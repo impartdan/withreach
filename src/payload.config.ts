@@ -1,4 +1,5 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
+import { resendAdapter } from '@payloadcms/email-resend'
 import sharp from 'sharp'
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
@@ -65,6 +66,11 @@ export default buildConfig({
   collections: [Pages, Posts, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
+  email: resendAdapter({
+    defaultFromAddress: process.env.RESEND_FROM_ADDRESS || 'no-reply@example.com',
+    defaultFromName: process.env.RESEND_FROM_NAME || 'Withreach',
+    apiKey: process.env.RESEND_API_KEY,
+  }),
   plugins,
   secret: process.env.PAYLOAD_SECRET,
   sharp,

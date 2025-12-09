@@ -5,8 +5,19 @@ declare global {
       DATABASE_URI: string
       NEXT_PUBLIC_SERVER_URL: string
       VERCEL_PROJECT_PRODUCTION_URL: string
+      RESEND_API_KEY: string
+      RESEND_FROM_ADDRESS?: string
+      RESEND_FROM_NAME?: string
     }
   }
+}
+
+declare module '@payloadcms/email-resend' {
+  export function resendAdapter(options: {
+    defaultFromAddress: string
+    defaultFromName: string
+    apiKey: string
+  }): any
 }
 
 // If this file has no import/export statements (i.e. is a script)
