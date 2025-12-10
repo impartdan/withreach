@@ -1684,6 +1684,13 @@ export interface Footer {
         id?: string | null;
       }[]
     | null;
+  badges?:
+    | {
+        logo: number | Media;
+        url?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1727,6 +1734,13 @@ export interface FooterSelect<T extends boolean = true> {
               url?: T;
               label?: T;
             };
+        id?: T;
+      };
+  badges?:
+    | T
+    | {
+        logo?: T;
+        url?: T;
         id?: T;
       };
   updatedAt?: T;

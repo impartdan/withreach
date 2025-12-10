@@ -25,6 +25,28 @@ export const Footer: GlobalConfig = {
         },
       },
     },
+    {
+      name: 'badges',
+      type: 'array',
+      label: 'Badges',
+      fields: [
+        {
+          name: 'logo',
+          label: 'Logo',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        },
+        {
+          name: 'url',
+          label: 'URL',
+          type: 'text',
+        },
+      ],
+      admin: {
+        initCollapsed: true,
+      },
+    },
   ],
   hooks: {
     afterChange: [revalidateFooter],
