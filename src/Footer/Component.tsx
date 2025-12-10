@@ -16,6 +16,15 @@ export async function Footer() {
 
   return (
     <footer className="mt-auto border-t border-border bg-black dark:bg-card text-white">
+      <div className="container py-8">
+        <div className="flex justify-between items-baseline font-black text-7xl text-white">
+          <div>R</div>
+          <div>E</div>
+          <div>A</div>
+          <div>C</div>
+          <div>H</div>
+        </div>
+      </div>
       <div className="container py-8 gap-8 flex flex-col md:flex-row md:items-center md:justify-between">
         <div className="flex flex-col md:flex-row md:items-center gap-4">
           <ThemeSelector />
