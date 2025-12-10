@@ -17,7 +17,7 @@ declare module '@payloadcms/email-resend' {
     defaultFromAddress: string
     defaultFromName: string
     apiKey: string
-  }): any
+  }): unknown
 }
 
 // If this file has no import/export statements (i.e. is a script)
