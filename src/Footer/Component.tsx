@@ -17,7 +17,7 @@ export async function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-black dark:bg-card text-white">
       <div className="container py-8 gap-8 flex flex-col md:flex-row md:items-center md:justify-between">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col md:flex-row md:items-center gap-4">
           <ThemeSelector />
           <nav className="flex flex-col md:flex-row gap-4">
             {navItems.map(({ link }, i) => {
@@ -39,7 +39,7 @@ export async function Footer() {
 
               const BadgeContent = (
                 <Media
-                  className="h-8 w-auto"
+                  className="h-8 w-auto grayscale hover:grayscale-0 transition-all duration-300"
                   imgClassName="h-8 w-auto object-contain"
                   resource={logoMedia ?? logo}
                   alt={logoMedia?.alt || 'Badge logo'}
