@@ -11,11 +11,67 @@ import { getCachedGlobal } from '@/utilities/getGlobals'
 export async function Footer() {
   const footerData: FooterGlobal = await getCachedGlobal('footer', 1)()
 
-  const navItems = footerData?.navItems || []
+  const navColumns = footerData?.navColumns || []
   const badges = footerData?.badges || []
 
   return (
     <footer className="mt-auto border-t border-border bg-black dark:bg-card text-white">
+      <div className="container py-8">
+        <nav className="flex w-full flex-col md:flex-row gap-8">
+          {navColumns.map((column, columnIndex) => {
+            return (
+              <div
+                key={column.id ?? `column-${columnIndex}`}
+                className={`flex flex-col gap-4 ${
+                  columnIndex === navColumns.length - 1 ? 'flex-none' : 'flex-1'
+                }`}
+              >
+                {(column?.menus || []).map((menu, menuIndex) => {
+                  const items = menu?.items || []
+                  if (!items.length) return null
+
+                  return (
+                    <div key={menu.id ?? `menu-${menuIndex}`} className="flex flex-col gap-2">
+                      {menu.title && (
+                        <div className="text-xs font-semibold uppercase text-white/60">
+                          {menu.title}
+                        </div>
+                      )}
+                      <div className="flex flex-col gap-1">
+                        {items.map((item, itemIndex) => {
+                          const link = item?.link
+                          if (!link) return null
+
+                          const isHashLink =
+                            typeof link.url === 'string' && link.url.startsWith('#')
+
+                          const key =
+                            item.id ??
+                            `column-${columnIndex}-menu-${menuIndex}-item-${itemIndex}-${
+                              link.url ?? 'link'
+                            }`
+
+                          return (
+                            <CMSLink
+                              className={`text-white ${
+                                menu?.variant === 'primary' ? 'text-base md:text-lg' : 'text-sm'
+                              }`}
+                              appearance={isHashLink ? 'link' : 'inline'}
+                              key={key}
+                              {...link}
+                            />
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            )
+          })}
+        </nav>
+      </div>
+
       <div className="container py-8">
         <div className="flex justify-between items-baseline font-black text-7xl text-white">
           <div>R</div>
@@ -28,11 +84,6 @@ export async function Footer() {
       <div className="container py-8 gap-8 flex flex-col md:flex-row md:items-center md:justify-between">
         <div className="flex flex-col md:flex-row md:items-center gap-4">
           <ThemeSelector />
-          <nav className="flex flex-col md:flex-row gap-4">
-            {navItems.map(({ link }, i) => {
-              return <CMSLink className="text-white" key={i} {...link} />
-            })}
-          </nav>
         </div>
 
         {badges && badges.length > 0 && (

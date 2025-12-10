@@ -10,14 +10,45 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
-      name: 'navItems',
+      name: 'navColumns',
       type: 'array',
+      label: 'Footer Navigation',
       fields: [
-        link({
-          appearances: false,
-        }),
+        {
+          name: 'menus',
+          type: 'array',
+          label: 'Menus',
+          fields: [
+            {
+              name: 'title',
+              type: 'text',
+              label: 'Menu title',
+              required: true,
+            },
+            {
+              name: 'items',
+              type: 'array',
+              label: 'Links',
+              fields: [
+                link({
+                  appearances: false,
+                }),
+              ],
+            },
+            {
+              name: 'variant',
+              type: 'select',
+              label: 'Menu style',
+              defaultValue: 'primary',
+              required: true,
+              options: [
+                { label: 'Primary', value: 'primary' },
+                { label: 'Secondary', value: 'secondary' },
+              ],
+            },
+          ],
+        },
       ],
-      maxRows: 6,
       admin: {
         initCollapsed: true,
         components: {
