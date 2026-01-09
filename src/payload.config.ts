@@ -24,6 +24,12 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    components: {
+      beforeLogin: ['@/components/AdminLoginBackground#BeforeLogin'],
+      graphics: {
+        Logo: '@/components/AdminLogo#Logo',
+      },
+    },
     user: Users.slug,
     livePreview: {
       breakpoints: [
