@@ -160,6 +160,7 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
                 {showLogo && logo && (
                   <div className="mb-6 h-12 flex items-center justify-start relative">
                     {logo.mimeType === 'image/svg+xml' ? (
+                      // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={getMediaUrl(logo.url, logo.updatedAt)}
                         alt={logo.alt || integration.title}
@@ -235,7 +236,9 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
       {/* No results message */}
       {displayedIntegrations.length === 0 && isSearching && (
         <div className="text-center py-12">
-          <p className="text-muted-foreground text-lg">No integrations found matching "{searchTerm}"</p>
+          <p className="text-muted-foreground text-lg">
+            No integrations found matching &quot;{searchTerm}&quot;
+          </p>
           <button
             onClick={() => setSearchTerm('')}
             className="mt-4 text-sm text-primary hover:text-primary/80 underline"

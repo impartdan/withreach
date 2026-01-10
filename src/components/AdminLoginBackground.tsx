@@ -7,7 +7,6 @@ import React from 'react'
 export const BeforeLogin: React.FC = () => {
   return (
     <style
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{
         __html: `
           html, body {
