@@ -26,7 +26,7 @@ export const IntegrationsBlock: React.FC<
 
   // Get featured integrations in the specified order
   let featuredIntegrations: Integration[] = []
-  let featuredIds: string[] = []
+  let featuredIds: (string | number)[] = []
 
   if (selectedIntegrations && selectedIntegrations.length > 0) {
     const selectedIds = selectedIntegrations
@@ -36,7 +36,7 @@ export const IntegrationsBlock: React.FC<
         }
         return integration
       })
-      .filter(Boolean) as string[]
+      .filter(Boolean) as (string | number)[]
 
     featuredIds = selectedIds
 

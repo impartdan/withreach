@@ -46,7 +46,7 @@ interface IntegrationsClientProps {
   title: string
   featuredIntegrations: Integration[]
   allIntegrations: Integration[]
-  featuredIds: string[]
+  featuredIds: (string | number)[]
 }
 
 export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
