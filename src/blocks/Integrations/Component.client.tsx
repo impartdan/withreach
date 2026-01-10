@@ -9,28 +9,28 @@ import { getMediaUrl } from '@/utilities/getMediaUrl'
 // Category badge color mapping
 const getCategoryColor = (categoryTitle: string) => {
   const normalizedTitle = categoryTitle.toLowerCase()
-  
+
   if (normalizedTitle.includes('ecommerce')) {
-    return 'bg-green-900/40 text-green-300'
+    return 'bg-green-100 text-green-800'
   } else if (normalizedTitle.includes('billing') || normalizedTitle.includes('subscription')) {
-    return 'bg-purple-900/40 text-purple-300'
+    return 'bg-purple-100 text-purple-800'
   } else if (normalizedTitle.includes('payment')) {
-    return 'bg-orange-900/40 text-orange-300'
+    return 'bg-orange-100 text-orange-800'
   }
-  
-  return 'bg-secondary text-secondary-foreground'
+
+  return 'bg-gray-100 text-gray-800'
 }
 
 // Simple fuzzy search function
 const fuzzySearch = (searchTerm: string, text: string): boolean => {
   const search = searchTerm.toLowerCase()
   const target = text.toLowerCase()
-  
+
   // If it's a direct substring match, return true
   if (target.includes(search)) {
     return true
   }
-  
+
   // Fuzzy match: check if characters appear in order
   let searchIndex = 0
   for (let i = 0; i < target.length && searchIndex < search.length; i++) {
@@ -38,7 +38,7 @@ const fuzzySearch = (searchTerm: string, text: string): boolean => {
       searchIndex++
     }
   }
-  
+
   return searchIndex === search.length
 }
 
@@ -77,7 +77,7 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
   return (
     <div>
       {/* Search Bar */}
-      <div className="mb-8">
+      <div className="mb-12">
         <div className="relative">
           <input
             ref={searchInputRef}
@@ -85,10 +85,10 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
             placeholder={`Search all ${allIntegrations.length} integrations`}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-3 pl-12 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder:text-muted-foreground"
+            className="w-full px-5 py-4 pl-14 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-gray-900 placeholder:text-gray-500 text-lg"
           />
           <svg
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
+            className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -103,7 +103,7 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
           {searchTerm && (
             <button
               onClick={() => setSearchTerm('')}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+              className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-900 transition-colors"
               aria-label="Clear search"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,80 +121,83 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
 
       {/* Title - only show when not searching */}
       {!isSearching && (
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-normal">{title}</h2>
+        <div className="mb-10">
+          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">{title}</h2>
         </div>
       )}
 
       {/* Results count when searching */}
       {isSearching && (
-        <div className="mb-6 text-sm text-muted-foreground">
-          {displayedIntegrations.length} {displayedIntegrations.length === 1 ? 'result' : 'results'} found
+        <div className="mb-8 text-base text-gray-600">
+          {displayedIntegrations.length} {displayedIntegrations.length === 1 ? 'result' : 'results'}{' '}
+          found
         </div>
       )}
 
       {/* Integration Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {displayedIntegrations.map((integration) => {
           const category = typeof integration.category === 'object' ? integration.category : null
           const logo = typeof integration.logo === 'object' ? integration.logo : null
           const isFeatured = featuredIds.includes(integration.id)
           const showLogo = !isSearching || isFeatured
-          
+
           return (
             <article
               key={integration.id}
-              className="flex flex-col border border-border rounded-lg bg-card hover:shadow-lg transition-all duration-200 overflow-hidden"
+              className="flex flex-col border border-gray-200 rounded-xl bg-white hover:border-gray-300 hover:shadow-md transition-all duration-200"
             >
-              <div className="p-6 flex flex-col flex-1">
+              <div className="p-8 flex flex-col flex-1">
                 {/* Category Badge */}
                 {category && (
-                  <div className="mb-4">
-                    <span className={`inline-block px-3 py-1 text-xs font-medium rounded-md ${getCategoryColor(category.title)}`}>
+                  <div className="mb-6">
+                    <span
+                      className={`inline-block px-3 py-1.5 text-xs font-medium rounded-full ${getCategoryColor(category.title)}`}
+                    >
                       {category.title}
                     </span>
                   </div>
                 )}
-                
+
                 {/* Logo - only show for featured when searching */}
                 {showLogo && logo && (
-                  <div className="mb-6 h-12 flex items-center justify-start relative">
+                  <div className="mb-8 h-16 flex items-start">
                     {logo.mimeType === 'image/svg+xml' ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={getMediaUrl(logo.url, logo.updatedAt)}
                         alt={logo.alt || integration.title}
-                        className="max-h-12 max-w-full w-auto object-contain"
+                        className="max-h-16 max-w-[180px] w-auto object-contain object-left"
                       />
                     ) : (
                       <Media
                         resource={logo}
-                        imgClassName="max-h-12 max-w-full w-auto object-contain"
+                        imgClassName="max-h-16 max-w-[180px] w-auto object-contain object-left"
                       />
                     )}
                   </div>
                 )}
-                
+
                 {/* Title */}
-                <h3 className="text-xl font-semibold mb-3 text-foreground">{integration.title}</h3>
-                
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">{integration.title}</h3>
+
                 {/* Description */}
-                <p className="text-muted-foreground text-sm mb-4 flex-1">
+                <p className="text-gray-600 text-base leading-relaxed mb-6 flex-1">
                   {integration.description}
                 </p>
-                
+
                 {/* Link - only show for featured integrations */}
                 {isFeatured && integration.link && (
-                  <div className="pt-2">
+                  <div className="pt-2 mt-auto">
                     <Link
                       href={integration.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                      className="inline-flex items-center text-base font-medium text-gray-900 hover:text-gray-700 transition-colors group"
                     >
                       Explore
                       <svg
-                        className="ml-1 w-4 h-4"
+                        className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -216,16 +219,14 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
 
         {/* Placeholder Card - only show when not searching */}
         {!isSearching && (
-          <article className="flex flex-col border border-border rounded-lg bg-card items-center justify-center p-8 text-center min-h-[280px]">
-            <h3 className="text-xl font-semibold mb-3 text-foreground">
+          <article className="flex flex-col border border-gray-200 rounded-xl bg-white items-center justify-center p-8 text-center min-h-[320px]">
+            <h3 className="text-2xl font-semibold mb-4 text-gray-900">
               Not seeing your integration?
             </h3>
-            <p className="text-muted-foreground text-sm mb-6">
-              Search our full directory
-            </p>
+            <p className="text-gray-600 text-base mb-8">Search our full directory</p>
             <button
               onClick={() => searchInputRef.current?.focus()}
-              className="px-6 py-2 bg-foreground text-background rounded-md font-medium hover:opacity-90 transition-opacity"
+              className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
             >
               Search
             </button>
@@ -233,18 +234,24 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
         )}
       </div>
 
-      {/* No results message */}
+      {/* No results - show as a card in the grid */}
       {displayedIntegrations.length === 0 && isSearching && (
-        <div className="text-center py-12">
-          <p className="text-muted-foreground text-lg">
-            No integrations found matching &quot;{searchTerm}&quot;
-          </p>
-          <button
-            onClick={() => setSearchTerm('')}
-            className="mt-4 text-sm text-primary hover:text-primary/80 underline"
-          >
-            Clear search
-          </button>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <article className="flex flex-col border border-gray-200 rounded-xl bg-white items-center justify-center p-12 text-center min-h-[320px] sm:col-span-2 lg:col-span-3 xl:col-span-4">
+            <div className="max-w-md mx-auto">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">No integrations found</h3>
+              <p className="text-gray-600 text-base mb-8 leading-relaxed">
+                We couldn&apos;t find any integrations matching &quot;{searchTerm}&quot;. Try
+                adjusting your search or browse all integrations.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+              >
+                Connect with Sales
+              </Link>
+            </div>
+          </article>
         </div>
       )}
     </div>
