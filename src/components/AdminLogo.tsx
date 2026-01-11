@@ -19,7 +19,7 @@ export const Logo: React.FC<Props> = ({ className }) => {
     >
       {/* eslint-disable @next/next/no-img-element */}
       <Link href="/">
-        <LogoComponent style={{ width: '110px', height: '20px' }} />
+        <LogoComponent className="text-black" />
       </Link>
     </div>
   )

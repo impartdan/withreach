@@ -62,6 +62,7 @@ const config = {
         },
         background: 'hsl(var(--background))',
         border: 'hsla(var(--border))',
+
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
@@ -92,6 +93,10 @@ const config = {
         success: 'hsl(var(--success))',
         error: 'hsl(var(--error))',
         warning: 'hsl(var(--warning))',
+        brand: {
+          black: '#1E1A15',
+          'off-white': '#FAF7F5',
+        },
       },
       fontFamily: {
         mono: ['var(--font-geist-mono)'],

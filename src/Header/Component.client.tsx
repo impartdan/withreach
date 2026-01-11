@@ -13,12 +13,16 @@ interface HeaderClientProps {
 
 export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
   return (
-    <header className="container relative z-20">
-      <div className="py-8 flex justify-between">
-        <Link href="/">
-          <Logo loading="eager" priority="high" className="invert dark:invert-0" />
-        </Link>
-        <HeaderNav data={data} />
+    <header className="fixed top-0 z-30 w-full ">
+      <div className="mx-10 mt-9 mb-6 ">
+        <div className=" bg-white/60 hover:bg-white/100 transition-all duration-300 pl-[30px] pr-[10px] py-2 rounded-lg">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="flex-shrink-0">
+              <Logo className="text-black" />
+            </Link>
+            <HeaderNav />
+          </div>
+        </div>
       </div>
     </header>
   )
