@@ -62,16 +62,8 @@ export const Header: GlobalConfig = {
             {
               name: 'layout',
               type: 'select',
-              defaultValue: 'basic',
+              defaultValue: 'featuredWithList',
               options: [
-                {
-                  label: 'Basic',
-                  value: 'basic',
-                },
-                {
-                  label: 'Nav with Images',
-                  value: 'navWithImages',
-                },
                 {
                   label: 'Featured with List',
                   value: 'featuredWithList',
@@ -87,44 +79,6 @@ export const Header: GlobalConfig = {
                 {
                   label: 'Content Grid',
                   value: 'contentGrid',
-                },
-                {
-                  label: 'Simple Links with Feature',
-                  value: 'simpleLinksWithFeature',
-                },
-              ],
-            },
-            // Basic layout - just links
-            {
-              name: 'childLinks',
-              type: 'array',
-              label: 'Child Links',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'basic',
-              },
-              fields: [
-                link({
-                  appearances: false,
-                }),
-              ],
-            },
-            // Nav with images layout
-            {
-              name: 'navWithImagesLinks',
-              type: 'array',
-              label: 'Links with Images',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'navWithImages',
-              },
-              fields: [
-                link({
-                  appearances: false,
-                }),
-                {
-                  name: 'image',
-                  type: 'upload',
-                  relationTo: 'media',
-                  label: 'Image',
                 },
               ],
             },
@@ -290,102 +244,53 @@ export const Header: GlobalConfig = {
                     width: '50%',
                   },
                   fields: [
-                    {
-                      name: 'title',
-                      type: 'text',
-                      label: 'Title',
-                      required: true,
-                    },
+                    link({
+                      appearances: false,
+                    }),
                     {
                       name: 'description',
                       type: 'textarea',
                       label: 'Description',
                     },
-                    link({
-                      appearances: false,
-                    }),
                   ],
                 },
                 {
-                  name: 'cgCards',
-                  type: 'array',
-                  label: 'Content Cards (Right Column)',
+                  type: 'collapsible',
+                  label: 'Right Column Posts',
                   admin: {
                     width: '50%',
                   },
                   fields: [
                     {
-                      name: 'image',
-                      type: 'upload',
-                      relationTo: 'media',
-                      label: 'Card Image',
-                    },
-                    {
-                      name: 'tags',
-                      type: 'array',
-                      label: 'Category Tags',
-                      fields: [
+                      name: 'cgMode',
+                      type: 'radio',
+                      label: 'Content Mode',
+                      defaultValue: 'automatic',
+                      options: [
                         {
-                          name: 'tag',
-                          type: 'text',
-                          label: 'Tag',
+                          label: 'Automatic',
+                          value: 'automatic',
+                        },
+                        {
+                          label: 'Manual',
+                          value: 'manual',
                         },
                       ],
+                      admin: {
+                        layout: 'horizontal',
+                      },
                     },
                     {
-                      name: 'heading',
-                      type: 'text',
-                      label: 'Heading',
+                      name: 'cgPosts',
+                      type: 'relationship',
+                      relationTo: 'posts',
+                      label: 'Select Posts',
+                      hasMany: true,
+                      maxRows: 2,
+                      admin: {
+                        condition: (_, siblingData) => siblingData?.cgMode === 'manual',
+                      },
                     },
-                    link({
-                      appearances: false,
-                    }),
-                  ],
-                },
-              ],
-            },
-            // Simple Links with Feature layout
-            {
-              type: 'row',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'simpleLinksWithFeature',
-              },
-              fields: [
-                {
-                  name: 'slfLinks',
-                  type: 'array',
-                  label: 'Simple Links (Left Column)',
-                  admin: {
-                    width: '50%',
-                  },
-                  fields: [
-                    link({
-                      appearances: false,
-                    }),
-                  ],
-                },
-                {
-                  name: 'slfArticle',
-                  type: 'group',
-                  label: 'Featured Article (Right Column)',
-                  admin: {
-                    width: '50%',
-                  },
-                  fields: [
-                    {
-                      name: 'heading',
-                      type: 'text',
-                      label: 'Heading',
-                    },
-                    {
-                      name: 'backgroundImage',
-                      type: 'upload',
-                      relationTo: 'media',
-                      label: 'Background Image',
-                    },
-                    link({
-                      appearances: false,
-                    }),
                   ],
                 },
               ],

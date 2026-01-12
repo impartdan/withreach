@@ -6,13 +6,10 @@ import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { Header } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
-import { BasicDropdown } from './dropdowns/BasicDropdown'
-import { NavWithImagesDropdown } from './dropdowns/NavWithImagesDropdown'
 import { FeaturedWithListDropdown } from './dropdowns/FeaturedWithListDropdown'
 import { TwoColumnShowcaseDropdown } from './dropdowns/TwoColumnShowcaseDropdown'
 import { FeaturedIntegrationsDropdown } from './dropdowns/FeaturedIntegrationsDropdown'
 import { ContentGridDropdown } from './dropdowns/ContentGridDropdown'
-import { SimpleLinksWithFeatureDropdown } from './dropdowns/SimpleLinksWithFeatureDropdown'
 
 type MenuItem = NonNullable<Header['menuItems']>[number]
 
@@ -44,7 +41,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ menuItems = [], additional
 
   return (
     <>
-      <nav className="flex items-center gap-8">
+      <nav className="flex items-center gap-8 dropdown-container">
         {/* Desktop Nav Items - Hidden on large and below */}
         <div className="hidden lg:flex items-center gap-8">
           {menuItems?.map((item, i) => {
@@ -60,62 +57,16 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ menuItems = [], additional
 
             if (item.type === 'dropdown' && item.dropdownLabel) {
               return (
-                <div key={i} className="relative dropdown-container">
-                  <button
-                    onClick={() => toggleDropdown(i)}
-                    className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
-                  >
-                    {item.dropdownLabel}
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform ${activeDropdown === i ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-
-                  {/* Dropdown Menu */}
-                  {activeDropdown === i && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50">
-                      <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-                        {item.dropdown?.layout === 'basic' && (
-                          <BasicDropdown links={item.dropdown.childLinks as any} />
-                        )}
-                        {item.dropdown?.layout === 'navWithImages' && (
-                          <NavWithImagesDropdown links={item.dropdown.navWithImagesLinks as any} />
-                        )}
-                        {item.dropdown?.layout === 'featuredWithList' && (
-                          <FeaturedWithListDropdown
-                            items={item.dropdown.fwlItems as any}
-                            featuredCard={item.dropdown.fwlCard as any}
-                          />
-                        )}
-                        {item.dropdown?.layout === 'twoColumnShowcase' && (
-                          <TwoColumnShowcaseDropdown
-                            items={item.dropdown.tcsItems as any}
-                            mode={item.dropdown.tcsMode as any}
-                            post={item.dropdown.tcsPost as any}
-                          />
-                        )}
-                        {item.dropdown?.layout === 'featuredIntegrations' && (
-                          <FeaturedIntegrationsDropdown
-                            items={item.dropdown.fiItems as any}
-                            integrations={item.dropdown.fiIntegrations as any}
-                          />
-                        )}
-                        {item.dropdown?.layout === 'contentGrid' && (
-                          <ContentGridDropdown
-                            items={item.dropdown.cgItems as any}
-                            contentCards={item.dropdown.cgCards as any}
-                          />
-                        )}
-                        {item.dropdown?.layout === 'simpleLinksWithFeature' && (
-                          <SimpleLinksWithFeatureDropdown
-                            links={item.dropdown.slfLinks as any}
-                            featuredArticle={item.dropdown.slfArticle as any}
-                          />
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
+                <button
+                  key={i}
+                  onClick={() => toggleDropdown(i)}
+                  className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                >
+                  {item.dropdownLabel}
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${activeDropdown === i ? 'rotate-180' : ''}`}
+                  />
+                </button>
               )
             }
 
@@ -169,6 +120,40 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ menuItems = [], additional
           )
         })}
       </nav>
+
+      {/* Centered Dropdown Menu - Fixed positioning relative to viewport */}
+      {activeDropdown !== null && menuItems?.[activeDropdown]?.type === 'dropdown' && (
+        <div className="fixed left-1/2 -translate-x-1/2 z-50" style={{ top: '65px' }}>
+          <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+            {menuItems[activeDropdown].dropdown?.layout === 'featuredWithList' && (
+              <FeaturedWithListDropdown
+                items={menuItems[activeDropdown].dropdown.fwlItems as any}
+                featuredCard={menuItems[activeDropdown].dropdown.fwlCard as any}
+              />
+            )}
+            {menuItems[activeDropdown].dropdown?.layout === 'twoColumnShowcase' && (
+              <TwoColumnShowcaseDropdown
+                items={menuItems[activeDropdown].dropdown.tcsItems as any}
+                mode={menuItems[activeDropdown].dropdown.tcsMode as any}
+                post={menuItems[activeDropdown].dropdown.tcsPost as any}
+              />
+            )}
+            {menuItems[activeDropdown].dropdown?.layout === 'featuredIntegrations' && (
+              <FeaturedIntegrationsDropdown
+                items={menuItems[activeDropdown].dropdown.fiItems as any}
+                integrations={menuItems[activeDropdown].dropdown.fiIntegrations as any}
+              />
+            )}
+            {menuItems[activeDropdown].dropdown?.layout === 'contentGrid' && (
+              <ContentGridDropdown
+                items={menuItems[activeDropdown].dropdown.cgItems as any}
+                mode={menuItems[activeDropdown].dropdown.cgMode as any}
+                posts={menuItems[activeDropdown].dropdown.cgPosts as any}
+              />
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Mobile Slide-in Menu - Slides from top */}
       <div

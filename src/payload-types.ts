@@ -1860,58 +1860,7 @@ export interface Header {
         };
         dropdownLabel?: string | null;
         dropdown?: {
-          layout?:
-            | (
-                | 'basic'
-                | 'navWithImages'
-                | 'featuredWithList'
-                | 'twoColumnShowcase'
-                | 'featuredIntegrations'
-                | 'contentGrid'
-                | 'simpleLinksWithFeature'
-              )
-            | null;
-          childLinks?:
-            | {
-                link: {
-                  type?: ('reference' | 'custom') | null;
-                  newTab?: boolean | null;
-                  reference?:
-                    | ({
-                        relationTo: 'pages';
-                        value: number | Page;
-                      } | null)
-                    | ({
-                        relationTo: 'posts';
-                        value: number | Post;
-                      } | null);
-                  url?: string | null;
-                  label: string;
-                };
-                id?: string | null;
-              }[]
-            | null;
-          navWithImagesLinks?:
-            | {
-                link: {
-                  type?: ('reference' | 'custom') | null;
-                  newTab?: boolean | null;
-                  reference?:
-                    | ({
-                        relationTo: 'pages';
-                        value: number | Page;
-                      } | null)
-                    | ({
-                        relationTo: 'posts';
-                        value: number | Post;
-                      } | null);
-                  url?: string | null;
-                  label: string;
-                };
-                image?: (number | null) | Media;
-                id?: string | null;
-              }[]
-            | null;
+          layout?: ('featuredWithList' | 'twoColumnShowcase' | 'featuredIntegrations' | 'contentGrid') | null;
           fwlItems?:
             | {
                 link: {
@@ -1998,93 +1947,27 @@ export interface Header {
           fiIntegrations?: (number | Integration)[] | null;
           cgItems?:
             | {
-                title: string;
+                link: {
+                  type?: ('reference' | 'custom') | null;
+                  newTab?: boolean | null;
+                  reference?:
+                    | ({
+                        relationTo: 'pages';
+                        value: number | Page;
+                      } | null)
+                    | ({
+                        relationTo: 'posts';
+                        value: number | Post;
+                      } | null);
+                  url?: string | null;
+                  label: string;
+                };
                 description?: string | null;
-                link: {
-                  type?: ('reference' | 'custom') | null;
-                  newTab?: boolean | null;
-                  reference?:
-                    | ({
-                        relationTo: 'pages';
-                        value: number | Page;
-                      } | null)
-                    | ({
-                        relationTo: 'posts';
-                        value: number | Post;
-                      } | null);
-                  url?: string | null;
-                  label: string;
-                };
                 id?: string | null;
               }[]
             | null;
-          cgCards?:
-            | {
-                image?: (number | null) | Media;
-                tags?:
-                  | {
-                      tag?: string | null;
-                      id?: string | null;
-                    }[]
-                  | null;
-                heading?: string | null;
-                link: {
-                  type?: ('reference' | 'custom') | null;
-                  newTab?: boolean | null;
-                  reference?:
-                    | ({
-                        relationTo: 'pages';
-                        value: number | Page;
-                      } | null)
-                    | ({
-                        relationTo: 'posts';
-                        value: number | Post;
-                      } | null);
-                  url?: string | null;
-                  label: string;
-                };
-                id?: string | null;
-              }[]
-            | null;
-          slfLinks?:
-            | {
-                link: {
-                  type?: ('reference' | 'custom') | null;
-                  newTab?: boolean | null;
-                  reference?:
-                    | ({
-                        relationTo: 'pages';
-                        value: number | Page;
-                      } | null)
-                    | ({
-                        relationTo: 'posts';
-                        value: number | Post;
-                      } | null);
-                  url?: string | null;
-                  label: string;
-                };
-                id?: string | null;
-              }[]
-            | null;
-          slfArticle: {
-            heading?: string | null;
-            backgroundImage?: (number | null) | Media;
-            link: {
-              type?: ('reference' | 'custom') | null;
-              newTab?: boolean | null;
-              reference?:
-                | ({
-                    relationTo: 'pages';
-                    value: number | Page;
-                  } | null)
-                | ({
-                    relationTo: 'posts';
-                    value: number | Post;
-                  } | null);
-              url?: string | null;
-              label: string;
-            };
-          };
+          cgMode?: ('automatic' | 'manual') | null;
+          cgPosts?: (number | Post)[] | null;
         };
         id?: string | null;
       }[]
@@ -2184,35 +2067,6 @@ export interface HeaderSelect<T extends boolean = true> {
           | T
           | {
               layout?: T;
-              childLinks?:
-                | T
-                | {
-                    link?:
-                      | T
-                      | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                        };
-                    id?: T;
-                  };
-              navWithImagesLinks?:
-                | T
-                | {
-                    link?:
-                      | T
-                      | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                        };
-                    image?: T;
-                    id?: T;
-                  };
               fwlItems?:
                 | T
                 | {
@@ -2278,70 +2132,20 @@ export interface HeaderSelect<T extends boolean = true> {
               cgItems?:
                 | T
                 | {
-                    title?: T;
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                        };
                     description?: T;
-                    link?:
-                      | T
-                      | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                        };
                     id?: T;
                   };
-              cgCards?:
-                | T
-                | {
-                    image?: T;
-                    tags?:
-                      | T
-                      | {
-                          tag?: T;
-                          id?: T;
-                        };
-                    heading?: T;
-                    link?:
-                      | T
-                      | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                        };
-                    id?: T;
-                  };
-              slfLinks?:
-                | T
-                | {
-                    link?:
-                      | T
-                      | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                        };
-                    id?: T;
-                  };
-              slfArticle?:
-                | T
-                | {
-                    heading?: T;
-                    backgroundImage?: T;
-                    link?:
-                      | T
-                      | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                        };
-                  };
+              cgMode?: T;
+              cgPosts?: T;
             };
         id?: T;
       };
