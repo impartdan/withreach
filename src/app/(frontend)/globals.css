@@ -98,8 +98,8 @@
   }
 }
 
-/* Keep header static during transitions */
-header {
+/* Keep header static during transitions - only apply when transitioning class is present */
+.transitioning-header {
   view-transition-name: header;
 }
 
