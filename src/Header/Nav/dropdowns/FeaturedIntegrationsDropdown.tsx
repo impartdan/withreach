@@ -1,14 +1,26 @@
-import type { Integration } from '@/payload-types'
+import type { Integration, Page, Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media as MediaComponent } from '@/components/Media'
 import { Link } from 'next-view-transitions'
 
+type CMSLinkType = {
+  appearance?: 'inline' | 'default' | 'outline'
+  label?: string | null
+  newTab?: boolean | null
+  reference?: {
+    relationTo: 'pages' | 'posts'
+    value: Page | Post | string | number
+  } | null
+  type?: 'custom' | 'reference' | null
+  url?: string | null
+}
+
 interface FeaturedIntegrationsDropdownProps {
   items?: Array<{
-    description?: string
-    link?: any
+    description?: string | null
+    link?: CMSLinkType
   }> | null
-  integrations?: Array<string | Integration> | null
+  integrations?: Array<string | number | Integration> | null
 }
 
 export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdownProps> = ({

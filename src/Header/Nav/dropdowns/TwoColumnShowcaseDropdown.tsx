@@ -1,16 +1,29 @@
 'use client'
 
-import type { Post } from '@/payload-types'
+import type { Post, Page } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Link } from 'next-view-transitions'
+import Image from 'next/image'
+
+type CMSLinkType = {
+  appearance?: 'inline' | 'default' | 'outline'
+  label?: string | null
+  newTab?: boolean | null
+  reference?: {
+    relationTo: 'pages' | 'posts'
+    value: Page | Post | string | number
+  } | null
+  type?: 'custom' | 'reference' | null
+  url?: string | null
+}
 
 interface TwoColumnShowcaseDropdownProps {
   items?: Array<{
-    description?: string
-    link?: any
+    description?: string | null
+    link?: CMSLinkType
   }> | null
-  mode?: 'automatic' | 'manual'
-  post?: string | Post | null
+  mode?: 'automatic' | 'manual' | null
+  post?: string | number | Post | null
   latestPosts: Post[]
 }
 
@@ -20,12 +33,12 @@ const PostCard: React.FC<{ post: Post }> = ({ post }) => {
   return (
     <Link href={`/posts/${post.slug}`} className="w-[382px] block group">
       {post.heroImage && typeof post.heroImage === 'object' && 'url' in post.heroImage ? (
-        <div className="aspect-[3/2] rounded-lg overflow-hidden">
-          <img
+        <div className="aspect-[3/2] rounded-lg overflow-hidden relative">
+          <Image
             src={post.heroImage.url as string}
             alt={post.heroImage.alt || post.title || ''}
-            className="w-full h-full object-cover transition-transform group-hover:scale-105"
-            style={{ objectFit: 'cover' }}
+            fill
+            className="object-cover transition-transform group-hover:scale-105"
           />
         </div>
       ) : null}

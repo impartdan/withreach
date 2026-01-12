@@ -95,7 +95,7 @@ export const HubspotFormBlock: React.FC<
           formId: formId,
           target: `#hubspot-form-${formId}`,
           css: disableHubspotStyles ? '' : undefined,
-          onFormReady: (form) => {
+          onFormReady: () => {
             console.log('HubSpot form ready:', formId)
           },
           onFormSubmitted: () => {
@@ -107,7 +107,7 @@ export const HubspotFormBlock: React.FC<
         setError('Failed to create HubSpot form. Please check your Form ID.')
       }
     }
-  }, [scriptLoaded, formId, effectivePortalId])
+  }, [scriptLoaded, formId, effectivePortalId, disableHubspotStyles])
 
   return (
     <div className="container lg:max-w-[48rem] py-10">

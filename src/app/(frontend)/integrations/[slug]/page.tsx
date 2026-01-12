@@ -4,7 +4,6 @@ import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import { notFound } from 'next/navigation'
-import type { Integration } from '@/payload-types'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import { generateMeta } from '@/utilities/generateMeta'
@@ -35,20 +34,30 @@ type Args = {
   }>
 }
 
+interface LexicalNode {
+  type?: string
+  children?: LexicalNode[]
+  text?: string
+}
+
+interface RichTextData {
+  root?: LexicalNode
+}
+
 // Helper function to extract feature list items from richText
-function extractFeatures(richTextData: any): string[] {
+function extractFeatures(richTextData: RichTextData): string[] {
   if (!richTextData?.root?.children) return []
 
   const features: string[] = []
 
-  const traverse = (node: any) => {
+  const traverse = (node: LexicalNode) => {
     if (node.type === 'listitem' && node.children) {
       // Extract text from list item
       const text = node.children
-        .map((child: any) => {
+        .map((child: LexicalNode) => {
           if (child.type === 'text') return child.text
           if (child.children) {
-            return child.children.map((c: any) => c.text || '').join('')
+            return child.children.map((c: LexicalNode) => c.text || '').join('')
           }
           return ''
         })
@@ -58,7 +67,7 @@ function extractFeatures(richTextData: any): string[] {
     }
 
     if (node.children) {
-      node.children.forEach((child: any) => traverse(child))
+      node.children.forEach((child: LexicalNode) => traverse(child))
     }
   }
 

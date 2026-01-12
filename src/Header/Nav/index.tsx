@@ -125,29 +125,29 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ menuItems = [], additional
           <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
             {menuItems[activeDropdown].dropdown?.layout === 'featuredWithList' && (
               <FeaturedWithListDropdown
-                items={menuItems[activeDropdown].dropdown.fwlItems as any}
-                featuredCard={menuItems[activeDropdown].dropdown.fwlCard as any}
+                items={menuItems[activeDropdown].dropdown.fwlItems}
+                featuredCard={menuItems[activeDropdown].dropdown.fwlCard}
               />
             )}
             {menuItems[activeDropdown].dropdown?.layout === 'twoColumnShowcase' && (
               <TwoColumnShowcaseDropdown
-                items={menuItems[activeDropdown].dropdown.tcsItems as any}
-                mode={menuItems[activeDropdown].dropdown.tcsMode as any}
-                post={menuItems[activeDropdown].dropdown.tcsPost as any}
+                items={menuItems[activeDropdown].dropdown.tcsItems}
+                mode={menuItems[activeDropdown].dropdown.tcsMode}
+                post={menuItems[activeDropdown].dropdown.tcsPost}
                 latestPosts={latestPosts}
               />
             )}
             {menuItems[activeDropdown].dropdown?.layout === 'featuredIntegrations' && (
               <FeaturedIntegrationsDropdown
-                items={menuItems[activeDropdown].dropdown.fiItems as any}
-                integrations={menuItems[activeDropdown].dropdown.fiIntegrations as any}
+                items={menuItems[activeDropdown].dropdown.fiItems}
+                integrations={menuItems[activeDropdown].dropdown.fiIntegrations}
               />
             )}
             {menuItems[activeDropdown].dropdown?.layout === 'contentGrid' && (
               <ContentGridDropdown
-                items={menuItems[activeDropdown].dropdown.cgItems as any}
-                mode={menuItems[activeDropdown].dropdown.cgMode as any}
-                posts={menuItems[activeDropdown].dropdown.cgPosts as any}
+                items={menuItems[activeDropdown].dropdown.cgItems}
+                mode={menuItems[activeDropdown].dropdown.cgMode}
+                posts={menuItems[activeDropdown].dropdown.cgPosts}
                 latestPosts={latestPosts}
               />
             )}

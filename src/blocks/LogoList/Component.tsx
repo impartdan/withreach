@@ -1,7 +1,6 @@
 import type { LogoListBlock as LogoListBlockProps } from '@/payload-types'
 import React from 'react'
 import { Media } from '@/components/Media'
-import { cn } from '@/utilities/ui'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
 
 export const LogoListBlock: React.FC<

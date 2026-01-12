@@ -17,7 +17,6 @@ export const Logo: React.FC<Props> = ({ className }) => {
         color: '#FAF7F5',
       }}
     >
-      {/* eslint-disable @next/next/no-img-element */}
       <Link href="/">
         <LogoComponent className="text-black" />
       </Link>

@@ -24,7 +24,7 @@ const updateShopifyIntegration = async () => {
     console.log(`Found Shopify integration with ID: ${shopifyIntegration.id}`)
 
     // Update with body and features content from https://www.withreach.com/partners/shopify
-    const updated = await payload.update({
+    await payload.update({
       collection: 'integrations',
       id: shopifyIntegration.id,
       data: {

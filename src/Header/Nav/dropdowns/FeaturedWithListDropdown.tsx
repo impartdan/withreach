@@ -1,15 +1,27 @@
-import type { Media } from '@/payload-types'
+import type { Media, Page, Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media as MediaComponent } from '@/components/Media'
 
+type CMSLinkType = {
+  appearance?: 'inline' | 'default' | 'outline'
+  label?: string | null
+  newTab?: boolean | null
+  reference?: {
+    relationTo: 'pages' | 'posts'
+    value: Page | Post | string | number
+  } | null
+  type?: 'custom' | 'reference' | null
+  url?: string | null
+}
+
 interface FeaturedWithListDropdownProps {
   items?: Array<{
-    description?: string
-    link?: any
+    description?: string | null
+    link?: CMSLinkType
   }> | null
   featuredCard?: {
-    backgroundImage?: string | Media | null
-    link?: any
+    backgroundImage?: string | number | Media | null
+    link?: CMSLinkType
   } | null
 }
 

@@ -431,7 +431,7 @@ async function updatePartners() {
       const integration = integrations.docs[0]
 
       // Prepare update data
-      const updateData: any = {}
+      const updateData: Record<string, unknown> = {}
 
       if (content.body && content.body.length > 0) {
         updateData.body = createLexicalBody(content.body)
