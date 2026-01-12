@@ -35,6 +35,14 @@ export const hero: Field = {
           label: 'Low Impact',
           value: 'lowImpact',
         },
+        {
+          label: 'Fullscreen',
+          value: 'fullscreen',
+        },
+        {
+          label: 'Text and Image',
+          value: 'textAndImage',
+        },
       ],
       required: true,
     },
@@ -62,10 +70,42 @@ export const hero: Field = {
       name: 'media',
       type: 'upload',
       admin: {
-        condition: (_, { type } = {}) => ['highImpact', 'mediumImpact'].includes(type),
+        condition: (_, { type } = {}) =>
+          ['highImpact', 'mediumImpact', 'fullscreen', 'textAndImage'].includes(type),
       },
       relationTo: 'media',
       required: true,
+    },
+    {
+      name: 'video',
+      type: 'upload',
+      admin: {
+        condition: (_, { type } = {}) => type === 'fullscreen',
+      },
+      filterOptions: {
+        mimeType: {
+          contains: 'mp4',
+        },
+      },
+      relationTo: 'media',
+    },
+    {
+      name: 'rightText',
+      type: 'richText',
+      admin: {
+        condition: (_, { type } = {}) => type === 'textAndImage',
+      },
+      editor: lexicalEditor({
+        features: ({ rootFeatures }) => {
+          return [
+            ...rootFeatures,
+            HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+            FixedToolbarFeature(),
+            InlineToolbarFeature(),
+          ]
+        },
+      }),
+      label: 'Right Text',
     },
   ],
   label: false,

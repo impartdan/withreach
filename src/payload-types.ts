@@ -162,7 +162,7 @@ export interface Page {
   id: number;
   title: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
+    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'fullscreen' | 'textAndImage';
     richText?: {
       root: {
         type: string;
@@ -203,6 +203,22 @@ export interface Page {
         }[]
       | null;
     media?: (number | null) | Media;
+    video?: (number | null) | Media;
+    rightText?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
   };
   layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | IntegrationsBlock)[];
   meta?: {
@@ -1141,6 +1157,8 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
             };
         media?: T;
+        video?: T;
+        rightText?: T;
       };
   layout?:
     | T

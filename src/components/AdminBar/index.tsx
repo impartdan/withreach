@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation'
 import './index.scss'
 
 import { getClientSideURL } from '@/utilities/getURL'
+import { useAdmin } from '@/providers/AdminContext'
 
 const baseClass = 'admin-bar'
 
@@ -37,9 +38,11 @@ export const AdminBar: React.FC<{
   const { adminBarProps } = props || {}
   const segments = useSelectedLayoutSegments()
   const [show, setShow] = useState(false)
-  const collection = (
-    collectionLabels[segments?.[1] as keyof typeof collectionLabels] ? segments[1] : 'pages'
-  ) as keyof typeof collectionLabels
+  const { documentId, collection: contextCollection } = useAdmin()
+  const collection = (contextCollection ||
+    (collectionLabels[segments?.[1] as keyof typeof collectionLabels]
+      ? segments[1]
+      : 'pages')) as keyof typeof collectionLabels
   const router = useRouter()
 
   const onAuthChange = React.useCallback((user: PayloadMeUser) => {
@@ -48,7 +51,7 @@ export const AdminBar: React.FC<{
 
   return (
     <div
-      className={cn(baseClass, 'py-2 bg-black text-white', 'fixed top-0 left-0 right-0 z-30', {
+      className={cn(baseClass, 'py-2 bg-black text-white', 'fixed top-0 left-0 right-0 z-40', {
         block: show,
         hidden: !show,
       })}
@@ -63,6 +66,7 @@ export const AdminBar: React.FC<{
             user: 'text-white',
           }}
           cmsURL={getClientSideURL()}
+          id={documentId}
           collectionSlug={collection}
           collectionLabels={{
             plural: collectionLabels[collection]?.plural || 'Pages',
