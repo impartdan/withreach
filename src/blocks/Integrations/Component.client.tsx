@@ -136,84 +136,95 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
       )}
 
       {/* Integration Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-12 lg:gap-y-16">
         {displayedIntegrations.map((integration) => {
           const category = typeof integration.category === 'object' ? integration.category : null
           const logo = typeof integration.logo === 'object' ? integration.logo : null
           const isFeatured = featuredIds.includes(integration.id)
           const showLogo = !isSearching || isFeatured
+          const isLinkable = isFeatured && integration.link
+
+          const cardContent = (
+            <>
+              {/* Category Badge */}
+              {category && (
+                <div className="-mt-[45px] mb-8">
+                  <span
+                    className={`inline-block px-3 py-1.5 text-xs font-medium rounded-full ${getCategoryColor(category.title)}`}
+                  >
+                    {category.title}
+                  </span>
+                </div>
+              )}
+
+              {/* Logo - only show for featured when searching */}
+              {showLogo && logo && (
+                <div className="mb-8">
+                  {logo.mimeType === 'image/svg+xml' ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={getMediaUrl(logo.url, logo.updatedAt)}
+                      alt={logo.alt || integration.title}
+                      className="aspect-[3/1] w-full object-contain object-center"
+                    />
+                  ) : (
+                    <Media
+                      resource={logo}
+                      imgClassName="aspect-[3/1] w-full object-contain object-center"
+                    />
+                  )}
+                </div>
+              )}
+
+              {/* Title */}
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{integration.title}</h3>
+
+              {/* Description */}
+              <p className="text-gray-600 text-base leading-relaxed mb-6 flex-1">
+                {integration.description}
+              </p>
+
+              {/* Link indicator - only show for featured integrations */}
+              {isLinkable && (
+                <div className="pt-2 mt-auto">
+                  <span className="inline-flex items-center text-base font-medium text-gray-900 group-hover:text-gray-700 transition-colors group">
+                    Explore
+                    <svg
+                      className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              )}
+            </>
+          )
 
           return (
             <article
               key={integration.id}
-              className="flex flex-col border border-gray-200 rounded-xl bg-white hover:border-gray-300 hover:shadow-md transition-all duration-200"
+              className="flex flex-col border border-gray-200 rounded-xl bg-white hover:border-gray-300 hover:shadow-md transition-all duration-200 group"
             >
-              <div className="p-8 flex flex-col flex-1">
-                {/* Category Badge */}
-                {category && (
-                  <div className="mb-6">
-                    <span
-                      className={`inline-block px-3 py-1.5 text-xs font-medium rounded-full ${getCategoryColor(category.title)}`}
-                    >
-                      {category.title}
-                    </span>
-                  </div>
-                )}
-
-                {/* Logo - only show for featured when searching */}
-                {showLogo && logo && (
-                  <div className="mb-8 h-16 flex items-start">
-                    {logo.mimeType === 'image/svg+xml' ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={getMediaUrl(logo.url, logo.updatedAt)}
-                        alt={logo.alt || integration.title}
-                        className="max-h-16 max-w-[180px] w-auto object-contain object-left"
-                      />
-                    ) : (
-                      <Media
-                        resource={logo}
-                        imgClassName="max-h-16 max-w-[180px] w-auto object-contain object-left"
-                      />
-                    )}
-                  </div>
-                )}
-
-                {/* Title */}
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">{integration.title}</h3>
-
-                {/* Description */}
-                <p className="text-gray-600 text-base leading-relaxed mb-6 flex-1">
-                  {integration.description}
-                </p>
-
-                {/* Link - only show for featured integrations */}
-                {isFeatured && integration.link && (
-                  <div className="pt-2 mt-auto">
-                    <Link
-                      href={integration.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-base font-medium text-gray-900 hover:text-gray-700 transition-colors group"
-                    >
-                      Explore
-                      <svg
-                        className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                )}
-              </div>
+              {isLinkable ? (
+                <Link
+                  href={integration.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-8 flex flex-col flex-1"
+                >
+                  {cardContent}
+                </Link>
+              ) : (
+                <div className="p-8 flex flex-col flex-1">{cardContent}</div>
+              )}
             </article>
           )
         })}
