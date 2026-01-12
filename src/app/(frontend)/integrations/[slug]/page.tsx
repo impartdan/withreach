@@ -7,8 +7,8 @@ import { notFound } from 'next/navigation'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import { generateMeta } from '@/utilities/generateMeta'
-import { IntegrationCard } from '@/blocks/Integrations/IntegrationCard'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
+import { RelatedIntegrationsClient } from './RelatedIntegrations.client'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -163,22 +163,7 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
       </div>
 
       {/* Related Integrations Section */}
-      {randomIntegrations.length > 0 && (
-        <div className="container mx-auto px-4 max-w-7xl mt-16 pt-16 border-t border-gray-200">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
-            Explore More Integrations
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {randomIntegrations.map((relatedIntegration) => (
-              <IntegrationCard
-                key={relatedIntegration.id}
-                integration={relatedIntegration}
-                showLogo={true}
-              />
-            ))}
-          </div>
-        </div>
-      )}
+      <RelatedIntegrationsClient integrations={randomIntegrations} />
     </article>
   )
 }

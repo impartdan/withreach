@@ -63,12 +63,11 @@ export const TwoColumnShowcaseDropdown: React.FC<TwoColumnShowcaseDropdownProps>
 }) => {
   if (!items) return null
 
-  const displayPost = mode === 'manual' 
-    ? (typeof post === 'object' ? post : null) 
-    : (latestPosts[0] || null)
+  const displayPost =
+    mode === 'manual' ? (typeof post === 'object' ? post : null) : latestPosts[0] || null
 
   return (
-    <div className="flex gap-16 p-10 min-w-[915px]">
+    <div className="flex gap-16 p-10">
       {/* Left side - List Items */}
       <div className="flex-1 flex flex-col gap-8">
         {items?.map((item, index) => (

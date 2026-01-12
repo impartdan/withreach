@@ -33,7 +33,7 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
   if (!items && !integrations) return null
 
   return (
-    <div className="flex gap-10 p-10 min-w-[914px]">
+    <div className="flex gap-10 p-10">
       {/* Left side - List Items */}
       <div className="flex-1 flex flex-col gap-10">
         {items?.map((item, index) => (
