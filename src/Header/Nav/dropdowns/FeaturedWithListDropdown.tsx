@@ -1,6 +1,9 @@
+'use client'
+
 import type { Media, Page, Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media as MediaComponent } from '@/components/Media'
+import { motion } from 'framer-motion'
 
 type CMSLinkType = {
   appearance?: 'inline' | 'default' | 'outline'
@@ -36,7 +39,13 @@ export const FeaturedWithListDropdown: React.FC<FeaturedWithListDropdownProps> =
       {/* Left side - List Items */}
       <div className="flex-1 flex flex-col gap-8">
         {items?.map((item, index) => (
-          <div key={index} className="group">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.2, delay: index * 0.05, ease: 'easeOut' }}
+            className="group"
+          >
             <CMSLink {...item.link} label={null} className="block">
               <div className="flex items-start gap-2 mb-1">
                 <h3 className="text-[22px] font-normal text-[#04212F] group-hover:text-gray-600 transition-colors">
@@ -63,13 +72,18 @@ export const FeaturedWithListDropdown: React.FC<FeaturedWithListDropdownProps> =
                 <p className="text-base font-medium text-[#04212F]">{item.description}</p>
               )}
             </CMSLink>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* Right side - Featured Card */}
       {featuredCard && (
-        <div className="w-[382px] h-[340px] rounded-lg overflow-hidden relative group">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3, delay: 0.1, ease: 'easeOut' }}
+          className="w-[382px] h-[340px] rounded-lg overflow-hidden relative group"
+        >
           {featuredCard.backgroundImage && (
             <div className="absolute inset-0">
               <MediaComponent
@@ -81,7 +95,7 @@ export const FeaturedWithListDropdown: React.FC<FeaturedWithListDropdownProps> =
           {featuredCard.link && (
             <CMSLink {...featuredCard.link} label={null} className="absolute inset-0" />
           )}
-        </div>
+        </motion.div>
       )}
     </div>
   )

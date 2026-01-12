@@ -4,6 +4,7 @@ import type { Post, Page } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Link } from 'next-view-transitions'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 type CMSLinkType = {
   appearance?: 'inline' | 'default' | 'outline'
@@ -73,7 +74,13 @@ export const ContentGridDropdown: React.FC<ContentGridDropdownProps> = ({
       {/* Left side - List Items */}
       <div className="flex-1 flex flex-col gap-8">
         {items?.map((item, index) => (
-          <div key={index} className="group">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.2, delay: index * 0.05, ease: 'easeOut' }}
+            className="group"
+          >
             <CMSLink {...item.link} label={null} className="block">
               <div className="flex items-start gap-2">
                 {item.link?.label && (
@@ -89,7 +96,7 @@ export const ContentGridDropdown: React.FC<ContentGridDropdownProps> = ({
                 <p className="text-base font-medium text-[#04212F] mt-1">{item.description}</p>
               )}
             </CMSLink>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -97,9 +104,15 @@ export const ContentGridDropdown: React.FC<ContentGridDropdownProps> = ({
       <div className="flex gap-10">
         {displayPosts.length > 0 &&
           displayPosts.slice(0, 2).map((post, index) => (
-            <div key={index} className="w-[382px]">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 + index * 0.1, ease: 'easeOut' }}
+              className="w-[382px]"
+            >
               <PostCard post={post} />
-            </div>
+            </motion.div>
           ))}
 
         {displayPosts.length === 0 && (

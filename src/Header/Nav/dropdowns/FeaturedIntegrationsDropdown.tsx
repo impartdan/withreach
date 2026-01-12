@@ -1,7 +1,10 @@
+'use client'
+
 import type { Integration, Page, Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media as MediaComponent } from '@/components/Media'
 import { Link } from 'next-view-transitions'
+import { motion } from 'framer-motion'
 
 type CMSLinkType = {
   appearance?: 'inline' | 'default' | 'outline'
@@ -34,7 +37,13 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
       {/* Left side - List Items */}
       <div className="flex-1 flex flex-col gap-10">
         {items?.map((item, index) => (
-          <div key={index} className="group">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.2, delay: index * 0.05, ease: 'easeOut' }}
+            className="group"
+          >
             <CMSLink {...item.link} label={null} className="block">
               <div className="flex items-start gap-2">
                 {item.link?.label && (
@@ -50,7 +59,7 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
                 <p className="text-base font-medium text-[#04212F] mt-1">{item.description}</p>
               )}
             </CMSLink>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -60,30 +69,36 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
           if (typeof integration !== 'object') return null
 
           return (
-            <Link
+            <motion.div
               key={index}
-              href={`/integrations/${integration.slug}`}
-              className="flex items-center justify-between p-4 bg-[#EEECE6] rounded-[10px] group hover:bg-[#E5E3DD] transition-colors"
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.2, delay: 0.1 + index * 0.08, ease: 'easeOut' }}
             >
-              <div className="flex items-center gap-4">
-                {integration.icon && (
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
-                    <MediaComponent
-                      resource={integration.icon}
-                      className="w-6 h-6 object-contain"
-                    />
-                  </div>
-                )}
-                <span className="text-[40px] font-normal text-[#1E1A15] leading-[44px]">
-                  {integration.title}
-                </span>
-              </div>
-              <div className="flex items-center gap-3 text-base font-semibold text-[#1E1A15]">
-                <svg width="4" height="8" viewBox="0 0 4 8" fill="none">
-                  <path d="M0.5 0.5L3.5 4L0.5 7.5" stroke="#1E1A15" strokeWidth="1.5" />
-                </svg>
-              </div>
-            </Link>
+              <Link
+                href={`/integrations/${integration.slug}`}
+                className="flex items-center justify-between p-4 bg-[#EEECE6] rounded-[10px] group hover:bg-[#E5E3DD] transition-colors"
+              >
+                <div className="flex items-center gap-4">
+                  {integration.icon && (
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
+                      <MediaComponent
+                        resource={integration.icon}
+                        className="w-6 h-6 object-contain"
+                      />
+                    </div>
+                  )}
+                  <span className="text-[40px] font-normal text-[#1E1A15] leading-[44px]">
+                    {integration.title}
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 text-base font-semibold text-[#1E1A15]">
+                  <svg width="4" height="8" viewBox="0 0 4 8" fill="none">
+                    <path d="M0.5 0.5L3.5 4L0.5 7.5" stroke="#1E1A15" strokeWidth="1.5" />
+                  </svg>
+                </div>
+              </Link>
+            </motion.div>
           )
         })}
       </div>

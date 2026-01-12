@@ -5,6 +5,7 @@ import { Link } from 'next-view-transitions'
 import type { Integration } from '@/payload-types'
 import { Button } from '@/components/ui/button'
 import { IntegrationCard } from './IntegrationCard'
+import { RevealList, RevealListItem } from '@/components/ui/reveal-list'
 
 // Simple fuzzy search function
 const fuzzySearch = (searchTerm: string, text: string): boolean => {
@@ -120,33 +121,49 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
       )}
 
       {/* Integration Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-12 lg:gap-y-16">
-        {displayedIntegrations.map((integration) => {
-          const isFeatured = featuredIds.includes(integration.id)
-          const showLogo = !isSearching || isFeatured
+      {!isSearching ? (
+        /* Initial page load - with animations */
+        <RevealList
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-12 lg:gap-y-16"
+          staggerDelay={0.08}
+        >
+          {displayedIntegrations.map((integration) => {
+            const isFeatured = featuredIds.includes(integration.id)
+            const showLogo = !isSearching || isFeatured
 
-          return (
-            <IntegrationCard
-              key={integration.id}
-              integration={integration}
-              showLogo={showLogo}
-            />
-          )
-        })}
+            return (
+              <RevealListItem key={integration.id}>
+                <IntegrationCard integration={integration} showLogo={showLogo} />
+              </RevealListItem>
+            )
+          })}
 
-        {/* Placeholder Card - only show when not searching */}
-        {!isSearching && (
-          <article className="flex flex-col border border-gray-200 rounded-xl bg-white items-center justify-center p-8 text-center min-h-[320px]">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900">
-              Not seeing your integration?
-            </h3>
-            <p className="text-gray-600 text-base mb-8">Search our full directory</p>
-            <Button onClick={() => searchInputRef.current?.focus()} size="lg">
-              Search
-            </Button>
-          </article>
-        )}
-      </div>
+          {/* Placeholder Card - only show when not searching */}
+          <RevealListItem>
+            <article className="flex flex-col border border-gray-200 rounded-xl bg-white items-center justify-center p-8 text-center min-h-[320px]">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
+                Not seeing your integration?
+              </h3>
+              <p className="text-gray-600 text-base mb-8">Search our full directory</p>
+              <Button onClick={() => searchInputRef.current?.focus()} size="lg">
+                Search
+              </Button>
+            </article>
+          </RevealListItem>
+        </RevealList>
+      ) : (
+        /* Search results - no animations */
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-12 lg:gap-y-16">
+          {displayedIntegrations.map((integration) => {
+            const isFeatured = featuredIds.includes(integration.id)
+            const showLogo = !isSearching || isFeatured
+
+            return (
+              <IntegrationCard key={integration.id} integration={integration} showLogo={showLogo} />
+            )
+          })}
+        </div>
+      )}
 
       {/* No results - show as a card in the grid */}
       {displayedIntegrations.length === 0 && isSearching && (

@@ -9,6 +9,7 @@ import { FeaturedWithListDropdown } from './dropdowns/FeaturedWithListDropdown'
 import { TwoColumnShowcaseDropdown } from './dropdowns/TwoColumnShowcaseDropdown'
 import { FeaturedIntegrationsDropdown } from './dropdowns/FeaturedIntegrationsDropdown'
 import { ContentGridDropdown } from './dropdowns/ContentGridDropdown'
+import { AnimatePresence, motion } from 'framer-motion'
 
 interface HeaderNavProps {
   menuItems?: Header['menuItems']
@@ -16,7 +17,11 @@ interface HeaderNavProps {
   latestPosts: Post[]
 }
 
-export const HeaderNav: React.FC<HeaderNavProps> = ({ menuItems = [], additionalLinks = [], latestPosts }) => {
+export const HeaderNav: React.FC<HeaderNavProps> = ({
+  menuItems = [],
+  additionalLinks = [],
+  latestPosts,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null)
 
@@ -120,40 +125,55 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ menuItems = [], additional
       </nav>
 
       {/* Centered Dropdown Menu - Fixed positioning relative to viewport */}
-      {activeDropdown !== null && menuItems?.[activeDropdown]?.type === 'dropdown' && (
-        <div className="fixed left-1/2 -translate-x-1/2 z-50" style={{ top: '65px' }}>
-          <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-            {menuItems[activeDropdown].dropdown?.layout === 'featuredWithList' && (
-              <FeaturedWithListDropdown
-                items={menuItems[activeDropdown].dropdown.fwlItems}
-                featuredCard={menuItems[activeDropdown].dropdown.fwlCard}
-              />
-            )}
-            {menuItems[activeDropdown].dropdown?.layout === 'twoColumnShowcase' && (
-              <TwoColumnShowcaseDropdown
-                items={menuItems[activeDropdown].dropdown.tcsItems}
-                mode={menuItems[activeDropdown].dropdown.tcsMode}
-                post={menuItems[activeDropdown].dropdown.tcsPost}
-                latestPosts={latestPosts}
-              />
-            )}
-            {menuItems[activeDropdown].dropdown?.layout === 'featuredIntegrations' && (
-              <FeaturedIntegrationsDropdown
-                items={menuItems[activeDropdown].dropdown.fiItems}
-                integrations={menuItems[activeDropdown].dropdown.fiIntegrations}
-              />
-            )}
-            {menuItems[activeDropdown].dropdown?.layout === 'contentGrid' && (
-              <ContentGridDropdown
-                items={menuItems[activeDropdown].dropdown.cgItems}
-                mode={menuItems[activeDropdown].dropdown.cgMode}
-                posts={menuItems[activeDropdown].dropdown.cgPosts}
-                latestPosts={latestPosts}
-              />
-            )}
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {activeDropdown !== null && menuItems?.[activeDropdown]?.type === 'dropdown' && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="fixed left-0 right-0 z-50"
+            style={{ top: '65px' }}
+          >
+            <div
+              className={`mx-auto bg-white rounded-2xl shadow-2xl border max-w-full border-gray-200 overflow-hidden ${
+                menuItems[activeDropdown].dropdown?.layout === 'contentGrid'
+                  ? 'lg:max-w-[1207px]'
+                  : 'lg:max-w-[884px]'
+              }`}
+            >
+              {menuItems[activeDropdown].dropdown?.layout === 'featuredWithList' && (
+                <FeaturedWithListDropdown
+                  items={menuItems[activeDropdown].dropdown.fwlItems}
+                  featuredCard={menuItems[activeDropdown].dropdown.fwlCard}
+                />
+              )}
+              {menuItems[activeDropdown].dropdown?.layout === 'twoColumnShowcase' && (
+                <TwoColumnShowcaseDropdown
+                  items={menuItems[activeDropdown].dropdown.tcsItems}
+                  mode={menuItems[activeDropdown].dropdown.tcsMode}
+                  post={menuItems[activeDropdown].dropdown.tcsPost}
+                  latestPosts={latestPosts}
+                />
+              )}
+              {menuItems[activeDropdown].dropdown?.layout === 'featuredIntegrations' && (
+                <FeaturedIntegrationsDropdown
+                  items={menuItems[activeDropdown].dropdown.fiItems}
+                  integrations={menuItems[activeDropdown].dropdown.fiIntegrations}
+                />
+              )}
+              {menuItems[activeDropdown].dropdown?.layout === 'contentGrid' && (
+                <ContentGridDropdown
+                  items={menuItems[activeDropdown].dropdown.cgItems}
+                  mode={menuItems[activeDropdown].dropdown.cgMode}
+                  posts={menuItems[activeDropdown].dropdown.cgPosts}
+                  latestPosts={latestPosts}
+                />
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Mobile Slide-in Menu - Slides from top */}
       <div
