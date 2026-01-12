@@ -26,7 +26,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, latestPosts })
         headerRef.current?.classList.add('transitioning-header')
         setTimeout(() => {
           headerRef.current?.classList.remove('transitioning-header')
-        }, 400)
+        }, 1000)
       }
     }
 
