@@ -291,7 +291,6 @@ async function seed() {
       data: {
         title: partner.name,
         description: partner.description,
-        link: partner.link,
         category: categoryId,
         slug,
       },
