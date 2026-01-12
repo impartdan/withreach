@@ -80,6 +80,9 @@ export const AdminBar: React.FC<{
               router.refresh()
             })
           }}
+          editProps={{
+            target: '_self',
+          }}
           style={{
             backgroundColor: 'transparent',
             padding: 0,

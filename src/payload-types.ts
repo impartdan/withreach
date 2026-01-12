@@ -228,6 +228,7 @@ export interface Page {
     | FormBlock
     | IntegrationsBlock
     | LogoListBlock
+    | HubspotFormBlock
   )[];
   meta?: {
     title?: string | null;
@@ -881,6 +882,31 @@ export interface LogoListBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HubspotFormBlock".
+ */
+export interface HubspotFormBlock {
+  /**
+   * Enter the HubSpot form ID (e.g., "12345678-1234-1234-1234-123456789012")
+   */
+  formId: string;
+  /**
+   * Override the default portal ID from environment variables. Leave empty to use NEXT_PUBLIC_HUBSPOT_PORTAL_ID
+   */
+  portalId?: string | null;
+  /**
+   * Optional title to display above the form
+   */
+  formTitle?: string | null;
+  /**
+   * Check this to disable HubSpot's default CSS and use only your custom styles
+   */
+  disableHubspotStyles?: boolean | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'hubspotForm';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1199,6 +1225,7 @@ export interface PagesSelect<T extends boolean = true> {
         formBlock?: T | FormBlockSelect<T>;
         integrations?: T | IntegrationsBlockSelect<T>;
         logoList?: T | LogoListBlockSelect<T>;
+        hubspotForm?: T | HubspotFormBlockSelect<T>;
       };
   meta?:
     | T
@@ -1321,6 +1348,18 @@ export interface LogoListBlockSelect<T extends boolean = true> {
         link?: T;
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HubspotFormBlock_select".
+ */
+export interface HubspotFormBlockSelect<T extends boolean = true> {
+  formId?: T;
+  portalId?: T;
+  formTitle?: T;
+  disableHubspotStyles?: T;
   id?: T;
   blockName?: T;
 }

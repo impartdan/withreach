@@ -1,0 +1,386 @@
+/* HubSpot Form Custom Styles - Matching existing form fields */
+
+/* Target HubSpot forms specifically */
+.hs-form {
+  /* Form container */
+}
+
+.hs-form fieldset {
+  max-width: 100% !important;
+}
+
+/* Form fields - matching Input component styles */
+.hs-form .hs-input {
+  display: flex;
+  height: 2.5rem; /* h-10 = 40px */
+  width: 100% !important;
+  border-radius: 0.25rem; /* rounded */
+  border: 1px solid #d1d5db; /* border-brand-gray-light */
+  background-color: #ffffff; /* bg-white */
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.25rem;
+  color: #000000; /* text-black */
+  transition: all 0.2s;
+}
+
+.hs-form .hs-input::placeholder {
+  color: #6b7280; /* text-brand-gray */
+}
+
+.hs-form .hs-input:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 0 4px hsl(var(--ring)); /* focus-visible:ring-2 focus-visible:ring-offset-2 */
+}
+
+.hs-form .hs-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Labels - matching Label component styles */
+.hs-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  line-height: 1;
+  color: #000000;
+}
+
+/* Field groups */
+.hs-form .hs-form-field {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hs-form .hs-form-field:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Extra spacing after select/dropdown fields */
+.hs-form .hs-fieldtype-select {
+  margin-bottom: 2.5rem !important;
+}
+
+/* Reorder field elements: label -> input -> legend */
+.hs-form .hs-form-field label {
+  order: 1;
+}
+
+.hs-form .hs-form-field .input {
+  order: 2;
+}
+
+.hs-form .hs-form-field legend.hs-field-desc {
+  order: 3;
+}
+
+/* Field wrapper adjustments */
+.hs-form .input {
+  margin-bottom: 0;
+}
+
+.hs-form .hs-fieldtype-text,
+.hs-form .hs-fieldtype-textarea,
+.hs-form .hs-fieldtype-select,
+.hs-form .hs-fieldtype-email,
+.hs-form .hs-fieldtype-number,
+.hs-form .hs-fieldtype-phonenumber {
+  margin-bottom: 1.5rem;
+}
+
+.hs-form .hs-fieldtype-booleancheckbox {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Error messages */
+.hs-form .hs-error-msgs {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.hs-form .hs-error-msg {
+  color: hsl(var(--destructive));
+  font-size: 0.875rem; /* text-sm to match the rest */
+  margin-top: 0.25rem;
+}
+
+.hs-form .hs-input.error,
+.hs-form .error .hs-input {
+  border-color: hsl(var(--destructive));
+}
+
+/* Submit button - matching Button component default variant */
+.hs-form .hs-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  height: 2.5rem; /* h-10 = 40px */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  background-color: #1e1a15; /* bg-brand-black */
+  color: #faf7f5; /* text-brand-off-white */
+  border: none;
+  border-radius: 0.25rem; /* rounded */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hs-form .hs-button:hover {
+  background-color: #faf7f5; /* hover:bg-brand-off-white */
+  color: #1e1a15; /* hover:text-brand-black */
+}
+
+.hs-form .hs-button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 0 4px hsl(var(--ring));
+}
+
+.hs-form .hs-button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Textarea - matching Textarea component styles */
+.hs-form textarea.hs-input {
+  min-height: 80px; /* min-h-[80px] */
+  height: auto;
+  resize: vertical;
+}
+
+/* Select dropdown - matching input styles */
+.hs-form select.hs-input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+/* Checkbox and Radio */
+.hs-form .hs-form-checkbox,
+.hs-form .hs-form-radio {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.hs-form .hs-form-checkbox input[type='checkbox'],
+.hs-form .hs-form-radio input[type='radio'] {
+  width: 1.125rem !important;
+  height: 1.125rem !important;
+  min-width: 1.125rem;
+  margin-top: 0.125rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  border: 2px solid #d1d5db;
+  background-color: #ffffff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hs-form .hs-form-radio input[type='radio'] {
+  border-radius: 50%;
+}
+
+.hs-form .hs-form-checkbox input[type='checkbox']:checked {
+  background-color: #1e1a15;
+  border-color: #1e1a15;
+}
+
+/* Checkmark for checked state */
+.hs-form .hs-form-checkbox input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  left: 0.25rem;
+  top: 0.0625rem;
+  width: 0.375rem;
+  height: 0.625rem;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.hs-form .hs-form-radio input[type='radio']:checked {
+  background-color: #ffffff;
+  border-color: #1e1a15;
+  border-width: 5px;
+}
+
+.hs-form .hs-form-checkbox label,
+.hs-form .hs-form-radio label {
+  margin-bottom: 0;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Boolean checkbox (consent/opt-in checkboxes) */
+.hs-form .hs-form-booleancheckbox {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+}
+
+.hs-form .hs-form-booleancheckbox input[type='checkbox'].hs-input {
+  display: inline-flex !important;
+  width: 1.125rem !important;
+  max-width: 1.125rem !important;
+  height: 1.125rem !important;
+  margin-top: 0.125rem !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  border: 2px solid #d1d5db;
+  background-color: #ffffff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  flex-basis: auto !important;
+  vertical-align: top;
+}
+
+.hs-form .hs-form-booleancheckbox input[type='checkbox'].hs-input:checked {
+  background-color: #1e1a15;
+  border-color: #1e1a15;
+}
+
+.hs-form .hs-form-booleancheckbox input[type='checkbox'].hs-input:checked::after {
+  content: '';
+  position: absolute;
+  left: 0.1875rem;
+  top: 0rem;
+  width: 0.3125rem;
+  height: 0.5625rem;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.hs-form .hs-form-booleancheckbox label,
+.hs-form .hs-form-booleancheckbox p {
+  margin-bottom: 0;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.hs-form .hs-form-booleancheckbox label {
+  display: flex;
+}
+
+/* HubSpot wraps checkboxes in a list - style appropriately */
+.hs-form .inputs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hs-form .inputs-list .hs-form-checkbox,
+.hs-form .inputs-list .hs-form-radio {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Required field indicator */
+.hs-form .hs-form-required {
+  color: hsl(var(--destructive));
+  margin-left: 0.125rem;
+}
+
+/* Success message */
+.hs-form .submitted-message {
+  padding: 1rem;
+  background-color: #faf7f5; /* brand-off-white */
+  border: 1px solid #d1d5db; /* brand-gray-light */
+  border-radius: 0.25rem;
+  color: #1e1a15; /* brand-black */
+  font-size: 0.875rem;
+}
+
+/* Field descriptions */
+.hs-form .hs-field-desc {
+  font-size: 0.875rem;
+  color: #6b7280; /* brand-gray */
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Legend element specifically (when used as field description) */
+.hs-form legend.hs-field-desc {
+  display: block;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Legal/consent text */
+.hs-form .legal-consent-container {
+  font-size: 0.75rem;
+  color: #6b7280; /* brand-gray */
+  margin-top: 1rem;
+}
+
+/* Submit button wrapper */
+.hs-form .hs-submit {
+  margin-top: 1.5rem;
+}
+
+.hs-form .actions {
+  margin-top: 1.5rem;
+}
+
+/* Loading state */
+.hs-form .hs-loading {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Remove HubSpot's default margins that might conflict */
+.hs-form fieldset.form-columns-1,
+.hs-form fieldset.form-columns-2,
+.hs-form fieldset.form-columns-3 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* File upload styling */
+.hs-form input[type='file'].hs-input {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hs-form .hs-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .hs-form label {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}

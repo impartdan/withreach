@@ -9,6 +9,7 @@ import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { Integrations } from '../../blocks/Integrations/config'
 import { LogoList } from '../../blocks/LogoList/config'
+import { HubspotFormBlock } from '../../blocks/HubspotForm/config'
 import { hero } from '@/heros/config'
 import { slugField } from 'payload'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -74,7 +75,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Integrations, LogoList],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Integrations, LogoList, HubspotFormBlock],
               required: true,
               admin: {
                 initCollapsed: true,

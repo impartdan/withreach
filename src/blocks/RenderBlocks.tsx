@@ -9,6 +9,7 @@ import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { IntegrationsBlock } from '@/blocks/Integrations/Component'
 import { LogoListBlock } from '@/blocks/LogoList/Component'
+import { HubspotFormBlock } from '@/blocks/HubspotForm/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -18,6 +19,7 @@ const blockComponents = {
   mediaBlock: MediaBlock,
   integrations: IntegrationsBlock,
   logoList: LogoListBlock,
+  hubspotForm: HubspotFormBlock,
 }
 
 export const RenderBlocks: React.FC<{
