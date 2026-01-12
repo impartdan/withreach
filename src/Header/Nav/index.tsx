@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export const HeaderNav: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -65,12 +66,9 @@ export const HeaderNav: React.FC = () => {
           Sign In
         </Link>
 
-        <Link
-          href="#"
-          className="hidden md:block px-6 py-2.5 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors"
-        >
-          Book a Call
-        </Link>
+        <Button asChild className="hidden md:inline-flex">
+          <Link href="#">Book a Call</Link>
+        </Button>
       </nav>
 
       {/* Mobile Slide-in Menu - Slides from top */}
