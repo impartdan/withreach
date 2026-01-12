@@ -63,18 +63,26 @@
   }
 }
 
+header {
+  view-transition-name: header;
+}
+
+#vt-main {
+  view-transition-name: main;
+}
+
 /* View Transitions API */
-::view-transition-old(root),
-::view-transition-new(root) {
+::view-transition-old(main),
+::view-transition-new(main) {
   animation-timing-function: ease-in-out;
 }
 
-::view-transition-old(root) {
+::view-transition-old(main) {
   animation-duration: 0.15s;
   animation-name: fade-out;
 }
 
-::view-transition-new(root) {
+::view-transition-new(main) {
   animation-delay: 0.15s;
   animation-duration: 0.4s;
   animation-name: fade-in;
@@ -96,14 +104,4 @@
   to {
     opacity: 1;
   }
-}
-
-/* Keep header static during transitions - only apply when transitioning class is present */
-.transitioning-header {
-  view-transition-name: header;
-}
-
-::view-transition-old(header),
-::view-transition-new(header) {
-  animation: none;
 }

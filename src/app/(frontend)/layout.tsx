@@ -39,7 +39,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             />
 
             <Header />
-            {children}
+            <div id="vt-main">{children}</div>
             <Footer />
           </Providers>
         </body>
