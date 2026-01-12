@@ -33,6 +33,12 @@ export const Integrations: CollectionConfig = {
       relationTo: 'media',
     },
     {
+      name: 'icon',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Icon',
+    },
+    {
       name: 'link',
       type: 'text',
       admin: {

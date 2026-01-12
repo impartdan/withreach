@@ -130,291 +130,264 @@ export const Header: GlobalConfig = {
             },
             // Featured with List layout
             {
-              name: 'fwlItems',
-              type: 'array',
-              label: 'Left Column Items',
+              type: 'row',
               admin: {
                 condition: (_, siblingData) => siblingData?.layout === 'featuredWithList',
               },
               fields: [
                 {
-                  name: 'title',
-                  type: 'text',
-                  label: 'Title',
-                  required: true,
+                  name: 'fwlItems',
+                  type: 'array',
+                  label: 'Left Column Items',
+                  admin: {
+                    width: '50%',
+                  },
+                  fields: [
+                    link({
+                      appearances: false,
+                    }),
+                    {
+                      name: 'description',
+                      type: 'textarea',
+                      label: 'Description',
+                    },
+                  ],
                 },
                 {
-                  name: 'description',
-                  type: 'textarea',
-                  label: 'Description',
+                  name: 'fwlCard',
+                  type: 'group',
+                  label: 'Featured Card (Right Column)',
+                  admin: {
+                    width: '50%',
+                  },
+                  fields: [
+                    {
+                      name: 'backgroundImage',
+                      type: 'upload',
+                      relationTo: 'media',
+                      label: 'Background Image',
+                    },
+                    link({
+                      appearances: false,
+                    }),
+                  ],
                 },
-                link({
-                  appearances: false,
-                }),
-              ],
-            },
-            {
-              name: 'fwlCard',
-              type: 'group',
-              label: 'Featured Card (Right Column)',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'featuredWithList',
-              },
-              fields: [
-                {
-                  name: 'heading',
-                  type: 'text',
-                  label: 'Heading',
-                },
-                {
-                  name: 'callToActionText',
-                  type: 'text',
-                  label: 'Call to Action Text',
-                },
-                {
-                  name: 'backgroundImage',
-                  type: 'upload',
-                  relationTo: 'media',
-                  label: 'Background Image',
-                },
-                link({
-                  appearances: false,
-                }),
               ],
             },
             // Two-Column with Showcase layout
             {
-              name: 'tcsItems',
-              type: 'array',
-              label: 'Left Column Items',
+              type: 'row',
               admin: {
                 condition: (_, siblingData) => siblingData?.layout === 'twoColumnShowcase',
               },
               fields: [
                 {
-                  name: 'title',
-                  type: 'text',
-                  label: 'Title',
-                  required: true,
-                },
-                {
-                  name: 'description',
-                  type: 'textarea',
-                  label: 'Description',
-                },
-                link({
-                  appearances: false,
-                }),
-              ],
-            },
-            {
-              name: 'centerImage',
-              type: 'upload',
-              relationTo: 'media',
-              label: 'Center Decorative Image',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'twoColumnShowcase',
-              },
-            },
-            {
-              name: 'tcsCard',
-              type: 'group',
-              label: 'Showcase Card (Right Column)',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'twoColumnShowcase',
-              },
-              fields: [
-                {
-                  name: 'image',
-                  type: 'upload',
-                  relationTo: 'media',
-                  label: 'Card Image',
-                },
-                {
-                  name: 'tags',
+                  name: 'tcsItems',
                   type: 'array',
-                  label: 'Category Tags',
+                  label: 'Left Column Items',
+                  admin: {
+                    width: '50%',
+                  },
                   fields: [
+                    link({
+                      appearances: false,
+                    }),
                     {
-                      name: 'tag',
-                      type: 'text',
-                      label: 'Tag',
+                      name: 'description',
+                      type: 'textarea',
+                      label: 'Description',
                     },
                   ],
                 },
                 {
-                  name: 'heading',
-                  type: 'text',
-                  label: 'Heading',
+                  type: 'collapsible',
+                  label: 'Right Column',
+                  admin: {
+                    width: '50%',
+                  },
+                  fields: [
+                    {
+                      name: 'tcsMode',
+                      type: 'radio',
+                      label: 'Content Mode',
+                      defaultValue: 'automatic',
+                      options: [
+                        {
+                          label: 'Automatic',
+                          value: 'automatic',
+                        },
+                        {
+                          label: 'Manual',
+                          value: 'manual',
+                        },
+                      ],
+                      admin: {
+                        layout: 'horizontal',
+                      },
+                    },
+                    {
+                      name: 'tcsPost',
+                      type: 'relationship',
+                      relationTo: 'posts',
+                      label: 'Select Post',
+                      admin: {
+                        condition: (_, siblingData) => siblingData?.tcsMode === 'manual',
+                      },
+                    },
+                  ],
                 },
-                link({
-                  appearances: false,
-                }),
               ],
             },
             // Featured Integrations layout
             {
-              name: 'fiItems',
-              type: 'array',
-              label: 'Left Column Items',
+              type: 'row',
               admin: {
                 condition: (_, siblingData) => siblingData?.layout === 'featuredIntegrations',
               },
               fields: [
                 {
-                  name: 'title',
-                  type: 'text',
-                  label: 'Title',
-                  required: true,
-                },
-                {
-                  name: 'description',
-                  type: 'textarea',
-                  label: 'Description',
-                },
-                link({
-                  appearances: false,
-                }),
-              ],
-            },
-            {
-              name: 'fiTitle',
-              type: 'text',
-              label: 'Integrations Section Title',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'featuredIntegrations',
-              },
-            },
-            {
-              name: 'fiIntegrations',
-              type: 'array',
-              label: 'Integration Cards',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'featuredIntegrations',
-              },
-              fields: [
-                {
-                  name: 'integration',
-                  type: 'relationship',
-                  relationTo: 'integrations',
-                  label: 'Integration',
-                },
-                {
-                  name: 'customName',
-                  type: 'text',
-                  label: 'Custom Name (optional, overrides integration name)',
-                },
-                {
-                  name: 'customLogo',
-                  type: 'upload',
-                  relationTo: 'media',
-                  label: 'Custom Logo (optional, overrides integration logo)',
-                },
-                link({
-                  appearances: false,
-                  overrides: {
-                    label: 'Explore Link',
-                  },
-                }),
-              ],
-            },
-            // Content Grid layout
-            {
-              name: 'cgItems',
-              type: 'array',
-              label: 'Left Column Items',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'contentGrid',
-              },
-              fields: [
-                {
-                  name: 'title',
-                  type: 'text',
-                  label: 'Title',
-                  required: true,
-                },
-                {
-                  name: 'description',
-                  type: 'textarea',
-                  label: 'Description',
-                },
-                link({
-                  appearances: false,
-                }),
-              ],
-            },
-            {
-              name: 'cgCards',
-              type: 'array',
-              label: 'Content Cards (Right Column)',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'contentGrid',
-              },
-              fields: [
-                {
-                  name: 'image',
-                  type: 'upload',
-                  relationTo: 'media',
-                  label: 'Card Image',
-                },
-                {
-                  name: 'tags',
+                  name: 'fiItems',
                   type: 'array',
-                  label: 'Category Tags',
+                  label: 'Left Column Items',
+                  admin: {
+                    width: '50%',
+                  },
                   fields: [
+                    link({
+                      appearances: false,
+                    }),
                     {
-                      name: 'tag',
-                      type: 'text',
-                      label: 'Tag',
+                      name: 'description',
+                      type: 'textarea',
+                      label: 'Description',
                     },
                   ],
                 },
                 {
-                  name: 'heading',
-                  type: 'text',
-                  label: 'Heading',
+                  name: 'fiIntegrations',
+                  type: 'relationship',
+                  relationTo: 'integrations',
+                  label: 'Integrations (Right Column)',
+                  hasMany: true,
+                  admin: {
+                    width: '50%',
+                  },
                 },
-                link({
-                  appearances: false,
-                }),
+              ],
+            },
+            // Content Grid layout
+            {
+              type: 'row',
+              admin: {
+                condition: (_, siblingData) => siblingData?.layout === 'contentGrid',
+              },
+              fields: [
+                {
+                  name: 'cgItems',
+                  type: 'array',
+                  label: 'Left Column Items',
+                  admin: {
+                    width: '50%',
+                  },
+                  fields: [
+                    {
+                      name: 'title',
+                      type: 'text',
+                      label: 'Title',
+                      required: true,
+                    },
+                    {
+                      name: 'description',
+                      type: 'textarea',
+                      label: 'Description',
+                    },
+                    link({
+                      appearances: false,
+                    }),
+                  ],
+                },
+                {
+                  name: 'cgCards',
+                  type: 'array',
+                  label: 'Content Cards (Right Column)',
+                  admin: {
+                    width: '50%',
+                  },
+                  fields: [
+                    {
+                      name: 'image',
+                      type: 'upload',
+                      relationTo: 'media',
+                      label: 'Card Image',
+                    },
+                    {
+                      name: 'tags',
+                      type: 'array',
+                      label: 'Category Tags',
+                      fields: [
+                        {
+                          name: 'tag',
+                          type: 'text',
+                          label: 'Tag',
+                        },
+                      ],
+                    },
+                    {
+                      name: 'heading',
+                      type: 'text',
+                      label: 'Heading',
+                    },
+                    link({
+                      appearances: false,
+                    }),
+                  ],
+                },
               ],
             },
             // Simple Links with Feature layout
             {
-              name: 'slfLinks',
-              type: 'array',
-              label: 'Simple Links (Left Column)',
-              admin: {
-                condition: (_, siblingData) => siblingData?.layout === 'simpleLinksWithFeature',
-              },
-              fields: [
-                link({
-                  appearances: false,
-                }),
-              ],
-            },
-            {
-              name: 'slfArticle',
-              type: 'group',
-              label: 'Featured Article (Right Column)',
+              type: 'row',
               admin: {
                 condition: (_, siblingData) => siblingData?.layout === 'simpleLinksWithFeature',
               },
               fields: [
                 {
-                  name: 'heading',
-                  type: 'text',
-                  label: 'Heading',
+                  name: 'slfLinks',
+                  type: 'array',
+                  label: 'Simple Links (Left Column)',
+                  admin: {
+                    width: '50%',
+                  },
+                  fields: [
+                    link({
+                      appearances: false,
+                    }),
+                  ],
                 },
                 {
-                  name: 'backgroundImage',
-                  type: 'upload',
-                  relationTo: 'media',
-                  label: 'Background Image',
+                  name: 'slfArticle',
+                  type: 'group',
+                  label: 'Featured Article (Right Column)',
+                  admin: {
+                    width: '50%',
+                  },
+                  fields: [
+                    {
+                      name: 'heading',
+                      type: 'text',
+                      label: 'Heading',
+                    },
+                    {
+                      name: 'backgroundImage',
+                      type: 'upload',
+                      relationTo: 'media',
+                      label: 'Background Image',
+                    },
+                    link({
+                      appearances: false,
+                    }),
+                  ],
                 },
-                link({
-                  appearances: false,
-                }),
               ],
             },
           ],

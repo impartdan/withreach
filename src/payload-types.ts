@@ -831,6 +831,7 @@ export interface Integration {
   title: string;
   description: string;
   logo?: (number | null) | Media;
+  icon?: (number | null) | Media;
   /**
    * URL to the integration website or documentation
    */
@@ -1516,6 +1517,7 @@ export interface IntegrationsSelect<T extends boolean = true> {
   title?: T;
   description?: T;
   logo?: T;
+  icon?: T;
   link?: T;
   category?: T;
   generateSlug?: T;
@@ -1912,8 +1914,6 @@ export interface Header {
             | null;
           fwlItems?:
             | {
-                title: string;
-                description?: string | null;
                 link: {
                   type?: ('reference' | 'custom') | null;
                   newTab?: boolean | null;
@@ -1929,12 +1929,11 @@ export interface Header {
                   url?: string | null;
                   label: string;
                 };
+                description?: string | null;
                 id?: string | null;
               }[]
             | null;
-          fwlCard?: {
-            heading?: string | null;
-            callToActionText?: string | null;
+          fwlCard: {
             backgroundImage?: (number | null) | Media;
             link: {
               type?: ('reference' | 'custom') | null;
@@ -1954,8 +1953,6 @@ export interface Header {
           };
           tcsItems?:
             | {
-                title: string;
-                description?: string | null;
                 link: {
                   type?: ('reference' | 'custom') | null;
                   newTab?: boolean | null;
@@ -1971,81 +1968,34 @@ export interface Header {
                   url?: string | null;
                   label: string;
                 };
+                description?: string | null;
                 id?: string | null;
               }[]
             | null;
-          centerImage?: (number | null) | Media;
-          tcsCard?: {
-            image?: (number | null) | Media;
-            tags?:
-              | {
-                  tag?: string | null;
-                  id?: string | null;
-                }[]
-              | null;
-            heading?: string | null;
-            link: {
-              type?: ('reference' | 'custom') | null;
-              newTab?: boolean | null;
-              reference?:
-                | ({
-                    relationTo: 'pages';
-                    value: number | Page;
-                  } | null)
-                | ({
-                    relationTo: 'posts';
-                    value: number | Post;
-                  } | null);
-              url?: string | null;
-              label: string;
-            };
-          };
+          tcsMode?: ('automatic' | 'manual') | null;
+          tcsPost?: (number | null) | Post;
           fiItems?:
             | {
-                title: string;
+                link: {
+                  type?: ('reference' | 'custom') | null;
+                  newTab?: boolean | null;
+                  reference?:
+                    | ({
+                        relationTo: 'pages';
+                        value: number | Page;
+                      } | null)
+                    | ({
+                        relationTo: 'posts';
+                        value: number | Post;
+                      } | null);
+                  url?: string | null;
+                  label: string;
+                };
                 description?: string | null;
-                link: {
-                  type?: ('reference' | 'custom') | null;
-                  newTab?: boolean | null;
-                  reference?:
-                    | ({
-                        relationTo: 'pages';
-                        value: number | Page;
-                      } | null)
-                    | ({
-                        relationTo: 'posts';
-                        value: number | Post;
-                      } | null);
-                  url?: string | null;
-                  label: string;
-                };
                 id?: string | null;
               }[]
             | null;
-          fiTitle?: string | null;
-          fiIntegrations?:
-            | {
-                integration?: (number | null) | Integration;
-                customName?: string | null;
-                customLogo?: (number | null) | Media;
-                link: {
-                  type?: ('reference' | 'custom') | null;
-                  newTab?: boolean | null;
-                  reference?:
-                    | ({
-                        relationTo: 'pages';
-                        value: number | Page;
-                      } | null)
-                    | ({
-                        relationTo: 'posts';
-                        value: number | Post;
-                      } | null);
-                  url?: string | null;
-                  label: string;
-                };
-                id?: string | null;
-              }[]
-            | null;
+          fiIntegrations?: (number | Integration)[] | null;
           cgItems?:
             | {
                 title: string;
@@ -2116,7 +2066,7 @@ export interface Header {
                 id?: string | null;
               }[]
             | null;
-          slfArticle?: {
+          slfArticle: {
             heading?: string | null;
             backgroundImage?: (number | null) | Media;
             link: {
@@ -2266,8 +2216,6 @@ export interface HeaderSelect<T extends boolean = true> {
               fwlItems?:
                 | T
                 | {
-                    title?: T;
-                    description?: T;
                     link?:
                       | T
                       | {
@@ -2277,13 +2225,12 @@ export interface HeaderSelect<T extends boolean = true> {
                           url?: T;
                           label?: T;
                         };
+                    description?: T;
                     id?: T;
                   };
               fwlCard?:
                 | T
                 | {
-                    heading?: T;
-                    callToActionText?: T;
                     backgroundImage?: T;
                     link?:
                       | T
@@ -2298,8 +2245,6 @@ export interface HeaderSelect<T extends boolean = true> {
               tcsItems?:
                 | T
                 | {
-                    title?: T;
-                    description?: T;
                     link?:
                       | T
                       | {
@@ -2309,64 +2254,27 @@ export interface HeaderSelect<T extends boolean = true> {
                           url?: T;
                           label?: T;
                         };
+                    description?: T;
                     id?: T;
                   };
-              centerImage?: T;
-              tcsCard?:
-                | T
-                | {
-                    image?: T;
-                    tags?:
-                      | T
-                      | {
-                          tag?: T;
-                          id?: T;
-                        };
-                    heading?: T;
-                    link?:
-                      | T
-                      | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                        };
-                  };
+              tcsMode?: T;
+              tcsPost?: T;
               fiItems?:
                 | T
                 | {
-                    title?: T;
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                        };
                     description?: T;
-                    link?:
-                      | T
-                      | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                        };
                     id?: T;
                   };
-              fiTitle?: T;
-              fiIntegrations?:
-                | T
-                | {
-                    integration?: T;
-                    customName?: T;
-                    customLogo?: T;
-                    link?:
-                      | T
-                      | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                        };
-                    id?: T;
-                  };
+              fiIntegrations?: T;
               cgItems?:
                 | T
                 | {
