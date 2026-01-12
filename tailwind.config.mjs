@@ -96,6 +96,8 @@ const config = {
         brand: {
           black: '#1E1A15',
           'off-white': '#FAF7F5',
+          'gray-light': '#d1d5db',
+          gray: '#6b7280',
         },
       },
       fontFamily: {
