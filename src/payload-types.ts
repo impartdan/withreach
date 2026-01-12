@@ -836,6 +836,42 @@ export interface Integration {
    * URL to the integration website or documentation
    */
   link?: string | null;
+  /**
+   * Detailed content about the integration
+   */
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Key features of the integration
+   */
+  features?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   category?: (number | null) | IntegrationCategory;
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
@@ -1519,6 +1555,8 @@ export interface IntegrationsSelect<T extends boolean = true> {
   logo?: T;
   icon?: T;
   link?: T;
+  body?: T;
+  features?: T;
   category?: T;
   generateSlug?: T;
   slug?: T;

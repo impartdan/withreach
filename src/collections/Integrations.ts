@@ -46,6 +46,22 @@ export const Integrations: CollectionConfig = {
       },
     },
     {
+      name: 'body',
+      type: 'richText',
+      label: 'Body',
+      admin: {
+        description: 'Detailed content about the integration',
+      },
+    },
+    {
+      name: 'features',
+      type: 'richText',
+      label: 'Features',
+      admin: {
+        description: 'Key features of the integration',
+      },
+    },
+    {
       name: 'category',
       type: 'relationship',
       relationTo: 'integration-categories',
