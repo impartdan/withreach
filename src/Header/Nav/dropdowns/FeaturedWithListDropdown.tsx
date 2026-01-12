@@ -41,9 +41,9 @@ export const FeaturedWithListDropdown: React.FC<FeaturedWithListDropdownProps> =
                   <path
                     d="M0.75 8L4.375 4.375L0.75 0.75"
                     stroke="#284854"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </div>

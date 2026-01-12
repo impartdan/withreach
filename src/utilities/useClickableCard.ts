@@ -1,7 +1,7 @@
 'use client'
 import type { RefObject } from 'react'
 
-import { useRouter } from 'next/navigation'
+import { useTransitionRouter } from 'next-view-transitions'
 import { useCallback, useEffect, useRef } from 'react'
 
 type UseClickableCardType<T extends HTMLElement> = {
@@ -24,7 +24,7 @@ function useClickableCard<T extends HTMLElement>({
   newTab = false,
   scroll = true,
 }: Props): UseClickableCardType<T> {
-  const router = useRouter()
+  const router = useTransitionRouter()
   const card = useRef<T>(null)
   const link = useRef<HTMLAnchorElement>(null)
   const timeDown = useRef<number>(0)

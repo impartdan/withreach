@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import type { Integration } from '@/payload-types'
 import { Media } from '@/components/Media'
 import { getMediaUrl } from '@/utilities/getMediaUrl'

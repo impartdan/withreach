@@ -2,7 +2,7 @@
 
 import type { Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 
 interface TwoColumnShowcaseDropdownProps {
   items?: Array<{

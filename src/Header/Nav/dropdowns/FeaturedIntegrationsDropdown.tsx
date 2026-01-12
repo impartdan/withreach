@@ -1,7 +1,7 @@
 import type { Integration } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media as MediaComponent } from '@/components/Media'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 
 interface FeaturedIntegrationsDropdownProps {
   items?: Array<{

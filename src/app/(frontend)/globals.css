@@ -62,3 +62,49 @@
     @apply pt-[116px];
   }
 }
+
+/* View Transitions API */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-timing-function: ease-in-out;
+}
+
+::view-transition-old(root) {
+  animation-duration: 0.15s;
+  animation-name: fade-out;
+}
+
+::view-transition-new(root) {
+  animation-delay: 0.15s;
+  animation-duration: 0.4s;
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Keep header static during transitions */
+header {
+  view-transition-name: header;
+}
+
+::view-transition-old(header),
+::view-transition-new(header) {
+  animation: none;
+  mix-blend-mode: normal;
+}

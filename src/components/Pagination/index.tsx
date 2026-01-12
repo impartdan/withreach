@@ -9,7 +9,7 @@ import {
   PaginationPrevious,
 } from '@/components/ui/pagination'
 import { cn } from '@/utilities/ui'
-import { useRouter } from 'next/navigation'
+import { useTransitionRouter } from 'next-view-transitions'
 import React from 'react'
 
 export const Pagination: React.FC<{
@@ -17,7 +17,7 @@ export const Pagination: React.FC<{
   page: number
   totalPages: number
 }> = (props) => {
-  const router = useRouter()
+  const router = useTransitionRouter()
 
   const { className, page, totalPages } = props
   const hasNextPage = page < totalPages
