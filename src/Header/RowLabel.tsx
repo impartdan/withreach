@@ -13,8 +13,16 @@ export const RowLabel: React.FC<RowLabelProps> = () => {
     if (data.data.type === 'link' && data.data.link?.label) {
       label = `${rowNum}: ${data.data.link.label} (Link)`
     } else if (data.data.type === 'dropdown' && data.data.dropdownLabel) {
-      const layout = data.data.dropdown?.layout === 'navWithImages' ? 'with Images' : 'Basic'
-      label = `${rowNum}: ${data.data.dropdownLabel} (Dropdown - ${layout})`
+      const layoutLabels = {
+        featuredWithList: 'Featured with List',
+        twoColumnShowcase: 'Two-Column Showcase',
+        featuredIntegrations: 'Featured Integrations',
+        contentGrid: 'Content Grid',
+      }
+      const layout = data.data.dropdown?.layout 
+        ? layoutLabels[data.data.dropdown.layout] || data.data.dropdown.layout
+        : 'Unknown'
+      label = `${rowNum}: ${data.data.dropdownLabel} (${layout})`
     } else {
       label = `${rowNum}: Untitled`
     }

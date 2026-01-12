@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { Header, Post } from '@/payload-types'
@@ -10,8 +9,6 @@ import { FeaturedWithListDropdown } from './dropdowns/FeaturedWithListDropdown'
 import { TwoColumnShowcaseDropdown } from './dropdowns/TwoColumnShowcaseDropdown'
 import { FeaturedIntegrationsDropdown } from './dropdowns/FeaturedIntegrationsDropdown'
 import { ContentGridDropdown } from './dropdowns/ContentGridDropdown'
-
-type MenuItem = NonNullable<Header['menuItems']>[number]
 
 interface HeaderNavProps {
   menuItems?: Header['menuItems']

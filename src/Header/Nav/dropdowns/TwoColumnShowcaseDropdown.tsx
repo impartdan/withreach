@@ -1,6 +1,6 @@
 'use client'
 
-import type { Media, Post } from '@/payload-types'
+import type { Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import Link from 'next/link'
 

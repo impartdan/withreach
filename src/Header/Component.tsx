@@ -4,7 +4,7 @@ import React from 'react'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 
-import type { Header, Post } from '@/payload-types'
+import type { Header } from '@/payload-types'
 
 export async function Header() {
   const headerData: Header = await getCachedGlobal('header', 3)()
