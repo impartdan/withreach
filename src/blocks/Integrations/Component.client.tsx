@@ -124,14 +124,12 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
         {displayedIntegrations.map((integration) => {
           const isFeatured = featuredIds.includes(integration.id)
           const showLogo = !isSearching || isFeatured
-          const showLink = isFeatured
 
           return (
             <IntegrationCard
               key={integration.id}
               integration={integration}
               showLogo={showLogo}
-              showLink={showLink}
             />
           )
         })}

@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import type { Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import Link from 'next/link'
@@ -12,6 +11,7 @@ interface ContentGridDropdownProps {
   }> | null
   mode?: 'automatic' | 'manual'
   posts?: (string | Post)[] | null
+  latestPosts: Post[]
 }
 
 const PostCard: React.FC<{ post: Post }> = ({ post }) => {
@@ -45,28 +45,8 @@ export const ContentGridDropdown: React.FC<ContentGridDropdownProps> = ({
   items,
   mode,
   posts,
+  latestPosts,
 }) => {
-  const [latestPosts, setLatestPosts] = useState<Post[]>([])
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    if (mode === 'automatic') {
-      setLoading(true)
-      fetch('/api/posts?limit=2&sort=-publishedAt')
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.docs && data.docs.length > 0) {
-            setLatestPosts(data.docs)
-          }
-          setLoading(false)
-        })
-        .catch((err) => {
-          console.error('Failed to fetch latest posts:', err)
-          setLoading(false)
-        })
-    }
-  }, [mode])
-
   if (!items) return null
 
   // Get display posts based on mode
@@ -102,30 +82,21 @@ export const ContentGridDropdown: React.FC<ContentGridDropdownProps> = ({
 
       {/* Right side - Post Content */}
       <div className="flex gap-10">
-        {loading && (
-          <>
-            <div className="w-[382px] flex items-center justify-center">
-              <div className="text-sm text-gray-500 italic">Loading posts...</div>
-            </div>
-          </>
-        )}
-
-        {!loading &&
-          displayPosts.length > 0 &&
+        {displayPosts.length > 0 &&
           displayPosts.slice(0, 2).map((post, index) => (
             <div key={index} className="w-[382px]">
               <PostCard post={post} />
             </div>
           ))}
 
-        {!loading && displayPosts.length === 0 && (
+        {displayPosts.length === 0 && (
           <div className="w-[382px] flex items-center justify-center">
             <div className="text-sm text-gray-500 italic">No posts available</div>
           </div>
         )}
 
         {/* Show placeholder for second post if only one exists */}
-        {!loading && displayPosts.length === 1 && (
+        {displayPosts.length === 1 && (
           <div className="w-[382px] flex items-center justify-center">
             <div className="text-sm text-gray-500 italic">No second post available</div>
           </div>

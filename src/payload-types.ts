@@ -833,10 +833,6 @@ export interface Integration {
   logo?: (number | null) | Media;
   icon?: (number | null) | Media;
   /**
-   * URL to the integration website or documentation
-   */
-  link?: string | null;
-  /**
    * Detailed content about the integration
    */
   body?: {
@@ -1554,7 +1550,6 @@ export interface IntegrationsSelect<T extends boolean = true> {
   description?: T;
   logo?: T;
   icon?: T;
-  link?: T;
   body?: T;
   features?: T;
   category?: T;

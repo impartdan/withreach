@@ -2,16 +2,17 @@
 import Link from 'next/link'
 import React from 'react'
 
-import type { Header } from '@/payload-types'
+import type { Header, Post } from '@/payload-types'
 
 import { Logo } from '@/components/Logo/Logo'
 import { HeaderNav } from './Nav'
 
 interface HeaderClientProps {
   data: Header
+  latestPosts: Post[]
 }
 
-export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
+export const HeaderClient: React.FC<HeaderClientProps> = ({ data, latestPosts }) => {
   return (
     <header className="fixed top-0 z-30 w-full ">
       <div className="px-10 pt-9 pb-6 group ">
@@ -20,7 +21,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
             <Link href="/" className="flex-shrink-0">
               <Logo className="text-black" />
             </Link>
-            <HeaderNav menuItems={data.menuItems} additionalLinks={data.additionalLinks} />
+            <HeaderNav menuItems={data.menuItems} additionalLinks={data.additionalLinks} latestPosts={latestPosts} />
           </div>
         </div>
       </div>

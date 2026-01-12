@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import type { Media, Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import Link from 'next/link'
@@ -12,6 +11,7 @@ interface TwoColumnShowcaseDropdownProps {
   }> | null
   mode?: 'automatic' | 'manual'
   post?: string | Post | null
+  latestPosts: Post[]
 }
 
 const PostCard: React.FC<{ post: Post }> = ({ post }) => {
@@ -45,31 +45,13 @@ export const TwoColumnShowcaseDropdown: React.FC<TwoColumnShowcaseDropdownProps>
   items,
   mode,
   post,
+  latestPosts,
 }) => {
-  const [latestPost, setLatestPost] = useState<Post | null>(null)
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    if (mode === 'automatic') {
-      setLoading(true)
-      fetch('/api/posts?limit=1&sort=-publishedAt')
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.docs && data.docs.length > 0) {
-            setLatestPost(data.docs[0])
-          }
-          setLoading(false)
-        })
-        .catch((err) => {
-          console.error('Failed to fetch latest post:', err)
-          setLoading(false)
-        })
-    }
-  }, [mode])
-
   if (!items) return null
 
-  const displayPost = mode === 'manual' ? (typeof post === 'object' ? post : null) : latestPost
+  const displayPost = mode === 'manual' 
+    ? (typeof post === 'object' ? post : null) 
+    : (latestPosts[0] || null)
 
   return (
     <div className="flex gap-16 p-10 min-w-[915px]">
@@ -97,15 +79,9 @@ export const TwoColumnShowcaseDropdown: React.FC<TwoColumnShowcaseDropdownProps>
       </div>
 
       {/* Right side - Post Content */}
-      {loading && (
-        <div className="w-[382px] flex items-center justify-center">
-          <div className="text-sm text-gray-500 italic">Loading latest post...</div>
-        </div>
-      )}
+      {displayPost && <PostCard post={displayPost} />}
 
-      {!loading && displayPost && <PostCard post={displayPost} />}
-
-      {!loading && !displayPost && (mode === 'automatic' || mode === 'manual') && (
+      {!displayPost && (mode === 'automatic' || mode === 'manual') && (
         <div className="w-[382px] flex items-center justify-center">
           <div className="text-sm text-gray-500 italic">No post available</div>
         </div>

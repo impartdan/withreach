@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import type { Header } from '@/payload-types'
+import type { Header, Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { FeaturedWithListDropdown } from './dropdowns/FeaturedWithListDropdown'
 import { TwoColumnShowcaseDropdown } from './dropdowns/TwoColumnShowcaseDropdown'
@@ -16,9 +16,10 @@ type MenuItem = NonNullable<Header['menuItems']>[number]
 interface HeaderNavProps {
   menuItems?: Header['menuItems']
   additionalLinks?: Header['additionalLinks']
+  latestPosts: Post[]
 }
 
-export const HeaderNav: React.FC<HeaderNavProps> = ({ menuItems = [], additionalLinks = [] }) => {
+export const HeaderNav: React.FC<HeaderNavProps> = ({ menuItems = [], additionalLinks = [], latestPosts }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null)
 
@@ -136,6 +137,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ menuItems = [], additional
                 items={menuItems[activeDropdown].dropdown.tcsItems as any}
                 mode={menuItems[activeDropdown].dropdown.tcsMode as any}
                 post={menuItems[activeDropdown].dropdown.tcsPost as any}
+                latestPosts={latestPosts}
               />
             )}
             {menuItems[activeDropdown].dropdown?.layout === 'featuredIntegrations' && (
@@ -149,6 +151,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ menuItems = [], additional
                 items={menuItems[activeDropdown].dropdown.cgItems as any}
                 mode={menuItems[activeDropdown].dropdown.cgMode as any}
                 posts={menuItems[activeDropdown].dropdown.cgPosts as any}
+                latestPosts={latestPosts}
               />
             )}
           </div>

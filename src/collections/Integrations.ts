@@ -39,13 +39,6 @@ export const Integrations: CollectionConfig = {
       label: 'Icon',
     },
     {
-      name: 'link',
-      type: 'text',
-      admin: {
-        description: 'URL to the integration website or documentation',
-      },
-    },
-    {
       name: 'body',
       type: 'richText',
       label: 'Body',

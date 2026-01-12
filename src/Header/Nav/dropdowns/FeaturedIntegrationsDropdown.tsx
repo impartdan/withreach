@@ -50,7 +50,7 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
           return (
             <Link
               key={index}
-              href={integration.link || `/integrations/${integration.slug}`}
+              href={`/integrations/${integration.slug}`}
               className="flex items-center justify-between p-4 bg-[#EEECE6] rounded-[10px] group hover:bg-[#E5E3DD] transition-colors"
             >
               <div className="flex items-center gap-4">
