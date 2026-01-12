@@ -19,7 +19,7 @@ const heroes = {
 export const RenderHero: React.FC<Page['hero']> = (props) => {
   const { type } = props || {}
 
-  if (!type || type === 'none') return null
+  if (!type || type === 'none') return <div className="header-offset" />
 
   const HeroToRender = heroes[type]
 

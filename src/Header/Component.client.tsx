@@ -20,7 +20,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
             <Link href="/" className="flex-shrink-0">
               <Logo className="text-black" />
             </Link>
-            <HeaderNav />
+            <HeaderNav menuItems={data.menuItems} additionalLinks={data.additionalLinks} />
           </div>
         </div>
       </div>
