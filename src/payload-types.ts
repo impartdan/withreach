@@ -220,7 +220,15 @@ export interface Page {
       [k: string]: unknown;
     } | null;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | IntegrationsBlock)[];
+  layout: (
+    | CallToActionBlock
+    | ContentBlock
+    | MediaBlock
+    | ArchiveBlock
+    | FormBlock
+    | IntegrationsBlock
+    | LogoListBlock
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -852,6 +860,27 @@ export interface IntegrationCategory {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LogoListBlock".
+ */
+export interface LogoListBlock {
+  logos: {
+    logo: number | Media;
+    /**
+     * Alternative text for accessibility
+     */
+    alt?: string | null;
+    /**
+     * Optional URL to link to when logo is clicked
+     */
+    link?: string | null;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'logoList';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1169,6 +1198,7 @@ export interface PagesSelect<T extends boolean = true> {
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
         integrations?: T | IntegrationsBlockSelect<T>;
+        logoList?: T | LogoListBlockSelect<T>;
       };
   meta?:
     | T
@@ -1275,6 +1305,22 @@ export interface FormBlockSelect<T extends boolean = true> {
 export interface IntegrationsBlockSelect<T extends boolean = true> {
   title?: T;
   selectedIntegrations?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LogoListBlock_select".
+ */
+export interface LogoListBlockSelect<T extends boolean = true> {
+  logos?:
+    | T
+    | {
+        logo?: T;
+        alt?: T;
+        link?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }

@@ -58,4 +58,7 @@
   body {
     @apply bg-white text-brand-black min-h-[100vh] flex flex-col;
   }
+  .header-offset {
+    @apply pt-[116px];
+  }
 }
