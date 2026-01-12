@@ -5,6 +5,7 @@ import Link from 'next/link'
 import type { Integration } from '@/payload-types'
 import { Media } from '@/components/Media'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
+import { Button } from '@/components/ui/button'
 
 // Category badge color mapping
 const getCategoryColor = (categoryTitle: string) => {
@@ -224,12 +225,9 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
               Not seeing your integration?
             </h3>
             <p className="text-gray-600 text-base mb-8">Search our full directory</p>
-            <button
-              onClick={() => searchInputRef.current?.focus()}
-              className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
-            >
+            <Button onClick={() => searchInputRef.current?.focus()} size="lg">
               Search
-            </button>
+            </Button>
           </article>
         )}
       </div>
@@ -244,12 +242,9 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
                 We couldn&apos;t find any integrations matching &quot;{searchTerm}&quot;. Try
                 adjusting your search or browse all integrations.
               </p>
-              <Link
-                href="/contact"
-                className="inline-block px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
-              >
-                Connect with Sales
-              </Link>
+              <Button asChild size="lg">
+                <Link href="/contact">Connect with Sales</Link>
+              </Button>
             </div>
           </article>
         </div>
