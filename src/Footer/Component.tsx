@@ -5,6 +5,11 @@ import type { Footer as FooterGlobal } from '@/payload-types'
 
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
+import { R } from '@/components/Logo/R'
+import { E } from '@/components/Logo/E'
+import { A } from '@/components/Logo/A'
+import { C } from '@/components/Logo/C'
+import { H } from '@/components/Logo/H'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 
 export async function Footer() {
@@ -14,7 +19,7 @@ export async function Footer() {
   const badges = footerData?.badges || []
 
   return (
-    <footer className="mt-auto border-t border-border bg-black dark:bg-card text-white">
+    <footer className="mt-auto  bg-brand-black dark:bg-card text-white">
       <div className="container py-8 space-y-16">
         <nav className="flex w-full flex-col md:flex-row gap-8">
           {navColumns.map((column, columnIndex) => {
@@ -71,11 +76,11 @@ export async function Footer() {
         </nav>
 
         <div className="flex justify-between items-baseline font-black text-4xl md:text-7xl pt-20 text-white">
-          <div>R</div>
-          <div>E</div>
-          <div>A</div>
-          <div>C</div>
-          <div>H</div>
+          <R className="w-auto h-8 md:h-12 lg:h-16" />
+          <E className="w-auto h-8 md:h-12 lg:h-16" />
+          <A className="w-auto h-8 md:h-12 lg:h-16" />
+          <C className="w-auto h-8 md:h-12 lg:h-16" />
+          <H className="w-auto h-8 md:h-12 lg:h-16" />
         </div>
         <div className=" gap-8 flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col md:flex-row md:items-center gap-4">
