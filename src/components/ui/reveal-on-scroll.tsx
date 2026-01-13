@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from 'framer-motion'
 import { type HTMLMotionProps } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 const variants: Record<string, Variants> = {
   fadeIn: {
@@ -43,16 +44,35 @@ export function RevealOnScroll({
   variant = 'fadeIn',
   delay = 0,
   duration = 0.5,
-  amount = 0.2,
+  amount,
   once = true,
   className,
   ...props
 }: RevealOnScrollProps) {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    // Detect if we're on a mobile device
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Use a lower threshold on mobile for better trigger behavior
+  // On mobile: 0.1 (10% visible) - triggers earlier
+  // On desktop: 0.2 (20% visible) - original behavior
+  const viewportAmount = amount !== undefined ? amount : (isMobile ? 0.1 : 0.2)
+
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount }}
+      viewport={{ once, amount: viewportAmount, margin: '0px 0px -50px 0px' }}
       variants={variants[variant]}
       transition={{
         duration,

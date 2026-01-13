@@ -140,7 +140,7 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
 
           {/* Placeholder Card - only show when not searching */}
           <RevealListItem>
-            <article className="flex flex-col border border-gray-200 rounded-xl bg-white items-center justify-center p-8 text-center min-h-[320px]">
+            <article className="h-full flex flex-col border border-gray-200 rounded-xl bg-white items-center justify-center p-8 text-center min-h-[320px]">
               <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 Not seeing your integration?
               </h3>
