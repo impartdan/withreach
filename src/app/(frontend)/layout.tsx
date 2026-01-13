@@ -4,6 +4,7 @@ import { cn } from '@/utilities/ui'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import React from 'react'
+import Script from 'next/script'
 
 import { AdminBar } from '@/components/AdminBar'
 import { Footer } from '@/Footer/Component'
@@ -18,6 +19,7 @@ import { getServerSideURL } from '@/utilities/getURL'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
+  const hubspotPortalId = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID
 
   return (
     <ViewTransitions>
@@ -42,6 +44,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <div id="vt-main">{children}</div>
             <Footer />
           </Providers>
+
+          {/* HubSpot Tracking Code - tracks page views across all pages for journey analytics */}
+          {hubspotPortalId && (
+            <Script
+              id="hs-script-loader"
+              strategy="afterInteractive"
+              src={`//js.hs-scripts.com/${hubspotPortalId}.js`}
+            />
+          )}
         </body>
       </html>
     </ViewTransitions>

@@ -18,7 +18,37 @@ NEXT_PUBLIC_HUBSPOT_PORTAL_ID=your-portal-id-here
 - In the left sidebar, navigate to **Account Setup** > **Account Defaults**
 - Your Portal ID (also called Hub ID) will be displayed there
 
-**Note:** The `NEXT_PUBLIC_` prefix is required because this variable needs to be accessible in the browser to load the HubSpot form script.
+**Note:** The `NEXT_PUBLIC_` prefix is required because this variable needs to be accessible in the browser to load the HubSpot scripts.
+
+## User Journey Tracking
+
+This implementation includes **two HubSpot scripts** for complete analytics:
+
+### 1. Global Tracking Code (All Pages)
+Located in `/src/app/(frontend)/layout.tsx`, this script tracks page views across your entire site:
+- **What it does**: Tracks all page views, sessions, and user behavior
+- **Where it loads**: Every page on your site
+- **Script**: `//js.hs-scripts.com/{portalId}.js`
+- **Purpose**: Captures the complete user journey before form submission
+
+### 2. Forms Script (Form Pages Only)
+Loaded automatically when a HubSpot form is displayed:
+- **What it does**: Renders and submits forms
+- **Where it loads**: Only on pages with HubSpot forms
+- **Script**: `//js.hsforms.net/forms/embed/v2.js`
+- **Purpose**: Handles form display and submission
+
+### How Journey Tracking Works
+
+1. User visits your homepage → **Tracked** by global script
+2. User navigates to pricing page → **Tracked** by global script
+3. User views about page → **Tracked** by global script
+4. User submits form on contact page → **Forms script** associates all previous page views with the contact
+
+All of this data appears in HubSpot under:
+- **Contact records** → Activity timeline
+- **Contact properties** → Original source, page views, etc.
+- **Reports** → Attribution and analytics reports
 
 ### 2. Finding Your Form ID
 
