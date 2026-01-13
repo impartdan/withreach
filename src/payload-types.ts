@@ -818,6 +818,10 @@ export interface IntegrationsBlock {
    * Select specific integrations to display. Leave empty to show all integrations.
    */
   selectedIntegrations?: (number | Integration)[] | null;
+  /**
+   * Select integrations to pin at the top. Pinned integrations will always appear first, regardless of sorting.
+   */
+  pinnedIntegrations?: (number | Integration)[] | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'integrations';
@@ -1365,6 +1369,7 @@ export interface FormBlockSelect<T extends boolean = true> {
 export interface IntegrationsBlockSelect<T extends boolean = true> {
   title?: T;
   selectedIntegrations?: T;
+  pinnedIntegrations?: T;
   id?: T;
   blockName?: T;
 }

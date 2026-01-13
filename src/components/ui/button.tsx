@@ -19,21 +19,24 @@ const buttonVariants = cva(
         sm: 'h-9 rounded px-3',
       },
       variant: {
-        default: 'bg-brand-black text-brand-off-white hover:bg-brand-off-white hover:text-brand-black',
+        default:
+          'bg-brand-black text-brand-off-white hover:bg-brand-off-white hover:text-brand-black',
         destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         ghost: 'hover:bg-card hover:text-accent-foreground',
         link: 'text-primary items-start justify-start underline-offset-4 hover:underline',
-        outline: 'border-2 border-brand-black bg-transparent text-brand-black hover:border-brand-off-white hover:text-brand-off-white',
-        'outline-invert': 'border-2 border-brand-off-white bg-transparent text-brand-off-white hover:border-brand-black hover:text-brand-black',
-        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        outline:
+          'border-2 border-brand-black bg-transparent text-brand-black hover:border-brand-off-white hover:text-brand-off-white',
+        'outline-invert':
+          'border-2 border-brand-off-white bg-transparent text-brand-off-white hover:border-brand-black hover:text-brand-black',
+        secondary:
+          'bg-brand-gray text-brand-off-white hover:bg-brand-black hover:text-brand-off-white',
       },
     },
   },
 )
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean
   ref?: React.Ref<HTMLButtonElement>
 }

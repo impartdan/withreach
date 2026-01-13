@@ -10,7 +10,7 @@ export const IntegrationsBlock: React.FC<
     id?: string
   }
 > = async (props) => {
-  const { id, title, selectedIntegrations } = props
+  const { id, title, selectedIntegrations, pinnedIntegrations } = props
 
   const payload = await getPayload({ config: configPromise })
 
@@ -23,6 +23,39 @@ export const IntegrationsBlock: React.FC<
   })
 
   const allIntegrations = allIntegrationsResult.docs
+
+  // Get pinned integrations in the specified order
+  let pinnedIntegrationsArray: Integration[] = []
+  let pinnedIds: (string | number)[] = []
+
+  if (pinnedIntegrations && pinnedIntegrations.length > 0) {
+    const pinnedIdsExtracted = pinnedIntegrations
+      .map((integration) => {
+        if (typeof integration === 'object' && integration !== null) {
+          return integration.id
+        }
+        return integration
+      })
+      .filter(Boolean) as (string | number)[]
+
+    pinnedIds = pinnedIdsExtracted
+
+    const result = await payload.find({
+      collection: 'integrations',
+      depth: 1,
+      where: {
+        id: {
+          in: pinnedIdsExtracted,
+        },
+      },
+      limit: 100,
+    })
+
+    // Sort by the order they were pinned
+    pinnedIntegrationsArray = pinnedIdsExtracted
+      .map((id) => result.docs.find((doc) => doc.id === id))
+      .filter((doc): doc is Integration => doc !== undefined)
+  }
 
   // Get featured integrations in the specified order
   let featuredIntegrations: Integration[] = []
@@ -68,6 +101,8 @@ export const IntegrationsBlock: React.FC<
         featuredIntegrations={featuredIntegrations}
         allIntegrations={allIntegrations}
         featuredIds={featuredIds}
+        pinnedIntegrations={pinnedIntegrationsArray}
+        pinnedIds={pinnedIds}
       />
     </div>
   )

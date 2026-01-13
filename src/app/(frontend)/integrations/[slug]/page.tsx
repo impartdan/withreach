@@ -3,7 +3,7 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import { generateMeta } from '@/utilities/generateMeta'
@@ -81,6 +81,13 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
 
   if (!integration) {
     return notFound()
+  }
+
+  // Check if the integration is featured in any IntegrationsBlock
+  const isFeatured = await checkIfIntegrationIsFeatured(integration.id)
+  
+  if (!isFeatured) {
+    redirect('/partners')
   }
 
   const logo = typeof integration.logo === 'object' ? integration.logo : null
@@ -223,7 +230,55 @@ async function getRandomIntegrations({
     },
   })
 
+  // Get list of all featured integration IDs
+  const featuredIds = await getFeaturedIntegrationIds()
+
+  // Filter to only include featured integrations
+  const featuredIntegrations = result.docs.filter((integration) =>
+    featuredIds.includes(integration.id),
+  )
+
   // Shuffle and pick random integrations
-  const shuffled = result.docs.sort(() => Math.random() - 0.5)
+  const shuffled = featuredIntegrations.sort(() => Math.random() - 0.5)
   return shuffled.slice(0, limit)
+}
+
+async function getFeaturedIntegrationIds(): Promise<(string | number)[]> {
+  const payload = await getPayload({ config: configPromise })
+
+  // Find all pages that might contain IntegrationsBlocks
+  const pages = await payload.find({
+    collection: 'pages',
+    limit: 1000,
+    pagination: false,
+  })
+
+  const featuredIds = new Set<string | number>()
+
+  // Collect all featured integration IDs from all IntegrationsBlocks
+  for (const page of pages.docs) {
+    if (page.layout) {
+      for (const block of page.layout) {
+        if (block.blockType === 'integrations' && block.selectedIntegrations) {
+          const selectedIds = block.selectedIntegrations
+            .map((integration: any) => {
+              if (typeof integration === 'object' && integration !== null) {
+                return integration.id
+              }
+              return integration
+            })
+            .filter(Boolean)
+
+          selectedIds.forEach((id: string | number) => featuredIds.add(id))
+        }
+      }
+    }
+  }
+
+  return Array.from(featuredIds)
+}
+
+async function checkIfIntegrationIsFeatured(integrationId: string | number): Promise<boolean> {
+  const featuredIds = await getFeaturedIntegrationIds()
+  return featuredIds.includes(integrationId)
 }

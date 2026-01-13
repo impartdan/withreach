@@ -23,5 +23,14 @@ export const Integrations: Block = {
         description: 'Select specific integrations to display. Leave empty to show all integrations.',
       },
     },
+    {
+      name: 'pinnedIntegrations',
+      type: 'relationship',
+      relationTo: 'integrations',
+      hasMany: true,
+      admin: {
+        description: 'Select integrations to pin at the top. Pinned integrations will always appear first, regardless of sorting.',
+      },
+    },
   ],
 }

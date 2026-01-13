@@ -32,7 +32,7 @@ export const RelatedIntegrationsClient: React.FC<RelatedIntegrationsClientProps>
         >
           {integrations.map((integration) => (
             <RevealListItem key={integration.id}>
-              <IntegrationCard integration={integration} showLogo={true} />
+              <IntegrationCard integration={integration} showLogo={true} isFeatured={true} />
             </RevealListItem>
           ))}
         </RevealList>
