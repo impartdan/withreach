@@ -14,7 +14,9 @@ export const FullscreenHero: React.FC<Page['hero']> = ({ links, media, richText,
       <div className="container z-10 relative flex items-center justify-center">
         <RevealOnScroll variant="slideUp">
           <div className="max-w-[36.5rem] md:text-center">
-            {richText && <RichText className="mb-6" data={richText} enableGutter={false} />}
+            {richText && (
+              <RichText className="mb-6 text-balance" data={richText} enableGutter={false} />
+            )}
             {Array.isArray(links) && links.length > 0 && (
               <ul className="flex md:justify-center gap-4">
                 {links.map(({ link }, i) => {

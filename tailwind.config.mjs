@@ -101,8 +101,9 @@ const config = {
         },
       },
       fontFamily: {
-        mono: ['var(--font-geist-mono)'],
-        sans: ['var(--font-geist-sans)'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+        mix: ['var(--font-mix)', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         'accordion-down': {

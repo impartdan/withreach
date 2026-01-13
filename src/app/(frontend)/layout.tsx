@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 
 import { cn } from '@/utilities/ui'
-import { GeistMono } from 'geist/font/mono'
-import { GeistSans } from 'geist/font/sans'
 import React from 'react'
 import Script from 'next/script'
 
@@ -16,6 +14,7 @@ import { ViewTransitions } from 'next-view-transitions'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
+import { SeasonMix, SeasonSans, SeasonSerif } from './fonts'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -24,7 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <ViewTransitions>
       <html
-        className={cn(GeistSans.variable, GeistMono.variable)}
+        className={cn(SeasonSans.variable, SeasonSerif.variable, SeasonMix.variable)}
         lang="en"
         suppressHydrationWarning
       >
