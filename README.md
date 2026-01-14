@@ -189,7 +189,7 @@ src/
 │   ├── Content/             # Rich text content
 │   ├── Form/                # Custom form builder
 │   ├── HubspotForm/         # HubSpot form integration
-│   ├── Integrations/        # Partner integrations display with pinning
+│   ├── Integrations/        # Partner integrations display with filtering and pinning capabilities
 │   ├── LogoList/            # Logo grid display
 │   ├── MediaBlock/          # Image and video blocks
 │   └── RelatedPosts/        # Related content suggestions
