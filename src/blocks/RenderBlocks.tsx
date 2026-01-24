@@ -42,8 +42,11 @@ export const RenderBlocks: React.FC<{
             const Block = blockComponents[blockType]
 
             if (Block) {
+              // Not all blocks have blockSettings, so we safely access it
+              const blockSettings = 'blockSettings' in block ? block.blockSettings : undefined
+
               return (
-                <BlockWrapper key={index} blockSettings={block.blockSettings}>
+                <BlockWrapper key={index} blockSettings={blockSettings}>
                   {/* @ts-expect-error there may be some mismatch between the expected types here */}
                   <Block {...block} disableInnerContainer />
                 </BlockWrapper>
