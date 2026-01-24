@@ -2,6 +2,7 @@ import React from 'react'
 
 import type { Page } from '@/payload-types'
 
+import { BackgroundImageHero } from '@/heros/BackgroundImage'
 import { FullscreenHero } from '@/heros/Fullscreen'
 import { HighImpactHero } from '@/heros/HighImpact'
 import { LowImpactHero } from '@/heros/LowImpact'
@@ -9,6 +10,7 @@ import { MediumImpactHero } from '@/heros/MediumImpact'
 import { TextAndImageHero } from '@/heros/TextAndImage'
 
 const heroes = {
+  backgroundImage: BackgroundImageHero,
   fullscreen: FullscreenHero,
   highImpact: HighImpactHero,
   lowImpact: LowImpactHero,

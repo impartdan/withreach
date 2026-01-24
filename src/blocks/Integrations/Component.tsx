@@ -95,7 +95,7 @@ export const IntegrationsBlock: React.FC<
   }
 
   return (
-    <div className="container my-16" id={`block-${id}`}>
+    <div className="container" id={`block-${id}`}>
       <IntegrationsClient
         title={title}
         featuredIntegrations={featuredIntegrations}

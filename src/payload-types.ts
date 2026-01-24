@@ -162,7 +162,7 @@ export interface Page {
   id: number;
   title: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'fullscreen' | 'textAndImage';
+    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'fullscreen' | 'textAndImage' | 'backgroundImage';
     richText?: {
       root: {
         type: string;

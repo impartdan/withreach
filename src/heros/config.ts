@@ -43,6 +43,10 @@ export const hero: Field = {
           label: 'Text and Image',
           value: 'textAndImage',
         },
+        {
+          label: 'Background Image',
+          value: 'backgroundImage',
+        },
       ],
       required: true,
     },
@@ -71,7 +75,9 @@ export const hero: Field = {
       type: 'upload',
       admin: {
         condition: (_, { type } = {}) =>
-          ['highImpact', 'mediumImpact', 'fullscreen', 'textAndImage'].includes(type),
+          ['highImpact', 'mediumImpact', 'fullscreen', 'textAndImage', 'backgroundImage'].includes(
+            type,
+          ),
       },
       relationTo: 'media',
       required: true,
