@@ -137,7 +137,7 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       admin: {
         description: 'Background image for this block',
       },
-    })
+    } as any)
 
     fields.push({
       name: 'backgroundImagePosition',
@@ -181,7 +181,7 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       admin: {
         description: 'Background video for this block (takes precedence over image)',
       },
-    })
+    } as any)
   }
 
   const blockSettingsGroup: GroupField = {
@@ -193,7 +193,7 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       description: 'Configure appearance settings for this block',
     },
     fields,
-  }
+  } as GroupField
 
   return deepMerge(blockSettingsGroup, overrides)
 }
