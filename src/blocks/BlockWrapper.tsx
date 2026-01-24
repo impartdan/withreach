@@ -5,11 +5,11 @@ import type { Media } from '@/payload-types'
 type BlockWrapperProps = {
   children: React.ReactNode
   blockSettings?: {
-    paddingTop?: 'none' | 'small' | 'medium' | 'large' | 'xlarge'
-    paddingBottom?: 'none' | 'small' | 'medium' | 'large' | 'xlarge'
-    backgroundColor?: 'none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background'
+    paddingTop?: 'none' | 'small' | 'medium' | 'large' | 'xlarge' | null
+    paddingBottom?: 'none' | 'small' | 'medium' | 'large' | 'xlarge' | null
+    backgroundColor?: 'none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background' | null
     backgroundImage?: number | Media | null
-    backgroundImagePosition?: 'center' | 'top' | 'bottom' | 'left' | 'right'
+    backgroundImagePosition?: 'center' | 'top' | 'bottom' | 'left' | 'right' | null
     backgroundVideo?: number | Media | null
   }
   className?: string
@@ -54,17 +54,20 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
   blockSettings,
   className,
 }) => {
-  const paddingTopClass = blockSettings?.paddingTop
-    ? paddingTopClasses[blockSettings.paddingTop]
-    : paddingTopClasses.medium
+  const paddingTopClass =
+    blockSettings?.paddingTop && blockSettings.paddingTop !== null
+      ? paddingTopClasses[blockSettings.paddingTop]
+      : paddingTopClasses.medium
 
-  const paddingBottomClass = blockSettings?.paddingBottom
-    ? paddingBottomClasses[blockSettings.paddingBottom]
-    : paddingBottomClasses.medium
+  const paddingBottomClass =
+    blockSettings?.paddingBottom && blockSettings.paddingBottom !== null
+      ? paddingBottomClasses[blockSettings.paddingBottom]
+      : paddingBottomClasses.medium
 
-  const bgColorClass = blockSettings?.backgroundColor
-    ? bgColorClasses[blockSettings.backgroundColor]
-    : ''
+  const bgColorClass =
+    blockSettings?.backgroundColor && blockSettings.backgroundColor !== null
+      ? bgColorClasses[blockSettings.backgroundColor]
+      : ''
 
   const bgImage =
     typeof blockSettings?.backgroundImage === 'object' && blockSettings?.backgroundImage !== null
@@ -76,9 +79,10 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
       ? blockSettings.backgroundVideo
       : null
 
-  const bgPositionClass = blockSettings?.backgroundImagePosition
-    ? bgPositionClasses[blockSettings.backgroundImagePosition]
-    : bgPositionClasses.center
+  const bgPositionClass =
+    blockSettings?.backgroundImagePosition && blockSettings.backgroundImagePosition !== null
+      ? bgPositionClasses[blockSettings.backgroundImagePosition]
+      : bgPositionClasses.center
 
   return (
     <div
