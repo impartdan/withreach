@@ -5,6 +5,8 @@ import { blockSettings } from '@/fields/blockSettings'
 export const StatsBlock: Block = {
   slug: 'statsBlock',
   interfaceName: 'StatsBlock',
+  imageURL: '/block-thumbnails/stats-block.png',
+  imageAltText: 'Horizontal stats layout with heading and statistics separated by dividers',
   labels: {
     singular: 'Stats Block',
     plural: 'Stats Blocks',
@@ -48,15 +50,6 @@ export const StatsBlock: Block = {
                   required: true,
                   admin: {
                     description: 'Description or context for the statistic',
-                  },
-                },
-                {
-                  name: 'icon',
-                  type: 'upload',
-                  relationTo: 'media',
-                  label: 'Icon',
-                  admin: {
-                    description: 'Optional icon to display with the statistic',
                   },
                 },
               ],

@@ -1064,10 +1064,6 @@ export interface StatsBlock {
      * Description or context for the statistic
      */
     description: string;
-    /**
-     * Optional icon to display with the statistic
-     */
-    icon?: (number | null) | Media;
     id?: string | null;
   }[];
   /**
@@ -1149,14 +1145,6 @@ export interface TextImageFeatureBlock {
     image: number | Media;
     id?: string | null;
   }[];
-  /**
-   * Position of images relative to text content
-   */
-  imagePosition?: ('left' | 'right') | null;
-  /**
-   * Alignment of text content
-   */
-  contentAlignment?: ('left' | 'center' | 'right') | null;
   /**
    * Configure appearance settings for this block
    */
@@ -1710,7 +1698,6 @@ export interface StatsBlockSelect<T extends boolean = true> {
     | {
         value?: T;
         description?: T;
-        icon?: T;
         id?: T;
       };
   blockSettings?:
@@ -1754,8 +1741,6 @@ export interface TextImageFeatureBlockSelect<T extends boolean = true> {
         image?: T;
         id?: T;
       };
-  imagePosition?: T;
-  contentAlignment?: T;
   blockSettings?:
     | T
     | {
