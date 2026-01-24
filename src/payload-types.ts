@@ -229,6 +229,7 @@ export interface Page {
     | IntegrationsBlock
     | LogoListBlock
     | HubspotFormBlock
+    | StatsBlock
   )[];
   meta?: {
     title?: string | null;
@@ -510,6 +511,23 @@ export interface CallToActionBlock {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Background video for this block (takes precedence over image)
+     */
+    backgroundVideo?: (number | null) | Media;
+  };
   id?: string | null;
   blockName?: string | null;
   blockType: 'cta';
@@ -560,6 +578,23 @@ export interface ContentBlock {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Background video for this block (takes precedence over image)
+     */
+    backgroundVideo?: (number | null) | Media;
+  };
   id?: string | null;
   blockName?: string | null;
   blockType: 'content';
@@ -604,6 +639,23 @@ export interface ArchiveBlock {
         value: number | Post;
       }[]
     | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Background video for this block (takes precedence over image)
+     */
+    backgroundVideo?: (number | null) | Media;
+  };
   id?: string | null;
   blockName?: string | null;
   blockType: 'archive';
@@ -822,6 +874,23 @@ export interface IntegrationsBlock {
    * Select integrations to pin at the top. Pinned integrations will always appear first, regardless of sorting.
    */
   pinnedIntegrations?: (number | Integration)[] | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Background video for this block (takes precedence over image)
+     */
+    backgroundVideo?: (number | null) | Media;
+  };
   id?: string | null;
   blockName?: string | null;
   blockType: 'integrations';
@@ -913,6 +982,23 @@ export interface LogoListBlock {
     link?: string | null;
     id?: string | null;
   }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Background video for this block (takes precedence over image)
+     */
+    backgroundVideo?: (number | null) | Media;
+  };
   id?: string | null;
   blockName?: string | null;
   blockType: 'logoList';
@@ -938,9 +1024,71 @@ export interface HubspotFormBlock {
    * Check this to disable HubSpot's default CSS and use only your custom styles
    */
   disableHubspotStyles?: boolean | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Background video for this block (takes precedence over image)
+     */
+    backgroundVideo?: (number | null) | Media;
+  };
   id?: string | null;
   blockName?: string | null;
   blockType: 'hubspotForm';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StatsBlock".
+ */
+export interface StatsBlock {
+  /**
+   * Main heading for the stats section (e.g., "Our optimization success")
+   */
+  heading?: string | null;
+  stats: {
+    /**
+     * The main statistic value (e.g., "$3B", "130+", "90%+")
+     */
+    value: string;
+    /**
+     * Description or context for the statistic
+     */
+    description: string;
+    /**
+     * Optional icon to display with the statistic
+     */
+    icon?: (number | null) | Media;
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Background video for this block (takes precedence over image)
+     */
+    backgroundVideo?: (number | null) | Media;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'statsBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1263,6 +1411,7 @@ export interface PagesSelect<T extends boolean = true> {
         integrations?: T | IntegrationsBlockSelect<T>;
         logoList?: T | LogoListBlockSelect<T>;
         hubspotForm?: T | HubspotFormBlockSelect<T>;
+        statsBlock?: T | StatsBlockSelect<T>;
       };
   meta?:
     | T
@@ -1299,6 +1448,16 @@ export interface CallToActionBlockSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+      };
   id?: T;
   blockName?: T;
 }
@@ -1325,6 +1484,16 @@ export interface ContentBlockSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+      };
   id?: T;
   blockName?: T;
 }
@@ -1348,6 +1517,16 @@ export interface ArchiveBlockSelect<T extends boolean = true> {
   categories?: T;
   limit?: T;
   selectedDocs?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+      };
   id?: T;
   blockName?: T;
 }
@@ -1370,6 +1549,16 @@ export interface IntegrationsBlockSelect<T extends boolean = true> {
   title?: T;
   selectedIntegrations?: T;
   pinnedIntegrations?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+      };
   id?: T;
   blockName?: T;
 }
@@ -1386,6 +1575,16 @@ export interface LogoListBlockSelect<T extends boolean = true> {
         link?: T;
         id?: T;
       };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+      };
   id?: T;
   blockName?: T;
 }
@@ -1398,6 +1597,43 @@ export interface HubspotFormBlockSelect<T extends boolean = true> {
   portalId?: T;
   formTitle?: T;
   disableHubspotStyles?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StatsBlock_select".
+ */
+export interface StatsBlockSelect<T extends boolean = true> {
+  heading?: T;
+  stats?:
+    | T
+    | {
+        value?: T;
+        description?: T;
+        icon?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+      };
   id?: T;
   blockName?: T;
 }

@@ -8,6 +8,7 @@ import {
 } from '@payloadcms/richtext-lexical'
 
 import { link } from '@/fields/link'
+import { blockSettings } from '@/fields/blockSettings'
 
 const columnFields: Field[] = [
   {
@@ -68,12 +69,35 @@ export const Content: Block = {
   interfaceName: 'ContentBlock',
   fields: [
     {
-      name: 'columns',
-      type: 'array',
-      admin: {
-        initCollapsed: true,
-      },
-      fields: columnFields,
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            {
+              name: 'columns',
+              type: 'array',
+              admin: {
+                initCollapsed: true,
+              },
+              fields: columnFields,
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              enableBackgroundImage: true,
+              enableBackgroundVideo: true,
+              defaultPaddingTop: 'medium',
+              defaultPaddingBottom: 'medium',
+            }),
+          ],
+        },
+      ],
     },
   ],
 }

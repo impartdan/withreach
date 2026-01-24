@@ -1,5 +1,7 @@
 import type { Block } from 'payload'
 
+import { blockSettings } from '@/fields/blockSettings'
+
 export const LogoList: Block = {
   slug: 'logoList',
   interfaceName: 'LogoListBlock',
@@ -9,33 +11,56 @@ export const LogoList: Block = {
   },
   fields: [
     {
-      name: 'logos',
-      type: 'array',
-      label: 'Logos',
-      required: true,
-      minRows: 1,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'logo',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
+          label: 'Content',
+          fields: [
+            {
+              name: 'logos',
+              type: 'array',
+              label: 'Logos',
+              required: true,
+              minRows: 1,
+              fields: [
+                {
+                  name: 'logo',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: true,
+                },
+                {
+                  name: 'alt',
+                  type: 'text',
+                  label: 'Alt Text',
+                  admin: {
+                    description: 'Alternative text for accessibility',
+                  },
+                },
+                {
+                  name: 'link',
+                  type: 'text',
+                  label: 'Link',
+                  admin: {
+                    description: 'Optional URL to link to when logo is clicked',
+                  },
+                },
+              ],
+            },
+          ],
         },
         {
-          name: 'alt',
-          type: 'text',
-          label: 'Alt Text',
-          admin: {
-            description: 'Alternative text for accessibility',
-          },
-        },
-        {
-          name: 'link',
-          type: 'text',
-          label: 'Link',
-          admin: {
-            description: 'Optional URL to link to when logo is clicked',
-          },
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              enableBackgroundImage: true,
+              enableBackgroundVideo: true,
+              defaultPaddingTop: 'medium',
+              defaultPaddingBottom: 'medium',
+            }),
+          ],
         },
       ],
     },

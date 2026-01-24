@@ -1,0 +1,54 @@
+# Cursor AI Rules
+
+## AI-Generated Content Organization
+
+### File Location Rules
+
+All AI-generated markdown files and context documents MUST be stored in the `/ai` directory at the project root.
+
+**Examples of AI-generated content:**
+- Implementation guides and tutorials created by AI
+- Project planning documents
+- Context files for AI understanding
+- URL reference lists
+- API documentation generated during development
+- Technical summaries and overviews
+
+**Exceptions (legitimate documentation that stays in place):**
+- `README.md` at project root - main project documentation
+- Component-specific `README.md` files within their directories (e.g., `src/blocks/*/README.md`)
+- Official package documentation
+- User-facing documentation
+
+### Naming Conventions
+
+- Use kebab-case for all files in `/ai` directory
+- Use descriptive names that clearly indicate content
+- Examples: `reveal-animations-guide.md`, `keeper-urls.md`, `api-reference.md`
+
+### File Management Rules
+
+1. **Before creating new AI context files:** Check if a relevant file already exists in `/ai`
+2. **Prefer updating existing files** over creating new ones
+3. **Delete or merge obsolete files** instead of letting them accumulate
+4. **Keep content current:** Update existing docs rather than creating "v2" files
+
+### Workflow
+
+When AI assistance creates markdown documentation:
+
+1. Check `/ai` directory for existing related files
+2. If exists: Update the existing file with new information
+3. If new: Create file in `/ai` with clear kebab-case name
+4. Periodically review and consolidate duplicate or outdated files
+
+### Forbidden Practices
+
+- ❌ Do NOT create AI context markdown files at the project root
+- ❌ Do NOT create multiple versions of the same document (e.g., summary + guide for same topic)
+- ❌ Do NOT leave obsolete AI-generated files in the repository
+- ❌ Do NOT create AI documentation inside component directories (use `/ai` instead)
+
+## Purpose
+
+This structure keeps the repository clean, maintainable, and makes it easy to find AI-generated context and documentation in one centralized location.

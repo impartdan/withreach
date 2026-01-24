@@ -25,6 +25,37 @@ const config = {
     'bg-success/30',
     'border-warning',
     'bg-warning/30',
+    // Block padding classes
+    'pt-8',
+    'pt-16',
+    'pt-24',
+    'pt-32',
+    'pb-8',
+    'pb-16',
+    'pb-24',
+    'pb-32',
+    // Background position classes
+    'bg-center',
+    'bg-top',
+    'bg-bottom',
+    'bg-left',
+    'bg-right',
+    'bg-cover',
+    'bg-no-repeat',
+    // Background color classes
+    'bg-primary',
+    'bg-secondary',
+    'bg-accent',
+    'bg-muted',
+    'bg-card',
+    'bg-background',
+    // Foreground color classes
+    'text-primary-foreground',
+    'text-secondary-foreground',
+    'text-accent-foreground',
+    'text-muted-foreground',
+    'text-card-foreground',
+    'text-foreground',
   ],
   theme: {
     container: {

@@ -10,6 +10,8 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { IntegrationsBlock } from '@/blocks/Integrations/Component'
 import { LogoListBlock } from '@/blocks/LogoList/Component'
 import { HubspotFormBlock } from '@/blocks/HubspotForm/Component'
+import { StatsBlock } from '@/blocks/StatsBlock/Component'
+import { BlockWrapper } from '@/blocks/BlockWrapper'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -20,6 +22,7 @@ const blockComponents = {
   integrations: IntegrationsBlock,
   logoList: LogoListBlock,
   hubspotForm: HubspotFormBlock,
+  statsBlock: StatsBlock,
 }
 
 export const RenderBlocks: React.FC<{
@@ -40,10 +43,10 @@ export const RenderBlocks: React.FC<{
 
             if (Block) {
               return (
-                <div key={index}>
+                <BlockWrapper key={index} blockSettings={block.blockSettings}>
                   {/* @ts-expect-error there may be some mismatch between the expected types here */}
                   <Block {...block} disableInnerContainer />
-                </div>
+                </BlockWrapper>
               )
             }
           }

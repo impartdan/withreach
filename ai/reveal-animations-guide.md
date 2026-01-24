@@ -196,4 +196,4 @@ These components automatically respect `prefers-reduced-motion`. Users who have 
 
 ## Need Help?
 
-Check `src/components/ui/reveal-examples.md` for more detailed examples and API documentation.
+Check `/ai/reveal-animations-api.md` for more detailed examples and API documentation.
