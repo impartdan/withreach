@@ -11,6 +11,7 @@ import { IntegrationsBlock } from '@/blocks/Integrations/Component'
 import { LogoListBlock } from '@/blocks/LogoList/Component'
 import { HubspotFormBlock } from '@/blocks/HubspotForm/Component'
 import { StatsBlock } from '@/blocks/StatsBlock/Component'
+import { TextImageFeatureBlock } from '@/blocks/TextImageFeature/Component'
 import { BlockWrapper } from '@/blocks/BlockWrapper'
 
 const blockComponents = {
@@ -23,6 +24,7 @@ const blockComponents = {
   logoList: LogoListBlock,
   hubspotForm: HubspotFormBlock,
   statsBlock: StatsBlock,
+  textImageFeature: TextImageFeatureBlock,
 }
 
 export const RenderBlocks: React.FC<{

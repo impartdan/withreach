@@ -230,6 +230,7 @@ export interface Page {
     | LogoListBlock
     | HubspotFormBlock
     | StatsBlock
+    | TextImageFeatureBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1092,6 +1093,93 @@ export interface StatsBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TextImageFeatureBlock".
+ */
+export interface TextImageFeatureBlock {
+  /**
+   * Main heading for the feature section
+   */
+  heading: string;
+  /**
+   * Description text for the feature
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Add 1-2 images to display alongside the text
+   */
+  images: {
+    image: number | Media;
+    id?: string | null;
+  }[];
+  /**
+   * Position of images relative to text content
+   */
+  imagePosition?: ('left' | 'right') | null;
+  /**
+   * Alignment of text content
+   */
+  contentAlignment?: ('left' | 'center' | 'right') | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Background video for this block (takes precedence over image)
+     */
+    backgroundVideo?: (number | null) | Media;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'textImageFeature';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1412,6 +1500,7 @@ export interface PagesSelect<T extends boolean = true> {
         logoList?: T | LogoListBlockSelect<T>;
         hubspotForm?: T | HubspotFormBlockSelect<T>;
         statsBlock?: T | StatsBlockSelect<T>;
+        textImageFeature?: T | TextImageFeatureBlockSelect<T>;
       };
   meta?:
     | T
@@ -1624,6 +1713,49 @@ export interface StatsBlockSelect<T extends boolean = true> {
         icon?: T;
         id?: T;
       };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TextImageFeatureBlock_select".
+ */
+export interface TextImageFeatureBlockSelect<T extends boolean = true> {
+  heading?: T;
+  content?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  imagePosition?: T;
+  contentAlignment?: T;
   blockSettings?:
     | T
     | {
