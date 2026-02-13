@@ -45,7 +45,7 @@
     "next-env.d.ts",
     "next.config.js",
     "next-sitemap.config.cjs"
-  ],
+, "tailwind.typography.mjs"  ],
   "exclude": [
     "node_modules"
   ],

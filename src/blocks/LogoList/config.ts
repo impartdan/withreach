@@ -17,6 +17,14 @@ export const LogoList: Block = {
           label: 'Content',
           fields: [
             {
+              name: 'title',
+              type: 'text',
+              label: 'Title',
+              admin: {
+                description: 'Optional title displayed above the logos',
+              },
+            },
+            {
               name: 'logos',
               type: 'array',
               label: 'Logos',

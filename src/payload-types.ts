@@ -971,6 +971,10 @@ export interface IntegrationCategory {
  * via the `definition` "LogoListBlock".
  */
 export interface LogoListBlock {
+  /**
+   * Optional title displayed above the logos
+   */
+  title?: string | null;
   logos: {
     logo: number | Media;
     /**
@@ -1644,6 +1648,7 @@ export interface IntegrationsBlockSelect<T extends boolean = true> {
  * via the `definition` "LogoListBlock_select".
  */
 export interface LogoListBlockSelect<T extends boolean = true> {
+  title?: T;
   logos?:
     | T
     | {
