@@ -30,7 +30,7 @@ export const generateMeta = async (args: {
     ? doc?.meta?.title + ' | With Reach'
     : 'With Reach'
 
-  return {
+  const meta: Metadata = {
     description: doc?.meta?.description,
     openGraph: mergeOpenGraph({
       description: doc?.meta?.description || '',
@@ -46,4 +46,13 @@ export const generateMeta = async (args: {
     }),
     title,
   }
+
+  if ((doc?.meta as { noindex?: boolean })?.noindex) {
+    meta.robots = {
+      index: false,
+      follow: false,
+    }
+  }
+
+  return meta
 }

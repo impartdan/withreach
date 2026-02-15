@@ -59,11 +59,7 @@ export const LogoListBlock: React.FC<
     )
   }
 
-  const titleElement = title ? (
-    <p className="text-center text-sm uppercase tracking-widest text-muted-foreground mb-6">
-      {title}
-    </p>
-  ) : null
+  const titleElement = title ? <p className="text-center type-display-xs mb-6">{title}</p> : null
 
   // Static single-line layout for 4 or fewer logos
   if (!shouldAnimate) {

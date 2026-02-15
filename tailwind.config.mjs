@@ -26,15 +26,9 @@ const config = {
     'bg-success/30',
     'border-warning',
     'bg-warning/30',
-    // Block padding classes
-    'pt-8',
-    'pt-16',
-    'pt-24',
-    'pt-32',
-    'pb-8',
-    'pb-16',
-    'pb-24',
-    'pb-32',
+    // Block padding classes (responsive spacing tokens)
+    'pt-3xs', 'pt-2xs', 'pt-xs', 'pt-sm', 'pt-md', 'pt-lg', 'pt-xl', 'pt-2xl',
+    'pb-3xs', 'pb-2xs', 'pb-xs', 'pb-sm', 'pb-md', 'pb-lg', 'pb-xl', 'pb-2xl',
     // Background position classes
     'bg-center',
     'bg-top',
@@ -152,45 +146,16 @@ const config = {
           '100%': { transform: 'translateX(-50%)' },
         },
       },
-      typography: () => ({
-        DEFAULT: {
-          css: [
-            {
-              '--tw-prose-body': 'var(--text)',
-              '--tw-prose-headings': 'var(--text)',
-              h1: {
-                fontWeight: 'normal',
-                marginBottom: '0.25em',
-              },
-            },
-          ],
-        },
-        base: {
-          css: [
-            {
-              h1: {
-                fontSize: '2.5rem',
-              },
-              h2: {
-                fontSize: '1.25rem',
-                fontWeight: 600,
-              },
-            },
-          ],
-        },
-        md: {
-          css: [
-            {
-              h1: {
-                fontSize: '3.5rem',
-              },
-              h2: {
-                fontSize: '1.5rem',
-              },
-            },
-          ],
-        },
-      }),
+      spacing: {
+        '2xl': 'var(--spacing-2xl)',
+        'xl': 'var(--spacing-xl)',
+        'lg': 'var(--spacing-lg)',
+        'md': 'var(--spacing-md)',
+        'sm': 'var(--spacing-sm)',
+        'xs': 'var(--spacing-xs)',
+        '2xs': 'var(--spacing-2xs)',
+        '3xs': 'var(--spacing-3xs)',
+      },
     },
   },
 }

@@ -2,11 +2,14 @@ import React from 'react'
 import { cn } from '@/utilities/ui'
 import type { Media } from '@/payload-types'
 
+import type { SpacingSize } from '@/fields/blockSettings'
+
 type BlockWrapperProps = {
   children: React.ReactNode
+  blockType?: string
   blockSettings?: {
-    paddingTop?: 'none' | 'small' | 'medium' | 'large' | 'xlarge' | null
-    paddingBottom?: 'none' | 'small' | 'medium' | 'large' | 'xlarge' | null
+    paddingTop?: SpacingSize | null
+    paddingBottom?: SpacingSize | null
     backgroundColor?: 'none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background' | null
     backgroundImage?: number | Media | null
     backgroundImagePosition?: 'center' | 'top' | 'bottom' | 'left' | 'right' | null
@@ -15,20 +18,28 @@ type BlockWrapperProps = {
   className?: string
 }
 
-const paddingTopClasses = {
+const paddingTopClasses: Record<SpacingSize, string> = {
   none: '',
-  small: 'pt-8',
-  medium: 'pt-16',
-  large: 'pt-24',
-  xlarge: 'pt-32',
+  '3xs': 'pt-3xs',
+  '2xs': 'pt-2xs',
+  xs: 'pt-xs',
+  sm: 'pt-sm',
+  md: 'pt-md',
+  lg: 'pt-lg',
+  xl: 'pt-xl',
+  '2xl': 'pt-2xl',
 }
 
-const paddingBottomClasses = {
+const paddingBottomClasses: Record<SpacingSize, string> = {
   none: '',
-  small: 'pb-8',
-  medium: 'pb-16',
-  large: 'pb-24',
-  xlarge: 'pb-32',
+  '3xs': 'pb-3xs',
+  '2xs': 'pb-2xs',
+  xs: 'pb-xs',
+  sm: 'pb-sm',
+  md: 'pb-md',
+  lg: 'pb-lg',
+  xl: 'pb-xl',
+  '2xl': 'pb-2xl',
 }
 
 const bgColorClasses = {
@@ -51,18 +62,19 @@ const bgPositionClasses = {
 
 export const BlockWrapper: React.FC<BlockWrapperProps> = ({
   children,
+  blockType,
   blockSettings,
   className,
 }) => {
   const paddingTopClass =
     blockSettings?.paddingTop && blockSettings.paddingTop !== null
       ? paddingTopClasses[blockSettings.paddingTop]
-      : paddingTopClasses.medium
+      : paddingTopClasses.md
 
   const paddingBottomClass =
     blockSettings?.paddingBottom && blockSettings.paddingBottom !== null
       ? paddingBottomClasses[blockSettings.paddingBottom]
-      : paddingBottomClasses.medium
+      : paddingBottomClasses.md
 
   const bgColorClass =
     blockSettings?.backgroundColor && blockSettings.backgroundColor !== null
@@ -94,6 +106,7 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
         bgImage && [bgPositionClass, 'bg-cover', 'bg-no-repeat'],
         className,
       )}
+      data-block={blockType}
       style={{
         backgroundImage: bgImage?.url ? `url(${bgImage.url})` : undefined,
       }}

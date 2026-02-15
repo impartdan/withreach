@@ -12,6 +12,33 @@ import { LogoList } from '../../blocks/LogoList/config'
 import { HubspotFormBlock } from '../../blocks/HubspotForm/config'
 import { StatsBlock } from '../../blocks/StatsBlock/config'
 import { TextImageFeature } from '../../blocks/TextImageFeature/config'
+import { InsetDualImage } from '../../blocks/InsetDualImage/config'
+import { InsetCopyImage } from '../../blocks/InsetCopyImage/config'
+import { StatsText } from '../../blocks/StatsText/config'
+import { PageTeaser } from '../../blocks/PageTeaser/config'
+import { Diagram } from '../../blocks/Diagram/config'
+import { TrioTallImageCards } from '../../blocks/TrioTallImageCards/config'
+import { TrioShortImageCards } from '../../blocks/TrioShortImageCards/config'
+import { TrioTextOnlyCards } from '../../blocks/TrioTextOnlyCards/config'
+import { Testimonial } from '../../blocks/Testimonial/config'
+import { ItemHighlights } from '../../blocks/ItemHighlights/config'
+import { FaqCenter } from '../../blocks/FaqCenter/config'
+import { FaqToCall } from '../../blocks/FaqToCall/config'
+import { Checklist } from '../../blocks/Checklist/config'
+import { ImageLeftTextRight } from '../../blocks/ImageLeftTextRight/config'
+import { SimpleContent } from '../../blocks/SimpleContent/config'
+import { IndentedContent } from '../../blocks/IndentedContent/config'
+import { ConsList } from '../../blocks/ConsList/config'
+import { CtaLarge } from '../../blocks/CtaLarge/config'
+import { CtaSmall } from '../../blocks/CtaSmall/config'
+import { Disclaimer } from '../../blocks/Disclaimer/config'
+import { CenterText } from '../../blocks/CenterText/config'
+import { RichTextBlock } from '../../blocks/RichTextBlock/config'
+import { FiftyFifty } from '../../blocks/FiftyFifty/config'
+import { ItemHighlightsWithIntro } from '../../blocks/ItemHighlightsWithIntro/config'
+import { PeopleIndex } from '../../blocks/PeopleIndex/config'
+import { SupportIndex } from '../../blocks/SupportIndex/config'
+import { FormBlock2 } from '../../blocks/FormBlock2/config'
 import { hero } from '@/heros/config'
 import { slugField } from 'payload'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -77,7 +104,45 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Integrations, LogoList, HubspotFormBlock, StatsBlock, TextImageFeature],
+              blocks: [
+                CallToAction,
+                Content,
+                MediaBlock,
+                Archive,
+                FormBlock,
+                Integrations,
+                LogoList,
+                HubspotFormBlock,
+                StatsBlock,
+                TextImageFeature,
+                InsetDualImage,
+                InsetCopyImage,
+                StatsText,
+                PageTeaser,
+                Diagram,
+                TrioTallImageCards,
+                TrioShortImageCards,
+                TrioTextOnlyCards,
+                Testimonial,
+                ItemHighlights,
+                FaqCenter,
+                FaqToCall,
+                Checklist,
+                ImageLeftTextRight,
+                SimpleContent,
+                IndentedContent,
+                ConsList,
+                CtaLarge,
+                CtaSmall,
+                Disclaimer,
+                CenterText,
+                RichTextBlock,
+                FiftyFifty,
+                ItemHighlightsWithIntro,
+                PeopleIndex,
+                SupportIndex,
+                FormBlock2,
+              ],
               required: true,
               admin: {
                 initCollapsed: true,
@@ -111,6 +176,16 @@ export const Pages: CollectionConfig<'pages'> = {
               titlePath: 'meta.title',
               descriptionPath: 'meta.description',
             }),
+            {
+              name: 'noindex',
+              type: 'checkbox',
+              defaultValue: false,
+              label: 'Block search engine indexing',
+              admin: {
+                description:
+                  'When enabled, this page will not appear in search engine results (adds noindex, nofollow meta tag).',
+              },
+            },
           ],
         },
       ],

@@ -70,6 +70,16 @@
   }
 
   :root {
+    /* Responsive spacing tokens (mobile-first) */
+    --spacing-2xl: 80px;
+    --spacing-xl: 60px;
+    --spacing-lg: 48px;
+    --spacing-md: 40px;
+    --spacing-sm: 24px;
+    --spacing-xs: 24px;
+    --spacing-2xs: 16px;
+    --spacing-3xs: 8px;
+
     /* Dark theme is now the only theme */
     --background: 0 0% 0%;
     --foreground: 210 40% 98%;
@@ -104,6 +114,32 @@
     --success: 196 100% 14%;
     --warning: 34 51% 25%;
     --error: 10 39% 43%;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --spacing-2xl: 120px;
+    --spacing-xl: 100px;
+    --spacing-lg: 60px;
+    --spacing-md: 56px;
+    --spacing-sm: 36px;
+    --spacing-xs: 32px;
+    --spacing-2xs: 20px;
+    --spacing-3xs: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --spacing-2xl: 160px;
+    --spacing-xl: 120px;
+    --spacing-lg: 80px;
+    --spacing-md: 64px;
+    --spacing-sm: 40px;
+    --spacing-xs: 32px;
+    --spacing-2xs: 24px;
+    --spacing-3xs: 16px;
   }
 }
 

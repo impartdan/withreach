@@ -74,8 +74,8 @@ export const TextImageFeature: Block = {
       enableBackground: true,
       enableBackgroundImage: true,
       enableBackgroundVideo: true,
-      defaultPaddingTop: 'large',
-      defaultPaddingBottom: 'large',
+      defaultPaddingTop: 'lg',
+      defaultPaddingBottom: 'lg',
     }),
   ],
 }

@@ -160,6 +160,16 @@ export const Posts: CollectionConfig<'posts'> = {
               titlePath: 'meta.title',
               descriptionPath: 'meta.description',
             }),
+            {
+              name: 'noindex',
+              type: 'checkbox',
+              defaultValue: false,
+              label: 'Block search engine indexing',
+              admin: {
+                description:
+                  'When enabled, this post will not appear in search engine results (adds noindex, nofollow meta tag).',
+              },
+            },
           ],
         },
       ],

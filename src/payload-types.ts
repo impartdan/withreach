@@ -231,6 +231,33 @@ export interface Page {
     | HubspotFormBlock
     | StatsBlock
     | TextImageFeatureBlock
+    | InsetDualImageBlock
+    | InsetCopyImageBlock
+    | StatsTextBlock
+    | PageTeaserBlock
+    | DiagramBlock
+    | TrioTallImageCardsBlock
+    | TrioShortImageCardsBlock
+    | TrioTextOnlyCardsBlock
+    | TestimonialBlock
+    | ItemHighlightsBlock
+    | FaqCenterBlock
+    | FaqToCallBlock
+    | ChecklistBlock
+    | ImageLeftTextRightBlock
+    | SimpleContentBlock
+    | IndentedContentBlock
+    | ConsListBlock
+    | CtaLargeBlock
+    | CtaSmallBlock
+    | DisclaimerBlock
+    | CenterTextBlock
+    | RichTextBlockType
+    | FiftyFiftyBlock
+    | ItemHighlightsWithIntroBlock
+    | PeopleIndexBlock
+    | SupportIndexBlock
+    | FormBlock2Type
   )[];
   meta?: {
     title?: string | null;
@@ -239,6 +266,10 @@ export interface Page {
      */
     image?: (number | null) | Media;
     description?: string | null;
+    /**
+     * When enabled, this page will not appear in search engine results (adds noindex, nofollow meta tag).
+     */
+    noindex?: boolean | null;
   };
   publishedAt?: string | null;
   /**
@@ -282,6 +313,10 @@ export interface Post {
      */
     image?: (number | null) | Media;
     description?: string | null;
+    /**
+     * When enabled, this post will not appear in search engine results (adds noindex, nofollow meta tag).
+     */
+    noindex?: boolean | null;
   };
   publishedAt?: string | null;
   authors?: (number | User)[] | null;
@@ -516,8 +551,8 @@ export interface CallToActionBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
-    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
     /**
      * Background image for this block
@@ -583,8 +618,8 @@ export interface ContentBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
-    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
     /**
      * Background image for this block
@@ -644,8 +679,8 @@ export interface ArchiveBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
-    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
     /**
      * Background image for this block
@@ -879,8 +914,8 @@ export interface IntegrationsBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
-    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
     /**
      * Background image for this block
@@ -991,8 +1026,8 @@ export interface LogoListBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
-    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
     /**
      * Background image for this block
@@ -1033,8 +1068,8 @@ export interface HubspotFormBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
-    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
     /**
      * Background image for this block
@@ -1074,8 +1109,8 @@ export interface StatsBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
-    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
     /**
      * Background image for this block
@@ -1153,8 +1188,8 @@ export interface TextImageFeatureBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    paddingTop?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
-    paddingBottom?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
     /**
      * Background image for this block
@@ -1169,6 +1204,1490 @@ export interface TextImageFeatureBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'textImageFeature';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "InsetDualImageBlock".
+ */
+export interface InsetDualImageBlock {
+  /**
+   * Main heading for the section
+   */
+  heading: string;
+  /**
+   * Description text below the heading
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Add exactly 2 images to display side by side
+   */
+  images: {
+    image: number | Media;
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Background video for this block (takes precedence over image)
+     */
+    backgroundVideo?: (number | null) | Media;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'insetDualImage';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "InsetCopyImageBlock".
+ */
+export interface InsetCopyImageBlock {
+  /**
+   * Main heading for the section
+   */
+  heading: string;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Add images to display in a collage alongside the text
+   */
+  images: {
+    image: number | Media;
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Background video for this block (takes precedence over image)
+     */
+    backgroundVideo?: (number | null) | Media;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'insetCopyImage';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StatsTextBlock".
+ */
+export interface StatsTextBlock {
+  stats: {
+    /**
+     * The stat value (e.g. "200+", "$XXM")
+     */
+    value: string;
+    /**
+     * The stat label (e.g. "Markets")
+     */
+    label: string;
+    id?: string | null;
+  }[];
+  /**
+   * Main heading displayed next to the stats
+   */
+  heading: string;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'statsText';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PageTeaserBlock".
+ */
+export interface PageTeaserBlock {
+  /**
+   * Main heading for the teaser
+   */
+  heading: string;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Illustration or image displayed on the right side
+   */
+  image?: (number | null) | Media;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'pageTeaser';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DiagramBlock".
+ */
+export interface DiagramBlock {
+  /**
+   * Main heading above the diagram
+   */
+  heading: string;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Diagram or illustration image
+   */
+  image: number | Media;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'diagram';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TrioTallImageCardsBlock".
+ */
+export interface TrioTallImageCardsBlock {
+  heading: string;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  cards: {
+    image: number | Media;
+    title: string;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Optional link URL for the card
+     */
+    link?: string | null;
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'trioTallImageCards';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TrioShortImageCardsBlock".
+ */
+export interface TrioShortImageCardsBlock {
+  heading: string;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  cards: {
+    image: number | Media;
+    title: string;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Optional link for this card
+     */
+    link: {
+      type?: ('reference' | 'custom') | null;
+      newTab?: boolean | null;
+      reference?:
+        | ({
+            relationTo: 'pages';
+            value: number | Page;
+          } | null)
+        | ({
+            relationTo: 'posts';
+            value: number | Post;
+          } | null);
+      url?: string | null;
+      label: string;
+    };
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'trioShortImageCards';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TrioTextOnlyCardsBlock".
+ */
+export interface TrioTextOnlyCardsBlock {
+  cards: {
+    /**
+     * Card heading (e.g. "Keep your roadmap")
+     */
+    title: string;
+    /**
+     * Highlighted subtitle text (shown in gold/accent color)
+     */
+    subtitle?: string | null;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Optional link for this card
+     */
+    link: {
+      type?: ('reference' | 'custom') | null;
+      newTab?: boolean | null;
+      reference?:
+        | ({
+            relationTo: 'pages';
+            value: number | Page;
+          } | null)
+        | ({
+            relationTo: 'posts';
+            value: number | Post;
+          } | null);
+      url?: string | null;
+      label: string;
+    };
+    /**
+     * Card style variant
+     */
+    style?: ('light' | 'dark') | null;
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'trioTextOnlyCards';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialBlock".
+ */
+export interface TestimonialBlock {
+  /**
+   * Video or image for the testimonial (supports video with play button overlay)
+   */
+  media: number | Media;
+  /**
+   * Company logo displayed above the quote
+   */
+  companyLogo?: (number | null) | Media;
+  /**
+   * The testimonial quote text
+   */
+  quote: string;
+  /**
+   * Name of the person giving the testimonial
+   */
+  authorName: string;
+  /**
+   * Job title and company of the author
+   */
+  authorTitle?: string | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'testimonial';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ItemHighlightsBlock".
+ */
+export interface ItemHighlightsBlock {
+  heading: string;
+  columns?: ('3' | '4') | null;
+  items: {
+    /**
+     * Icon for this highlight item
+     */
+    icon?: (number | null) | Media;
+    title: string;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'itemHighlights';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FaqCenterBlock".
+ */
+export interface FaqCenterBlock {
+  /**
+   * Small label text above the heading
+   */
+  label?: string | null;
+  heading: string;
+  /**
+   * Short description below the heading
+   */
+  description?: string | null;
+  faqs: {
+    question: string;
+    answer: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'faqCenter';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FaqToCallBlock".
+ */
+export interface FaqToCallBlock {
+  heading: string;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Illustration displayed below the text on the left side
+   */
+  image?: (number | null) | Media;
+  faqs: {
+    question: string;
+    answer: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'faqToCall';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ChecklistBlock".
+ */
+export interface ChecklistBlock {
+  heading: string;
+  items: {
+    title: string;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'checklist';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ImageLeftTextRightBlock".
+ */
+export interface ImageLeftTextRightBlock {
+  heading: string;
+  /**
+   * Images displayed on the left side
+   */
+  images?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  items: {
+    title: string;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'imageLeftTextRight';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SimpleContentBlock".
+ */
+export interface SimpleContentBlock {
+  heading: string;
+  items: {
+    title: string;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    id?: string | null;
+  }[];
+  /**
+   * Optional images displayed on the right side
+   */
+  images?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'simpleContent';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "IndentedContentBlock".
+ */
+export interface IndentedContentBlock {
+  heading: string;
+  /**
+   * Brief description text below the heading
+   */
+  description?: string | null;
+  /**
+   * Content with bullet points, lists, etc.
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Optional logos or icons displayed on the right
+   */
+  images?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'indentedContent';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ConsListBlock".
+ */
+export interface ConsListBlock {
+  /**
+   * Main heading above the two columns
+   */
+  heading: string;
+  /**
+   * Heading for the cons/problems column (e.g. "Incorrect tax handling leads to:")
+   */
+  consHeading: string;
+  consItems: {
+    text: string;
+    id?: string | null;
+  }[];
+  /**
+   * Text for the solution/positive column on the right
+   */
+  solutionText: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'consList';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CtaLargeBlock".
+ */
+export interface CtaLargeBlock {
+  /**
+   * Small label text above the heading (e.g. "Connect with us")
+   */
+  label?: string | null;
+  heading: string;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ctaLarge';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CtaSmallBlock".
+ */
+export interface CtaSmallBlock {
+  cards: {
+    heading: string;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    link: {
+      type?: ('reference' | 'custom') | null;
+      newTab?: boolean | null;
+      reference?:
+        | ({
+            relationTo: 'pages';
+            value: number | Page;
+          } | null)
+        | ({
+            relationTo: 'posts';
+            value: number | Post;
+          } | null);
+      url?: string | null;
+      label: string;
+      /**
+       * Choose how the link should be rendered.
+       */
+      appearance?: ('default' | 'outline') | null;
+    };
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ctaSmall';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DisclaimerBlock".
+ */
+export interface DisclaimerBlock {
+  /**
+   * Label text displayed on the left (e.g. "Fine print / Disclaimer:")
+   */
+  label: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'disclaimer';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CenterTextBlock".
+ */
+export interface CenterTextBlock {
+  /**
+   * Rich text content with headings, paragraphs, lists, bold, etc.
+   */
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'centerText';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RichTextBlockType".
+ */
+export interface RichTextBlockType {
+  /**
+   * Long-form rich text content for pages like privacy policies, terms of service, etc.
+   */
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'richTextBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FiftyFiftyBlock".
+ */
+export interface FiftyFiftyBlock {
+  heading: string;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Image or screenshot displayed on the opposite side of the text
+   */
+  image: number | Media;
+  layout?: ('textLeft' | 'imageLeft') | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'fiftyFifty';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ItemHighlightsWithIntroBlock".
+ */
+export interface ItemHighlightsWithIntroBlock {
+  heading: string;
+  /**
+   * Short description below the heading
+   */
+  description?: string | null;
+  items: {
+    /**
+     * Icon for this item
+     */
+    icon?: (number | null) | Media;
+    title: string;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Optional link for this item
+     */
+    link: {
+      type?: ('reference' | 'custom') | null;
+      newTab?: boolean | null;
+      reference?:
+        | ({
+            relationTo: 'pages';
+            value: number | Page;
+          } | null)
+        | ({
+            relationTo: 'posts';
+            value: number | Post;
+          } | null);
+      url?: string | null;
+      label: string;
+    };
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'itemHighlightsWithIntro';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PeopleIndexBlock".
+ */
+export interface PeopleIndexBlock {
+  heading: string;
+  people: {
+    photo: number | Media;
+    name: string;
+    /**
+     * Job title and/or team (e.g. "Senior Engineer / Platform")
+     */
+    title?: string | null;
+    /**
+     * LinkedIn profile URL
+     */
+    linkedinUrl?: string | null;
+    id?: string | null;
+  }[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'peopleIndex';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SupportIndexBlock".
+ */
+export interface SupportIndexBlock {
+  heading: string;
+  cards: {
+    title: string;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    /**
+     * Link for this resource card
+     */
+    link: {
+      type?: ('reference' | 'custom') | null;
+      newTab?: boolean | null;
+      reference?:
+        | ({
+            relationTo: 'pages';
+            value: number | Page;
+          } | null)
+        | ({
+            relationTo: 'posts';
+            value: number | Post;
+          } | null);
+      url?: string | null;
+      label: string;
+    };
+    id?: string | null;
+  }[];
+  /**
+   * Optional content displayed below the cards (e.g. contact info, addresses)
+   */
+  footerContent?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'supportIndex';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FormBlock2Type".
+ */
+export interface FormBlock2Type {
+  /**
+   * Heading above the form
+   */
+  heading: string;
+  /**
+   * Optional text displayed below the heading
+   */
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Select the form to display
+   */
+  form: number | Form;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    /**
+     * Background image for this block
+     */
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'formBlock2';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1493,6 +3012,33 @@ export interface PagesSelect<T extends boolean = true> {
         hubspotForm?: T | HubspotFormBlockSelect<T>;
         statsBlock?: T | StatsBlockSelect<T>;
         textImageFeature?: T | TextImageFeatureBlockSelect<T>;
+        insetDualImage?: T | InsetDualImageBlockSelect<T>;
+        insetCopyImage?: T | InsetCopyImageBlockSelect<T>;
+        statsText?: T | StatsTextBlockSelect<T>;
+        pageTeaser?: T | PageTeaserBlockSelect<T>;
+        diagram?: T | DiagramBlockSelect<T>;
+        trioTallImageCards?: T | TrioTallImageCardsBlockSelect<T>;
+        trioShortImageCards?: T | TrioShortImageCardsBlockSelect<T>;
+        trioTextOnlyCards?: T | TrioTextOnlyCardsBlockSelect<T>;
+        testimonial?: T | TestimonialBlockSelect<T>;
+        itemHighlights?: T | ItemHighlightsBlockSelect<T>;
+        faqCenter?: T | FaqCenterBlockSelect<T>;
+        faqToCall?: T | FaqToCallBlockSelect<T>;
+        checklist?: T | ChecklistBlockSelect<T>;
+        imageLeftTextRight?: T | ImageLeftTextRightBlockSelect<T>;
+        simpleContent?: T | SimpleContentBlockSelect<T>;
+        indentedContent?: T | IndentedContentBlockSelect<T>;
+        consList?: T | ConsListBlockSelect<T>;
+        ctaLarge?: T | CtaLargeBlockSelect<T>;
+        ctaSmall?: T | CtaSmallBlockSelect<T>;
+        disclaimer?: T | DisclaimerBlockSelect<T>;
+        centerText?: T | CenterTextBlockSelect<T>;
+        richTextBlock?: T | RichTextBlockTypeSelect<T>;
+        fiftyFifty?: T | FiftyFiftyBlockSelect<T>;
+        itemHighlightsWithIntro?: T | ItemHighlightsWithIntroBlockSelect<T>;
+        peopleIndex?: T | PeopleIndexBlockSelect<T>;
+        supportIndex?: T | SupportIndexBlockSelect<T>;
+        formBlock2?: T | FormBlock2TypeSelect<T>;
       };
   meta?:
     | T
@@ -1500,6 +3046,7 @@ export interface PagesSelect<T extends boolean = true> {
         title?: T;
         image?: T;
         description?: T;
+        noindex?: T;
       };
   publishedAt?: T;
   generateSlug?: T;
@@ -1761,6 +3308,804 @@ export interface TextImageFeatureBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "InsetDualImageBlock_select".
+ */
+export interface InsetDualImageBlockSelect<T extends boolean = true> {
+  heading?: T;
+  content?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "InsetCopyImageBlock_select".
+ */
+export interface InsetCopyImageBlockSelect<T extends boolean = true> {
+  heading?: T;
+  content?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StatsTextBlock_select".
+ */
+export interface StatsTextBlockSelect<T extends boolean = true> {
+  stats?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  heading?: T;
+  content?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PageTeaserBlock_select".
+ */
+export interface PageTeaserBlockSelect<T extends boolean = true> {
+  heading?: T;
+  content?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  image?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DiagramBlock_select".
+ */
+export interface DiagramBlockSelect<T extends boolean = true> {
+  heading?: T;
+  content?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  image?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TrioTallImageCardsBlock_select".
+ */
+export interface TrioTallImageCardsBlockSelect<T extends boolean = true> {
+  heading?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  cards?:
+    | T
+    | {
+        image?: T;
+        title?: T;
+        description?: T;
+        link?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TrioShortImageCardsBlock_select".
+ */
+export interface TrioShortImageCardsBlockSelect<T extends boolean = true> {
+  heading?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  cards?:
+    | T
+    | {
+        image?: T;
+        title?: T;
+        description?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TrioTextOnlyCardsBlock_select".
+ */
+export interface TrioTextOnlyCardsBlockSelect<T extends boolean = true> {
+  cards?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        description?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        style?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialBlock_select".
+ */
+export interface TestimonialBlockSelect<T extends boolean = true> {
+  media?: T;
+  companyLogo?: T;
+  quote?: T;
+  authorName?: T;
+  authorTitle?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ItemHighlightsBlock_select".
+ */
+export interface ItemHighlightsBlockSelect<T extends boolean = true> {
+  heading?: T;
+  columns?: T;
+  items?:
+    | T
+    | {
+        icon?: T;
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FaqCenterBlock_select".
+ */
+export interface FaqCenterBlockSelect<T extends boolean = true> {
+  label?: T;
+  heading?: T;
+  description?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FaqToCallBlock_select".
+ */
+export interface FaqToCallBlockSelect<T extends boolean = true> {
+  heading?: T;
+  content?: T;
+  image?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ChecklistBlock_select".
+ */
+export interface ChecklistBlockSelect<T extends boolean = true> {
+  heading?: T;
+  items?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ImageLeftTextRightBlock_select".
+ */
+export interface ImageLeftTextRightBlockSelect<T extends boolean = true> {
+  heading?: T;
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  items?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SimpleContentBlock_select".
+ */
+export interface SimpleContentBlockSelect<T extends boolean = true> {
+  heading?: T;
+  items?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "IndentedContentBlock_select".
+ */
+export interface IndentedContentBlockSelect<T extends boolean = true> {
+  heading?: T;
+  description?: T;
+  content?: T;
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ConsListBlock_select".
+ */
+export interface ConsListBlockSelect<T extends boolean = true> {
+  heading?: T;
+  consHeading?: T;
+  consItems?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  solutionText?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CtaLargeBlock_select".
+ */
+export interface CtaLargeBlockSelect<T extends boolean = true> {
+  label?: T;
+  heading?: T;
+  content?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CtaSmallBlock_select".
+ */
+export interface CtaSmallBlockSelect<T extends boolean = true> {
+  cards?:
+    | T
+    | {
+        heading?: T;
+        description?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DisclaimerBlock_select".
+ */
+export interface DisclaimerBlockSelect<T extends boolean = true> {
+  label?: T;
+  content?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CenterTextBlock_select".
+ */
+export interface CenterTextBlockSelect<T extends boolean = true> {
+  content?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RichTextBlockType_select".
+ */
+export interface RichTextBlockTypeSelect<T extends boolean = true> {
+  content?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FiftyFiftyBlock_select".
+ */
+export interface FiftyFiftyBlockSelect<T extends boolean = true> {
+  heading?: T;
+  content?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  image?: T;
+  layout?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ItemHighlightsWithIntroBlock_select".
+ */
+export interface ItemHighlightsWithIntroBlockSelect<T extends boolean = true> {
+  heading?: T;
+  description?: T;
+  items?:
+    | T
+    | {
+        icon?: T;
+        title?: T;
+        description?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PeopleIndexBlock_select".
+ */
+export interface PeopleIndexBlockSelect<T extends boolean = true> {
+  heading?: T;
+  people?:
+    | T
+    | {
+        photo?: T;
+        name?: T;
+        title?: T;
+        linkedinUrl?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SupportIndexBlock_select".
+ */
+export interface SupportIndexBlockSelect<T extends boolean = true> {
+  heading?: T;
+  cards?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  footerContent?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FormBlock2Type_select".
+ */
+export interface FormBlock2TypeSelect<T extends boolean = true> {
+  heading?: T;
+  description?: T;
+  form?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts_select".
  */
 export interface PostsSelect<T extends boolean = true> {
@@ -1775,6 +4120,7 @@ export interface PostsSelect<T extends boolean = true> {
         title?: T;
         image?: T;
         description?: T;
+        noindex?: T;
       };
   publishedAt?: T;
   authors?: T;

@@ -13,6 +13,7 @@ import {
   StrikethroughFeature,
   type LinkFields,
 } from '@payloadcms/richtext-lexical'
+import { TypographyFeature } from '@/lexical/typography/feature.server'
 
 export const defaultLexical = lexicalEditor({
   features: [
@@ -20,6 +21,7 @@ export const defaultLexical = lexicalEditor({
     HeadingFeature({
       enabledHeadingSizes: ['h2', 'h3', 'h4'],
     }),
+    TypographyFeature(),
     BoldFeature(),
     ItalicFeature(),
     UnderlineFeature(),
