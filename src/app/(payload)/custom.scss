@@ -1,0 +1,41 @@
+/* Custom fonts for the Payload admin panel editor previews */
+
+@font-face {
+  font-family: 'Season Mix';
+  src:
+    url('/fonts/SeasonMixVF.woff2') format('woff2-variations'),
+    url('/fonts/SeasonMixVF.woff') format('woff-variations');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Season Mix';
+  src:
+    url('/fonts/SeasonMixItalicsVF.woff2') format('woff2-variations'),
+    url('/fonts/SeasonMixItalicsVF.woff') format('woff-variations');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Season Sans';
+  src:
+    url('/fonts/SeasonSansVF.woff2') format('woff2-variations'),
+    url('/fonts/SeasonSansVF.woff') format('woff-variations');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Season Sans';
+  src:
+    url('/fonts/SeasonSansItalicsVF.woff2') format('woff2-variations'),
+    url('/fonts/SeasonSansItalicsVF.woff') format('woff-variations');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}

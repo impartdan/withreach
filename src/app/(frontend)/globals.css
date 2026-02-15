@@ -5,8 +5,9 @@
 /* Season Fonts - Variable Font Declarations */
 @font-face {
   font-family: 'Season Mix';
-  src: url('/fonts/SeasonMixVF.woff2') format('woff2-variations'),
-       url('/fonts/SeasonMixVF.woff') format('woff-variations');
+  src:
+    url('/fonts/SeasonMixVF.woff2') format('woff2-variations'),
+    url('/fonts/SeasonMixVF.woff') format('woff-variations');
   font-weight: 300 900;
   font-style: normal;
   font-display: swap;
@@ -14,8 +15,9 @@
 
 @font-face {
   font-family: 'Season Mix';
-  src: url('/fonts/SeasonMixItalicsVF.woff2') format('woff2-variations'),
-       url('/fonts/SeasonMixItalicsVF.woff') format('woff-variations');
+  src:
+    url('/fonts/SeasonMixItalicsVF.woff2') format('woff2-variations'),
+    url('/fonts/SeasonMixItalicsVF.woff') format('woff-variations');
   font-weight: 300 900;
   font-style: italic;
   font-display: swap;
@@ -23,8 +25,9 @@
 
 @font-face {
   font-family: 'Season Sans';
-  src: url('/fonts/SeasonSansVF.woff2') format('woff2-variations'),
-       url('/fonts/SeasonSansVF.woff') format('woff-variations');
+  src:
+    url('/fonts/SeasonSansVF.woff2') format('woff2-variations'),
+    url('/fonts/SeasonSansVF.woff') format('woff-variations');
   font-weight: 300 900;
   font-style: normal;
   font-display: swap;
@@ -32,8 +35,9 @@
 
 @font-face {
   font-family: 'Season Sans';
-  src: url('/fonts/SeasonSansItalicsVF.woff2') format('woff2-variations'),
-       url('/fonts/SeasonSansItalicsVF.woff') format('woff-variations');
+  src:
+    url('/fonts/SeasonSansItalicsVF.woff2') format('woff2-variations'),
+    url('/fonts/SeasonSansItalicsVF.woff') format('woff-variations');
   font-weight: 300 900;
   font-style: italic;
   font-display: swap;
@@ -41,8 +45,9 @@
 
 @font-face {
   font-family: 'Season Serif';
-  src: url('/fonts/SeasonSerifVF.woff2') format('woff2-variations'),
-       url('/fonts/SeasonSerifVF.woff') format('woff-variations');
+  src:
+    url('/fonts/SeasonSerifVF.woff2') format('woff2-variations'),
+    url('/fonts/SeasonSerifVF.woff') format('woff-variations');
   font-weight: 300 900;
   font-style: normal;
   font-display: swap;
@@ -50,8 +55,9 @@
 
 @font-face {
   font-family: 'Season Serif';
-  src: url('/fonts/SeasonSerifItalicsVF.woff2') format('woff2-variations'),
-       url('/fonts/SeasonSerifItalicsVF.woff') format('woff-variations');
+  src:
+    url('/fonts/SeasonSerifItalicsVF.woff2') format('woff2-variations'),
+    url('/fonts/SeasonSerifItalicsVF.woff') format('woff-variations');
   font-weight: 300 900;
   font-style: italic;
   font-display: swap;
@@ -148,7 +154,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-white text-brand-black min-h-[100vh] flex flex-col font-sans;
+    @apply bg-brand-off-white text-brand-black min-h-[100vh] flex flex-col font-sans;
   }
   .header-offset {
     @apply pt-[116px];
