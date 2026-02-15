@@ -8,7 +8,7 @@ import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
-export const FullscreenHero: React.FC<Page['hero']> = ({ links, media, richText, video }) => {
+export const HomeHero: React.FC<Page['hero']> = ({ links, media, richText, video }) => {
   return (
     <div className="relative flex items-center justify-center bg-brand-black text-white min-h-screen header-offset">
       <div className="container z-10 relative flex items-center justify-center">

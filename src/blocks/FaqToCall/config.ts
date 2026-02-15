@@ -13,8 +13,8 @@ export const FaqToCall: Block = {
   imageAltText: 'FAQ accordion with heading and illustration on the left',
   interfaceName: 'FaqToCallBlock',
   labels: {
-    singular: 'FAQ To Call',
-    plural: 'FAQ To Calls',
+    singular: 'FAQ Two Column',
+    plural: 'FAQ Two Columns',
   },
   fields: [
     {

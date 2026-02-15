@@ -143,7 +143,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 SupportIndex,
                 FormBlock2,
               ],
-              required: true,
+              required: false,
               admin: {
                 initCollapsed: true,
               },

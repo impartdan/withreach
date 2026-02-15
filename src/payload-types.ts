@@ -162,7 +162,7 @@ export interface Page {
   id: number;
   title: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'fullscreen' | 'textAndImage' | 'backgroundImage';
+    type: 'none' | 'homeHero' | 'solutionsHero' | 'partnerHero' | 'textHero' | 'supportHero';
     richText?: {
       root: {
         type: string;
@@ -204,7 +204,8 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
     video?: (number | null) | Media;
-    rightText?: {
+    featureImage?: (number | null) | Media;
+    featureContent?: {
       root: {
         type: string;
         children: {
@@ -219,46 +220,61 @@ export interface Page {
       };
       [k: string]: unknown;
     } | null;
+    partnerCards?:
+      | {
+          image: number | Media;
+          badge: string;
+          title: string;
+          description?: string | null;
+          link?: string | null;
+          linkUrl?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    logoOne?: (number | null) | Media;
+    logoTwo?: (number | null) | Media;
   };
-  layout: (
-    | CallToActionBlock
-    | ContentBlock
-    | MediaBlock
-    | ArchiveBlock
-    | FormBlock
-    | IntegrationsBlock
-    | LogoListBlock
-    | HubspotFormBlock
-    | StatsBlock
-    | TextImageFeatureBlock
-    | InsetDualImageBlock
-    | InsetCopyImageBlock
-    | StatsTextBlock
-    | PageTeaserBlock
-    | DiagramBlock
-    | TrioTallImageCardsBlock
-    | TrioShortImageCardsBlock
-    | TrioTextOnlyCardsBlock
-    | TestimonialBlock
-    | ItemHighlightsBlock
-    | FaqCenterBlock
-    | FaqToCallBlock
-    | ChecklistBlock
-    | ImageLeftTextRightBlock
-    | SimpleContentBlock
-    | IndentedContentBlock
-    | ConsListBlock
-    | CtaLargeBlock
-    | CtaSmallBlock
-    | DisclaimerBlock
-    | CenterTextBlock
-    | RichTextBlockType
-    | FiftyFiftyBlock
-    | ItemHighlightsWithIntroBlock
-    | PeopleIndexBlock
-    | SupportIndexBlock
-    | FormBlock2Type
-  )[];
+  layout?:
+    | (
+        | CallToActionBlock
+        | ContentBlock
+        | MediaBlock
+        | ArchiveBlock
+        | FormBlock
+        | IntegrationsBlock
+        | LogoListBlock
+        | HubspotFormBlock
+        | StatsBlock
+        | TextImageFeatureBlock
+        | InsetDualImageBlock
+        | InsetCopyImageBlock
+        | StatsTextBlock
+        | PageTeaserBlock
+        | DiagramBlock
+        | TrioTallImageCardsBlock
+        | TrioShortImageCardsBlock
+        | TrioTextOnlyCardsBlock
+        | TestimonialBlock
+        | ItemHighlightsBlock
+        | FaqCenterBlock
+        | FaqToCallBlock
+        | ChecklistBlock
+        | ImageLeftTextRightBlock
+        | SimpleContentBlock
+        | IndentedContentBlock
+        | ConsListBlock
+        | CtaLargeBlock
+        | CtaSmallBlock
+        | DisclaimerBlock
+        | CenterTextBlock
+        | RichTextBlockType
+        | FiftyFiftyBlock
+        | ItemHighlightsWithIntroBlock
+        | PeopleIndexBlock
+        | SupportIndexBlock
+        | FormBlock2Type
+      )[]
+    | null;
   meta?: {
     title?: string | null;
     /**
@@ -2997,7 +3013,21 @@ export interface PagesSelect<T extends boolean = true> {
             };
         media?: T;
         video?: T;
-        rightText?: T;
+        featureImage?: T;
+        featureContent?: T;
+        partnerCards?:
+          | T
+          | {
+              image?: T;
+              badge?: T;
+              title?: T;
+              description?: T;
+              link?: T;
+              linkUrl?: T;
+              id?: T;
+            };
+        logoOne?: T;
+        logoTwo?: T;
       };
   layout?:
     | T

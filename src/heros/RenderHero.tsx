@@ -2,20 +2,18 @@ import React from 'react'
 
 import type { Page } from '@/payload-types'
 
-import { BackgroundImageHero } from '@/heros/BackgroundImage'
-import { FullscreenHero } from '@/heros/Fullscreen'
-import { HighImpactHero } from '@/heros/HighImpact'
-import { LowImpactHero } from '@/heros/LowImpact'
-import { MediumImpactHero } from '@/heros/MediumImpact'
-import { TextAndImageHero } from '@/heros/TextAndImage'
+import { HomeHero } from '@/heros/HomeHero'
+import { PartnerHero } from '@/heros/PartnerHero'
+import { SolutionsHero } from '@/heros/SolutionsHero'
+import { SupportHero } from '@/heros/SupportHero'
+import { TextHero } from '@/heros/TextHero'
 
 const heroes = {
-  backgroundImage: BackgroundImageHero,
-  fullscreen: FullscreenHero,
-  highImpact: HighImpactHero,
-  lowImpact: LowImpactHero,
-  mediumImpact: MediumImpactHero,
-  textAndImage: TextAndImageHero,
+  homeHero: HomeHero,
+  solutionsHero: SolutionsHero,
+  partnerHero: PartnerHero,
+  textHero: TextHero,
+  supportHero: SupportHero,
 }
 
 export const RenderHero: React.FC<Page['hero']> = (props) => {

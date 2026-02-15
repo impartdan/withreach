@@ -3,6 +3,7 @@ import * as migration_20260111_230934 from './20260111_230934';
 import * as migration_20260112_010500 from './20260112_010500';
 import * as migration_20260112_074700 from './20260112_074700';
 import * as migration_20260214_migrate_spacing_enums from './20260214_migrate_spacing_enums';
+import * as migration_20260215_migrate_hero_types from './20260215_migrate_hero_types';
 
 export const migrations = [
   {
@@ -29,5 +30,10 @@ export const migrations = [
     up: migration_20260214_migrate_spacing_enums.up,
     down: migration_20260214_migrate_spacing_enums.down,
     name: '20260214_migrate_spacing_enums'
+  },
+  {
+    up: migration_20260215_migrate_hero_types.up,
+    down: migration_20260215_migrate_hero_types.down,
+    name: '20260215_migrate_hero_types'
   },
 ];
