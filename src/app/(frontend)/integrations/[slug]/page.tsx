@@ -6,6 +6,7 @@ import React, { cache } from 'react'
 import { notFound, redirect } from 'next/navigation'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
+import type { Integration } from '@/payload-types'
 import { generateMeta } from '@/utilities/generateMeta'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
 import { RelatedIntegrationsClient } from './RelatedIntegrations.client'
@@ -261,7 +262,7 @@ async function getFeaturedIntegrationIds(): Promise<(string | number)[]> {
       for (const block of page.layout) {
         if (block.blockType === 'integrations' && block.selectedIntegrations) {
           const selectedIds = block.selectedIntegrations
-            .map((integration: any) => {
+            .map((integration: number | Integration) => {
               if (typeof integration === 'object' && integration !== null) {
                 return integration.id
               }
