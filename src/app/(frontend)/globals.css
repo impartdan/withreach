@@ -161,8 +161,14 @@
   }
 }
 
-header {
-  view-transition-name: header;
+@import 'wysiwyg.css';
+
+/* View transition for the header content layer (applied via Tailwind
+   arbitrary property on a sibling of the blur layer so backdrop-filter
+   is not broken by the isolated stacking context). */
+::view-transition-old(header),
+::view-transition-new(header) {
+  animation: none;
 }
 
 #vt-main {

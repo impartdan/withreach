@@ -7,22 +7,13 @@ import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import Link from 'next/link'
 
-export const PartnerHero: React.FC<Page['hero']> = ({
-  media,
-  richText,
-  partnerCards,
-}) => {
+export const PartnerHero: React.FC<Page['hero']> = ({ media, richText, partnerCards }) => {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden header-offset">
+    <div className="relative w-full md:min-h-[536px] overflow-hidden header-offset">
       {/* Background image with blur + overlay */}
       {media && typeof media === 'object' && (
         <div className="absolute inset-0">
-          <Media
-            fill
-            imgClassName="object-cover"
-            priority
-            resource={media}
-          />
+          <Media fill imgClassName="object-cover" priority resource={media} />
           <div className="absolute inset-0 bg-black/20" />
           <div className="absolute inset-0 backdrop-blur-[17px] bg-white/[0.01]" />
         </div>
@@ -33,7 +24,7 @@ export const PartnerHero: React.FC<Page['hero']> = ({
         {/* Heading + subtitle */}
         {richText && (
           <div className="container text-center text-white max-w-[922px]">
-            <RichText data={richText} enableGutter={false} />
+            <RichText data={richText} enableGutter={false} className="space-y-10 text-pretty" />
           </div>
         )}
 
@@ -48,11 +39,7 @@ export const PartnerHero: React.FC<Page['hero']> = ({
                 {/* Card image */}
                 {card.image && typeof card.image === 'object' && (
                   <div className="relative h-[264px] rounded-lg overflow-hidden">
-                    <Media
-                      fill
-                      imgClassName="object-cover"
-                      resource={card.image}
-                    />
+                    <Media fill imgClassName="object-cover" resource={card.image} />
                   </div>
                 )}
 

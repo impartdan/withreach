@@ -13,9 +13,9 @@ export const HomeHero: React.FC<Page['hero']> = ({ links, media, richText, video
     <div className="relative flex items-center justify-center bg-brand-black text-white min-h-screen header-offset">
       <div className="container z-10 relative flex items-center justify-center">
         <RevealOnScroll variant="slideUp">
-          <div className="max-w-[36.5rem] md:text-center">
+          <div className="max-w-3xl md:text-center space-y-6">
             {richText && (
-              <RichText className="mb-6 text-balance" data={richText} enableGutter={false} />
+              <RichText className=" wysiwyg text-balance" data={richText} enableGutter={false} />
             )}
             {Array.isArray(links) && links.length > 0 && (
               <ul className="flex md:justify-center gap-4">

@@ -13,18 +13,19 @@ import {
 } from 'lexical'
 
 export type TypographyStyle =
-  | 'type-display-xxl'
+  | 'type-display-hero-a'
+  | 'type-display-hero-b'
   | 'type-display-xl'
   | 'type-display-lg'
   | 'type-display-md'
   | 'type-display-sm'
   | 'type-display-xs'
-  | 'type-display-xxs'
-  | 'type-body-lg'
+  | 'type-intro'
+  | 'type-micro'
+  | 'type-micro-b'
   | 'type-body'
-  | 'type-button-lg'
   | 'type-button'
-  | 'type-navigation'
+  | 'type-eyebrow'
 
 /**
  * Inline style previews for the editor so users can see the visual
@@ -32,12 +33,19 @@ export type TypographyStyle =
  * These mirror the base (mobile) values from tailwind.typography.mjs.
  */
 const TYPOGRAPHY_PREVIEW_STYLES: Record<TypographyStyle, Record<string, string>> = {
-  'type-display-xxl': {
-    fontSize: '80px',
+  'type-display-hero-a': {
+    fontSize: '64px',
     lineHeight: '0.9',
     letterSpacing: '-0.03em',
     fontFamily: 'Season Mix, sans-serif',
     fontWeight: 'normal',
+  },
+  'type-display-hero-b': {
+    fontSize: '64px',
+    lineHeight: '0.9',
+    letterSpacing: '-0.03em',
+    fontFamily: 'Season Sans, sans-serif',
+    fontWeight: '300',
   },
   'type-display-xl': {
     fontSize: '72px',
@@ -72,15 +80,21 @@ const TYPOGRAPHY_PREVIEW_STYLES: Record<TypographyStyle, Record<string, string>>
     fontWeight: '500',
     fontFamily: 'Season Sans, sans-serif',
   },
-  'type-display-xxs': {
-    fontSize: '18px',
+  'type-intro': {
+    fontSize: '20px',
     lineHeight: '1.3',
-    fontWeight: '500',
+    fontWeight: 'bold',
     fontFamily: 'Season Sans, sans-serif',
   },
-  'type-body-lg': {
-    fontSize: '20px',
-    lineHeight: '1.4',
+  'type-micro': {
+    fontSize: '16px',
+    lineHeight: '1.3',
+    fontWeight: '400',
+    fontFamily: 'Season Sans, sans-serif',
+  },
+  'type-micro-b': {
+    fontSize: '16px',
+    lineHeight: '1.3',
     fontWeight: '500',
     fontFamily: 'Season Sans, sans-serif',
   },
@@ -90,22 +104,16 @@ const TYPOGRAPHY_PREVIEW_STYLES: Record<TypographyStyle, Record<string, string>>
     fontWeight: '500',
     fontFamily: 'Season Sans, sans-serif',
   },
-  'type-button-lg': {
-    fontSize: '18px',
-    lineHeight: '1.3',
-    fontWeight: '600',
-    fontFamily: 'Season Sans, sans-serif',
-  },
   'type-button': {
     fontSize: '16px',
     lineHeight: '1.3',
     fontWeight: '600',
     fontFamily: 'Season Sans, sans-serif',
   },
-  'type-navigation': {
-    fontSize: '16px',
-    lineHeight: '1.3',
-    fontWeight: '500',
+  'type-eyebrow': {
+    fontSize: '18px',
+    lineHeight: '1.2',
+    fontWeight: '600',
     fontFamily: 'Season Sans, sans-serif',
   },
 }
@@ -234,9 +242,7 @@ export class TypographyStyleNode extends ElementNode {
   }
 }
 
-export function $createTypographyStyleNode(
-  typographyStyle: TypographyStyle,
-): TypographyStyleNode {
+export function $createTypographyStyleNode(typographyStyle: TypographyStyle): TypographyStyleNode {
   return $applyNodeReplacement(new TypographyStyleNode(typographyStyle))
 }
 

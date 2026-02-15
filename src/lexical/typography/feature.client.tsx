@@ -21,18 +21,19 @@ const TYPOGRAPHY_STYLES: Array<{
   key: TypographyStyle
   label: string
 }> = [
-  { key: 'type-display-xxl', label: 'Display XXL' },
+  { key: 'type-display-hero-a', label: 'Display Hero A' },
+  { key: 'type-display-hero-b', label: 'Display Hero B' },
   { key: 'type-display-xl', label: 'Display XL' },
   { key: 'type-display-lg', label: 'Display LG' },
   { key: 'type-display-md', label: 'Display MD' },
   { key: 'type-display-sm', label: 'Display SM' },
   { key: 'type-display-xs', label: 'Display XS' },
-  { key: 'type-display-xxs', label: 'Display XXS' },
-  { key: 'type-body-lg', label: 'Body LG' },
+  { key: 'type-intro', label: 'Intro' },
+  { key: 'type-micro', label: 'Micro' },
+  { key: 'type-micro-b', label: 'Micro B' },
   { key: 'type-body', label: 'Body' },
-  { key: 'type-button-lg', label: 'Button LG' },
   { key: 'type-button', label: 'Button' },
-  { key: 'type-navigation', label: 'Navigation' },
+  { key: 'type-eyebrow', label: 'Eyebrow' },
 ]
 
 const toolbarGroups = [

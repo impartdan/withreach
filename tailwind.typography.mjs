@@ -80,7 +80,7 @@ module.exports = plugin(function ({ addUtilities }) {
       '.type-intro': {
         'font-size': '20px',
         'line-height': '1.3',
-        'font-weight': 'bold',
+        'font-weight': '500',
         'font-family': seasonSans,
         '@screen md': {
           'font-size': '22px',

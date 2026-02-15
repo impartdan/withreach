@@ -1,0 +1,122 @@
+.wysiwyg {
+  h1:not([class^='type-']) {
+    @apply type-display-xl;
+  }
+  h2:not([class^='type-']) {
+    @apply type-display-lg;
+  }
+  h3:not([class^='type-']) {
+    @apply type-display-md;
+  }
+  h4:not([class^='type-']) {
+    @apply type-display-sm;
+  }
+  h5:not([class^='type-']) {
+    @apply type-display-xs;
+  }
+  h6:not([class^='type-']) {
+    @apply type-intro;
+  }
+
+  b,
+  strong {
+    @apply font-bold;
+  }
+
+  .text-white &,
+  &.text-white {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-[#fff];
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply mt-4 mb-0 first:mt-0;
+  }
+
+  li {
+    @apply mt-2 mb-0 first:mt-0;
+  }
+
+  h1 {
+    + p {
+      @apply mt-9;
+    }
+  }
+  h2 {
+  }
+  h3 {
+  }
+  h4 {
+    + p {
+      @apply mt-0;
+    }
+  }
+  h5 {
+    + p {
+      @apply mt-0;
+    }
+  }
+  h6 {
+    + p {
+      @apply mt-0;
+    }
+  }
+
+  p {
+    + {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        @apply mt-8;
+      }
+    }
+  }
+
+  ul,
+  ol {
+    @apply list-outside;
+    @apply ml-4;
+    > li:first-child {
+      @apply mt-4;
+    }
+  }
+  ul {
+    li {
+      @apply relative pl-2 list-disc;
+    }
+  }
+  ol {
+    li {
+      @apply relative pl-2 list-decimal;
+    }
+  }
+
+  blockquote {
+    @apply block py-9 px-14 my-5 xl:my-10;
+    @apply bg-[#957E2F]/20;
+    @apply font-serif font-medium text-[18px] leading-[1.4];
+  }
+
+  a:not([class]) {
+    @apply underline hover:no-underline;
+  }
+
+  + .button-block {
+    @apply mt-9 !important;
+  }
+}
