@@ -69,7 +69,7 @@ export class TypographyStyleNode extends ElementNode {
     return prevNode.__typographyStyle !== this.__typographyStyle
   }
 
-  exportDOM(editor: LexicalEditor): DOMExportOutput {
+  exportDOM(_editor: LexicalEditor): DOMExportOutput {
     const element = document.createElement('p')
     element.className = this.__typographyStyle
 

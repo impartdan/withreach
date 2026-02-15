@@ -4,7 +4,7 @@ import { motion, type Variants } from 'framer-motion'
 import { type HTMLMotionProps } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-const containerVariants: Variants = {
+const _containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -83,7 +83,7 @@ export function RevealList({
   )
 }
 
-interface RevealListItemProps extends Omit<HTMLMotionProps<'div'>, 'variants'> {}
+type RevealListItemProps = Omit<HTMLMotionProps<'div'>, 'variants'>
 
 export function RevealListItem({ children, className, ...props }: RevealListItemProps) {
   return (

@@ -1,7 +1,7 @@
 'use client'
 
 import { $setBlocksType } from '@lexical/selection'
-import { $getSelection, $isRangeSelection } from 'lexical'
+import { $getSelection, $isRangeSelection, type BaseSelection, type LexicalEditor } from 'lexical'
 import { createClientFeature } from '@payloadcms/richtext-lexical/client'
 
 import type { TypographyStyle } from './TypographyStyleNode'
@@ -40,7 +40,7 @@ const toolbarGroups = [
     type: 'dropdown' as const,
     ChildComponent: TypographyIcon,
     items: TYPOGRAPHY_STYLES.map((style, i) => ({
-      isActive: ({ selection }: { selection: any }) => {
+      isActive: ({ selection }: { selection: BaseSelection | null }) => {
         if (!$isRangeSelection(selection)) {
           return false
         }
@@ -58,7 +58,7 @@ const toolbarGroups = [
       },
       key: style.key,
       label: style.label,
-      onSelect: ({ editor }: { editor: any }) => {
+      onSelect: ({ editor }: { editor: LexicalEditor }) => {
         editor.update(() => {
           const selection = $getSelection()
           $setBlocksType(selection, () => $createTypographyStyleNode(style.key))

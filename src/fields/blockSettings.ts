@@ -117,7 +117,7 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       admin: {
         description: 'Background image for this block',
       },
-    } satisfies Field)
+    } as Field)
 
     fields.push({
       name: 'backgroundImagePosition',
@@ -161,7 +161,7 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       admin: {
         description: 'Background video for this block (takes precedence over image)',
       },
-    } satisfies Field)
+    } as Field)
   }
 
   const blockSettingsGroup: GroupField = {
