@@ -7,10 +7,17 @@ export async function up({ db, payload }: MigrateUpArgs): Promise<void> {
     ADD COLUMN IF NOT EXISTS "parent_id" integer
   `)
   await db.execute(sql`
-    ALTER TABLE "pages"
-    ADD CONSTRAINT "pages_parent_id_pages_id_fk"
-    FOREIGN KEY ("parent_id") REFERENCES "public"."pages"("id")
-    ON DELETE SET NULL ON UPDATE NO ACTION
+    DO $$
+    BEGIN
+      IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint WHERE conname = 'pages_parent_id_pages_id_fk'
+      ) THEN
+        ALTER TABLE "pages"
+        ADD CONSTRAINT "pages_parent_id_pages_id_fk"
+        FOREIGN KEY ("parent_id") REFERENCES "public"."pages"("id")
+        ON DELETE SET NULL ON UPDATE NO ACTION;
+      END IF;
+    END $$
   `)
 
   payload.logger.info('Added parent_id to pages')
@@ -27,16 +34,30 @@ export async function up({ db, payload }: MigrateUpArgs): Promise<void> {
     )
   `)
   await db.execute(sql`
-    ALTER TABLE "pages_breadcrumbs"
-    ADD CONSTRAINT "pages_breadcrumbs_doc_id_pages_id_fk"
-    FOREIGN KEY ("doc_id") REFERENCES "public"."pages"("id")
-    ON DELETE SET NULL ON UPDATE NO ACTION
+    DO $$
+    BEGIN
+      IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint WHERE conname = 'pages_breadcrumbs_doc_id_pages_id_fk'
+      ) THEN
+        ALTER TABLE "pages_breadcrumbs"
+        ADD CONSTRAINT "pages_breadcrumbs_doc_id_pages_id_fk"
+        FOREIGN KEY ("doc_id") REFERENCES "public"."pages"("id")
+        ON DELETE SET NULL ON UPDATE NO ACTION;
+      END IF;
+    END $$
   `)
   await db.execute(sql`
-    ALTER TABLE "pages_breadcrumbs"
-    ADD CONSTRAINT "pages_breadcrumbs_parent_id_fk"
-    FOREIGN KEY ("_parent_id") REFERENCES "public"."pages"("id")
-    ON DELETE CASCADE ON UPDATE NO ACTION
+    DO $$
+    BEGIN
+      IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint WHERE conname = 'pages_breadcrumbs_parent_id_fk'
+      ) THEN
+        ALTER TABLE "pages_breadcrumbs"
+        ADD CONSTRAINT "pages_breadcrumbs_parent_id_fk"
+        FOREIGN KEY ("_parent_id") REFERENCES "public"."pages"("id")
+        ON DELETE CASCADE ON UPDATE NO ACTION;
+      END IF;
+    END $$
   `)
 
   await db.execute(sql`
