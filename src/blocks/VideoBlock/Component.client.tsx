@@ -108,8 +108,6 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
             >
               {/* Poster / thumbnail */}
               {thumbSrc ? (
-                // Use a plain img for YouTube thumbnails (external domain, unknown dimensions)
-                // and NextImage for uploaded posters. Both cases are handled by the ternary below.
                 posterUrl ? (
                   <NextImage
                     src={posterUrl}
@@ -130,7 +128,6 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
                     }
                   />
                 )
-              )
               ) : (
                 <div className="absolute inset-0 bg-neutral-900" />
               )}
