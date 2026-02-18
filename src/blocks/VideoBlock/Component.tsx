@@ -1,31 +1,25 @@
 import React from 'react'
 
+import type { Media as MediaType } from '@/payload-types'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
 import { VideoBlockClient, type VideoBlockClientProps } from './Component.client'
 
-type MediaResource = {
-  url?: string | null
-  filename?: string | null
-  alt?: string | null
-  updatedAt?: string | null
-}
-
 type Props = {
   videoType?: string | null
-  video?: MediaResource | string | null
+  video?: MediaType | string | null
   youtubeUrl?: string | null
-  poster?: MediaResource | string | null
+  poster?: MediaType | string | null
   maxWidth?: string | null
   alignment?: string | null
   disableInnerContainer?: boolean
 }
 
-function resolveMediaUrl(resource: MediaResource | string | null | undefined): string | null {
+function resolveMediaUrl(resource: MediaType | string | null | undefined): string | null {
   if (!resource || typeof resource === 'string') return null
   return getMediaUrl(resource.url, resource.updatedAt) || null
 }
 
-function resolveMediaAlt(resource: MediaResource | string | null | undefined): string | null {
+function resolveMediaAlt(resource: MediaType | string | null | undefined): string | null {
   if (!resource || typeof resource === 'string') return null
   return resource.alt || null
 }

@@ -51,12 +51,14 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     banner: ({ node }) => <BannerBlock className="col-start-2 mb-4" {...node.fields} />,
     imageBlock: ({ node }) => (
       <div className="col-start-1 col-span-3 my-4">
-        <ImageBlockComponent {...(node.fields as any)} />
+        {/* @ts-expect-error block field types not yet in payload-types */}
+        <ImageBlockComponent {...node.fields} />
       </div>
     ),
     videoBlock: ({ node }) => (
       <div className="col-start-1 col-span-3 my-4">
-        <VideoBlockComponent {...(node.fields as any)} />
+        {/* @ts-expect-error block field types not yet in payload-types */}
+        <VideoBlockComponent {...node.fields} />
       </div>
     ),
     code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,

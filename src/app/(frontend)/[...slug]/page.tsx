@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
-import { getPayload, type RequiredDataFromCollectionSlug } from 'payload'
+import { getPayload, type RequiredDataFromCollectionSlug, type Where } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 
@@ -28,7 +28,7 @@ const queryPageByPath = cache(async ({ pathSegments }: { pathSegments: string[] 
   let page: RequiredDataFromCollectionSlug<'pages'> | null = null
 
   for (const segment of pathSegments) {
-    const where: Record<string, unknown> = {
+    const where: Where = {
       slug: { equals: segment },
     }
     if (parentId === null) {

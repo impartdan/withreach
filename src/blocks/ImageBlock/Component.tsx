@@ -2,19 +2,10 @@ import React from 'react'
 
 import { cn } from '@/utilities/ui'
 import { Media } from '@/components/Media'
-
-type MediaResource = {
-  url?: string | null
-  width?: number | null
-  height?: number | null
-  alt?: string | null
-  mimeType?: string | null
-  filename?: string | null
-  updatedAt?: string | null
-}
+import type { Media as MediaType } from '@/payload-types'
 
 type Props = {
-  image?: MediaResource | string | null
+  image?: MediaType | string | null
   maxWidth?: string | null
   alignment?: string | null
   disableInnerContainer?: boolean
@@ -38,7 +29,7 @@ export const ImageBlockComponent: React.FC<Props> = ({ image, maxWidth, alignmen
     <div className="container">
       <div className={cn(maxWidthClass, isCenter && 'mx-auto')}>
         <Media
-          resource={image as any}
+          resource={image}
           imgClassName="w-full h-auto rounded-lg"
         />
       </div>

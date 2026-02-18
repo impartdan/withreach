@@ -1,16 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
+import NextImage from 'next/image'
 
 import { cn } from '@/utilities/ui'
-import { getMediaUrl } from '@/utilities/getMediaUrl'
-
-type MediaResource = {
-  url?: string | null
-  filename?: string | null
-  alt?: string | null
-  updatedAt?: string | null
-}
 
 export type VideoBlockClientProps = {
   videoType?: string | null
@@ -115,17 +108,29 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
             >
               {/* Poster / thumbnail */}
               {thumbSrc ? (
-                <img
-                  src={thumbSrc}
-                  alt={posterAlt || 'Video thumbnail'}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  onError={
-                    // Only fall through YouTube sizes if we're using a YouTube thumbnail
-                    !posterUrl && youtubeId && ytThumbIdx < YT_THUMB_SIZES.length - 1
-                      ? () => setYtThumbIdx((i) => i + 1)
-                      : undefined
-                  }
-                />
+                // Use a plain img for YouTube thumbnails (external domain, unknown dimensions)
+                // and NextImage for uploaded posters. Both cases are handled by the ternary below.
+                posterUrl ? (
+                  <NextImage
+                    src={posterUrl}
+                    alt={posterAlt || 'Video thumbnail'}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={thumbSrc}
+                    alt="Video thumbnail"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    onError={
+                      youtubeId && ytThumbIdx < YT_THUMB_SIZES.length - 1
+                        ? () => setYtThumbIdx((i) => i + 1)
+                        : undefined
+                    }
+                  />
+                )
+              )
               ) : (
                 <div className="absolute inset-0 bg-neutral-900" />
               )}
