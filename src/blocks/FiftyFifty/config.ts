@@ -19,55 +19,70 @@ export const FiftyFifty: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'content',
-      type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-          ]
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'content',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                  ]
+                },
+              }),
+              label: 'Description',
+            },
+            linkGroup({
+              appearances: ['default', 'outline'],
+              overrides: {
+                maxRows: 2,
+              },
+            }),
+            {
+              name: 'image',
+              type: 'upload',
+              relationTo: 'media',
+              required: true,
+              admin: {
+                description: 'Image or screenshot displayed on the opposite side of the text',
+              },
+            },
+            {
+              name: 'layout',
+              type: 'select',
+              defaultValue: 'textLeft',
+              options: [
+                { label: 'Text Left / Image Right', value: 'textLeft' },
+                { label: 'Image Left / Text Right', value: 'imageLeft' },
+              ],
+            },
+          ],
         },
-      }),
-      label: 'Description',
-    },
-    linkGroup({
-      appearances: ['default', 'outline'],
-      overrides: {
-        maxRows: 2,
-      },
-    }),
-    {
-      name: 'image',
-      type: 'upload',
-      relationTo: 'media',
-      required: true,
-      admin: {
-        description: 'Image or screenshot displayed on the opposite side of the text',
-      },
-    },
-    {
-      name: 'layout',
-      type: 'select',
-      defaultValue: 'textLeft',
-      options: [
-        { label: 'Text Left / Image Right', value: 'textLeft' },
-        { label: 'Image Left / Text Right', value: 'imageLeft' },
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              enableBackgroundImage: true,
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
+            }),
+          ],
+        },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      enableBackgroundImage: true,
-      defaultPaddingTop: 'lg',
-      defaultPaddingBottom: 'lg',
-    }),
   ],
 }

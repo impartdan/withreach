@@ -18,60 +18,75 @@ export const SimpleContent: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'items',
-      type: 'array',
-      label: 'Content Steps',
-      minRows: 1,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'description',
-          type: 'richText',
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => {
-              return [
-                ...rootFeatures,
-                HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
-                FixedToolbarFeature(),
-                InlineToolbarFeature(),
-              ]
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
             },
-          }),
+            {
+              name: 'items',
+              type: 'array',
+              label: 'Content Steps',
+              minRows: 1,
+              required: true,
+              fields: [
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'description',
+                  type: 'richText',
+                  editor: lexicalEditor({
+                    features: ({ rootFeatures }) => {
+                      return [
+                        ...rootFeatures,
+                        HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
+                        FixedToolbarFeature(),
+                        InlineToolbarFeature(),
+                      ]
+                    },
+                  }),
+                },
+              ],
+            },
+            {
+              name: 'images',
+              type: 'array',
+              label: 'Images',
+              maxRows: 3,
+              admin: {
+                description: 'Optional images displayed on the right side',
+              },
+              fields: [
+                {
+                  name: 'image',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: true,
+                },
+              ],
+            },
+          ],
         },
-      ],
-    },
-    {
-      name: 'images',
-      type: 'array',
-      label: 'Images',
-      maxRows: 3,
-      admin: {
-        description: 'Optional images displayed on the right side',
-      },
-      fields: [
         {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
+            }),
+          ],
         },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'lg',
-      defaultPaddingBottom: 'lg',
-    }),
   ],
 }

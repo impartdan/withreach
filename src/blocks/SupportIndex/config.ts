@@ -18,59 +18,74 @@ export const SupportIndex: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'cards',
-      type: 'array',
-      label: 'Resource Cards',
-      minRows: 1,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'title',
-          type: 'text',
-          required: true,
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'cards',
+              type: 'array',
+              label: 'Resource Cards',
+              minRows: 1,
+              required: true,
+              fields: [
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'description',
+                  type: 'richText',
+                  editor: lexicalEditor({
+                    features: ({ rootFeatures }) => {
+                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                    },
+                  }),
+                },
+                link({
+                  appearances: false,
+                  overrides: {
+                    admin: {
+                      description: 'Link for this resource card',
+                    },
+                  },
+                }),
+              ],
+            },
+            {
+              name: 'footerContent',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                },
+              }),
+              label: 'Footer Content',
+              admin: {
+                description: 'Optional content displayed below the cards (e.g. contact info, addresses)',
+              },
+            },
+          ],
         },
         {
-          name: 'description',
-          type: 'richText',
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => {
-              return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
-            },
-          }),
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
+            }),
+          ],
         },
-        link({
-          appearances: false,
-          overrides: {
-            admin: {
-              description: 'Link for this resource card',
-            },
-          },
-        }),
       ],
     },
-    {
-      name: 'footerContent',
-      type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
-        },
-      }),
-      label: 'Footer Content',
-      admin: {
-        description: 'Optional content displayed below the cards (e.g. contact info, addresses)',
-      },
-    },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'lg',
-      defaultPaddingBottom: 'lg',
-    }),
   ],
 }

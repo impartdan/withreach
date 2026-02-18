@@ -18,37 +18,52 @@ export const CtaSmall: Block = {
   },
   fields: [
     {
-      name: 'cards',
-      type: 'array',
-      label: 'CTA Cards',
-      minRows: 1,
-      maxRows: 2,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'heading',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'description',
-          type: 'richText',
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => {
-              return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+          label: 'Content',
+          fields: [
+            {
+              name: 'cards',
+              type: 'array',
+              label: 'CTA Cards',
+              minRows: 1,
+              maxRows: 2,
+              required: true,
+              fields: [
+                {
+                  name: 'heading',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'description',
+                  type: 'richText',
+                  editor: lexicalEditor({
+                    features: ({ rootFeatures }) => {
+                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                    },
+                  }),
+                },
+                link({
+                  appearances: ['default', 'outline'],
+                }),
+              ],
             },
-          }),
+          ],
         },
-        link({
-          appearances: ['default', 'outline'],
-        }),
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
+            }),
+          ],
+        },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'lg',
-      defaultPaddingBottom: 'lg',
-    }),
   ],
 }

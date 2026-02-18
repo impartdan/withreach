@@ -13,7 +13,8 @@ import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
 import { Banner } from '../../blocks/Banner/config'
 import { Code } from '../../blocks/Code/config'
-import { MediaBlock } from '../../blocks/MediaBlock/config'
+import { ImageBlock } from '../../blocks/ImageBlock/config'
+import { VideoBlock } from '../../blocks/VideoBlock/config'
 import { LogoList } from '../../blocks/LogoList/config'
 import { HubspotFormBlock } from '../../blocks/HubspotForm/config'
 import { StatsBlock } from '../../blocks/StatsBlock/config'
@@ -92,7 +93,7 @@ export const Posts: CollectionConfig<'posts'> = {
                   return [
                     ...rootFeatures,
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Banner, Code, MediaBlock, LogoList, HubspotFormBlock, StatsBlock] }),
+                    BlocksFeature({ blocks: [Banner, Code, ImageBlock, VideoBlock, LogoList, HubspotFormBlock, StatsBlock] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),

@@ -17,30 +17,45 @@ export const Disclaimer: Block = {
   },
   fields: [
     {
-      name: 'label',
-      type: 'text',
-      required: true,
-      defaultValue: 'Fine print / Disclaimer:',
-      admin: {
-        description: 'Label text displayed on the left (e.g. "Fine print / Disclaimer:")',
-      },
-    },
-    {
-      name: 'content',
-      type: 'richText',
-      required: true,
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            {
+              name: 'label',
+              type: 'text',
+              required: true,
+              defaultValue: 'Fine print / Disclaimer:',
+              admin: {
+                description: 'Label text displayed on the left (e.g. "Fine print / Disclaimer:")',
+              },
+            },
+            {
+              name: 'content',
+              type: 'richText',
+              required: true,
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                },
+              }),
+              label: 'Disclaimer Text',
+            },
+          ],
         },
-      }),
-      label: 'Disclaimer Text',
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'sm',
+              defaultPaddingBottom: 'sm',
+            }),
+          ],
+        },
+      ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'sm',
-      defaultPaddingBottom: 'sm',
-    }),
   ],
 }

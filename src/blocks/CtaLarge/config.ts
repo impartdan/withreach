@@ -18,39 +18,54 @@ export const CtaLarge: Block = {
   },
   fields: [
     {
-      name: 'label',
-      type: 'text',
-      admin: {
-        description: 'Small label text above the heading (e.g. "Connect with us")',
-      },
-    },
-    {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'content',
-      type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            {
+              name: 'label',
+              type: 'text',
+              admin: {
+                description: 'Small label text above the heading (e.g. "Connect with us")',
+              },
+            },
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'content',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                },
+              }),
+              label: 'Description',
+            },
+            linkGroup({
+              appearances: ['default', 'outline'],
+              overrides: {
+                maxRows: 2,
+              },
+            }),
+          ],
         },
-      }),
-      label: 'Description',
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              enableBackgroundImage: true,
+              defaultPaddingTop: '2xl',
+              defaultPaddingBottom: '2xl',
+            }),
+          ],
+        },
+      ],
     },
-    linkGroup({
-      appearances: ['default', 'outline'],
-      overrides: {
-        maxRows: 2,
-      },
-    }),
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      enableBackgroundImage: true,
-      defaultPaddingTop: '2xl',
-      defaultPaddingBottom: '2xl',
-    }),
   ],
 }

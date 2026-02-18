@@ -18,62 +18,77 @@ export const FaqToCall: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'content',
-      type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-          ]
-        },
-      }),
-      label: 'Description',
-    },
-    {
-      name: 'image',
-      type: 'upload',
-      relationTo: 'media',
-      admin: {
-        description: 'Illustration displayed below the text on the left side',
-      },
-    },
-    {
-      name: 'faqs',
-      type: 'array',
-      label: 'FAQ Items',
-      minRows: 1,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'question',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'answer',
-          type: 'richText',
-          required: true,
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => {
-              return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
             },
-          }),
+            {
+              name: 'content',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                  ]
+                },
+              }),
+              label: 'Description',
+            },
+            {
+              name: 'image',
+              type: 'upload',
+              relationTo: 'media',
+              admin: {
+                description: 'Illustration displayed below the text on the left side',
+              },
+            },
+            {
+              name: 'faqs',
+              type: 'array',
+              label: 'FAQ Items',
+              minRows: 1,
+              required: true,
+              fields: [
+                {
+                  name: 'question',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'answer',
+                  type: 'richText',
+                  required: true,
+                  editor: lexicalEditor({
+                    features: ({ rootFeatures }) => {
+                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                    },
+                  }),
+                },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
+            }),
+          ],
         },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'lg',
-      defaultPaddingBottom: 'lg',
-    }),
   ],
 }

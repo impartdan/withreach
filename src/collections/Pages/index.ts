@@ -3,10 +3,10 @@ import type { CollectionConfig } from 'payload'
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
 import { Archive } from '../../blocks/ArchiveBlock/config'
-import { CallToAction } from '../../blocks/CallToAction/config'
 import { Content } from '../../blocks/Content/config'
 import { FormBlock } from '../../blocks/Form/config'
-import { MediaBlock } from '../../blocks/MediaBlock/config'
+import { ImageBlock } from '../../blocks/ImageBlock/config'
+import { VideoBlock } from '../../blocks/VideoBlock/config'
 import { Integrations } from '../../blocks/Integrations/config'
 import { LogoList } from '../../blocks/LogoList/config'
 import { HubspotFormBlock } from '../../blocks/HubspotForm/config'
@@ -32,8 +32,6 @@ import { ConsList } from '../../blocks/ConsList/config'
 import { CtaLarge } from '../../blocks/CtaLarge/config'
 import { CtaSmall } from '../../blocks/CtaSmall/config'
 import { Disclaimer } from '../../blocks/Disclaimer/config'
-import { CenterText } from '../../blocks/CenterText/config'
-import { RichTextBlock } from '../../blocks/RichTextBlock/config'
 import { FiftyFifty } from '../../blocks/FiftyFifty/config'
 import { ItemHighlightsWithIntro } from '../../blocks/ItemHighlightsWithIntro/config'
 import { PeopleIndex } from '../../blocks/PeopleIndex/config'
@@ -105,9 +103,9 @@ export const Pages: CollectionConfig<'pages'> = {
               name: 'layout',
               type: 'blocks',
               blocks: [
-                CallToAction,
                 Content,
-                MediaBlock,
+                ImageBlock,
+                VideoBlock,
                 Archive,
                 FormBlock,
                 Integrations,
@@ -135,8 +133,6 @@ export const Pages: CollectionConfig<'pages'> = {
                 CtaLarge,
                 CtaSmall,
                 Disclaimer,
-                CenterText,
-                RichTextBlock,
                 FiftyFifty,
                 ItemHighlightsWithIntro,
                 PeopleIndex,

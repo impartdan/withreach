@@ -19,62 +19,77 @@ export const ItemHighlightsWithIntro: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'description',
-      type: 'text',
-      admin: {
-        description: 'Short description below the heading',
-      },
-    },
-    {
-      name: 'items',
-      type: 'array',
-      label: 'Highlight Items',
-      minRows: 1,
-      maxRows: 6,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'icon',
-          type: 'upload',
-          relationTo: 'media',
-          admin: {
-            description: 'Icon for this item',
-          },
-        },
-        {
-          name: 'title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'description',
-          type: 'richText',
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => {
-              return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
             },
-          }),
-        },
-        link({
-          appearances: false,
-          overrides: {
-            admin: {
-              description: 'Optional link for this item',
+            {
+              name: 'description',
+              type: 'text',
+              admin: {
+                description: 'Short description below the heading',
+              },
             },
-          },
-        }),
+            {
+              name: 'items',
+              type: 'array',
+              label: 'Highlight Items',
+              minRows: 1,
+              maxRows: 6,
+              required: true,
+              fields: [
+                {
+                  name: 'icon',
+                  type: 'upload',
+                  relationTo: 'media',
+                  admin: {
+                    description: 'Icon for this item',
+                  },
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'description',
+                  type: 'richText',
+                  editor: lexicalEditor({
+                    features: ({ rootFeatures }) => {
+                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                    },
+                  }),
+                },
+                link({
+                  appearances: false,
+                  overrides: {
+                    admin: {
+                      description: 'Optional link for this item',
+                    },
+                  },
+                }),
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'xl',
+              defaultPaddingBottom: 'xl',
+            }),
+          ],
+        },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'xl',
-      defaultPaddingBottom: 'xl',
-    }),
   ],
 }

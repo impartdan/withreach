@@ -13,7 +13,7 @@ import { H } from '@/components/Logo/H'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 
 export async function Footer() {
-  const footerData: FooterGlobal = await getCachedGlobal('footer', 1)()
+  const footerData: FooterGlobal = await getCachedGlobal('footer', 4)()
 
   const navColumns = footerData?.navColumns || []
   const badges = footerData?.badges || []

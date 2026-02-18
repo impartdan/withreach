@@ -3,10 +3,10 @@ import React, { Fragment } from 'react'
 import type { Page } from '@/payload-types'
 
 import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
-import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
-import { MediaBlock } from '@/blocks/MediaBlock/Component'
+import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
+import { VideoBlockComponent } from '@/blocks/VideoBlock/Component'
 import { IntegrationsBlock } from '@/blocks/Integrations/Component'
 import { LogoListBlock } from '@/blocks/LogoList/Component'
 import { HubspotFormBlock } from '@/blocks/HubspotForm/Component'
@@ -32,8 +32,6 @@ import { ConsListBlock } from '@/blocks/ConsList/Component'
 import { CtaLargeBlock } from '@/blocks/CtaLarge/Component'
 import { CtaSmallBlock } from '@/blocks/CtaSmall/Component'
 import { DisclaimerBlock } from '@/blocks/Disclaimer/Component'
-import { CenterTextBlock } from '@/blocks/CenterText/Component'
-import { RichTextBlockComponent } from '@/blocks/RichTextBlock/Component'
 import { FiftyFiftyBlock } from '@/blocks/FiftyFifty/Component'
 import { ItemHighlightsWithIntroBlock } from '@/blocks/ItemHighlightsWithIntro/Component'
 import { PeopleIndexBlock } from '@/blocks/PeopleIndex/Component'
@@ -44,9 +42,9 @@ import { BlockWrapper } from '@/blocks/BlockWrapper'
 const blockComponents = {
   archive: ArchiveBlock,
   content: ContentBlock,
-  cta: CallToActionBlock,
   formBlock: FormBlock,
-  mediaBlock: MediaBlock,
+  imageBlock: ImageBlockComponent,
+  videoBlock: VideoBlockComponent,
   integrations: IntegrationsBlock,
   logoList: LogoListBlock,
   hubspotForm: HubspotFormBlock,
@@ -72,8 +70,6 @@ const blockComponents = {
   ctaLarge: CtaLargeBlock,
   ctaSmall: CtaSmallBlock,
   disclaimer: DisclaimerBlock,
-  centerText: CenterTextBlock,
-  richTextBlock: RichTextBlockComponent,
   fiftyFifty: FiftyFiftyBlock,
   itemHighlightsWithIntro: ItemHighlightsWithIntroBlock,
   peopleIndex: PeopleIndexBlock,

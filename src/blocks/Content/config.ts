@@ -1,4 +1,4 @@
-import type { Block, Field } from 'payload'
+import type { Block } from 'payload'
 
 import {
   FixedToolbarFeature,
@@ -7,66 +7,17 @@ import {
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 
-import { link } from '@/fields/link'
 import { blockSettings } from '@/fields/blockSettings'
-
-const columnFields: Field[] = [
-  {
-    name: 'size',
-    type: 'select',
-    defaultValue: 'oneThird',
-    options: [
-      {
-        label: 'One Third',
-        value: 'oneThird',
-      },
-      {
-        label: 'Half',
-        value: 'half',
-      },
-      {
-        label: 'Two Thirds',
-        value: 'twoThirds',
-      },
-      {
-        label: 'Full',
-        value: 'full',
-      },
-    ],
-  },
-  {
-    name: 'richText',
-    type: 'richText',
-    editor: lexicalEditor({
-      features: ({ rootFeatures }) => {
-        return [
-          ...rootFeatures,
-          HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
-          FixedToolbarFeature(),
-          InlineToolbarFeature(),
-        ]
-      },
-    }),
-    label: false,
-  },
-  {
-    name: 'enableLink',
-    type: 'checkbox',
-  },
-  link({
-    overrides: {
-      admin: {
-        condition: (_data, siblingData) => {
-          return Boolean(siblingData?.enableLink)
-        },
-      },
-    },
-  }),
-]
 
 export const Content: Block = {
   slug: 'content',
+  imageURL: '/block-thumbnails/rich-text.png',
+  imageAltText: 'Rich text content block',
   interfaceName: 'ContentBlock',
+  labels: {
+    singular: 'Content',
+    plural: 'Content',
+  },
   fields: [
     {
       type: 'tabs',
@@ -75,12 +26,48 @@ export const Content: Block = {
           label: 'Content',
           fields: [
             {
-              name: 'columns',
-              type: 'array',
-              admin: {
-                initCollapsed: true,
-              },
-              fields: columnFields,
+              name: 'content',
+              type: 'richText',
+              required: true,
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                  ]
+                },
+              }),
+              label: false,
+            },
+            {
+              name: 'maxWidth',
+              type: 'select',
+              defaultValue: 'max-w-xl',
+              label: 'Max Width',
+              options: [
+                { label: 'SM (384px)', value: 'max-w-sm' },
+                { label: 'MD (448px)', value: 'max-w-md' },
+                { label: 'LG (512px)', value: 'max-w-lg' },
+                { label: 'XL (576px)', value: 'max-w-xl' },
+                { label: '2XL (672px)', value: 'max-w-2xl' },
+                { label: '3XL (768px)', value: 'max-w-3xl' },
+                { label: '4XL (896px)', value: 'max-w-4xl' },
+                { label: '5XL (1024px)', value: 'max-w-5xl' },
+                { label: '6XL (1152px)', value: 'max-w-6xl' },
+                { label: 'None (full width)', value: 'none' },
+              ],
+            },
+            {
+              name: 'alignment',
+              type: 'select',
+              defaultValue: 'left',
+              label: 'Text Alignment',
+              options: [
+                { label: 'Left', value: 'left' },
+                { label: 'Center', value: 'center' },
+              ],
             },
           ],
         },
@@ -92,8 +79,8 @@ export const Content: Block = {
               enableBackground: true,
               enableBackgroundImage: true,
               enableBackgroundVideo: true,
-              defaultPaddingTop: 'md',
-              defaultPaddingBottom: 'md',
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
             }),
           ],
         },

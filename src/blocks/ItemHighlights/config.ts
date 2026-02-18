@@ -17,56 +17,71 @@ export const ItemHighlights: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'columns',
-      type: 'select',
-      defaultValue: '4',
-      options: [
-        { label: '3 Columns', value: '3' },
-        { label: '4 Columns', value: '4' },
-      ],
-    },
-    {
-      name: 'items',
-      type: 'array',
-      label: 'Items',
-      minRows: 1,
-      maxRows: 12,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'icon',
-          type: 'upload',
-          relationTo: 'media',
-          admin: {
-            description: 'Icon for this highlight item',
-          },
-        },
-        {
-          name: 'title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'description',
-          type: 'richText',
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => {
-              return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
             },
-          }),
+            {
+              name: 'columns',
+              type: 'select',
+              defaultValue: '4',
+              options: [
+                { label: '3 Columns', value: '3' },
+                { label: '4 Columns', value: '4' },
+              ],
+            },
+            {
+              name: 'items',
+              type: 'array',
+              label: 'Items',
+              minRows: 1,
+              maxRows: 12,
+              required: true,
+              fields: [
+                {
+                  name: 'icon',
+                  type: 'upload',
+                  relationTo: 'media',
+                  admin: {
+                    description: 'Icon for this highlight item',
+                  },
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'description',
+                  type: 'richText',
+                  editor: lexicalEditor({
+                    features: ({ rootFeatures }) => {
+                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                    },
+                  }),
+                },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
+            }),
+          ],
         },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'lg',
-      defaultPaddingBottom: 'lg',
-    }),
   ],
 }

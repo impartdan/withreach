@@ -236,9 +236,9 @@ export interface Page {
   };
   layout?:
     | (
-        | CallToActionBlock
         | ContentBlock
-        | MediaBlock
+        | ImageBlock
+        | VideoBlock
         | ArchiveBlock
         | FormBlock
         | IntegrationsBlock
@@ -266,8 +266,6 @@ export interface Page {
         | CtaLargeBlock
         | CtaSmallBlock
         | DisclaimerBlock
-        | CenterTextBlock
-        | RichTextBlockType
         | FiftyFiftyBlock
         | ItemHighlightsWithIntroBlock
         | PeopleIndexBlock
@@ -530,10 +528,10 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "CallToActionBlock".
+ * via the `definition` "ContentBlock".
  */
-export interface CallToActionBlock {
-  richText?: {
+export interface ContentBlock {
+  content: {
     root: {
       type: string;
       children: {
@@ -547,98 +545,22 @@ export interface CallToActionBlock {
       version: number;
     };
     [k: string]: unknown;
-  } | null;
-  links?:
-    | {
-        link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?:
-            | ({
-                relationTo: 'pages';
-                value: number | Page;
-              } | null)
-            | ({
-                relationTo: 'posts';
-                value: number | Post;
-              } | null);
-          url?: string | null;
-          label: string;
-          /**
-           * Choose how the link should be rendered.
-           */
-          appearance?: ('default' | 'outline') | null;
-        };
-        id?: string | null;
-      }[]
-    | null;
-  /**
-   * Configure appearance settings for this block
-   */
-  blockSettings?: {
-    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
-    backgroundImage?: (number | null) | Media;
-    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
-    /**
-     * Background video for this block (takes precedence over image)
-     */
-    backgroundVideo?: (number | null) | Media;
   };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'cta';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ContentBlock".
- */
-export interface ContentBlock {
-  columns?:
-    | {
-        size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
-        richText?: {
-          root: {
-            type: string;
-            children: {
-              type: any;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
-        enableLink?: boolean | null;
-        link?: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?:
-            | ({
-                relationTo: 'pages';
-                value: number | Page;
-              } | null)
-            | ({
-                relationTo: 'posts';
-                value: number | Post;
-              } | null);
-          url?: string | null;
-          label: string;
-          /**
-           * Choose how the link should be rendered.
-           */
-          appearance?: ('default' | 'outline') | null;
-        };
-        id?: string | null;
-      }[]
+  maxWidth?:
+    | (
+        | 'max-w-sm'
+        | 'max-w-md'
+        | 'max-w-lg'
+        | 'max-w-xl'
+        | 'max-w-2xl'
+        | 'max-w-3xl'
+        | 'max-w-4xl'
+        | 'max-w-5xl'
+        | 'max-w-6xl'
+        | 'none'
+      )
     | null;
+  alignment?: ('left' | 'center') | null;
   /**
    * Configure appearance settings for this block
    */
@@ -662,13 +584,55 @@ export interface ContentBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "MediaBlock".
+ * via the `definition` "ImageBlock".
  */
-export interface MediaBlock {
-  media: number | Media;
+export interface ImageBlock {
+  image: number | Media;
+  maxWidth?: ('max-w-3xl' | 'max-w-4xl' | 'max-w-5xl' | 'max-w-6xl' | 'none') | null;
+  alignment?: ('left' | 'center') | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
   id?: string | null;
   blockName?: string | null;
-  blockType: 'mediaBlock';
+  blockType: 'imageBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "VideoBlock".
+ */
+export interface VideoBlock {
+  videoType: 'upload' | 'youtube';
+  /**
+   * Upload an MP4 video file
+   */
+  video?: (number | null) | Media;
+  /**
+   * Paste a YouTube video URL (e.g. https://www.youtube.com/watch?v=...)
+   */
+  youtubeUrl?: string | null;
+  /**
+   * Optional thumbnail shown before the video plays. For YouTube, the video thumbnail is used automatically if left blank.
+   */
+  poster?: (number | null) | Media;
+  maxWidth?: ('max-w-3xl' | 'max-w-4xl' | 'max-w-5xl' | 'max-w-6xl' | 'none') | null;
+  alignment?: ('left' | 'center') | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'videoBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2364,76 +2328,6 @@ export interface DisclaimerBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "CenterTextBlock".
- */
-export interface CenterTextBlock {
-  /**
-   * Rich text content with headings, paragraphs, lists, bold, etc.
-   */
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  /**
-   * Configure appearance settings for this block
-   */
-  blockSettings?: {
-    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'centerText';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "RichTextBlockType".
- */
-export interface RichTextBlockType {
-  /**
-   * Long-form rich text content for pages like privacy policies, terms of service, etc.
-   */
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  /**
-   * Configure appearance settings for this block
-   */
-  blockSettings?: {
-    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'richTextBlock';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FiftyFiftyBlock".
  */
 export interface FiftyFiftyBlock {
@@ -3041,9 +2935,9 @@ export interface PagesSelect<T extends boolean = true> {
   layout?:
     | T
     | {
-        cta?: T | CallToActionBlockSelect<T>;
         content?: T | ContentBlockSelect<T>;
-        mediaBlock?: T | MediaBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        videoBlock?: T | VideoBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
         integrations?: T | IntegrationsBlockSelect<T>;
@@ -3071,8 +2965,6 @@ export interface PagesSelect<T extends boolean = true> {
         ctaLarge?: T | CtaLargeBlockSelect<T>;
         ctaSmall?: T | CtaSmallBlockSelect<T>;
         disclaimer?: T | DisclaimerBlockSelect<T>;
-        centerText?: T | CenterTextBlockSelect<T>;
-        richTextBlock?: T | RichTextBlockTypeSelect<T>;
         fiftyFifty?: T | FiftyFiftyBlockSelect<T>;
         itemHighlightsWithIntro?: T | ItemHighlightsWithIntroBlockSelect<T>;
         peopleIndex?: T | PeopleIndexBlockSelect<T>;
@@ -3105,61 +2997,12 @@ export interface PagesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "CallToActionBlock_select".
- */
-export interface CallToActionBlockSelect<T extends boolean = true> {
-  richText?: T;
-  links?:
-    | T
-    | {
-        link?:
-          | T
-          | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-              appearance?: T;
-            };
-        id?: T;
-      };
-  blockSettings?:
-    | T
-    | {
-        paddingTop?: T;
-        paddingBottom?: T;
-        backgroundColor?: T;
-        backgroundImage?: T;
-        backgroundImagePosition?: T;
-        backgroundVideo?: T;
-      };
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ContentBlock_select".
  */
 export interface ContentBlockSelect<T extends boolean = true> {
-  columns?:
-    | T
-    | {
-        size?: T;
-        richText?: T;
-        enableLink?: T;
-        link?:
-          | T
-          | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-              appearance?: T;
-            };
-        id?: T;
-      };
+  content?: T;
+  maxWidth?: T;
+  alignment?: T;
   blockSettings?:
     | T
     | {
@@ -3175,10 +3018,40 @@ export interface ContentBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "MediaBlock_select".
+ * via the `definition` "ImageBlock_select".
  */
-export interface MediaBlockSelect<T extends boolean = true> {
-  media?: T;
+export interface ImageBlockSelect<T extends boolean = true> {
+  image?: T;
+  maxWidth?: T;
+  alignment?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "VideoBlock_select".
+ */
+export interface VideoBlockSelect<T extends boolean = true> {
+  videoType?: T;
+  video?: T;
+  youtubeUrl?: T;
+  poster?: T;
+  maxWidth?: T;
+  alignment?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        backgroundColor?: T;
+      };
   id?: T;
   blockName?: T;
 }
@@ -3961,38 +3834,6 @@ export interface CtaSmallBlockSelect<T extends boolean = true> {
  */
 export interface DisclaimerBlockSelect<T extends boolean = true> {
   label?: T;
-  content?: T;
-  blockSettings?:
-    | T
-    | {
-        paddingTop?: T;
-        paddingBottom?: T;
-        backgroundColor?: T;
-      };
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "CenterTextBlock_select".
- */
-export interface CenterTextBlockSelect<T extends boolean = true> {
-  content?: T;
-  blockSettings?:
-    | T
-    | {
-        paddingTop?: T;
-        paddingBottom?: T;
-        backgroundColor?: T;
-      };
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "RichTextBlockType_select".
- */
-export interface RichTextBlockTypeSelect<T extends boolean = true> {
   content?: T;
   blockSettings?:
     | T

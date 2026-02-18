@@ -17,53 +17,68 @@ export const FaqCenter: Block = {
   },
   fields: [
     {
-      name: 'label',
-      type: 'text',
-      admin: {
-        description: 'Small label text above the heading',
-      },
-    },
-    {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'description',
-      type: 'text',
-      admin: {
-        description: 'Short description below the heading',
-      },
-    },
-    {
-      name: 'faqs',
-      type: 'array',
-      label: 'FAQ Items',
-      minRows: 1,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'question',
-          type: 'text',
-          required: true,
+          label: 'Content',
+          fields: [
+            {
+              name: 'label',
+              type: 'text',
+              admin: {
+                description: 'Small label text above the heading',
+              },
+            },
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'description',
+              type: 'text',
+              admin: {
+                description: 'Short description below the heading',
+              },
+            },
+            {
+              name: 'faqs',
+              type: 'array',
+              label: 'FAQ Items',
+              minRows: 1,
+              required: true,
+              fields: [
+                {
+                  name: 'question',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'answer',
+                  type: 'richText',
+                  required: true,
+                  editor: lexicalEditor({
+                    features: ({ rootFeatures }) => {
+                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                    },
+                  }),
+                },
+              ],
+            },
+          ],
         },
         {
-          name: 'answer',
-          type: 'richText',
-          required: true,
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => {
-              return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
-            },
-          }),
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'xl',
+              defaultPaddingBottom: 'xl',
+            }),
+          ],
         },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'xl',
-      defaultPaddingBottom: 'xl',
-    }),
   ],
 }

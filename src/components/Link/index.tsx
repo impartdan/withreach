@@ -20,6 +20,19 @@ type CMSLinkType = {
   url?: string | null
 }
 
+/** Build full URL path for a page (handles nested pages: breadcrumbs + slug). */
+function getPagePath(page: Page): string {
+  const slug = page.slug
+  if (!slug) return ''
+  const breadcrumbs = page.breadcrumbs
+  const ancestorSlugs = Array.isArray(breadcrumbs)
+    ? breadcrumbs
+        .map((b) => (b.doc && typeof b.doc === 'object' && 'slug' in b.doc ? b.doc.slug : null))
+        .filter((s): s is string => Boolean(s))
+    : []
+  return [...ancestorSlugs, slug].join('/')
+}
+
 export const CMSLink: React.FC<CMSLinkType> = (props) => {
   const {
     type,
@@ -35,9 +48,14 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
 
   const href =
     type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
-      ? `${reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : ''}/${
-          reference.value.slug
-        }`
+      ? (() => {
+          const prefix = reference.relationTo !== 'pages' ? `/${reference.relationTo}` : ''
+          const path =
+            reference.relationTo === 'pages' && 'breadcrumbs' in reference.value
+              ? getPagePath(reference.value as Page)
+              : (reference.value as Post).slug
+          return `${prefix}/${path}`
+        })()
       : url
 
   if (!href) return null

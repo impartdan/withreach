@@ -20,59 +20,74 @@ export const TrioShortImageCards: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    linkGroup({
-      appearances: ['default', 'outline'],
-      overrides: {
-        maxRows: 2,
-      },
-    }),
-    {
-      name: 'cards',
-      type: 'array',
-      label: 'Cards',
-      minRows: 1,
-      maxRows: 3,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
-        },
-        {
-          name: 'title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'description',
-          type: 'richText',
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => {
-              return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
             },
-          }),
-        },
-        link({
-          appearances: false,
-          overrides: {
-            admin: {
-              description: 'Optional link for this card',
+            linkGroup({
+              appearances: ['default', 'outline'],
+              overrides: {
+                maxRows: 2,
+              },
+            }),
+            {
+              name: 'cards',
+              type: 'array',
+              label: 'Cards',
+              minRows: 1,
+              maxRows: 3,
+              required: true,
+              fields: [
+                {
+                  name: 'image',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: true,
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'description',
+                  type: 'richText',
+                  editor: lexicalEditor({
+                    features: ({ rootFeatures }) => {
+                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                    },
+                  }),
+                },
+                link({
+                  appearances: false,
+                  overrides: {
+                    admin: {
+                      description: 'Optional link for this card',
+                    },
+                  },
+                }),
+              ],
             },
-          },
-        }),
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
+            }),
+          ],
+        },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'lg',
-      defaultPaddingBottom: 'lg',
-    }),
   ],
 }

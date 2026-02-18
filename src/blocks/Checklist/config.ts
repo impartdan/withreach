@@ -17,39 +17,54 @@ export const Checklist: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'items',
-      type: 'array',
-      label: 'Checklist Items',
-      minRows: 1,
-      maxRows: 12,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'title',
-          type: 'text',
-          required: true,
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'items',
+              type: 'array',
+              label: 'Checklist Items',
+              minRows: 1,
+              maxRows: 12,
+              required: true,
+              fields: [
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'description',
+                  type: 'richText',
+                  editor: lexicalEditor({
+                    features: ({ rootFeatures }) => {
+                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                    },
+                  }),
+                },
+              ],
+            },
+          ],
         },
         {
-          name: 'description',
-          type: 'richText',
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => {
-              return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
-            },
-          }),
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'xl',
+              defaultPaddingBottom: 'xl',
+            }),
+          ],
         },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'xl',
-      defaultPaddingBottom: 'xl',
-    }),
   ],
 }

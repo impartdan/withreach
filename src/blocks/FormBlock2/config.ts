@@ -17,41 +17,56 @@ export const FormBlock2: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-      admin: {
-        description: 'Heading above the form',
-      },
-    },
-    {
-      name: 'description',
-      type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
+              admin: {
+                description: 'Heading above the form',
+              },
+            },
+            {
+              name: 'description',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                },
+              }),
+              label: 'Description',
+              admin: {
+                description: 'Optional text displayed below the heading',
+              },
+            },
+            {
+              name: 'form',
+              type: 'relationship',
+              relationTo: 'forms',
+              required: true,
+              admin: {
+                description: 'Select the form to display',
+              },
+            },
+          ],
         },
-      }),
-      label: 'Description',
-      admin: {
-        description: 'Optional text displayed below the heading',
-      },
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              enableBackgroundImage: true,
+              defaultPaddingTop: 'xl',
+              defaultPaddingBottom: 'xl',
+            }),
+          ],
+        },
+      ],
     },
-    {
-      name: 'form',
-      type: 'relationship',
-      relationTo: 'forms',
-      required: true,
-      admin: {
-        description: 'Select the form to display',
-      },
-    },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      enableBackgroundImage: true,
-      defaultPaddingTop: 'xl',
-      defaultPaddingBottom: 'xl',
-    }),
   ],
 }

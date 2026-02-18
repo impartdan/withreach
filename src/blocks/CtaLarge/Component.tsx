@@ -3,18 +3,11 @@ import type { CtaLargeBlock as CtaLargeBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 
-export const CtaLargeBlock: React.FC<CtaLargeBlockProps> = ({
-  label,
-  heading,
-  content,
-  links,
-}) => {
+export const CtaLargeBlock: React.FC<CtaLargeBlockProps> = ({ label, heading, content, links }) => {
   return (
     <div className="container">
-      <div className="text-center max-w-3xl mx-auto">
-        {label && (
-          <p className="text-sm font-semibold text-brand-black mb-4">{label}</p>
-        )}
+      <div className="text-center max-w-3xl mx-auto text-pretty">
+        {label && <p className="text-sm font-semibold text-brand-black mb-4">{label}</p>}
 
         {heading && (
           <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black mb-6">

@@ -12,50 +12,65 @@ export const PeopleIndex: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-      defaultValue: 'Our team',
-    },
-    {
-      name: 'people',
-      type: 'array',
-      label: 'Team Members',
-      minRows: 1,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'photo',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
+              defaultValue: 'Our team',
+            },
+            {
+              name: 'people',
+              type: 'array',
+              label: 'Team Members',
+              minRows: 1,
+              required: true,
+              fields: [
+                {
+                  name: 'photo',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: true,
+                },
+                {
+                  name: 'name',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  admin: {
+                    description: 'Job title and/or team (e.g. "Senior Engineer / Platform")',
+                  },
+                },
+                {
+                  name: 'linkedinUrl',
+                  type: 'text',
+                  admin: {
+                    description: 'LinkedIn profile URL',
+                  },
+                },
+              ],
+            },
+          ],
         },
         {
-          name: 'name',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'title',
-          type: 'text',
-          admin: {
-            description: 'Job title and/or team (e.g. "Senior Engineer / Platform")',
-          },
-        },
-        {
-          name: 'linkedinUrl',
-          type: 'text',
-          admin: {
-            description: 'LinkedIn profile URL',
-          },
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
+            }),
+          ],
         },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'lg',
-      defaultPaddingBottom: 'lg',
-    }),
   ],
 }

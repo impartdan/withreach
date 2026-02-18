@@ -18,59 +18,74 @@ export const StatsText: Block = {
   },
   fields: [
     {
-      name: 'stats',
-      type: 'array',
-      label: 'Statistics',
-      minRows: 1,
-      maxRows: 4,
-      required: true,
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'value',
-          type: 'text',
-          required: true,
-          admin: {
-            description: 'The stat value (e.g. "200+", "$XXM")',
-          },
+          label: 'Content',
+          fields: [
+            {
+              name: 'stats',
+              type: 'array',
+              label: 'Statistics',
+              minRows: 1,
+              maxRows: 4,
+              required: true,
+              fields: [
+                {
+                  name: 'value',
+                  type: 'text',
+                  required: true,
+                  admin: {
+                    description: 'The stat value (e.g. "200+", "$XXM")',
+                  },
+                },
+                {
+                  name: 'label',
+                  type: 'text',
+                  required: true,
+                  admin: {
+                    description: 'The stat label (e.g. "Markets")',
+                  },
+                },
+              ],
+            },
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
+              admin: {
+                description: 'Main heading displayed next to the stats',
+              },
+            },
+            {
+              name: 'content',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                  ]
+                },
+              }),
+              label: 'Description',
+            },
+          ],
         },
         {
-          name: 'label',
-          type: 'text',
-          required: true,
-          admin: {
-            description: 'The stat label (e.g. "Markets")',
-          },
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
+            }),
+          ],
         },
       ],
     },
-    {
-      name: 'heading',
-      type: 'text',
-      required: true,
-      admin: {
-        description: 'Main heading displayed next to the stats',
-      },
-    },
-    {
-      name: 'content',
-      type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-          ]
-        },
-      }),
-      label: 'Description',
-    },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'lg',
-      defaultPaddingBottom: 'lg',
-    }),
   ],
 }

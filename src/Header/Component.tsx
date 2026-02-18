@@ -7,7 +7,7 @@ import { getPayload } from 'payload'
 import type { Header } from '@/payload-types'
 
 export async function Header() {
-  const headerData: Header = await getCachedGlobal('header', 3)()
+  const headerData: Header = await getCachedGlobal('header', 4)()
 
   // Preload latest posts for automatic mode dropdowns
   const payload = await getPayload({ config: configPromise })

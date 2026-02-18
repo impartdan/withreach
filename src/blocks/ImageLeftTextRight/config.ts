@@ -19,61 +19,76 @@ export const ImageLeftTextRight: Block = {
   },
   fields: [
     {
-      name: 'heading',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'images',
-      type: 'array',
-      label: 'Images',
-      minRows: 1,
-      maxRows: 3,
-      admin: {
-        description: 'Images displayed on the left side',
-      },
-      fields: [
+      type: 'tabs',
+      tabs: [
         {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
-        },
-      ],
-    },
-    {
-      name: 'items',
-      type: 'array',
-      label: 'Content Items',
-      minRows: 1,
-      required: true,
-      fields: [
-        {
-          name: 'title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'description',
-          type: 'richText',
-          editor: lexicalEditor({
-            features: ({ rootFeatures }) => {
-              return [
-                ...rootFeatures,
-                HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
-                FixedToolbarFeature(),
-                InlineToolbarFeature(),
-              ]
+          label: 'Content',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              required: true,
             },
-          }),
+            {
+              name: 'images',
+              type: 'array',
+              label: 'Images',
+              minRows: 1,
+              maxRows: 3,
+              admin: {
+                description: 'Images displayed on the left side',
+              },
+              fields: [
+                {
+                  name: 'image',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: true,
+                },
+              ],
+            },
+            {
+              name: 'items',
+              type: 'array',
+              label: 'Content Items',
+              minRows: 1,
+              required: true,
+              fields: [
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'description',
+                  type: 'richText',
+                  editor: lexicalEditor({
+                    features: ({ rootFeatures }) => {
+                      return [
+                        ...rootFeatures,
+                        HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
+                        FixedToolbarFeature(),
+                        InlineToolbarFeature(),
+                      ]
+                    },
+                  }),
+                },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [
+            blockSettings({
+              enablePadding: true,
+              enableBackground: true,
+              defaultPaddingTop: 'lg',
+              defaultPaddingBottom: 'lg',
+            }),
+          ],
         },
       ],
     },
-    blockSettings({
-      enablePadding: true,
-      enableBackground: true,
-      defaultPaddingTop: 'lg',
-      defaultPaddingBottom: 'lg',
-    }),
   ],
 }
