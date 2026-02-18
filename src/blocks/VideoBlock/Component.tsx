@@ -6,21 +6,21 @@ import { VideoBlockClient, type VideoBlockClientProps } from './Component.client
 
 type Props = {
   videoType?: string | null
-  video?: MediaType | string | null
+  video?: MediaType | string | number | null
   youtubeUrl?: string | null
-  poster?: MediaType | string | null
+  poster?: MediaType | string | number | null
   maxWidth?: string | null
   alignment?: string | null
   disableInnerContainer?: boolean
 }
 
-function resolveMediaUrl(resource: MediaType | string | null | undefined): string | null {
-  if (!resource || typeof resource === 'string') return null
+function resolveMediaUrl(resource: MediaType | string | number | null | undefined): string | null {
+  if (!resource || typeof resource === 'string' || typeof resource === 'number') return null
   return getMediaUrl(resource.url, resource.updatedAt) || null
 }
 
-function resolveMediaAlt(resource: MediaType | string | null | undefined): string | null {
-  if (!resource || typeof resource === 'string') return null
+function resolveMediaAlt(resource: MediaType | string | number | null | undefined): string | null {
+  if (!resource || typeof resource === 'string' || typeof resource === 'number') return null
   return resource.alt || null
 }
 

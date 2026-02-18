@@ -5,7 +5,7 @@ import { Media } from '@/components/Media'
 import type { Media as MediaType } from '@/payload-types'
 
 type Props = {
-  image?: MediaType | string | null
+  image?: MediaType | string | number | null
   maxWidth?: string | null
   alignment?: string | null
   disableInnerContainer?: boolean
@@ -20,7 +20,7 @@ const maxWidthClasses: Record<string, string> = {
 }
 
 export const ImageBlockComponent: React.FC<Props> = ({ image, maxWidth, alignment }) => {
-  if (!image || typeof image === 'string') return null
+  if (!image || typeof image === 'string' || typeof image === 'number') return null
 
   const maxWidthClass = maxWidth ? (maxWidthClasses[maxWidth] ?? 'max-w-4xl') : 'max-w-4xl'
   const isCenter = alignment !== 'left'

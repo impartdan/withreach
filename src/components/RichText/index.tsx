@@ -14,14 +14,14 @@ import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
 import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
 import { VideoBlockComponent } from '@/blocks/VideoBlock/Component'
 
-import type { BannerBlock as BannerBlockProps } from '@/payload-types'
+import type { BannerBlock as BannerBlockProps, ImageBlock as ImageBlockProps, VideoBlock as VideoBlockProps } from '@/payload-types'
 import { BannerBlock } from '@/blocks/Banner/Component'
 import { cn } from '@/utilities/ui'
 import type { SerializedTypographyStyleNode } from '@/lexical/typography/TypographyStyleNode'
 
 type NodeTypes =
   | DefaultNodeTypes
-  | SerializedBlockNode<BannerBlockProps | CodeBlockProps>
+  | SerializedBlockNode<BannerBlockProps | CodeBlockProps | ImageBlockProps | VideoBlockProps>
   | SerializedTypographyStyleNode
 
 const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
@@ -51,13 +51,11 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     banner: ({ node }) => <BannerBlock className="col-start-2 mb-4" {...node.fields} />,
     imageBlock: ({ node }) => (
       <div className="col-start-1 col-span-3 my-4">
-        {/* @ts-expect-error block field types not yet in payload-types */}
         <ImageBlockComponent {...node.fields} />
       </div>
     ),
     videoBlock: ({ node }) => (
       <div className="col-start-1 col-span-3 my-4">
-        {/* @ts-expect-error block field types not yet in payload-types */}
         <VideoBlockComponent {...node.fields} />
       </div>
     ),

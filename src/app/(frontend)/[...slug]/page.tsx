@@ -58,11 +58,17 @@ const queryPageByPath = cache(async ({ pathSegments }: { pathSegments: string[] 
  * Build full path segments for a page from its breadcrumbs + slug (for generateStaticParams).
  */
 function getPathSegmentsFromPage(
-  page: { slug: string; breadcrumbs?: Array<{ doc?: { slug?: string } | null }> },
+  page: { slug: string; breadcrumbs?: Array<{ doc?: unknown }> | null },
 ): string[] {
   const ancestorSlugs =
     page.breadcrumbs
-      ?.map((b) => (typeof b.doc !== 'undefined' && b.doc && typeof b.doc === 'object' ? b.doc.slug : null))
+      ?.map((b) => {
+        const doc = b.doc
+        if (doc && typeof doc === 'object' && 'slug' in doc && typeof (doc as { slug?: unknown }).slug === 'string') {
+          return (doc as { slug: string }).slug
+        }
+        return null
+      })
       .filter((s): s is string => Boolean(s)) ?? []
   return [...ancestorSlugs, page.slug]
 }
