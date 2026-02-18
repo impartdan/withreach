@@ -77,9 +77,7 @@ export async function generateStaticParams() {
     pagination: false,
     select: {
       slug: true,
-      breadcrumbs: {
-        doc: { slug: true },
-      },
+      breadcrumbs: true,
     },
   })
 
