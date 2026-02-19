@@ -13,15 +13,22 @@ import { beforeSyncWithSearch } from '@/search/beforeSync'
 
 import { Page, Post } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
+import { getPagePath } from '@/utilities/getPagePath'
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title ? `${doc.title} | Reach` : 'Reach'
 }
 
-const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
+const generateURL: GenerateURL<Post | Page> = ({ doc, collectionConfig }) => {
   const url = getServerSideURL()
 
-  return doc?.slug ? `${url}/${doc.slug}` : url
+  if (!doc?.slug) return url
+
+  if (collectionConfig?.slug === 'pages') {
+    return `${url}${getPagePath(doc as Page)}`
+  }
+
+  return `${url}/${collectionConfig?.slug ?? ''}/${doc.slug}`
 }
 
 export const plugins: Plugin[] = [

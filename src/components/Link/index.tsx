@@ -4,6 +4,7 @@ import { Link } from 'next-view-transitions'
 import React from 'react'
 
 import type { Page, Post } from '@/payload-types'
+import { getPagePath } from '@/utilities/getPagePath'
 
 type CMSLinkType = {
   appearance?: 'inline' | ButtonProps['variant']
@@ -18,19 +19,6 @@ type CMSLinkType = {
   size?: ButtonProps['size'] | null
   type?: 'custom' | 'reference' | null
   url?: string | null
-}
-
-/** Build full URL path for a page (handles nested pages: breadcrumbs + slug). */
-function getPagePath(page: Page): string {
-  const slug = page.slug
-  if (!slug) return ''
-  const breadcrumbs = page.breadcrumbs
-  const ancestorSlugs = Array.isArray(breadcrumbs)
-    ? breadcrumbs
-        .map((b) => (b.doc && typeof b.doc === 'object' && 'slug' in b.doc ? b.doc.slug : null))
-        .filter((s): s is string => Boolean(s))
-    : []
-  return [...ancestorSlugs, slug].join('/')
 }
 
 export const CMSLink: React.FC<CMSLinkType> = (props) => {
@@ -48,14 +36,9 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
 
   const href =
     type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
-      ? (() => {
-          const prefix = reference.relationTo !== 'pages' ? `/${reference.relationTo}` : ''
-          const path =
-            reference.relationTo === 'pages' && 'breadcrumbs' in reference.value
-              ? getPagePath(reference.value as Page)
-              : (reference.value as Post).slug
-          return `${prefix}/${path}`
-        })()
+      ? reference.relationTo === 'pages' && 'breadcrumbs' in reference.value
+        ? getPagePath(reference.value as Page)
+        : `/${reference.relationTo}/${(reference.value as Post).slug}`
       : url
 
   if (!href) return null

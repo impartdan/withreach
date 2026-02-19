@@ -14,10 +14,11 @@ import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
 import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
 import { VideoBlockComponent } from '@/blocks/VideoBlock/Component'
 
-import type { BannerBlock as BannerBlockProps, ImageBlock as ImageBlockProps, VideoBlock as VideoBlockProps } from '@/payload-types'
+import type { BannerBlock as BannerBlockProps, ImageBlock as ImageBlockProps, VideoBlock as VideoBlockProps, Page } from '@/payload-types'
 import { BannerBlock } from '@/blocks/Banner/Component'
 import { cn } from '@/utilities/ui'
 import type { SerializedTypographyStyleNode } from '@/lexical/typography/TypographyStyleNode'
+import { getPagePath } from '@/utilities/getPagePath'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -29,8 +30,10 @@ const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
   if (typeof value !== 'object') {
     throw new Error('Expected value to be an object')
   }
-  const slug = value.slug
-  return relationTo === 'posts' ? `/posts/${slug}` : `/${slug}`
+  if (relationTo === 'pages') {
+    return getPagePath(value as Page)
+  }
+  return `/${relationTo}/${value.slug}`
 }
 
 const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) => ({
