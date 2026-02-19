@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation node -e \"process.exit(process.env.VERCEL_ENV==='preview'?0:0)\" && payload migrate && next build",
     "postbuild": "next-sitemap --config next-sitemap.config.cjs",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "dev:prod": "cross-env NODE_OPTIONS=--no-deprecation rm -rf .next && pnpm build && pnpm start",
@@ -21,7 +21,9 @@
     "test:e2e": "cross-env NODE_OPTIONS=\"--no-deprecation --no-experimental-strip-types\" pnpm exec playwright test --config=playwright.config.ts",
     "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts",
     "seed:integrations": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/seed-integrations.ts",
-    "seed:integration-logos": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/upload-integration-logos.ts"
+    "seed:integration-logos": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/upload-integration-logos.ts",
+    "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
+    "migrate:create": "cross-env NODE_OPTIONS=--no-deprecation payload migrate:create"
   },
   "dependencies": {
     "@lexical/selection": "0.35.0",
