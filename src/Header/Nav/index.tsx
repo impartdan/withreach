@@ -24,6 +24,21 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null)
+  const [mobileAccordion, setMobileAccordion] = useState<number | null>(null)
+
+  const toggleMobileAccordion = (index: number) => {
+    setMobileAccordion(mobileAccordion === index ? null : index)
+  }
+
+  const getMobileItems = (item: NonNullable<typeof menuItems>[number]) => {
+    if (item.type !== 'dropdown' || !item.dropdown) return []
+    const { layout } = item.dropdown
+    if (layout === 'featuredWithList') return item.dropdown.fwlItems ?? []
+    if (layout === 'twoColumnShowcase') return item.dropdown.tcsItems ?? []
+    if (layout === 'featuredIntegrations') return item.dropdown.fiItems ?? []
+    if (layout === 'contentGrid') return item.dropdown.cgItems ?? []
+    return []
+  }
 
   // Close dropdown when clicking outside
   React.useEffect(() => {
@@ -53,7 +68,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
                 <CMSLink
                   key={i}
                   {...item.link}
-                  className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                  className="text-base font-semibold text-brand-black hover:text-brand-gray transition-colors"
                 />
               )
             }
@@ -63,7 +78,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
                 <button
                   key={i}
                   onClick={() => toggleDropdown(i)}
-                  className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                  className="flex items-center gap-1 text-base font-semibold text-brand-black hover:text-brand-gray transition-colors"
                 >
                   {item.dropdownLabel}
                   <ChevronDown
@@ -108,7 +123,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
 
           if (item.style === 'primary') {
             return (
-              <Button key={i} asChild className="hidden md:inline-flex">
+              <Button key={i} asChild className="hidden whitespace-nowrap md:inline-flex">
                 <CMSLink {...item.link} />
               </Button>
             )
@@ -118,7 +133,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
             <CMSLink
               key={i}
               {...item.link}
-              className="hidden md:block text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+              className="hidden whitespace-nowrap md:block text-base font-semibold text-brand-black hover:text-brand-gray transition-colors"
             />
           )
         })}
@@ -132,8 +147,10 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
+            exit={{ opacity: 0, y: -10, transition: { duration: 0 } }}
             className="fixed left-0 right-0 z-50"
-            style={{ top: '65px' }}
+            style={{ top: '100px' }}
+            onClick={() => setActiveDropdown(null)}
           >
             <div
               className={`mx-auto bg-white rounded-2xl shadow-2xl border max-w-full border-gray-200 overflow-hidden ${
@@ -181,8 +198,9 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           isMenuOpen ? 'top-0 translate-y-0' : '-top-full -translate-y-full'
         } lg:hidden`}
       >
-        <div className="p-8">
-          <div className="flex justify-end mb-8">
+        {/* Close button row — matches header's p-3 outer + pl-[21px] pr-[17px] py-2 inner */}
+        <div className="p-3">
+          <div className="pl-[21px] pr-[17px] py-2 flex justify-end">
             <button
               onClick={() => setIsMenuOpen(false)}
               className="flex flex-col justify-center items-center w-8 h-8 gap-1.5"
@@ -193,7 +211,9 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
               <span className="w-6 h-0.5 bg-gray-700 -rotate-45 -translate-y-2" />
             </button>
           </div>
+        </div>
 
+        <div className="px-8 pb-8">
           <nav className="flex flex-col gap-6">
             {menuItems?.map((item, i) => {
               if (item.type === 'link' && item.link) {
@@ -208,15 +228,47 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
               }
 
               if (item.type === 'dropdown' && item.dropdownLabel) {
+                const mobileItems = getMobileItems(item)
+                const isOpen = mobileAccordion === i
                 return (
-                  <button
-                    key={i}
-                    onClick={() => setActiveDropdown(activeDropdown === i ? null : i)}
-                    className="flex items-center justify-between text-lg font-medium text-gray-700 hover:text-gray-900 transition-colors py-2"
-                  >
-                    {item.dropdownLabel}
-                    <ChevronDown className="w-5 h-5" />
-                  </button>
+                  <div key={i}>
+                    <button
+                      onClick={() => toggleMobileAccordion(i)}
+                      className="flex items-center justify-between w-full text-lg font-medium text-gray-700 hover:text-gray-900 transition-colors py-2"
+                    >
+                      {item.dropdownLabel}
+                      <ChevronDown
+                        className={`w-5 h-5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {isOpen && mobileItems.length > 0 && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25, ease: 'easeInOut' }}
+                          className="overflow-hidden"
+                        >
+                          <div className="flex flex-col gap-1 pl-4 pb-2 border-l-2 border-gray-200 ml-1 mt-1">
+                            {mobileItems.map((subItem, j) => (
+                              <div key={j} onClick={() => setIsMenuOpen(false)}>
+                                <CMSLink
+                                  {...subItem.link}
+                                  className="block py-2 text-base font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                                />
+                                {subItem.description && (
+                                  <p className="text-sm text-gray-400 -mt-1 pb-1">
+                                    {subItem.description}
+                                  </p>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 )
               }
 
@@ -241,7 +293,11 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
                   }
 
                   return (
-                    <div key={`mobile-${i}`} onClick={() => setIsMenuOpen(false)}>
+                    <div
+                      key={`mobile-${i}`}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-center"
+                    >
                       <CMSLink
                         {...item.link}
                         className="text-lg font-medium text-gray-700 hover:text-gray-900 transition-colors py-2 block"

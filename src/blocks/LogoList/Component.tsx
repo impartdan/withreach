@@ -21,18 +21,19 @@ export const LogoListBlock: React.FC<
     if (!logo) return null
 
     const logoElement = (
-      <div className="flex items-center justify-center h-16 md:h-20 px-6 md:px-10 shrink-0">
+      <div className="relative shrink-0 aspect-[200/75] w-[180px]">
         {logo.mimeType === 'image/svg+xml' ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={getMediaUrl(logo.url, logo.updatedAt)}
             alt={item.alt || logo.alt || ''}
-            className="max-h-full max-w-full w-auto h-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+            className="w-full h-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
           />
         ) : (
           <Media
             resource={logo}
-            imgClassName="max-h-full max-w-full w-auto h-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+            fill
+            imgClassName="object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
           />
         )}
       </div>
@@ -66,7 +67,7 @@ export const LogoListBlock: React.FC<
     return (
       <div className="container max-w-5xl " id={id ? `block-${id}` : undefined}>
         {titleElement}
-        <div className="flex items-center justify-center gap-4 md:gap-8 lg:gap-12">
+        <div className="flex items-center justify-between gap-4 md:gap-8 lg:gap-20">
           {logos.map((item, index) => renderLogo(item, index))}
         </div>
       </div>

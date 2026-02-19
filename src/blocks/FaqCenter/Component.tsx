@@ -13,22 +13,19 @@ export const FaqCenterBlock: React.FC<FaqCenterBlockProps> = ({
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <div className="bg-brand-black">
+    <div className="bg-brand-black text-white">
       <div className="container">
         <div className="py-16 md:py-20">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
-            {label && (
-              <p className="text-sm font-semibold text-white mb-3">{label}</p>
-            )}
+          <div className="text-center max-w-5xl mx-auto mb-10 md:mb-14">
+            {label && <p className="type-eyebrow mb-3">{label}</p>}
             {heading && (
-              <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-white mb-4">
-                {heading}
-              </h2>
+              <h2
+                className="type-display-md mb-4 [&_span]:text-brand-gray"
+                dangerouslySetInnerHTML={{ __html: heading }}
+              />
             )}
-            {description && (
-              <p className="text-base md:text-lg text-white/70 leading-[1.5]">{description}</p>
-            )}
+            {description && <p className="type-intro">{description}</p>}
           </div>
 
           {/* FAQ Items */}
