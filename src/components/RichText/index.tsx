@@ -31,7 +31,7 @@ const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
     throw new Error('Expected value to be an object')
   }
   if (relationTo === 'pages') {
-    return getPagePath(value as Page)
+    return getPagePath(value as unknown as Page)
   }
   return `/${relationTo}/${value.slug}`
 }
