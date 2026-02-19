@@ -26,11 +26,10 @@ export const PayloadRedirects: React.FC<Props> = async ({ disableNotFound, url }
 
     const relationTo = redirectItem.to?.reference?.relationTo
 
-    if (typeof redirectItem.to?.reference?.value === 'string') {
-      const collection = relationTo
-      const id = redirectItem.to?.reference?.value
+    if (typeof redirectItem.to?.reference?.value === 'string' && relationTo) {
+      const id = redirectItem.to.reference.value
 
-      const document = (await getCachedDocument(collection, id)()) as Page | Post
+      const document = (await getCachedDocument(relationTo, id)()) as Page | Post
       redirectUrl =
         relationTo === 'pages'
           ? getPagePath(document as Page)
