@@ -69,17 +69,25 @@ export const Pages: CollectionConfig<'pages'> = {
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
     livePreview: {
-      url: ({ data }) =>
-        generatePreviewPath({
+      url: ({ data }) => {
+        const breadcrumbs = data?.breadcrumbs as Array<{ url?: string }> | undefined
+        const nestedPath = breadcrumbs?.at(-1)?.url
+        return generatePreviewPath({
           slug: data?.slug,
           collection: 'pages',
-        }),
+          path: nestedPath,
+        })
+      },
     },
-    preview: (data) =>
-      generatePreviewPath({
+    preview: (data) => {
+      const breadcrumbs = (data as { breadcrumbs?: Array<{ url?: string }> })?.breadcrumbs
+      const nestedPath = breadcrumbs?.at(-1)?.url
+      return generatePreviewPath({
         slug: data?.slug as string,
         collection: 'pages',
-      }),
+        path: nestedPath,
+      })
+    },
     useAsTitle: 'title',
   },
   fields: [
