@@ -39,3 +39,139 @@
   font-style: italic;
   font-display: swap;
 }
+
+/* Mirror wysiwyg.css styles inside the Lexical editor content area */
+.ContentEditable__root {
+  h1:not([class^='type-']) {
+    font-size: 72px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-family: 'Season Mix', sans-serif;
+  }
+  h2:not([class^='type-']) {
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-family: 'Season Mix', sans-serif;
+    font-weight: normal;
+  }
+  h3:not([class^='type-']) {
+    font-size: 32px;
+    line-height: 1.1;
+    font-family: 'Season Sans', sans-serif;
+    font-weight: normal;
+  }
+  h4:not([class^='type-']) {
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-family: 'Season Mix', sans-serif;
+    font-weight: normal;
+  }
+  h5:not([class^='type-']) {
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 500;
+    font-family: 'Season Sans', sans-serif;
+  }
+  h6:not([class^='type-']) {
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 500;
+    font-family: 'Season Sans', sans-serif;
+  }
+
+  b,
+  strong {
+    font-weight: 700;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-top: 1rem;
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  li {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1 + p {
+    margin-top: 2.25rem;
+  }
+
+  h4 + p,
+  h5 + p,
+  h6 + p {
+    margin-top: 0;
+  }
+
+  p + h1,
+  p + h2,
+  p + h3,
+  p + h4,
+  p + h5,
+  p + h6 {
+    margin-top: 2rem;
+  }
+
+  ul,
+  ol {
+    list-style-position: outside;
+    margin-left: 1rem;
+
+    > li:first-child {
+      margin-top: 1rem;
+    }
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 0.5rem;
+    list-style-type: disc;
+  }
+
+  ol li {
+    position: relative;
+    padding-left: 0.5rem;
+    list-style-type: decimal;
+  }
+
+  blockquote {
+    display: block;
+    font-family: 'Season Mix', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid #c7c2b5;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  a:not([class]) {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

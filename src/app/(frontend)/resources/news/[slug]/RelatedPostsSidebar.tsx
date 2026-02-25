@@ -55,9 +55,7 @@ export const RelatedPostsSidebar: React.FC<RelatedPostsSidebarProps> = ({ posts 
               <div className="flex flex-col gap-4 flex-1 min-w-0">
                 {resolvedCategories.length > 0 && (
                   <div className="flex flex-wrap gap-2">
-                    {resolvedCategories.map((cat) => (
-                      <Tag key={cat.id} label={cat.title} variant="secondary" />
-                    ))}
+                    <Tag label={resolvedCategories[0].title} variant="secondary" />
                   </div>
                 )}
 
