@@ -6,6 +6,7 @@ import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
 
 import { Categories } from './collections/Categories'
+import { CaseStudyCategories } from './collections/CaseStudyCategories'
 import { IntegrationCategories } from './collections/IntegrationCategories'
 import { Integrations } from './collections/Integrations'
 import { Media } from './collections/Media'
@@ -67,7 +68,7 @@ export default buildConfig({
     },
     push: process.env.NODE_ENV === 'development',
   }),
-  collections: [Pages, Posts, CaseStudies, Integrations, Categories, IntegrationCategories, Media, Users],
+  collections: [Pages, Posts, CaseStudies, Integrations, Categories, CaseStudyCategories, IntegrationCategories, Media, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, NewsSettings, CaseStudiesSettings],
   email: resendAdapter({

@@ -15,6 +15,7 @@ import { ImageBlock } from '../../blocks/ImageBlock/config'
 import { VideoBlock } from '../../blocks/VideoBlock/config'
 import { StatsBlock } from '../../blocks/StatsBlock/config'
 import { BlockquoteBlock } from '../../blocks/Blockquote/config'
+import { ConclusionBlock } from '../../blocks/Conclusion/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateCaseStudy, revalidateCaseStudyDelete } from './hooks/revalidateCaseStudy'
 
@@ -41,6 +42,7 @@ export const CaseStudies: CollectionConfig<'case-studies'> = {
     companyName: true,
     companyLogo: true,
     categories: true,
+    caseStudyCategories: true,
     meta: {
       image: true,
       description: true,
@@ -108,6 +110,40 @@ export const CaseStudies: CollectionConfig<'case-studies'> = {
               },
             },
             {
+              name: 'pdf',
+              type: 'upload',
+              relationTo: 'media',
+              label: 'PDF Version',
+              filterOptions: {
+                mimeType: { in: ['application/pdf'] },
+              },
+              admin: {
+                description: 'Upload a PDF version of this case study. A download link will appear in the sidebar CTA.',
+              },
+            },
+            {
+              name: 'highlights',
+              type: 'array',
+              label: 'Overview Highlights',
+              admin: {
+                description: 'Key facts displayed at the top of the case study (e.g. Industry: Retail Fashion, Founded: 2003, Tech Stack: Checkout API).',
+              },
+              fields: [
+                {
+                  name: 'label',
+                  type: 'text',
+                  required: true,
+                  admin: { width: '50%' },
+                },
+                {
+                  name: 'value',
+                  type: 'text',
+                  required: true,
+                  admin: { width: '50%' },
+                },
+              ],
+            },
+            {
               name: 'content',
               type: 'richText',
               editor: lexicalEditor({
@@ -115,7 +151,7 @@ export const CaseStudies: CollectionConfig<'case-studies'> = {
                   return [
                     ...rootFeatures.filter((f) => f.key !== 'blockquote'),
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [ImageBlock, VideoBlock, StatsBlock, BlockquoteBlock] }),
+                    BlocksFeature({ blocks: [ImageBlock, VideoBlock, StatsBlock, BlockquoteBlock, ConclusionBlock] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),
@@ -154,6 +190,17 @@ export const CaseStudies: CollectionConfig<'case-studies'> = {
               },
               hasMany: true,
               relationTo: 'categories',
+            },
+            {
+              name: 'caseStudyCategories',
+              type: 'relationship',
+              label: 'Case Study Types',
+              admin: {
+                position: 'sidebar',
+                description: 'Categorize this case study by type (e.g., Retail, SaaS, Enterprise).',
+              },
+              hasMany: true,
+              relationTo: 'case-study-categories',
             },
           ],
           label: 'Meta',

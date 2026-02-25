@@ -72,6 +72,7 @@ export interface Config {
     'case-studies': CaseStudy;
     integrations: Integration;
     categories: Category;
+    'case-study-categories': CaseStudyCategory;
     'integration-categories': IntegrationCategory;
     media: Media;
     users: User;
@@ -97,6 +98,7 @@ export interface Config {
     'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
     integrations: IntegrationsSelect<false> | IntegrationsSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    'case-study-categories': CaseStudyCategoriesSelect<false> | CaseStudyCategoriesSelect<true>;
     'integration-categories': IntegrationCategoriesSelect<false> | IntegrationCategoriesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
@@ -577,6 +579,20 @@ export interface CaseStudy {
    * Logo displayed over the card image. Use a white/transparent version for best results.
    */
   companyLogo?: (number | null) | Media;
+  /**
+   * Upload a PDF version of this case study. A download link will appear in the sidebar CTA.
+   */
+  pdf?: (number | null) | Media;
+  /**
+   * Key facts displayed at the top of the case study (e.g. Industry: Retail Fashion, Founded: 2003, Tech Stack: Checkout API).
+   */
+  highlights?:
+    | {
+        label: string;
+        value: string;
+        id?: string | null;
+      }[]
+    | null;
   content: {
     root: {
       type: string;
@@ -594,6 +610,10 @@ export interface CaseStudy {
   };
   relatedCaseStudies?: (number | CaseStudy)[] | null;
   categories?: (number | Category)[] | null;
+  /**
+   * Categorize this case study by type (e.g., Retail, SaaS, Enterprise).
+   */
+  caseStudyCategories?: (number | CaseStudyCategory)[] | null;
   meta?: {
     title?: string | null;
     /**
@@ -615,6 +635,21 @@ export interface CaseStudy {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-study-categories".
+ */
+export interface CaseStudyCategory {
+  id: number;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1178,6 +1213,14 @@ export interface ImageBlock {
  * via the `definition` "VideoBlock".
  */
 export interface VideoBlock {
+  /**
+   * Optional heading displayed above the video (e.g., "Testimonial Video").
+   */
+  title?: string | null;
+  /**
+   * Optional description displayed below the title, above the video.
+   */
+  description?: string | null;
   videoType: 'upload' | 'youtube';
   /**
    * Upload an MP4 video file
@@ -1780,13 +1823,17 @@ export interface StatsBlock {
   heading?: string | null;
   stats: {
     /**
-     * The main statistic value (e.g., "$3B", "130+", "90%+")
+     * Optional icon displayed above the stat.
+     */
+    icon?: (number | null) | Media;
+    /**
+     * The main statistic value (e.g., "$3B", "130+", "90%+") or a title (e.g., "+12% Authorization Rate")
      */
     value: string;
     /**
      * Description or context for the statistic
      */
-    description: string;
+    description?: string | null;
     id?: string | null;
   }[];
   /**
@@ -4386,6 +4433,10 @@ export interface PayloadLockedDocument {
         value: number | Category;
       } | null)
     | ({
+        relationTo: 'case-study-categories';
+        value: number | CaseStudyCategory;
+      } | null)
+    | ({
         relationTo: 'integration-categories';
         value: number | IntegrationCategory;
       } | null)
@@ -4790,6 +4841,8 @@ export interface ImageBlockSelect<T extends boolean = true> {
  * via the `definition` "VideoBlock_select".
  */
 export interface VideoBlockSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
   videoType?: T;
   video?: T;
   youtubeUrl?: T;
@@ -4938,6 +4991,7 @@ export interface StatsBlockSelect<T extends boolean = true> {
   stats?:
     | T
     | {
+        icon?: T;
         value?: T;
         description?: T;
         id?: T;
@@ -5947,9 +6001,18 @@ export interface CaseStudiesSelect<T extends boolean = true> {
   excerpt?: T;
   heroImage?: T;
   companyLogo?: T;
+  pdf?: T;
+  highlights?:
+    | T
+    | {
+        label?: T;
+        value?: T;
+        id?: T;
+      };
   content?: T;
   relatedCaseStudies?: T;
   categories?: T;
+  caseStudyCategories?: T;
   meta?:
     | T
     | {
@@ -5997,6 +6060,17 @@ export interface CategoriesSelect<T extends boolean = true> {
         label?: T;
         id?: T;
       };
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-study-categories_select".
+ */
+export interface CaseStudyCategoriesSelect<T extends boolean = true> {
+  title?: T;
   generateSlug?: T;
   slug?: T;
   updatedAt?: T;
@@ -6696,6 +6770,35 @@ export interface CaseStudiesSetting {
    * Select up to 5 case studies to feature on the case studies page.
    */
   featuredCaseStudies?: (number | CaseStudy)[] | null;
+  /**
+   * Sticky call-to-action sidebar displayed on every case study page.
+   */
+  caseStudyCta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Optional call-to-action link (e.g., "Contact sales").
+     */
+    primaryLink?: {
+      type?: ('reference' | 'custom') | null;
+      newTab?: boolean | null;
+      reference?:
+        | ({
+            relationTo: 'pages';
+            value: number | Page;
+          } | null)
+        | ({
+            relationTo: 'posts';
+            value: number | Post;
+          } | null)
+        | ({
+            relationTo: 'case-studies';
+            value: number | CaseStudy;
+          } | null);
+      url?: string | null;
+      label?: string | null;
+    };
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -6896,6 +6999,21 @@ export interface NewsSettingsSelect<T extends boolean = true> {
  */
 export interface CaseStudiesSettingsSelect<T extends boolean = true> {
   featuredCaseStudies?: T;
+  caseStudyCta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        primaryLink?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -6953,7 +7071,8 @@ export interface BlockquoteBlock {
  * via the `definition` "ConclusionBlock".
  */
 export interface ConclusionBlock {
-  content: {
+  heading?: string | null;
+  content?: {
     root: {
       type: string;
       children: {
@@ -6967,7 +7086,20 @@ export interface ConclusionBlock {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
+  /**
+   * Optional grid of highlight stats with icons. Used in case study conclusions.
+   */
+  stats?:
+    | {
+        /**
+         * Optional icon displayed above the stat.
+         */
+        icon?: (number | null) | Media;
+        title: string;
+        description?: string | null;
+      }[]
+    | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'conclusion';

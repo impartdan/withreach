@@ -19,6 +19,22 @@ export const VideoBlock: Block = {
           label: 'Content',
           fields: [
             {
+              name: 'title',
+              type: 'text',
+              label: 'Title',
+              admin: {
+                description: 'Optional heading displayed above the video (e.g., "Testimonial Video").',
+              },
+            },
+            {
+              name: 'description',
+              type: 'textarea',
+              label: 'Description',
+              admin: {
+                description: 'Optional description displayed below the title, above the video.',
+              },
+            },
+            {
               name: 'videoType',
               type: 'select',
               defaultValue: 'upload',

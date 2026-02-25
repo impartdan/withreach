@@ -35,19 +35,27 @@ export const StatsBlock: Block = {
               maxRows: 6,
               fields: [
                 {
+                  name: 'icon',
+                  type: 'upload',
+                  relationTo: 'media',
+                  label: 'Icon',
+                  admin: {
+                    description: 'Optional icon displayed above the stat.',
+                  },
+                },
+                {
                   name: 'value',
                   type: 'text',
                   label: 'Stat Value',
                   required: true,
                   admin: {
-                    description: 'The main statistic value (e.g., "$3B", "130+", "90%+")',
+                    description: 'The main statistic value (e.g., "$3B", "130+", "90%+") or a title (e.g., "+12% Authorization Rate")',
                   },
                 },
                 {
                   name: 'description',
                   type: 'textarea',
                   label: 'Description',
-                  required: true,
                   admin: {
                     description: 'Description or context for the statistic',
                   },

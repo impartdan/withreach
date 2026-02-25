@@ -5,6 +5,8 @@ import { getMediaUrl } from '@/utilities/getMediaUrl'
 import { VideoBlockClient, type VideoBlockClientProps } from './Component.client'
 
 type Props = {
+  title?: string | null
+  description?: string | null
   videoType?: string | null
   video?: MediaType | string | number | null
   youtubeUrl?: string | null
@@ -25,6 +27,8 @@ function resolveMediaAlt(resource: MediaType | string | number | null | undefine
 }
 
 export const VideoBlockComponent: React.FC<Props> = ({
+  title,
+  description,
   videoType,
   video,
   youtubeUrl,
@@ -42,5 +46,21 @@ export const VideoBlockComponent: React.FC<Props> = ({
     alignment,
   }
 
-  return <VideoBlockClient {...clientProps} />
+  return (
+    <div>
+      {(title || description) && (
+        <div className="flex flex-col gap-4 mb-4">
+          {title && (
+            <h3 className="type-display-sm text-brand-black">{title}</h3>
+          )}
+          {description && (
+            <p className="text-lg font-sans font-medium text-brand-black leading-relaxed">
+              {description}
+            </p>
+          )}
+        </div>
+      )}
+      <VideoBlockClient {...clientProps} />
+    </div>
+  )
 }
