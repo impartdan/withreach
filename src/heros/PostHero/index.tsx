@@ -23,7 +23,7 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
           <div className="flex flex-col gap-10 flex-1 min-w-0">
             {/* Back link */}
             <Link
-              href="/posts"
+              href="/resources/news"
               className="inline-flex items-center gap-2 text-brand-black text-base font-sans font-semibold hover:opacity-70 transition-opacity"
             >
               <svg

@@ -11,16 +11,12 @@ import {
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { Code } from '../../blocks/Code/config'
 import { ImageBlock } from '../../blocks/ImageBlock/config'
 import { VideoBlock } from '../../blocks/VideoBlock/config'
-import { HubspotFormBlock } from '../../blocks/HubspotForm/config'
 import { StatsBlock } from '../../blocks/StatsBlock/config'
 import { BlockquoteBlock } from '../../blocks/Blockquote/config'
-import { ConclusionBlock } from '../../blocks/Conclusion/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
-import { populateAuthors } from './hooks/populateAuthors'
-import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
+import { revalidateCaseStudy, revalidateCaseStudyDelete } from './hooks/revalidateCaseStudy'
 
 import {
   MetaDescriptionField,
@@ -31,20 +27,19 @@ import {
 } from '@payloadcms/plugin-seo/fields'
 import { slugField } from 'payload'
 
-export const Posts: CollectionConfig<'posts'> = {
-  slug: 'posts',
+export const CaseStudies: CollectionConfig<'case-studies'> = {
+  slug: 'case-studies',
   access: {
     create: authenticated,
     delete: authenticated,
     read: authenticatedOrPublished,
     update: authenticated,
   },
-  // This config controls what's populated by default when a post is referenced
-  // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property
-  // Type safe if the collection slug generic is passed to `CollectionConfig` - `CollectionConfig<'posts'>
   defaultPopulate: {
     title: true,
     slug: true,
+    companyName: true,
+    companyLogo: true,
     categories: true,
     meta: {
       image: true,
@@ -53,18 +48,18 @@ export const Posts: CollectionConfig<'posts'> = {
   },
   admin: {
     group: 'Collections',
-    defaultColumns: ['title', 'slug', 'updatedAt'],
+    defaultColumns: ['title', 'companyName', 'slug', 'updatedAt'],
     livePreview: {
       url: ({ data }) =>
         generatePreviewPath({
           slug: data?.slug,
-          collection: 'posts',
+          collection: 'case-studies',
         }),
     },
     preview: (data) =>
       generatePreviewPath({
         slug: data?.slug as string,
-        collection: 'posts',
+        collection: 'case-studies',
       }),
     useAsTitle: 'title',
   },
@@ -75,11 +70,20 @@ export const Posts: CollectionConfig<'posts'> = {
       required: true,
     },
     {
+      name: 'companyName',
+      type: 'text',
+      required: true,
+      label: 'Company Name',
+      admin: {
+        description: 'The name of the company featured in this case study (e.g., "Club L", "Revolve").',
+      },
+    },
+    {
       name: 'excerpt',
       type: 'textarea',
       label: 'Excerpt',
       admin: {
-        description: 'A short summary of the post used in listings and previews.',
+        description: 'A short summary of the case study used in listings and previews.',
         rows: 3,
       },
     },
@@ -92,6 +96,16 @@ export const Posts: CollectionConfig<'posts'> = {
               name: 'heroImage',
               type: 'upload',
               relationTo: 'media',
+              label: 'Hero Image',
+            },
+            {
+              name: 'companyLogo',
+              type: 'upload',
+              relationTo: 'media',
+              label: 'Company Logo',
+              admin: {
+                description: 'Logo displayed over the card image. Use a white/transparent version for best results.',
+              },
             },
             {
               name: 'content',
@@ -101,7 +115,7 @@ export const Posts: CollectionConfig<'posts'> = {
                   return [
                     ...rootFeatures.filter((f) => f.key !== 'blockquote'),
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Code, ImageBlock, VideoBlock, HubspotFormBlock, StatsBlock, BlockquoteBlock, ConclusionBlock] }),
+                    BlocksFeature({ blocks: [ImageBlock, VideoBlock, StatsBlock, BlockquoteBlock] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),
@@ -117,7 +131,7 @@ export const Posts: CollectionConfig<'posts'> = {
         {
           fields: [
             {
-              name: 'relatedPosts',
+              name: 'relatedCaseStudies',
               type: 'relationship',
               admin: {
                 position: 'sidebar',
@@ -130,7 +144,7 @@ export const Posts: CollectionConfig<'posts'> = {
                 }
               },
               hasMany: true,
-              relationTo: 'posts',
+              relationTo: 'case-studies',
             },
             {
               name: 'categories',
@@ -159,13 +173,9 @@ export const Posts: CollectionConfig<'posts'> = {
             MetaImageField({
               relationTo: 'media',
             }),
-
             MetaDescriptionField({}),
             PreviewField({
-              // if the `generateUrl` function is configured
               hasGenerateFn: true,
-
-              // field paths to match the target field for data
               titlePath: 'meta.title',
               descriptionPath: 'meta.description',
             }),
@@ -176,7 +186,7 @@ export const Posts: CollectionConfig<'posts'> = {
               label: 'Block search engine indexing',
               admin: {
                 description:
-                  'When enabled, this post will not appear in search engine results (adds noindex, nofollow meta tag).',
+                  'When enabled, this case study will not appear in search engine results (adds noindex, nofollow meta tag).',
               },
             },
           ],
@@ -203,50 +213,16 @@ export const Posts: CollectionConfig<'posts'> = {
         ],
       },
     },
-    {
-      name: 'authors',
-      type: 'relationship',
-      admin: {
-        position: 'sidebar',
-      },
-      hasMany: true,
-      relationTo: 'users',
-    },
-    // This field is only used to populate the user data via the `populateAuthors` hook
-    // This is because the `user` collection has access control locked to protect user privacy
-    // GraphQL will also not return mutated user data that differs from the underlying schema
-    {
-      name: 'populatedAuthors',
-      type: 'array',
-      access: {
-        update: () => false,
-      },
-      admin: {
-        disabled: true,
-        readOnly: true,
-      },
-      fields: [
-        {
-          name: 'id',
-          type: 'text',
-        },
-        {
-          name: 'name',
-          type: 'text',
-        },
-      ],
-    },
     slugField(),
   ],
   hooks: {
-    afterChange: [revalidatePost],
-    afterRead: [populateAuthors],
-    afterDelete: [revalidateDelete],
+    afterChange: [revalidateCaseStudy],
+    afterDelete: [revalidateCaseStudyDelete],
   },
   versions: {
     drafts: {
       autosave: {
-        interval: 100, // We set this interval for optimal live preview
+        interval: 100,
       },
       schedulePublish: true,
     },

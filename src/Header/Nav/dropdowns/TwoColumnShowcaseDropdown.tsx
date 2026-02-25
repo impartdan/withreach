@@ -1,6 +1,6 @@
 'use client'
 
-import type { Post, Page } from '@/payload-types'
+import type { Post, Page, CaseStudy } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Link } from 'next-view-transitions'
 import Image from 'next/image'
@@ -11,8 +11,8 @@ type CMSLinkType = {
   label?: string | null
   newTab?: boolean | null
   reference?: {
-    relationTo: 'pages' | 'posts'
-    value: Page | Post | string | number
+    relationTo: 'pages' | 'posts' | 'case-studies'
+    value: Page | Post | CaseStudy | string | number
   } | null
   type?: 'custom' | 'reference' | null
   url?: string | null
@@ -32,7 +32,7 @@ const PostCard: React.FC<{ post: Post }> = ({ post }) => {
   if (!post.slug) return null
 
   return (
-    <Link href={`/posts/${post.slug}`} className="w-[382px] block group">
+    <Link href={`/resources/news/${post.slug}`} className="w-[382px] block group">
       {post.heroImage && typeof post.heroImage === 'object' && 'url' in post.heroImage ? (
         <div className="aspect-[3/2] rounded-lg overflow-hidden relative">
           <Image

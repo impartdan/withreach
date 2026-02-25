@@ -69,6 +69,7 @@ export const Pages: CollectionConfig<'pages'> = {
     breadcrumbs: true,
   },
   admin: {
+    group: 'Collections',
     defaultColumns: ['title', 'path', 'updatedAt'],
     livePreview: {
       url: ({ data }) => {

@@ -11,15 +11,20 @@ import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/
 import { searchFields } from '@/search/fieldOverrides'
 import { beforeSyncWithSearch } from '@/search/beforeSync'
 
-import { Page, Post } from '@/payload-types'
+import { Page, Post, CaseStudy } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
 import { getPagePath } from '@/utilities/getPagePath'
 
-const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
+const collectionPathMap: Record<string, string> = {
+  posts: '/resources/news',
+  'case-studies': '/resources/case-studies',
+}
+
+const generateTitle: GenerateTitle<Post | Page | CaseStudy> = ({ doc }) => {
   return doc?.title ? `${doc.title} | Reach` : 'Reach'
 }
 
-const generateURL: GenerateURL<Post | Page> = ({ doc, collectionConfig }) => {
+const generateURL: GenerateURL<Post | Page | CaseStudy> = ({ doc, collectionConfig }) => {
   const url = getServerSideURL()
 
   if (!doc?.slug) return url
@@ -28,13 +33,17 @@ const generateURL: GenerateURL<Post | Page> = ({ doc, collectionConfig }) => {
     return `${url}${getPagePath(doc as Page)}`
   }
 
-  return `${url}/${collectionConfig?.slug ?? ''}/${doc.slug}`
+  const prefix = collectionPathMap[collectionConfig?.slug ?? ''] || `/${collectionConfig?.slug ?? ''}`
+  return `${url}${prefix}/${doc.slug}`
 }
 
 export const plugins: Plugin[] = [
   redirectsPlugin({
-    collections: ['pages', 'posts'],
+    collections: ['pages', 'posts', 'case-studies'],
     overrides: {
+      admin: {
+        group: 'Utilities',
+      },
       // @ts-expect-error - This is a valid override, mapped fields don't resolve to the same type
       fields: ({ defaultFields }) => {
         return defaultFields.map((field) => {
@@ -69,6 +78,9 @@ export const plugins: Plugin[] = [
       payment: false,
     },
     formOverrides: {
+      admin: {
+        group: 'Utilities',
+      },
       fields: ({ defaultFields }) => {
         return defaultFields.map((field) => {
           if ('name' in field && field.name === 'confirmationMessage') {
@@ -89,11 +101,19 @@ export const plugins: Plugin[] = [
         })
       },
     },
+    formSubmissionOverrides: {
+      admin: {
+        group: 'Utilities',
+      },
+    },
   }),
   searchPlugin({
     collections: ['posts'],
     beforeSync: beforeSyncWithSearch,
     searchOverrides: {
+      admin: {
+        group: 'Utilities',
+      },
       fields: ({ defaultFields }) => {
         return [...defaultFields, ...searchFields]
       },

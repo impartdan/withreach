@@ -69,10 +69,11 @@ export interface Config {
   collections: {
     pages: Page;
     posts: Post;
-    media: Media;
-    categories: Category;
+    'case-studies': CaseStudy;
     integrations: Integration;
+    categories: Category;
     'integration-categories': IntegrationCategory;
+    media: Media;
     users: User;
     redirects: Redirect;
     forms: Form;
@@ -93,10 +94,11 @@ export interface Config {
   collectionsSelect: {
     pages: PagesSelect<false> | PagesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
-    media: MediaSelect<false> | MediaSelect<true>;
-    categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
     integrations: IntegrationsSelect<false> | IntegrationsSelect<true>;
+    categories: CategoriesSelect<false> | CategoriesSelect<true>;
     'integration-categories': IntegrationCategoriesSelect<false> | IntegrationCategoriesSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
@@ -117,11 +119,13 @@ export interface Config {
     header: Header;
     footer: Footer;
     'news-settings': NewsSetting;
+    'case-studies-settings': CaseStudiesSetting;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     'news-settings': NewsSettingsSelect<false> | NewsSettingsSelect<true>;
+    'case-studies-settings': CaseStudiesSettingsSelect<false> | CaseStudiesSettingsSelect<true>;
   };
   locale: null;
   user: User & {
@@ -270,6 +274,10 @@ export interface HomeHeroBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -551,6 +559,65 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-studies".
+ */
+export interface CaseStudy {
+  id: number;
+  title: string;
+  /**
+   * The name of the company featured in this case study (e.g., "Club L", "Revolve").
+   */
+  companyName: string;
+  /**
+   * A short summary of the case study used in listings and previews.
+   */
+  excerpt?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Logo displayed over the card image. Use a white/transparent version for best results.
+   */
+  companyLogo?: (number | null) | Media;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  relatedCaseStudies?: (number | CaseStudy)[] | null;
+  categories?: (number | Category)[] | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+    /**
+     * When enabled, this case study will not appear in search engine results (adds noindex, nofollow meta tag).
+     */
+    noindex?: boolean | null;
+  };
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "PlatformHeroBlock".
  */
 export interface PlatformHeroBlock {
@@ -582,6 +649,10 @@ export interface PlatformHeroBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -821,6 +892,10 @@ export interface TextHeroBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -909,6 +984,10 @@ export interface SupportHeroBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -1794,6 +1873,10 @@ export interface TextImageFeatureBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -1896,6 +1979,10 @@ export interface InsetDualImageBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -1995,6 +2082,10 @@ export interface InsetCopyImageBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -2173,6 +2264,10 @@ export interface PageTeaserBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -2269,6 +2364,10 @@ export interface DiagramBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -2347,6 +2446,10 @@ export interface TrioTallImageCardsBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -2445,6 +2548,10 @@ export interface TrioShortImageCardsBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -2488,6 +2595,10 @@ export interface TrioShortImageCardsBlock {
         | ({
             relationTo: 'posts';
             value: number | Post;
+          } | null)
+        | ({
+            relationTo: 'case-studies';
+            value: number | CaseStudy;
           } | null);
       url?: string | null;
       label: string;
@@ -2581,6 +2692,10 @@ export interface TrioTextOnlyCardsBlock {
         | ({
             relationTo: 'posts';
             value: number | Post;
+          } | null)
+        | ({
+            relationTo: 'case-studies';
+            value: number | CaseStudy;
           } | null);
       url?: string | null;
       label: string;
@@ -2673,6 +2788,10 @@ export interface TestimonialBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -3390,6 +3509,10 @@ export interface CtaLargeBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -3478,6 +3601,10 @@ export interface CtaSmallBlock {
         | ({
             relationTo: 'posts';
             value: number | Post;
+          } | null)
+        | ({
+            relationTo: 'case-studies';
+            value: number | CaseStudy;
           } | null);
       url?: string | null;
       label: string;
@@ -3634,6 +3761,10 @@ export interface FiftyFiftyBlock {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -3739,6 +3870,10 @@ export interface ItemHighlightsWithIntroBlock {
         | ({
             relationTo: 'posts';
             value: number | Post;
+          } | null)
+        | ({
+            relationTo: 'case-studies';
+            value: number | CaseStudy;
           } | null);
       url?: string | null;
       label: string;
@@ -3889,6 +4024,10 @@ export interface SupportIndexBlock {
         | ({
             relationTo: 'posts';
             value: number | Post;
+          } | null)
+        | ({
+            relationTo: 'case-studies';
+            value: number | CaseStudy;
           } | null);
       url?: string | null;
       label: string;
@@ -4052,6 +4191,10 @@ export interface Redirect {
       | ({
           relationTo: 'posts';
           value: number | Post;
+        } | null)
+      | ({
+          relationTo: 'case-studies';
+          value: number | CaseStudy;
         } | null);
     url?: string | null;
   };
@@ -4231,20 +4374,24 @@ export interface PayloadLockedDocument {
         value: number | Post;
       } | null)
     | ({
-        relationTo: 'media';
-        value: number | Media;
-      } | null)
-    | ({
-        relationTo: 'categories';
-        value: number | Category;
+        relationTo: 'case-studies';
+        value: number | CaseStudy;
       } | null)
     | ({
         relationTo: 'integrations';
         value: number | Integration;
       } | null)
     | ({
+        relationTo: 'categories';
+        value: number | Category;
+      } | null)
+    | ({
         relationTo: 'integration-categories';
         value: number | IntegrationCategory;
+      } | null)
+    | ({
+        relationTo: 'media';
+        value: number | Media;
       } | null)
     | ({
         relationTo: 'users';
@@ -5792,6 +5939,82 @@ export interface PostsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-studies_select".
+ */
+export interface CaseStudiesSelect<T extends boolean = true> {
+  title?: T;
+  companyName?: T;
+  excerpt?: T;
+  heroImage?: T;
+  companyLogo?: T;
+  content?: T;
+  relatedCaseStudies?: T;
+  categories?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+        noindex?: T;
+      };
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "integrations_select".
+ */
+export interface IntegrationsSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  logo?: T;
+  icon?: T;
+  body?: T;
+  features?: T;
+  category?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories_select".
+ */
+export interface CategoriesSelect<T extends boolean = true> {
+  title?: T;
+  parent?: T;
+  breadcrumbs?:
+    | T
+    | {
+        doc?: T;
+        url?: T;
+        label?: T;
+        id?: T;
+      };
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "integration-categories_select".
+ */
+export interface IntegrationCategoriesSelect<T extends boolean = true> {
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
@@ -5883,54 +6106,6 @@ export interface MediaSelect<T extends boolean = true> {
               filename?: T;
             };
       };
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "categories_select".
- */
-export interface CategoriesSelect<T extends boolean = true> {
-  title?: T;
-  parent?: T;
-  breadcrumbs?:
-    | T
-    | {
-        doc?: T;
-        url?: T;
-        label?: T;
-        id?: T;
-      };
-  generateSlug?: T;
-  slug?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "integrations_select".
- */
-export interface IntegrationsSelect<T extends boolean = true> {
-  title?: T;
-  description?: T;
-  logo?: T;
-  icon?: T;
-  body?: T;
-  features?: T;
-  category?: T;
-  generateSlug?: T;
-  slug?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "integration-categories_select".
- */
-export interface IntegrationCategoriesSelect<T extends boolean = true> {
-  title?: T;
-  generateSlug?: T;
-  slug?: T;
-  updatedAt?: T;
-  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -6250,6 +6425,10 @@ export interface Header {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -6270,6 +6449,10 @@ export interface Header {
                     | ({
                         relationTo: 'posts';
                         value: number | Post;
+                      } | null)
+                    | ({
+                        relationTo: 'case-studies';
+                        value: number | CaseStudy;
                       } | null);
                   url?: string | null;
                   label: string;
@@ -6291,6 +6474,10 @@ export interface Header {
                 | ({
                     relationTo: 'posts';
                     value: number | Post;
+                  } | null)
+                | ({
+                    relationTo: 'case-studies';
+                    value: number | CaseStudy;
                   } | null);
               url?: string | null;
               label: string;
@@ -6309,6 +6496,10 @@ export interface Header {
                     | ({
                         relationTo: 'posts';
                         value: number | Post;
+                      } | null)
+                    | ({
+                        relationTo: 'case-studies';
+                        value: number | CaseStudy;
                       } | null);
                   url?: string | null;
                   label: string;
@@ -6332,6 +6523,10 @@ export interface Header {
                     | ({
                         relationTo: 'posts';
                         value: number | Post;
+                      } | null)
+                    | ({
+                        relationTo: 'case-studies';
+                        value: number | CaseStudy;
                       } | null);
                   url?: string | null;
                   label: string;
@@ -6354,6 +6549,10 @@ export interface Header {
                     | ({
                         relationTo: 'posts';
                         value: number | Post;
+                      } | null)
+                    | ({
+                        relationTo: 'case-studies';
+                        value: number | CaseStudy;
                       } | null);
                   url?: string | null;
                   label: string;
@@ -6381,6 +6580,10 @@ export interface Header {
             | ({
                 relationTo: 'posts';
                 value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
               } | null);
           url?: string | null;
           label: string;
@@ -6416,6 +6619,10 @@ export interface Footer {
                         | ({
                             relationTo: 'posts';
                             value: number | Post;
+                          } | null)
+                        | ({
+                            relationTo: 'case-studies';
+                            value: number | CaseStudy;
                           } | null);
                       url?: string | null;
                       label: string;
@@ -6467,11 +6674,28 @@ export interface NewsSetting {
         | ({
             relationTo: 'posts';
             value: number | Post;
+          } | null)
+        | ({
+            relationTo: 'case-studies';
+            value: number | CaseStudy;
           } | null);
       url?: string | null;
       label: string;
     };
   };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-studies-settings".
+ */
+export interface CaseStudiesSetting {
+  id: number;
+  /**
+   * Select up to 5 case studies to feature on the case studies page.
+   */
+  featuredCaseStudies?: (number | CaseStudy)[] | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -6668,6 +6892,16 @@ export interface NewsSettingsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-studies-settings_select".
+ */
+export interface CaseStudiesSettingsSelect<T extends boolean = true> {
+  featuredCaseStudies?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "TaskSchedulePublish".
  */
 export interface TaskSchedulePublish {
@@ -6682,6 +6916,10 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'posts';
           value: number | Post;
+        } | null)
+      | ({
+          relationTo: 'case-studies';
+          value: number | CaseStudy;
         } | null);
     global?: string | null;
     user?: (number | null) | User;

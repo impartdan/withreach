@@ -1,6 +1,6 @@
 'use client'
 
-import type { Integration, Page, Post } from '@/payload-types'
+import type { Integration, Page, Post, CaseStudy } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media as MediaComponent } from '@/components/Media'
 import { Link } from 'next-view-transitions'
@@ -11,8 +11,8 @@ type CMSLinkType = {
   label?: string | null
   newTab?: boolean | null
   reference?: {
-    relationTo: 'pages' | 'posts'
-    value: Page | Post | string | number
+    relationTo: 'pages' | 'posts' | 'case-studies'
+    value: Page | Post | CaseStudy | string | number
   } | null
   type?: 'custom' | 'reference' | null
   url?: string | null

@@ -13,6 +13,7 @@ export const Integrations: CollectionConfig = {
     update: authenticated,
   },
   admin: {
+    group: 'Collections',
     useAsTitle: 'title',
     defaultColumns: ['title', 'category', 'updatedAt'],
   },

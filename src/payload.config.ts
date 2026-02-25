@@ -11,10 +11,12 @@ import { Integrations } from './collections/Integrations'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
+import { CaseStudies } from './collections/CaseStudies'
 import { Users } from './collections/Users'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
 import { NewsSettings } from './globals/NewsSettings/config'
+import { CaseStudiesSettings } from './globals/CaseStudiesSettings/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
@@ -65,9 +67,9 @@ export default buildConfig({
     },
     push: process.env.NODE_ENV === 'development',
   }),
-  collections: [Pages, Posts, Media, Categories, Integrations, IntegrationCategories, Users],
+  collections: [Pages, Posts, CaseStudies, Integrations, Categories, IntegrationCategories, Media, Users],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Header, Footer, NewsSettings],
+  globals: [Header, Footer, NewsSettings, CaseStudiesSettings],
   email: resendAdapter({
     defaultFromAddress: process.env.RESEND_FROM_ADDRESS || 'no-reply@example.com',
     defaultFromName: process.env.RESEND_FROM_NAME || 'Withreach',

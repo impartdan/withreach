@@ -5,8 +5,13 @@ import { cn } from '@/utilities/ui'
 import { Link } from 'next-view-transitions'
 import React from 'react'
 
-import type { Page, Post } from '@/payload-types'
+import type { Page, Post, CaseStudy } from '@/payload-types'
 import { getPagePath } from '@/utilities/getPagePath'
+
+const collectionPathMap: Record<string, string> = {
+  posts: '/resources/news',
+  'case-studies': '/resources/case-studies',
+}
 
 const lightVariantMap: Partial<Record<NonNullable<ButtonProps['variant']>, ButtonProps['variant']>> =
   {
@@ -21,8 +26,8 @@ type CMSLinkType = {
   label?: string | null
   newTab?: boolean | null
   reference?: {
-    relationTo: 'pages' | 'posts'
-    value: Page | Post | string | number
+    relationTo: 'pages' | 'posts' | 'case-studies'
+    value: Page | Post | CaseStudy | string | number
   } | null
   size?: ButtonProps['size'] | null
   type?: 'custom' | 'reference' | null
@@ -48,7 +53,7 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
     type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
       ? reference.relationTo === 'pages' && 'breadcrumbs' in reference.value
         ? getPagePath(reference.value as Page)
-        : `/${reference.relationTo}/${(reference.value as Post).slug}`
+        : `${collectionPathMap[reference.relationTo] || ''}/${reference.value.slug}`
       : url
 
   if (!href) return null

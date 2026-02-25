@@ -13,6 +13,7 @@ export const IntegrationCategories: CollectionConfig = {
     update: authenticated,
   },
   admin: {
+    group: 'Taxonomies',
     useAsTitle: 'title',
   },
   fields: [
