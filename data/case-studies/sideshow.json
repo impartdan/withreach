@@ -1,0 +1,136 @@
+{
+  "type": "case-study",
+  "title": "Increasing Global Approval Rates To Over 90% With Reach – Sideshow's Success Story",
+  "slug": "sideshow",
+  "companyName": "Sideshow is a creative powerhouse specializing in high-end pop culture collectibles. With a mission to connect fans with premium representations of their favourite characters",
+  "excerpt": "Sideshow unlocked a localized checkout experience, leading to a worldwide average approval rate of 92.60% and a significant decrease in failed transactions. By leveraging Reach's Merchant of Record model, Sideshow could focus on growing their product offerings while delivering an exceptional experience to their global customers.",
+  "publishedAt": null,
+  "heroImage": {
+    "url": "https://www.withreach.com/images/sideshow-hero.webp",
+    "alt": "Case Study Hero",
+    "filename": "sideshow-hero.webp"
+  },
+  "companyLogo": {
+    "url": "https://www.withreach.com/images/brand-icons/sideshow.svg",
+    "alt": "Client Logo",
+    "filename": "sideshow.svg"
+  },
+  "pdfUrl": null,
+  "highlights": [
+    {
+      "label": "Industry",
+      "value": "Retail & Collectibles"
+    },
+    {
+      "label": "Founded",
+      "value": "1994"
+    },
+    {
+      "label": "Tech Stack",
+      "value": "Checkout API Integration"
+    }
+  ],
+  "categories": [],
+  "caseStudyCategories": [],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Sideshow is a creative powerhouse specializing in high-end pop culture collectibles. With a mission to connect fans with premium representations of their favourite characters, Sideshow has established itself as a global leader in the collectibles industry. Guided by their passion for art and storytelling, the company has always considered itself a global brand."
+      },
+      {
+        "blockType": "statsBlock",
+        "heading": "Key Highlights",
+        "stats": [
+          {
+            "value": "Increased approval rates",
+            "description": "to over 90% and decreased false declines"
+          },
+          {
+            "value": "Eliminated buyer friction",
+            "description": "by offering their international customers a localized checkout experience"
+          },
+          {
+            "value": "Gained operational peace of mind",
+            "description": "to focus on core offerings and not payment complexities"
+          },
+          {
+            "value": "solve issues specific to their product and industry",
+            "description": "Collaborative development to"
+          }
+        ]
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "\"Reach really has been that rock for us. It lets us focus on how to better serve and interact with our customers, knowing that the payment side is handled — and handled well.\"",
+        "citation": "Rob Hammond - Co-CEO of Sideshow"
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Situation"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In the early nineties, Sideshow relied on phone and fax orders. As they expanded online, more customers began shopping from abroad, but the checkout experience created friction for international buyers. Before partnering with Reach, Sideshow only accepted credit cards, lacked localized payment options, and processed all transactions from the U.S., leading to high foreign transaction fees, and false declines - these issues deterred global customers. Sideshow was also limited by the standard refund policies available through previous payment service providers. These policies did not fit Sideshow's pre-order-based business model in a way that satisfied their global consumer's needs. To maintain their reputation for exceptional experiences, Sideshow needed a solution that aligned with their premium products and met the needs of their diverse audience."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Solution"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In 2014, Sideshow partnered with Reach to level up their international ecommerce capabilities. Reach, through their Merchant of Record (MoR) model, greatly improved Sideshow's checkout in all the countries they serve. This allowed Sideshow to:"
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Localize Their Checkout Experience"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Enable cross-border customers to pay via payment methods & currencies local to, or preferred by them."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Reduce Cross-Border Fees"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Significantly reduce cross-border transaction fees for their international customers."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Reduce Purchase Friction"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Streamline the checkout process to reduce friction and enhance the buying experience for their global audience."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Custom-Build Collaborative Solutions"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Regular collaboration with developers at both companies provided Sideshow with bespoke solutions to the pre-order refund challenges inherent to their industry and product."
+      },
+      {
+        "blockType": "conclusion",
+        "heading": "The Outcome",
+        "text": "Sideshow unlocked a localized checkout, which led to a worldwide average approval rate of 92.60% and a significant decrease in failed transactions.\n\nReach minimized or eliminated international transaction fees, creating a better experience for customers and boosting conversions.\n\nSideshow's customers gained the convenience of paying in their local currencies & payment methods, eliminating checkout friction and increasing their overall satisfaction.\n\nWith Reach managing the complexities of global payments, Sideshow can focus on growing its product offerings and strengthening customer relationships."
+      }
+    ]
+  },
+  "meta": {
+    "title": "Increasing Global Approval Rates To Over 90% With Reach – Sideshow's Success Story",
+    "description": "Discover how Sideshow partnered with Reach to level up their international ecommerce capabilities and achieve over 90% approval rates globally.",
+    "ogImageUrl": "/images/sideshow-hero.webp"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/case-studies/sideshow"
+}

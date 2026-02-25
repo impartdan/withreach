@@ -1,0 +1,101 @@
+{
+  "type": "case-study",
+  "title": "How Club L accelerated global growth with Reach",
+  "slug": "club-l",
+  "companyName": "Club L London",
+  "excerpt": "Club L partnered with Reach to improve international authorization rates, simplify compliance, and unlock scalable growth with a single integration.",
+  "publishedAt": null,
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/10/club-l2.webp",
+    "alt": "Club L Hero",
+    "filename": "club-l2.webp"
+  },
+  "companyLogo": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/10/clubl.svg",
+    "alt": "Client Logo",
+    "filename": "clubl.svg"
+  },
+  "pdfUrl": null,
+  "highlights": [],
+  "categories": [],
+  "caseStudyCategories": [],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Club L London is the next-generation online fashion retailer for the forward-thinking consumer. Expertly designed and crafted in-house, Club L specializes in accessible luxury, unique designs and unrivaled quality made to flatter every figure. Founded in 2007 Club L was created with the vision of offering long-lasting luxury styles, trend-oriented collections with a twist and unique, statement designs that offer both exceptional quality and fit in an otherwise saturated market of fast-fashion and throw-away goods."
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "US sales tax compliance is incredibly complex and distracted our Finance team from their day to day. Reach’s solution took this headache away completely and actually made us money! Local acquiring increased our checkout conversion by over 2% which more than covers their service fees",
+        "citation": "Club L"
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Situation"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Club L was experiencing exponential growth in their international markets, and looking to further their growth with the acquisition of UK fashion brand Lavish Alice. With the growth, Club L was looking for a global partner that could help localize their websites, handle tax compliance, support a seamless checkout experience, all while keeping their cost down. In 2023, Club L’s leadership team began the search for a provider with the requirements below:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "A checkout with the technology to support localized transactions in each customer’s country",
+          "The ability to handle taxes in those local markets seamlessly",
+          "An easy-to-integrate system that would work with their existing Shopify setup and support their in-house e-commerce team"
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Solution"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "After looking at a range of options, Club L chose Reach to support their Shopify stores with a tailored solution. Reach enabled them to meet tax compliance globally and brought meaningful benefits to their international operations. This included support for their expansion stores in the USA, Australia, and Canada. As well support Lavish Alice on a global Shopify Store and regional Ireland store."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Localized Payments"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Reach processes transactions locally across markets to improve authorization rates and customer experience."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Simplified Compliance"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Operating as the Merchant of Record, Reach manages the complex layers of tax, regulations, and fraud controls across jurisdictions."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Scalable Integration"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "A flexible integration approach allowed Club L to move quickly and scale confidently without distracting core teams."
+      },
+      {
+        "blockType": "conclusion",
+        "heading": "The Outcome",
+        "text": "Reduced overall processing and tax cost by 25% across all markets\n\nReduced cart abandonment by 10% by offering a fully localised Shopify Payments experience to shoppers\n\nGained full US sales tax compliance in all states and full tax compliance in international markets\n\nIncreased conversions by offering Shop Pay Installments and Afterpay"
+      }
+    ]
+  },
+  "meta": {
+    "title": "Club L Partners with Reach to Accelerate Global Growth | Reach",
+    "description": "Read how Club L simplified international payments and scaled confidently with Reach's Merchant of Record model.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/10/club-l2.webp"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/case-studies/club-l"
+}

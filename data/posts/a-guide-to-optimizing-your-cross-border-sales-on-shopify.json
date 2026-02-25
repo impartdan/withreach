@@ -1,0 +1,115 @@
+{
+  "type": "post",
+  "title": "A guide to optimizing your cross-border sales on Shopify",
+  "slug": "a-guide-to-optimizing-your-cross-border-sales-on-shopify",
+  "excerpt": "Enable local processing through your existing Shopify stores with our Merchant of Record model with zero technical lift.",
+  "publishedAt": "2023-10-18T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8128-a1f6-f8ff68b93f24/636c95c0-a400-4687-8059-10e86d4c8de1.jpg",
+    "alt": "A guide to optimizing your cross-border sales on Shopify",
+    "filename": "636c95c0-a400-4687-8059-10e86d4c8de1.jpg"
+  },
+  "authors": [],
+  "categories": [
+    "Localized Customer Experience",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Summary"
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Shopify Markets"
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "“Markets is an attractive and cost-effective option for Shopify merchants, as it allows them to expand and test a new region with lower costs to market. This gives you time to prove your business case before investing further time, money and staff resources in that region. When used in conjunction with Expansion Stores, Markets can also help to broaden your reach and serve additional markets beyond those where you are already established.“ Nichola Birch, Lead Product Manager at Swanky",
+        "citation": ""
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Expansion Stores"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "This independence is critical for brands seeking a more robust approach to localizing their presence in individual markets. As each expansion store functions independently, you can implement optimizations in areas like region-specific content, promotional campaigns and discounts to enhance your ability to convert more in a chosen jurisdiction."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Expansion stores also enable functionality that's not just consumer-facing. They allow for the payout of multiple currencies, so if you need to be paid in currency local to your store in a specific region, extension stores can make that happen. The multi-store approach also enables a more straightforward solution for complex pricing, shipping, tax, and warehousing rules. As you can manage each store individually, you can tailor your stores for each of these areas to meet the requirements of a specific geography."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Increased Cost"
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Increased Time Managing Stores"
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Not Truly Local"
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Taking Shopify Expansion Stores To The Next Level"
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "“Our unified codebase allows you to retain the localized content and functionality of each regional store, while managing shared components from the central codebase. Once the master code has been created, future expansion stores can be easily spun out for new regions, whilst any new updates or improvements can be automatically rolled out across all the stores simultaneously. “ Ian Jamieson, Head of Technology at Swanky",
+        "citation": ""
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Furthermore, you can unlock local processing in over 70 markets worldwide with a no-code integration using our Merchant of Record model. By localizing your payments through the Reach MoR network, you can increase your conversions by up to 20% and gain fee savings of up to 40% in your Shopify expansion stores."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Explore the analysis below of an Australian based retailer selling into the US which factors in both the benefits and additional cost of having an localized extension store vs. Shopify Markets."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "What would You do with an Extra $20K per Month?"
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Go Global with The Right Partners"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Reach & Swanky can enhance your businesses' ability to scale efficiently with Shopify expansion stores, save on fees, increase conversions, and get the best ROI while you grow internationally."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Learn more about our Merchant of Record model’s seamless no-code integration for your Shopify extension stores."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Learn more about Swanky’s unified codebase solution for managing multiple Shopify Plus expansion stores."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Further, explore Shopify Markets and expansion stores in Swanky’s in-depth blog."
+      }
+    ]
+  },
+  "meta": {
+    "title": "A guide to optimizing your cross-border sales on Shopify",
+    "description": "Enable local processing through your existing Shopify stores with our Merchant of Record model with zero technical lift.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8128-a1f6-f8ff68b93f24/636c95c0-a400-4687-8059-10e86d4c8de1.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/a-guide-to-optimizing-your-cross-border-sales-on-shopify"
+}

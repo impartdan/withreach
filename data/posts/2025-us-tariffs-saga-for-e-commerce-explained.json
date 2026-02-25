@@ -1,0 +1,301 @@
+{
+  "type": "post",
+  "title": "2025 US Tariffs Saga for E-commerce: Explained",
+  "slug": "2025-us-tariffs-saga-for-e-commerce-explained",
+  "excerpt": "Detailed breakdown of new US customs duties on Chinese, Mexican, and Canadian imports. Learn the chronology of events, de minimis thresholds, and what these tariff changes mean for e-commerce businesses and consumers in 2025.",
+  "publishedAt": "2025-02-25T05:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-816d-9185-c95c0ffda5d1/8856b195-99a0-4944-a2ff-97083e35d8c7.png",
+    "alt": "2025 US Tariffs Saga for E-commerce: Explained",
+    "filename": "8856b195-99a0-4944-a2ff-97083e35d8c7.png"
+  },
+  "authors": [],
+  "categories": [
+    "Tarrifs",
+    "Compliance",
+    "United States",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Now that the dust has settled, I want to provide a detailed breakdown of the customs duties that the US has imposed on China, Canada, and Mexico. Read on to understand what happened, the current situation, and what to expect in the future. This information will be useful for online sellers shipping goods to US buyers and buyers themselves."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Chronology of Events"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Friday, February 1 – President Trump signs three executive orders, which impose the following trade restrictions on imports from Mexico, Canada, and China starting February 4:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "An additional 25% tariff on all goods manufactured in Mexico.",
+          "An additional 25% tariff on all goods manufactured in Canada (with exceptions for oil, gas, and other natural resources, which will be subject to a 10% tariff).",
+          "An additional 10% tariff on all goods manufactured in China.",
+          "These tariffs are imposed in addition to existing tariffs on goods from these countries.",
+          "The duty-free threshold for parcels from these countries is eliminated. Previously, the duty-free threshold, also known as de minimis, was set at $800.",
+          "Before this change, online purchases under $800 were exempt from customs duties. Read more about de minimis below."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "President Trump speaks by phone with the President of Mexico and the Prime Minister of Canada.",
+          "Mexico and Canada pledge additional funding to strengthen border security with the US to prevent drug smuggling and illegal immigration.",
+          "President Trump delays the enforcement of the executive orders for Canada and Mexico by 30 days.",
+          "The order concerning China remains in effect."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "The executive order for China comes into effect.",
+          "US Customs and Border Protection (CBP) announces that de minimis exemptions and simplified customs clearance are no longer applicable to goods from China and Hong Kong.",
+          "The US Postal Service (USPS) suspends the acceptance of packages from China and Hong Kong."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Hong Kong Post halts the acceptance of shipments to the US.",
+          "Commercial couriers (DHL & UPS) start billing American recipients for additional tariffs and fees.",
+          "President Trump signs an amendment to his executive order, which will be published on Friday, February 7. Keep this in mind—it's important.",
+          "USPS unexpectedly resumes accepting shipments from China."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Over a million unprocessed packages containing goods from China pile up at JFK Airport in New York.",
+          "E-commerce sellers face chaos. As Reuters quotes one industry participant:"
+        ]
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "We're all running around like headless chickens at this moment in time, trying to second-guess what's going to happen.",
+        "citation": ""
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Friday, February 7:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "The amendment to the executive order signed on Wednesday is published, reinstating the previously eliminated duty-free threshold for Chinese goods.",
+          "However, this exemption is temporary and will remain in place only until the US Department of Commerce implements an \"adequate system for efficient processing and collection of customs duties.\""
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Hong Kong Post resumes accepting and sending shipments to the US.",
+          "Ten days have passed since the executive orders were signed.",
+          "The status quo is restored."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Thursday, February 27:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "President Donald Trump confirmed that tariffs on Mexico and Canada will take effect on March 4.",
+          "He also announced a tariff hike on Chinese imports, doubling the current 10% rate to 20%."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Monday, March 3:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "President Trump issues two executive orders amending the original tariff orders for Canada and Mexico. The amendments confirm that de minimis will remain in place for both countries—at least temporarily—after March 4, 2025.",
+          "A new executive order is published, doubling additional tariffs on China to 20%, as announced last week."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Tuesday, March 4:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "U.S. Customs and Border Protection issues guidance confirming that tariffs on Canada, China, and Mexico take effect at midnight."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Friday, March 7:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "A White House Fact Sheet confirms that the 25% tariffs will not apply to goods that meet the U.S.-Mexico-Canada Agreement (USMCA) rules of origin.",
+          "Please read my new article to understand USMCA Rules of Origin and their impact on tariffs: https://www.linkedin.com/pulse/understanding-usmca-rules-origin-impact-tariffs-grigory-shchichko-yqhjf/"
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "🆕 Wednesday, April 2:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "President Trump announces new reciprocal tariffs on imports from 83 countries.",
+          "A separate Executive Order eliminates the $800 de minimis threshold for goods from China, effective May 2, 2025.",
+          "From that date, all Chinese-origin goods—regardless of value—will be subject to full customs duties."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "You may ask, \"What was that all about?\" And you'd be surprised if I told you this is just the beginning."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "What Foreign E-commerce Sellers and US Buyers Need to Know"
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "What is De Minimis?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Many countries have a duty-free threshold for foreign purchases, known as de minimis. For example:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "European Union: EUR 150",
+          "United Kingdom: GBP 135",
+          "Singapore: SGD 400",
+          "Australia: AUD 1,000"
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Online purchases from abroad below these thresholds are exempt from customs duties."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Until recently, the US had a single duty-free threshold of $800 for online purchases from all countries. One of the main points of the executive order was the removal of this exemption for all goods produced in China or Hong Kong."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Yes, the duty-free threshold for Chinese goods has been temporarily reinstated, but the key word is temporary. Once the US Department of Commerce is ready to efficiently collect customs duties, the exemption will be eliminated again."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Why Is De Minimis Important?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Here’s a practical example of purchasing a women's dress made in China:"
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "New US Tariffs: Myths vs. Reality"
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Myth: Chinese goods will only become 10% more expensive."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✅ Reality: The February 2025 executive order adds a 10% tariff on top of existing ones. In practice, Chinese-made goods may face up to three different tariffs:"
+      },
+      {
+        "blockType": "list",
+        "style": "ordered",
+        "items": [
+          "Base tariff (varies by product, e.g., 14.9% for cotton dresses, 32% for synthetic skirts/blouses).",
+          "Section 301 Tariff (imposed in 2018-2019, e.g., 7.5% on apparel, 15% on smartphones/laptops).",
+          "New 20% tariff (10% was added in February and doubled in March 2025).",
+          "Reciprocal tariff of 34% (effective April 5, 2025)"
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Myth: Goods from foreign e-commerce stores (e.g., UK, Australia) won't get more expensive."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✅ Reality: The tariffs apply to the country of origin, not just the shipping country. Example: A UK store sells China-made products from its warehouse. ➡️ Even if shipped from the UK, it will be taxed as a Chinese product."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Myth: De Minimis is back—no need to worry."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✅ Reality: The original executive order eliminating de minimis is still in effect. The exemption is only temporary."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Myth: Foreign online purchases under $800 aren’t subject to sales tax."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✅ Reality: De minimis only applies to customs duties, not state sales tax."
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Each state sets its own sales tax rules.",
+          "Many states require foreign sellers to register and collect sales tax once they reach an economic nexus threshold (usually $100,000 in sales per year).",
+          "Some states (e.g., California, New York, Texas) have a higher threshold: $500,000."
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Myth: These new tariffs are just temporary and will go away soon."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✅ Reality: Trump's economic policy aims to lower corporate and personal income taxes. ➡️ To compensate for lost revenue, tariffs on foreign goods are a key strategy."
+      },
+      {
+        "blockType": "conclusion",
+        "heading": "Conclusion",
+        "text": "In my opinion, these tariffs could trigger a global chain reaction. E-commerce businesses and marketplaces must be ready to quickly adapt to changes in customs and tax policies —and explain them clearly to customers.\n\nSo, brace yourself for a Tariff Winter. ❄️\n\n📌 I’ll keep updating this article as new developments arise.\n\n• Updated on February 27, with tariffs for Mexico and Canada coming into effect on March 4.\n• Updated on March 3, with de minimis remaining after March 4.\n• Updated on March 4, with double tariffs for China.\n• Updated on March 10, with exemption for USMCA-compliant goods.\n• Updated on April 7, with reciprocal tariffs and abolishment of de minimis for China."
+      }
+    ]
+  },
+  "meta": {
+    "title": "2025 US Tariffs Saga for E-commerce: Explained",
+    "description": "Detailed breakdown of new US customs duties on Chinese, Mexican, and Canadian imports. Learn the chronology of events, de minimis thresholds, and what these tariff changes mean for e-commerce businesses and consumers in 2025.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-816d-9185-c95c0ffda5d1/8856b195-99a0-4944-a2ff-97083e35d8c7.png"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/2025-us-tariffs-saga-for-e-commerce-explained"
+}

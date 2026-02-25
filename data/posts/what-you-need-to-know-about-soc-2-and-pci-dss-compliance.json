@@ -1,0 +1,109 @@
+{
+  "type": "post",
+  "title": "What You Need to Know About SOC 2 and PCI DSS Compliance",
+  "slug": "what-you-need-to-know-about-soc-2-and-pci-dss-compliance",
+  "excerpt": "Learn about the importance of PCI DSS and AICPA SOC 2 compliance and how we help ensure your business’ cross-border payments remain compliant in global markets.\r\n",
+  "publishedAt": "2023-06-01T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8179-bd81-ef27eec14881/dcadce96-b622-49bf-b70f-19e2dc615241.jpg",
+    "alt": "What You Need to Know About SOC 2 and PCI DSS Compliance",
+    "filename": "dcadce96-b622-49bf-b70f-19e2dc615241.jpg"
+  },
+  "authors": [],
+  "categories": [
+    "Fraud",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "In 2022, it was estimated that over 422 million individuals were impacted by compromised data in the US alone. Due to the rise of such nefarious activity, consumers worldwide want to know that their payment data and information are being protected, and international businesses want to reduce their risk & liability."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "To meet these demands, regulatory bodies have created standards of compliance guidelines such as PCI DSS and AICPA SOC 2, which have become a requirement, if not the gold standard, for many industries globally."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "What are PCI DSS and SOC2?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "PCI DSS or The Payment Card Data Security Standard is a mandatory set of control standards for any company that processes, stores, or transmits credit card information. It was established by the Payment Card Industry Security Standards Council which is an independent regulatory body created by major credit card brands such as Mastercard & Visa."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The focus of PCI DSS is to set security guidelines and compliance standards for payment cards and ensure their information is being used/stored in a strict and secure manner. Controls and compliance standards include practices such as:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Ensuring strong encryption of all cardholder data while in transit over open networks",
+          "Regular scanning of all system disks to ensure that no card data is present",
+          "Monthly internal vulnerability scans, quarterly reporting to auditor",
+          "Annual penetration tests of production infrastructure performed by a third party",
+          "Ensuring change management processes are in place"
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "SOC2 or Systems and Organization Controls 2 is a voluntary set of standards that outlines the business controls and effectiveness of those controls to maintain a high level of information security to protect their systems. The American Institute of Certified Public Accountants established this set of standards. SOC2 is based on five criteria: security, availability, processing integrity, confidentiality, and privacy. SOC2 Type 1 provides a report of the procedures and controls that an organization has put in place as of a point in time. Type 2 looks over a period of time and tests the effectiveness of the controls which were implemented."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "An examination of a description of a service organization’s system and the suitability of the design and operating effectiveness of controls involves the following:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Obtaining an understanding of the system and the service organization's service commitments and system requirements.",
+          "Performing procedures to obtain evidence about whether the description is presented in accordance with the description criteria.",
+          "Performing procedures to obtain evidence about whether controls stated in the description were suitably designed to provide reasonable assurance that the service organization achieved its service commitments and system requirements based on the applicable trust services criteria.",
+          "Testing the operating effectiveness of controls stated in the description to provide reasonable assurance that the service organization achieved its service commitments and system requirements based on the applicable trust services criteria.",
+          "Evaluating the overall presentation of the description."
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Why Should You Care?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "While SOC2 is voluntary, protecting your consumer's data isn't. A breach of your client's data is a surefire way to tarnish your brand's reputation and destroy any trust you may have had with your consumers. By remaining compliant with SOC2, you guarantee your customers that the highest information security standards protect their data. When working with payment information and similar types of information, this level of protection is worth its weight in gold as it decreases your risk and liability while building consumer trust in your brand."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Unlike SOC2, PCI DSS compliance isn’t voluntary, and the repercussions of neglecting these security standards are severe. If your business handles credit card information and lets PCI fall by the wayside, you could be subject to fines as high as $1M if breached. That alone would be enough to sink most businesses, but it doesn’t stop there. Even if you’re big enough to eat those costs, banks and other financial institutions can terminate their relationship with you, limiting the payment options you can offer. So, to avoid these repercussions, it is essential that your business adheres to the strict compliance standards of PCI DSS."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "How Can We Help You Remain Compliant?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "As we’re 100% compliant with PCI DSS & SOC2 Type 1 & 2, every transaction you process with our Merchant of Record model is too. Our all-in pre-built solution for global payments is held to the highest level of compliance standards and is designed to securely manage your customers’ payment data. This enables you to sell internationally with the confidence of knowing our model keeps your buyer’s data protected and allows you to focus on what’s important, growing your international business."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "That being said, it is still essential that you maintain your own compliance with PCI DSS for all transactions processed outside of our platform to secure and protect your own platform and customer data."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Learn more about our Merchant of Record model and discover how we help ensure your business’ cross-border payments remain compliant in global markets."
+      }
+    ]
+  },
+  "meta": {
+    "title": "What You Need to Know About SOC 2 and PCI DSS Compliance",
+    "description": "Learn about the importance of PCI DSS and AICPA SOC 2 compliance and how we help ensure your business’ cross-border payments remain compliant in global markets.\r\n",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8179-bd81-ef27eec14881/dcadce96-b622-49bf-b70f-19e2dc615241.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/what-you-need-to-know-about-soc-2-and-pci-dss-compliance"
+}

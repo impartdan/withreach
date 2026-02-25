@@ -1,0 +1,78 @@
+{
+  "type": "post",
+  "title": "Understanding the Corporate Transparency Act (CTA) and Its Impact on U.S. Businesses",
+  "slug": "understanding-the-corporate-transparency-act-cta-and-its-impact-on-us-businesses",
+  "excerpt": "Businesses operating in the United States should be aware of a critical new regulation: the Corporate Transparency Act (CTA). Learn more in this article.",
+  "publishedAt": "2024-10-29T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8147-b123-e3969d759397/5d56ca02-db63-46ec-83b1-99ac634c3fcc.jpg",
+    "alt": "Understanding the Corporate Transparency Act (CTA) and Its Impact on U.S. Businesses",
+    "filename": "5d56ca02-db63-46ec-83b1-99ac634c3fcc.jpg"
+  },
+  "authors": [],
+  "categories": [
+    "Compliance",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "As we approach the end of the year, businesses operating in the United States should be aware of a critical new regulation: the Corporate Transparency Act (CTA), which came into effect on January 1, 2024. This legislation introduces new compliance requirements for corporations, limited liability companies, and other entities operating within the U.S."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "While there have been legal challenges, notably from the Alabama Federal District Court, only the plaintiffs involved have been granted a stay from the CTA's application. This means most companies must prepare to comply with its provisions, particularly in filing a Beneficial Ownership Information (BOI) report with the U.S. Department of the Treasury’s Financial Crimes Enforcement Network (FinCEN)."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "What is Required Under the CTA?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The CTA mandates that all legal entities created or registered to do business in the U.S. submit a BOI report. This report must include detailed information about the entity’s beneficial owners and, in the case of newly formed entities, the individuals involved in the formation process. The specific deadlines for submitting these reports vary based on when the entity was established or registered."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Failing to meet these filing requirements can result in penalties, so it is essential to begin preparing your compliance efforts as early as possible."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "The Time to Act is Now"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Given the January 1, 2025, deadline and the high volume of anticipated filings, it’s crucial to begin the compliance process now. FinCEN is expected to experience a significant influx of reports, and delaying could result in unnecessary complications or risks for your business."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "By staying ahead of these compliance requirements, your business can avoid potential legal risks and ensure it continues to operate smoothly in the U.S."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "File a Beneficial Ownership Information (BOI) report today:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "https://boiefiling.fincen.gov"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Want to learn more? Check out the BOI FAQ:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "https://www.fincen.gov/boi-faqs#B_1"
+      }
+    ]
+  },
+  "meta": {
+    "title": "Understanding the Corporate Transparency Act (CTA) and Its Impact on U.S. Businesses",
+    "description": "Businesses operating in the United States should be aware of a critical new regulation: the Corporate Transparency Act (CTA). Learn more in this article.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8147-b123-e3969d759397/5d56ca02-db63-46ec-83b1-99ac634c3fcc.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/understanding-the-corporate-transparency-act-cta-and-its-impact-on-us-businesses"
+}

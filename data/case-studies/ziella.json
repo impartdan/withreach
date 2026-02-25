@@ -1,0 +1,136 @@
+{
+  "type": "case-study",
+  "title": "From Cash Flow Constraints to Record Revenue: Ziella's Success with Reach",
+  "slug": "ziella",
+  "companyName": "Ziella",
+  "excerpt": "Ziella, a rapidly growing DTC jewelry brand, partnered with Reach to eliminate payment holds during peak periods, enabling seamless global expansion and achieving record-breaking Q4 performance while significantly reducing chargebacks.",
+  "publishedAt": null,
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/04/ziella-hero.png",
+    "alt": "Ziella Hero",
+    "filename": "ziella-hero.png"
+  },
+  "companyLogo": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/04/Ziella-Logo.png",
+    "alt": "Ziella Logo",
+    "filename": "Ziella-Logo.png"
+  },
+  "pdfUrl": null,
+  "highlights": [
+    {
+      "label": "Industry",
+      "value": "Retail Jewelry"
+    },
+    {
+      "label": "Founded",
+      "value": "2022"
+    },
+    {
+      "label": "Tech Stack",
+      "value": "Shopify Embedded"
+    }
+  ],
+  "categories": [],
+  "caseStudyCategories": [],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Ziella is a rapidly growing, direct-to-consumer ecommerce brand specializing in creating meaningful customer experiences through thoughtfully curated gift sets. Operating under the Protus Brands umbrella, Ziella has experienced significant growth, particularly during peak seasons like Black Friday and Cyber Monday."
+      },
+      {
+        "blockType": "statsBlock",
+        "heading": "Key Highlights",
+        "stats": [
+          {
+            "value": "Eliminated Payment Holds",
+            "description": "during peak periods, enabling uninterrupted business operations"
+          },
+          {
+            "value": "Seamless Expansion",
+            "description": "into European markets with full compliance and infrastructure"
+          },
+          {
+            "value": "Reduced Chargebacks",
+            "description": "through improved support and returns experience"
+          },
+          {
+            "value": "Record-Breaking Q4",
+            "description": "with ability to scale ad campaigns and respond to viral demand"
+          }
+        ]
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "\"Working with Reach, that's allowed us to not worry about cashflow, to worry about that payment process. It allowed the team to really focus on what they do well, which is creating meaningful ads, getting a good process in place and it really enabled the team to scale new products and deliver a great experience for our customers.\"",
+        "citation": "Sean Goodman - Operations Management, Protus Brands (Ziella)"
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Situation"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Ziella, a fast-growing direct-to-consumer ecommerce store under Protus Brands, specializes in thoughtfully curated gift sets. With demand spiking during seasonal periods—especially Q4—the team needed a reliable payments partner to scale. Ziella saw rapid growth, causing their previous payments solution to trigger holds on nearly 100% of incoming funds during their busiest time of year. This severely constrained cash flow and made it difficult to pay vendors, run ads, or even cover payroll."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Solution"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Within a few weeks, Ziella implemented Reach's Merchant of Record services, a decision driven by Reach's capacity to streamline global payment complexities. Key features of the solution included:"
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Transparent, Real-Time Support"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Ziella's previous solution lacked direct communication and timely responses. Reach solved this by providing direct access to their team via Slack, ensuring quick and efficient issue resolution."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Stable, Scalable Payment System"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Ziella, a rapidly growing brand, needed a payment platform that could handle fluctuating transaction volumes. Reach's solution provided the necessary infrastructure to process payments without revenue holds, enabling Ziella to capitalize on periods of high demand and plan for future growth."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Seamless Onboarding Experience"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Reach delivered a fast, personalized, and frictionless onboarding process with clear documentation and hands-on support, ensuring a smooth transition and minimizing delays."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Ability to Launch into New Markets Without Delays"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Reach provides the infrastructure and expertise to navigate international payments and compliance, enabling Ziella to launch into new EU markets with ease and confidence."
+      },
+      {
+        "blockType": "conclusion",
+        "heading": "The Outcome",
+        "text": "Scaling ad campaigns and responding to viral demand became possible without liquidity issues.\n\nSeamless launches into new markets were possible with established infrastructure powered by Reach & completed with full compliance.\n\nImproved support, transparency, and returns experience led to fewer chargeback disputes, with support from Reach.\n\nBy outsourcing their global payments solution, Ziella can focus on creativity and customer experience, not payments."
+      }
+    ]
+  },
+  "meta": {
+    "title": "From Cash Flow Constraints to Record Revenue: Ziella's Success with Reach | Reach",
+    "description": "Discover how Ziella partnered with Reach to overcome payment processing challenges and achieve record-breaking growth while expanding globally.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/04/ziella-hero.png"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/case-studies/ziella"
+}

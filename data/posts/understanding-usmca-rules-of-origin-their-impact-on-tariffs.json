@@ -1,0 +1,229 @@
+{
+  "type": "post",
+  "title": "Understanding USMCA Rules of Origin & Their Impact on Tariffs",
+  "slug": "understanding-usmca-rules-of-origin-their-impact-on-tariffs",
+  "excerpt": "With the latest tariff adjustments, goods that meet the USMCA (U.S.-Mexico-Canada Agreement) rules of origin will not be subject to the new 25% tariffs. However, those that do not qualify will face the full tariff rate.",
+  "publishedAt": "2025-03-10T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81c0-b3a7-e839c7af2e3f/a7ddfae7-250a-4284-8035-c10c3c66dafd.jpg",
+    "alt": "Understanding USMCA Rules of Origin & Their Impact on Tariffs",
+    "filename": "a7ddfae7-250a-4284-8035-c10c3c66dafd.jpg"
+  },
+  "authors": [],
+  "categories": [
+    "Tax",
+    "Tarrifs",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "What Are USMCA Rules of Origin?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Think of these as the “made in North America” rules. USMCA replaced NAFTA and set new standards to ensure that only products with enough North American content qualify for duty-free trade."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Key Rules of Origin Under USMCA:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "1. Regional Value Content (RVC) Requirement"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "A certain percentage of a product’s value must come from North America.",
+          "Example: Cars must have 75% North American content (up from NAFTA’s 62.5%)."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "2. Tariff Shift Rule"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "If parts from outside North America are used, the final product must be significantly transformed in a USMCA country to qualify.",
+          "Example: A car part made with Chinese steel but fully processed in Mexico might still qualify."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "3. Specific Product Rules"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Some industries (e.g., textiles, chemicals, electronics) have additional origin criteria."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "4. Labor Value Content Requirement (Automotive Industry Only)"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "40-45% of a vehicle’s value must come from workers earning at least $16/hour."
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Industry-Specific Impact of USMCA Rules"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Electronics Industry"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Fashion Industry"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Personal Care Industry"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Key Takeaways"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Where you assemble a product isn’t enough – If the core materials aren’t North American, it won’t qualify.",
+          "Raw materials matter – Products with key components from outside the region face full tariffs.",
+          "Sourcing smartly can save money – Using North American ingredients can mean duty-free trade under USMCA."
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Impact of the New White House Tariff Announcement"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "✅ If a product qualifies under USMCA, it avoids the 25% tariff.",
+          "❌ If it doesn’t meet USMCA rules, it is subject to the full tariff.",
+          "⚠️ Companies will need to prove USMCA compliance using certificates of origin and detailed supply chain documentation."
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "How to Prove USMCA Compliance"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "To avoid tariffs, companies must prove their products meet USMCA’s origin rules with detailed documentation."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "USMCA Certificate of Origin – Your Golden Ticket"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "A USMCA Certificate of Origin must be provided by the exporter, producer, or importer to claim duty-free status. It must include:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✔ Exporter Information (name, address, contact details)"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✔ Product Description & HS Code (first 6 digits)"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✔ Origin Criterion (how the product qualifies under USMCA)"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✔ Certification Statement & Signature (affirming compliance)"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Other Documents You May Need"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "U.S. Customs and Border Protection (CBP) might ask for:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✔ Bill of Materials (BOM) – Showing where each component comes from."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✔ Supplier Declarations – Proof that materials are North American."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✔ Manufacturing Process Records – Evidence of substantial transformation."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "✔ Shipping & Import Records – To confirm product details."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "How CBP Verifies USMCA Compliance"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "CBP won’t just take your word for it. They may:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "✅ Request more documents to verify claims.",
+          "✅ Audit companies (importers & suppliers) for compliance.",
+          "✅ Inspect shipments to ensure details match records."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "❌ Deny duty-free benefits and apply full tariffs.",
+          "❌ Issue penalties for incorrect or misleading claims."
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Final Thoughts"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Businesses need to adjust their supply chains, double-check compliance, and educate customers on duty-free trade options. Those who act early will have a competitive edge as tariffs reshape global trade."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Navigating US tariff changes can be overwhelming. For a broader perspective on the latest developments and their impact on e-commerce, check out my article 2025 US Tariffs Saga for E-commerce: Explained: https://www.linkedin.com/pulse/2025-us-tariffs-saga-e-commerce-explained-grigory-shchichko-23g8f/"
+      }
+    ]
+  },
+  "meta": {
+    "title": "Understanding USMCA Rules of Origin & Their Impact on Tariffs",
+    "description": "With the latest tariff adjustments, goods that meet the USMCA (U.S.-Mexico-Canada Agreement) rules of origin will not be subject to the new 25% tariffs. However, those that do not qualify will face the full tariff rate.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81c0-b3a7-e839c7af2e3f/a7ddfae7-250a-4284-8035-c10c3c66dafd.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/understanding-usmca-rules-of-origin-their-impact-on-tariffs"
+}

@@ -1,0 +1,182 @@
+{
+  "type": "post",
+  "title": "Duty Avoidance in Cross-Border Ecommerce: The Risks Behind the Shortcut",
+  "slug": "duty-avoidance-in-cross-border-ecommerce-the-risks-behind-the-shortcut",
+  "excerpt": "Beware of duty avoidance schemes in cross-border ecommerce. Learn the serious customs, tax, and reputational risks of using shell importers to slash import duties. Don't fall for risky shortcuts.",
+  "publishedAt": "2025-10-29T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/29b9344f-6e66-80ab-a87f-da649d0b2575/023849e5-f6f1-4960-86d3-0a3d248ab8ff.png",
+    "alt": "Duty Avoidance in Cross-Border Ecommerce: The Risks Behind the Shortcut",
+    "filename": "023849e5-f6f1-4960-86d3-0a3d248ab8ff.png"
+  },
+  "authors": [],
+  "categories": [
+    "Tarrifs",
+    "United States",
+    "Merchant of Record",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "With tariffs rising and cross-border shipping costs squeezing margins, it’s no surprise that ecommerce brands are looking for creative ways to manage their landed costs. But there’s a growing tactic being pitched to DTC retailers that comes with significant hidden risks: duty avoidance through shell importers."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Here’s how it typically works: a brand sets up a U.S. shell company, often in Delaware, to act as the Importer of Record (IOR) for shipments coming into the U.S. Instead of declaring the full retail value of the product sold to the consumer, the shell company “buys” the product at cost — say, $10 instead of the $185 the customer pays. The idea is that this artificial “cost price” gets declared to U.S. Customs, slashing the import duty."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "At first glance, it may seem like a clever workaround. But this strategy sits on shaky legal ground and opens up brands to serious customs, tax, and reputational consequences. Here’s what you need to know."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "## The Real Cost of Cutting Corners"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "U.S. Customs and Border Protection (CBP) requires importers to declare the true value of goods — not an internal transfer price created for tax or logistics convenience. If the U.S. shell company is related to the foreign seller (which it usually is), then any sale between them is considered a related-party transaction and must reflect arm’s-length pricing. Declaring the low manufacturing cost as the value — without markup — is likely a violation of customs valuation rules. If you’re headquartered outside the U.S., don’t assume you’re immune — the IRS has mutual collection agreements with countries like Australia and the UK, meaning they can work with foreign tax agencies to enforce and collect unpaid duties and penalties internationally."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Violations can result in:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "- Back duties owed on the full retail value - Fines up to the full value of the goods - Seizure of goods at port - Lose Importer license - Potential criminal charges if deemed intentional fraud"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In other words, duty avoidance via artificial transfer pricing isn’t optimization — it’s often customs fraud."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "## Why the “Shell Importer” Model Triggers Scrutiny"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The problem with the shell importer model is that it often mimics the structure of a legitimate B2B2C setup — without the substance. U.S. Customs looks closely for indicators of fraud, including:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "- A U.S. entity that lacks real independence: no staff, no expenses, no bank activity - Repeated related-party imports declared at unusually low prices - Use of commercial clearance on individual customer orders, rather than bulk entries — a red flag in standard B2B operations"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "These signals can trigger a CBP investigation, especially if there's a pattern suggesting the structure was designed solely to mask the true transaction value. Even if the U.S. entity appears valid on paper, proving the transfer price is arm’s-length is a high bar — and many retailers fail to meet it."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The result? Back duties, fines, audits, shipment delays, and potential enforcement actions. In the chaos of adapting to new tariff regimes, retailers may be unknowingly walking into avoidable legal and financial exposure."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "## Enforcement Is Heating Up"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "U.S. regulators are not only aware of these schemes — they’re actively targeting them. In 2025, the Department of Justice launched a Trade Fraud Task Force focused specifically on cracking down on customs fraud, undervaluation, and shell company tactics. CBP has also ramped up its data analytics, identifying abnormal pricing patterns or repeated undervaluation attempts."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Recent examples include:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "- $12.4M False Claims Act settlement against a Texas importer who falsified customs declarations - A multi-agency probe into over $250M in duty evasion involving shell companies routing goods from China through third countries - DOJ’s use of criminal statutes like wire fraud, conspiracy, and smuggling to prosecute duty evasion rings"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "If a company tries this model and gets caught, it’s not just a slap on the wrist. It can lead to audits, lawsuits, and long-term import restrictions."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "## Beyond Fines: Tax, Operational, and Brand Risks"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Even if customs risks don’t scare you off, consider the broader tax and operational exposure this model creates."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "### 1. Federal & State Tax Obligations Still Apply"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Incorporating a shell importer in Delaware doesn’t make your tax obligations disappear:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "- The shell entity is still subject to U.S. corporate income tax on any profits it books (e.g., retail price minus import “cost”)."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Failure to register and collect properly can lead to back taxes, interest, and state penalties. The tax authorities in these states are just as aggressive as federal agencies when it comes to enforcement."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "### 2. Reputational Fallout"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Consumers expect modern brands to be transparent and ethical. If your company gets publicly linked to duty evasion — whether through government action or whistleblower lawsuits — the PR damage can be severe. In a competitive DTC landscape, trust is hard to earn and easy to lose."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "## There Are Compliant Models — But They Take Real Work"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "To be clear, there are legitimate ways to optimize duties for cross-border ecommerce. Some retailers choose to set up a fully operational U.S. subsidiary with local staff, a bank account, physical presence (like a 3PL), and their own decision-making authority. If structured properly, these entities can buy inventory at a true transfer price from the parent company and import it at that value — but only if they meet arm’s-length standards and obtain validation from CBP or a customs valuation ruling."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "However, this setup isn’t fast or cheap. It requires:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "- A functioning U.S. entity with real operations (not just paper filings) - Investment in local infrastructure and compliance controls - Transfer pricing documentation that can survive an audit - Often, upfront engagement with CBP to get approval for valuation methods"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In short, this is a real business expansion — not a workaround. It’s how large, global retailers do it right. But in the scramble to manage new tariffs, some brands are opting for riskier shortcuts without fully understanding the consequences."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "## Ask the Right Questions Before You Say Yes"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "If a partner or consultant pitches a model that sounds “too good to be true,” pressure test it. Ask:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "- Will your organization assume liability if customs flags the value? - Is the declared value defensible under CBP rules? - Do you have customs to sign off from the CBA? - What legal opinions back up the strategy — and who pays if it fails? - Are duties being prepaid or deferred — and by whom?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "If the answers are vague or the risks are brushed aside, that’s a sign to walk away."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "## Final Thoughts"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In today’s competitive landscape, controlling cross-border costs is crucial — but compliance matters more. While shell importer schemes promise fast savings, they open the door to legal, financial, and reputational harm. U.S. authorities are watching closely, and the consequences are real."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Brands that build sustainable, compliant international operations will outlast those chasing shortcuts. Invest in proper strategy, ask the hard questions, and remember: there’s no such thing as “free duty.”"
+      }
+    ]
+  },
+  "meta": {
+    "title": "Duty Avoidance in Cross-Border Ecommerce: The Risks Behind the Shortcut",
+    "description": "Beware of duty avoidance schemes in cross-border ecommerce. Learn the serious customs, tax, and reputational risks of using shell importers to slash import duties. Don't fall for risky shortcuts.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/29b9344f-6e66-80ab-a87f-da649d0b2575/023849e5-f6f1-4960-86d3-0a3d248ab8ff.png"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/duty-avoidance-in-cross-border-ecommerce-the-risks-behind-the-shortcut"
+}

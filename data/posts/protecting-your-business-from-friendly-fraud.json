@@ -1,0 +1,176 @@
+{
+  "type": "post",
+  "title": "Protecting Your Business from Friendly Fraud ",
+  "slug": "protecting-your-business-from-friendly-fraud",
+  "excerpt": "Learn about Friendly fraud and its impacts on global ecommerce, and discover how our Merchant of Record model can help protect you from evolving fraud patterns.\r\n",
+  "publishedAt": "2023-05-18T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8149-a76a-d775c74bcf91/2fb9789a-ef21-47be-ac96-5ebd2d97dd41.webp",
+    "alt": "Protecting Your Business from Friendly Fraud ",
+    "filename": "2fb9789a-ef21-47be-ac96-5ebd2d97dd41.webp"
+  },
+  "authors": [],
+  "categories": [
+    "Fraud",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "As more businesses expand their digital offerings and grow into new global markets, cross-border ecommerce also rapidly evolves. However, with this growth comes increased potential for cyber crime as fraudsters look to take advantage of unsuspecting or unprepared businesses. To complicate this matter, the types of fraud vary as widely as the growth opportunities available in the global marketplace."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "One form of fraud that has become prevalent is \"friendly fraud,\" and it's quickly becoming one of the most significant challenges for ecommerce brands worldwide. Friendly fraud is a leading factor in the increase of fraudulent chargebacks filed globally, and they ultimately result in lost revenue for countless ecommerce businesses. In fact, recent data has shown that approximately 40% of online merchants worldwide have experienced chargebacks related to friendly fraud."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "But what is friendly fraud, and how can you identify and prevent it? Let's take a deep dive into this widespread form of payments fraud and explore how your cross-border business can prepare for it."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "What is Friendly Fraud?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "“Friendly” or first-party fraud occurs when a cardholder reports a transaction as fraudulent even though it was a valid purchase. Once this happens, the cardholder initiates a chargeback, and the seller loses the revenue from the transaction."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "This form of fraud is termed “friendly” because not all instances occur with nefarious intentions behind them. Some examples of potential friendly fraud causes include:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "The buyer may have forgotten about the purchase, or the buyer did not read or misunderstood the merchant's full descriptor and thought they did not make the purchase.",
+          "A family member may have used a card without the cardholder's permission, or the cardholder had forgotten that they had given permission and were unaware of the purchase."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "The buyer had buyer's remorse and did not want to go through a return process, or they wanted to bypass a store policy (such as policies for lost/stolen goods, delayed delivery, store credit, workmanship, custom fees, or wrong product selected)."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "The buyer believes they have been scammed or purchased a product from a false company."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "The buyer reported a subscription or recurring shipment as fraudulent to bypass the cancellation process, or they may have found the process too difficult to unsubscribe."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "The buyer commits intentional consumer fraud by reporting the purchase as illegitimate as soon as the product is on the way, has been received, or used."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "As you can see, friendly fraud isn't exactly black and white, nor undertaken with malicious intent. Some cases are opened innocently and caused due to a buyer's misunderstanding or mistake. This is where this variant of fraud earns its \"friendly\" moniker. However, while some examples aren't nefarious in nature, others most certainly are."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In these cases, the consumer actively initiates a chargeback under false pretenses, and they're anything but friendly. These situations happen when a buyer believes it is easier to report a transaction as fraudulent rather than go through the proper channels for consumer disputes. Or, the buyer may feel justified in their actions believing the charge should be reversed due to unfair or inconvenient circumstances. Some cases are purely fraudulent, as the buyer intends to receive goods and services without paying for them."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Identifying Friendly Fraud Vs. Regular Fraud"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "One important indication that a chargeback may not be regular fraud is that with friendly fraud, the user has supplied the correct cardholder information. This means the cardholder's name, card security info, address, and email address all match the buyer."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In the case of regular criminal fraud, the cardholder's name, delivery address, and device location may be completely mismatched or have other suspicious activity and trends that would be flagged through fraud-based analytics. Friendly fraud transactions may elude fraud controls as all the billing and shipping information matches, and there are no trends that would indicate the purchase is fraudulent. However, even if all the cardholder information matches, it may still be a fraudulent transaction if the cardholder's personal information is compromised."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Preventative Measures"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The best way to protect your global business against any chargeback is by implementing preventative measures. These items can also be used as evidence to help dispute these types of chargebacks should they occur."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Some recommended preventative measures include:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Clearly outlining shipping information and details that include the shipped to address and define terms and conditions of your returns policy."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Enabling notifications and communications that are automatically generated when a purchase is made and for shipping/ delivery updates."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Ensure that any communications from the buyer include their name, email address or phone number, and date."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Refund transactions that are clear cases of fraud before a chargeback is started because once a chargeback is opened, a chargeback fee is applied regardless."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "If a chargeback is filed against you, reach out to the customer to see if they recognize the transaction and if there were any issues with the order. If they don't respond to the recorded notice, you can use this communication as evidence to show a further attempt was made to rectify possible issues. If the buyer replies, they now recognize their transaction, and you can request that they withdraw the chargeback. If it is withdrawn, the chargeback fee will still be applicable, but the loss of revenue from the disputed products will be prevented. The entire communication can also be submitted as evidence that the buyer is aware of and authorized the purchase."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "How Reach Can Help with Chargebacks and Friendly Fraud"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "While no set of fraud controls can entirely eliminate chargebacks or change their outcome, our fully managed fraud solution can help identify chargeback trends before they become a problem. As a Merchant of Record, we must maintain an extremely low fraud threshold. As such, we assure you that any fraud that may occur will be minimal as we’re fully invested in keeping it below this threshold. And that’s truly the best protection you can have."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Our team also has extensive experience monitoring transaction trends throughout different markets and payment processors. We review data used during a transaction, historical data regarding previous disputes, and the overall online presence of the buyer to identify potential fraud before it makes an impact. We are always on top of evolving payments fraud and will notify you of any pattern or group causing spikes in chargebacks or a decrease in authorization rates. Best of all, our solution works with your existing in-house fraud controls to enhance them instead of replacing them. Our robust fraud engine works in tandem with yours to analyze a broader spectrum of data to build specific controls based on the combination of that data's findings."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Along with fraud monitoring, we also suggest the types of controls you can deploy and the criteria your internal teams should be looking at to flag future fraudulent activity."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "So if you're looking to grow friendly conversions instead of fraud, connect with the fully managed fraud solution designed to make that happen. Integrate today and spend less time focusing on fraud and more time focusing on the growth of your global business."
+      }
+    ]
+  },
+  "meta": {
+    "title": "Protecting Your Business from Friendly Fraud ",
+    "description": "Learn about Friendly fraud and its impacts on global ecommerce, and discover how our Merchant of Record model can help protect you from evolving fraud patterns.\r\n",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8149-a76a-d775c74bcf91/2fb9789a-ef21-47be-ac96-5ebd2d97dd41.webp"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/protecting-your-business-from-friendly-fraud"
+}

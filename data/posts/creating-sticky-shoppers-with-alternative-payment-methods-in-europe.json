@@ -1,0 +1,66 @@
+{
+  "type": "post",
+  "title": "Creating Sticky Shoppers with Alternative Payment Methods In Europe",
+  "slug": "creating-sticky-shoppers-with-alternative-payment-methods-in-europe",
+  "excerpt": "Learn how unlocking alternative payment methods can enable you to convert more and create higher consumer retention in the European marketplace.",
+  "publishedAt": "2023-10-06T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81c8-9853-e4d59780fb92/5e67226e-1f37-466e-a3d4-036a0c9dcf68.webp",
+    "alt": "Creating Sticky Shoppers with Alternative Payment Methods In Europe",
+    "filename": "5e67226e-1f37-466e-a3d4-036a0c9dcf68.webp"
+  },
+  "authors": [],
+  "categories": [
+    "Localized Customer Experience",
+    "Alternative Payment Methods",
+    "Europe",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Europe offers lucrative opportunities for businesses looking to scale globally, but capturing conversions and solidifying shopper retention in each continent can be tricky. Europe's population is culturally diverse, and each nationality comes with its own preferences for how consumers shop online and how they pay for ecommerce goods and services."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Due to this vast array of consumer behavior and stratification of desired payment experiences, Europe does not have a one-size-fits-all preferred payment method. For instance, you can't just offer credit cards and hope that will work for all shoppers. Instead, you may have to provide alternative methods that they know and trust in order to secure recurring and loyal customers."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Let's take a closer look at a specific European country, Sweden, for example, to explore what this looks like."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Sweden is a powerhouse of ecommerce revenue potential as 9 out of 10 consumers in the Nordic region regularly shop online, and the country as a whole spent an estimated 22 billion Euros online in 2021. However, tapping into the market can be difficult if you don't offer the payment experience the country's consumers expect. For instance, Sweden loves to pay in installments, with approximately 25% of their ecommerce buyers using the payment method to shop online. If you don't offer this payment method when selling in the country and others like it, you introduce friction into your consumer's checkout experience, which can result in lost conversions."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "To ensure your European shoppers can pay in a method that’s local to them, you have to integrate with a payment partner that can offer the methods they want. Two ways of doing this include connecting directly with a payment processor that’s integrated with alternative payment methods you need, or integrating with a Merchant of Record (MOR)."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Integrating directly with a payment processor lets you offer the alternative payment methods your customers demand. However, you may have to repeat this process for each of the payment methods you need, since the processor may have integration gaps in the alternative methods you want to offer. Additionally, this option will only allow you to process cross-border unless you have an established local entity in the region. This means you will be exposed to higher processing fees and false declines when selling internationally."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Alternatively, you can integrate with a Merchant of Record. Since a MOR already has a network of established relationships with payment processors and banks, you can unlock a full suite of alternative payment methods without requiring multiple integrations. Connecting with a MOR can also unlock local acquiring in your desired regions, since the MOR has already done the heavy lifting to set up global entities. Enabling local acquiring increases your international transactions' health and approval rates, and decreases processing fees. Overall, integrating with a Merchant of Record provides the most seamless approach to offering alternative payment methods in regions like Sweden and the rest of Europe. The MOR model only requires one integration to empower you to offer optimized alternative payment methods like Klarna. And thanks to the MOR model's ability to provide local acquiring, you can gain savings on processing fees while increasing your overall conversions simultaneously. This ensures you're creating loyal and recurring consumers in the European marketplace while capturing more revenue."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Want to learn more about creating sticky customers in the European marketplace? Connect with our team and explore our Merchant of Record model to see how we can help you scale internationally with preferred alternative payment methods like Klarna."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Check out Klarna to discover how they're elevating consumer experiences worldwide and helping brands grow with the smoothest and safest way to offer installment payments."
+      }
+    ]
+  },
+  "meta": {
+    "title": "Creating Sticky Shoppers with Alternative Payment Methods In Europe",
+    "description": "Learn how unlocking alternative payment methods can enable you to convert more and create higher consumer retention in the European marketplace.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81c8-9853-e4d59780fb92/5e67226e-1f37-466e-a3d4-036a0c9dcf68.webp"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/creating-sticky-shoppers-with-alternative-payment-methods-in-europe"
+}

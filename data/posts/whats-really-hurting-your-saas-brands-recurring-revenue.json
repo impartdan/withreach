@@ -1,0 +1,100 @@
+{
+  "type": "post",
+  "title": "What’s Really Hurting Your SaaS Brand’s Recurring Revenue?",
+  "slug": "whats-really-hurting-your-saas-brands-recurring-revenue",
+  "excerpt": "According to data compiled by Forbes, it can cost four to five times more money to secure a new customer than to retain an existing one.",
+  "publishedAt": "2024-07-11T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-812a-a231-f13b9845444e/c6be2bb1-4ca3-4250-b477-1feb501ca079.jpeg",
+    "alt": "What’s Really Hurting Your SaaS Brand’s Recurring Revenue?",
+    "filename": "c6be2bb1-4ca3-4250-b477-1feb501ca079.jpeg"
+  },
+  "authors": [],
+  "categories": [
+    "Localized Customer Experience",
+    "Integration",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "According to data compiled by Forbes, it can cost four to five times more money to secure a new customer than to retain an existing one. This is particularly acute for digital businesses, who often overlook the principal reason for customer loss: churn."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "For global SaaS businesses like yours, churn is often seen as public enemy number one. Churn occurs when a transaction that has already been processed successfully multiple times in the past fails in the present, and the customer and potential future revenue generated from them is lost. These customers are often not recoverable."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "There are two types of churn: voluntary churn, which is when a consumer terminates their subscription, and involuntary churn, which is when a transaction fails due to issues such as insufficient funds or simply because the consumer's card has expired. Regardless of the reason, the result is the same. Your SaaS brand loses that future recurring revenue."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Because recurring revenue and the lifetime value of your consumers are the lifeblood of any subscription-based company, reducing churn is a business-critical imperative.But what if we told you there was a more prolific killer of international recurring revenue? This blocker of global success is called a false decline, and it’s arguably worse than churn."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The reason why false declines are more damaging to your bottom line than churn is because they happen on your global consumers’ initial transaction. As 2/3rd of customers that face a false decline will not re-attempt their transaction, you lose that revenue and that customer before you can even realize any of the potential lifetime value. And, as Forbes points out, it will cost you up to five times more to replace that stream of revenue. While focusing on churn and maintaining the long-term value of your current consumers is cheaper than trying to gain net-new customers, you’re hindering your ability to scale and be profitable if you don’t optimize your checkout for that initial international transaction. Optimization can take many forms, but there are clear and actionable steps that you can take to ensure you convert that initial transaction into a steady stream of revenue."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "With this in mind, let’s explore false declines, why they happen, and what you can do about them."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Why are legitimate transactions being declined?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "A false decline, simply put, is when a transaction that is 100% legitimate is declined when it should have been approved. When international consumers attempt to purchase through your global storefront, there are many reasons why their transaction could be falsely declined."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "One of the most common reasons they happen to businesses that sell internationally is because the seller’s acquiring bank and the consumer’s issuing bank are unfamiliar with each other. The unfamiliarity of this situation generates perceived risk, and fraud alarms are triggered, ultimately leading to a false decline."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The complexities of global ecommerce and regional compliance, in general, result in an unnecessarily high amount of false declines. There are tens of thousands of international institutions across the globe, and they effectively have to earn each other’s trust before transactions flow seamlessly between issuer and acquirer."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "However, there’s no reason to lose customers and recurring revenue because your payments orchestration company or your customer's bank declines a transaction simply because it’s from a foreign country."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "With the right international partner, you can navigate the challenges of global ecommerce and its associated risks. In fact, businesses that partner with the right international platform can see an increase in overall profitability of 86%."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "How to deal with false declines without losing customers"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "When it comes to global ecommerce, leveraging an international partner can help you navigate the relationships between acquiring and issuing banks to ensure that legitimate transactions aren’t flagged as fraud or deemed too risky and subsequently falsely declined."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Global solutions, like ours, achieve this by acting as the global Merchant of Record for international SaaS businesses. This type of partnership allows us to localize your transactions on your behalf. Localizing a transaction by harnessing the power of a worldwide network ensures that the route it travels sees the highest success rates possible. Processing international transactions locally in this manner can enable your SaaS business to drastically increase its approval rates and significantly reduce costly false declines."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "However, some transactions can still be flagged as fraud due to anti-fraud systems. Although these systems can be highly intricate with advanced knowledge of fraud patterns, they can still create false positives. This is why you can also benefit from working with a human-centered fraud team like ours, which pairs advanced machine learning systems with the keen eyes of human intelligence to reduce your fraud risk without hindering your international conversions."
+      },
+      {
+        "blockType": "conclusion",
+        "heading": "Conclusion",
+        "text": "As demonstrated above, churn is still a costly problem with which global SaaS businesses must grapple. For businesses like yours, ignoring false declines will hurt your bottom line more in the long run. This is because a false decline does not just represent a loss on just one transaction but the loss of the entire lifetime value of that potential customer. Coupled with the associated multiplied cost of new customer acquisition, this dynamic can render international sales in certain markets unviable.\n\nNew subscribers are crucial for sustainable growth and profitability in today's competitive SaaS landscape. By leveraging our international platform, you can localize your global checkout, access our network of global fraud experts, and scale into new markets by increasing your approval rates by over 90%.\n\nChoose a partner that aligns with your international goals and provides the functionality you need to convert new subscribers globally, all while making your SaaS business more profitable. Learn more about how we can empower your international SaaS business here."
+      }
+    ]
+  },
+  "meta": {
+    "title": "What’s Really Hurting Your SaaS Brand’s Recurring Revenue?",
+    "description": "According to data compiled by Forbes, it can cost four to five times more money to secure a new customer than to retain an existing one.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-812a-a231-f13b9845444e/c6be2bb1-4ca3-4250-b477-1feb501ca079.jpeg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/whats-really-hurting-your-saas-brands-recurring-revenue"
+}

@@ -1,0 +1,72 @@
+{
+  "type": "post",
+  "title": "Everything You Need to Know About Chargebacks",
+  "slug": "everything-you-need-to-know-about-chargebacks",
+  "excerpt": "Learn how to protect your ecommerce business from the challenges of chargebacks. Discover their origins, the impact of friendly fraud, and strategies like the representment process to safeguard your revenue.",
+  "publishedAt": "2025-01-15T05:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-818e-801c-e2dbb718ff9c/a3b429aa-94a5-4e73-bf98-54a2b8684a04.webp",
+    "alt": "Everything You Need to Know About Chargebacks",
+    "filename": "a3b429aa-94a5-4e73-bf98-54a2b8684a04.webp"
+  },
+  "authors": [],
+  "categories": [
+    "Fraud",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "What Are Chargebacks?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Chargebacks originated in the 1960s with the establishment of the credit card industry, primarily designed to protect consumers from fraudulent transactions. They allow consumers to dispute charges and seek refunds when goods or services are not delivered as promised.\nThe ecosystem of chargebacks involves multiple players including the consumer, the issuing bank, the merchant, and the acquiring processor. When a consumer files a chargeback, the issuing bank assesses its validity and processes the claim, often to the detriment of the merchant. Consequently, merchants face significant challenges in managing chargebacks, especially when they represent a large percentage of their transactions."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Impact of Friendly Fraud"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "As the system evolved, it developed vulnerabilities that led to \"friendly fraud\"—when consumers exploit the chargeback process after receiving their purchased goods or services.\nToday, friendly fraud makes up 60-70% of all chargebacks, severely impacting merchants. Beyond the immediate financial losses, this practice drains valuable time and resources. Merchants must shift their focus from core business operations to fighting these fraudulent disputes."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Representment Process - How to challenge chargebacks and protect your business"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "It’s important to know when you should fight back against chargeback claims - especially with the rise of friendly fraud. This is known as the representment process, where merchants provide compelling evidence to contest chargebacks."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "This process can be slow and cumbersome, often relying on human decision-making, which introduces subjectivity and potential errors."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Often, the costs associated with handling chargebacks can range from $20 to $100 per incident, which can be a significant financial strain on merchants, especially those with lower-priced products."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "A common misconception among merchants is that winning a representment will negate the chargeback from their records. However, it’s very important to know that any chargeback that passes through the system counts against the merchant's monthly threshold. To mitigate risk, merchants are encouraged to utilize technology and pre-chargeback alerts that can help prevent chargebacks before they occur."
+      },
+      {
+        "blockType": "conclusion",
+        "heading": "Conclusion",
+        "text": "While chargebacks serve as a vital consumer protection tool, their unintended consequences can pose serious challenges for merchants. Understanding the chargeback and representment process is crucial for protecting your business from any financial and legal implications.\n\nBy leveraging advanced technologies and proactive strategies, including partnering with the right businesses that understand the complexities of fraud systems, merchants can minimize the risk of disputes, safeguard their revenue, and focus on growing their operations. A balanced approach that combines awareness, preparedness, and innovation will empower businesses to navigate the complexities of chargebacks effectively.\n\nFor more insights and detailed discussions on chargebacks, check out our interview with Vinay Shiriwastaw from ChargebackHelp on True Fraud. Subscribe to the podcast on your favourite platform to stay informed about the latest trends in chargebacks and fraud prevention.\n\nDiscover how our global experts and Merchant of Record model can maximize your international potential today and in the future here."
+      }
+    ]
+  },
+  "meta": {
+    "title": "Everything You Need to Know About Chargebacks",
+    "description": "Learn how to protect your ecommerce business from the challenges of chargebacks. Discover their origins, the impact of friendly fraud, and strategies like the representment process to safeguard your revenue.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-818e-801c-e2dbb718ff9c/a3b429aa-94a5-4e73-bf98-54a2b8684a04.webp"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/everything-you-need-to-know-about-chargebacks"
+}

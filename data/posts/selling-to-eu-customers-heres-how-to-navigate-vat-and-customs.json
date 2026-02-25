@@ -1,0 +1,98 @@
+{
+  "type": "post",
+  "title": "Selling to EU Customers? Here's How to Navigate VAT and Customs",
+  "slug": "selling-to-eu-customers-heres-how-to-navigate-vat-and-customs",
+  "excerpt": "Navigating EU VAT and customs for your online retail business can be complex. Learn about shipping options (DDU, DDP, IOSS) and how to simplify EU expansion with Reach.",
+  "publishedAt": "2025-04-10T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8159-bde5-f0edaf7e8823/f6444c12-47af-4171-8eef-0c4ecdb944b5.jpg",
+    "alt": "Selling to EU Customers? Here's How to Navigate VAT and Customs",
+    "filename": "f6444c12-47af-4171-8eef-0c4ecdb944b5.jpg"
+  },
+  "authors": [],
+  "categories": [
+    "Tax",
+    "Compliance",
+    "United Kingdom",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Expanding your online retail business into the European Union (EU) market can open doors to new opportunities. However, navigating VAT and customs requirements when shipping internationally can be challenging."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Option 1: Shipping DDU (Delivered Duties Unpaid)"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Negative Customer Experiences: Customers receive unexpected charges upon delivery, potentially leading to dissatisfaction.",
+          "Higher Return Rates: Refusals to accept packages due to additional costs increase returns and shipping expenses.",
+          "Delays at Customs: Shipments can be held at customs, resulting in delivery delays and negative reviews."
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Option 2: Shipping DDP (Delivered Duties Paid)"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Higher Shipping Fees: Shipping providers typically charge higher fees for handling DDP shipments due to the additional administrative tasks involved.",
+          "Complex Pricing Models: Predicting precise duties, taxes, and associated shipping fees upfront can be challenging, complicating pricing strategies.",
+          "Administrative Burden: Each shipment involves detailed paperwork and compliance tasks, increasing operational complexity."
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Option 3: Using the Import One Stop Shop (IOSS)"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Transparent Pricing: Customers see the full cost upfront, enhancing satisfaction.",
+          "Faster Customs Clearance: Reduced risk of shipment delays and additional charges upon delivery."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Registration and Intermediary Requirement: Non-EU retailers must appoint an EU-based intermediary for registration and VAT management.",
+          "Monthly VAT Reporting: Detailed monthly VAT filings are required, along with currency conversion management and adherence to varying VAT rates across the EU.",
+          "Complex Record-Keeping: Retailers must meticulously track and report every sale, creating additional workload for accounting teams."
+        ]
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Simplify EU Sales with Reach"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Comprehensive VAT Management: Reach handles VAT registration, collection, filings, and reporting.",
+          "Seamless Customer Experience: Transparent pricing and hassle-free deliveries build customer trust.",
+          "Cost-Effective Integration: No complex technical integrations required; you can retain your current setup and leave the complexities to us."
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "title": "Selling to EU Customers? Here's How to Navigate VAT and Customs",
+    "description": "Navigating EU VAT and customs for your online retail business can be complex. Learn about shipping options (DDU, DDP, IOSS) and how to simplify EU expansion with Reach.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8159-bde5-f0edaf7e8823/f6444c12-47af-4171-8eef-0c4ecdb944b5.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/selling-to-eu-customers-heres-how-to-navigate-vat-and-customs"
+}

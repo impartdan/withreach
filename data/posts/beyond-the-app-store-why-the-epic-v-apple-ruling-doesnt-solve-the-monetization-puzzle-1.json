@@ -1,0 +1,136 @@
+{
+  "type": "post",
+  "title": "Beyond the App Store: Why the Epic v. Apple Ruling Doesn't Solve the Monetization Puzzle (1)",
+  "slug": "beyond-the-app-store-why-the-epic-v-apple-ruling-doesnt-solve-the-monetization-puzzle-1",
+  "excerpt": "App monetization in the U.S. just got flipped on its head. In a landmark ruling on April 30, 2025, in the Epic v. Apple case, a U.S. court declared that Apple can no longer prevent app developers from directing U.S. users to external payment options.",
+  "publishedAt": "2025-05-26T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/2819344f-6e66-80b3-8b1b-e9ccacc3283e/e0595d06-a0ae-4a2e-a419-6db93d73db77.jpg",
+    "alt": "Beyond the App Store: Why the Epic v. Apple Ruling Doesn't Solve the Monetization Puzzle (1)",
+    "filename": "e0595d06-a0ae-4a2e-a419-6db93d73db77.jpg"
+  },
+  "authors": [
+    "Shayne Plesa-Naden"
+  ],
+  "categories": [
+    "Recurring Payments",
+    "Tax",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "However, this newfound freedom comes with responsibilities. Managing your own payments means you're now responsible for handling the core payment functionalities that Apple once did, like tax compliance, fraud, chargebacks and more. Let's unpack what this means and how you can get the most out of this ruling."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "What the Ruling Delivers"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The Epic v. Apple decision brought about significant shifts for app developers in the United States. You can now integrate links within your app that guide U.S. users to your website or payment gateway to complete purchases, and Apple is now barred from including negative messages on these payment links. Along with the newfound freedom, Apple can no longer charge their 15 to 30 percent commission on these external payments. Instantly, that's more money back in your pocket. Plus, you now have more freedom to inform U.S. users about these alternative payment options directly within your app."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Upsides for Your App Business"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "This ruling unlocks powerful new avenues for revenue growth in the U.S. market and increased control over your payments, giving you the ability to:"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Reclaim Your Margin"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The most immediate benefit is the potential to retain a significant percentage of revenue that previously went to Apple, directly impacting your bottom line."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Leverage Your Preferred Payment Processor"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Integrate seamlessly with payment gateways of your choice to gain more flexibility in terms of fees, features, and reporting."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Unlock Flexible Pricing and Promotions"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Implement your own pricing strategies, offer exclusive discounts through your own channels, and tailor promotions directly to your audience."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Own Your Customer Data"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "By directing U.S. consumers to your own checkout, you can now capture valuable first-party customer data, including email addresses, enabling more personalized marketing and improved attribution tracking."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Catch: You Have to Manage Your Own Payments"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "While the Epic v. Apple ruling provides you with a huge opportunity to maximize your growth in the U.S. marketplace, there are challenges you will have to navigate when operating your own web stores' payments."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Tax Compliance"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "You are responsible for understanding the nuances and complexity of tax compliance yourself. That means navigating tax regulations in every individual U.S. state you sell into and VAT, GST, and sales tax across numerous international jurisdictions. Failure to meet tax compliance requirements will result in damaging penalties, legal repercussions, and damage to your brands reputation."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Fraud and Chargeback Management"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Selling anything online exposes you to the risks of fraudulent transactions and costly chargebacks, which can have a much more significant impact on your bottom line than Apple’s 30% commission ever did."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Without Apple's infrastructure managing all these critical functions of your payments, you will have to manage tax compliance, fraud prevention, chargeback management, and cross-border payments complexity, such as currency conversion in-house. Building out the specialized teams to manage all of this is not only costly, it requires a lot of time and effort to do it right."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "How to Optimize Your Operations in a Post-Apple Fee World"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "To capitalize on the Epic vs. Apple ruling, you need a partner who simplifies the complexity of payments. That’s where we come in. As the trusted Merchant of Record for leading digital businesses worldwide, we handle managing payments, tax compliance, and fraud, so you can focus on growing your app. Already integrated with leading platforms like Stripe, Adyen and Checkout.com, Reach is easy to activate and built to optimize your operations."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Ready to Turn This Ruling into Revenue?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The Epic v. Apple decision opens exciting doors, but capturing true success gets significantly easier with a partner equipped to handle the challenges of digital ecommerce for you. Don't let the complexities of taxes, fraud, and payments limit your newfound freedom."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Contact us today and enhance your app's growth without sacrificing your hard-earned revenue to app store fees or the hidden costs of owning your online payments."
+      }
+    ]
+  },
+  "meta": {
+    "title": "Beyond the App Store: Why the Epic v. Apple Ruling Doesn't Solve the Monetization Puzzle (1)",
+    "description": "App monetization in the U.S. just got flipped on its head. In a landmark ruling on April 30, 2025, in the Epic v. Apple case, a U.S. court declared that Apple can no longer prevent app developers from directing U.S. users to external payment options.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/2819344f-6e66-80b3-8b1b-e9ccacc3283e/e0595d06-a0ae-4a2e-a419-6db93d73db77.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/beyond-the-app-store-why-the-epic-v-apple-ruling-doesnt-solve-the-monetization-puzzle-1"
+}

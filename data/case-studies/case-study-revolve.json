@@ -1,0 +1,136 @@
+{
+  "type": "case-study",
+  "title": "How Revolve Maximized Their Global Authorization Rates  With Reach",
+  "slug": "case-study-revolve",
+  "companyName": "Revolve",
+  "excerpt": "Revolve, a Los Angeles-based online fashion retailer, partnered with Reach to improve their international payment authorization rates, achieving a 12% increase in their weighted average global authorization rate while simplifying their global operations.",
+  "publishedAt": null,
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/01/RevolveHeader-scaled.jpg",
+    "alt": "Revolve Hero",
+    "filename": "RevolveHeader-scaled.jpg"
+  },
+  "companyLogo": {
+    "url": "https://www.withreach.com/images/brand-icons/revolve.svg",
+    "alt": "Revolve Logo",
+    "filename": "revolve.svg"
+  },
+  "pdfUrl": null,
+  "highlights": [
+    {
+      "label": "Industry",
+      "value": "Retail Fashion"
+    },
+    {
+      "label": "Founded",
+      "value": "2003"
+    },
+    {
+      "label": "Tech Stack",
+      "value": "Checkout API Integration"
+    }
+  ],
+  "categories": [],
+  "caseStudyCategories": [],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Revolve, a Los Angeles-based online fashion retailer, has carved their niche as a global leader in trendsetting apparel. With customers spanning continents, the company faced a pivotal challenge: improving international payment authorization rates to enhance the customer experience and drive revenue."
+      },
+      {
+        "blockType": "statsBlock",
+        "heading": "Key Highlights",
+        "stats": [
+          {
+            "value": "+12% Authorization Rate",
+            "description": "increased Revolve's weighted average global authorization rate"
+          },
+          {
+            "value": "Simplified Compliance",
+            "description": "removed the need for Revolve to establish local business entities worldwide"
+          },
+          {
+            "value": "Global Scalability",
+            "description": "scaled operations & offerings in multiple regions with a single integration and contract"
+          },
+          {
+            "value": "Enduring Partnership",
+            "description": "an eight-year collaboration built on trust and mutual success"
+          }
+        ]
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "\"Reach really acts as an extension of my team. They help us improve our authorization rates. For example, if we see a lower authorization rate in Taiwan, there's going to be an active discussion between us and Reach to work to improve it. Typically, it's Reach coming up with solutions and recommendations for us.\"",
+        "citation": "Kai Li - Senior Vice President of International, Revolve"
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Situation"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "When Kai Li joined Revolve, he was tasked with scaling the company's international operations. One significant hurdle was ensuring high authorization rates for transactions across diverse global markets. In cross-border ecommerce, international transactions are often flagged as potential fraud by banks, leading to false declines and lost revenue. Revolve needed a global solution that could improve authorization rates while simplifying the complexity of operating in multiple countries worldwide. Revolve was, at the time, constrained by engineering resources, meaning that they could only afford to integrate a payment partner into their systems once every few years. Therefore, they had to be very cautious with who they chose to help them with their global expansion."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Solution"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In 2016, Revolve chose Reach as its Merchant of Record. The decision was rooted in Reach's ability to localize transactions seamlessly through this powerful model. Key features included:"
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Single Integration & Contract"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Reach eliminated the need for Revolve to establish multiple local business entities worldwide by allowing them to use Reach's existing global entity network. Revolve also unlocked a vast suite of preferred local payment methods through the singular integration process."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Localized Payments"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Reach's global network enabled transactions to be processed locally in the customer's banking region, which dramatically improved Revolve's authorization rates worldwide."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Global Expertise"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Reach provided the experience and knowledge of international payments Revolve needed without them having to onboard additional teams or specialists."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Transparent Operations"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Unlike competitors, Reach clearly outlined all requirements and processes from the outset, ensuring a frictionless collaboration for years to come."
+      },
+      {
+        "blockType": "conclusion",
+        "heading": "The Outcome",
+        "text": "Reach's single integration and single contract approach allowed Revolve to operate worldwide without cross-border administrative burdens.\n\nThrough Reach, Revolve was able to avoid the overhead costs of hiring additional teams to handle their international payments internally.\n\nBy localizing transactions, Reach significantly improved Revolve's authorization rates, directly boosting global revenue.\n\nEight years into the partnership, Reach remains Revolve's primary global payments partner thanks to constant collaboration, discussion, and growth."
+      }
+    ]
+  },
+  "meta": {
+    "title": "How Revolve Maximized Their Global Authorization Rates With Reach | Reach",
+    "description": "Discover how Revolve partnered with Reach to improve their global authorization rates and simplify international operations.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/01/RevolveHeader-scaled.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-revolve"
+}

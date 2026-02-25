@@ -1,0 +1,145 @@
+{
+  "type": "case-study",
+  "title": "How The Foldie Scaled Global Success with Reach",
+  "slug": "case-study-the-foldie",
+  "companyName": "Founded in 2020 by siblings Thomas and Svéa Van den Heuvel",
+  "excerpt": "The Foldie unlocked hassle-free international payments, global tax compliance, and fraud prevention through Reach's Merchant of Record model. By leveraging Reach's no-code Shopify integration, The Foldie achieved 10,000 orders each in the UK and Australia within months of implementation while significantly reducing customer complaints and chargebacks.",
+  "publishedAt": null,
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/12/9_bfdfd291-63b2-447a-b26e-bfe926a5eb09.webp",
+    "alt": "Case Study Hero",
+    "filename": "9_bfdfd291-63b2-447a-b26e-bfe926a5eb09.webp"
+  },
+  "companyLogo": {
+    "url": "https://www.withreach.com/images/foldie.png",
+    "alt": "Client Logo",
+    "filename": "foldie.png"
+  },
+  "pdfUrl": null,
+  "highlights": [
+    {
+      "label": "Industry",
+      "value": "Retail (Travel Accessories)"
+    },
+    {
+      "label": "Founded",
+      "value": "2020"
+    },
+    {
+      "label": "Tech Stack",
+      "value": "Shopify Embedded"
+    },
+    {
+      "label": "Integration",
+      "value": "December 2024"
+    }
+  ],
+  "categories": [],
+  "caseStudyCategories": [],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Founded in 2020 by siblings Thomas and Svéa Van den Heuvel, The Foldie began as an innovative response to the rising demand for versatile travel products. Their flagship offering—foldable travel bags—not only met the needs of modern travellers but also propelled the company to rapid success in the U.S. However, as The Foldie's reputation grew, it became evident that lucrative markets beyond American borders remained untapped."
+      },
+      {
+        "blockType": "statsBlock",
+        "heading": "Key Highlights",
+        "stats": [
+          {
+            "value": "10,000+ Orders",
+            "description": "each in the UK and Australia within months of implementation"
+          },
+          {
+            "value": "Hassle-free Compliance",
+            "description": "with international payments, global tax compliance, & fraud prevention"
+          },
+          {
+            "value": "Increased Conversions",
+            "description": "with significantly reduced customer complaints and chargebacks"
+          },
+          {
+            "value": "Optimized Operations",
+            "description": "by redistributing stock globally to align with seasonal demand"
+          }
+        ]
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "\"With Reach, it's easy to get into other countries, and it doesn't take a lot of effort from the founders. Having those extra hands feels like a part of the business you can just give away to someone else. And that's really game-changing for us.\"",
+        "citation": "Svéa Van den Heuvel - Co-Founder, The Foldie"
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "\"With Reach, it's super simple to add another 10-30% on top of your current revenue. It has been a game-changer.\"",
+        "citation": "Thomas Van den Heuvel - Co-Founder, The Foldie"
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Situation"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "While the U.S. market had been their initial focus, the founders knew they were missing opportunities in lucrative markets like the UK, Europe, and Australia. However, expanding internationally required more than just shipping products abroad—it demanded in-depth knowledge of global tax regulations, fraud prevention, and localized customer preferences. As a lean, founder-led operation, Thomas and Svéa also struggled to balance the demands of running their business with the complexities of scaling globally. They needed a partner like Reach, who could take on the operational and regulatory burden of international payments, freeing them to focus on what they did best—designing and selling great products."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Solution"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The Foldie partnered with Reach to unlock the advantage of their global Merchant of Record (MoR) model, enabling The Foldie to navigate the complexities of international ecommerce more efficiently. Through a no-code integration to their Shopify expansion stores, Reach took on the challenges of managing global payments, tax compliance, fraud prevention, and localized customer experience."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Strategic International Expansion"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Simplified entry into key markets like the UK, Europe, and Australia with localized payments to maximize their conversions."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Simple & Comprehensive Compliance"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Hassle-free compliance, as Reach took charge of international tax compliance, fraud prevention, and global payments."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Fast Implementation"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "A streamlined setup process that took just a few weeks, significantly faster than the founders anticipated."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Scalable Success"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Increased volume and revenue as a result of an increased addressable global market and a reduction in international fees."
+      },
+      {
+        "blockType": "conclusion",
+        "heading": "The Outcome",
+        "text": "Conversion rates increased while customer complaints and chargebacks declined in Australia and the UK.\n\nWithin just a few months of implementing Reach's no-code Shopify integration, The Foldie achieved 10,000 orders in both the UK and Australia.\n\nThe Foldie offloaded complexity, lowered their international operational costs and freed up the founders to focus on scaling their brand.\n\nUsing an MoR, The Foldie was able to easily reallocate stock based on seasonal demand to increase their sales volume year-round."
+      }
+    ]
+  },
+  "meta": {
+    "title": "How The Foldie Scaled Global Success with Reach",
+    "description": "Discover how The Foldie partnered with Reach to unlock new international markets and achieve 10,000+ orders in both the UK and Australia within months of implementation.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/12/9_bfdfd291-63b2-447a-b26e-bfe926a5eb09.webp"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-the-foldie"
+}

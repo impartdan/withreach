@@ -1,0 +1,1430 @@
+[
+  {
+    "type": "case-study",
+    "title": "Case Study: aussieBum",
+    "slug": "case-study-aussiebum",
+    "companyName": null,
+    "excerpt": "Learn how aussieBum was able to increase conversions and decrease failed credit card transactions with Reach's Merchant of Record model and Guided Fraud Services.",
+    "publishedAt": null,
+    "heroImage": null,
+    "companyLogo": null,
+    "pdfUrl": null,
+    "highlights": [],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": []
+    },
+    "meta": {
+      "title": "Case Study: aussieBum",
+      "description": "Learn how aussieBum was able to increase conversions and decrease failed credit card transactions with Reach's Merchant of Record model and Guided Fraud Services.",
+      "ogImageUrl": null
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-aussiebum"
+  },
+  {
+    "type": "case-study",
+    "title": "Case Study: BlendJet",
+    "slug": "case-study-blendjet",
+    "companyName": null,
+    "excerpt": "Blendjet chose the Reach MoR Solution to process in their global shopper’s preferred payment method and local currency, increasing international sales 45% faster.",
+    "publishedAt": null,
+    "heroImage": null,
+    "companyLogo": null,
+    "pdfUrl": null,
+    "highlights": [],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": []
+    },
+    "meta": {
+      "title": "Case Study: BlendJet",
+      "description": "Blendjet chose the Reach MoR Solution to process in their global shopper’s preferred payment method and local currency, increasing international sales 45% faster.",
+      "ogImageUrl": null
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-blendjet"
+  },
+  {
+    "type": "case-study",
+    "title": "How Club L accelerated global growth with Reach",
+    "slug": "case-study-club-l",
+    "companyName": "Club L London",
+    "excerpt": "Club L partnered with Reach to improve international authorization rates, simplify compliance, and unlock scalable growth with a single integration.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/10/club-l2.webp",
+      "alt": "Club L Hero",
+      "filename": "club-l2.webp"
+    },
+    "companyLogo": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/10/clubl.svg",
+      "alt": "Client Logo",
+      "filename": "clubl.svg"
+    },
+    "pdfUrl": null,
+    "highlights": [],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Club L London is the next-generation online fashion retailer for the forward-thinking consumer. Expertly designed and crafted in-house, Club L specializes in accessible luxury, unique designs and unrivaled quality made to flatter every figure. Founded in 2007 Club L was created with the vision of offering long-lasting luxury styles, trend-oriented collections with a twist and unique, statement designs that offer both exceptional quality and fit in an otherwise saturated market of fast-fashion and throw-away goods."
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "US sales tax compliance is incredibly complex and distracted our Finance team from their day to day. Reach’s solution took this headache away completely and actually made us money! Local acquiring increased our checkout conversion by over 2% which more than covers their service fees",
+          "citation": "Club L"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Club L was experiencing exponential growth in their international markets, and looking to further their growth with the acquisition of UK fashion brand Lavish Alice. With the growth, Club L was looking for a global partner that could help localize their websites, handle tax compliance, support a seamless checkout experience, all while keeping their cost down. In 2023, Club L’s leadership team began the search for a provider with the requirements below:"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "A checkout with the technology to support localized transactions in each customer’s country",
+            "The ability to handle taxes in those local markets seamlessly",
+            "An easy-to-integrate system that would work with their existing Shopify setup and support their in-house e-commerce team"
+          ]
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "After looking at a range of options, Club L chose Reach to support their Shopify stores with a tailored solution. Reach enabled them to meet tax compliance globally and brought meaningful benefits to their international operations. This included support for their expansion stores in the USA, Australia, and Canada. As well support Lavish Alice on a global Shopify Store and regional Ireland store."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Localized Payments"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach processes transactions locally across markets to improve authorization rates and customer experience."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Simplified Compliance"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Operating as the Merchant of Record, Reach manages the complex layers of tax, regulations, and fraud controls across jurisdictions."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Scalable Integration"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "A flexible integration approach allowed Club L to move quickly and scale confidently without distracting core teams."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Reduced overall processing and tax cost by 25% across all markets\n\nReduced cart abandonment by 10% by offering a fully localised Shopify Payments experience to shoppers\n\nGained full US sales tax compliance in all states and full tax compliance in international markets\n\nIncreased conversions by offering Shop Pay Installments and Afterpay"
+        }
+      ]
+    },
+    "meta": {
+      "title": "Club L Partners with Reach to Accelerate Global Growth | Reach",
+      "description": "Read how Club L simplified international payments and scaled confidently with Reach's Merchant of Record model.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/10/club-l2.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-club-l"
+  },
+  {
+    "type": "case-study",
+    "title": "How Revolve Maximized Their Global Authorization Rates  With Reach",
+    "slug": "case-study-revolve",
+    "companyName": "Revolve",
+    "excerpt": "Revolve, a Los Angeles-based online fashion retailer, partnered with Reach to improve their international payment authorization rates, achieving a 12% increase in their weighted average global authorization rate while simplifying their global operations.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/01/RevolveHeader-scaled.jpg",
+      "alt": "Revolve Hero",
+      "filename": "RevolveHeader-scaled.jpg"
+    },
+    "companyLogo": {
+      "url": "https://www.withreach.com/images/brand-icons/revolve.svg",
+      "alt": "Revolve Logo",
+      "filename": "revolve.svg"
+    },
+    "pdfUrl": null,
+    "highlights": [
+      {
+        "label": "Industry",
+        "value": "Retail Fashion"
+      },
+      {
+        "label": "Founded",
+        "value": "2003"
+      },
+      {
+        "label": "Tech Stack",
+        "value": "Checkout API Integration"
+      }
+    ],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Revolve, a Los Angeles-based online fashion retailer, has carved their niche as a global leader in trendsetting apparel. With customers spanning continents, the company faced a pivotal challenge: improving international payment authorization rates to enhance the customer experience and drive revenue."
+        },
+        {
+          "blockType": "statsBlock",
+          "heading": "Key Highlights",
+          "stats": [
+            {
+              "value": "+12% Authorization Rate",
+              "description": "increased Revolve's weighted average global authorization rate"
+            },
+            {
+              "value": "Simplified Compliance",
+              "description": "removed the need for Revolve to establish local business entities worldwide"
+            },
+            {
+              "value": "Global Scalability",
+              "description": "scaled operations & offerings in multiple regions with a single integration and contract"
+            },
+            {
+              "value": "Enduring Partnership",
+              "description": "an eight-year collaboration built on trust and mutual success"
+            }
+          ]
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"Reach really acts as an extension of my team. They help us improve our authorization rates. For example, if we see a lower authorization rate in Taiwan, there's going to be an active discussion between us and Reach to work to improve it. Typically, it's Reach coming up with solutions and recommendations for us.\"",
+          "citation": "Kai Li - Senior Vice President of International, Revolve"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "When Kai Li joined Revolve, he was tasked with scaling the company's international operations. One significant hurdle was ensuring high authorization rates for transactions across diverse global markets. In cross-border ecommerce, international transactions are often flagged as potential fraud by banks, leading to false declines and lost revenue. Revolve needed a global solution that could improve authorization rates while simplifying the complexity of operating in multiple countries worldwide. Revolve was, at the time, constrained by engineering resources, meaning that they could only afford to integrate a payment partner into their systems once every few years. Therefore, they had to be very cautious with who they chose to help them with their global expansion."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In 2016, Revolve chose Reach as its Merchant of Record. The decision was rooted in Reach's ability to localize transactions seamlessly through this powerful model. Key features included:"
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Single Integration & Contract"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach eliminated the need for Revolve to establish multiple local business entities worldwide by allowing them to use Reach's existing global entity network. Revolve also unlocked a vast suite of preferred local payment methods through the singular integration process."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Localized Payments"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach's global network enabled transactions to be processed locally in the customer's banking region, which dramatically improved Revolve's authorization rates worldwide."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Global Expertise"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach provided the experience and knowledge of international payments Revolve needed without them having to onboard additional teams or specialists."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Transparent Operations"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Unlike competitors, Reach clearly outlined all requirements and processes from the outset, ensuring a frictionless collaboration for years to come."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Reach's single integration and single contract approach allowed Revolve to operate worldwide without cross-border administrative burdens.\n\nThrough Reach, Revolve was able to avoid the overhead costs of hiring additional teams to handle their international payments internally.\n\nBy localizing transactions, Reach significantly improved Revolve's authorization rates, directly boosting global revenue.\n\nEight years into the partnership, Reach remains Revolve's primary global payments partner thanks to constant collaboration, discussion, and growth."
+        }
+      ]
+    },
+    "meta": {
+      "title": "How Revolve Maximized Their Global Authorization Rates With Reach | Reach",
+      "description": "Discover how Revolve partnered with Reach to improve their global authorization rates and simplify international operations.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/01/RevolveHeader-scaled.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-revolve"
+  },
+  {
+    "type": "case-study",
+    "title": "SaberMasters overcomes payment challenges & achieves record-breaking growth.",
+    "slug": "case-study-sabermasters",
+    "companyName": "SaberMasters is a growing e-commerce company selling premium lightsabers to the global Star Wars community. While they gained traction quickly through social media and selling on Shopify",
+    "excerpt": "From September to December 2023, SaberMasters generated over $1.4 million in sales, marking their most successful and peaceful Q4 yet. By leveraging Reach's Merchant of Record model and ease of integration, SaberMasters could concentrate on expanding their business without the stress of international payment concerns.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://www.withreach.com/images/sabermasters-hero.webp",
+      "alt": "Case Study Hero",
+      "filename": "sabermasters-hero.webp"
+    },
+    "companyLogo": {
+      "url": "https://www.withreach.com/images/brand-icons/sabermasters.svg",
+      "alt": "Client Logo",
+      "filename": "sabermasters.svg"
+    },
+    "pdfUrl": null,
+    "highlights": [
+      {
+        "label": "Industry",
+        "value": "Specialty Retail"
+      },
+      {
+        "label": "Founded",
+        "value": "2020"
+      },
+      {
+        "label": "Tech Stack",
+        "value": "Shopify Embedded"
+      }
+    ],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "SaberMasters is a growing e-commerce company selling premium lightsabers to the global Star Wars community. While they gained traction quickly through social media and selling on Shopify, they encountered significant payment processing issues that threatened their expansion."
+        },
+        {
+          "blockType": "statsBlock",
+          "heading": "Key Highlights",
+          "stats": [
+            {
+              "value": "$1.4 million in sales",
+              "description": "from September to December 2023"
+            },
+            {
+              "value": "",
+              "description": "Achieved best & most peaceful Q4 to date"
+            },
+            {
+              "value": "",
+              "description": "Improved conversion & authorization rates"
+            },
+            {
+              "value": "",
+              "description": "Integrated a scalable payments infrastructure"
+            }
+          ]
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"Through Reach, we were able to get back on track, and we saw an increase in conversion rates and authorization rates.\"",
+          "citation": "Blagovest Kamenov - Co-Founder & Former CMO"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Heading into Q4 2023, SaberMasters was in a difficult situation with over $80,000 in held funds. This is because they had to create new merchant accounts separate from the ones used by their previous business, which caused them to lose credibility, even after processing millions in revenue through their former processor. To further the problem, SaberMasters was limited by the lack of credit card options they had in Europe, which restricted their working capital and their overall ability to scale in the region. According to Blagovest Kamenov, Co-Founder and former CMO at SaberMasters, the team faced a situation where \"there was pretty much no exit,\" putting their business at risk during the critical holiday season."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In September 2023, SaberMasters partnered with Reach to leverage their Merchant of Record model to power their global sales. Through Reach's ability to plug into SaberMaster's existing Shopify expansion stores with a simple no-code integration, the onboarding process was smooth, allowing SaberMasters to swiftly resolve the issues experienced with their former payment processor. Reach gave them access to the liquidity they needed, which was a game-changer during their most important sales period of the year."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "From September to December 2023, SaberMasters generated over $1.4 million in sales, marking their most successful and peaceful Q4 yet. By leveraging Reach's Merchant of Record model and ease of integration, SaberMasters could concentrate on expanding their business without the stress of international payment concerns."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Processing locally through Reach empowered SaberMasters to surpass $1.4 million in sales during Q4 2023, marking their highest revenue period to date. SaberMaster's conversion and authorization rates improved due to Reach's Merchant of Record model & local processing ability.\n\nReach provided SaberMasters with a reliable and secure global payment system, ensuring they had the liquidity they needed to scale their operations. By optimizing their global payment systems SaberMasters was able to shift their focus from managing international payment risks to driving growth.\n\nThrough Reach's embedded Shopify integrations, SaberMasters was able to optimize their international payments quickly and without any technical lift. They were live and able to capture revenue right away with a no-code integration, just in time for the holiday season."
+        }
+      ]
+    },
+    "meta": {
+      "title": "SaberMasters overcomes payment challenges & achieves record-breaking growth.",
+      "description": "Discover how SaberMasters leveraged Reach's Merchant of Record model and ease of integration to overcome payment challenges and achieve record-breaking growth.",
+      "ogImageUrl": "/images/sabermasters-hero.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-sabermasters"
+  },
+  {
+    "type": "case-study",
+    "title": "Increasing Global Approval Rates To Over 90% With Reach – Sideshow's Success Story",
+    "slug": "case-study-sideshow",
+    "companyName": "Sideshow is a creative powerhouse specializing in high-end pop culture collectibles. With a mission to connect fans with premium representations of their favourite characters",
+    "excerpt": "Sideshow unlocked a localized checkout experience, leading to a worldwide average approval rate of 92.60% and a significant decrease in failed transactions. By leveraging Reach's Merchant of Record model, Sideshow could focus on growing their product offerings while delivering an exceptional experience to their global customers.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://www.withreach.com/images/sideshow-hero.webp",
+      "alt": "Case Study Hero",
+      "filename": "sideshow-hero.webp"
+    },
+    "companyLogo": {
+      "url": "https://www.withreach.com/images/brand-icons/sideshow.svg",
+      "alt": "Client Logo",
+      "filename": "sideshow.svg"
+    },
+    "pdfUrl": null,
+    "highlights": [
+      {
+        "label": "Industry",
+        "value": "Retail & Collectibles"
+      },
+      {
+        "label": "Founded",
+        "value": "1994"
+      },
+      {
+        "label": "Tech Stack",
+        "value": "Checkout API Integration"
+      }
+    ],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Sideshow is a creative powerhouse specializing in high-end pop culture collectibles. With a mission to connect fans with premium representations of their favourite characters, Sideshow has established itself as a global leader in the collectibles industry. Guided by their passion for art and storytelling, the company has always considered itself a global brand."
+        },
+        {
+          "blockType": "statsBlock",
+          "heading": "Key Highlights",
+          "stats": [
+            {
+              "value": "Increased approval rates",
+              "description": "to over 90% and decreased false declines"
+            },
+            {
+              "value": "Eliminated buyer friction",
+              "description": "by offering their international customers a localized checkout experience"
+            },
+            {
+              "value": "Gained operational peace of mind",
+              "description": "to focus on core offerings and not payment complexities"
+            },
+            {
+              "value": "solve issues specific to their product and industry",
+              "description": "Collaborative development to"
+            }
+          ]
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"Reach really has been that rock for us. It lets us focus on how to better serve and interact with our customers, knowing that the payment side is handled — and handled well.\"",
+          "citation": "Rob Hammond - Co-CEO of Sideshow"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In the early nineties, Sideshow relied on phone and fax orders. As they expanded online, more customers began shopping from abroad, but the checkout experience created friction for international buyers. Before partnering with Reach, Sideshow only accepted credit cards, lacked localized payment options, and processed all transactions from the U.S., leading to high foreign transaction fees, and false declines - these issues deterred global customers. Sideshow was also limited by the standard refund policies available through previous payment service providers. These policies did not fit Sideshow's pre-order-based business model in a way that satisfied their global consumer's needs. To maintain their reputation for exceptional experiences, Sideshow needed a solution that aligned with their premium products and met the needs of their diverse audience."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In 2014, Sideshow partnered with Reach to level up their international ecommerce capabilities. Reach, through their Merchant of Record (MoR) model, greatly improved Sideshow's checkout in all the countries they serve. This allowed Sideshow to:"
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Localize Their Checkout Experience"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Enable cross-border customers to pay via payment methods & currencies local to, or preferred by them."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Reduce Cross-Border Fees"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Significantly reduce cross-border transaction fees for their international customers."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Reduce Purchase Friction"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Streamline the checkout process to reduce friction and enhance the buying experience for their global audience."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Custom-Build Collaborative Solutions"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Regular collaboration with developers at both companies provided Sideshow with bespoke solutions to the pre-order refund challenges inherent to their industry and product."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Sideshow unlocked a localized checkout, which led to a worldwide average approval rate of 92.60% and a significant decrease in failed transactions.\n\nReach minimized or eliminated international transaction fees, creating a better experience for customers and boosting conversions.\n\nSideshow's customers gained the convenience of paying in their local currencies & payment methods, eliminating checkout friction and increasing their overall satisfaction.\n\nWith Reach managing the complexities of global payments, Sideshow can focus on growing its product offerings and strengthening customer relationships."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Increasing Global Approval Rates To Over 90% With Reach – Sideshow's Success Story",
+      "description": "Discover how Sideshow partnered with Reach to level up their international ecommerce capabilities and achieve over 90% approval rates globally.",
+      "ogImageUrl": "/images/sideshow-hero.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-sideshow"
+  },
+  {
+    "type": "case-study",
+    "title": "How The Foldie Scaled Global Success with Reach",
+    "slug": "case-study-the-foldie",
+    "companyName": "Founded in 2020 by siblings Thomas and Svéa Van den Heuvel",
+    "excerpt": "The Foldie unlocked hassle-free international payments, global tax compliance, and fraud prevention through Reach's Merchant of Record model. By leveraging Reach's no-code Shopify integration, The Foldie achieved 10,000 orders each in the UK and Australia within months of implementation while significantly reducing customer complaints and chargebacks.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/12/9_bfdfd291-63b2-447a-b26e-bfe926a5eb09.webp",
+      "alt": "Case Study Hero",
+      "filename": "9_bfdfd291-63b2-447a-b26e-bfe926a5eb09.webp"
+    },
+    "companyLogo": {
+      "url": "https://www.withreach.com/images/foldie.png",
+      "alt": "Client Logo",
+      "filename": "foldie.png"
+    },
+    "pdfUrl": null,
+    "highlights": [
+      {
+        "label": "Industry",
+        "value": "Retail (Travel Accessories)"
+      },
+      {
+        "label": "Founded",
+        "value": "2020"
+      },
+      {
+        "label": "Tech Stack",
+        "value": "Shopify Embedded"
+      },
+      {
+        "label": "Integration",
+        "value": "December 2024"
+      }
+    ],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Founded in 2020 by siblings Thomas and Svéa Van den Heuvel, The Foldie began as an innovative response to the rising demand for versatile travel products. Their flagship offering—foldable travel bags—not only met the needs of modern travellers but also propelled the company to rapid success in the U.S. However, as The Foldie's reputation grew, it became evident that lucrative markets beyond American borders remained untapped."
+        },
+        {
+          "blockType": "statsBlock",
+          "heading": "Key Highlights",
+          "stats": [
+            {
+              "value": "10,000+ Orders",
+              "description": "each in the UK and Australia within months of implementation"
+            },
+            {
+              "value": "Hassle-free Compliance",
+              "description": "with international payments, global tax compliance, & fraud prevention"
+            },
+            {
+              "value": "Increased Conversions",
+              "description": "with significantly reduced customer complaints and chargebacks"
+            },
+            {
+              "value": "Optimized Operations",
+              "description": "by redistributing stock globally to align with seasonal demand"
+            }
+          ]
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"With Reach, it's easy to get into other countries, and it doesn't take a lot of effort from the founders. Having those extra hands feels like a part of the business you can just give away to someone else. And that's really game-changing for us.\"",
+          "citation": "Svéa Van den Heuvel - Co-Founder, The Foldie"
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"With Reach, it's super simple to add another 10-30% on top of your current revenue. It has been a game-changer.\"",
+          "citation": "Thomas Van den Heuvel - Co-Founder, The Foldie"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "While the U.S. market had been their initial focus, the founders knew they were missing opportunities in lucrative markets like the UK, Europe, and Australia. However, expanding internationally required more than just shipping products abroad—it demanded in-depth knowledge of global tax regulations, fraud prevention, and localized customer preferences. As a lean, founder-led operation, Thomas and Svéa also struggled to balance the demands of running their business with the complexities of scaling globally. They needed a partner like Reach, who could take on the operational and regulatory burden of international payments, freeing them to focus on what they did best—designing and selling great products."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The Foldie partnered with Reach to unlock the advantage of their global Merchant of Record (MoR) model, enabling The Foldie to navigate the complexities of international ecommerce more efficiently. Through a no-code integration to their Shopify expansion stores, Reach took on the challenges of managing global payments, tax compliance, fraud prevention, and localized customer experience."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Strategic International Expansion"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Simplified entry into key markets like the UK, Europe, and Australia with localized payments to maximize their conversions."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Simple & Comprehensive Compliance"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Hassle-free compliance, as Reach took charge of international tax compliance, fraud prevention, and global payments."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Fast Implementation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "A streamlined setup process that took just a few weeks, significantly faster than the founders anticipated."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Scalable Success"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Increased volume and revenue as a result of an increased addressable global market and a reduction in international fees."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Conversion rates increased while customer complaints and chargebacks declined in Australia and the UK.\n\nWithin just a few months of implementing Reach's no-code Shopify integration, The Foldie achieved 10,000 orders in both the UK and Australia.\n\nThe Foldie offloaded complexity, lowered their international operational costs and freed up the founders to focus on scaling their brand.\n\nUsing an MoR, The Foldie was able to easily reallocate stock based on seasonal demand to increase their sales volume year-round."
+        }
+      ]
+    },
+    "meta": {
+      "title": "How The Foldie Scaled Global Success with Reach",
+      "description": "Discover how The Foldie partnered with Reach to unlock new international markets and achieve 10,000+ orders in both the UK and Australia within months of implementation.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/12/9_bfdfd291-63b2-447a-b26e-bfe926a5eb09.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-the-foldie"
+  },
+  {
+    "type": "case-study",
+    "title": "How Club L accelerated global growth with Reach",
+    "slug": "club-l",
+    "companyName": "Club L London",
+    "excerpt": "Club L partnered with Reach to improve international authorization rates, simplify compliance, and unlock scalable growth with a single integration.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/10/club-l2.webp",
+      "alt": "Club L Hero",
+      "filename": "club-l2.webp"
+    },
+    "companyLogo": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/10/clubl.svg",
+      "alt": "Client Logo",
+      "filename": "clubl.svg"
+    },
+    "pdfUrl": null,
+    "highlights": [],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Club L London is the next-generation online fashion retailer for the forward-thinking consumer. Expertly designed and crafted in-house, Club L specializes in accessible luxury, unique designs and unrivaled quality made to flatter every figure. Founded in 2007 Club L was created with the vision of offering long-lasting luxury styles, trend-oriented collections with a twist and unique, statement designs that offer both exceptional quality and fit in an otherwise saturated market of fast-fashion and throw-away goods."
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "US sales tax compliance is incredibly complex and distracted our Finance team from their day to day. Reach’s solution took this headache away completely and actually made us money! Local acquiring increased our checkout conversion by over 2% which more than covers their service fees",
+          "citation": "Club L"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Club L was experiencing exponential growth in their international markets, and looking to further their growth with the acquisition of UK fashion brand Lavish Alice. With the growth, Club L was looking for a global partner that could help localize their websites, handle tax compliance, support a seamless checkout experience, all while keeping their cost down. In 2023, Club L’s leadership team began the search for a provider with the requirements below:"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "A checkout with the technology to support localized transactions in each customer’s country",
+            "The ability to handle taxes in those local markets seamlessly",
+            "An easy-to-integrate system that would work with their existing Shopify setup and support their in-house e-commerce team"
+          ]
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "After looking at a range of options, Club L chose Reach to support their Shopify stores with a tailored solution. Reach enabled them to meet tax compliance globally and brought meaningful benefits to their international operations. This included support for their expansion stores in the USA, Australia, and Canada. As well support Lavish Alice on a global Shopify Store and regional Ireland store."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Localized Payments"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach processes transactions locally across markets to improve authorization rates and customer experience."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Simplified Compliance"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Operating as the Merchant of Record, Reach manages the complex layers of tax, regulations, and fraud controls across jurisdictions."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Scalable Integration"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "A flexible integration approach allowed Club L to move quickly and scale confidently without distracting core teams."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Reduced overall processing and tax cost by 25% across all markets\n\nReduced cart abandonment by 10% by offering a fully localised Shopify Payments experience to shoppers\n\nGained full US sales tax compliance in all states and full tax compliance in international markets\n\nIncreased conversions by offering Shop Pay Installments and Afterpay"
+        }
+      ]
+    },
+    "meta": {
+      "title": "Club L Partners with Reach to Accelerate Global Growth | Reach",
+      "description": "Read how Club L simplified international payments and scaled confidently with Reach's Merchant of Record model.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/10/club-l2.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/club-l"
+  },
+  {
+    "type": "case-study",
+    "title": "How The Foldie Scaled Global Success with Reach",
+    "slug": "foldie",
+    "companyName": "Founded in 2020 by siblings Thomas and Svéa Van den Heuvel",
+    "excerpt": "The Foldie unlocked hassle-free international payments, global tax compliance, and fraud prevention through Reach's Merchant of Record model. By leveraging Reach's no-code Shopify integration, The Foldie achieved 10,000 orders each in the UK and Australia within months of implementation while significantly reducing customer complaints and chargebacks.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/12/9_bfdfd291-63b2-447a-b26e-bfe926a5eb09.webp",
+      "alt": "Case Study Hero",
+      "filename": "9_bfdfd291-63b2-447a-b26e-bfe926a5eb09.webp"
+    },
+    "companyLogo": {
+      "url": "https://www.withreach.com/images/foldie.png",
+      "alt": "Client Logo",
+      "filename": "foldie.png"
+    },
+    "pdfUrl": null,
+    "highlights": [
+      {
+        "label": "Industry",
+        "value": "Retail (Travel Accessories)"
+      },
+      {
+        "label": "Founded",
+        "value": "2020"
+      },
+      {
+        "label": "Tech Stack",
+        "value": "Shopify Embedded"
+      },
+      {
+        "label": "Integration",
+        "value": "December 2024"
+      }
+    ],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Founded in 2020 by siblings Thomas and Svéa Van den Heuvel, The Foldie began as an innovative response to the rising demand for versatile travel products. Their flagship offering—foldable travel bags—not only met the needs of modern travellers but also propelled the company to rapid success in the U.S. However, as The Foldie's reputation grew, it became evident that lucrative markets beyond American borders remained untapped."
+        },
+        {
+          "blockType": "statsBlock",
+          "heading": "Key Highlights",
+          "stats": [
+            {
+              "value": "10,000+ Orders",
+              "description": "each in the UK and Australia within months of implementation"
+            },
+            {
+              "value": "Hassle-free Compliance",
+              "description": "with international payments, global tax compliance, & fraud prevention"
+            },
+            {
+              "value": "Increased Conversions",
+              "description": "with significantly reduced customer complaints and chargebacks"
+            },
+            {
+              "value": "Optimized Operations",
+              "description": "by redistributing stock globally to align with seasonal demand"
+            }
+          ]
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"With Reach, it's easy to get into other countries, and it doesn't take a lot of effort from the founders. Having those extra hands feels like a part of the business you can just give away to someone else. And that's really game-changing for us.\"",
+          "citation": "Svéa Van den Heuvel - Co-Founder, The Foldie"
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"With Reach, it's super simple to add another 10-30% on top of your current revenue. It has been a game-changer.\"",
+          "citation": "Thomas Van den Heuvel - Co-Founder, The Foldie"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "While the U.S. market had been their initial focus, the founders knew they were missing opportunities in lucrative markets like the UK, Europe, and Australia. However, expanding internationally required more than just shipping products abroad—it demanded in-depth knowledge of global tax regulations, fraud prevention, and localized customer preferences. As a lean, founder-led operation, Thomas and Svéa also struggled to balance the demands of running their business with the complexities of scaling globally. They needed a partner like Reach, who could take on the operational and regulatory burden of international payments, freeing them to focus on what they did best—designing and selling great products."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The Foldie partnered with Reach to unlock the advantage of their global Merchant of Record (MoR) model, enabling The Foldie to navigate the complexities of international ecommerce more efficiently. Through a no-code integration to their Shopify expansion stores, Reach took on the challenges of managing global payments, tax compliance, fraud prevention, and localized customer experience."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Strategic International Expansion"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Simplified entry into key markets like the UK, Europe, and Australia with localized payments to maximize their conversions."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Simple & Comprehensive Compliance"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Hassle-free compliance, as Reach took charge of international tax compliance, fraud prevention, and global payments."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Fast Implementation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "A streamlined setup process that took just a few weeks, significantly faster than the founders anticipated."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Scalable Success"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Increased volume and revenue as a result of an increased addressable global market and a reduction in international fees."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Conversion rates increased while customer complaints and chargebacks declined in Australia and the UK.\n\nWithin just a few months of implementing Reach's no-code Shopify integration, The Foldie achieved 10,000 orders in both the UK and Australia.\n\nThe Foldie offloaded complexity, lowered their international operational costs and freed up the founders to focus on scaling their brand.\n\nUsing an MoR, The Foldie was able to easily reallocate stock based on seasonal demand to increase their sales volume year-round."
+        }
+      ]
+    },
+    "meta": {
+      "title": "How The Foldie Scaled Global Success with Reach",
+      "description": "Discover how The Foldie partnered with Reach to unlock new international markets and achieve 10,000+ orders in both the UK and Australia within months of implementation.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/12/9_bfdfd291-63b2-447a-b26e-bfe926a5eb09.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/foldie"
+  },
+  {
+    "type": "case-study",
+    "title": "How Revolve Maximized Their Global Authorization Rates  With Reach",
+    "slug": "revolve",
+    "companyName": "Revolve",
+    "excerpt": "Revolve, a Los Angeles-based online fashion retailer, partnered with Reach to improve their international payment authorization rates, achieving a 12% increase in their weighted average global authorization rate while simplifying their global operations.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/01/RevolveHeader-scaled.jpg",
+      "alt": "Revolve Hero",
+      "filename": "RevolveHeader-scaled.jpg"
+    },
+    "companyLogo": {
+      "url": "https://www.withreach.com/images/brand-icons/revolve.svg",
+      "alt": "Revolve Logo",
+      "filename": "revolve.svg"
+    },
+    "pdfUrl": null,
+    "highlights": [
+      {
+        "label": "Industry",
+        "value": "Retail Fashion"
+      },
+      {
+        "label": "Founded",
+        "value": "2003"
+      },
+      {
+        "label": "Tech Stack",
+        "value": "Checkout API Integration"
+      }
+    ],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Revolve, a Los Angeles-based online fashion retailer, has carved their niche as a global leader in trendsetting apparel. With customers spanning continents, the company faced a pivotal challenge: improving international payment authorization rates to enhance the customer experience and drive revenue."
+        },
+        {
+          "blockType": "statsBlock",
+          "heading": "Key Highlights",
+          "stats": [
+            {
+              "value": "+12% Authorization Rate",
+              "description": "increased Revolve's weighted average global authorization rate"
+            },
+            {
+              "value": "Simplified Compliance",
+              "description": "removed the need for Revolve to establish local business entities worldwide"
+            },
+            {
+              "value": "Global Scalability",
+              "description": "scaled operations & offerings in multiple regions with a single integration and contract"
+            },
+            {
+              "value": "Enduring Partnership",
+              "description": "an eight-year collaboration built on trust and mutual success"
+            }
+          ]
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"Reach really acts as an extension of my team. They help us improve our authorization rates. For example, if we see a lower authorization rate in Taiwan, there's going to be an active discussion between us and Reach to work to improve it. Typically, it's Reach coming up with solutions and recommendations for us.\"",
+          "citation": "Kai Li - Senior Vice President of International, Revolve"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "When Kai Li joined Revolve, he was tasked with scaling the company's international operations. One significant hurdle was ensuring high authorization rates for transactions across diverse global markets. In cross-border ecommerce, international transactions are often flagged as potential fraud by banks, leading to false declines and lost revenue. Revolve needed a global solution that could improve authorization rates while simplifying the complexity of operating in multiple countries worldwide. Revolve was, at the time, constrained by engineering resources, meaning that they could only afford to integrate a payment partner into their systems once every few years. Therefore, they had to be very cautious with who they chose to help them with their global expansion."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In 2016, Revolve chose Reach as its Merchant of Record. The decision was rooted in Reach's ability to localize transactions seamlessly through this powerful model. Key features included:"
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Single Integration & Contract"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach eliminated the need for Revolve to establish multiple local business entities worldwide by allowing them to use Reach's existing global entity network. Revolve also unlocked a vast suite of preferred local payment methods through the singular integration process."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Localized Payments"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach's global network enabled transactions to be processed locally in the customer's banking region, which dramatically improved Revolve's authorization rates worldwide."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Global Expertise"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach provided the experience and knowledge of international payments Revolve needed without them having to onboard additional teams or specialists."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Transparent Operations"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Unlike competitors, Reach clearly outlined all requirements and processes from the outset, ensuring a frictionless collaboration for years to come."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Reach's single integration and single contract approach allowed Revolve to operate worldwide without cross-border administrative burdens.\n\nThrough Reach, Revolve was able to avoid the overhead costs of hiring additional teams to handle their international payments internally.\n\nBy localizing transactions, Reach significantly improved Revolve's authorization rates, directly boosting global revenue.\n\nEight years into the partnership, Reach remains Revolve's primary global payments partner thanks to constant collaboration, discussion, and growth."
+        }
+      ]
+    },
+    "meta": {
+      "title": "How Revolve Maximized Their Global Authorization Rates With Reach | Reach",
+      "description": "Discover how Revolve partnered with Reach to improve their global authorization rates and simplify international operations.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/01/RevolveHeader-scaled.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/revolve"
+  },
+  {
+    "type": "case-study",
+    "title": "SaberMasters overcomes payment challenges & achieves record-breaking growth.",
+    "slug": "sabermasters",
+    "companyName": "SaberMasters is a growing e-commerce company selling premium lightsabers to the global Star Wars community. While they gained traction quickly through social media and selling on Shopify",
+    "excerpt": "From September to December 2023, SaberMasters generated over $1.4 million in sales, marking their most successful and peaceful Q4 yet. By leveraging Reach's Merchant of Record model and ease of integration, SaberMasters could concentrate on expanding their business without the stress of international payment concerns.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://www.withreach.com/images/sabermasters-hero.webp",
+      "alt": "Case Study Hero",
+      "filename": "sabermasters-hero.webp"
+    },
+    "companyLogo": {
+      "url": "https://www.withreach.com/images/brand-icons/sabermasters.svg",
+      "alt": "Client Logo",
+      "filename": "sabermasters.svg"
+    },
+    "pdfUrl": null,
+    "highlights": [
+      {
+        "label": "Industry",
+        "value": "Specialty Retail"
+      },
+      {
+        "label": "Founded",
+        "value": "2020"
+      },
+      {
+        "label": "Tech Stack",
+        "value": "Shopify Embedded"
+      }
+    ],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "SaberMasters is a growing e-commerce company selling premium lightsabers to the global Star Wars community. While they gained traction quickly through social media and selling on Shopify, they encountered significant payment processing issues that threatened their expansion."
+        },
+        {
+          "blockType": "statsBlock",
+          "heading": "Key Highlights",
+          "stats": [
+            {
+              "value": "$1.4 million in sales",
+              "description": "from September to December 2023"
+            },
+            {
+              "value": "",
+              "description": "Achieved best & most peaceful Q4 to date"
+            },
+            {
+              "value": "",
+              "description": "Improved conversion & authorization rates"
+            },
+            {
+              "value": "",
+              "description": "Integrated a scalable payments infrastructure"
+            }
+          ]
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"Through Reach, we were able to get back on track, and we saw an increase in conversion rates and authorization rates.\"",
+          "citation": "Blagovest Kamenov - Co-Founder & Former CMO"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Heading into Q4 2023, SaberMasters was in a difficult situation with over $80,000 in held funds. This is because they had to create new merchant accounts separate from the ones used by their previous business, which caused them to lose credibility, even after processing millions in revenue through their former processor. To further the problem, SaberMasters was limited by the lack of credit card options they had in Europe, which restricted their working capital and their overall ability to scale in the region. According to Blagovest Kamenov, Co-Founder and former CMO at SaberMasters, the team faced a situation where \"there was pretty much no exit,\" putting their business at risk during the critical holiday season."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In September 2023, SaberMasters partnered with Reach to leverage their Merchant of Record model to power their global sales. Through Reach's ability to plug into SaberMaster's existing Shopify expansion stores with a simple no-code integration, the onboarding process was smooth, allowing SaberMasters to swiftly resolve the issues experienced with their former payment processor. Reach gave them access to the liquidity they needed, which was a game-changer during their most important sales period of the year."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "From September to December 2023, SaberMasters generated over $1.4 million in sales, marking their most successful and peaceful Q4 yet. By leveraging Reach's Merchant of Record model and ease of integration, SaberMasters could concentrate on expanding their business without the stress of international payment concerns."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Processing locally through Reach empowered SaberMasters to surpass $1.4 million in sales during Q4 2023, marking their highest revenue period to date. SaberMaster's conversion and authorization rates improved due to Reach's Merchant of Record model & local processing ability.\n\nReach provided SaberMasters with a reliable and secure global payment system, ensuring they had the liquidity they needed to scale their operations. By optimizing their global payment systems SaberMasters was able to shift their focus from managing international payment risks to driving growth.\n\nThrough Reach's embedded Shopify integrations, SaberMasters was able to optimize their international payments quickly and without any technical lift. They were live and able to capture revenue right away with a no-code integration, just in time for the holiday season."
+        }
+      ]
+    },
+    "meta": {
+      "title": "SaberMasters overcomes payment challenges & achieves record-breaking growth.",
+      "description": "Discover how SaberMasters leveraged Reach's Merchant of Record model and ease of integration to overcome payment challenges and achieve record-breaking growth.",
+      "ogImageUrl": "/images/sabermasters-hero.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/sabermasters"
+  },
+  {
+    "type": "case-study",
+    "title": "Increasing Global Approval Rates To Over 90% With Reach – Sideshow's Success Story",
+    "slug": "sideshow",
+    "companyName": "Sideshow is a creative powerhouse specializing in high-end pop culture collectibles. With a mission to connect fans with premium representations of their favourite characters",
+    "excerpt": "Sideshow unlocked a localized checkout experience, leading to a worldwide average approval rate of 92.60% and a significant decrease in failed transactions. By leveraging Reach's Merchant of Record model, Sideshow could focus on growing their product offerings while delivering an exceptional experience to their global customers.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://www.withreach.com/images/sideshow-hero.webp",
+      "alt": "Case Study Hero",
+      "filename": "sideshow-hero.webp"
+    },
+    "companyLogo": {
+      "url": "https://www.withreach.com/images/brand-icons/sideshow.svg",
+      "alt": "Client Logo",
+      "filename": "sideshow.svg"
+    },
+    "pdfUrl": null,
+    "highlights": [
+      {
+        "label": "Industry",
+        "value": "Retail & Collectibles"
+      },
+      {
+        "label": "Founded",
+        "value": "1994"
+      },
+      {
+        "label": "Tech Stack",
+        "value": "Checkout API Integration"
+      }
+    ],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Sideshow is a creative powerhouse specializing in high-end pop culture collectibles. With a mission to connect fans with premium representations of their favourite characters, Sideshow has established itself as a global leader in the collectibles industry. Guided by their passion for art and storytelling, the company has always considered itself a global brand."
+        },
+        {
+          "blockType": "statsBlock",
+          "heading": "Key Highlights",
+          "stats": [
+            {
+              "value": "Increased approval rates",
+              "description": "to over 90% and decreased false declines"
+            },
+            {
+              "value": "Eliminated buyer friction",
+              "description": "by offering their international customers a localized checkout experience"
+            },
+            {
+              "value": "Gained operational peace of mind",
+              "description": "to focus on core offerings and not payment complexities"
+            },
+            {
+              "value": "solve issues specific to their product and industry",
+              "description": "Collaborative development to"
+            }
+          ]
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"Reach really has been that rock for us. It lets us focus on how to better serve and interact with our customers, knowing that the payment side is handled — and handled well.\"",
+          "citation": "Rob Hammond - Co-CEO of Sideshow"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In the early nineties, Sideshow relied on phone and fax orders. As they expanded online, more customers began shopping from abroad, but the checkout experience created friction for international buyers. Before partnering with Reach, Sideshow only accepted credit cards, lacked localized payment options, and processed all transactions from the U.S., leading to high foreign transaction fees, and false declines - these issues deterred global customers. Sideshow was also limited by the standard refund policies available through previous payment service providers. These policies did not fit Sideshow's pre-order-based business model in a way that satisfied their global consumer's needs. To maintain their reputation for exceptional experiences, Sideshow needed a solution that aligned with their premium products and met the needs of their diverse audience."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In 2014, Sideshow partnered with Reach to level up their international ecommerce capabilities. Reach, through their Merchant of Record (MoR) model, greatly improved Sideshow's checkout in all the countries they serve. This allowed Sideshow to:"
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Localize Their Checkout Experience"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Enable cross-border customers to pay via payment methods & currencies local to, or preferred by them."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Reduce Cross-Border Fees"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Significantly reduce cross-border transaction fees for their international customers."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Reduce Purchase Friction"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Streamline the checkout process to reduce friction and enhance the buying experience for their global audience."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Custom-Build Collaborative Solutions"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Regular collaboration with developers at both companies provided Sideshow with bespoke solutions to the pre-order refund challenges inherent to their industry and product."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Sideshow unlocked a localized checkout, which led to a worldwide average approval rate of 92.60% and a significant decrease in failed transactions.\n\nReach minimized or eliminated international transaction fees, creating a better experience for customers and boosting conversions.\n\nSideshow's customers gained the convenience of paying in their local currencies & payment methods, eliminating checkout friction and increasing their overall satisfaction.\n\nWith Reach managing the complexities of global payments, Sideshow can focus on growing its product offerings and strengthening customer relationships."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Increasing Global Approval Rates To Over 90% With Reach – Sideshow's Success Story",
+      "description": "Discover how Sideshow partnered with Reach to level up their international ecommerce capabilities and achieve over 90% approval rates globally.",
+      "ogImageUrl": "/images/sideshow-hero.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/sideshow"
+  },
+  {
+    "type": "case-study",
+    "title": "From Cash Flow Constraints to Record Revenue: Ziella's Success with Reach",
+    "slug": "ziella",
+    "companyName": "Ziella",
+    "excerpt": "Ziella, a rapidly growing DTC jewelry brand, partnered with Reach to eliminate payment holds during peak periods, enabling seamless global expansion and achieving record-breaking Q4 performance while significantly reducing chargebacks.",
+    "publishedAt": null,
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/04/ziella-hero.png",
+      "alt": "Ziella Hero",
+      "filename": "ziella-hero.png"
+    },
+    "companyLogo": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/04/Ziella-Logo.png",
+      "alt": "Ziella Logo",
+      "filename": "Ziella-Logo.png"
+    },
+    "pdfUrl": null,
+    "highlights": [
+      {
+        "label": "Industry",
+        "value": "Retail Jewelry"
+      },
+      {
+        "label": "Founded",
+        "value": "2022"
+      },
+      {
+        "label": "Tech Stack",
+        "value": "Shopify Embedded"
+      }
+    ],
+    "categories": [],
+    "caseStudyCategories": [],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Ziella is a rapidly growing, direct-to-consumer ecommerce brand specializing in creating meaningful customer experiences through thoughtfully curated gift sets. Operating under the Protus Brands umbrella, Ziella has experienced significant growth, particularly during peak seasons like Black Friday and Cyber Monday."
+        },
+        {
+          "blockType": "statsBlock",
+          "heading": "Key Highlights",
+          "stats": [
+            {
+              "value": "Eliminated Payment Holds",
+              "description": "during peak periods, enabling uninterrupted business operations"
+            },
+            {
+              "value": "Seamless Expansion",
+              "description": "into European markets with full compliance and infrastructure"
+            },
+            {
+              "value": "Reduced Chargebacks",
+              "description": "through improved support and returns experience"
+            },
+            {
+              "value": "Record-Breaking Q4",
+              "description": "with ability to scale ad campaigns and respond to viral demand"
+            }
+          ]
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"Working with Reach, that's allowed us to not worry about cashflow, to worry about that payment process. It allowed the team to really focus on what they do well, which is creating meaningful ads, getting a good process in place and it really enabled the team to scale new products and deliver a great experience for our customers.\"",
+          "citation": "Sean Goodman - Operations Management, Protus Brands (Ziella)"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Ziella, a fast-growing direct-to-consumer ecommerce store under Protus Brands, specializes in thoughtfully curated gift sets. With demand spiking during seasonal periods—especially Q4—the team needed a reliable payments partner to scale. Ziella saw rapid growth, causing their previous payments solution to trigger holds on nearly 100% of incoming funds during their busiest time of year. This severely constrained cash flow and made it difficult to pay vendors, run ads, or even cover payroll."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Within a few weeks, Ziella implemented Reach's Merchant of Record services, a decision driven by Reach's capacity to streamline global payment complexities. Key features of the solution included:"
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Transparent, Real-Time Support"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Ziella's previous solution lacked direct communication and timely responses. Reach solved this by providing direct access to their team via Slack, ensuring quick and efficient issue resolution."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Stable, Scalable Payment System"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Ziella, a rapidly growing brand, needed a payment platform that could handle fluctuating transaction volumes. Reach's solution provided the necessary infrastructure to process payments without revenue holds, enabling Ziella to capitalize on periods of high demand and plan for future growth."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Seamless Onboarding Experience"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach delivered a fast, personalized, and frictionless onboarding process with clear documentation and hands-on support, ensuring a smooth transition and minimizing delays."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Ability to Launch into New Markets Without Delays"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach provides the infrastructure and expertise to navigate international payments and compliance, enabling Ziella to launch into new EU markets with ease and confidence."
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "The Outcome",
+          "text": "Scaling ad campaigns and responding to viral demand became possible without liquidity issues.\n\nSeamless launches into new markets were possible with established infrastructure powered by Reach & completed with full compliance.\n\nImproved support, transparency, and returns experience led to fewer chargeback disputes, with support from Reach.\n\nBy outsourcing their global payments solution, Ziella can focus on creativity and customer experience, not payments."
+        }
+      ]
+    },
+    "meta": {
+      "title": "From Cash Flow Constraints to Record Revenue: Ziella's Success with Reach | Reach",
+      "description": "Discover how Ziella partnered with Reach to overcome payment processing challenges and achieve record-breaking growth while expanding globally.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2025/04/ziella-hero.png"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/case-studies/ziella"
+  }
+]

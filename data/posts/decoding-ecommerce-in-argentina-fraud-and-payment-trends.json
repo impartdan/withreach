@@ -1,0 +1,117 @@
+{
+  "type": "post",
+  "title": "Decoding Ecommerce in Argentina: Fraud and Payment Trends",
+  "slug": "decoding-ecommerce-in-argentina-fraud-and-payment-trends",
+  "excerpt": "Explores the unique ecommerce challenges shaped by Argentina's economy, currency preferences, government regulations, and the rise of \"affordable luxury\" fraud. Learn practical tips to adapt your fraud prevention strategies and succeed in Argentina.",
+  "publishedAt": "2025-04-09T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81f7-a226-e3d33d94f7db/1b66e0da-37af-4762-b4dc-187e61788e1b.jpg",
+    "alt": "Decoding Ecommerce in Argentina: Fraud and Payment Trends",
+    "filename": "1b66e0da-37af-4762-b4dc-187e61788e1b.jpg"
+  },
+  "authors": [],
+  "categories": [
+    "Fraud",
+    "Argentina",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "If you’re looking to expand your ecommerce business into Argentina, there are a few things you’ll want to understand about the local market—especially when it comes to online fraud. Argentina’s economic and political history has shaped how people shop online and, in turn, how fraud shows up."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "How the Economy Shapes Ecommerce Fraud"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Argentina’s economy has seen a lot of ups and downs. Currency instability and high inflation have led many people to prefer cash over digital payments. Credit card use isn’t as common, thanks to sky-high interest rates and concerns about the value of the peso.\nBecause of the country’s bigger social and economic challenges, local authorities often focus their resources on more serious crimes—meaning fraud prevention isn’t always a top priority. That makes the online space a little riskier for ecommerce businesses."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Why Cash and the U.S. Dollar Are So Popular"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In recent years, the peso hasn’t held its value well, so many Argentinians prefer to save and spend in U.S. dollars when they can. This often leads people to shop online in USD—even using VPNs to look like they're buying from the U.S.—which can trip up fraud detection systems. If your business only accepts pesos, you might see fewer conversions as a result.\nWith the use of USD for goods shipped to Argentina, out-of-the-box fraud filters might flag these transactions as suspicious just because the currency, billing address, or shipping info doesn’t line up, which leads to false declines and lost sales."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "How Government Rules Can Create Unusual Shopping Behaviors"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "To protect its economy, Argentina has often placed limits on how much people can buy online and what they can import. While well-intentioned, these restrictions can have unintended side effects."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In the past, people who don’t use their limit would sell access to their accounts to let others buy more online. This frequently leads to purchases with mismatched names and addresses. To a fraud engine, that looks shady. But in reality, it might just be someone trying to get around the system."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Some shoppers take things a step further, using credit cards from neighboring countries like Chile or Bolivia to get past restrictions. This leads to a rise in cross-border transactions—and more confusion for fraud prevention systems."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Rise of “Affordable Luxuries” in Fraud"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "You might think fraudsters only go after big-ticket items, but that’s not always the case in Argentina. With fewer goods available due to import rules and tight budgets, there's high demand for small, desirable items—like phone accessories or beauty products. These “affordable luxuries” are easier to sell and less likely to draw attention than more expensive items.\nSometimes these items are bought with stolen credit card info and then sold in person with cash transactions."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "Tips for Selling Online in Argentina"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "To succeed in Argentina, you need more than a strong product—you need to understand how people shop and the challenges they face. Here are a few ways to set yourself up for success:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Offer cash-based payment options where possible.",
+          "Keep an eye on economic and political changes—they affect how people shop.",
+          "Don’t rely too heavily on red flags like mismatched names or billing addresses. In Argentina, they might not mean fraud.",
+          "Adjust your fraud tools to reflect local behaviors, rather than using a global template.",
+          "Learn how your Argentinian customers shop and what motivates their purchases."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The Argentinian market is complex, but it’s also full of opportunity. With the right local insight and tools in place, you can protect your business and connect more effectively with your customers."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "🎥 Want to dive deeper?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Watch our latest episode of True Fraud featuring expert Pablo Torres, where we unpack everything you need to know about ecommerce in Argentina."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Ready to make your store global-ready?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "See how Reach can help."
+      }
+    ]
+  },
+  "meta": {
+    "title": "Decoding Ecommerce in Argentina: Fraud and Payment Trends",
+    "description": "Explores the unique ecommerce challenges shaped by Argentina's economy, currency preferences, government regulations, and the rise of \"affordable luxury\" fraud. Learn practical tips to adapt your fraud prevention strategies and succeed in Argentina.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81f7-a226-e3d33d94f7db/1b66e0da-37af-4762-b4dc-187e61788e1b.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/decoding-ecommerce-in-argentina-fraud-and-payment-trends"
+}

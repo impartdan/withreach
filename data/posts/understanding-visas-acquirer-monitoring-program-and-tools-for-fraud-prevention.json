@@ -1,0 +1,117 @@
+{
+  "type": "post",
+  "title": "Understanding Visa's Acquirer Monitoring Program and Tools for Fraud Prevention",
+  "slug": "understanding-visas-acquirer-monitoring-program-and-tools-for-fraud-prevention",
+  "excerpt": "Discover how the new Visa Acquirer Monitoring Program (VAMP) launching in April 2025 impacts your business, learn about essential fraud prevention tools such as RDR, Compelling Evidence 3.0, and Pre-Chargeback Alerts and how they can help protect your ecommerce business.",
+  "publishedAt": "2024-11-27T05:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1359344f-6e66-8046-b000-f8c7b470f43f/9f1d0f63-ccdc-4882-951f-958a7b2f85dd.jpg",
+    "alt": "Understanding Visa's Acquirer Monitoring Program and Tools for Fraud Prevention",
+    "filename": "9f1d0f63-ccdc-4882-951f-958a7b2f85dd.jpg"
+  },
+  "authors": [],
+  "categories": [
+    "Fraud",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Managing chargeback and fraud risks for your ecommerce business can be daunting and complex. The"
+      },
+      {
+        "blockType": "paragraph",
+        "text": ", launching in April 2025, aims to help merchants and acquirers address these challenges more effectively, but there are some important shifts to know of so that it doesn’t impact your business negatively."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Visa's Acquirer Monitoring Program: What's New?"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Visa's Acquirer Monitoring Program (VAMP) integrates two previously separate programs to reduce fraud and ensure compliance with acceptable chargeback rates. The program holds both merchants and acquirers accountable, with stricter thresholds on allowable chargeback levels. This dual focus shifts from simply monitoring merchant behavior to evaluating the acquirer's role in managing risk within their portfolios.\nThe program's stipulations are stringent: both acquirers and merchants must keep chargeback ratios below certain levels to avoid financial penalties. For acquirers, this adds an extra layer of responsibility, encouraging proactive monitoring and mitigation of fraud risk across their portfolios."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Leveraging Fraud Prevention Tools to Stay Compliant"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Visa's program emphasizes pre-emptive fraud management and utilizes several tools to keep chargeback ratios within compliance. By using pre-chargeback alerts and rapid dispute resolution methods, merchants can address potential issues before they become chargebacks. When used effectively, these tools not only prevent chargebacks but also ensure that certain resolved disputes won't count toward Visa's chargeback ratio requirements."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Key Tools to Combat Chargebacks"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Available through providers like Verifi (by Visa) and Ethoca (by Mastercard), these alerts notify merchants of potential chargebacks, allowing them to address issues proactively. Merchants can offer solutions like refunds or cancellations to avoid costly disputes."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Rapid Dispute Resolution (RDR)"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Offered by Verifi, RDR swiftly resolves disputes by issuing refunds before they become chargebacks, effectively removing them from the chargeback ratio. This is particularly useful for low-value transactions where dispute costs might outweigh the chargeback's financial impact."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Compelling Evidence 3.0"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "This advanced tool uses data like device IDs, IP addresses, and purchase histories to provide issuers with evidence of legitimate transactions. Issuers can then assess claims and potentially decline chargeback requests, transferring liability back to themselves if the merchant is not at fault."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Order Insights"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "By offering transaction details to customers through their online banking portals, merchants can help consumers recognize purchases, reducing accidental chargebacks."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Managing Compliance and Risk"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "VAMP introduces a stricter approach to chargeback management, making it essential for businesses to use these tools as part of a comprehensive fraud management strategy. By setting up customized rules, such as thresholds based on transaction size or frequency, merchants can preemptively address low-value disputes and avoid fines. This layered approach allows businesses to meet Visa's tighter compliance guidelines while protecting their bottom line.\nFor merchants of all sizes, these tools serve a dual purpose: protecting businesses from fraud and maintaining healthy relationships with acquirers by staying within acceptable chargeback thresholds. With the right mix of proactive fraud management tools and strategies, businesses can comply with Visa's new standards and foster a more secure transaction environment."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "Looking Ahead"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "As digital payment methods evolve, fraud prevention and dispute resolution tools will become increasingly sophisticated. The Visa Acquirer Monitoring Program sets new standards for safer, more compliant payment ecosystems. By embracing these technologies and strategies, businesses can stay vigilant against fraud, minimize dispute-related financial impacts, and operate securely within the broader payment ecosystem."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Does the breadth of tools available seem daunting? Partnering with companies designed to manage your Fraud exposure can help. Reach now partners with ChargebackHelp to ensure all of our clients have access to the top-of-the-line resources so you can avoid hassles with your business."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Listen to our episode of True Fraud with Vinay Shiriwastaw, CCO at DisputeHelp, to hear about how our partnership with the chargeback management company can help your business stay far away from the chargeback thresholds."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Discover how our global experts and Merchant of Record model can maximize your international potential today and in the future here."
+      }
+    ]
+  },
+  "meta": {
+    "title": "Understanding Visa's Acquirer Monitoring Program and Tools for Fraud Prevention",
+    "description": "Discover how the new Visa Acquirer Monitoring Program (VAMP) launching in April 2025 impacts your business, learn about essential fraud prevention tools such as RDR, Compelling Evidence 3.0, and Pre-Chargeback Alerts and how they can help protect your ecommerce business.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1359344f-6e66-8046-b000-f8c7b470f43f/9f1d0f63-ccdc-4882-951f-958a7b2f85dd.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/understanding-visas-acquirer-monitoring-program-and-tools-for-fraud-prevention"
+}

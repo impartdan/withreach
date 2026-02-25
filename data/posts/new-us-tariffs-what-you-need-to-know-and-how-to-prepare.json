@@ -1,0 +1,101 @@
+{
+  "type": "post",
+  "title": "New US Tariffs: What You Need to Know and How to Prepare",
+  "slug": "new-us-tariffs-what-you-need-to-know-and-how-to-prepare",
+  "excerpt": "In this blog, we explain President Trump’s contemplated tariffs against China, Mexico, and Canada, and provide tips and strategies for how to mitigate their impacts on your business.",
+  "publishedAt": "2025-02-04T05:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81d6-b8f7-ea56e331550c/7967eaac-7268-4bdc-b894-79a331dca083.jpg",
+    "alt": "New US Tariffs: What You Need to Know and How to Prepare",
+    "filename": "7967eaac-7268-4bdc-b894-79a331dca083.jpg"
+  },
+  "authors": [],
+  "categories": [
+    "Tarrifs",
+    "Compliance",
+    "United States",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Despite these delays, it is highly likely that certain aspects of the proposed tariffs will be enacted in the near future. Therefore, it is crucial for global retailers targeting the U.S. market to understand the potential implications and consider proactive strategies."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Who will be affected by the proposed tariffs?"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Direct Imports from China: Retailers that ship their products directly from China will face an additional 10% tariff on these imports.",
+          "Indirect Imports with Chinese Origin: Retailers shipping items into the U.S. from locations outside China, where the country of origin is China, will also be subject to the additional 10% tariff.",
+          "Direct Imports from Canada: Retailers that ship their products directly from Canada will face a 25% tariff on these imports.",
+          "Indirect Imports with Canada Origin: Retailers shipping items into the U.S. from locations outside Canada, where the country of origin is Canada, will also be subject to a 25% tariff.",
+          "Direct Imports from Mexico: Retailers that ship their products directly from Mexico will face a 25% tariff on these imports.",
+          "Indirect Imports with Mexico Origin: Retailers shipping items into the U.S. from locations outside Mexico, where the country of origin is Mexico, will also be subject to a 25% tariff."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "You will no longer benefit from the de minimis provision, which allows tariff-free entry of packages valued under $800.",
+          "Your products will be subject to the new duty rates, which will be held at customs until the amount is paid by the customer if the product is shipped DDU - delivery duties unpaid.",
+          "The US customs agent and carriers do not have the structure to handle these new regulations. If enacted, there will be severe delays and holding of shipments.",
+          "Most US customers do not understand duties, so any delay or surprise additional fees due at the border will lead to an increase in chargebacks."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Consider an Australian-based retailer shipping from an AU warehouse with Chinese-made silk dresses. Previously, an order worth $200 would have been under the $800 de minimis threshold, exempting it from duties. With the new tariffs, however, this same order would now be subject to 16.9% duty (6.9% standard duty + 10% new tariff). If shipped DDU, US customs would hold the order until the $33.80 duty is collected from the customer, who will likely be unaware of this additional cost. The process would add further fees and frustrations, potentially leading to customer dissatisfaction."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Steps to take now"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "If you’re affected by these changes, here are some steps to take:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Post notifications on your website and social media, and consider sending email alerts to explain the tariff changes and potential shipping delays. Transparency will help maintain customer trust and reduce chargebacks."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Ensure your customers are informed about the tariffs, especially regarding potential delays and extra duties. This proactive communication can help prevent negative reviews."
+        ]
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "Consider increasing U.S. pricing to cover the new duties and switch to DDP (Delivery Duty Paid) shipping to mitigate the impact on your customers. You may also want to reassess your supply chain, exploring alternative sourcing options or using a 3PL in the U.S."
+        ]
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Reach is here to help"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "We’re committed to supporting our global clients through this challenging time. Our team is actively monitoring developments, and we are always available to offer guidance. For any questions or to schedule a consultation, please contact us."
+      }
+    ]
+  },
+  "meta": {
+    "title": "New US Tariffs: What You Need to Know and How to Prepare",
+    "description": "In this blog, we explain President Trump’s contemplated tariffs against China, Mexico, and Canada, and provide tips and strategies for how to mitigate their impacts on your business.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81d6-b8f7-ea56e331550c/7967eaac-7268-4bdc-b894-79a331dca083.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/new-us-tariffs-what-you-need-to-know-and-how-to-prepare"
+}

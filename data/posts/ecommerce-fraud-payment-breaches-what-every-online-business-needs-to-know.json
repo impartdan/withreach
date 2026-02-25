@@ -1,0 +1,98 @@
+{
+  "type": "post",
+  "title": "Ecommerce Fraud & Payment Breaches: What Every Online Business Needs to Know",
+  "slug": "ecommerce-fraud-payment-breaches-what-every-online-business-needs-to-know",
+  "excerpt": "Cybersecurity is no longer just an IT concern – it’s a business imperative for ecommerce companies. This blog post explores the core principles of ecommerce security, from protecting customer data and maintaining trust to addressing rising threats like payment breaches and insider risks.",
+  "publishedAt": "2025-05-21T04:00:00.000Z",
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/13c9344f-6e66-818e-bdab-d0aaced37d5e/ae30c6f1-2c25-4ed3-bc17-75ce092e6000.jpg",
+    "alt": "Ecommerce Fraud & Payment Breaches: What Every Online Business Needs to Know",
+    "filename": "ae30c6f1-2c25-4ed3-bc17-75ce092e6000.jpg"
+  },
+  "authors": [],
+  "categories": [
+    "Fraud",
+    "Cybersecurity",
+    "Compliance",
+    "Reach blog"
+  ],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "Cybersecurity isn’t just something for your IT team to worry about, it’s a core part of doing business online. For ecommerce companies, protecting customer data, preventing fraud, and securing transactions are essential to earning trust and keeping your store running smoothly."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "As online shopping continues to grow, so do the risks. Understanding those risks, and how to stay ahead of them, is a must for anyone in digital commerce."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "### Cybersecurity Basics for Ecommerce"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "At its core, ecommerce cybersecurity is about protecting three key things: your customers’ data, your ability to process transactions, and the trust you’ve built with your audience."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "This is where the CIA triad comes into play."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "- Confidentiality means keeping customer information and payment details private. - Integrity ensures that orders and transactions aren’t tampered with. - Availability means your store remains accessible and functional for customers."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "If even one of these foundational elements is compromised, your business could face serious disruptions and reputational harm."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "### Payment Breaches Are on the Rise"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Cybercriminals are constantly looking for ways to steal payment data like credit card numbers, billing addresses, and CVV codes. Unfortunately, ecommerce platforms often present a tempting target. Attackers may skim cards through compromised plugins or third-party scripts, use stolen login credentials to access customer accounts through credential stuffing, or intercept transactions during insecure checkout processes through man-in-the-middle attacks."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "If your business stores or processes payment data, PCI DSS compliance is more than a box to check—it’s a critical baseline. But being compliant isn’t enough. You also need to actively monitor your systems and have a rapid response plan for anything suspicious."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "### Don’t Overlook Insider Threats"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Cybersecurity isn’t just about firewalls or software - it’s about people. Everyone on your team, from customer service agents to warehouse staff, plays a role in fraud prevention. That includes knowing how to spot phishing attempts, recognizing signs of refund scams, and understanding how fraudsters might test stolen credit cards. When your staff is trained and alert, they become one of your strongest defenses. Additionally, it’s important to foster a company culture where employees feel empowered to report anything unusual without fear of retaliation."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "### What’s Next in Ecommerce Fraud"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Ecommerce threats are evolving fast. Expect to see more ransomware attacks, fake checkout pages, supplier-targeted email scams, and AI-driven synthetic identities."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Cybersecurity isn’t just an IT issue—it’s a business strategy. With the right tools, training, and mindset, you can protect your store and earn customer trust in an increasingly high-risk environment. Invest in fraud detection tools that can save your business before it gets hit."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Want to dive deeper? Check out our latest podcast episode with cybersecurity expert Tim Graham on True Fraud."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Need help tightening your fraud defenses? Our team is here to support you."
+      }
+    ]
+  },
+  "meta": {
+    "title": "Ecommerce Fraud & Payment Breaches: What Every Online Business Needs to Know",
+    "description": "Cybersecurity is no longer just an IT concern – it’s a business imperative for ecommerce companies. This blog post explores the core principles of ecommerce security, from protecting customer data and maintaining trust to addressing rising threats like payment breaches and insider risks.",
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/13c9344f-6e66-818e-bdab-d0aaced37d5e/ae30c6f1-2c25-4ed3-bc17-75ce092e6000.jpg"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/reach-blog/ecommerce-fraud-payment-breaches-what-every-online-business-needs-to-know"
+}

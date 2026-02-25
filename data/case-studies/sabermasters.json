@@ -1,0 +1,104 @@
+{
+  "type": "case-study",
+  "title": "SaberMasters overcomes payment challenges & achieves record-breaking growth.",
+  "slug": "sabermasters",
+  "companyName": "SaberMasters is a growing e-commerce company selling premium lightsabers to the global Star Wars community. While they gained traction quickly through social media and selling on Shopify",
+  "excerpt": "From September to December 2023, SaberMasters generated over $1.4 million in sales, marking their most successful and peaceful Q4 yet. By leveraging Reach's Merchant of Record model and ease of integration, SaberMasters could concentrate on expanding their business without the stress of international payment concerns.",
+  "publishedAt": null,
+  "heroImage": {
+    "url": "https://www.withreach.com/images/sabermasters-hero.webp",
+    "alt": "Case Study Hero",
+    "filename": "sabermasters-hero.webp"
+  },
+  "companyLogo": {
+    "url": "https://www.withreach.com/images/brand-icons/sabermasters.svg",
+    "alt": "Client Logo",
+    "filename": "sabermasters.svg"
+  },
+  "pdfUrl": null,
+  "highlights": [
+    {
+      "label": "Industry",
+      "value": "Specialty Retail"
+    },
+    {
+      "label": "Founded",
+      "value": "2020"
+    },
+    {
+      "label": "Tech Stack",
+      "value": "Shopify Embedded"
+    }
+  ],
+  "categories": [],
+  "caseStudyCategories": [],
+  "content": {
+    "type": "structured",
+    "blocks": [
+      {
+        "blockType": "paragraph",
+        "text": "SaberMasters is a growing e-commerce company selling premium lightsabers to the global Star Wars community. While they gained traction quickly through social media and selling on Shopify, they encountered significant payment processing issues that threatened their expansion."
+      },
+      {
+        "blockType": "statsBlock",
+        "heading": "Key Highlights",
+        "stats": [
+          {
+            "value": "$1.4 million in sales",
+            "description": "from September to December 2023"
+          },
+          {
+            "value": "",
+            "description": "Achieved best & most peaceful Q4 to date"
+          },
+          {
+            "value": "",
+            "description": "Improved conversion & authorization rates"
+          },
+          {
+            "value": "",
+            "description": "Integrated a scalable payments infrastructure"
+          }
+        ]
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "\"Through Reach, we were able to get back on track, and we saw an increase in conversion rates and authorization rates.\"",
+        "citation": "Blagovest Kamenov - Co-Founder & Former CMO"
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Situation"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Heading into Q4 2023, SaberMasters was in a difficult situation with over $80,000 in held funds. This is because they had to create new merchant accounts separate from the ones used by their previous business, which caused them to lose credibility, even after processing millions in revenue through their former processor. To further the problem, SaberMasters was limited by the lack of credit card options they had in Europe, which restricted their working capital and their overall ability to scale in the region. According to Blagovest Kamenov, Co-Founder and former CMO at SaberMasters, the team faced a situation where \"there was pretty much no exit,\" putting their business at risk during the critical holiday season."
+      },
+      {
+        "blockType": "heading",
+        "level": "h2",
+        "text": "The Solution"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "In September 2023, SaberMasters partnered with Reach to leverage their Merchant of Record model to power their global sales. Through Reach's ability to plug into SaberMaster's existing Shopify expansion stores with a simple no-code integration, the onboarding process was smooth, allowing SaberMasters to swiftly resolve the issues experienced with their former payment processor. Reach gave them access to the liquidity they needed, which was a game-changer during their most important sales period of the year."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "From September to December 2023, SaberMasters generated over $1.4 million in sales, marking their most successful and peaceful Q4 yet. By leveraging Reach's Merchant of Record model and ease of integration, SaberMasters could concentrate on expanding their business without the stress of international payment concerns."
+      },
+      {
+        "blockType": "conclusion",
+        "heading": "The Outcome",
+        "text": "Processing locally through Reach empowered SaberMasters to surpass $1.4 million in sales during Q4 2023, marking their highest revenue period to date. SaberMaster's conversion and authorization rates improved due to Reach's Merchant of Record model & local processing ability.\n\nReach provided SaberMasters with a reliable and secure global payment system, ensuring they had the liquidity they needed to scale their operations. By optimizing their global payment systems SaberMasters was able to shift their focus from managing international payment risks to driving growth.\n\nThrough Reach's embedded Shopify integrations, SaberMasters was able to optimize their international payments quickly and without any technical lift. They were live and able to capture revenue right away with a no-code integration, just in time for the holiday season."
+      }
+    ]
+  },
+  "meta": {
+    "title": "SaberMasters overcomes payment challenges & achieves record-breaking growth.",
+    "description": "Discover how SaberMasters leveraged Reach's Merchant of Record model and ease of integration to overcome payment challenges and achieve record-breaking growth.",
+    "ogImageUrl": "/images/sabermasters-hero.webp"
+  },
+  "sourceUrl": "https://www.withreach.com/resources/case-studies/sabermasters"
+}
