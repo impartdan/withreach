@@ -2,8 +2,6 @@
 import React from 'react'
 import { Link } from 'next-view-transitions'
 
-import { cn } from '@/utilities/ui'
-
 type ArchivePaginationProps = {
   currentPage: number
   totalPages: number

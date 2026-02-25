@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'next-view-transitions'
 
-import type { Post, Category, Media as MediaType } from '@/payload-types'
+import type { Post, Category } from '@/payload-types'
 import { Media } from '@/components/Media'
 
 export type PostCardData = Pick<Post, 'slug' | 'title' | 'categories' | 'heroImage' | 'meta'>

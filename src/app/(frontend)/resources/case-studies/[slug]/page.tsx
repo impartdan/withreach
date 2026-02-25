@@ -5,6 +5,7 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
+import { Link } from 'next-view-transitions'
 import RichText from '@/components/RichText'
 
 import type { CaseStudy } from '@/payload-types'
@@ -80,7 +81,7 @@ function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
       <div className="container header-offset pb-20">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           <div className="flex flex-col gap-10 flex-1 min-w-0">
-            <a
+            <Link
               href="/resources/case-studies"
               className="inline-flex items-center gap-2 text-brand-black text-base font-sans font-semibold hover:opacity-70 transition-opacity"
             >
@@ -101,7 +102,7 @@ function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
                 />
               </svg>
               Back to Case Studies
-            </a>
+            </Link>
 
             <div className="flex flex-col gap-6">
               {companyName && (

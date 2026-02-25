@@ -2,7 +2,7 @@
 import React, { useState, useCallback } from 'react'
 import { Link } from 'next-view-transitions'
 
-import type { Post, Category, Media as MediaType } from '@/payload-types'
+import type { Post, Category } from '@/payload-types'
 import { Media } from '@/components/Media'
 import { cn } from '@/utilities/ui'
 
