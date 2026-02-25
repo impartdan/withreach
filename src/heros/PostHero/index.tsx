@@ -1,8 +1,8 @@
 import React from 'react'
-import Link from 'next/link'
 
 import type { Post } from '@/payload-types'
 import { Media } from '@/components/Media'
+import { BackButton } from '@/components/ui/back-button'
 
 export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
   const { categories, excerpt, heroImage, publishedAt, title } = post
@@ -18,32 +18,11 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
   return (
     <section className="bg-brand-off-white w-full">
       <div className="container header-offset pb-20">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start justify-between">
           {/* Left column */}
           <div className="flex flex-col gap-10 flex-1 min-w-0">
             {/* Back link */}
-            <Link
-              href="/resources/news"
-              className="inline-flex items-center gap-2 text-brand-black text-base font-sans font-semibold hover:opacity-70 transition-opacity"
-            >
-              <svg
-                width="8"
-                height="12"
-                viewBox="0 0 8 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="rotate-90"
-              >
-                <path
-                  d="M1 1L7 6L1 11"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Back to News and Insights
-            </Link>
+            <BackButton href="/resources/news">Back to News and Insights</BackButton>
 
             <div className="flex flex-col gap-6">
               {/* Title */}
@@ -84,12 +63,7 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
           {heroImage && typeof heroImage !== 'string' && (
             <div className="w-full lg:w-[40%] lg:max-w-[420px] shrink-0">
               <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden">
-                <Media
-                  fill
-                  priority
-                  imgClassName="object-cover"
-                  resource={heroImage}
-                />
+                <Media fill priority imgClassName="object-cover" resource={heroImage} />
               </div>
             </div>
           )}

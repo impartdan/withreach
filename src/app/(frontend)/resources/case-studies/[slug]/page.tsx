@@ -5,8 +5,8 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
-import { Link } from 'next-view-transitions'
 import RichText from '@/components/RichText'
+import { BackButton } from '@/components/ui/back-button'
 
 import type { CaseStudy, CaseStudyCategory, Category, CaseStudiesSetting } from '@/payload-types'
 
@@ -71,36 +71,15 @@ export default async function CaseStudyPage({ params: paramsPromise }: Args) {
       <CaseStudyHero caseStudy={caseStudy} />
 
       <div className="bg-white">
-        <div className="container py-20">
-          <div className="flex flex-col lg:flex-row gap-20 items-start">
+        <div className="container py-10 md:py-20">
+          <div className="flex flex-col lg:flex-row gap-20 justify-between max-w-6xl mx-auto">
             {/* Left Column - Content */}
             <div className="flex-1 min-w-0 flex flex-col gap-10 max-w-[720px]">
               <CaseStudyHighlights caseStudy={caseStudy} />
 
               <RichText data={caseStudy.content} enableGutter={false} />
 
-              <Link
-                href="/resources/case-studies"
-                className="inline-flex items-center gap-2 text-brand-black text-base font-sans font-semibold hover:opacity-70 transition-opacity"
-              >
-                <svg
-                  width="8"
-                  height="12"
-                  viewBox="0 0 8 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="rotate-90"
-                >
-                  <path
-                    d="M1 1L7 6L1 11"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                Back to Case Studies
-              </Link>
+              <BackButton href="/resources/case-studies">Back to Case Studies</BackButton>
             </div>
 
             {/* Right Column - Sticky CTA */}
@@ -191,7 +170,7 @@ function CaseStudyCta({
 }
 
 function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
-  const { categories, caseStudyCategories, excerpt, heroImage, title, companyName, companyLogo } =
+  const { categories, caseStudyCategories, excerpt, heroImage, title, companyLogo } =
     caseStudy
 
   const resolvedCategories = [
@@ -207,31 +186,10 @@ function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
 
   return (
     <section className="bg-brand-off-white w-full">
-      <div className="container header-offset pb-20">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-[78px] items-start">
+      <div className="container header-offset pb-10 md:pb-20">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-[78px] items-start justify-between max-w-6xl mx-auto md:pt-14">
           <div className="flex flex-col gap-10 flex-1 min-w-0 max-w-[661px]">
-            <Link
-              href="/resources/case-studies"
-              className="inline-flex items-center gap-2 text-brand-black text-base font-sans font-semibold hover:opacity-70 transition-opacity"
-            >
-              <svg
-                width="8"
-                height="12"
-                viewBox="0 0 8 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="rotate-90"
-              >
-                <path
-                  d="M1 1L7 6L1 11"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Back to Case Studies
-            </Link>
+            <BackButton href="/resources/case-studies">Back to Case Studies</BackButton>
 
             <div className="flex flex-col gap-6">
               <h1 className="type-display-lg text-brand-black">{title}</h1>

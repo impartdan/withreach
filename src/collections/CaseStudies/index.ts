@@ -12,7 +12,7 @@ import {
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
 import { ImageBlock } from '../../blocks/ImageBlock/config'
-import { VideoBlock } from '../../blocks/VideoBlock/config'
+import { VideoEmbed } from '../../blocks/VideoEmbed/config'
 import { StatsBlock } from '../../blocks/StatsBlock/config'
 import { BlockquoteBlock } from '../../blocks/Blockquote/config'
 import { ConclusionBlock } from '../../blocks/Conclusion/config'
@@ -151,7 +151,7 @@ export const CaseStudies: CollectionConfig<'case-studies'> = {
                   return [
                     ...rootFeatures.filter((f) => f.key !== 'blockquote'),
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [ImageBlock, VideoBlock, StatsBlock, BlockquoteBlock, ConclusionBlock] }),
+                    BlocksFeature({ blocks: [ImageBlock, VideoEmbed, StatsBlock, BlockquoteBlock, ConclusionBlock] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),

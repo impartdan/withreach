@@ -15,10 +15,10 @@ export const ConclusionBlockComponent: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={`bg-brand-linen rounded-lg p-9 my-8${className ? ` ${className}` : ''}`}
+      className={`bg-brand-linen rounded-lg p-9 my-8 flex flex-col gap-10${className ? ` ${className}` : ''}`}
     >
       {heading && (
-        <h3 className="type-display-sm text-brand-black mb-10">{heading}</h3>
+        <h3 className="type-display-sm text-brand-black">{heading}</h3>
       )}
 
       {stats && stats.length > 0 && (
@@ -50,9 +50,7 @@ export const ConclusionBlockComponent: React.FC<Props> = ({
       )}
 
       {content && (
-        <div className={stats && stats.length > 0 ? 'mt-8' : ''}>
-          <RichText data={content} enableGutter={false} />
-        </div>
+        <RichText data={content} enableGutter={false} />
       )}
     </div>
   )

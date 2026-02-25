@@ -13,7 +13,7 @@ import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
 import { Code } from '../../blocks/Code/config'
 import { ImageBlock } from '../../blocks/ImageBlock/config'
-import { VideoBlock } from '../../blocks/VideoBlock/config'
+import { VideoEmbed } from '../../blocks/VideoEmbed/config'
 import { HubspotFormBlock } from '../../blocks/HubspotForm/config'
 import { StatsBlock } from '../../blocks/StatsBlock/config'
 import { BlockquoteBlock } from '../../blocks/Blockquote/config'
@@ -101,7 +101,7 @@ export const Posts: CollectionConfig<'posts'> = {
                   return [
                     ...rootFeatures.filter((f) => f.key !== 'blockquote'),
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Code, ImageBlock, VideoBlock, HubspotFormBlock, StatsBlock, BlockquoteBlock, ConclusionBlock] }),
+                    BlocksFeature({ blocks: [Code, ImageBlock, VideoEmbed, HubspotFormBlock, StatsBlock, BlockquoteBlock, ConclusionBlock] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),

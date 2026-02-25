@@ -7,6 +7,25 @@
  */
 
 /**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StatItem".
+ */
+export type StatItem = {
+  /**
+   * Optional icon displayed above the stat.
+   */
+  icon?: (number | null) | Media;
+  /**
+   * The main statistic value (e.g., "$3B", "130+", "90%+") or a title (e.g., "+12% Authorization Rate")
+   */
+  value: string;
+  /**
+   * Description or context for the statistic
+   */
+  description?: string | null;
+  id?: string | null;
+}[];
+/**
  * Supported timezones in IANA format.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1821,21 +1840,7 @@ export interface StatsBlock {
    * Main heading for the stats section (e.g., "Our optimization success")
    */
   heading?: string | null;
-  stats: {
-    /**
-     * Optional icon displayed above the stat.
-     */
-    icon?: (number | null) | Media;
-    /**
-     * The main statistic value (e.g., "$3B", "130+", "90%+") or a title (e.g., "+12% Authorization Rate")
-     */
-    value: string;
-    /**
-     * Description or context for the statistic
-     */
-    description?: string | null;
-    id?: string | null;
-  }[];
+  stats: StatItem;
   /**
    * Configure appearance settings for this block
    */
@@ -4988,14 +4993,7 @@ export interface HubspotFormBlockSelect<T extends boolean = true> {
  */
 export interface StatsBlockSelect<T extends boolean = true> {
   heading?: T;
-  stats?:
-    | T
-    | {
-        icon?: T;
-        value?: T;
-        description?: T;
-        id?: T;
-      };
+  stats?: T | StatItemSelect<T>;
   blockSettings?:
     | T
     | {
@@ -5011,6 +5009,16 @@ export interface StatsBlockSelect<T extends boolean = true> {
       };
   id?: T;
   blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StatItem_select".
+ */
+export interface StatItemSelect<T extends boolean = true> {
+  icon?: T;
+  value?: T;
+  description?: T;
+  id?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -7057,6 +7065,36 @@ export interface CodeBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "VideoEmbed".
+ */
+export interface VideoEmbed {
+  /**
+   * Optional heading displayed above the video.
+   */
+  title?: string | null;
+  /**
+   * Optional description displayed below the title.
+   */
+  description?: string | null;
+  videoType: 'upload' | 'youtube';
+  /**
+   * Upload an MP4 video file
+   */
+  video?: (number | null) | Media;
+  /**
+   * Paste a YouTube video URL (e.g. https://www.youtube.com/watch?v=...)
+   */
+  youtubeUrl?: string | null;
+  /**
+   * Optional thumbnail shown before the video plays. For YouTube, the video thumbnail is used automatically if left blank.
+   */
+  poster?: (number | null) | Media;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'videoEmbed';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "BlockquoteBlock".
  */
 export interface BlockquoteBlock {
@@ -7098,6 +7136,7 @@ export interface ConclusionBlock {
         icon?: (number | null) | Media;
         title: string;
         description?: string | null;
+        id?: string | null;
       }[]
     | null;
   id?: string | null;

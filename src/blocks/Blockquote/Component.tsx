@@ -8,14 +8,19 @@ type Props = BlockquoteBlockProps & {
 export const BlockquoteBlockComponent: React.FC<Props> = ({ quote, citation, className }) => {
   return (
     <blockquote
-      className={`border-l-4 border-primary pl-6 py-2 my-6 italic text-muted-foreground${className ? ` ${className}` : ''}`}
+      className={`border-l relative border-brand-gray-light pl-8 py-4 flex gap-1 items-start not-italic${className ? ` ${className}` : ''}`}
     >
-      <p className="text-xl leading-relaxed">&ldquo;{quote}&rdquo;</p>
-      {citation && (
-        <footer className="mt-3 text-sm font-medium not-italic text-foreground">
-          &mdash; {citation}
-        </footer>
-      )}
+      <span className=" absolute left-4 top-4 font-mix text-[32px] leading-[1.2] tracking-[-0.64px] text-brand-black shrink-0 not-italic">
+        &ldquo;
+      </span>
+      <div className="flex flex-col gap-4 min-w-0">
+        <p className="font-mix text-[32px] leading-[1.2] tracking-[-0.64px] text-brand-black whitespace-pre-wrap">
+          {quote}&rdquo;
+        </p>
+        {citation && (
+          <p className="font-sans text-base text-brand-black leading-[1.6]">&mdash; {citation}</p>
+        )}
+      </div>
     </blockquote>
   )
 }

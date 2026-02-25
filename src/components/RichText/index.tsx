@@ -13,19 +13,19 @@ import {
 import React from 'react'
 import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
 import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
-import { VideoBlockComponent } from '@/blocks/VideoBlock/Component'
+import { VideoEmbedComponent } from '@/blocks/VideoEmbed/Component'
 import { BlockquoteBlockComponent } from '@/blocks/Blockquote/Component'
 import { ConclusionBlockComponent } from '@/blocks/Conclusion/Component'
 import { Media } from '@/components/Media'
 
-import type { ImageBlock as ImageBlockProps, VideoBlock as VideoBlockProps, StatsBlock as StatsBlockProps, BlockquoteBlock as BlockquoteBlockProps, ConclusionBlock as ConclusionBlockProps, Page } from '@/payload-types'
+import type { ImageBlock as ImageBlockProps, VideoEmbed as VideoEmbedProps, StatsBlock as StatsBlockProps, BlockquoteBlock as BlockquoteBlockProps, ConclusionBlock as ConclusionBlockProps, Page } from '@/payload-types'
 import { cn } from '@/utilities/ui'
 import type { SerializedTypographyStyleNode } from '@/lexical/typography/TypographyStyleNode'
 import { getPagePath } from '@/utilities/getPagePath'
 
 type NodeTypes =
   | DefaultNodeTypes
-  | SerializedBlockNode<CodeBlockProps | ImageBlockProps | VideoBlockProps | StatsBlockProps | BlockquoteBlockProps | ConclusionBlockProps>
+  | SerializedBlockNode<CodeBlockProps | ImageBlockProps | VideoEmbedProps | StatsBlockProps | BlockquoteBlockProps | ConclusionBlockProps>
   | SerializedTypographyStyleNode
 
 const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
@@ -59,9 +59,9 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
         <ImageBlockComponent {...node.fields} />
       </div>
     ),
-    videoBlock: ({ node }) => (
+    videoEmbed: ({ node }) => (
       <div className="col-start-1 col-span-3 my-4">
-        <VideoBlockComponent {...node.fields} />
+        <VideoEmbedComponent {...(node.fields as VideoEmbedProps)} />
       </div>
     ),
     statsBlock: ({ node }) => {

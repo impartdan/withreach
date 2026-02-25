@@ -107,9 +107,12 @@
   }
 
   blockquote {
-    @apply block py-9 px-14 my-5 xl:my-10;
-    @apply bg-[#957E2F]/20;
+    @apply block;
     @apply font-serif font-medium text-[18px] leading-[1.4];
+  }
+
+  hr {
+    @apply border-0 border-t border-brand-gray-light my-10;
   }
 
   a:not([class]) {

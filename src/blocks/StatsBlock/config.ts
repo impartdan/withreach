@@ -33,6 +33,9 @@ export const StatsBlock: Block = {
               required: true,
               minRows: 1,
               maxRows: 6,
+              // Stable interface name helps Payload track array items correctly
+              // across multiple block instances in the same Lexical editor
+              interfaceName: 'StatItem',
               fields: [
                 {
                   name: 'icon',
