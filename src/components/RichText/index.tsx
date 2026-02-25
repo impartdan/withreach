@@ -13,8 +13,10 @@ import {
 import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
 import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
 import { VideoBlockComponent } from '@/blocks/VideoBlock/Component'
+import { BlockquoteBlockComponent } from '@/blocks/Blockquote/Component'
+import { ConclusionBlockComponent } from '@/blocks/Conclusion/Component'
 
-import type { BannerBlock as BannerBlockProps, ImageBlock as ImageBlockProps, VideoBlock as VideoBlockProps, Page } from '@/payload-types'
+import type { BannerBlock as BannerBlockProps, ImageBlock as ImageBlockProps, VideoBlock as VideoBlockProps, BlockquoteBlock as BlockquoteBlockProps, ConclusionBlock as ConclusionBlockProps, Page } from '@/payload-types'
 import { BannerBlock } from '@/blocks/Banner/Component'
 import { cn } from '@/utilities/ui'
 import type { SerializedTypographyStyleNode } from '@/lexical/typography/TypographyStyleNode'
@@ -22,7 +24,7 @@ import { getPagePath } from '@/utilities/getPagePath'
 
 type NodeTypes =
   | DefaultNodeTypes
-  | SerializedBlockNode<BannerBlockProps | CodeBlockProps | ImageBlockProps | VideoBlockProps>
+  | SerializedBlockNode<BannerBlockProps | CodeBlockProps | ImageBlockProps | VideoBlockProps | BlockquoteBlockProps | ConclusionBlockProps>
   | SerializedTypographyStyleNode
 
 const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
@@ -63,6 +65,12 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
       </div>
     ),
     code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
+    blockquote: ({ node }) => (
+      <BlockquoteBlockComponent className="col-start-2" {...node.fields} />
+    ),
+    conclusion: ({ node }) => (
+      <ConclusionBlockComponent className="col-start-2" {...node.fields} />
+    ),
   },
 })
 

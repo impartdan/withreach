@@ -1,73 +1,100 @@
-import { formatDateTime } from 'src/utilities/formatDateTime'
 import React from 'react'
+import Link from 'next/link'
 
 import type { Post } from '@/payload-types'
-
 import { Media } from '@/components/Media'
-import { formatAuthors } from '@/utilities/formatAuthors'
 
-export const PostHero: React.FC<{
-  post: Post
-}> = ({ post }) => {
-  const { categories, heroImage, populatedAuthors, publishedAt, title } = post
+export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
+  const { categories, excerpt, heroImage, publishedAt, title } = post
 
-  const hasAuthors =
-    populatedAuthors && populatedAuthors.length > 0 && formatAuthors(populatedAuthors) !== ''
+  const formattedDate = publishedAt
+    ? new Date(publishedAt).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+    : null
 
   return (
-    <div className="relative flex items-end min-h-[80vh]">
-      <div className="container z-10 relative header-offset lg:grid lg:grid-cols-[1fr_48rem_1fr] text-white pb-8">
-        <div className="col-start-1 col-span-1 md:col-start-2 md:col-span-2">
-          <div className="uppercase text-sm mb-6">
-            {categories?.map((category, index) => {
-              if (typeof category === 'object' && category !== null) {
-                const { title: categoryTitle } = category
+    <section className="bg-brand-off-white w-full">
+      <div className="container header-offset pb-20">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+          {/* Left column */}
+          <div className="flex flex-col gap-10 flex-1 min-w-0">
+            {/* Back link */}
+            <Link
+              href="/posts"
+              className="inline-flex items-center gap-2 text-brand-black text-base font-sans font-semibold hover:opacity-70 transition-opacity"
+            >
+              <svg
+                width="8"
+                height="12"
+                viewBox="0 0 8 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="rotate-90"
+              >
+                <path
+                  d="M1 1L7 6L1 11"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Back to News and Insights
+            </Link>
 
-                const titleToUse = categoryTitle || 'Untitled category'
+            <div className="flex flex-col gap-6">
+              {/* Title */}
+              <h1 className="type-display-lg text-brand-black">{title}</h1>
 
-                const isLast = index === categories.length - 1
+              {/* Date + Excerpt */}
+              <div className="flex flex-col gap-2">
+                {formattedDate && (
+                  <p className="text-lg font-sans font-medium text-brand-black">{formattedDate}</p>
+                )}
+                {excerpt && (
+                  <p className="text-lg font-sans font-medium text-brand-black leading-relaxed">
+                    {excerpt}
+                  </p>
+                )}
+              </div>
+            </div>
 
-                return (
-                  <React.Fragment key={index}>
-                    {titleToUse}
-                    {!isLast && <React.Fragment>, &nbsp;</React.Fragment>}
-                  </React.Fragment>
-                )
-              }
-              return null
-            })}
-          </div>
-
-          <div className="">
-            <h1 className="mb-6 text-3xl md:text-5xl lg:text-6xl">{title}</h1>
-          </div>
-
-          <div className="flex flex-col md:flex-row gap-4 md:gap-16">
-            {hasAuthors && (
-              <div className="flex flex-col gap-4">
-                <div className="flex flex-col gap-1">
-                  <p className="text-sm">Author</p>
-
-                  <p>{formatAuthors(populatedAuthors)}</p>
-                </div>
+            {/* Category pills */}
+            {categories && categories.length > 0 && (
+              <div className="flex flex-wrap gap-3">
+                {categories.map((category, index) => {
+                  if (typeof category !== 'object' || !category) return null
+                  return (
+                    <span
+                      key={index}
+                      className="inline-flex items-center px-4 py-2 rounded-full border border-brand-gray-light text-brand-black text-sm font-sans font-medium"
+                    >
+                      {category.title ?? 'Untitled'}
+                    </span>
+                  )
+                })}
               </div>
             )}
-            {publishedAt && (
-              <div className="flex flex-col gap-1">
-                <p className="text-sm">Date Published</p>
-
-                <time dateTime={publishedAt}>{formatDateTime(publishedAt)}</time>
-              </div>
-            )}
           </div>
+
+          {/* Right column — hero image */}
+          {heroImage && typeof heroImage !== 'string' && (
+            <div className="w-full lg:w-[40%] lg:max-w-[420px] shrink-0">
+              <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden">
+                <Media
+                  fill
+                  priority
+                  imgClassName="object-cover"
+                  resource={heroImage}
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      <div className="absolute inset-0 w-full h-full select-none">
-        {heroImage && typeof heroImage !== 'string' && (
-          <Media fill priority imgClassName="-z-10 object-cover" resource={heroImage} />
-        )}
-        <div className="absolute pointer-events-none left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent" />
-      </div>
-    </div>
+    </section>
   )
 }

@@ -14,6 +14,7 @@ import { Posts } from './collections/Posts'
 import { Users } from './collections/Users'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
+import { NewsSettings } from './globals/NewsSettings/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
@@ -66,7 +67,7 @@ export default buildConfig({
   }),
   collections: [Pages, Posts, Media, Categories, Integrations, IntegrationCategories, Users],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Header, Footer],
+  globals: [Header, Footer, NewsSettings],
   email: resendAdapter({
     defaultFromAddress: process.env.RESEND_FROM_ADDRESS || 'no-reply@example.com',
     defaultFromName: process.env.RESEND_FROM_NAME || 'Withreach',

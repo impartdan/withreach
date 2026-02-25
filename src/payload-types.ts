@@ -116,10 +116,12 @@ export interface Config {
   globals: {
     header: Header;
     footer: Footer;
+    'news-settings': NewsSetting;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
+    'news-settings': NewsSettingsSelect<false> | NewsSettingsSelect<true>;
   };
   locale: null;
   user: User & {
@@ -328,6 +330,10 @@ export interface HomeHeroBlock {
 export interface Post {
   id: number;
   title: string;
+  /**
+   * A short summary of the post used in listings and previews.
+   */
+  excerpt?: string | null;
   heroImage?: (number | null) | Media;
   content: {
     root: {
@@ -5757,6 +5763,7 @@ export interface FormBlock2TypeSelect<T extends boolean = true> {
  */
 export interface PostsSelect<T extends boolean = true> {
   title?: T;
+  excerpt?: T;
   heroImage?: T;
   content?: T;
   relatedPosts?: T;
@@ -6435,6 +6442,41 @@ export interface Footer {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "news-settings".
+ */
+export interface NewsSetting {
+  id: number;
+  /**
+   * Select up to 5 posts to feature on the news page.
+   */
+  featuredPosts?: (number | Post)[] | null;
+  /**
+   * Call-to-action displayed within blog posts.
+   */
+  postCta: {
+    title?: string | null;
+    description?: string | null;
+    link: {
+      type?: ('reference' | 'custom') | null;
+      newTab?: boolean | null;
+      reference?:
+        | ({
+            relationTo: 'pages';
+            value: number | Page;
+          } | null)
+        | ({
+            relationTo: 'posts';
+            value: number | Post;
+          } | null);
+      url?: string | null;
+      label: string;
+    };
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
@@ -6601,6 +6643,31 @@ export interface FooterSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "news-settings_select".
+ */
+export interface NewsSettingsSelect<T extends boolean = true> {
+  featuredPosts?: T;
+  postCta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "TaskSchedulePublish".
  */
 export interface TaskSchedulePublish {
@@ -6623,10 +6690,31 @@ export interface TaskSchedulePublish {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "BannerBlock".
+ * via the `definition` "CodeBlock".
  */
-export interface BannerBlock {
-  style: 'info' | 'warning' | 'error' | 'success';
+export interface CodeBlock {
+  language?: ('typescript' | 'javascript' | 'css') | null;
+  code: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'code';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BlockquoteBlock".
+ */
+export interface BlockquoteBlock {
+  quote: string;
+  citation?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'blockquote';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ConclusionBlock".
+ */
+export interface ConclusionBlock {
   content: {
     root: {
       type: string;
@@ -6644,18 +6732,7 @@ export interface BannerBlock {
   };
   id?: string | null;
   blockName?: string | null;
-  blockType: 'banner';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "CodeBlock".
- */
-export interface CodeBlock {
-  language?: ('typescript' | 'javascript' | 'css') | null;
-  code: string;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'code';
+  blockType: 'conclusion';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

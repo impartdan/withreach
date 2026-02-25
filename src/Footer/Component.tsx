@@ -3,7 +3,6 @@ import { Link } from 'next-view-transitions'
 
 import type { Footer as FooterGlobal } from '@/payload-types'
 
-import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { R } from '@/components/Logo/R'
 import { E } from '@/components/Logo/E'
@@ -11,6 +10,7 @@ import { A } from '@/components/Logo/A'
 import { C } from '@/components/Logo/C'
 import { H } from '@/components/Logo/H'
 import { getCachedGlobal } from '@/utilities/getGlobals'
+import { FooterCollapsibleMenu } from './FooterCollapsibleMenu'
 
 export async function Footer() {
   const footerData: FooterGlobal = await getCachedGlobal('footer', 4)()
@@ -21,48 +21,23 @@ export async function Footer() {
   return (
     <footer className="mt-auto  bg-brand-black dark:bg-card text-white">
       <div className="container py-8 space-y-16">
-        <nav className="flex w-full flex-col md:flex-row gap-8">
+        <nav className="flex w-full flex-col md:flex-row md:gap-8">
           {navColumns.map((column, columnIndex) => {
             return (
               <div
                 key={column.id ?? `column-${columnIndex}`}
-                className={`flex flex-col gap-4 ${
+                className={`flex flex-col md:gap-4 ${
                   columnIndex === navColumns.length - 1 ? 'flex-none' : 'flex-1'
                 }`}
               >
-                {(column?.menus || []).map((menu, menuIndex) => {
-                  const items = menu?.items || []
-                  if (!items.length) return null
-
-                  return (
-                    <div key={menu.id ?? `menu-${menuIndex}`} className="flex flex-col gap-2">
-                      {menu.title && (
-                        <div className="type-micro-b text-brand-olive">{menu.title}</div>
-                      )}
-                      <div className="flex flex-col gap-2">
-                        {items.map((item, itemIndex) => {
-                          const link = item?.link
-                          if (!link) return null
-
-                          const key =
-                            item.id ??
-                            `column-${columnIndex}-menu-${menuIndex}-item-${itemIndex}-${
-                              link.url ?? 'link'
-                            }`
-
-                          return (
-                            <CMSLink
-                              {...link}
-                              key={key}
-                              className={`text-white ${menu?.variant === 'primary' ? 'type-intro' : 'type-micro-b'}`}
-                              appearance="inline"
-                            />
-                          )
-                        })}
-                      </div>
-                    </div>
-                  )
-                })}
+                {(column?.menus || []).map((menu, menuIndex) => (
+                  <FooterCollapsibleMenu
+                    key={menu.id ?? `menu-${menuIndex}`}
+                    menu={menu}
+                    menuIndex={menuIndex}
+                    defaultOpen={columnIndex === 0}
+                  />
+                ))}
               </div>
             )
           })}

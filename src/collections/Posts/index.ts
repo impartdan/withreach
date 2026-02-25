@@ -11,13 +11,13 @@ import {
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { Banner } from '../../blocks/Banner/config'
 import { Code } from '../../blocks/Code/config'
 import { ImageBlock } from '../../blocks/ImageBlock/config'
 import { VideoBlock } from '../../blocks/VideoBlock/config'
-import { LogoList } from '../../blocks/LogoList/config'
 import { HubspotFormBlock } from '../../blocks/HubspotForm/config'
 import { StatsBlock } from '../../blocks/StatsBlock/config'
+import { BlockquoteBlock } from '../../blocks/Blockquote/config'
+import { ConclusionBlock } from '../../blocks/Conclusion/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { populateAuthors } from './hooks/populateAuthors'
 import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
@@ -74,6 +74,15 @@ export const Posts: CollectionConfig<'posts'> = {
       required: true,
     },
     {
+      name: 'excerpt',
+      type: 'textarea',
+      label: 'Excerpt',
+      admin: {
+        description: 'A short summary of the post used in listings and previews.',
+        rows: 3,
+      },
+    },
+    {
       type: 'tabs',
       tabs: [
         {
@@ -89,9 +98,9 @@ export const Posts: CollectionConfig<'posts'> = {
               editor: lexicalEditor({
                 features: ({ rootFeatures }) => {
                   return [
-                    ...rootFeatures,
+                    ...rootFeatures.filter((f) => f.key !== 'blockquote'),
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Banner, Code, ImageBlock, VideoBlock, LogoList, HubspotFormBlock, StatsBlock] }),
+                    BlocksFeature({ blocks: [Code, ImageBlock, VideoBlock, HubspotFormBlock, StatsBlock, BlockquoteBlock, ConclusionBlock] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),
