@@ -50,7 +50,8 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
               <div className="relative rounded-lg overflow-hidden aspect-[3/2]">
                 <Media
                   resource={image}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  pictureClassName="absolute inset-0 w-full h-full"
+                  imgClassName="w-full h-full object-cover"
                   htmlElement={null}
                 />
               </div>

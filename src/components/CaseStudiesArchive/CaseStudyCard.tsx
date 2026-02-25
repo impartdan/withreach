@@ -37,7 +37,8 @@ export const CaseStudyCard: React.FC<{ caseStudy: CaseStudyCardData }> = ({ case
             <>
               <Media
                 resource={image}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                pictureClassName="absolute inset-0 w-full h-full"
+                imgClassName="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 htmlElement={null}
               />
               <div className="absolute inset-0 bg-black/30 rounded-lg" />
