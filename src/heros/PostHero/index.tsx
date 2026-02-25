@@ -17,18 +17,15 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
 
   return (
     <section className="bg-brand-off-white w-full">
-      <div className="container header-offset pb-20">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start justify-between">
+      <div className="container header-offset pb-10 md:pb-20">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-[78px] items-start justify-between max-w-6xl mx-auto md:pt-14">
           {/* Left column */}
-          <div className="flex flex-col gap-10 flex-1 min-w-0">
-            {/* Back link */}
+          <div className="flex flex-col gap-10 flex-1 min-w-0 max-w-[661px]">
             <BackButton href="/resources/news">Back to News and Insights</BackButton>
 
             <div className="flex flex-col gap-6">
-              {/* Title */}
               <h1 className="type-display-lg text-brand-black">{title}</h1>
 
-              {/* Date + Excerpt */}
               <div className="flex flex-col gap-2">
                 {formattedDate && (
                   <p className="text-lg font-sans font-medium text-brand-black">{formattedDate}</p>
@@ -41,7 +38,6 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
               </div>
             </div>
 
-            {/* Category pills */}
             {categories && categories.length > 0 && (
               <div className="flex flex-wrap gap-3">
                 {categories.map((category, index) => {
@@ -49,7 +45,7 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
                   return (
                     <span
                       key={index}
-                      className="inline-flex items-center px-4 py-2 rounded-full border border-brand-gray-light text-brand-black text-sm font-sans font-medium"
+                      className="inline-flex items-center px-5 py-2.5 rounded-[6px] bg-brand-black text-white type-eyebrow"
                     >
                       {category.title ?? 'Untitled'}
                     </span>
@@ -61,8 +57,8 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
 
           {/* Right column — hero image */}
           {heroImage && typeof heroImage !== 'string' && (
-            <div className="w-full lg:w-[40%] lg:max-w-[420px] shrink-0">
-              <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden">
+            <div className="w-full lg:w-[430px] shrink-0">
+              <div className="relative w-full aspect-[430/290] rounded-lg overflow-hidden">
                 <Media fill priority imgClassName="object-cover" resource={heroImage} />
               </div>
             </div>
