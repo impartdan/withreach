@@ -38,14 +38,17 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
   if (!src && resource && typeof resource === 'object') {
     const { alt: altFromResource, height: fullHeight, url, width: fullWidth } = resource
 
-    width = fullWidth!
-    height = fullHeight!
+    width = fullWidth ?? undefined
+    height = fullHeight ?? undefined
     alt = altFromResource || ''
 
     const cacheTag = resource.updatedAt
 
     src = getMediaUrl(url, cacheTag)
   }
+
+  // SVGs and other media without stored dimensions must use fill mode
+  const useFill = fill || (!width && !height)
 
   const loading = loadingFromProps || (!priority ? 'lazy' : undefined)
 
@@ -61,8 +64,8 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
       <NextImage
         alt={alt || ''}
         className={cn(imgClassName)}
-        fill={fill}
-        height={!fill ? height : undefined}
+        fill={useFill}
+        height={!useFill ? height : undefined}
         placeholder="blur"
         blurDataURL={placeholderBlur}
         priority={priority}
@@ -70,7 +73,7 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         loading={loading}
         sizes={sizes}
         src={src}
-        width={!fill ? width : undefined}
+        width={!useFill ? width : undefined}
       />
     </picture>
   )
