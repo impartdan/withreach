@@ -56,11 +56,6 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
   const size = appearance === 'link' ? 'clear' : sizeFromProps
   const newTabProps = newTab ? { rel: 'noopener noreferrer', target: '_blank' } : {}
 
-  const resolvedVariant =
-    blockTheme === 'light' && appearance !== 'inline'
-      ? (lightVariantMap[appearance as NonNullable<ButtonProps['variant']>] ?? appearance)
-      : appearance
-
   /* Ensure we don't break any styles set by richText */
   if (appearance === 'inline') {
     return (
@@ -70,6 +65,11 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
       </Link>
     )
   }
+
+  const resolvedVariant =
+    blockTheme === 'light'
+      ? (lightVariantMap[appearance as NonNullable<ButtonProps['variant']>] ?? appearance)
+      : (appearance as ButtonProps['variant'])
 
   return (
     <Button asChild className={className} size={size} variant={resolvedVariant}>
