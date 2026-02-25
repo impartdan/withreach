@@ -81,20 +81,31 @@ export const ContentGridDropdown: React.FC<ContentGridDropdownProps> = ({
             transition={{ duration: 0.2, delay: index * 0.05, ease: 'easeOut' }}
             className="group"
           >
-            <CMSLink {...item.link} label={null} className="block">
-              <div className="flex items-start gap-2">
+            <CMSLink {...item.link} label={null} className="block group/link">
+              <div className="flex items-center gap-2">
                 {item.link?.label && (
-                  <span className="text-[22px] font-normal text-[#04212F] group-hover:text-gray-600 transition-colors">
+                  <span className="type-intro text-brand-black/70 group-hover/link:text-brand-black transition-colors">
                     {item.link.label}
                   </span>
                 )}
-                <svg width="4" height="7" viewBox="0 0 4 7" className="mt-3" fill="none">
-                  <path d="M0.5 0.5L3.5 3.5L0.5 6.5" stroke="#284854" strokeWidth="1.5" />
+                <svg
+                  width="6"
+                  height="9"
+                  viewBox="0 0 6 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="self-center"
+                >
+                  <path
+                    d="M0.75 8L4.375 4.375L0.75 0.75"
+                    stroke="#284854"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
-              {item.description && (
-                <p className="text-base font-medium text-[#04212F] mt-1">{item.description}</p>
-              )}
+              {item.description && <p className=" mt-1">{item.description}</p>}
             </CMSLink>
           </motion.div>
         ))}

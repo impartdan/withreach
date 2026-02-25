@@ -69,7 +69,7 @@ export const Pages: CollectionConfig<'pages'> = {
     breadcrumbs: true,
   },
   admin: {
-    defaultColumns: ['title', 'slug', 'updatedAt'],
+    defaultColumns: ['title', 'path', 'updatedAt'],
     livePreview: {
       url: ({ data }) => {
         const breadcrumbs = data?.breadcrumbs as Array<{ url?: string }> | undefined
@@ -214,6 +214,23 @@ export const Pages: CollectionConfig<'pages'> = {
       type: 'date',
       admin: {
         position: 'sidebar',
+      },
+    },
+    {
+      name: 'path',
+      type: 'text',
+      virtual: true,
+      label: 'Path',
+      admin: {
+        position: 'sidebar',
+      },
+      hooks: {
+        afterRead: [
+          ({ siblingData }) => {
+            const breadcrumbs = siblingData?.breadcrumbs as Array<{ url?: string }> | undefined
+            return breadcrumbs?.at(-1)?.url || `/${siblingData?.slug || ''}`
+          },
+        ],
       },
     },
     slugField(),

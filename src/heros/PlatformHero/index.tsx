@@ -24,9 +24,7 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({ richText, links,
       <div className="container relative z-10 flex flex-col md:flex-row items-center gap-10 md:gap-16 py-[160px]">
         {/* Left column: text content */}
         <div className="w-full md:w-1/2 flex flex-col gap-6">
-          {richText && (
-            <RichText data={richText} enableGutter={false} />
-          )}
+          {richText && <RichText data={richText} enableGutter={false} />}
           {Array.isArray(links) && links.length > 0 && (
             <ul className="flex gap-4">
               {links.map(({ link }, i) => (
@@ -42,21 +40,11 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({ richText, links,
         {media && typeof media === 'object' && (
           <div className="w-full md:w-1/2 mix-blend-multiply">
             {isVideo && media.url ? (
-              <video
-                autoPlay
-                className="w-full h-auto"
-                loop
-                muted
-                playsInline
-              >
+              <video autoPlay className="w-full h-auto" loop muted playsInline>
                 <source src={media.url} type="video/mp4" />
               </video>
             ) : (
-              <Media
-                className="w-full h-auto"
-                resource={media}
-                priority
-              />
+              <Media className="w-full h-auto mix-blend-multiply" resource={media} priority />
             )}
           </div>
         )}

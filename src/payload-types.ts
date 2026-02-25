@@ -225,6 +225,7 @@ export interface Page {
       }[]
     | null;
   publishedAt?: string | null;
+  path?: string | null;
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */
@@ -649,7 +650,6 @@ export interface SolutionsHeroBlock {
     };
     [k: string]: unknown;
   } | null;
-  media?: (number | null) | Media;
   featureImage?: (number | null) | Media;
   featureContent?: {
     root: {
@@ -4379,6 +4379,7 @@ export interface PagesSelect<T extends boolean = true> {
         id?: T;
       };
   publishedAt?: T;
+  path?: T;
   generateSlug?: T;
   slug?: T;
   updatedAt?: T;
@@ -4462,7 +4463,6 @@ export interface PlatformHeroBlockSelect<T extends boolean = true> {
  */
 export interface SolutionsHeroBlockSelect<T extends boolean = true> {
   richText?: T;
-  media?: T;
   featureImage?: T;
   featureContent?: T;
   blockSettings?:

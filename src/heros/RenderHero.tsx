@@ -2,7 +2,7 @@ import React from 'react'
 
 import type { Page } from '@/payload-types'
 
-import { BlockWrapper } from '@/blocks/BlockWrapper'
+import { HeroBlockWrapper } from '@/blocks/HeroBlockWrapper'
 import { HomeHero } from '@/heros/HomeHero'
 import { PartnerHero } from '@/heros/PartnerHero'
 import { PlatformHero } from '@/heros/PlatformHero'
@@ -38,13 +38,15 @@ export const RenderHero: React.FC<{ hero: Page['hero'] }> = ({ hero }) => {
   const meta = heroMeta[block.blockType]
 
   return (
-    <BlockWrapper
+    <HeroBlockWrapper
       blockType={block.blockType}
       blockSettings={settings}
       fallbackBgClass={meta?.fallbackBgClass}
-      className="header-offset"
     >
-      <HeroToRender {...(block as any)} />
-    </BlockWrapper>
+      {React.createElement(
+        HeroToRender as unknown as React.ComponentType<Record<string, unknown>>,
+        block as unknown as Record<string, unknown>,
+      )}
+    </HeroBlockWrapper>
   )
 }

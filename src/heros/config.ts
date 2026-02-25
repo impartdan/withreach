@@ -82,11 +82,6 @@ export const SolutionsHeroBlock: Block = {
           fields: [
             heroRichText,
             {
-              name: 'media',
-              type: 'upload',
-              relationTo: 'media',
-            },
-            {
               name: 'featureImage',
               type: 'upload',
               label: 'Feature Image',

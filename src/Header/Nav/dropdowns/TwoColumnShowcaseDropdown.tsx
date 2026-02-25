@@ -78,20 +78,18 @@ export const TwoColumnShowcaseDropdown: React.FC<TwoColumnShowcaseDropdownProps>
             transition={{ duration: 0.2, delay: index * 0.05, ease: 'easeOut' }}
             className="group"
           >
-            <CMSLink {...item.link} label={null} className="block">
-              <div className="flex items-start gap-2">
+            <CMSLink {...item.link} label={null} className="block group/link">
+              <div className="flex items-center gap-2">
                 {item.link?.label && (
-                  <span className="text-[22px] font-normal text-[#04212F] group-hover:text-gray-600 transition-colors">
+                  <span className="type-intro text-brand-black/70 group-hover/link:text-brand-black transition-colors">
                     {item.link.label}
                   </span>
                 )}
-                <svg width="4" height="7" viewBox="0 0 4 7" className="mt-3" fill="none">
+                <svg width="4" height="7" viewBox="0 0 4 7" className="" fill="none">
                   <path d="M0.5 0.5L3.5 3.5L0.5 6.5" stroke="#284854" strokeWidth="1.5" />
                 </svg>
               </div>
-              {item.description && (
-                <p className="text-base font-medium text-[#04212F] mt-1">{item.description}</p>
-              )}
+              {item.description && <p className=" mt-1">{item.description}</p>}
             </CMSLink>
           </motion.div>
         ))}

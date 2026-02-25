@@ -46,9 +46,9 @@ export const FeaturedWithListDropdown: React.FC<FeaturedWithListDropdownProps> =
             transition={{ duration: 0.2, delay: index * 0.05, ease: 'easeOut' }}
             className="group"
           >
-            <CMSLink {...item.link} label={null} className="block">
-              <div className="flex items-start gap-2 mb-1">
-                <h3 className="text-[22px] font-normal text-[#04212F] group-hover:text-gray-600 transition-colors">
+            <CMSLink {...item.link} label={null} className="block group/link">
+              <div className="flex items-center gap-2 mb-1">
+                <h3 className="type-intro text-brand-black/70 group-hover/link:text-brand-black transition-colors">
                   {item.link?.label}
                 </h3>
                 <svg
@@ -68,9 +68,7 @@ export const FeaturedWithListDropdown: React.FC<FeaturedWithListDropdownProps> =
                   />
                 </svg>
               </div>
-              {item.description && (
-                <p className="text-base font-medium text-[#04212F]">{item.description}</p>
-              )}
+              {item.description && <p className="">{item.description}</p>}
             </CMSLink>
           </motion.div>
         ))}

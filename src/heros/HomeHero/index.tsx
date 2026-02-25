@@ -9,7 +9,7 @@ import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const HomeHero: React.FC<HomeHeroBlockType> = ({ links, richText }) => {
   return (
-    <div className="relative flex items-center justify-center min-h-screen">
+    <div className="relative min-h-screen pb-lg header-offset flex items-center justify-center">
       <div className="container z-10 relative flex items-center justify-center">
         <RevealOnScroll variant="slideUp">
           <div className="max-w-3xl md:text-center space-y-6">
@@ -17,7 +17,7 @@ export const HomeHero: React.FC<HomeHeroBlockType> = ({ links, richText }) => {
               <RichText className="wysiwyg text-balance" data={richText} enableGutter={false} />
             )}
             {Array.isArray(links) && links.length > 0 && (
-              <ul className="flex md:justify-center gap-4">
+              <ul className="flex justify-center gap-4">
                 {links.map(({ link }, i) => {
                   return (
                     <li key={i}>

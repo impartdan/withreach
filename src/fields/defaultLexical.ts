@@ -18,11 +18,11 @@ import { TypographyFeature } from '@/lexical/typography/feature.server'
 
 export const defaultLexical = lexicalEditor({
   features: [
+    TypographyFeature(),
     ParagraphFeature(),
     HeadingFeature({
       enabledHeadingSizes: ['h2', 'h3', 'h4'],
     }),
-    TypographyFeature(),
     BoldFeature(),
     ItalicFeature(),
     UnderlineFeature(),
