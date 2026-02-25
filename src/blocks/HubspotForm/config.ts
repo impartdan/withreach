@@ -55,11 +55,8 @@ export const HubspotFormBlock: Block = {
             blockSettings({
               enablePadding: true,
               enableBackground: true,
-              enableBackgroundImage: true,
-              enableBackgroundVideo: true,
               defaultPaddingTop: 'lg',
               defaultPaddingBottom: 'lg',
-              defaultBackgroundColor: 'card',
             }),
           ],
         },

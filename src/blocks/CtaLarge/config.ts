@@ -59,7 +59,6 @@ export const CtaLarge: Block = {
             blockSettings({
               enablePadding: true,
               enableBackground: true,
-              enableBackgroundImage: true,
               defaultPaddingTop: '2xl',
               defaultPaddingBottom: '2xl',
             }),

@@ -76,7 +76,6 @@ export const FiftyFifty: Block = {
             blockSettings({
               enablePadding: true,
               enableBackground: true,
-              enableBackgroundImage: true,
               defaultPaddingTop: 'lg',
               defaultPaddingBottom: 'lg',
             }),

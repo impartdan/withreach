@@ -37,7 +37,8 @@ import { ItemHighlightsWithIntro } from '../../blocks/ItemHighlightsWithIntro/co
 import { PeopleIndex } from '../../blocks/PeopleIndex/config'
 import { SupportIndex } from '../../blocks/SupportIndex/config'
 import { FormBlock2 } from '../../blocks/FormBlock2/config'
-import { hero } from '@/heros/config'
+import { createParentField, createBreadcrumbsField } from '@payloadcms/plugin-nested-docs'
+import { heroBlocks } from '@/heros/config'
 import { slugField } from 'payload'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -68,7 +69,7 @@ export const Pages: CollectionConfig<'pages'> = {
     breadcrumbs: true,
   },
   admin: {
-    defaultColumns: ['title', 'slug', 'updatedAt'],
+    defaultColumns: ['title', 'path', 'updatedAt'],
     livePreview: {
       url: ({ data }) => {
         const breadcrumbs = data?.breadcrumbs as Array<{ url?: string }> | undefined
@@ -101,8 +102,16 @@ export const Pages: CollectionConfig<'pages'> = {
       type: 'tabs',
       tabs: [
         {
-          fields: [hero],
           label: 'Hero',
+          fields: [
+            {
+              name: 'hero',
+              type: 'blocks',
+              blocks: heroBlocks,
+              maxRows: 1,
+              label: false,
+            },
+          ],
         },
         {
           fields: [
@@ -191,6 +200,13 @@ export const Pages: CollectionConfig<'pages'> = {
             },
           ],
         },
+        {
+          label: 'Breadcrumbs',
+          fields: [
+            createParentField('pages'),
+            createBreadcrumbsField('pages'),
+          ],
+        },
       ],
     },
     {
@@ -198,6 +214,23 @@ export const Pages: CollectionConfig<'pages'> = {
       type: 'date',
       admin: {
         position: 'sidebar',
+      },
+    },
+    {
+      name: 'path',
+      type: 'text',
+      virtual: true,
+      label: 'Path',
+      admin: {
+        position: 'sidebar',
+      },
+      hooks: {
+        afterRead: [
+          ({ siblingData }) => {
+            const breadcrumbs = siblingData?.breadcrumbs as Array<{ url?: string }> | undefined
+            return breadcrumbs?.at(-1)?.url || `/${siblingData?.slug || ''}`
+          },
+        ],
       },
     },
     slugField(),

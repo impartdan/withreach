@@ -3,10 +3,15 @@ import React from 'react'
 import { cn } from '@/utilities/ui'
 import type { Media } from '@/payload-types'
 
-import type { BackgroundColor, BackgroundType, SpacingSize, TextColor } from '@/fields/blockSettings'
+import type {
+  BackgroundColor,
+  BackgroundType,
+  SpacingSize,
+  TextColor,
+} from '@/fields/blockSettings'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
 
-type BlockWrapperProps = {
+type HeroBlockWrapperProps = {
   children: React.ReactNode
   blockType?: string
   blockSettings?: {
@@ -77,22 +82,21 @@ const bgPositionClasses = {
   right: 'bg-right',
 }
 
-export const BlockWrapper: React.FC<BlockWrapperProps> = ({
+export const HeroBlockWrapper: React.FC<HeroBlockWrapperProps> = ({
   children,
   blockType,
   blockSettings,
   fallbackBgClass,
   className,
 }) => {
-  const paddingTopClass =
-    blockSettings?.paddingTop && blockSettings.paddingTop !== null
-      ? paddingTopClasses[blockSettings.paddingTop]
-      : paddingTopClasses.md
+  // No default padding — heroes control their own spacing
+  const paddingTopClass = blockSettings?.paddingTop
+    ? paddingTopClasses[blockSettings.paddingTop]
+    : ''
 
-  const paddingBottomClass =
-    blockSettings?.paddingBottom && blockSettings.paddingBottom !== null
-      ? paddingBottomClasses[blockSettings.paddingBottom]
-      : paddingBottomClasses.md
+  const paddingBottomClass = blockSettings?.paddingBottom
+    ? paddingBottomClasses[blockSettings.paddingBottom]
+    : ''
 
   const bgType = blockSettings?.background ?? 'none'
 
@@ -108,10 +112,9 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
       ? blockSettings.backgroundImage
       : null
 
-  const bgPositionClass =
-    blockSettings?.backgroundImagePosition
-      ? bgPositionClasses[blockSettings.backgroundImagePosition]
-      : bgPositionClasses.center
+  const bgPositionClass = blockSettings?.backgroundImagePosition
+    ? bgPositionClasses[blockSettings.backgroundImagePosition]
+    : bgPositionClasses.center
 
   const bgVideoFile =
     bgType === 'video' &&
@@ -132,16 +135,19 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
 
   return (
     <div
-      className={cn('relative', paddingTopClass, paddingBottomClass, bgColorClass || fallbackBgClass, className)}
+      className={cn(
+        'relative',
+        paddingTopClass,
+        paddingBottomClass,
+        bgColorClass || fallbackBgClass,
+        className,
+      )}
       data-block={blockType}
     >
       {/* z-0: image layer — sits above the background color */}
       {bgImage?.url && (
         <div
-          className={cn(
-            'absolute inset-0 bg-cover bg-no-repeat z-0',
-            bgPositionClass,
-          )}
+          className={cn('absolute inset-0 bg-cover bg-no-repeat z-0', bgPositionClass)}
           style={{ backgroundImage: `url(${bgImage.url})` }}
         />
       )}
@@ -159,7 +165,7 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
       )}
       {/* z-[15]: blur overlay — applied over any video background */}
       {videoSrc && (
-        <div className="absolute inset-0 z-[15] backdrop-blur-[17px] bg-[rgba(255,255,255,0.01)]" />
+        <div className="absolute inset-0 z-[15] backdrop-blur-[17px] bg-[rgba(0,0,0,0.2)]" />
       )}
       {/* z-20: content — always on top */}
       <BlockThemeContext.Provider value={theme}>

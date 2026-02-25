@@ -62,8 +62,6 @@ export const StatsBlock: Block = {
             blockSettings({
               enablePadding: true,
               enableBackground: true,
-              enableBackgroundImage: true,
-              enableBackgroundVideo: true,
               defaultPaddingTop: 'xl',
               defaultPaddingBottom: 'xl',
             }),

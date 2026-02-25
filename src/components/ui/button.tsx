@@ -21,6 +21,8 @@ const buttonVariants = cva(
       variant: {
         default:
           'bg-brand-black text-brand-off-white hover:bg-brand-off-white hover:text-brand-black',
+        'default-invert':
+          'bg-brand-off-white text-brand-black hover:bg-brand-black hover:text-brand-off-white',
         destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         ghost: 'hover:bg-card hover:text-accent-foreground',
         link: 'text-primary items-start justify-start underline-offset-4 hover:underline',

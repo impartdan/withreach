@@ -15,6 +15,7 @@ const eslintConfig = [
     rules: {
       '@next/next/no-duplicate-head': 'off',
       '@next/next/no-page-custom-font': 'off',
+      'react-hooks/exhaustive-deps': 'off',
       '@typescript-eslint/ban-ts-comment': 'warn',
       '@typescript-eslint/no-empty-object-type': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',

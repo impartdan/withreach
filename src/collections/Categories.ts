@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 import { anyone } from '../access/anyone'
 import { authenticated } from '../access/authenticated'
+import { createParentField, createBreadcrumbsField } from '@payloadcms/plugin-nested-docs'
 import { slugField } from 'payload'
 
 export const Categories: CollectionConfig = {
@@ -21,6 +22,8 @@ export const Categories: CollectionConfig = {
       type: 'text',
       required: true,
     },
+    createParentField('categories'),
+    createBreadcrumbsField('categories'),
     slugField({
       position: undefined,
     }),

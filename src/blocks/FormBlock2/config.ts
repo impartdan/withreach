@@ -60,7 +60,6 @@ export const FormBlock2: Block = {
             blockSettings({
               enablePadding: true,
               enableBackground: true,
-              enableBackgroundImage: true,
               defaultPaddingTop: 'xl',
               defaultPaddingBottom: 'xl',
             }),
