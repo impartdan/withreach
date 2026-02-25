@@ -173,8 +173,8 @@ async function ensureMedia(
     stats.media.uploaded++
     console.log(`  [media] uploaded: ${path.basename(filePath)} (id: ${media.id})`)
     return media.id as number
-  } catch (err: any) {
-    console.warn(`  [media] FAILED to upload ${url}: ${err.message}`)
+  } catch (err: unknown) {
+    console.warn(`  [media] FAILED to upload ${url}: ${err instanceof Error ? err.message : String(err)}`)
     stats.media.failed++
     return null
   } finally {
@@ -383,8 +383,8 @@ async function convertBlocksToLexical(
         default:
           console.warn(`  [lexical] Unknown blockType: ${block.blockType} — skipping`)
       }
-    } catch (err: any) {
-      console.warn(`  [lexical] Failed to convert block (${block.blockType}): ${err.message}`)
+    } catch (err: unknown) {
+      console.warn(`  [lexical] Failed to convert block (${block.blockType}): ${err instanceof Error ? err.message : String(err)}`)
     }
   }
 
@@ -497,8 +497,8 @@ async function ensureCategory(
     stats.categories.created++
     console.log(`  [category] created: ${title}`)
     return id
-  } catch (err: any) {
-    console.warn(`  [category] FAILED for "${title}": ${err.message}`)
+  } catch (err: unknown) {
+    console.warn(`  [category] FAILED for "${title}": ${err instanceof Error ? err.message : String(err)}`)
     return null
   }
 }
@@ -572,14 +572,15 @@ async function importPost(
           image: ogImageId ?? undefined,
         },
         _status: 'published',
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } as any,
       context: { disableRevalidate: true },
     })
 
     console.log(`  [post] created: ${post.slug}`)
     stats.posts.created++
-  } catch (err: any) {
-    console.error(`  [post] FAILED: ${post.slug}: ${err.message}`)
+  } catch (err: unknown) {
+    console.error(`  [post] FAILED: ${post.slug}: ${err instanceof Error ? err.message : String(err)}`)
     stats.posts.failed++
   }
 }
@@ -651,14 +652,15 @@ async function importCaseStudy(
           image: ogImageId ?? undefined,
         },
         _status: 'published',
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } as any,
       context: { disableRevalidate: true },
     })
 
     console.log(`  [case-study] created: ${cs.slug}`)
     stats.caseStudies.created++
-  } catch (err: any) {
-    console.error(`  [case-study] FAILED: ${cs.slug}: ${err.message}`)
+  } catch (err: unknown) {
+    console.error(`  [case-study] FAILED: ${cs.slug}: ${err instanceof Error ? err.message : String(err)}`)
     stats.caseStudies.failed++
   }
 }

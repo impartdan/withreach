@@ -171,10 +171,10 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
                   items={menuItems[activeDropdown].dropdown.tcsItems}
                   mode={menuItems[activeDropdown].dropdown.tcsMode}
                   contentType={
-                    (menuItems[activeDropdown].dropdown as any).tcsContentType ?? 'posts'
+                    menuItems[activeDropdown].dropdown.tcsContentType ?? 'posts'
                   }
                   post={menuItems[activeDropdown].dropdown.tcsPost}
-                  caseStudy={(menuItems[activeDropdown].dropdown as any).tcsCaseStudy}
+                  caseStudy={menuItems[activeDropdown].dropdown.tcsCaseStudy}
                   latestPosts={latestPosts}
                   latestCaseStudies={latestCaseStudies}
                 />
