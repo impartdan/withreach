@@ -20,9 +20,9 @@ const heroes = {
 }
 
 const heroMeta: Partial<Record<keyof typeof heroes, { fallbackBgClass?: string }>> = {
-  textHero: { fallbackBgClass: 'bg-brand-offwhite' },
+  textHero: { fallbackBgClass: 'bg-brand-off-white' },
   supportHero: { fallbackBgClass: 'bg-brand-linen' },
-  platformHero: { fallbackBgClass: 'bg-brand-offwhite' },
+  platformHero: { fallbackBgClass: 'bg-brand-off-white' },
 }
 
 export const RenderHero: React.FC<{ hero: Page['hero'] }> = ({ hero }) => {
@@ -37,10 +37,17 @@ export const RenderHero: React.FC<{ hero: Page['hero'] }> = ({ hero }) => {
   const settings = 'blockSettings' in block ? block.blockSettings : undefined
   const meta = heroMeta[block.blockType]
 
+  // For solutionsHero, the background image is rendered inside the component itself
+  // so the wrapper should not also render it
+  const wrapperSettings =
+    block.blockType === 'solutionsHero' && settings
+      ? { ...settings, backgroundImage: null }
+      : settings
+
   return (
     <HeroBlockWrapper
       blockType={block.blockType}
-      blockSettings={settings}
+      blockSettings={wrapperSettings}
       fallbackBgClass={meta?.fallbackBgClass}
     >
       {React.createElement(

@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, partnerCards }) => {
   return (
-    <div className="relative w-full md:min-h-[536px] overflow-hidden">
+    <div className="relative w-full md:min-h-[536px] header-offset overflow-hidden">
       {/* Background image with blur + overlay */}
       {media && typeof media === 'object' && (
         <div className="absolute inset-0">

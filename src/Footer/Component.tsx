@@ -37,17 +37,12 @@ export async function Footer() {
                   return (
                     <div key={menu.id ?? `menu-${menuIndex}`} className="flex flex-col gap-2">
                       {menu.title && (
-                        <div className="text-xs font-semibold uppercase text-white/60">
-                          {menu.title}
-                        </div>
+                        <div className="type-micro-b text-brand-olive">{menu.title}</div>
                       )}
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-col gap-2">
                         {items.map((item, itemIndex) => {
                           const link = item?.link
                           if (!link) return null
-
-                          const isHashLink =
-                            typeof link.url === 'string' && link.url.startsWith('#')
 
                           const key =
                             item.id ??
@@ -57,12 +52,10 @@ export async function Footer() {
 
                           return (
                             <CMSLink
-                              className={`text-white ${
-                                menu?.variant === 'primary' ? 'text-base md:text-lg' : 'text-sm'
-                              }`}
-                              appearance={isHashLink ? 'link' : 'inline'}
-                              key={key}
                               {...link}
+                              key={key}
+                              className={`text-white ${menu?.variant === 'primary' ? 'type-intro' : 'type-micro-b'}`}
+                              appearance="inline"
                             />
                           )
                         })}

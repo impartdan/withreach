@@ -1,34 +1,58 @@
 'use client'
 import React from 'react'
 
-import type { SolutionsHeroBlock as SolutionsHeroBlockType } from '@/payload-types'
+import type {
+  Media as MediaType,
+  SolutionsHeroBlock as SolutionsHeroBlockType,
+} from '@/payload-types'
 
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
+
+const bgPositionClasses: Record<string, string> = {
+  center: 'bg-center',
+  top: 'bg-top',
+  bottom: 'bg-bottom',
+  left: 'bg-left',
+  right: 'bg-right',
+}
 
 export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
   richText,
   featureImage,
   featureContent,
+  blockSettings,
 }) => {
+  const bgImage =
+    blockSettings?.background === 'image' &&
+    typeof blockSettings?.backgroundImage === 'object' &&
+    blockSettings.backgroundImage !== null
+      ? (blockSettings.backgroundImage as MediaType)
+      : null
+
+  const bgPositionClass = blockSettings?.backgroundImagePosition
+    ? (bgPositionClasses[blockSettings.backgroundImagePosition] ?? 'bg-center')
+    : 'bg-center'
+
   return (
     <div className="relative w-full bg-white">
       {/* Top hero area — solid dark background */}
-      <div className="relative min-h-[570px] flex items-center justify-center overflow-hidden bg-brand-black">
+      <div className="relative min-h-[570px] flex items-center justify-center overflow-hidden">
+        {bgImage?.url && (
+          <div
+            className={`absolute inset-0 bg-cover bg-no-repeat z-0 ${bgPositionClass}`}
+            style={{ backgroundImage: `url(${bgImage.url})` }}
+            aria-hidden="true"
+          />
+        )}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none z-[1] backdrop-blur"
           aria-hidden="true"
-          style={{
-            background:
-              'radial-gradient(ellipse at 30% 60%, rgba(42,36,28,0.9) 0%, #1E1A15 70%)',
-          }}
         />
 
         {/* Centered text content */}
         <div className="container relative z-10 text-center text-white max-w-[922px] py-20">
-          {richText && (
-            <RichText className="text-balance" data={richText} enableGutter={false} />
-          )}
+          {richText && <RichText className="text-balance" data={richText} enableGutter={false} />}
         </div>
       </div>
 
