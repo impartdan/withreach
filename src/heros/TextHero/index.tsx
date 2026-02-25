@@ -1,20 +1,20 @@
 'use client'
 import React from 'react'
 
-import type { Page } from '@/payload-types'
+import type { TextHeroBlock as TextHeroBlockType } from '@/payload-types'
 
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 
-export const TextHero: React.FC<Page['hero']> = ({
+export const TextHero: React.FC<TextHeroBlockType> = ({
   richText,
   links,
   logoOne,
   logoTwo,
 }) => {
   return (
-    <div className="bg-brand-offwhite w-full header-offset">
+    <div className="w-full">
       <div className="container flex flex-col items-center gap-10 py-20 max-w-[908px]">
         {/* Optional logos */}
         {(logoOne || logoTwo) && (

@@ -6,6 +6,7 @@ import * as migration_20260214_migrate_spacing_enums from './20260214_migrate_sp
 import * as migration_20260215_migrate_hero_types from './20260215_migrate_hero_types';
 import * as migration_20260216_pages_nested_docs from './20260216_pages_nested_docs';
 import * as migration_20260218_migrate_media_blocks from './20260218_migrate_media_blocks';
+import * as migration_20260224_update_bg_color_enum from './20260224_update_bg_color_enum';
 
 export const migrations = [
   {
@@ -47,5 +48,10 @@ export const migrations = [
     up: migration_20260218_migrate_media_blocks.up,
     down: migration_20260218_migrate_media_blocks.down,
     name: '20260218_migrate_media_blocks'
+  },
+  {
+    up: migration_20260224_update_bg_color_enum.up,
+    down: migration_20260224_update_bg_color_enum.down,
+    name: '20260224_update_bg_color_enum'
   },
 ];

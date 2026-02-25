@@ -63,8 +63,6 @@ export const LogoList: Block = {
             blockSettings({
               enablePadding: true,
               enableBackground: true,
-              enableBackgroundImage: true,
-              enableBackgroundVideo: true,
               defaultPaddingTop: 'md',
               defaultPaddingBottom: 'md',
             }),

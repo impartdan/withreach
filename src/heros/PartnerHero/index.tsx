@@ -1,15 +1,15 @@
 'use client'
 import React from 'react'
 
-import type { Page } from '@/payload-types'
+import type { PartnerHeroBlock as PartnerHeroBlockType } from '@/payload-types'
 
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import Link from 'next/link'
 
-export const PartnerHero: React.FC<Page['hero']> = ({ media, richText, partnerCards }) => {
+export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, partnerCards }) => {
   return (
-    <div className="relative w-full md:min-h-[536px] overflow-hidden header-offset">
+    <div className="relative w-full md:min-h-[536px] overflow-hidden">
       {/* Background image with blur + overlay */}
       {media && typeof media === 'object' && (
         <div className="absolute inset-0">

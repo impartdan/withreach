@@ -1,12 +1,12 @@
 'use client'
 import React from 'react'
 
-import type { Page } from '@/payload-types'
+import type { SolutionsHeroBlock as SolutionsHeroBlockType } from '@/payload-types'
 
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 
-export const SolutionsHero: React.FC<Page['hero']> = ({
+export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
   media,
   richText,
   featureImage,
@@ -15,7 +15,7 @@ export const SolutionsHero: React.FC<Page['hero']> = ({
   return (
     <div className="relative w-full">
       {/* Top hero area with background image */}
-      <div className="relative min-h-[570px] flex items-center justify-center overflow-hidden header-offset">
+      <div className="relative min-h-[570px] flex items-center justify-center overflow-hidden">
         {/* Background image with blur + overlay */}
         {media && typeof media === 'object' && (
           <div className="absolute inset-0">

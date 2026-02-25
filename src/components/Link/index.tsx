@@ -1,10 +1,18 @@
+'use client'
 import { Button, type ButtonProps } from '@/components/ui/button'
+import { useBlockTheme } from '@/components/BlockThemeContext'
 import { cn } from '@/utilities/ui'
 import { Link } from 'next-view-transitions'
 import React from 'react'
 
 import type { Page, Post } from '@/payload-types'
 import { getPagePath } from '@/utilities/getPagePath'
+
+const lightVariantMap: Partial<Record<NonNullable<ButtonProps['variant']>, ButtonProps['variant']>> =
+  {
+    default: 'default-invert',
+    outline: 'outline-invert',
+  }
 
 type CMSLinkType = {
   appearance?: 'inline' | ButtonProps['variant']
@@ -34,6 +42,8 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
     url,
   } = props
 
+  const blockTheme = useBlockTheme()
+
   const href =
     type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
       ? reference.relationTo === 'pages' && 'breadcrumbs' in reference.value
@@ -46,6 +56,11 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
   const size = appearance === 'link' ? 'clear' : sizeFromProps
   const newTabProps = newTab ? { rel: 'noopener noreferrer', target: '_blank' } : {}
 
+  const resolvedVariant =
+    blockTheme === 'light' && appearance !== 'inline'
+      ? (lightVariantMap[appearance as NonNullable<ButtonProps['variant']>] ?? appearance)
+      : appearance
+
   /* Ensure we don't break any styles set by richText */
   if (appearance === 'inline') {
     return (
@@ -57,7 +72,7 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
   }
 
   return (
-    <Button asChild className={className} size={size} variant={appearance}>
+    <Button asChild className={className} size={size} variant={resolvedVariant}>
       <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
         {label && label}
         {children && children}

@@ -4,14 +4,34 @@ import deepMerge from '@/utilities/deepMerge'
 
 export type SpacingSize = 'none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 
+export type BackgroundType = 'none' | 'color' | 'image' | 'video'
+
+export type TextColor = 'dark' | 'light'
+
+export type BackgroundColor =
+  | 'primary'
+  | 'secondary'
+  | 'accent'
+  | 'muted'
+  | 'card'
+  | 'background'
+  | 'brand-off-white'
+  | 'brand-linen'
+  | 'brand-black'
+  | 'brand-white'
+  | 'brand-olive'
+  | 'brand-gray'
+  | 'brand-purple'
+  | 'brand-peach'
+  | 'brand-green'
+  | 'brand-blue'
+  | 'brand-blue-light'
+
 export type BlockSettingsOptions = {
   enablePadding?: boolean
   enableBackground?: boolean
-  enableBackgroundImage?: boolean
-  enableBackgroundVideo?: boolean
   defaultPaddingTop?: SpacingSize
   defaultPaddingBottom?: SpacingSize
-  defaultBackgroundColor?: 'none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background'
   overrides?: Partial<GroupField>
 }
 
@@ -21,11 +41,8 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
   const {
     enablePadding = true,
     enableBackground = true,
-    enableBackgroundImage = false,
-    enableBackgroundVideo = false,
     defaultPaddingTop = 'md',
     defaultPaddingBottom = 'md',
-    defaultBackgroundColor = 'none',
     overrides = {},
   } = options
 
@@ -71,51 +88,58 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
 
   if (enableBackground) {
     fields.push({
-      name: 'backgroundColor',
+      name: 'background',
       type: 'select',
-      defaultValue: defaultBackgroundColor,
-      dbName: 'bg_color',
+      defaultValue: 'none',
+      dbName: 'bg',
+      label: 'Background',
       options: [
-        {
-          label: 'None',
-          value: 'none',
-        },
-        {
-          label: 'Primary',
-          value: 'primary',
-        },
-        {
-          label: 'Secondary',
-          value: 'secondary',
-        },
-        {
-          label: 'Accent',
-          value: 'accent',
-        },
-        {
-          label: 'Muted',
-          value: 'muted',
-        },
-        {
-          label: 'Card',
-          value: 'card',
-        },
-        {
-          label: 'Background',
-          value: 'background',
-        },
+        { label: 'None', value: 'none' },
+        { label: 'Color', value: 'color' },
+        { label: 'Image', value: 'image' },
+        { label: 'Video', value: 'video' },
       ],
     })
-  }
 
-  if (enableBackgroundImage) {
+    fields.push({
+      name: 'backgroundColor',
+      type: 'select',
+      dbName: 'bg_color',
+      label: 'Background Color',
+      admin: {
+        condition: (_, siblingData) =>
+          ['color', 'image', 'video'].includes(siblingData?.background),
+      },
+      options: [
+        { label: 'Off White', value: 'brand-off-white' },
+        { label: 'Linen', value: 'brand-linen' },
+        { label: 'Black', value: 'brand-black' },
+        { label: 'White', value: 'brand-white' },
+        { label: 'Olive', value: 'brand-olive' },
+        { label: 'Gray', value: 'brand-gray' },
+        { label: 'Purple', value: 'brand-purple' },
+        { label: 'Peach', value: 'brand-peach' },
+        { label: 'Green', value: 'brand-green' },
+        { label: 'Blue', value: 'brand-blue' },
+        { label: 'Blue Light', value: 'brand-blue-light' },
+        { label: 'Primary', value: 'primary' },
+        { label: 'Secondary', value: 'secondary' },
+        { label: 'Accent', value: 'accent' },
+        { label: 'Muted', value: 'muted' },
+        { label: 'Card', value: 'card' },
+        { label: 'Background', value: 'background' },
+      ],
+    })
+
     fields.push({
       name: 'backgroundImage',
       type: 'upload',
       relationTo: 'media',
       dbName: 'bg_img_id',
+      label: 'Background Image',
       admin: {
-        description: 'Background image for this block',
+        condition: (_, siblingData) =>
+          ['image', 'video'].includes(siblingData?.background),
       },
     } as Field)
 
@@ -124,44 +148,57 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       type: 'select',
       defaultValue: 'center',
       dbName: 'bg_img_pos',
+      label: 'Image Position',
       admin: {
-        condition: (_, siblingData) => Boolean(siblingData?.backgroundImage),
+        condition: (_, siblingData) =>
+          ['image', 'video'].includes(siblingData?.background),
       },
       options: [
-        {
-          label: 'Center',
-          value: 'center',
-        },
-        {
-          label: 'Top',
-          value: 'top',
-        },
-        {
-          label: 'Bottom',
-          value: 'bottom',
-        },
-        {
-          label: 'Left',
-          value: 'left',
-        },
-        {
-          label: 'Right',
-          value: 'right',
-        },
+        { label: 'Center', value: 'center' },
+        { label: 'Top', value: 'top' },
+        { label: 'Bottom', value: 'bottom' },
+        { label: 'Left', value: 'left' },
+        { label: 'Right', value: 'right' },
       ],
     })
-  }
 
-  if (enableBackgroundVideo) {
     fields.push({
       name: 'backgroundVideo',
       type: 'upload',
       relationTo: 'media',
       dbName: 'bg_vid_id',
+      label: 'Video File',
       admin: {
-        description: 'Background video for this block (takes precedence over image)',
+        condition: (_, siblingData) => siblingData?.background === 'video',
+        description: 'Upload an MP4 video file',
+      },
+      filterOptions: {
+        mimeType: { contains: 'video' },
       },
     } as Field)
+
+    fields.push({
+      name: 'backgroundVideoUrl',
+      type: 'text',
+      dbName: 'bg_vid_url',
+      label: 'Video URL',
+      admin: {
+        condition: (_, siblingData) => siblingData?.background === 'video',
+        description: 'Or paste an external video URL (used if no file is uploaded)',
+      },
+    })
+
+    fields.push({
+      name: 'textColor',
+      type: 'select',
+      defaultValue: 'dark',
+      dbName: 'txt_color',
+      label: 'Text Color',
+      options: [
+        { label: 'Dark', value: 'dark' },
+        { label: 'Light', value: 'light' },
+      ],
+    })
   }
 
   const blockSettingsGroup: GroupField = {

@@ -161,79 +161,9 @@ export interface UserAuthOperations {
 export interface Page {
   id: number;
   title: string;
-  hero: {
-    type: 'none' | 'homeHero' | 'solutionsHero' | 'partnerHero' | 'textHero' | 'supportHero';
-    richText?: {
-      root: {
-        type: string;
-        children: {
-          type: any;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    links?:
-      | {
-          link: {
-            type?: ('reference' | 'custom') | null;
-            newTab?: boolean | null;
-            reference?:
-              | ({
-                  relationTo: 'pages';
-                  value: number | Page;
-                } | null)
-              | ({
-                  relationTo: 'posts';
-                  value: number | Post;
-                } | null);
-            url?: string | null;
-            label: string;
-            /**
-             * Choose how the link should be rendered.
-             */
-            appearance?: ('default' | 'outline') | null;
-          };
-          id?: string | null;
-        }[]
-      | null;
-    media?: (number | null) | Media;
-    video?: (number | null) | Media;
-    featureImage?: (number | null) | Media;
-    featureContent?: {
-      root: {
-        type: string;
-        children: {
-          type: any;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    partnerCards?:
-      | {
-          image: number | Media;
-          badge: string;
-          title: string;
-          description?: string | null;
-          link?: string | null;
-          linkUrl?: string | null;
-          id?: string | null;
-        }[]
-      | null;
-    logoOne?: (number | null) | Media;
-    logoTwo?: (number | null) | Media;
-  };
+  hero?:
+    | (HomeHeroBlock | PlatformHeroBlock | SolutionsHeroBlock | PartnerHeroBlock | TextHeroBlock | SupportHeroBlock)[]
+    | null;
   layout?:
     | (
         | ContentBlock
@@ -285,12 +215,6 @@ export interface Page {
      */
     noindex?: boolean | null;
   };
-  publishedAt?: string | null;
-  /**
-   * When enabled, the slug will auto-generate from the title field on save and autosave.
-   */
-  generateSlug?: boolean | null;
-  slug: string;
   parent?: (number | null) | Page;
   breadcrumbs?:
     | {
@@ -300,9 +224,101 @@ export interface Page {
         id?: string | null;
       }[]
     | null;
+  publishedAt?: string | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeHeroBlock".
+ */
+export interface HomeHeroBlock {
+  richText?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'homeHero';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -484,11 +500,6 @@ export interface FolderInterface {
 export interface Category {
   id: number;
   title: string;
-  /**
-   * When enabled, the slug will auto-generate from the title field on save and autosave.
-   */
-  generateSlug?: boolean | null;
-  slug: string;
   parent?: (number | null) | Category;
   breadcrumbs?:
     | {
@@ -498,6 +509,11 @@ export interface Category {
         id?: string | null;
       }[]
     | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -525,6 +541,421 @@ export interface User {
       }[]
     | null;
   password?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PlatformHeroBlock".
+ */
+export interface PlatformHeroBlock {
+  richText?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  media?: (number | null) | Media;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'platformHero';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SolutionsHeroBlock".
+ */
+export interface SolutionsHeroBlock {
+  richText?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  media?: (number | null) | Media;
+  featureImage?: (number | null) | Media;
+  featureContent?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'solutionsHero';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PartnerHeroBlock".
+ */
+export interface PartnerHeroBlock {
+  richText?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  media?: (number | null) | Media;
+  partnerCards?:
+    | {
+        image: number | Media;
+        badge: string;
+        title: string;
+        description?: string | null;
+        link?: string | null;
+        linkUrl?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'partnerHero';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TextHeroBlock".
+ */
+export interface TextHeroBlock {
+  richText?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  logoOne?: (number | null) | Media;
+  logoTwo?: (number | null) | Media;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'textHero';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SupportHeroBlock".
+ */
+export interface SupportHeroBlock {
+  richText?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null);
+          url?: string | null;
+          label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  media?: (number | null) | Media;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'supportHero';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -567,16 +998,39 @@ export interface ContentBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
-     * Background video for this block (takes precedence over image)
+     * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -596,7 +1050,39 @@ export interface ImageBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -628,7 +1114,39 @@ export interface VideoBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -670,16 +1188,39 @@ export interface ArchiveBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
-     * Background video for this block (takes precedence over image)
+     * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -905,16 +1446,39 @@ export interface IntegrationsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
-     * Background video for this block (takes precedence over image)
+     * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1017,16 +1581,39 @@ export interface LogoListBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
-     * Background video for this block (takes precedence over image)
+     * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1059,16 +1646,39 @@ export interface HubspotFormBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
-     * Background video for this block (takes precedence over image)
+     * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1100,16 +1710,39 @@ export interface StatsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
-     * Background video for this block (takes precedence over image)
+     * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1179,16 +1812,39 @@ export interface TextImageFeatureBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
-     * Background video for this block (takes precedence over image)
+     * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1258,16 +1914,39 @@ export interface InsetDualImageBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
-     * Background video for this block (takes precedence over image)
+     * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1334,16 +2013,39 @@ export interface InsetCopyImageBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
-     * Background video for this block (takes precedence over image)
+     * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1390,7 +2092,39 @@ export interface StatsTextBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1454,7 +2188,39 @@ export interface PageTeaserBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1518,12 +2284,39 @@ export interface DiagramBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1589,7 +2382,39 @@ export interface TrioTallImageCardsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1669,7 +2494,39 @@ export interface TrioShortImageCardsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1734,7 +2591,39 @@ export interface TrioTextOnlyCardsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1795,7 +2684,39 @@ export interface TestimonialBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1837,7 +2758,39 @@ export interface ItemHighlightsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1882,7 +2835,39 @@ export interface FaqCenterBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1938,7 +2923,39 @@ export interface FaqToCallBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1975,7 +2992,39 @@ export interface ChecklistBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2021,7 +3070,39 @@ export interface ImageLeftTextRightBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2067,7 +3148,39 @@ export interface SimpleContentBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2116,7 +3229,39 @@ export interface IndentedContentBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2163,7 +3308,39 @@ export interface ConsListBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2224,12 +3401,39 @@ export interface CtaLargeBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2284,7 +3488,39 @@ export interface CtaSmallBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2320,7 +3556,39 @@ export interface DisclaimerBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2382,12 +3650,39 @@ export interface FiftyFiftyBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2450,7 +3745,39 @@ export interface ItemHighlightsWithIntroBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2481,7 +3808,39 @@ export interface PeopleIndexBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2554,7 +3913,39 @@ export interface SupportIndexBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2597,12 +3988,39 @@ export interface FormBlock2Type {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    backgroundColor?: ('none' | 'primary' | 'secondary' | 'accent' | 'muted' | 'card' | 'background') | null;
-    /**
-     * Background image for this block
-     */
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2897,40 +4315,12 @@ export interface PagesSelect<T extends boolean = true> {
   hero?:
     | T
     | {
-        type?: T;
-        richText?: T;
-        links?:
-          | T
-          | {
-              link?:
-                | T
-                | {
-                    type?: T;
-                    newTab?: T;
-                    reference?: T;
-                    url?: T;
-                    label?: T;
-                    appearance?: T;
-                  };
-              id?: T;
-            };
-        media?: T;
-        video?: T;
-        featureImage?: T;
-        featureContent?: T;
-        partnerCards?:
-          | T
-          | {
-              image?: T;
-              badge?: T;
-              title?: T;
-              description?: T;
-              link?: T;
-              linkUrl?: T;
-              id?: T;
-            };
-        logoOne?: T;
-        logoTwo?: T;
+        homeHero?: T | HomeHeroBlockSelect<T>;
+        platformHero?: T | PlatformHeroBlockSelect<T>;
+        solutionsHero?: T | SolutionsHeroBlockSelect<T>;
+        partnerHero?: T | PartnerHeroBlockSelect<T>;
+        textHero?: T | TextHeroBlockSelect<T>;
+        supportHero?: T | SupportHeroBlockSelect<T>;
       };
   layout?:
     | T
@@ -2979,9 +4369,6 @@ export interface PagesSelect<T extends boolean = true> {
         description?: T;
         noindex?: T;
       };
-  publishedAt?: T;
-  generateSlug?: T;
-  slug?: T;
   parent?: T;
   breadcrumbs?:
     | T
@@ -2991,9 +4378,211 @@ export interface PagesSelect<T extends boolean = true> {
         label?: T;
         id?: T;
       };
+  publishedAt?: T;
+  generateSlug?: T;
+  slug?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeHeroBlock_select".
+ */
+export interface HomeHeroBlockSelect<T extends boolean = true> {
+  richText?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        background?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PlatformHeroBlock_select".
+ */
+export interface PlatformHeroBlockSelect<T extends boolean = true> {
+  richText?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  media?: T;
+  blockSettings?:
+    | T
+    | {
+        background?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SolutionsHeroBlock_select".
+ */
+export interface SolutionsHeroBlockSelect<T extends boolean = true> {
+  richText?: T;
+  media?: T;
+  featureImage?: T;
+  featureContent?: T;
+  blockSettings?:
+    | T
+    | {
+        background?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PartnerHeroBlock_select".
+ */
+export interface PartnerHeroBlockSelect<T extends boolean = true> {
+  richText?: T;
+  media?: T;
+  partnerCards?:
+    | T
+    | {
+        image?: T;
+        badge?: T;
+        title?: T;
+        description?: T;
+        link?: T;
+        linkUrl?: T;
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        background?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TextHeroBlock_select".
+ */
+export interface TextHeroBlockSelect<T extends boolean = true> {
+  richText?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  logoOne?: T;
+  logoTwo?: T;
+  blockSettings?:
+    | T
+    | {
+        background?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SupportHeroBlock_select".
+ */
+export interface SupportHeroBlockSelect<T extends boolean = true> {
+  richText?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  media?: T;
+  blockSettings?:
+    | T
+    | {
+        background?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
+      };
+  id?: T;
+  blockName?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -3008,10 +4597,13 @@ export interface ContentBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3029,7 +4621,13 @@ export interface ImageBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3050,7 +4648,13 @@ export interface VideoBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3071,10 +4675,13 @@ export interface ArchiveBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3103,10 +4710,13 @@ export interface IntegrationsBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3130,10 +4740,13 @@ export interface LogoListBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3152,10 +4765,13 @@ export interface HubspotFormBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3178,10 +4794,13 @@ export interface StatsBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3219,10 +4838,13 @@ export interface TextImageFeatureBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3260,10 +4882,13 @@ export interface InsetDualImageBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3301,10 +4926,13 @@ export interface InsetCopyImageBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3328,7 +4956,13 @@ export interface StatsTextBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3361,7 +4995,13 @@ export interface PageTeaserBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3394,9 +5034,13 @@ export interface DiagramBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3436,7 +5080,13 @@ export interface TrioTallImageCardsBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3484,7 +5134,13 @@ export interface TrioShortImageCardsBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3517,7 +5173,13 @@ export interface TrioTextOnlyCardsBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3552,7 +5214,13 @@ export interface TestimonialBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3577,7 +5245,13 @@ export interface ItemHighlightsBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3602,7 +5276,13 @@ export interface FaqCenterBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3627,7 +5307,13 @@ export interface FaqToCallBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3650,7 +5336,13 @@ export interface ChecklistBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3679,7 +5371,13 @@ export interface ImageLeftTextRightBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3708,7 +5406,13 @@ export interface SimpleContentBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3732,7 +5436,13 @@ export interface IndentedContentBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3756,7 +5466,13 @@ export interface ConsListBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3789,9 +5505,13 @@ export interface CtaLargeBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3823,7 +5543,13 @@ export interface CtaSmallBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3840,7 +5566,13 @@ export interface DisclaimerBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3874,9 +5606,13 @@ export interface FiftyFiftyBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3910,7 +5646,13 @@ export interface ItemHighlightsWithIntroBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3935,7 +5677,13 @@ export interface PeopleIndexBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3968,7 +5716,13 @@ export interface SupportIndexBlockSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -3986,9 +5740,13 @@ export interface FormBlock2TypeSelect<T extends boolean = true> {
     | {
         paddingTop?: T;
         paddingBottom?: T;
+        background?: T;
         backgroundColor?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
       };
   id?: T;
   blockName?: T;
@@ -4125,8 +5883,6 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface CategoriesSelect<T extends boolean = true> {
   title?: T;
-  generateSlug?: T;
-  slug?: T;
   parent?: T;
   breadcrumbs?:
     | T
@@ -4136,6 +5892,8 @@ export interface CategoriesSelect<T extends boolean = true> {
         label?: T;
         id?: T;
       };
+  generateSlug?: T;
+  slug?: T;
   updatedAt?: T;
   createdAt?: T;
 }

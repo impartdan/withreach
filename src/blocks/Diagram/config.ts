@@ -70,7 +70,6 @@ export const Diagram: Block = {
             blockSettings({
               enablePadding: true,
               enableBackground: true,
-              enableBackgroundImage: true,
               defaultPaddingTop: 'lg',
               defaultPaddingBottom: 'lg',
             }),

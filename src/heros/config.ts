@@ -1,4 +1,4 @@
-import type { Field } from 'payload'
+import type { Block, Field } from 'payload'
 
 import {
   FixedToolbarFeature,
@@ -7,190 +7,316 @@ import {
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 
+import { blockSettings } from '@/fields/blockSettings'
 import { linkGroup } from '@/fields/linkGroup'
 
-export const hero: Field = {
-  name: 'hero',
-  type: 'group',
-  fields: [
-    {
-      name: 'type',
-      type: 'select',
-      defaultValue: 'none',
-      label: 'Type',
-      options: [
-        {
-          label: 'None',
-          value: 'none',
-        },
-        {
-          label: 'Home Hero',
-          value: 'homeHero',
-        },
-        {
-          label: 'Solutions Hero',
-          value: 'solutionsHero',
-        },
-        {
-          label: 'Partner Hero',
-          value: 'partnerHero',
-        },
-        {
-          label: 'Text Hero',
-          value: 'textHero',
-        },
-        {
-          label: 'Support Hero',
-          value: 'supportHero',
-        },
-      ],
-      required: true,
+const heroRichText: Field = {
+  name: 'richText',
+  type: 'richText',
+  editor: lexicalEditor({
+    features: ({ rootFeatures }) => {
+      return [
+        ...rootFeatures,
+        HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+        FixedToolbarFeature(),
+        InlineToolbarFeature(),
+      ]
     },
-    // Shared rich text field – used by all hero types
-    {
-      name: 'richText',
-      type: 'richText',
-      admin: {
-        condition: (_, { type } = {}) => type !== 'none',
-      },
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-          ]
-        },
-      }),
-      label: false,
-    },
-    // Shared links – used by homeHero, textHero, supportHero
-    linkGroup({
-      overrides: {
-        maxRows: 2,
-        admin: {
-          condition: (_, { type } = {}) =>
-            ['homeHero', 'textHero', 'supportHero'].includes(type),
-        },
-      },
-    }),
-    // Shared media upload – used by homeHero, solutionsHero, partnerHero, supportHero
-    {
-      name: 'media',
-      type: 'upload',
-      admin: {
-        condition: (_, { type } = {}) =>
-          ['homeHero', 'solutionsHero', 'partnerHero', 'supportHero'].includes(type),
-      },
-      relationTo: 'media',
-    },
-    // Video – homeHero only (optional video background)
-    {
-      name: 'video',
-      type: 'upload',
-      admin: {
-        condition: (_, { type } = {}) => type === 'homeHero',
-      },
-      filterOptions: {
-        mimeType: {
-          contains: 'mp4',
-        },
-      },
-      relationTo: 'media',
-    },
-    // Solutions Hero – feature image (inside the card below the hero area)
-    {
-      name: 'featureImage',
-      type: 'upload',
-      admin: {
-        condition: (_, { type } = {}) => type === 'solutionsHero',
-      },
-      label: 'Feature Image',
-      relationTo: 'media',
-    },
-    // Solutions Hero – feature content (text beside the feature image)
-    {
-      name: 'featureContent',
-      type: 'richText',
-      admin: {
-        condition: (_, { type } = {}) => type === 'solutionsHero',
-      },
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-          ]
-        },
-      }),
-      label: 'Feature Content',
-    },
-    // Partner Hero – cards array
-    {
-      name: 'partnerCards',
-      type: 'array',
-      admin: {
-        condition: (_, { type } = {}) => type === 'partnerHero',
-      },
-      label: 'Partner Cards',
-      maxRows: 4,
-      dbName: 'hero_p_cards',
-      fields: [
-        {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
-        },
-        {
-          name: 'badge',
-          type: 'text',
-          label: 'Badge Label',
-          required: true,
-        },
-        {
-          name: 'title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'description',
-          type: 'textarea',
-        },
-        {
-          name: 'link',
-          type: 'text',
-          label: 'Link Text',
-        },
-        {
-          name: 'linkUrl',
-          type: 'text',
-          label: 'Link URL',
-        },
-      ],
-    },
-    // Text Hero – optional logo images
-    {
-      name: 'logoOne',
-      type: 'upload',
-      admin: {
-        condition: (_, { type } = {}) => type === 'textHero',
-      },
-      label: 'Logo One',
-      relationTo: 'media',
-    },
-    {
-      name: 'logoTwo',
-      type: 'upload',
-      admin: {
-        condition: (_, { type } = {}) => type === 'textHero',
-      },
-      label: 'Logo Two',
-      relationTo: 'media',
-    },
-  ],
+  }),
   label: false,
 }
+
+const heroSettings = blockSettings({
+  enablePadding: false,
+  enableBackground: true,
+})
+
+export const HomeHeroBlock: Block = {
+  slug: 'homeHero',
+  imageURL: '/block-thumbnails/hero-home.png',
+  imageAltText: 'Full-screen hero with video or image background and centered text',
+  interfaceName: 'HomeHeroBlock',
+  labels: {
+    singular: 'Home Hero',
+    plural: 'Home Heroes',
+  },
+  fields: [
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            heroRichText,
+            linkGroup({
+              overrides: {
+                maxRows: 2,
+              },
+            }),
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [heroSettings],
+        },
+      ],
+    },
+  ],
+}
+
+export const SolutionsHeroBlock: Block = {
+  slug: 'solutionsHero',
+  imageURL: '/block-thumbnails/hero-solutions.png',
+  imageAltText: 'Hero with blurred background image and overlapping feature card',
+  interfaceName: 'SolutionsHeroBlock',
+  labels: {
+    singular: 'Solutions Hero',
+    plural: 'Solutions Heroes',
+  },
+  fields: [
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            heroRichText,
+            {
+              name: 'media',
+              type: 'upload',
+              relationTo: 'media',
+            },
+            {
+              name: 'featureImage',
+              type: 'upload',
+              label: 'Feature Image',
+              relationTo: 'media',
+            },
+            {
+              name: 'featureContent',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                  ]
+                },
+              }),
+              label: 'Feature Content',
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [heroSettings],
+        },
+      ],
+    },
+  ],
+}
+
+export const PartnerHeroBlock: Block = {
+  slug: 'partnerHero',
+  imageURL: '/block-thumbnails/hero-partner.png',
+  imageAltText: 'Hero with blurred background image and partner cards grid',
+  interfaceName: 'PartnerHeroBlock',
+  labels: {
+    singular: 'Partner Hero',
+    plural: 'Partner Heroes',
+  },
+  fields: [
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            heroRichText,
+            {
+              name: 'media',
+              type: 'upload',
+              relationTo: 'media',
+            },
+            {
+              name: 'partnerCards',
+              type: 'array',
+              label: 'Partner Cards',
+              maxRows: 4,
+              fields: [
+                {
+                  name: 'image',
+                  type: 'upload',
+                  relationTo: 'media',
+                  required: true,
+                },
+                {
+                  name: 'badge',
+                  type: 'text',
+                  label: 'Badge Label',
+                  required: true,
+                },
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'description',
+                  type: 'textarea',
+                },
+                {
+                  name: 'link',
+                  type: 'text',
+                  label: 'Link Text',
+                },
+                {
+                  name: 'linkUrl',
+                  type: 'text',
+                  label: 'Link URL',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [heroSettings],
+        },
+      ],
+    },
+  ],
+}
+
+export const TextHeroBlock: Block = {
+  slug: 'textHero',
+  imageURL: '/block-thumbnails/hero-text.png',
+  imageAltText: 'Centered text hero with optional logos and CTA buttons',
+  interfaceName: 'TextHeroBlock',
+  labels: {
+    singular: 'Text Hero',
+    plural: 'Text Heroes',
+  },
+  fields: [
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            heroRichText,
+            linkGroup({
+              overrides: {
+                maxRows: 2,
+              },
+            }),
+            {
+              name: 'logoOne',
+              type: 'upload',
+              label: 'Logo One',
+              relationTo: 'media',
+            },
+            {
+              name: 'logoTwo',
+              type: 'upload',
+              label: 'Logo Two',
+              relationTo: 'media',
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [heroSettings],
+        },
+      ],
+    },
+  ],
+}
+
+export const PlatformHeroBlock: Block = {
+  slug: 'platformHero',
+  imageURL: '/block-thumbnails/hero-platform.png',
+  imageAltText: 'Light background with left-aligned text and illustration on the right',
+  interfaceName: 'PlatformHeroBlock',
+  labels: {
+    singular: 'Platform Hero',
+    plural: 'Platform Heroes',
+  },
+  fields: [
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            heroRichText,
+            linkGroup({
+              overrides: {
+                maxRows: 2,
+              },
+            }),
+            {
+              name: 'media',
+              type: 'upload',
+              label: 'Illustration',
+              relationTo: 'media',
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [heroSettings],
+        },
+      ],
+    },
+  ],
+}
+
+export const SupportHeroBlock: Block = {
+  slug: 'supportHero',
+  imageURL: '/block-thumbnails/hero-support.png',
+  imageAltText: 'Two-column hero with text and CTA on left, image on right',
+  interfaceName: 'SupportHeroBlock',
+  labels: {
+    singular: 'Support Hero',
+    plural: 'Support Heroes',
+  },
+  fields: [
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            heroRichText,
+            linkGroup({
+              overrides: {
+                maxRows: 2,
+              },
+            }),
+            {
+              name: 'media',
+              type: 'upload',
+              relationTo: 'media',
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [heroSettings],
+        },
+      ],
+    },
+  ],
+}
+
+export const heroBlocks = [
+  HomeHeroBlock,
+  PlatformHeroBlock,
+  SolutionsHeroBlock,
+  PartnerHeroBlock,
+  TextHeroBlock,
+  SupportHeroBlock,
+]

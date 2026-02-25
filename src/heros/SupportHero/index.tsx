@@ -1,19 +1,19 @@
 'use client'
 import React from 'react'
 
-import type { Page } from '@/payload-types'
+import type { SupportHeroBlock as SupportHeroBlockType } from '@/payload-types'
 
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 
-export const SupportHero: React.FC<Page['hero']> = ({
+export const SupportHero: React.FC<SupportHeroBlockType> = ({
   richText,
   links,
   media,
 }) => {
   return (
-    <div className="bg-brand-linen w-full header-offset">
+    <div className="w-full">
       <div className="container flex flex-col md:flex-row gap-16 md:gap-36 items-start py-20 md:py-[120px]">
         {/* Left column – text content */}
         <div className="w-full md:w-[548px] flex flex-col gap-10 flex-shrink-0">
