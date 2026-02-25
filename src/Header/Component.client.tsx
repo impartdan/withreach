@@ -1,7 +1,7 @@
 'use client'
 import { Link } from 'next-view-transitions'
 
-import type { Header, Post } from '@/payload-types'
+import type { CaseStudy, Header, Post } from '@/payload-types'
 
 import { Logo } from '@/components/Logo/Logo'
 import { HeaderNav } from './Nav'
@@ -9,9 +9,14 @@ import { HeaderNav } from './Nav'
 interface HeaderClientProps {
   data: Header
   latestPosts: Post[]
+  latestCaseStudies: CaseStudy[]
 }
 
-export const HeaderClient: React.FC<HeaderClientProps> = ({ data, latestPosts }) => {
+export const HeaderClient: React.FC<HeaderClientProps> = ({
+  data,
+  latestPosts,
+  latestCaseStudies,
+}) => {
   return (
     <header className="fixed top-0 z-30 w-full">
       <div className="p-3 md:px-10 md:pt-9 md:pb-6 group">
@@ -28,6 +33,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data, latestPosts })
                 menuItems={data.menuItems}
                 additionalLinks={data.additionalLinks}
                 latestPosts={latestPosts}
+                latestCaseStudies={latestCaseStudies}
               />
             </div>
           </div>

@@ -12,6 +12,7 @@ import type { CaseStudy, CaseStudyCategory, Category, CaseStudiesSetting } from 
 
 import { Media } from '@/components/Media'
 import { CMSLink } from '@/components/Link'
+import { Tag } from '@/components/Tag'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
@@ -204,12 +205,7 @@ function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
             {resolvedCategories.length > 0 && (
               <div className="flex flex-wrap gap-3">
                 {resolvedCategories.map((catTitle, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center px-5 py-2.5 rounded-[6px] bg-brand-black text-white type-eyebrow"
-                  >
-                    {catTitle ?? 'Untitled'}
-                  </span>
+                  <Tag key={index} label={catTitle ?? 'Untitled'} variant="secondary" />
                 ))}
               </div>
             )}

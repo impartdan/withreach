@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import type { Header, Post } from '@/payload-types'
+import type { CaseStudy, Header, Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { FeaturedWithListDropdown } from './dropdowns/FeaturedWithListDropdown'
 import { TwoColumnShowcaseDropdown } from './dropdowns/TwoColumnShowcaseDropdown'
@@ -15,12 +15,14 @@ interface HeaderNavProps {
   menuItems?: Header['menuItems']
   additionalLinks?: Header['additionalLinks']
   latestPosts: Post[]
+  latestCaseStudies: CaseStudy[]
 }
 
 export const HeaderNav: React.FC<HeaderNavProps> = ({
   menuItems = [],
   additionalLinks = [],
   latestPosts,
+  latestCaseStudies,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null)
@@ -168,8 +170,13 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
                 <TwoColumnShowcaseDropdown
                   items={menuItems[activeDropdown].dropdown.tcsItems}
                   mode={menuItems[activeDropdown].dropdown.tcsMode}
+                  contentType={
+                    (menuItems[activeDropdown].dropdown as any).tcsContentType ?? 'posts'
+                  }
                   post={menuItems[activeDropdown].dropdown.tcsPost}
+                  caseStudy={(menuItems[activeDropdown].dropdown as any).tcsCaseStudy}
                   latestPosts={latestPosts}
+                  latestCaseStudies={latestCaseStudies}
                 />
               )}
               {menuItems[activeDropdown].dropdown?.layout === 'featuredIntegrations' && (

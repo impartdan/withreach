@@ -3,6 +3,7 @@ import React from 'react'
 import type { Post } from '@/payload-types'
 import { Media } from '@/components/Media'
 import { BackButton } from '@/components/ui/back-button'
+import { Tag } from '@/components/Tag'
 
 export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
   const { categories, excerpt, heroImage, publishedAt, title } = post
@@ -43,12 +44,7 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
                 {categories.map((category, index) => {
                   if (typeof category !== 'object' || !category) return null
                   return (
-                    <span
-                      key={index}
-                      className="inline-flex items-center px-5 py-2.5 rounded-[6px] bg-brand-black text-white type-eyebrow"
-                    >
-                      {category.title ?? 'Untitled'}
-                    </span>
+                    <Tag key={index} label={category.title ?? 'Untitled'} variant="secondary" />
                   )
                 })}
               </div>

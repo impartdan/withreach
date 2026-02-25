@@ -40,6 +40,7 @@ export const CaseStudies: CollectionConfig<'case-studies'> = {
     title: true,
     slug: true,
     companyName: true,
+    heroImage: true,
     companyLogo: true,
     categories: true,
     caseStudyCategories: true,

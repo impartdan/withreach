@@ -6590,8 +6590,10 @@ export interface Header {
                 id?: string | null;
               }[]
             | null;
+          tcsContentType?: ('posts' | 'case-studies') | null;
           tcsMode?: ('automatic' | 'manual') | null;
           tcsPost?: (number | null) | Post;
+          tcsCaseStudy?: (number | null) | CaseStudy;
           fiItems?:
             | {
                 link: {
@@ -6877,8 +6879,10 @@ export interface HeaderSelect<T extends boolean = true> {
                     description?: T;
                     id?: T;
                   };
+              tcsContentType?: T;
               tcsMode?: T;
               tcsPost?: T;
+              tcsCaseStudy?: T;
               fiItems?:
                 | T
                 | {

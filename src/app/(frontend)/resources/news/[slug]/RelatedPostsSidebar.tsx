@@ -3,6 +3,7 @@ import { Link } from 'next-view-transitions'
 
 import type { Category, Post } from '@/payload-types'
 import { Media } from '@/components/Media'
+import { Tag } from '@/components/Tag'
 
 interface RelatedPostsSidebarProps {
   posts: Post[]
@@ -55,12 +56,7 @@ export const RelatedPostsSidebar: React.FC<RelatedPostsSidebarProps> = ({ posts 
                 {resolvedCategories.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     {resolvedCategories.map((cat) => (
-                      <span
-                        key={cat.id}
-                        className="inline-flex items-center px-5 py-2.5 rounded-[6px] bg-brand-black text-white type-eyebrow"
-                      >
-                        {cat.title}
-                      </span>
+                      <Tag key={cat.id} label={cat.title} variant="secondary" />
                     ))}
                   </div>
                 )}

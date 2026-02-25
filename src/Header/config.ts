@@ -161,6 +161,25 @@ export const Header: GlobalConfig = {
                   },
                   fields: [
                     {
+                      name: 'tcsContentType',
+                      type: 'radio',
+                      label: 'Content Type',
+                      defaultValue: 'posts',
+                      options: [
+                        {
+                          label: 'Posts (News)',
+                          value: 'posts',
+                        },
+                        {
+                          label: 'Case Studies',
+                          value: 'case-studies',
+                        },
+                      ],
+                      admin: {
+                        layout: 'horizontal',
+                      },
+                    },
+                    {
                       name: 'tcsMode',
                       type: 'radio',
                       label: 'Content Mode',
@@ -185,7 +204,21 @@ export const Header: GlobalConfig = {
                       relationTo: 'posts',
                       label: 'Select Post',
                       admin: {
-                        condition: (_, siblingData) => siblingData?.tcsMode === 'manual',
+                        condition: (_, siblingData) =>
+                          siblingData?.tcsMode === 'manual' &&
+                          (siblingData?.tcsContentType === 'posts' ||
+                            !siblingData?.tcsContentType),
+                      },
+                    },
+                    {
+                      name: 'tcsCaseStudy',
+                      type: 'relationship',
+                      relationTo: 'case-studies',
+                      label: 'Select Case Study',
+                      admin: {
+                        condition: (_, siblingData) =>
+                          siblingData?.tcsMode === 'manual' &&
+                          siblingData?.tcsContentType === 'case-studies',
                       },
                     },
                   ],

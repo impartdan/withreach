@@ -3,6 +3,7 @@ import { Link } from 'next-view-transitions'
 
 import type { CaseStudy, Category } from '@/payload-types'
 import { Media } from '@/components/Media'
+import { Tag } from '@/components/Tag'
 
 export type CaseStudyCardData = Pick<
   CaseStudy,
@@ -60,12 +61,7 @@ export const CaseStudyCard: React.FC<{ caseStudy: CaseStudyCardData }> = ({ case
         {resolvedCategories.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {resolvedCategories.map((cat) => (
-              <span
-                key={cat.id}
-                className="bg-brand-black text-white rounded-[6px] px-5 py-2.5 type-eyebrow"
-              >
-                {cat.title}
-              </span>
+              <Tag key={cat.id} label={cat.title} variant="secondary" />
             ))}
           </div>
         )}

@@ -4,6 +4,7 @@ import { Link } from 'next-view-transitions'
 
 import type { CaseStudy, Category } from '@/payload-types'
 import { Media } from '@/components/Media'
+import { Tag } from '@/components/Tag'
 import { cn } from '@/utilities/ui'
 
 type FeaturedCaseStudiesProps = {
@@ -62,12 +63,7 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
                 {categories.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     {categories.map((cat) => (
-                      <span
-                        key={cat.id}
-                        className="bg-brand-black text-white rounded-[6px] px-5 py-2.5 type-eyebrow"
-                      >
-                        {cat.title}
-                      </span>
+                      <Tag key={cat.id} label={cat.title} variant="secondary" />
                     ))}
                   </div>
                 )}

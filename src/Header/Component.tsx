@@ -9,14 +9,28 @@ import type { Header } from '@/payload-types'
 export async function Header() {
   const headerData: Header = await getCachedGlobal('header', 4)()
 
-  // Preload latest posts for automatic mode dropdowns
+  // Preload latest posts and case studies for automatic mode dropdowns
   const payload = await getPayload({ config: configPromise })
-  const latestPosts = await payload.find({
-    collection: 'posts',
-    limit: 2,
-    depth: 2,
-    sort: '-publishedAt',
-  })
+  const [latestPostsResult, latestCaseStudiesResult] = await Promise.all([
+    payload.find({
+      collection: 'posts',
+      limit: 2,
+      depth: 2,
+      sort: '-publishedAt',
+    }),
+    payload.find({
+      collection: 'case-studies',
+      limit: 1,
+      depth: 2,
+      sort: '-publishedAt',
+    }),
+  ])
 
-  return <HeaderClient data={headerData} latestPosts={latestPosts.docs} />
+  return (
+    <HeaderClient
+      data={headerData}
+      latestPosts={latestPostsResult.docs}
+      latestCaseStudies={latestCaseStudiesResult.docs}
+    />
+  )
 }

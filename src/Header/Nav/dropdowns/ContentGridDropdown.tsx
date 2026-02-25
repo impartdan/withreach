@@ -1,9 +1,10 @@
 'use client'
 
-import type { Post, Page, CaseStudy } from '@/payload-types'
+import type { CaseStudy, Category, Page, Post } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Link } from 'next-view-transitions'
-import Image from 'next/image'
+import { Media } from '@/components/Media'
+import { Tag } from '@/components/Tag'
 import { motion } from 'framer-motion'
 
 type CMSLinkType = {
@@ -31,25 +32,34 @@ interface ContentGridDropdownProps {
 const PostCard: React.FC<{ post: Post }> = ({ post }) => {
   if (!post.slug) return null
 
+  const image = post.heroImage && typeof post.heroImage === 'object' ? post.heroImage : null
+  const primaryCategory =
+    post.categories?.[0] && typeof post.categories[0] === 'object'
+      ? (post.categories[0] as Category)
+      : null
+
   return (
-    <Link href={`/resources/news/${post.slug}`} className="w-[382px] block group">
-      {post.heroImage && typeof post.heroImage === 'object' && 'url' in post.heroImage ? (
-        <div className="aspect-[3/2] rounded-lg overflow-hidden relative">
-          <Image
-            src={post.heroImage.url as string}
-            alt={post.heroImage.alt || post.title || ''}
-            fill
-            className="object-cover transition-transform group-hover:scale-105"
+    <Link href={`/resources/news/${post.slug}`} className="block group/card">
+      <div className="aspect-[3/2] rounded-lg overflow-hidden relative mb-6">
+        {image ? (
+          <Media
+            resource={image}
+            pictureClassName="absolute inset-0 w-full h-full bg-brand-linen"
+            imgClassName="w-full h-full object-cover transition-transform duration-300 group-hover/card:scale-105"
+            htmlElement={null}
           />
-        </div>
-      ) : null}
-      <div className="p-4 bg-gray-50 rounded-lg mt-4">
-        <h4 className="text-lg font-medium group-hover:text-gray-600 transition-colors">
-          {post.title}
-        </h4>
-        {post.meta?.description && (
-          <p className="text-sm text-gray-600 mt-2">{post.meta.description}</p>
+        ) : (
+          <div className="absolute inset-0 bg-brand-black/80 rounded-lg" />
         )}
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <div className="flex gap-3 flex-wrap">
+          <Tag label="News" variant="primary" />
+          {primaryCategory && <Tag label={primaryCategory.title} variant="secondary" />}
+        </div>
+
+        <h4 className="type-display-sm">{post.title}</h4>
       </div>
     </Link>
   )
@@ -63,7 +73,6 @@ export const ContentGridDropdown: React.FC<ContentGridDropdownProps> = ({
 }) => {
   if (!items) return null
 
-  // Get display posts based on mode
   const displayPosts =
     mode === 'manual' && posts
       ? posts.filter((p): p is Post => typeof p === 'object' && p !== null)
@@ -105,37 +114,29 @@ export const ContentGridDropdown: React.FC<ContentGridDropdownProps> = ({
                   />
                 </svg>
               </div>
-              {item.description && <p className=" mt-1">{item.description}</p>}
+              {item.description && <p className="mt-1">{item.description}</p>}
             </CMSLink>
           </motion.div>
         ))}
       </div>
 
-      {/* Right side - Post Content */}
+      {/* Right side - Post Cards */}
       <div className="flex gap-10">
-        {displayPosts.length > 0 &&
-          displayPosts.slice(0, 2).map((post, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 + index * 0.1, ease: 'easeOut' }}
-              className="w-[382px]"
-            >
-              <PostCard post={post} />
-            </motion.div>
-          ))}
+        {displayPosts.slice(0, 2).map((post, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 + index * 0.1, ease: 'easeOut' }}
+            className="w-[359px]"
+          >
+            <PostCard post={post} />
+          </motion.div>
+        ))}
 
         {displayPosts.length === 0 && (
-          <div className="w-[382px] flex items-center justify-center">
+          <div className="w-[359px] flex items-center justify-center">
             <div className="text-sm text-gray-500 italic">No posts available</div>
-          </div>
-        )}
-
-        {/* Show placeholder for second post if only one exists */}
-        {displayPosts.length === 1 && (
-          <div className="w-[382px] flex items-center justify-center">
-            <div className="text-sm text-gray-500 italic">No second post available</div>
           </div>
         )}
       </div>
