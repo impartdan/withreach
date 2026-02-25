@@ -44,7 +44,7 @@ export const RenderHero: React.FC<{ hero: Page['hero'] }> = ({ hero }) => {
       fallbackBgClass={meta?.fallbackBgClass}
       className="header-offset"
     >
-      <HeroToRender {...block} />
+      <HeroToRender {...(block as any)} />
     </BlockWrapper>
   )
 }

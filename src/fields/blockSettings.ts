@@ -180,7 +180,6 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
     fields.push({
       name: 'backgroundVideoUrl',
       type: 'text',
-      dbName: 'bg_vid_url',
       label: 'Video URL',
       admin: {
         condition: (_, siblingData) => siblingData?.background === 'video',
