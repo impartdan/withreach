@@ -39,61 +39,73 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
       {Array.isArray(cards) && cards.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, index) => {
-            return (
-              <div
-                key={index}
-                className={`rounded-[8px] p-8 flex flex-col gap-6 justify-between bg-white border border-border text-brand-black group hover:bg-brand-olive hover:text-white transition-colors duration-300`}
-              >
-                <div className="flex flex-col gap-4">
+            const cardInner = (
+              <>
+                <div className="flex flex-col justify-between gap-4">
                   <div>
                     {card.title && (
-                      <span className={`type-display-md text-brand-olive hover:text-white`}>
+                      <span
+                        className={`type-display-md text-brand-black group-hover:text-brand-olive`}
+                      >
                         {card.title}
                       </span>
                     )}
                     {card.subtitle && (
-                      <span className="text-2xl md:text-3xl font-semibold font-mix leading-[1.2] block">
+                      <span className="type-display-md block text-brand-olive group-hover:text-white">
                         {card.subtitle}
                       </span>
                     )}
                   </div>
-
+                </div>
+                <div className="flex flex-col justify-between gap-4">
                   {card.description && (
                     <RichText
-                      className={`type-micro text-brand-black/70 hover:text-white`}
+                      className={`type-micro text-brand-black/70 group-hover:text-white`}
                       data={card.description}
                       enableGutter={false}
                       enableProse={false}
                     />
                   )}
+                  {card.link && (
+                    <div>
+                      <span className="text-brand-black group-hover:text-white">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5 12H19M19 12L12 5M19 12L12 19"
+                            stroke="currentColor"
+                            strokeWidth="1.66667"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  )}
                 </div>
+              </>
+            )
 
-                {card.link && (
-                  <div>
-                    <CMSLink
-                      size="clear"
-                      {...card.link}
-                      label={null}
-                      className={` text-brand-black hover:text-white`}
-                    >
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 12H19M19 12L12 5M19 12L12 19"
-                          stroke="currentColor"
-                          stroke-width="1.66667"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </CMSLink>
-                  </div>
-                )}
+            const cardClassName = `rounded-[8px] p-8 lg:min-h-[400px] flex flex-col gap-6 justify-between bg-white border border-border text-brand-black group hover:bg-brand-black hover:text-white transition-colors duration-300`
+
+            return card.link ? (
+              <CMSLink
+                key={index}
+                appearance="inline"
+                {...card.link}
+                label={null}
+                className={cardClassName}
+              >
+                {cardInner}
+              </CMSLink>
+            ) : (
+              <div key={index} className={cardClassName}>
+                {cardInner}
               </div>
             )
           })}
