@@ -18,9 +18,7 @@ export const PostCard: React.FC<{ post: PostCardData }> = ({ post }) => {
         : null
 
   const resolvedCategories =
-    categories?.filter(
-      (c): c is Category => typeof c === 'object' && c !== null,
-    ) ?? []
+    categories?.filter((c): c is Category => typeof c === 'object' && c !== null) ?? []
 
   const href = `/resources/news/${slug}`
 
@@ -31,7 +29,8 @@ export const PostCard: React.FC<{ post: PostCardData }> = ({ post }) => {
           {image ? (
             <Media
               resource={image}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              pictureClassName="absolute inset-0 w-full h-full"
+              imgClassName="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               htmlElement={null}
             />
           ) : (

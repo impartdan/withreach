@@ -4,6 +4,8 @@ import { blockSettings } from '@/fields/blockSettings'
 
 export const LogoList: Block = {
   slug: 'logoList',
+  imageURL: '/block-thumbnails/logo-list.png',
+  imageAltText: 'Logo list with heading and scrolling partner logos',
   interfaceName: 'LogoListBlock',
   labels: {
     singular: 'Logo List',

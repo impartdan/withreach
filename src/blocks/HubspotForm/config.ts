@@ -4,6 +4,8 @@ import { blockSettings } from '@/fields/blockSettings'
 
 export const HubspotFormBlock: Block = {
   slug: 'hubspotForm',
+  imageURL: '/block-thumbnails/hubspot-form.png',
+  imageAltText: 'HubSpot form with fields for name, email, website and more',
   interfaceName: 'HubspotFormBlock',
   fields: [
     {

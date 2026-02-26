@@ -4,6 +4,8 @@ import { blockSettings } from '@/fields/blockSettings'
 
 export const Integrations: Block = {
   slug: 'integrations',
+  imageURL: '/block-thumbnails/integrations.png',
+  imageAltText: 'Integration partner cards grid with logos, names and descriptions',
   interfaceName: 'IntegrationsBlock',
   labels: {
     singular: 'Integrations',

@@ -2,9 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { Archive } from '../../blocks/ArchiveBlock/config'
 import { Content } from '../../blocks/Content/config'
-import { FormBlock } from '../../blocks/Form/config'
 import { ImageBlock } from '../../blocks/ImageBlock/config'
 import { VideoBlock } from '../../blocks/VideoBlock/config'
 import { Integrations } from '../../blocks/Integrations/config'
@@ -35,7 +33,6 @@ import { Disclaimer } from '../../blocks/Disclaimer/config'
 import { FiftyFifty } from '../../blocks/FiftyFifty/config'
 import { ItemHighlightsWithIntro } from '../../blocks/ItemHighlightsWithIntro/config'
 import { PeopleIndex } from '../../blocks/PeopleIndex/config'
-import { SupportIndex } from '../../blocks/SupportIndex/config'
 import { CardGrid } from '../../blocks/CardGrid/config'
 import { FormBlock2 } from '../../blocks/FormBlock2/config'
 import { createParentField, createBreadcrumbsField } from '@payloadcms/plugin-nested-docs'
@@ -124,8 +121,6 @@ export const Pages: CollectionConfig<'pages'> = {
                 Content,
                 ImageBlock,
                 VideoBlock,
-                Archive,
-                FormBlock,
                 Integrations,
                 LogoList,
                 HubspotFormBlock,
@@ -154,7 +149,6 @@ export const Pages: CollectionConfig<'pages'> = {
                 FiftyFifty,
                 ItemHighlightsWithIntro,
                 PeopleIndex,
-                SupportIndex,
                 CardGrid,
                 FormBlock2,
               ],

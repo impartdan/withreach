@@ -2,9 +2,7 @@ import React, { Fragment } from 'react'
 
 import type { Page } from '@/payload-types'
 
-import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
-import { FormBlock } from '@/blocks/Form/Component'
 import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
 import { VideoBlockComponent } from '@/blocks/VideoBlock/Component'
 import { IntegrationsBlock } from '@/blocks/Integrations/Component'
@@ -35,15 +33,12 @@ import { DisclaimerBlock } from '@/blocks/Disclaimer/Component'
 import { FiftyFiftyBlock } from '@/blocks/FiftyFifty/Component'
 import { ItemHighlightsWithIntroBlock } from '@/blocks/ItemHighlightsWithIntro/Component'
 import { PeopleIndexBlock } from '@/blocks/PeopleIndex/Component'
-import { SupportIndexBlock } from '@/blocks/SupportIndex/Component'
 import { CardGridBlock } from '@/blocks/CardGrid/Component'
 import { FormBlock2Component } from '@/blocks/FormBlock2/Component'
 import { BlockWrapper } from '@/blocks/BlockWrapper'
 
 const blockComponents = {
-  archive: ArchiveBlock,
   content: ContentBlock,
-  formBlock: FormBlock,
   imageBlock: ImageBlockComponent,
   videoBlock: VideoBlockComponent,
   integrations: IntegrationsBlock,
@@ -74,7 +69,6 @@ const blockComponents = {
   fiftyFifty: FiftyFiftyBlock,
   itemHighlightsWithIntro: ItemHighlightsWithIntroBlock,
   peopleIndex: PeopleIndexBlock,
-  supportIndex: SupportIndexBlock,
   cardGrid: CardGridBlock,
   formBlock2: FormBlock2Component,
 }
