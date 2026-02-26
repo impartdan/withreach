@@ -91,7 +91,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
               </>
             )
 
-            const cardClassName = `rounded-[8px] p-8 lg:min-h-[400px] flex flex-col gap-6 justify-between bg-white border border-border text-brand-black group hover:bg-brand-black hover:text-white transition-colors duration-300`
+            const cardClassName = `rounded-[8px] p-8 lg:min-h-[400px] flex flex-col gap-6 justify-between bg-white border border-brand-black/20 text-brand-black group hover:bg-brand-black hover:text-white transition-colors duration-300`
 
             return card.link ? (
               <CMSLink
