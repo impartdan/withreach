@@ -6,6 +6,9 @@ import { revalidateNewsSettings } from './hooks/revalidateNewsSettings'
 export const NewsSettings: GlobalConfig = {
   slug: 'news-settings',
   label: 'News Settings',
+  admin: {
+    group: 'News',
+  },
   access: {
     read: () => true,
   },

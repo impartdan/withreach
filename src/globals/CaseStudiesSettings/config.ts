@@ -5,6 +5,9 @@ import { revalidateCaseStudiesSettings } from './hooks/revalidateCaseStudiesSett
 export const CaseStudiesSettings: GlobalConfig = {
   slug: 'case-studies-settings',
   label: 'Case Studies Settings',
+  admin: {
+    group: 'Case Studies',
+  },
   access: {
     read: () => true,
   },

@@ -50,7 +50,7 @@ export const CaseStudies: CollectionConfig<'case-studies'> = {
     },
   },
   admin: {
-    group: 'Collections',
+    group: 'Case Studies',
     defaultColumns: ['title', 'companyName', 'slug', 'updatedAt'],
     livePreview: {
       url: ({ data }) =>
