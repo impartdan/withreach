@@ -1,25 +1,47 @@
 import React from 'react'
+import type { Media as MediaType } from '@/payload-types'
 import type { TestimonialBlock as TestimonialBlockProps } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
+import { VideoBlockClient } from '@/blocks/VideoBlock/Component.client'
+import { getMediaUrl } from '@/utilities/getMediaUrl'
+
+function resolveMediaUrl(resource: MediaType | string | number | null | undefined): string | null {
+  if (!resource || typeof resource === 'string' || typeof resource === 'number') return null
+  return getMediaUrl(resource.url, resource.updatedAt) || null
+}
+
+function resolveMediaAlt(resource: MediaType | string | number | null | undefined): string | null {
+  if (!resource || typeof resource === 'string' || typeof resource === 'number') return null
+  return resource.alt || null
+}
 
 export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
-  media,
+  videoType,
+  video,
+  youtubeUrl,
+  poster,
   companyLogo,
   quote,
   authorName,
   authorTitle,
   links,
 }) => {
+  const hasVideo = (videoType === 'upload' && video) || (videoType === 'youtube' && youtubeUrl)
+
   return (
     <div className="container">
       <div className="relative flex flex-col lg:flex-row lg:items-center gap-0">
-        {/* Video/Image */}
-        {media && typeof media !== 'string' && (
+        {/* Video */}
+        {hasVideo && (
           <div className="relative rounded-xl overflow-hidden lg:w-[60%] aspect-video z-0">
-            <Media
-              resource={media}
-              imgClassName="object-cover w-full h-full absolute inset-0"
+            <VideoBlockClient
+              embedded
+              videoType={videoType ?? undefined}
+              videoUrl={resolveMediaUrl(video)}
+              youtubeUrl={youtubeUrl ?? undefined}
+              posterUrl={resolveMediaUrl(poster)}
+              posterAlt={resolveMediaAlt(poster)}
             />
           </div>
         )}

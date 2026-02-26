@@ -13,6 +13,8 @@ export type VideoBlockClientProps = {
   posterAlt?: string | null
   maxWidth?: string | null
   alignment?: string | null
+  /** When true, renders only the video player without container/maxWidth wrappers (for embedding in other blocks) */
+  embedded?: boolean
 }
 
 const maxWidthClasses: Record<string, string> = {
@@ -58,6 +60,7 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
   posterAlt,
   maxWidth,
   alignment,
+  embedded = false,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [ytThumbIdx, setYtThumbIdx] = useState(0)
@@ -75,11 +78,8 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
 
   const handlePlay = () => setIsPlaying(true)
 
-  return (
-    <div className="container">
-      <div className={cn(maxWidthClass, isCenter && 'mx-auto')}>
-        {/* 16:9 aspect ratio wrapper */}
-        <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black">
+  const videoPlayer = (
+    <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black">
           {isPlaying ? (
             <>
               {videoType === 'youtube' && youtubeId ? (
@@ -143,7 +143,17 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
               </div>
             </button>
           )}
-        </div>
+    </div>
+  )
+
+  if (embedded) {
+    return videoPlayer
+  }
+
+  return (
+    <div className="container">
+      <div className={cn(maxWidthClass, isCenter && 'mx-auto')}>
+        {videoPlayer}
       </div>
     </div>
   )

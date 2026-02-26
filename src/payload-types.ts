@@ -3508,10 +3508,19 @@ export interface TrioTextOnlyCardsBlock {
  * via the `definition` "TestimonialBlock".
  */
 export interface TestimonialBlock {
+  videoType: 'upload' | 'youtube';
   /**
-   * Video or image for the testimonial (supports video with play button overlay)
+   * Upload an MP4 video file
    */
-  media: number | Media;
+  video?: (number | null) | Media;
+  /**
+   * Paste a YouTube video URL (e.g. https://www.youtube.com/watch?v=...)
+   */
+  youtubeUrl?: string | null;
+  /**
+   * Optional thumbnail shown before the video plays. For YouTube, the video thumbnail is used automatically if left blank.
+   */
+  poster?: (number | null) | Media;
   /**
    * Company logo displayed above the quote
    */
@@ -7047,7 +7056,10 @@ export interface TrioTextOnlyCardsBlockSelect<T extends boolean = true> {
  * via the `definition` "TestimonialBlock_select".
  */
 export interface TestimonialBlockSelect<T extends boolean = true> {
-  media?: T;
+  videoType?: T;
+  video?: T;
+  youtubeUrl?: T;
+  poster?: T;
   companyLogo?: T;
   quote?: T;
   authorName?: T;
