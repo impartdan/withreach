@@ -12,7 +12,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
   return (
     <div className="container">
       {/* Header */}
-      <div className="flex flex-col gap-6 mb-10 md:mb-12 lg:mb-20 max-w-lg">
+      <div className="flex flex-col gap-6 mb-10 md:mb-12 lg:mb-20 max-w-2xl">
         {heading && <h2 className="type-display-lg">{heading}</h2>}
 
         {Array.isArray(links) && links.length > 0 && (
