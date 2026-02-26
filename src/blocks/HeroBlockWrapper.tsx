@@ -6,6 +6,7 @@ import type { Media } from '@/payload-types'
 import type {
   BackgroundColor,
   BackgroundType,
+  GradientDirection,
   SpacingSize,
   TextColor,
 } from '@/fields/blockSettings'
@@ -23,6 +24,9 @@ type HeroBlockWrapperProps = {
     backgroundImagePosition?: 'center' | 'top' | 'bottom' | 'left' | 'right' | null
     backgroundVideo?: number | Media | null
     backgroundVideoUrl?: string | null
+    gradientFrom?: BackgroundColor | null
+    gradientTo?: BackgroundColor | null
+    gradientDirection?: GradientDirection | null
     textColor?: TextColor | null
   }
   /** Applied to the root div only when blockSettings produces no active background class */
@@ -82,6 +86,26 @@ const bgPositionClasses = {
   right: 'bg-right',
 }
 
+const colorToCss: Record<BackgroundColor, string> = {
+  'brand-off-white': '#FAF7F5',
+  'brand-linen': '#EEECE6',
+  'brand-black': '#1E1A15',
+  'brand-white': '#FFFFFF',
+  'brand-olive': '#999177',
+  'brand-gray': '#6b7280',
+  'brand-purple': '#D4C9ED',
+  'brand-peach': '#FACBA1',
+  'brand-green': '#DAF2BF',
+  'brand-blue': '#C2CFE5',
+  'brand-blue-light': '#E5EEFD',
+  primary: 'hsl(var(--primary))',
+  secondary: 'hsl(var(--secondary))',
+  accent: 'hsl(var(--accent))',
+  muted: 'hsl(var(--muted))',
+  card: 'hsl(var(--card))',
+  background: 'hsl(var(--background))',
+}
+
 export const HeroBlockWrapper: React.FC<HeroBlockWrapperProps> = ({
   children,
   blockType,
@@ -101,9 +125,18 @@ export const HeroBlockWrapper: React.FC<HeroBlockWrapperProps> = ({
   const bgType = blockSettings?.background ?? 'none'
 
   const bgColorClass =
-    bgType !== 'none' && blockSettings?.backgroundColor
+    bgType !== 'none' && bgType !== 'gradient' && blockSettings?.backgroundColor
       ? bgColorClasses[blockSettings.backgroundColor]
       : ''
+
+  const gradientStyle =
+    bgType === 'gradient' && blockSettings?.gradientFrom && blockSettings?.gradientTo
+      ? {
+          background: `linear-gradient(${
+            blockSettings.gradientDirection === 'right' ? 'to right' : 'to bottom'
+          }, ${colorToCss[blockSettings.gradientFrom]}, ${colorToCss[blockSettings.gradientTo]})`,
+        }
+      : undefined
 
   const bgImage =
     (bgType === 'image' || bgType === 'video') &&
@@ -139,9 +172,10 @@ export const HeroBlockWrapper: React.FC<HeroBlockWrapperProps> = ({
         'relative',
         paddingTopClass,
         paddingBottomClass,
-        bgColorClass || fallbackBgClass,
+        bgColorClass || (!gradientStyle ? fallbackBgClass : undefined),
         className,
       )}
+      style={gradientStyle}
       data-block={blockType}
     >
       {/* z-0: image layer — sits above the background color */}

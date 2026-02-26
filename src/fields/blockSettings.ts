@@ -4,7 +4,9 @@ import deepMerge from '@/utilities/deepMerge'
 
 export type SpacingSize = 'none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 
-export type BackgroundType = 'none' | 'color' | 'image' | 'video'
+export type BackgroundType = 'none' | 'color' | 'image' | 'video' | 'gradient'
+
+export type GradientDirection = 'down' | 'right'
 
 export type TextColor = 'dark' | 'light'
 
@@ -96,6 +98,7 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       options: [
         { label: 'None', value: 'none' },
         { label: 'Color', value: 'color' },
+        { label: 'Gradient', value: 'gradient' },
         { label: 'Image', value: 'image' },
         { label: 'Video', value: 'video' },
       ],
@@ -128,6 +131,63 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
         { label: 'Muted', value: 'muted' },
         { label: 'Card', value: 'card' },
         { label: 'Background', value: 'background' },
+      ],
+    })
+
+    const gradientColorOptions = [
+      { label: 'Off White', value: 'brand-off-white' },
+      { label: 'Linen', value: 'brand-linen' },
+      { label: 'Black', value: 'brand-black' },
+      { label: 'White', value: 'brand-white' },
+      { label: 'Olive', value: 'brand-olive' },
+      { label: 'Gray', value: 'brand-gray' },
+      { label: 'Purple', value: 'brand-purple' },
+      { label: 'Peach', value: 'brand-peach' },
+      { label: 'Green', value: 'brand-green' },
+      { label: 'Blue', value: 'brand-blue' },
+      { label: 'Blue Light', value: 'brand-blue-light' },
+      { label: 'Primary', value: 'primary' },
+      { label: 'Secondary', value: 'secondary' },
+      { label: 'Accent', value: 'accent' },
+      { label: 'Muted', value: 'muted' },
+      { label: 'Card', value: 'card' },
+      { label: 'Background', value: 'background' },
+    ]
+
+    fields.push({
+      name: 'gradientFrom',
+      type: 'select',
+      dbName: 'bg_grad_from',
+      label: 'From',
+      admin: {
+        condition: (_, siblingData) => siblingData?.background === 'gradient',
+      },
+      options: gradientColorOptions,
+    })
+
+    fields.push({
+      name: 'gradientTo',
+      type: 'select',
+      dbName: 'bg_grad_to',
+      label: 'To',
+      admin: {
+        condition: (_, siblingData) => siblingData?.background === 'gradient',
+      },
+      options: gradientColorOptions,
+    })
+
+    fields.push({
+      name: 'gradientDirection',
+      type: 'select',
+      defaultValue: 'down',
+      dbName: 'bg_grad_dir',
+      label: 'Direction',
+      admin: {
+        condition: (_, siblingData) => siblingData?.background === 'gradient',
+      },
+      options: [
+        { label: 'Down', value: 'down' },
+        { label: 'Right', value: 'right' },
       ],
     })
 

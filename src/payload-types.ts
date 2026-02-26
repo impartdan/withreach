@@ -312,7 +312,7 @@ export interface HomeHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -334,6 +334,49 @@ export interface HomeHeroBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -721,7 +764,7 @@ export interface PlatformHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -743,6 +786,49 @@ export interface PlatformHeroBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -799,7 +885,7 @@ export interface SolutionsHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -821,6 +907,49 @@ export interface SolutionsHeroBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -873,7 +1002,7 @@ export interface PartnerHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -895,6 +1024,49 @@ export interface PartnerHeroBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -966,7 +1138,7 @@ export interface TextHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -988,6 +1160,49 @@ export interface TextHeroBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1057,7 +1272,7 @@ export interface SupportHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1079,6 +1294,49 @@ export interface SupportHeroBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1136,7 +1394,7 @@ export interface ContentBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1158,6 +1416,49 @@ export interface ContentBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1188,7 +1489,7 @@ export interface ImageBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1210,6 +1511,49 @@ export interface ImageBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1260,7 +1604,7 @@ export interface VideoBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1282,6 +1626,49 @@ export interface VideoBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1318,7 +1705,7 @@ export interface IntegrationsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1340,6 +1727,49 @@ export interface IntegrationsBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1453,7 +1883,7 @@ export interface LogoListBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1475,6 +1905,49 @@ export interface LogoListBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1518,7 +1991,7 @@ export interface HubspotFormBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1540,6 +2013,49 @@ export interface HubspotFormBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1572,7 +2088,7 @@ export interface StatsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1594,6 +2110,49 @@ export interface StatsBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1678,7 +2237,7 @@ export interface TextImageFeatureBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1700,6 +2259,49 @@ export interface TextImageFeatureBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1784,7 +2386,7 @@ export interface InsetDualImageBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1806,6 +2408,49 @@ export interface InsetDualImageBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1887,7 +2532,7 @@ export interface InsetCopyImageBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1909,6 +2554,49 @@ export interface InsetCopyImageBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -1966,7 +2654,7 @@ export interface StatsTextBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -1988,6 +2676,49 @@ export interface StatsTextBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2066,7 +2797,7 @@ export interface PageTeaserBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2088,6 +2819,49 @@ export interface PageTeaserBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2166,7 +2940,7 @@ export interface DiagramBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2188,6 +2962,49 @@ export interface DiagramBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2268,7 +3085,7 @@ export interface TrioTallImageCardsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2290,6 +3107,49 @@ export interface TrioTallImageCardsBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2388,7 +3248,7 @@ export interface TrioShortImageCardsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2410,6 +3270,49 @@ export interface TrioShortImageCardsBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2489,7 +3392,7 @@ export interface TrioTextOnlyCardsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2511,6 +3414,49 @@ export interface TrioTextOnlyCardsBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2586,7 +3532,7 @@ export interface TestimonialBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2608,6 +3554,49 @@ export interface TestimonialBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2660,7 +3649,7 @@ export interface ItemHighlightsBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2682,6 +3671,49 @@ export interface ItemHighlightsBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2737,7 +3769,7 @@ export interface FaqCenterBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2759,6 +3791,49 @@ export interface FaqCenterBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2825,7 +3900,7 @@ export interface FaqToCallBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2847,6 +3922,49 @@ export interface FaqToCallBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2894,7 +4012,7 @@ export interface ChecklistBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2916,6 +4034,49 @@ export interface ChecklistBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -2972,7 +4133,7 @@ export interface ImageLeftTextRightBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -2994,6 +4155,49 @@ export interface ImageLeftTextRightBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3050,7 +4254,7 @@ export interface SimpleContentBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3072,6 +4276,49 @@ export interface SimpleContentBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3131,7 +4378,7 @@ export interface IndentedContentBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3153,6 +4400,49 @@ export interface IndentedContentBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3210,7 +4500,7 @@ export interface ConsListBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3232,6 +4522,49 @@ export interface ConsListBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3307,7 +4640,7 @@ export interface CtaLargeBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3329,6 +4662,49 @@ export interface CtaLargeBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3398,7 +4774,7 @@ export interface CtaSmallBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3420,6 +4796,49 @@ export interface CtaSmallBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3466,7 +4885,7 @@ export interface DisclaimerBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3488,6 +4907,49 @@ export interface DisclaimerBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3564,7 +5026,7 @@ export interface FiftyFiftyBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3586,6 +5048,49 @@ export interface FiftyFiftyBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3663,7 +5168,7 @@ export interface ItemHighlightsWithIntroBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3685,6 +5190,49 @@ export interface ItemHighlightsWithIntroBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3726,7 +5274,7 @@ export interface PeopleIndexBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3748,6 +5296,49 @@ export interface PeopleIndexBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3828,7 +5419,7 @@ export interface CardGridBlock {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3850,6 +5441,49 @@ export interface CardGridBlock {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -3903,7 +5537,7 @@ export interface FormBlock2Type {
   blockSettings?: {
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
-    background?: ('none' | 'color' | 'image' | 'video') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
           | 'brand-off-white'
@@ -3925,6 +5559,49 @@ export interface FormBlock2Type {
           | 'background'
         )
       | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
@@ -4511,6 +6188,9 @@ export interface HomeHeroBlockSelect<T extends boolean = true> {
     | {
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4547,6 +6227,9 @@ export interface PlatformHeroBlockSelect<T extends boolean = true> {
     | {
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4569,6 +6252,9 @@ export interface SolutionsHeroBlockSelect<T extends boolean = true> {
     | {
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4601,6 +6287,9 @@ export interface PartnerHeroBlockSelect<T extends boolean = true> {
     | {
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4639,6 +6328,9 @@ export interface TextHeroBlockSelect<T extends boolean = true> {
     | {
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4675,6 +6367,9 @@ export interface SupportHeroBlockSelect<T extends boolean = true> {
     | {
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4699,6 +6394,9 @@ export interface ContentBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4723,6 +6421,9 @@ export interface ImageBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4752,6 +6453,9 @@ export interface VideoBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4776,6 +6480,9 @@ export interface IntegrationsBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4806,6 +6513,9 @@ export interface LogoListBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4831,6 +6541,9 @@ export interface HubspotFormBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4854,6 +6567,9 @@ export interface StatsBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4908,6 +6624,9 @@ export interface TextImageFeatureBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4952,6 +6671,9 @@ export interface InsetDualImageBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -4996,6 +6718,9 @@ export interface InsetCopyImageBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5026,6 +6751,9 @@ export interface StatsTextBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5065,6 +6793,9 @@ export interface PageTeaserBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5104,6 +6835,9 @@ export interface DiagramBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5150,6 +6884,9 @@ export interface TrioTallImageCardsBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5204,6 +6941,9 @@ export interface TrioShortImageCardsBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5243,6 +6983,9 @@ export interface TrioTextOnlyCardsBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5284,6 +7027,9 @@ export interface TestimonialBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5315,6 +7061,9 @@ export interface ItemHighlightsBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5346,6 +7095,9 @@ export interface FaqCenterBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5377,6 +7129,9 @@ export interface FaqToCallBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5406,6 +7161,9 @@ export interface ChecklistBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5441,6 +7199,9 @@ export interface ImageLeftTextRightBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5476,6 +7237,9 @@ export interface SimpleContentBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5506,6 +7270,9 @@ export interface IndentedContentBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5536,6 +7303,9 @@ export interface ConsListBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5575,6 +7345,9 @@ export interface CtaLargeBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5613,6 +7386,9 @@ export interface CtaSmallBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5636,6 +7412,9 @@ export interface DisclaimerBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5676,6 +7455,9 @@ export interface FiftyFiftyBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5716,6 +7498,9 @@ export interface ItemHighlightsWithIntroBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5747,6 +7532,9 @@ export interface PeopleIndexBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5785,6 +7573,9 @@ export interface CardGridBlockSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
@@ -5809,6 +7600,9 @@ export interface FormBlock2TypeSelect<T extends boolean = true> {
         paddingBottom?: T;
         background?: T;
         backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
         backgroundVideo?: T;
