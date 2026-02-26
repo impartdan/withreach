@@ -13,10 +13,6 @@ import { getMediaUrl } from '@/utilities/getMediaUrl'
 
 const { breakpoints } = cssVariables
 
-// A solid linen-colored placeholder (bg-brand-linen #EEECE6) while the image is loading
-const placeholderBlur =
-  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNFRUVDRTYiLz48L3N2Zz4='
-
 export const ImageMedia: React.FC<MediaProps> = (props) => {
   const {
     alt: altFromProps,
@@ -66,8 +62,6 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         className={cn(imgClassName)}
         fill={useFill}
         height={!useFill ? height : undefined}
-        placeholder="blur"
-        blurDataURL={placeholderBlur}
         priority={priority}
         quality={100}
         loading={loading}
