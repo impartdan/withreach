@@ -20,20 +20,18 @@ export const ItemHighlightsBlock: React.FC<ItemHighlightsBlockProps> = ({
       {Array.isArray(items) && items.length > 0 && (
         <div className={`grid grid-cols-1 md:grid-cols-2 ${gridCols} gap-8 md:gap-10`}>
           {items.map((item, index) => (
-            <div key={index} className="flex flex-col gap-3">
+            <div key={index} className="flex flex-col gap-4">
               {item.icon && typeof item.icon !== 'string' && (
-                <div className="w-10 h-10 mb-1">
-                  <Media resource={item.icon} imgClassName="w-full h-full object-contain" />
+                <div className="relative w-10 h-10">
+                  <Media
+                    resource={item.icon}
+                    pictureClassName="block w-full h-full"
+                    imgClassName="object-contain"
+                  />
                 </div>
               )}
-              {item.title && (
-                <h3 className="text-base md:text-lg font-semibold text-brand-black">
-                  {item.title}
-                </h3>
-              )}
-              {item.description && (
-                <p className="text-sm text-brand-black/70 leading-[1.5]">{item.description}</p>
-              )}
+              {item.title && <h3 className="type-display-xs">{item.title}</h3>}
+              {item.description && <p className=" type-micro">{item.description}</p>}
             </div>
           ))}
         </div>
