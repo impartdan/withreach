@@ -17,6 +17,12 @@
   h6:not([class^='type-']) {
     @apply type-intro;
   }
+  p:not([class^='type-']) {
+    @apply type-body;
+  }
+  li:not([class^='type-']) {
+    @apply type-body;
+  }
 
   b,
   strong {

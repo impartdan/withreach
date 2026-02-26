@@ -16,8 +16,12 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
 
       payload.logger.info(`Revalidating page at path: ${path}`)
 
-      revalidatePath(path)
-      revalidateTag('pages-sitemap')
+      try {
+        revalidatePath(path)
+        revalidateTag('pages-sitemap')
+      } catch (_err) {
+        // revalidatePath requires Next.js request context; skip when running outside (e.g. scripts)
+      }
     }
 
     // If the page was previously published, we need to revalidate the old path
@@ -26,8 +30,12 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
 
       payload.logger.info(`Revalidating old page at path: ${oldPath}`)
 
-      revalidatePath(oldPath)
-      revalidateTag('pages-sitemap')
+      try {
+        revalidatePath(oldPath)
+        revalidateTag('pages-sitemap')
+      } catch (_err) {
+        // revalidatePath requires Next.js request context; skip when running outside (e.g. scripts)
+      }
     }
   }
   return doc
@@ -36,8 +44,12 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
 export const revalidateDelete: CollectionAfterDeleteHook<Page> = ({ doc, req: { context } }) => {
   if (!context.disableRevalidate) {
     const path = getPagePath(doc)
-    revalidatePath(path)
-    revalidateTag('pages-sitemap')
+    try {
+      revalidatePath(path)
+      revalidateTag('pages-sitemap')
+    } catch (_err) {
+      // revalidatePath requires Next.js request context; skip when running outside (e.g. scripts)
+    }
   }
 
   return doc

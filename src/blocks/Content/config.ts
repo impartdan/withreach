@@ -63,7 +63,7 @@ export const Content: Block = {
               name: 'alignment',
               type: 'select',
               defaultValue: 'left',
-              label: 'Text Alignment',
+              label: 'Block Alignment',
               options: [
                 { label: 'Left', value: 'left' },
                 { label: 'Center', value: 'center' },

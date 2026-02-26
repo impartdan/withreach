@@ -20,8 +20,13 @@ const collectionPathMap: Record<string, string> = {
   'case-studies': '/resources/case-studies',
 }
 
-const generateTitle: GenerateTitle<Post | Page | CaseStudy> = ({ doc }) => {
-  return doc?.title ? `${doc.title} | Reach` : 'Reach'
+const generateTitle: GenerateTitle<Post | Page | CaseStudy> = ({ doc, collectionConfig }) => {
+  if (!doc?.title) return 'Reach'
+  const collectionSlug = collectionConfig?.slug
+  if (collectionSlug === 'posts' || collectionSlug === 'case-studies') {
+    return `${doc.title} | Merchant of Record | Reach`
+  }
+  return `${doc.title} | Reach`
 }
 
 const generateURL: GenerateURL<Post | Page | CaseStudy> = ({ doc, collectionConfig }) => {

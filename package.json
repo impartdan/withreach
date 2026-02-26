@@ -23,6 +23,8 @@
     "seed:content": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/import-content.ts",
     "seed:integrations": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/seed-integrations.ts",
     "seed:integration-logos": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/upload-integration-logos.ts",
+    "seed:company-page": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/seed-company-page.ts",
+    "update:seo": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/update-seo-meta.ts",
     "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
     "migrate:create": "cross-env NODE_OPTIONS=--no-deprecation payload migrate:create"
   },
