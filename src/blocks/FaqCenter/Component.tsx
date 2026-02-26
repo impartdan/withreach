@@ -21,7 +21,7 @@ export const FaqCenterBlock: React.FC<FaqCenterBlockProps> = ({
             {label && <p className="type-eyebrow mb-3">{label}</p>}
             {heading && (
               <h2
-                className="type-display-md mb-4 [&_span]:text-brand-gray"
+                className="type-display-md mb-4 [&_span]:text-brand-olive"
                 dangerouslySetInnerHTML={{ __html: heading }}
               />
             )}
@@ -32,26 +32,21 @@ export const FaqCenterBlock: React.FC<FaqCenterBlockProps> = ({
           {Array.isArray(faqs) && faqs.length > 0 && (
             <div className="max-w-3xl mx-auto divide-y divide-white/20">
               {faqs.map((faq, index) => (
-                <div key={index} className="py-5">
+                <div key={index} className="py-6">
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                     className="flex items-center justify-between w-full text-left gap-4"
                   >
-                    <span className="text-lg md:text-xl text-white font-medium">
-                      {faq.question}
-                    </span>
-                    <span className="text-white/60 text-2xl shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-white/20">
+                    <span className="type-display-xs text-white">{faq.question}</span>
+                    <span
+                      className={`text-white/60 text-2xl shrink-0 w-8 h-8 flex items-center justify-center rounded-[5px] border border-white/20 ${openIndex === index ? 'bg-transparent' : 'bg-[#2D2823] hover:bg-transparent'}`}
+                    >
                       {openIndex === index ? '−' : '+'}
                     </span>
                   </button>
                   {openIndex === index && faq.answer && (
                     <div className="mt-3">
-                      <RichText
-                        className="text-sm md:text-base text-white/70 leading-[1.6] [&>p]:mb-0"
-                        data={faq.answer}
-                        enableGutter={false}
-                        enableProse={false}
-                      />
+                      <RichText data={faq.answer} enableGutter={false} enableProse={true} />
                     </div>
                   )}
                 </div>
