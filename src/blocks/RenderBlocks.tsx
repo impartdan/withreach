@@ -36,6 +36,7 @@ import { FiftyFiftyBlock } from '@/blocks/FiftyFifty/Component'
 import { ItemHighlightsWithIntroBlock } from '@/blocks/ItemHighlightsWithIntro/Component'
 import { PeopleIndexBlock } from '@/blocks/PeopleIndex/Component'
 import { SupportIndexBlock } from '@/blocks/SupportIndex/Component'
+import { CardGridBlock } from '@/blocks/CardGrid/Component'
 import { FormBlock2Component } from '@/blocks/FormBlock2/Component'
 import { BlockWrapper } from '@/blocks/BlockWrapper'
 
@@ -74,6 +75,7 @@ const blockComponents = {
   itemHighlightsWithIntro: ItemHighlightsWithIntroBlock,
   peopleIndex: PeopleIndexBlock,
   supportIndex: SupportIndexBlock,
+  cardGrid: CardGridBlock,
   formBlock2: FormBlock2Component,
 }
 

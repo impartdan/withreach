@@ -3,14 +3,16 @@ import React from 'react'
 
 import type { TextHeroBlock as TextHeroBlockType } from '@/payload-types'
 
+import { cn } from '@/utilities/ui'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 
-export const TextHero: React.FC<TextHeroBlockType> = ({ richText, links, logoOne, logoTwo }) => {
+export const TextHero: React.FC<TextHeroBlockType> = ({ richText, links, logoOne, logoTwo, alignment }) => {
   return (
     <div className="w-full header-offset">
-      <div className="container flex flex-col items-center gap-10 py-20 max-w-[908px]">
+      <div className="container py-20">
+        <div className={cn('flex flex-col items-center gap-10 max-w-[908px]', alignment !== 'left' && 'mx-auto')}>
         {/* Optional logos */}
         {(logoOne || logoTwo) && (
           <div className="flex items-center gap-6">
@@ -45,6 +47,7 @@ export const TextHero: React.FC<TextHeroBlockType> = ({ richText, links, logoOne
             ))}
           </ul>
         )}
+        </div>
       </div>
     </div>
   )

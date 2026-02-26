@@ -36,6 +36,7 @@ import { FiftyFifty } from '../../blocks/FiftyFifty/config'
 import { ItemHighlightsWithIntro } from '../../blocks/ItemHighlightsWithIntro/config'
 import { PeopleIndex } from '../../blocks/PeopleIndex/config'
 import { SupportIndex } from '../../blocks/SupportIndex/config'
+import { CardGrid } from '../../blocks/CardGrid/config'
 import { FormBlock2 } from '../../blocks/FormBlock2/config'
 import { createParentField, createBreadcrumbsField } from '@payloadcms/plugin-nested-docs'
 import { heroBlocks } from '@/heros/config'
@@ -154,6 +155,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 ItemHighlightsWithIntro,
                 PeopleIndex,
                 SupportIndex,
+                CardGrid,
                 FormBlock2,
               ],
               required: false,

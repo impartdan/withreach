@@ -219,6 +219,16 @@ export const TextHeroBlock: Block = {
               label: 'Logo Two',
               relationTo: 'media',
             },
+            {
+              name: 'alignment',
+              type: 'select',
+              defaultValue: 'center',
+              label: 'Block Alignment',
+              options: [
+                { label: 'Left', value: 'left' },
+                { label: 'Center', value: 'center' },
+              ],
+            },
           ],
         },
         {

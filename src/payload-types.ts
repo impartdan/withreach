@@ -87,9 +87,9 @@ export interface Config {
   blocks: {};
   collections: {
     pages: Page;
+    integrations: Integration;
     posts: Post;
     'case-studies': CaseStudy;
-    integrations: Integration;
     categories: Category;
     'case-study-categories': CaseStudyCategory;
     'integration-categories': IntegrationCategory;
@@ -113,9 +113,9 @@ export interface Config {
   };
   collectionsSelect: {
     pages: PagesSelect<false> | PagesSelect<true>;
+    integrations: IntegrationsSelect<false> | IntegrationsSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
     'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
-    integrations: IntegrationsSelect<false> | IntegrationsSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     'case-study-categories': CaseStudyCategoriesSelect<false> | CaseStudyCategoriesSelect<true>;
     'integration-categories': IntegrationCategoriesSelect<false> | IntegrationCategoriesSelect<true>;
@@ -227,6 +227,7 @@ export interface Page {
         | ItemHighlightsWithIntroBlock
         | PeopleIndexBlock
         | SupportIndexBlock
+        | CardGridBlock
         | FormBlock2Type
       )[]
     | null;
@@ -963,6 +964,7 @@ export interface TextHeroBlock {
     | null;
   logoOne?: (number | null) | Media;
   logoTwo?: (number | null) | Media;
+  alignment?: ('left' | 'center') | null;
   /**
    * Configure appearance settings for this block
    */
@@ -4150,6 +4152,108 @@ export interface SupportIndexBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CardGridBlock".
+ */
+export interface CardGridBlock {
+  /**
+   * Optional section heading displayed above the cards
+   */
+  title?: string | null;
+  cards?:
+    | {
+        /**
+         * Card title
+         */
+        title: string;
+        /**
+         * Optional card description
+         */
+        description?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        /**
+         * Optional link for this card
+         */
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
+              } | null);
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    background?: ('none' | 'color' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'cardGrid';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FormBlock2Type".
  */
 export interface FormBlock2Type {
@@ -4422,16 +4526,16 @@ export interface PayloadLockedDocument {
         value: number | Page;
       } | null)
     | ({
+        relationTo: 'integrations';
+        value: number | Integration;
+      } | null)
+    | ({
         relationTo: 'posts';
         value: number | Post;
       } | null)
     | ({
         relationTo: 'case-studies';
         value: number | CaseStudy;
-      } | null)
-    | ({
-        relationTo: 'integrations';
-        value: number | Integration;
       } | null)
     | ({
         relationTo: 'categories';
@@ -4568,6 +4672,7 @@ export interface PagesSelect<T extends boolean = true> {
         itemHighlightsWithIntro?: T | ItemHighlightsWithIntroBlockSelect<T>;
         peopleIndex?: T | PeopleIndexBlockSelect<T>;
         supportIndex?: T | SupportIndexBlockSelect<T>;
+        cardGrid?: T | CardGridBlockSelect<T>;
         formBlock2?: T | FormBlock2TypeSelect<T>;
       };
   meta?:
@@ -4743,6 +4848,7 @@ export interface TextHeroBlockSelect<T extends boolean = true> {
       };
   logoOne?: T;
   logoTwo?: T;
+  alignment?: T;
   blockSettings?:
     | T
     | {
@@ -5944,6 +6050,44 @@ export interface SupportIndexBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CardGridBlock_select".
+ */
+export interface CardGridBlockSelect<T extends boolean = true> {
+  title?: T;
+  cards?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        background?: T;
+        backgroundColor?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FormBlock2Type_select".
  */
 export interface FormBlock2TypeSelect<T extends boolean = true> {
@@ -5965,6 +6109,23 @@ export interface FormBlock2TypeSelect<T extends boolean = true> {
       };
   id?: T;
   blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "integrations_select".
+ */
+export interface IntegrationsSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  logo?: T;
+  icon?: T;
+  body?: T;
+  features?: T;
+  category?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -6035,23 +6196,6 @@ export interface CaseStudiesSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "integrations_select".
- */
-export interface IntegrationsSelect<T extends boolean = true> {
-  title?: T;
-  description?: T;
-  logo?: T;
-  icon?: T;
-  body?: T;
-  features?: T;
-  category?: T;
-  generateSlug?: T;
-  slug?: T;
-  updatedAt?: T;
-  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

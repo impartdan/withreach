@@ -68,7 +68,7 @@ export default buildConfig({
     },
     push: process.env.NODE_ENV === 'development',
   }),
-  collections: [Pages, Posts, CaseStudies, Integrations, Categories, CaseStudyCategories, IntegrationCategories, Media, Users],
+  collections: [Pages, Integrations, Posts, CaseStudies, Categories, CaseStudyCategories, IntegrationCategories, Media, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, NewsSettings, CaseStudiesSettings],
   email: resendAdapter({
