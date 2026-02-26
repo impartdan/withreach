@@ -15,10 +15,12 @@ export const PageTeaserBlock: React.FC<PageTeaserBlockProps> = ({
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16 py-16 md:py-20">
           {/* Text Content */}
           <div className="flex flex-col gap-6 flex-1 items-start text-left">
-            {heading && <h2 className="type-display-md text-white">{heading}</h2>}
-
-            {content && <p className="type-display-md text-brand-olive">{content}</p>}
-
+            {(heading || content) && (
+              <div>
+                {heading && <h2 className="type-display-md text-white">{heading}</h2>}
+                {content && <p className="type-display-md text-brand-olive">{content}</p>}
+              </div>
+            )}
             {Array.isArray(links) && links.length > 0 && (
               <div className="flex flex-wrap gap-3 mt-2">
                 {links.map(({ link }, i) => {
