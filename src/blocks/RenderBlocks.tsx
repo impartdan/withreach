@@ -93,8 +93,18 @@ export const RenderBlocks: React.FC<{
               // Not all blocks have blockSettings, so we safely access it
               const blockSettings = 'blockSettings' in block ? block.blockSettings : undefined
 
+              const autoBackgroundBlocks = ['diagram', 'insetDualImage']
+              const fallbackBgClass = autoBackgroundBlocks.includes(blockType)
+                ? 'bg-brand-off-white'
+                : undefined
+
               return (
-                <BlockWrapper key={index} blockType={blockType} blockSettings={blockSettings}>
+                <BlockWrapper
+                  key={index}
+                  blockType={blockType}
+                  blockSettings={blockSettings}
+                  fallbackBgClass={fallbackBgClass}
+                >
                   {/* @ts-expect-error there may be some mismatch between the expected types here */}
                   <Block {...block} disableInnerContainer />
                 </BlockWrapper>

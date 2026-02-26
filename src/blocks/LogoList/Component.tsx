@@ -62,37 +62,47 @@ export const LogoListBlock: React.FC<
 
   const titleElement = title ? <p className="text-center type-display-xs mb-6">{title}</p> : null
 
-  // Static single-line layout for 4 or fewer logos
+  // Duration scales with the number of logos for consistent speed
+  const duration = `${logos.length * 4}s`
+
+  const marqueeBlock = (
+    <div className="overflow-hidden">
+      <div
+        className="flex w-max hover:[animation-play-state:paused]"
+        style={{
+          animation: `marquee ${duration} linear infinite`,
+        }}
+      >
+        {/* Render logos twice for seamless loop */}
+        {logos.map((item, index) => renderLogo(item, index))}
+        {logos.map((item, index) => renderLogo(item, `dup-${index}` as unknown as number))}
+      </div>
+    </div>
+  )
+
+  // Static single-line layout for 4 or fewer logos (desktop only)
+  // On mobile, always use the marquee carousel
   if (!shouldAnimate) {
     return (
-      <div className="container max-w-5xl " id={id ? `block-${id}` : undefined}>
-        {titleElement}
-        <div className="flex items-center justify-between gap-4 md:gap-8 lg:gap-20">
-          {logos.map((item, index) => renderLogo(item, index))}
+      <div id={id ? `block-${id}` : undefined}>
+        {titleElement && <div className="container max-w-5xl">{titleElement}</div>}
+        {/* Static layout — desktop only */}
+        <div className="container max-w-5xl hidden md:block">
+          <div className="flex items-center justify-between gap-4 md:gap-8 lg:gap-20">
+            {logos.map((item, index) => renderLogo(item, index))}
+          </div>
         </div>
+        {/* Carousel — mobile only */}
+        <div className="md:hidden">{marqueeBlock}</div>
       </div>
     )
   }
 
-  // Animated marquee for more than 4 logos
-  // Duration scales with the number of logos for consistent speed
-  const duration = `${logos.length * 4}s`
-
+  // Animated marquee for more than 4 logos (all screen sizes)
   return (
     <div className="" id={id ? `block-${id}` : undefined}>
       {titleElement && <div className="container max-w-5xl">{titleElement}</div>}
-      <div className="overflow-hidden">
-        <div
-          className="flex w-max hover:[animation-play-state:paused]"
-          style={{
-            animation: `marquee ${duration} linear infinite`,
-          }}
-        >
-          {/* Render logos twice for seamless loop */}
-          {logos.map((item, index) => renderLogo(item, index))}
-          {logos.map((item, index) => renderLogo(item, `dup-${index}` as unknown as number))}
-        </div>
-      </div>
+      {marqueeBlock}
     </div>
   )
 }
