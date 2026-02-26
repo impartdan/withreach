@@ -1,6 +1,5 @@
 import React from 'react'
 import type { ItemHighlightsBlock as ItemHighlightsBlockProps } from '@/payload-types'
-import RichText from '@/components/RichText'
 import { Media } from '@/components/Media'
 
 export const ItemHighlightsBlock: React.FC<ItemHighlightsBlockProps> = ({
@@ -33,12 +32,7 @@ export const ItemHighlightsBlock: React.FC<ItemHighlightsBlockProps> = ({
                 </h3>
               )}
               {item.description && (
-                <RichText
-                  className="text-sm text-brand-black/70 leading-[1.5] [&>p]:mb-0"
-                  data={item.description}
-                  enableGutter={false}
-                  enableProse={false}
-                />
+                <p className="text-sm text-brand-black/70 leading-[1.5]">{item.description}</p>
               )}
             </div>
           ))}

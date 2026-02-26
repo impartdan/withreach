@@ -1,9 +1,4 @@
 import type { Block } from 'payload'
-import {
-  FixedToolbarFeature,
-  InlineToolbarFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
 import { blockSettings } from '@/fields/blockSettings'
 
 export const ItemHighlights: Block = {
@@ -25,7 +20,6 @@ export const ItemHighlights: Block = {
             {
               name: 'heading',
               type: 'text',
-              required: true,
             },
             {
               name: 'columns',
@@ -59,12 +53,7 @@ export const ItemHighlights: Block = {
                 },
                 {
                   name: 'description',
-                  type: 'richText',
-                  editor: lexicalEditor({
-                    features: ({ rootFeatures }) => {
-                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
-                    },
-                  }),
+                  type: 'text',
                 },
               ],
             },
