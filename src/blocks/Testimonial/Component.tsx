@@ -31,10 +31,10 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
 
   return (
     <div className="container">
-      <div className="relative flex flex-col lg:flex-row lg:items-start gap-0">
+      <div className="relative flex flex-col lg:flex-row lg:items-end gap-5 lg:gap-0 pb-10">
         {/* Video */}
         {hasVideo && (
-          <div className="relative rounded-xl overflow-hidden lg:w-[68%] aspect-video z-0">
+          <div className="relative rounded-xl overflow-hidden lg:w-[68%] aspect-video z-0 ">
             <VideoBlockClient
               embedded
               videoType={videoType ?? undefined}
@@ -47,7 +47,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
         )}
 
         {/* Quote Card */}
-        <div className="bg-brand-off-white rounded-xl p-8 md:p-10 lg:p-12 flex flex-col gap-8 lg:absolute lg:right-0 lg:bottom-0 lg:w-[36%] z-10 -mt-8 lg:mt-0 mx-4 lg:mx-0 shadow-sm">
+        <div className="bg-brand-off-white w-full md:w-auto rounded-xl p-8 md:p-10 lg:p-12 flex flex-col gap-8 -mb-10 pb-10 lg:-translate-x-10 lg:w-[36%] z-10  shadow-sm">
           {companyLogo && typeof companyLogo !== 'string' && (
             <div className="h-6 md:h-8 mb-4">
               <Media resource={companyLogo} imgClassName="h-full w-auto object-contain" />
