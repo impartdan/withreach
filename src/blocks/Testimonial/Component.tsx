@@ -34,7 +34,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
       <div className="relative flex flex-col lg:flex-row lg:items-center gap-0">
         {/* Video */}
         {hasVideo && (
-          <div className="relative rounded-xl overflow-hidden lg:w-[60%] aspect-video z-0">
+          <div className="relative rounded-xl overflow-hidden lg:w-[68%] aspect-video z-0">
             <VideoBlockClient
               embedded
               videoType={videoType ?? undefined}
@@ -47,29 +47,22 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
         )}
 
         {/* Quote Card */}
-        <div className="bg-brand-off-white rounded-xl p-8 md:p-10 lg:p-12 flex flex-col gap-6 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[45%] lg:max-w-[420px] z-10 -mt-8 lg:mt-0 mx-4 lg:mx-0 shadow-sm">
+        <div className="bg-brand-off-white rounded-xl p-8 md:p-10 lg:p-12 flex flex-col gap-8 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[36%] z-10 -mt-8 lg:mt-0 mx-4 lg:mx-0 shadow-sm">
           {companyLogo && typeof companyLogo !== 'string' && (
-            <div className="h-6 md:h-8">
-              <Media
-                resource={companyLogo}
-                imgClassName="h-full w-auto object-contain"
-              />
+            <div className="h-6 md:h-8 mb-4">
+              <Media resource={companyLogo} imgClassName="h-full w-auto object-contain" />
             </div>
           )}
 
           {quote && (
-            <blockquote className="text-xl md:text-2xl lg:text-[28px] font-light font-mix leading-[1.3] text-brand-black">
+            <blockquote className="type-display-sm text-brand-black">
               &ldquo;{quote}&rdquo;
             </blockquote>
           )}
 
           <div>
-            {authorName && (
-              <p className="text-sm font-semibold text-brand-black">{authorName}</p>
-            )}
-            {authorTitle && (
-              <p className="text-sm text-brand-black/60">{authorTitle}</p>
-            )}
+            {authorName && <p className="text-base font-semibold text-brand-black">{authorName}</p>}
+            {authorTitle && <p className="text-base text-brand-black/60">{authorTitle}</p>}
           </div>
 
           {Array.isArray(links) && links.length > 0 && (

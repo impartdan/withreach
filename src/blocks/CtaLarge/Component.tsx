@@ -7,17 +7,13 @@ export const CtaLargeBlock: React.FC<CtaLargeBlockProps> = ({ label, heading, co
   return (
     <div className="container">
       <div className="text-center max-w-3xl mx-auto text-pretty">
-        {label && <p className="text-sm font-semibold text-brand-black mb-4">{label}</p>}
+        {label && <p className=" type-eyebrow  mb-4">{label}</p>}
 
-        {heading && (
-          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black mb-6">
-            {heading}
-          </h2>
-        )}
+        {heading && <h2 className="type-display-lg mb-6">{heading}</h2>}
 
         {content && (
           <RichText
-            className="text-base md:text-lg text-brand-black/70 leading-[1.5] [&>p]:mb-0 mb-8"
+            className="wysiwyg mb-8"
             data={content}
             enableGutter={false}
             enableProse={false}
