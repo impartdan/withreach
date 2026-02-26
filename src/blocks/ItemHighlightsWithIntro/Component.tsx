@@ -32,14 +32,11 @@ export const ItemHighlightsWithIntroBlock: React.FC<ItemHighlightsWithIntroBlock
                 <div key={index} className="flex flex-col gap-4">
                   {item.icon && typeof item.icon !== 'string' && (
                     <div className="w-10 h-10 mb-1">
-                      <Media
-                        resource={item.icon}
-                        imgClassName="w-full h-full object-contain"
-                      />
+                      <Media resource={item.icon} imgClassName="w-full h-full object-contain" />
                     </div>
                   )}
                   {item.title && (
-                    <h3 className="text-base md:text-lg font-semibold text-brand-gold">
+                    <h3 className="text-base md:text-lg font-semibold text-brand-olive">
                       {item.title}
                     </h3>
                   )}

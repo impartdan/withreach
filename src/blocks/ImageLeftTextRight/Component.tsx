@@ -36,10 +36,7 @@ export const ImageLeftTextRightBlock: React.FC<ImageLeftTextRightBlockProps> = (
                       key={index}
                       className={`absolute rounded-lg overflow-hidden shadow-lg ${positionClasses[index] || ''}`}
                     >
-                      <Media
-                        resource={item.image}
-                        imgClassName="object-cover w-full h-full"
-                      />
+                      <Media resource={item.image} imgClassName="object-cover w-full h-full" />
                     </div>
                   )
                 })}
@@ -52,7 +49,7 @@ export const ImageLeftTextRightBlock: React.FC<ImageLeftTextRightBlockProps> = (
                 items.map((item, index) => (
                   <div key={index} className="flex flex-col gap-2">
                     {item.title && (
-                      <h3 className="text-lg md:text-xl font-light font-mix italic text-brand-gold">
+                      <h3 className="text-lg md:text-xl font-light font-mix italic text-brand-olive">
                         {item.title}
                       </h3>
                     )}

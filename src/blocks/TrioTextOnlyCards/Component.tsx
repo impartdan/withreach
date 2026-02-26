@@ -24,7 +24,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({ 
                   <div>
                     {card.subtitle && (
                       <span
-                        className={`text-2xl md:text-3xl font-light font-mix leading-[1.2] block ${isDark ? 'text-brand-gold' : 'text-brand-gold'}`}
+                        className={`text-2xl md:text-3xl font-light font-mix leading-[1.2] block ${isDark ? 'text-brand-olive' : 'text-brand-olive'}`}
                       >
                         {card.subtitle}
                       </span>

@@ -17,7 +17,7 @@ export const PageTeaserBlock: React.FC<PageTeaserBlockProps> = ({
           <div className="flex flex-col gap-6 flex-1 items-start text-left">
             {heading && <h2 className="type-display-md text-white">{heading}</h2>}
 
-            {content && <p className="type-display-md text-brand-gold">{content}</p>}
+            {content && <p className="type-display-md text-brand-olive">{content}</p>}
 
             {Array.isArray(links) && links.length > 0 && (
               <div className="flex flex-wrap gap-3 mt-2">

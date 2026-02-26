@@ -20,7 +20,7 @@ export const ConsListBlock: React.FC<ConsListBlockProps> = ({
         {/* Cons Column */}
         <div className="bg-brand-off-white rounded-xl p-8 md:p-10">
           {consHeading && (
-            <h3 className="text-lg md:text-xl font-light font-mix text-brand-gold mb-6">
+            <h3 className="text-lg md:text-xl font-light font-mix text-brand-olive mb-6">
               {consHeading}
             </h3>
           )}
