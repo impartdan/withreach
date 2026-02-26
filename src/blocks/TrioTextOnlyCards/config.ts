@@ -5,6 +5,7 @@ import {
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 import { link } from '@/fields/link'
+import { linkGroup } from '@/fields/linkGroup'
 import { blockSettings } from '@/fields/blockSettings'
 
 export const TrioTextOnlyCards: Block = {
@@ -24,6 +25,28 @@ export const TrioTextOnlyCards: Block = {
         {
           label: 'Content',
           fields: [
+            {
+              name: 'introduction',
+              type: 'richText',
+              label: 'Introduction',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                },
+              }),
+            },
+            linkGroup({
+              appearances: ['default', 'outline'],
+              overrides: {
+                maxRows: 2,
+              },
+            }),
+            {
+              name: 'image',
+              type: 'upload',
+              label: 'Image',
+              relationTo: 'media',
+            },
             {
               name: 'cards',
               type: 'array',

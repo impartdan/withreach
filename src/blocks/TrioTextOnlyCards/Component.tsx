@@ -2,10 +2,49 @@ import React from 'react'
 import type { TrioTextOnlyCardsBlock as TrioTextOnlyCardsBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
+import { Media } from '@/components/Media'
 
-export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({ cards }) => {
+export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
+  introduction,
+  links,
+  image,
+  cards,
+}) => {
+  const hasHeader = introduction || (Array.isArray(links) && links.length > 0) || image
+
   return (
     <div className="container">
+      {hasHeader && (
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16 mb-12 md:mb-16 lg:mb-20">
+          <div className="flex flex-col gap-6 flex-1">
+            {introduction && (
+              <RichText
+                data={introduction}
+                enableGutter={false}
+                enableProse={false}
+              />
+            )}
+
+            {Array.isArray(links) && links.length > 0 && (
+              <div className="flex flex-wrap gap-3">
+                {links.map(({ link }, i) => (
+                  <CMSLink key={i} size="default" {...link} />
+                ))}
+              </div>
+            )}
+          </div>
+
+          {image && typeof image !== 'string' && (
+            <div className="flex-1 relative">
+              <Media
+                resource={image}
+                imgClassName="w-full h-full object-cover"
+              />
+            </div>
+          )}
+        </div>
+      )}
+
       {Array.isArray(cards) && cards.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, index) => {
