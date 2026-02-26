@@ -21,7 +21,7 @@ export const LogoListBlock: React.FC<
     if (!logo) return null
 
     const logoElement = (
-      <div className="relative shrink-0 aspect-[200/75] w-[180px]">
+      <div className="relative shrink-0 aspect-[200/75] w-[120px] md:w-[180px]">
         {logo.mimeType === 'image/svg+xml' ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -68,7 +68,7 @@ export const LogoListBlock: React.FC<
   const marqueeBlock = (
     <div className="overflow-hidden">
       <div
-        className="flex w-max hover:[animation-play-state:paused]"
+        className="flex w-max gap-12 hover:[animation-play-state:paused]"
         style={{
           animation: `marquee ${duration} linear infinite`,
         }}
