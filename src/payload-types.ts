@@ -3368,7 +3368,7 @@ export interface TrioTextOnlyCardsBlock {
     /**
      * Card heading (e.g. "Keep your roadmap")
      */
-    title: string;
+    title?: string | null;
     /**
      * Highlighted subtitle text (shown in gold/accent color)
      */

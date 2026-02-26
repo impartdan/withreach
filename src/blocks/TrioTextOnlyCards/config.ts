@@ -58,7 +58,6 @@ export const TrioTextOnlyCards: Block = {
                 {
                   name: 'title',
                   type: 'text',
-                  required: true,
                   admin: {
                     description: 'Card heading (e.g. "Keep your roadmap")',
                   },
