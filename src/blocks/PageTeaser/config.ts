@@ -1,10 +1,4 @@
 import type { Block } from 'payload'
-import {
-  FixedToolbarFeature,
-  HeadingFeature,
-  InlineToolbarFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
 import { linkGroup } from '@/fields/linkGroup'
 import { blockSettings } from '@/fields/blockSettings'
 
@@ -34,17 +28,7 @@ export const PageTeaser: Block = {
             },
             {
               name: 'content',
-              type: 'richText',
-              editor: lexicalEditor({
-                features: ({ rootFeatures }) => {
-                  return [
-                    ...rootFeatures,
-                    HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
-                    FixedToolbarFeature(),
-                    InlineToolbarFeature(),
-                  ]
-                },
-              }),
+              type: 'textarea',
               label: 'Description',
             },
             linkGroup({
