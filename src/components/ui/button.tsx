@@ -32,8 +32,8 @@ const buttonVariants = cva(
           'border-2 border-brand-off-white bg-transparent text-brand-off-white hover:border-brand-black hover:text-brand-black',
         secondary:
           'bg-brand-gray text-brand-off-white hover:bg-brand-black hover:text-brand-off-white',
-        arrow: 'bg-transparent border-transparent gap-4',
-        'arrow-invert': 'bg-transparent border-transparent gap-4',
+        arrow: ' text-brand-off-white bg-transparent border-transparent gap-4',
+        'arrow-invert': ' text-brand-black bg-transparent border-transparent gap-4',
       },
     },
   },
