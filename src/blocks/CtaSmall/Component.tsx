@@ -51,8 +51,7 @@ function resolveCardBackground(card: Card) {
   return { bgColorClass, gradientStyle, bgImage, bgPositionClass }
 }
 
-export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ logo, cards }) => {
-  const logoResource = logo && typeof logo === 'object' ? logo : null
+export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
   return (
     <div className="container">
       {Array.isArray(cards) && cards.length > 0 && (
@@ -62,6 +61,7 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ logo, cards }) => 
           {cards.map((card, index) => {
             const { bgColorClass, gradientStyle, bgImage, bgPositionClass } =
               resolveCardBackground(card)
+            const logoResource = card.logo && typeof card.logo === 'object' ? card.logo : null
 
             return (
               <div

@@ -5078,9 +5078,9 @@ export interface CtaLargeBlock {
  * via the `definition` "CtaSmallBlock".
  */
 export interface CtaSmallBlock {
-  logo?: (number | null) | Media;
   cards: {
-    heading: string;
+    logo?: (number | null) | Media;
+    heading?: string | null;
     description?: {
       root: {
         type: string;
@@ -5096,6 +5096,9 @@ export interface CtaSmallBlock {
       };
       [k: string]: unknown;
     } | null;
+    /**
+     * Optional link for this card
+     */
     link: {
       type?: ('reference' | 'custom') | null;
       newTab?: boolean | null;
@@ -7906,10 +7909,10 @@ export interface CtaLargeBlockSelect<T extends boolean = true> {
  * via the `definition` "CtaSmallBlock_select".
  */
 export interface CtaSmallBlockSelect<T extends boolean = true> {
-  logo?: T;
   cards?:
     | T
     | {
+        logo?: T;
         heading?: T;
         description?: T;
         link?:

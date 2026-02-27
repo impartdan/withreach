@@ -24,13 +24,6 @@ export const CtaSmall: Block = {
           label: 'Content',
           fields: [
             {
-              name: 'logo',
-              type: 'upload',
-              relationTo: 'media',
-              label: 'Logo',
-              required: false,
-            },
-            {
               name: 'cards',
               type: 'array',
               label: 'CTA Cards',
@@ -39,9 +32,14 @@ export const CtaSmall: Block = {
               required: true,
               fields: [
                 {
+                  name: 'logo',
+                  type: 'upload',
+                  relationTo: 'media',
+                  label: 'Logo',
+                },
+                {
                   name: 'heading',
                   type: 'text',
-                  required: true,
                 },
                 {
                   name: 'description',
@@ -54,6 +52,11 @@ export const CtaSmall: Block = {
                 },
                 link({
                   appearances: ['default', 'outline', 'arrow'],
+                  overrides: {
+                    admin: {
+                      description: 'Optional link for this card',
+                    },
+                  },
                 }),
                 {
                   name: 'background',
