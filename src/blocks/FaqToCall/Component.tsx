@@ -19,14 +19,15 @@ export const FaqToCallBlock: React.FC<FaqToCallBlockProps> = ({
         {/* Left side: Heading + Description + Image */}
         <div className="flex flex-col gap-8 lg:max-w-[440px] shrink-0">
           {heading && (
-            <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
-              {heading}
-            </h2>
+            <h2
+              className=" type-display-lg [&_span]:text-brand-olive"
+              dangerouslySetInnerHTML={{ __html: heading }}
+            />
           )}
 
           {content && (
             <RichText
-              className="text-base md:text-lg text-brand-black/70 leading-[1.5] [&>p]:mb-0"
+              className="`wysiwyg`"
               data={content}
               enableGutter={false}
               enableProse={false}
@@ -50,17 +51,17 @@ export const FaqToCallBlock: React.FC<FaqToCallBlockProps> = ({
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                     className="flex items-center justify-between w-full text-left gap-4"
                   >
-                    <span className="text-lg md:text-xl text-brand-black font-medium">
-                      {faq.question}
-                    </span>
-                    <span className="text-brand-black/40 text-2xl shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-border">
+                    <span className="type-display-xs">{faq.question}</span>
+                    <span
+                      className={`text-brand-black/60 text-2xl shrink-0 w-8 h-8 flex items-center justify-center rounded-[5px] border border-brand-black/20 ${openIndex === index ? 'bg-transparent' : ' hover:bg-transparent'}`}
+                    >
                       {openIndex === index ? '−' : '+'}
                     </span>
                   </button>
                   {openIndex === index && faq.answer && (
                     <div className="mt-3">
                       <RichText
-                        className="text-sm md:text-base text-brand-black/70 leading-[1.6] [&>p]:mb-0"
+                        className="wysiwyg type-micro-b"
                         data={faq.answer}
                         enableGutter={false}
                         enableProse={false}

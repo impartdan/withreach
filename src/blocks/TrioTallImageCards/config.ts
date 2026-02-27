@@ -27,7 +27,6 @@ export const TrioTallImageCards: Block = {
             {
               name: 'heading',
               type: 'text',
-              required: true,
             },
             linkGroup({
               appearances: ['default', 'outline'],
@@ -47,12 +46,10 @@ export const TrioTallImageCards: Block = {
                   name: 'image',
                   type: 'upload',
                   relationTo: 'media',
-                  required: true,
                 },
                 {
                   name: 'title',
                   type: 'text',
-                  required: true,
                 },
                 {
                   name: 'description',

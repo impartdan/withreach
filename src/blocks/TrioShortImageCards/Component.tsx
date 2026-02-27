@@ -12,12 +12,8 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
   return (
     <div className="container">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12">
-        {heading && (
-          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
-            {heading}
-          </h2>
-        )}
+      <div className="flex flex-col gap-6 mb-10 md:mb-12 lg:mb-20 max-w-2xl">
+        {heading && <h2 className="type-display-lg">{heading}</h2>}
 
         {Array.isArray(links) && links.length > 0 && (
           <div className="flex flex-wrap gap-3 shrink-0">
@@ -34,34 +30,25 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white border border-border rounded-xl overflow-hidden flex flex-col"
+              className="bg-brand-white/80 rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col"
             >
               {card.image && typeof card.image !== 'string' && (
-                <div className="aspect-[16/9] relative overflow-hidden">
+                <div className="aspect-square bg-white relative overflow-hidden">
                   <Media
                     resource={card.image}
                     imgClassName="object-cover w-full h-full absolute inset-0"
                   />
                 </div>
               )}
-              <div className="p-6 md:p-8 flex flex-col gap-3 flex-1">
-                {card.title && (
-                  <h3 className="text-lg md:text-xl font-semibold text-brand-black">
-                    {card.title}
-                  </h3>
-                )}
+              <div className=" flex flex-col gap-4 py-6 md:p-6">
+                {card.title && <h3 className="type-display-xs">{card.title}</h3>}
                 {card.description && (
                   <RichText
-                    className="text-sm md:text-base text-brand-black/70 leading-[1.5] [&>p]:mb-0 flex-1"
+                    className="type-micro"
                     data={card.description}
                     enableGutter={false}
                     enableProse={false}
                   />
-                )}
-                {card.link && (
-                  <div className="mt-2">
-                    <CMSLink size="default" {...card.link} />
-                  </div>
                 )}
               </div>
             </div>

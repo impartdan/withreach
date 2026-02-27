@@ -3012,7 +3012,7 @@ export interface DiagramBlock {
  * via the `definition` "TrioTallImageCardsBlock".
  */
 export interface TrioTallImageCardsBlock {
-  heading: string;
+  heading?: string | null;
   links?:
     | {
         link: {
@@ -3042,8 +3042,8 @@ export interface TrioTallImageCardsBlock {
       }[]
     | null;
   cards: {
-    image: number | Media;
-    title: string;
+    image?: (number | null) | Media;
+    title?: string | null;
     description?: {
       root: {
         type: string;
