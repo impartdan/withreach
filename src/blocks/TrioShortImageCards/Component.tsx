@@ -12,17 +12,22 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
   return (
     <div className="container">
       {/* Header */}
-      <div className="flex flex-col gap-6 mb-10 md:mb-12 lg:mb-20 max-w-2xl">
-        {heading && <h2 className="type-display-lg">{heading}</h2>}
+      {heading && (
+        <div className="flex flex-col gap-6 mb-10 md:mb-12 lg:mb-20 max-w-2xl">
+          <h2
+            className="type-display-lg [&_span]:text-brand-olive"
+            dangerouslySetInnerHTML={{ __html: heading }}
+          />
 
-        {Array.isArray(links) && links.length > 0 && (
-          <div className="flex flex-wrap gap-3 shrink-0">
-            {links.map(({ link }, i) => {
-              return <CMSLink key={i} size="default" {...link} />
-            })}
-          </div>
-        )}
-      </div>
+          {Array.isArray(links) && links.length > 0 && (
+            <div className="flex flex-wrap gap-3 shrink-0">
+              {links.map(({ link }, i) => {
+                return <CMSLink key={i} size="default" {...link} />
+              })}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Cards Grid */}
       {Array.isArray(cards) && cards.length > 0 && (
