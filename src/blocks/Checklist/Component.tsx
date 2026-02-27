@@ -14,7 +14,7 @@ export const ChecklistBlock: React.FC<ChecklistBlockProps> = ({ heading, items }
               {items.map((item, index) => (
                 <div key={index} className="flex gap-3 pt-6 md:pt-0">
                   <svg
-                    className="w-5 h-5 mt-0.5 text-white/60 shrink-0"
+                    className="w-5 h-5 mt-[0.25em] text-white/60 shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
