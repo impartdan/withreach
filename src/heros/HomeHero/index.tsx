@@ -8,7 +8,7 @@ import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const HomeHero: React.FC<HomeHeroBlockType> = ({ title, subtitle, links, richText }) => {
   return (
-    <div className="relative min-h-screen pb-lg header-offset text-center flex items-center justify-center">
+    <div className="relative min-h-[100dvh] pb-lg header-offset text-center flex items-center justify-center">
       <div className="container z-10 relative flex items-center justify-center">
         <RevealOnScroll variant="slideUp">
           <div className="max-w-3xl  ">
