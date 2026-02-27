@@ -9,7 +9,7 @@ export const ChecklistBlock: React.FC<ChecklistBlockProps> = ({ heading, items }
         {heading && <h2 className="type-display-md  mb-10 md:mb-14">{heading}</h2>}
 
         {Array.isArray(items) && items.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 [&>*:not(:first-child)]:border-t [&>*]:border-white/10 md:[&>*:nth-child(2)]:border-t-0 md:[&>*:nth-child(n+3)]:pt-6 lg:[&>*:nth-child(3)]:border-t-0 lg:[&>*:nth-child(3)]:pt-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 [&>*:not(:first-child)]:border-t [&>*]:border-white/10 md:[&>*:nth-child(2)]:border-t-0 md:max-lg:[&>*:nth-child(n+3)]:pt-6 lg:[&>*:nth-child(3)]:border-t-0 lg:[&>*:nth-child(n+4)]:pt-6">
             {items.map((item, index) => (
               <div key={index} className="flex gap-3 pt-6 md:pt-0">
                 <svg
