@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { cn } from '@/utilities/ui'
 import RichText from '@/components/RichText'
+import type { DefaultTypedEditorState } from '@payloadcms/richtext-lexical'
 import './hubspot-form.css'
 
 const maxWidthClasses: Record<string, string> = {
@@ -21,7 +22,7 @@ const maxWidthClasses: Record<string, string> = {
 export type HubspotFormBlockType = {
   blockName?: string
   blockType?: 'hubspotForm'
-  content?: Record<string, unknown> | null
+  content?: DefaultTypedEditorState | null
   maxWidth?: string | null
   alignment?: string | null
   formId: string
