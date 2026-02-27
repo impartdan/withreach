@@ -7,6 +7,7 @@ import * as migration_20260215_migrate_hero_types from './20260215_migrate_hero_
 import * as migration_20260216_pages_nested_docs from './20260216_pages_nested_docs';
 import * as migration_20260218_migrate_media_blocks from './20260218_migrate_media_blocks';
 import * as migration_20260224_update_bg_color_enum from './20260224_update_bg_color_enum';
+import * as migration_20260227_set_show_grid_lines_false from './20260227_set_show_grid_lines_false';
 
 export const migrations = [
   {
@@ -53,5 +54,10 @@ export const migrations = [
     up: migration_20260224_update_bg_color_enum.up,
     down: migration_20260224_update_bg_color_enum.down,
     name: '20260224_update_bg_color_enum'
+  },
+  {
+    up: migration_20260227_set_show_grid_lines_false.up,
+    down: migration_20260227_set_show_grid_lines_false.down,
+    name: '20260227_set_show_grid_lines_false'
   },
 ];
