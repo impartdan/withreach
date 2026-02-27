@@ -5114,6 +5114,55 @@ export interface CtaSmallBlock {
        */
       appearance?: ('default' | 'outline' | 'arrow') | null;
     };
+    background?: ('none' | 'color' | 'gradient' | 'image') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+        )
+      | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     id?: string | null;
   }[];
   /**
@@ -7866,6 +7915,13 @@ export interface CtaSmallBlockSelect<T extends boolean = true> {
               label?: T;
               appearance?: T;
             };
+        background?: T;
+        backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
         id?: T;
       };
   blockSettings?:

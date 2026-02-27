@@ -6,7 +6,7 @@ export const ChecklistBlock: React.FC<ChecklistBlockProps> = ({ heading, items }
   return (
     <div className="container">
       <div className="py-16 md:py-20">
-        {heading && <h2 className="type-display-md text-white mb-10 md:mb-14">{heading}</h2>}
+        {heading && <h2 className="type-display-md  mb-10 md:mb-14">{heading}</h2>}
 
         {Array.isArray(items) && items.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 [&>*:not(:first-child)]:border-t [&>*]:border-white/10 md:[&>*:nth-child(2)]:border-t-0 md:[&>*:nth-child(n+3)]:pt-6 lg:[&>*:nth-child(3)]:border-t-0 lg:[&>*:nth-child(3)]:pt-0">
@@ -22,10 +22,10 @@ export const ChecklistBlock: React.FC<ChecklistBlockProps> = ({ heading, items }
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
                 <div className="flex flex-col gap-4">
-                  {item.title && <h3 className="type-display-xs text-white">{item.title}</h3>}
+                  {item.title && <h3 className="type-display-xs ">{item.title}</h3>}
                   {item.description && (
                     <RichText
-                      className="type-micro-b text-white [&>p]:mb-0"
+                      className="type-micro-b  [&>p]:mb-0"
                       data={item.description}
                       enableGutter={false}
                       enableProse={false}

@@ -33,6 +33,8 @@ type BlockWrapperProps = {
   /** Applied to the root div only when blockSettings produces no active background class */
   fallbackBgClass?: string
   className?: string
+  /** When true, all background rendering is skipped (padding and gridlines still apply) */
+  skipBackground?: boolean
 }
 
 const paddingTopClasses: Record<SpacingSize, string> = {
@@ -59,7 +61,7 @@ const paddingBottomClasses: Record<SpacingSize, string> = {
   '2xl': 'pb-2xl',
 }
 
-const bgColorClasses: Record<BackgroundColor, string> = {
+export const bgColorClasses: Record<BackgroundColor, string> = {
   'brand-off-white': 'bg-brand-off-white',
   'brand-linen': 'bg-brand-linen',
   'brand-black': 'bg-brand-black',
@@ -87,7 +89,7 @@ const bgPositionClasses = {
   right: 'bg-right',
 }
 
-const colorToCss: Record<BackgroundColor, string> = {
+export const colorToCss: Record<BackgroundColor, string> = {
   'brand-off-white': '#FAF7F5',
   'brand-linen': '#EEECE6',
   'brand-black': '#1E1A15',
@@ -113,6 +115,7 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
   blockSettings,
   fallbackBgClass,
   className,
+  skipBackground = false,
 }) => {
   const paddingTopClass =
     blockSettings?.paddingTop && blockSettings.paddingTop !== null
@@ -127,12 +130,12 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
   const bgType = blockSettings?.background ?? 'none'
 
   const bgColorClass =
-    bgType !== 'none' && bgType !== 'gradient' && blockSettings?.backgroundColor
+    !skipBackground && bgType !== 'none' && bgType !== 'gradient' && blockSettings?.backgroundColor
       ? bgColorClasses[blockSettings.backgroundColor]
       : ''
 
   const gradientStyle =
-    bgType === 'gradient' && blockSettings?.gradientFrom && blockSettings?.gradientTo
+    !skipBackground && bgType === 'gradient' && blockSettings?.gradientFrom && blockSettings?.gradientTo
       ? {
           background: `linear-gradient(${
             blockSettings.gradientDirection === 'right' ? 'to right' : 'to bottom'
@@ -141,6 +144,7 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
       : undefined
 
   const bgImage =
+    !skipBackground &&
     (bgType === 'image' || bgType === 'video') &&
     typeof blockSettings?.backgroundImage === 'object' &&
     blockSettings.backgroundImage !== null
@@ -152,6 +156,7 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
     : bgPositionClasses.center
 
   const bgVideoFile =
+    !skipBackground &&
     bgType === 'video' &&
     typeof blockSettings?.backgroundVideo === 'object' &&
     blockSettings.backgroundVideo !== null
@@ -159,7 +164,7 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
       : null
 
   const bgVideoUrl =
-    bgType === 'video' && !bgVideoFile && blockSettings?.backgroundVideoUrl
+    !skipBackground && bgType === 'video' && !bgVideoFile && blockSettings?.backgroundVideoUrl
       ? blockSettings.backgroundVideoUrl
       : null
 
@@ -177,7 +182,7 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
         'relative',
         paddingTopClass,
         paddingBottomClass,
-        bgColorClass || (!gradientStyle ? fallbackBgClass : undefined),
+        !skipBackground && (bgColorClass || (!gradientStyle ? fallbackBgClass : undefined)),
         className,
       )}
       style={gradientStyle}
