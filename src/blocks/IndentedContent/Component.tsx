@@ -11,7 +11,7 @@ export const IndentedContentBlock: React.FC<IndentedContentBlockProps> = ({
 }) => {
   return (
     <div className="container">
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
         {/* Left: Text Content */}
         <div className="flex flex-col gap-6 flex-1 items-start">
           {heading && (
@@ -21,9 +21,7 @@ export const IndentedContentBlock: React.FC<IndentedContentBlockProps> = ({
           )}
 
           {description && (
-            <p className="text-base md:text-lg text-brand-black/70 leading-[1.5]">
-              {description}
-            </p>
+            <p className="text-base md:text-lg text-brand-black/70 leading-[1.5]">{description}</p>
           )}
 
           {content && (
@@ -38,14 +36,14 @@ export const IndentedContentBlock: React.FC<IndentedContentBlockProps> = ({
 
         {/* Right: Logo/Icon Grid */}
         {Array.isArray(images) && images.length > 0 && (
-          <div className="flex-1 flex flex-wrap gap-6 items-center justify-center content-center">
+          <div className="flex-1 flex w-full flex-wrap gap-6 items-center justify-center content-center">
             {images.map((item, index) => {
               if (!item.image || typeof item.image === 'string') return null
               return (
-                <div key={index} className="w-16 h-16 md:w-20 md:h-20">
+                <div key={index} className="w-full max-w-lg mx-auto">
                   <Media
                     resource={item.image}
-                    imgClassName="w-full h-full object-contain"
+                    imgClassName="w-full h-auto rounded-lg overflow-hidden"
                   />
                 </div>
               )

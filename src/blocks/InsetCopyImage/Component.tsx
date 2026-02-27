@@ -45,18 +45,12 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
             {images.map((item, index) => {
               if (!item.image || typeof item.image === 'string') return null
 
-              const positionClasses = [
-                'top-0 left-0 w-[55%] z-10',
-                'top-[10%] right-0 w-[60%] z-20',
-                'bottom-0 left-[15%] w-[50%] z-30',
-              ]
-
               return (
-                <div
-                  key={index}
-                  className={`absolute rounded-lg overflow-hidden shadow-lg ${positionClasses[index] || ''}`}
-                >
-                  <Media resource={item.image} imgClassName="object-cover w-full h-full" />
+                <div key={index} className="w-full max-w-lg mx-auto">
+                  <Media
+                    resource={item.image}
+                    imgClassName="w-full h-auto rounded-lg overflow-hidden"
+                  />
                 </div>
               )
             })}
