@@ -102,7 +102,11 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                   }`}
                 >
                   {card.title && (
-                    <h3 className={isFeaturedCard ? 'type-display-xs text-brand-off-white' : 'type-display-xs'}>
+                    <h3
+                      className={
+                        isFeaturedCard ? 'type-display-xs text-brand-off-white' : 'type-display-xs'
+                      }
+                    >
                       {card.title}
                     </h3>
                   )}
@@ -119,7 +123,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                     />
                   )}
                   {visibleCardLinks.length > 0 && (
-                    <BlockThemeContext.Provider value={isFeaturedCard ? 'dark' : 'light'}>
+                    <BlockThemeContext.Provider value="light">
                       <div className="relative z-20 mt-auto flex flex-wrap gap-3">
                         {visibleCardLinks.map((link, i) => (
                           <CMSLink key={i} {...link} appearance="arrow" size="default" />
