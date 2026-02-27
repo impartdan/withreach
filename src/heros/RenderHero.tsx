@@ -27,7 +27,7 @@ const heroMeta: Partial<Record<keyof typeof heroes, { fallbackBgClass?: string }
   platformHero: { fallbackBgClass: 'bg-brand-off-white' },
 }
 
-export const RenderHero: React.FC<{ hero: Page['hero'] }> = ({ hero }) => {
+export const RenderHero: React.FC<{ hero: Page['hero']; after?: React.ReactNode }> = ({ hero, after }) => {
   const block = hero?.[0]
 
   if (!block) return <div className="header-offset" />
@@ -51,6 +51,7 @@ export const RenderHero: React.FC<{ hero: Page['hero'] }> = ({ hero }) => {
       blockType={block.blockType}
       blockSettings={wrapperSettings}
       fallbackBgClass={meta?.fallbackBgClass}
+      after={after}
     >
       {React.createElement(
         HeroToRender as unknown as React.ComponentType<Record<string, unknown>>,

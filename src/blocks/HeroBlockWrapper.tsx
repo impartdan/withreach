@@ -14,6 +14,7 @@ import { BlockThemeContext } from '@/components/BlockThemeContext'
 
 type HeroBlockWrapperProps = {
   children: React.ReactNode
+  after?: React.ReactNode
   blockType?: string
   blockSettings?: {
     paddingTop?: SpacingSize | null
@@ -110,6 +111,7 @@ const colorToCss: Record<BackgroundColor, string> = {
 
 export const HeroBlockWrapper: React.FC<HeroBlockWrapperProps> = ({
   children,
+  after,
   blockType,
   blockSettings,
   fallbackBgClass,
@@ -220,6 +222,7 @@ export const HeroBlockWrapper: React.FC<HeroBlockWrapperProps> = ({
       <BlockThemeContext.Provider value={theme}>
         <div className={cn('relative z-20', textColorClass)}>{children}</div>
       </BlockThemeContext.Provider>
+      {after && <div className="relative z-20">{after}</div>}
     </div>
   )
 }

@@ -103,17 +103,22 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
       {page && <PageClient id={String(page.id)} collection="pages" />}
       {draft && <LivePreviewListener />}
 
-      {page?.hero && <RenderHero hero={page.hero} />}
-
-      <div className="bg-brand-linen">
-        <div className="container flex justify-center gap-4 flex-wrap pb-sm">
-          <CategoryFilter
-            categories={pillCategories}
-            activeCategory={categorySlug}
-            variant="pills"
-          />
-        </div>
-      </div>
+      {page?.hero && (
+        <RenderHero
+          hero={page.hero}
+          after={
+            pillCategories.length > 0 && (
+              <div className="container flex justify-center gap-4 flex-wrap pb-sm">
+                <CategoryFilter
+                  categories={pillCategories}
+                  activeCategory={categorySlug}
+                  variant="pills"
+                />
+              </div>
+            )
+          }
+        />
+      )}
 
       {featuredPosts && Array.isArray(featuredPosts) && featuredPosts.length > 0 && (
         <FeaturedPosts posts={featuredPosts} />
