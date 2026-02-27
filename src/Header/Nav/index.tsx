@@ -200,7 +200,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
 
       {/* Mobile Slide-in Menu - Slides from top */}
       <div
-        className={`fixed left-0 right-0 w-full bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
+        className={`fixed left-0 right-0 w-full min-h-dvh bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
           isMenuOpen ? 'top-0 translate-y-0' : '-top-full -translate-y-full'
         } lg:hidden`}
       >
