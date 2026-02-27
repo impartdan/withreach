@@ -206,7 +206,7 @@ export const HeroBlockWrapper: React.FC<HeroBlockWrapperProps> = ({
       )}
       {/* z-[16]: grid lines — between background and content */}
       {showGridLines && (
-        <div className="absolute inset-0 z-[16] pointer-events-none" aria-hidden="true">
+        <div className="absolute inset-0 z-[16] pointer-events-none hidden md:block" aria-hidden="true">
           <div className="container relative h-full">
             <div className={cn('absolute top-0 left-[17%] w-px h-full', gridLineColor)} />
             <div className={cn('absolute top-0 left-[33%] w-px h-full', gridLineColor)} />

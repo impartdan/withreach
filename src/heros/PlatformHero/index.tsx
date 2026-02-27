@@ -28,7 +28,7 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
       <div className="absolute bottom-0 left-0 right-0 z-20 h-[230px] bg-gradient-to-b from-transparent to-white pointer-events-none" />
       {/* Grid lines above gradient fade, below text content */}
       {showGridLines && (
-        <div className="absolute inset-0 z-20 pointer-events-none" aria-hidden="true">
+        <div className="absolute inset-0 z-20 pointer-events-none hidden md:block" aria-hidden="true">
           <div className="container relative h-full">
             <div className="absolute top-0 left-[17%] w-px h-full bg-brand-black/10" />
             <div className="absolute top-0 left-[33%] w-px h-full bg-brand-black/10" />

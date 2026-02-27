@@ -34,7 +34,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
       {/* Cards Grid */}
       {Array.isArray(cards) && cards.length > 0 && (
         <div
-          className={`flex overflow-x-auto -mx-4 px-4 pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-6 md:overflow-x-visible md:mx-0 md:px-0 md:pb-0 md:grid ${
+          className={`flex overflow-x-auto -mx-4 px-4 pb-2 scroll-smooth snap-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-6 md:overflow-x-visible md:mx-0 md:px-0 md:pb-0 md:grid ${
             cards.length === 1
               ? ''
               : cards.length === 2
