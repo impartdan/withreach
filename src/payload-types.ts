@@ -3572,6 +3572,10 @@ export interface TrioTextOnlyCardsBlock {
       }[]
     | null;
   image?: (number | null) | Media;
+  /**
+   * Optional image for mobile. Falls back to Image if not set.
+   */
+  mobileImage?: (number | null) | Media;
   cards: {
     /**
      * Card heading (e.g. "Keep your roadmap")
@@ -7453,6 +7457,7 @@ export interface TrioTextOnlyCardsBlockSelect<T extends boolean = true> {
         id?: T;
       };
   image?: T;
+  mobileImage?: T;
   cards?:
     | T
     | {

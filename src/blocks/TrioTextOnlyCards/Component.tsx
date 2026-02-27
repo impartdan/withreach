@@ -8,6 +8,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
   introduction,
   links,
   image,
+  mobileImage,
   cards,
 }) => {
   const hasHeader = introduction || (Array.isArray(links) && links.length > 0) || image
@@ -31,7 +32,15 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
           </div>
 
           <div className="flex-1 relative w-full md:w-auto">
-            {image && typeof image !== 'string' && <Media resource={image} imgClassName="w-full" />}
+            {mobileImage && typeof mobileImage !== 'string' && (
+              <Media resource={mobileImage} imgClassName="w-full md:hidden" />
+            )}
+            {image && typeof image !== 'string' && (
+              <Media
+                resource={image}
+                imgClassName={`w-full${mobileImage && typeof mobileImage !== 'string' ? ' hidden md:block' : ''}`}
+              />
+            )}
           </div>
         </div>
       )}

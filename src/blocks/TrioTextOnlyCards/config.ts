@@ -48,6 +48,15 @@ export const TrioTextOnlyCards: Block = {
               relationTo: 'media',
             },
             {
+              name: 'mobileImage',
+              type: 'upload',
+              label: 'Mobile Image',
+              relationTo: 'media',
+              admin: {
+                description: 'Optional image for mobile. Falls back to Image if not set.',
+              },
+            },
+            {
               name: 'cards',
               type: 'array',
               label: 'Cards',
