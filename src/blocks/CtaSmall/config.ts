@@ -24,6 +24,13 @@ export const CtaSmall: Block = {
           label: 'Content',
           fields: [
             {
+              name: 'logo',
+              type: 'upload',
+              relationTo: 'media',
+              label: 'Logo',
+              required: false,
+            },
+            {
               name: 'cards',
               type: 'array',
               label: 'CTA Cards',

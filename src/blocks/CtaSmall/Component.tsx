@@ -2,6 +2,8 @@ import React from 'react'
 import type { CtaSmallBlock as CtaSmallBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
+import { Media } from '@/components/Media'
+import { getMediaUrl } from '@/utilities/getMediaUrl'
 import { cn } from '@/utilities/ui'
 import { bgColorClasses, colorToCss } from '@/blocks/BlockWrapper'
 import type { BackgroundColor } from '@/fields/blockSettings'
@@ -49,7 +51,8 @@ function resolveCardBackground(card: Card) {
   return { bgColorClass, gradientStyle, bgImage, bgPositionClass }
 }
 
-export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
+export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ logo, cards }) => {
+  const logoResource = logo && typeof logo === 'object' ? logo : null
   return (
     <div className="container">
       {Array.isArray(cards) && cards.length > 0 && (
@@ -79,6 +82,21 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
 
                 {/* content */}
                 <div className="relative z-10 p-8 md:p-10 lg:p-12 flex flex-col items-center justify-center text-center gap-4 flex-1">
+                  {logoResource && (
+                    logoResource.mimeType === 'image/svg+xml' ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={getMediaUrl(logoResource.url, logoResource.updatedAt)}
+                        alt={logoResource.alt || ''}
+                        className="h-10 w-auto object-contain"
+                      />
+                    ) : (
+                      <div className="relative h-10 w-auto">
+                        <Media resource={logoResource} imgClassName="h-10 w-auto object-contain" />
+                      </div>
+                    )
+                  )}
+
                   {card.heading && (
                     <h3 className="text-2xl md:text-3xl font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
                       {card.heading}
