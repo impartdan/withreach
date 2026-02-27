@@ -57,7 +57,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                 {card.title && <h3 className="type-display-xs">{card.title}</h3>}
                 {card.description && (
                   <RichText
-                    className="type-micro"
+                    className="type-micro [&_p]:type-micro"
                     data={card.description}
                     enableGutter={false}
                     enableProse={false}

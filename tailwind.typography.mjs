@@ -89,7 +89,7 @@ module.exports = plugin(function ({ addUtilities }) {
       '.type-micro': {
         'font-size': '16px',
         'line-height': '1.3',
-        'font-weight': 'regular',
+        'font-weight': '400',
         'font-family': seasonSans,
         '@screen lg': {
           'line-height': '1.4',

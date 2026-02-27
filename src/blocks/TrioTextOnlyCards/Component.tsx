@@ -60,7 +60,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
                 <div className="flex flex-col justify-between gap-4">
                   {card.description && (
                     <RichText
-                      className={`type-micro text-brand-black/70 group-hover:text-white`}
+                      className={`type-body text-brand-black/70 group-hover:text-white`}
                       data={card.description}
                       enableGutter={false}
                       enableProse={false}
