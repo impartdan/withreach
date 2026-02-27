@@ -18,7 +18,7 @@ export const ItemHighlightsBlock: React.FC<ItemHighlightsBlockProps> = ({
       )}
 
       {Array.isArray(items) && items.length > 0 && (
-        <div className={`grid grid-cols-1 sm:grid-cols-2 ${gridCols} gap-8 md:gap-10`}>
+        <div className={`grid grid-cols-2 ${gridCols} gap-8 md:gap-10`}>
           {items.map((item, index) => (
             <div key={index} className="flex flex-col gap-4">
               {item.icon && typeof item.icon !== 'string' && (
