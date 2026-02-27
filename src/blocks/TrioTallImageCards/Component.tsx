@@ -63,9 +63,11 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
                     enableProse={false}
                   />
                 )}
-                {card.link && (
-                  <div className="mt-auto">
-                    <CMSLink size="default" url={card.link} label="Learn more" />
+                {Array.isArray(card.links) && card.links.length > 0 && (
+                  <div className="mt-auto flex flex-wrap gap-3">
+                    {card.links.map(({ link }, i) => (
+                      <CMSLink key={i} size="default" {...link} />
+                    ))}
                   </div>
                 )}
               </div>
