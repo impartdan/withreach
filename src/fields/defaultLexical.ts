@@ -1,7 +1,10 @@
 import type { TextFieldSingleValidation } from 'payload'
 import {
   AlignFeature,
+  BlocksFeature,
   BoldFeature,
+  FixedToolbarFeature,
+  InlineToolbarFeature,
   ItalicFeature,
   LinkFeature,
   ParagraphFeature,
@@ -15,6 +18,8 @@ import {
   type LinkFields,
 } from '@payloadcms/richtext-lexical'
 import { TypographyFeature } from '@/lexical/typography/feature.server'
+import { ImageBlock } from '@/blocks/ImageBlock/config'
+import { VideoEmbed } from '@/blocks/VideoEmbed/config'
 
 export const defaultLexical = lexicalEditor({
   features: [
@@ -59,5 +64,8 @@ export const defaultLexical = lexicalEditor({
         ]
       },
     }),
+    BlocksFeature({ blocks: [ImageBlock, VideoEmbed] }),
+    FixedToolbarFeature(),
+    InlineToolbarFeature(),
   ],
 })

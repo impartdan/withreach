@@ -8,6 +8,8 @@ import {
 } from '@payloadcms/richtext-lexical'
 import { blockSettings } from '@/fields/blockSettings'
 import { ChecklistList } from '@/blocks/ChecklistList/config'
+import { ImageBlock } from '@/blocks/ImageBlock/config'
+import { VideoEmbed } from '@/blocks/VideoEmbed/config'
 
 export const IndentedContent: Block = {
   slug: 'indentedContent',
@@ -45,7 +47,7 @@ export const IndentedContent: Block = {
                   return [
                     ...rootFeatures,
                     HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
-                    BlocksFeature({ blocks: [ChecklistList] }),
+                    BlocksFeature({ blocks: [ImageBlock, VideoEmbed, ChecklistList] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                   ]

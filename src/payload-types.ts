@@ -9266,32 +9266,6 @@ export interface TaskSchedulePublish {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ChecklistListBlock".
- */
-export interface ChecklistListBlock {
-  items?:
-    | {
-        text: string;
-        id?: string | null;
-      }[]
-    | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'checklistList';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "CodeBlock".
- */
-export interface CodeBlock {
-  language?: ('typescript' | 'javascript' | 'css') | null;
-  code: string;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'code';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "VideoEmbed".
  */
 export interface VideoEmbed {
@@ -9319,6 +9293,32 @@ export interface VideoEmbed {
   id?: string | null;
   blockName?: string | null;
   blockType: 'videoEmbed';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ChecklistListBlock".
+ */
+export interface ChecklistListBlock {
+  items?:
+    | {
+        text: string;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'checklistList';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CodeBlock".
+ */
+export interface CodeBlock {
+  language?: ('typescript' | 'javascript' | 'css') | null;
+  code: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'code';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -9363,7 +9363,6 @@ export interface ConclusionBlock {
         icon?: (number | null) | Media;
         title: string;
         description?: string | null;
-        id?: string | null;
       }[]
     | null;
   id?: string | null;
