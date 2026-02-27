@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'next-view-transitions'
+import { usePathname } from 'next/navigation'
 
 import type { CaseStudy, Header, Post } from '@/payload-types'
 
@@ -23,6 +24,11 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [headerHeight, setHeaderHeight] = useState(0)
   const headerRef = useRef<HTMLElement>(null)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [pathname])
 
   useEffect(() => {
     const el = headerRef.current

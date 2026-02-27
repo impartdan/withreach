@@ -97,7 +97,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           />
           <span
             className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
-              isMenuOpen ? 'opacity-0' : ''
+              isMenuOpen ? 'opacity-0 scale-x-0' : ''
             }`}
           />
           <span
