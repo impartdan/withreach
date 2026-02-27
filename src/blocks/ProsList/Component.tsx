@@ -22,17 +22,16 @@ export const ProsListBlock: React.FC<ProsListBlockProps> = ({
               {prosItems.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <svg
-                    width="23"
-                    height="17"
-                    viewBox="0 0 23 17"
+                    className="w-5 h-5 mt-0.5 text-brand-olive shrink-0"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 23 17"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
                   >
                     <path
                       d="M0.5 10.3551L7.46119 16.5L21.7 0.5"
-                      stroke="currentCOlor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
 
