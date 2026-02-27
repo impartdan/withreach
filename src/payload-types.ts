@@ -189,7 +189,15 @@ export interface Page {
   id: number;
   title: string;
   hero?:
-    | (HomeHeroBlock | PlatformHeroBlock | SolutionsHeroBlock | PartnerHeroBlock | TextHeroBlock | SupportHeroBlock)[]
+    | (
+        | HomeHeroBlock
+        | PlatformHeroBlock
+        | SolutionsHeroBlock
+        | PartnerHeroBlock
+        | TextHeroBlock
+        | SupportHeroBlock
+        | HubspotFormHeroBlock
+      )[]
     | null;
   layout?:
     | (
@@ -1358,6 +1366,123 @@ export interface SupportHeroBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HubspotFormHeroBlock".
+ */
+export interface HubspotFormHeroBlock {
+  richText?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Enter the HubSpot form ID (e.g., "12345678-1234-1234-1234-123456789012")
+   */
+  formId: string;
+  /**
+   * Override the default portal ID from environment variables. Leave empty to use NEXT_PUBLIC_HUBSPOT_PORTAL_ID
+   */
+  portalId?: string | null;
+  /**
+   * Check this to disable HubSpot's default CSS and use only your custom styles
+   */
+  disableHubspotStyles?: boolean | null;
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'hubspotFormHero';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ContentBlock".
  */
 export interface ContentBlock {
@@ -1972,6 +2097,36 @@ export interface LogoListBlock {
  * via the `definition` "HubspotFormBlock".
  */
 export interface HubspotFormBlock {
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  maxWidth?:
+    | (
+        | 'max-w-sm'
+        | 'max-w-md'
+        | 'max-w-lg'
+        | 'max-w-xl'
+        | 'max-w-2xl'
+        | 'max-w-3xl'
+        | 'max-w-4xl'
+        | 'max-w-5xl'
+        | 'max-w-6xl'
+        | 'none'
+      )
+    | null;
+  alignment?: ('left' | 'center') | null;
   /**
    * Enter the HubSpot form ID (e.g., "12345678-1234-1234-1234-123456789012")
    */
@@ -1980,10 +2135,6 @@ export interface HubspotFormBlock {
    * Override the default portal ID from environment variables. Leave empty to use NEXT_PUBLIC_HUBSPOT_PORTAL_ID
    */
   portalId?: string | null;
-  /**
-   * Optional title to display above the form
-   */
-  formTitle?: string | null;
   /**
    * Check this to disable HubSpot's default CSS and use only your custom styles
    */
@@ -6262,6 +6413,7 @@ export interface PagesSelect<T extends boolean = true> {
         partnerHero?: T | PartnerHeroBlockSelect<T>;
         textHero?: T | TextHeroBlockSelect<T>;
         supportHero?: T | SupportHeroBlockSelect<T>;
+        hubspotFormHero?: T | HubspotFormHeroBlockSelect<T>;
       };
   layout?:
     | T
@@ -6547,6 +6699,32 @@ export interface SupportHeroBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HubspotFormHeroBlock_select".
+ */
+export interface HubspotFormHeroBlockSelect<T extends boolean = true> {
+  richText?: T;
+  formId?: T;
+  portalId?: T;
+  disableHubspotStyles?: T;
+  blockSettings?:
+    | T
+    | {
+        background?: T;
+        backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ContentBlock_select".
  */
 export interface ContentBlockSelect<T extends boolean = true> {
@@ -6696,9 +6874,11 @@ export interface LogoListBlockSelect<T extends boolean = true> {
  * via the `definition` "HubspotFormBlock_select".
  */
 export interface HubspotFormBlockSelect<T extends boolean = true> {
+  content?: T;
+  maxWidth?: T;
+  alignment?: T;
   formId?: T;
   portalId?: T;
-  formTitle?: T;
   disableHubspotStyles?: T;
   blockSettings?:
     | T

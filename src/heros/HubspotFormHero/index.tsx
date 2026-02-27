@@ -1,35 +1,10 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { cn } from '@/utilities/ui'
 import RichText from '@/components/RichText'
-import './hubspot-form.css'
+import type { HubspotFormHeroBlock as HubspotFormHeroBlockType } from '@/payload-types'
+import '@/blocks/HubspotForm/hubspot-form.css'
 
-const maxWidthClasses: Record<string, string> = {
-  'max-w-sm': 'max-w-sm',
-  'max-w-md': 'max-w-md',
-  'max-w-lg': 'max-w-lg',
-  'max-w-xl': 'max-w-xl',
-  'max-w-2xl': 'max-w-2xl',
-  'max-w-3xl': 'max-w-3xl',
-  'max-w-4xl': 'max-w-4xl',
-  'max-w-5xl': 'max-w-5xl',
-  'max-w-6xl': 'max-w-6xl',
-  none: '',
-}
-
-export type HubspotFormBlockType = {
-  blockName?: string
-  blockType?: 'hubspotForm'
-  content?: Record<string, unknown> | null
-  maxWidth?: string | null
-  alignment?: string | null
-  formId: string
-  portalId?: string
-  disableHubspotStyles?: boolean
-}
-
-// Extend the Window interface to include hbspt
 declare global {
   interface Window {
     hbspt?: {
@@ -47,23 +22,21 @@ declare global {
   }
 }
 
-export const HubspotFormBlock: React.FC<
-  {
-    id?: string
-  } & HubspotFormBlockType
-> = (props) => {
-  const { content, maxWidth, alignment, formId, portalId, disableHubspotStyles } = props
-  const maxWidthClass = maxWidth ? (maxWidthClasses[maxWidth] ?? '') : 'max-w-xl'
+export const HubspotFormHero: React.FC<HubspotFormHeroBlockType> = ({
+  label,
+  richText,
+  formId,
+  portalId,
+  disableHubspotStyles,
+}) => {
   const formContainerRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [scriptLoaded, setScriptLoaded] = useState(false)
 
-  // Get portal ID from props or environment variable
   const effectivePortalId = portalId || process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID
 
   useEffect(() => {
-    // Check if portal ID is available
     if (!effectivePortalId) {
       setError(
         'HubSpot Portal ID is not configured. Please set NEXT_PUBLIC_HUBSPOT_PORTAL_ID in your environment variables.',
@@ -72,14 +45,12 @@ export const HubspotFormBlock: React.FC<
       return
     }
 
-    // Check if the script is already loaded
     if (window.hbspt) {
       setScriptLoaded(true)
       setIsLoading(false)
       return
     }
 
-    // Load the HubSpot forms script
     const script = document.createElement('script')
     script.src = '//js.hsforms.net/forms/embed/v2.js'
     script.charset = 'utf-8'
@@ -99,7 +70,6 @@ export const HubspotFormBlock: React.FC<
     document.body.appendChild(script)
 
     return () => {
-      // Cleanup: remove script if component unmounts
       if (script.parentNode) {
         script.parentNode.removeChild(script)
       }
@@ -107,20 +77,13 @@ export const HubspotFormBlock: React.FC<
   }, [effectivePortalId])
 
   useEffect(() => {
-    // Create the form once the script is loaded
     if (scriptLoaded && window.hbspt && formContainerRef.current && effectivePortalId) {
       try {
         window.hbspt.forms.create({
           portalId: effectivePortalId,
           formId: formId,
-          target: `#hubspot-form-${formId}`,
+          target: `#hubspot-hero-form-${formId}`,
           css: disableHubspotStyles ? '' : undefined,
-          onFormReady: () => {
-            console.log('HubSpot form ready:', formId)
-          },
-          onFormSubmitted: () => {
-            console.log('HubSpot form submitted:', formId)
-          },
         })
       } catch (err) {
         console.error('Error creating HubSpot form:', err)
@@ -130,12 +93,20 @@ export const HubspotFormBlock: React.FC<
   }, [scriptLoaded, formId, effectivePortalId, disableHubspotStyles])
 
   return (
-    <div className="container">
-      <div className={cn(alignment === 'center' && 'mx-auto', maxWidthClass)}>
-        {content && <RichText data={content} enableGutter={false} enableProse={true} />}
-        <div className="p-4 lg:p-6 border border-border rounded-[0.8rem] min-h-[500px] relative">
+    <div className="w-full header-offset">
+      <div className="container py-20 flex flex-col items-center gap-10">
+        {/* Eyebrow + heading */}
+        <div className="flex flex-col items-center gap-4 text-center max-w-3xl">
+          {label && (
+            <p className="text-sm font-medium tracking-widest uppercase opacity-70">{label}</p>
+          )}
+          {richText && <RichText data={richText} enableGutter={false} />}
+        </div>
+
+        {/* HubSpot form */}
+        <div className="w-full max-w-xl">
           {isLoading && (
-            <div className="flex items-center justify-center min-h-[500px]">
+            <div className="flex items-center justify-center min-h-[400px]">
               <svg
                 className="animate-spin h-12 w-12 text-brand-gray"
                 xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +137,7 @@ export const HubspotFormBlock: React.FC<
           )}
           <div
             ref={formContainerRef}
-            id={`hubspot-form-${formId}`}
+            id={`hubspot-hero-form-${formId}`}
             className={isLoading || error ? 'hidden' : ''}
           />
         </div>

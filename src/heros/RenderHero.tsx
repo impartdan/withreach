@@ -4,6 +4,7 @@ import type { Page } from '@/payload-types'
 
 import { HeroBlockWrapper } from '@/blocks/HeroBlockWrapper'
 import { HomeHero } from '@/heros/HomeHero'
+import { HubspotFormHero } from '@/heros/HubspotFormHero'
 import { PartnerHero } from '@/heros/PartnerHero'
 import { PlatformHero } from '@/heros/PlatformHero'
 import { SolutionsHero } from '@/heros/SolutionsHero'
@@ -12,6 +13,7 @@ import { TextHero } from '@/heros/TextHero'
 
 const heroes = {
   homeHero: HomeHero,
+  hubspotFormHero: HubspotFormHero,
   platformHero: PlatformHero,
   solutionsHero: SolutionsHero,
   partnerHero: PartnerHero,

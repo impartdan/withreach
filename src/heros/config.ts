@@ -327,6 +327,63 @@ export const SupportHeroBlock: Block = {
   ],
 }
 
+export const HubspotFormHeroBlock: Block = {
+  slug: 'hubspotFormHero',
+  imageURL: '/block-thumbnails/hero-hubspot-form.png',
+  imageAltText: 'Full-screen hero with centered heading and embedded HubSpot form',
+  interfaceName: 'HubspotFormHeroBlock',
+  labels: {
+    singular: 'HubSpot Form Hero',
+    plural: 'HubSpot Form Heroes',
+  },
+  fields: [
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            heroRichText,
+            {
+              name: 'formId',
+              type: 'text',
+              label: 'HubSpot Form ID',
+              required: true,
+              admin: {
+                description:
+                  'Enter the HubSpot form ID (e.g., "12345678-1234-1234-1234-123456789012")',
+              },
+            },
+            {
+              name: 'portalId',
+              type: 'text',
+              label: 'HubSpot Portal ID (Optional)',
+              admin: {
+                description:
+                  'Override the default portal ID from environment variables. Leave empty to use NEXT_PUBLIC_HUBSPOT_PORTAL_ID',
+              },
+            },
+            {
+              name: 'disableHubspotStyles',
+              type: 'checkbox',
+              label: 'Disable HubSpot Default Styles',
+              defaultValue: false,
+              admin: {
+                description:
+                  "Check this to disable HubSpot's default CSS and use only your custom styles",
+              },
+            },
+          ],
+        },
+        {
+          label: 'Settings',
+          fields: [heroSettings],
+        },
+      ],
+    },
+  ],
+}
+
 export const heroBlocks = [
   HomeHeroBlock,
   PlatformHeroBlock,
@@ -334,4 +391,5 @@ export const heroBlocks = [
   PartnerHeroBlock,
   TextHeroBlock,
   SupportHeroBlock,
+  HubspotFormHeroBlock,
 ]
