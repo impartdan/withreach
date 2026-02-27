@@ -8,6 +8,7 @@ import type {
 
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
+import { getMediaUrl } from '@/utilities/getMediaUrl'
 
 const bgPositionClasses: Record<string, string> = {
   center: 'bg-center',
@@ -15,6 +16,14 @@ const bgPositionClasses: Record<string, string> = {
   bottom: 'bg-bottom',
   left: 'bg-left',
   right: 'bg-right',
+}
+
+const objectPositionClasses: Record<string, string> = {
+  center: 'object-center',
+  top: 'object-top',
+  bottom: 'object-bottom',
+  left: 'object-left',
+  right: 'object-right',
 }
 
 export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
@@ -33,18 +42,40 @@ export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
   const bgPositionClass = blockSettings?.backgroundImagePosition
     ? (bgPositionClasses[blockSettings.backgroundImagePosition] ?? 'bg-center')
     : 'bg-center'
+  const objectPositionClass = blockSettings?.backgroundImagePosition
+    ? (objectPositionClasses[blockSettings.backgroundImagePosition] ?? 'object-center')
+    : 'object-center'
+  const bgMediaUrl = getMediaUrl(bgImage?.url, bgImage?.updatedAt)
+  const isBackgroundVideo = Boolean(
+    bgImage &&
+      (bgImage.mimeType?.includes('video') ||
+        bgImage.filename?.toLowerCase().endsWith('.mp4') ||
+        bgImage.url?.toLowerCase().endsWith('.mp4')),
+  )
 
   return (
     <div className="relative w-full bg-white">
       {/* Top hero area — solid dark background */}
       <div className="relative min-h-[570px] flex items-center justify-center overflow-hidden">
-        {bgImage?.url && (
-          <div
-            className={`absolute inset-0 bg-cover bg-no-repeat z-0 ${bgPositionClass}`}
-            style={{ backgroundImage: `url(${bgImage.url})` }}
-            aria-hidden="true"
-          />
-        )}
+        {bgMediaUrl &&
+          (isBackgroundVideo ? (
+            <video
+              autoPlay
+              className={`absolute inset-0 z-0 h-full w-full object-cover ${objectPositionClass}`}
+              loop
+              muted
+              playsInline
+              aria-hidden="true"
+            >
+              <source src={bgMediaUrl} type={bgImage?.mimeType || 'video/mp4'} />
+            </video>
+          ) : (
+            <div
+              className={`absolute inset-0 bg-cover bg-no-repeat z-0 ${bgPositionClass}`}
+              style={{ backgroundImage: `url(${bgMediaUrl})` }}
+              aria-hidden="true"
+            />
+          ))}
         {blockSettings?.backgroundBlur && (
           <div
             className="absolute inset-0 pointer-events-none z-[1] backdrop-blur-[17px]"
@@ -64,7 +95,14 @@ export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
           <div className="bg-brand-off-white rounded-2xl overflow-hidden flex flex-col md:flex-row items-center gap-10 md:gap-16 p-10 md:p-20 text-brand-black">
             {featureImage && typeof featureImage === 'object' && (
               <div className="w-full md:w-1/2 flex-shrink-0">
-                <Media className="w-full h-auto rounded-lg" resource={featureImage} />
+                <Media
+                  className="relative aspect-square w-full overflow-hidden rounded-lg"
+                  fill
+                  pictureClassName="h-full w-full"
+                  imgClassName="h-full w-full object-cover"
+                  videoClassName="h-full w-full object-cover"
+                  resource={featureImage}
+                />
               </div>
             )}
 
