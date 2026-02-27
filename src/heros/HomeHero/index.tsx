@@ -11,14 +11,18 @@ export const HomeHero: React.FC<HomeHeroBlockType> = ({ title, subtitle, links, 
     <div className="relative min-h-screen pb-lg header-offset flex items-center justify-center">
       <div className="container z-10 relative flex items-center justify-center">
         <RevealOnScroll variant="slideUp">
-          <div className="max-w-3xl md:text-center space-y-6">
+          <div className="max-w-3xl md:text-center ">
             {title && <h1 className="type-display-hero-a text-balance">{title}</h1>}
             {subtitle && <p className="type-display-hero-b text-balance">{subtitle}</p>}
             {richText && (
-              <RichText className="wysiwyg text-balance" data={richText} enableGutter={false} />
+              <RichText
+                className="wysiwyg text-balance mt-10"
+                data={richText}
+                enableGutter={false}
+              />
             )}
             {Array.isArray(links) && links.length > 0 && (
-              <ul className="flex justify-center gap-4">
+              <ul className="flex justify-center gap-4 mt-10">
                 {links.map(({ link }, i) => {
                   return (
                     <li key={i}>
