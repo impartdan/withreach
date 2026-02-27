@@ -16,7 +16,7 @@ export const ChecklistBlock: React.FC<ChecklistBlockProps> = ({ heading, items }
                   className="w-5 h-5 mt-[0.25em] text-white/60 shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  stroke="#999177"
                   strokeWidth={1.5}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
