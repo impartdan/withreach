@@ -15,7 +15,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
   return (
     <div className="container">
       {hasHeader && (
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16 mb-12 md:mb-16 lg:mb-20">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16 mb-12 md:mb-16 lg:mb-20">
           <div className="flex flex-col gap-6 flex-1">
             {introduction && (
               <RichText data={introduction} enableGutter={false} enableProse={false} />

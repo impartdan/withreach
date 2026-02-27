@@ -33,13 +33,11 @@ export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
           )}
 
           {Array.isArray(links) && links.length > 0 && (
-            <BlockThemeContext.Provider value="light">
-              <div className="flex flex-wrap gap-3">
-                {links.map(({ link }, i) => {
-                  return <CMSLink key={i} size="default" {...link} />
-                })}
-              </div>
-            </BlockThemeContext.Provider>
+            <div className="flex flex-wrap gap-3">
+              {links.map(({ link }, i) => {
+                return <CMSLink key={i} size="default" {...link} />
+              })}
+            </div>
           )}
         </div>
 
