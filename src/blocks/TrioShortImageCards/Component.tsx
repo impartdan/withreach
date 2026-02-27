@@ -65,7 +65,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                   <BlockThemeContext.Provider value="light">
                     <div className="mt-auto flex flex-wrap gap-3">
                       {card.links.map(({ link }, i) => (
-                        <CMSLink key={i} size="default" {...link} />
+                        <CMSLink key={i} appearance="arrow" size="default" {...link} />
                       ))}
                     </div>
                   </BlockThemeContext.Provider>
