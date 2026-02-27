@@ -5078,6 +5078,7 @@ export interface CtaLargeBlock {
  * via the `definition` "CtaSmallBlock".
  */
 export interface CtaSmallBlock {
+  logo?: (number | null) | Media;
   cards: {
     heading: string;
     description?: {
@@ -7905,6 +7906,7 @@ export interface CtaLargeBlockSelect<T extends boolean = true> {
  * via the `definition` "CtaSmallBlock_select".
  */
 export interface CtaSmallBlockSelect<T extends boolean = true> {
+  logo?: T;
   cards?:
     | T
     | {
