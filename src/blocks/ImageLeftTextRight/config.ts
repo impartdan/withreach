@@ -1,10 +1,4 @@
 import type { Block } from 'payload'
-import {
-  FixedToolbarFeature,
-  HeadingFeature,
-  InlineToolbarFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
 import { blockSettings } from '@/fields/blockSettings'
 
 export const ImageLeftTextRight: Block = {
@@ -27,25 +21,14 @@ export const ImageLeftTextRight: Block = {
             {
               name: 'heading',
               type: 'text',
-              required: true,
             },
             {
-              name: 'images',
-              type: 'array',
-              label: 'Images',
-              minRows: 1,
-              maxRows: 3,
+              name: 'image',
+              type: 'upload',
+              relationTo: 'media',
               admin: {
-                description: 'Images displayed on the left side',
+                description: 'Image displayed on the left side',
               },
-              fields: [
-                {
-                  name: 'image',
-                  type: 'upload',
-                  relationTo: 'media',
-                  required: true,
-                },
-              ],
             },
             {
               name: 'items',
@@ -61,17 +44,7 @@ export const ImageLeftTextRight: Block = {
                 },
                 {
                   name: 'description',
-                  type: 'richText',
-                  editor: lexicalEditor({
-                    features: ({ rootFeatures }) => {
-                      return [
-                        ...rootFeatures,
-                        HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
-                        FixedToolbarFeature(),
-                        InlineToolbarFeature(),
-                      ]
-                    },
-                  }),
+                  type: 'text',
                 },
               ],
             },

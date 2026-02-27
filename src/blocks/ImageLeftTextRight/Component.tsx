@@ -1,11 +1,10 @@
 import React from 'react'
 import type { ImageLeftTextRightBlock as ImageLeftTextRightBlockProps } from '@/payload-types'
-import RichText from '@/components/RichText'
 import { Media } from '@/components/Media'
 
 export const ImageLeftTextRightBlock: React.FC<ImageLeftTextRightBlockProps> = ({
   heading,
-  images,
+  image,
   items,
 }) => {
   return (
@@ -19,27 +18,10 @@ export const ImageLeftTextRightBlock: React.FC<ImageLeftTextRightBlockProps> = (
           )}
 
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-            {/* Images */}
-            {Array.isArray(images) && images.length > 0 && (
-              <div className="relative flex-1 min-h-[300px] md:min-h-[400px]">
-                {images.map((item, index) => {
-                  if (!item.image || typeof item.image === 'string') return null
-
-                  const positionClasses = [
-                    'top-0 left-0 w-[55%] z-10',
-                    'top-[10%] right-0 w-[60%] z-20',
-                    'bottom-0 left-[15%] w-[50%] z-30',
-                  ]
-
-                  return (
-                    <div
-                      key={index}
-                      className={`absolute rounded-lg overflow-hidden shadow-lg ${positionClasses[index] || ''}`}
-                    >
-                      <Media resource={item.image} imgClassName="object-cover w-full h-full" />
-                    </div>
-                  )
-                })}
+            {/* Image */}
+            {image && typeof image !== 'string' && (
+              <div className="relative flex-1 min-h-[300px] md:min-h-[400px] rounded-lg overflow-hidden shadow-lg">
+                <Media resource={image} imgClassName="object-cover w-full h-full" />
               </div>
             )}
 
@@ -54,12 +36,9 @@ export const ImageLeftTextRightBlock: React.FC<ImageLeftTextRightBlockProps> = (
                       </h3>
                     )}
                     {item.description && (
-                      <RichText
-                        className="text-sm md:text-base text-white/70 leading-[1.6] [&>p]:mb-0"
-                        data={item.description}
-                        enableGutter={false}
-                        enableProse={false}
-                      />
+                      <p className="text-sm md:text-base text-white/70 leading-[1.6]">
+                        {item.description}
+                      </p>
                     )}
                   </div>
                 ))}

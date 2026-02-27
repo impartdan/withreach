@@ -4123,33 +4123,14 @@ export interface ChecklistBlock {
  * via the `definition` "ImageLeftTextRightBlock".
  */
 export interface ImageLeftTextRightBlock {
-  heading: string;
+  heading?: string | null;
   /**
-   * Images displayed on the left side
+   * Image displayed on the left side
    */
-  images?:
-    | {
-        image: number | Media;
-        id?: string | null;
-      }[]
-    | null;
+  image?: (number | null) | Media;
   items: {
     title: string;
-    description?: {
-      root: {
-        type: string;
-        children: {
-          type: any;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
+    description?: string | null;
     id?: string | null;
   }[];
   /**
@@ -7224,12 +7205,7 @@ export interface ChecklistBlockSelect<T extends boolean = true> {
  */
 export interface ImageLeftTextRightBlockSelect<T extends boolean = true> {
   heading?: T;
-  images?:
-    | T
-    | {
-        image?: T;
-        id?: T;
-      };
+  image?: T;
   items?:
     | T
     | {

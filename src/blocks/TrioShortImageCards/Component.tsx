@@ -38,7 +38,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
               className="bg-brand-white/80 rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col"
             >
               {card.image && typeof card.image !== 'string' && (
-                <div className="aspect-square bg-white relative overflow-hidden">
+                <div className="aspect-[4/3] bg-white relative overflow-hidden">
                   <Media
                     resource={card.image}
                     imgClassName="object-cover w-full h-full absolute inset-0"
