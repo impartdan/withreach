@@ -45,10 +45,6 @@
         ]
       },
       {
-        "blockType": "paragraph",
-        "text": "2. Tariff Shift Rule"
-      },
-      {
         "blockType": "list",
         "style": "unordered",
         "items": [
@@ -79,25 +75,41 @@
         ]
       },
       {
+        "blockType": "imageBlock",
+        "imageUrl": "https://media.licdn.com/dms/image/v2/D4D12AQFzNvQi8jK00Q/article-inline_image-shrink_1000_1488/B4DZV_p7z8G8AQ-/0/1741603456930?e=2147483647&v=beta&t=Sm4ind_lrmyGF4Ivk8NeFGWDSuAm9NcJogjSrGVOTeI",
+        "imageAlt": "",
+        "imageFilename": "1741603456930",
+        "caption": null
+      },
+      {
         "blockType": "heading",
         "level": "h3",
         "text": "Industry-Specific Impact of USMCA Rules"
       },
       {
-        "blockType": "paragraph",
-        "text": "Electronics Industry"
+        "blockType": "imageBlock",
+        "imageUrl": "https://media.licdn.com/dms/image/v2/D4D12AQEoTb2rExtLMA/article-inline_image-shrink_400_744/B4DZV_qXgUHkAY-/0/1741603568422?e=2147483647&v=beta&t=rj2kO6kPQCRbRRTUVvKtmK30zSosrMsFWqrwYarcp1s",
+        "imageAlt": "",
+        "imageFilename": "1741603568422",
+        "caption": null
       },
       {
-        "blockType": "paragraph",
-        "text": "Fashion Industry"
+        "blockType": "imageBlock",
+        "imageUrl": "https://media.licdn.com/dms/image/v2/D4D12AQEY2D0dxIlv0g/article-inline_image-shrink_400_744/B4DZV_q7PzHwAY-/0/1741603714536?e=2147483647&v=beta&t=-ljQczOSg2gJqqXYar63sPSvbKtzMdO3euiHgcVO3pg",
+        "imageAlt": "",
+        "imageFilename": "1741603714536",
+        "caption": null
       },
       {
         "blockType": "paragraph",
         "text": "Personal Care Industry"
       },
       {
-        "blockType": "paragraph",
-        "text": "Key Takeaways"
+        "blockType": "imageBlock",
+        "imageUrl": "https://media.licdn.com/dms/image/v2/D4D12AQFlK3Sl3CmkTg/article-inline_image-shrink_400_744/B4DZV_rJH7HkAY-/0/1741603771729?e=2147483647&v=beta&t=hcthmgE4d0XlC9192P9qwtuchRWurd3R4CxHq6Gyy7s",
+        "imageAlt": "",
+        "imageFilename": "1741603771729",
+        "caption": null
       },
       {
         "blockType": "list",
@@ -121,6 +133,13 @@
           "❌ If it doesn’t meet USMCA rules, it is subject to the full tariff.",
           "⚠️ Companies will need to prove USMCA compliance using certificates of origin and detailed supply chain documentation."
         ]
+      },
+      {
+        "blockType": "imageBlock",
+        "imageUrl": "https://media.licdn.com/dms/image/v2/D4D12AQH_WP4yMFWvYA/article-inline_image-shrink_1000_1488/B4DZV_rvSfHkAQ-/0/1741603929930?e=2147483647&v=beta&t=3npsymUxOQxTMak08Q4Pe1yX8kqUTNdIskzHOF2F9A8",
+        "imageAlt": "",
+        "imageFilename": "1741603929930",
+        "caption": null
       },
       {
         "blockType": "heading",

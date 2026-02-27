@@ -164,6 +164,11 @@
       {
         "blockType": "paragraph",
         "text": "So if you're looking to grow friendly conversions instead of fraud, connect with the fully managed fraud solution designed to make that happen. Integrate today and spend less time focusing on fraud and more time focusing on the growth of your global business."
+      },
+      {
+        "blockType": "videoEmbed",
+        "videoType": "youtube",
+        "youtubeUrl": "https://www.youtube.com/watch?v=W90XJ2QPB2I"
       }
     ]
   },

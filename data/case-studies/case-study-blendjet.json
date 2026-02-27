@@ -2,10 +2,14 @@
   "type": "case-study",
   "title": "Case Study: BlendJet",
   "slug": "case-study-blendjet",
-  "companyName": null,
+  "companyName": "Blendjet",
   "excerpt": "Blendjet chose the Reach MoR Solution to process in their global shopper’s preferred payment method and local currency, increasing international sales 45% faster.",
   "publishedAt": null,
-  "heroImage": null,
+  "heroImage": {
+    "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-812d-8e2c-e85ebd02c8f4/8cdf60bd-0905-430a-886b-afbf0d501678.jpg",
+    "alt": "Case Study: BlendJet",
+    "filename": "8cdf60bd-0905-430a-886b-afbf0d501678.jpg"
+  },
   "companyLogo": null,
   "pdfUrl": null,
   "highlights": [],
@@ -13,12 +17,79 @@
   "caseStudyCategories": [],
   "content": {
     "type": "structured",
-    "blocks": []
+    "blocks": [
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "About Blendjet"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "BlendJet’s story began over a decade ago when Ryan Pamplin and John Zheng met through colleagues and formed a friendship, keeping in touch over the years. After life took an unexpected turn, Ryan was inspired to create a product that would help people live longer, healthier lives and he reconnected with John to brainstorm."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "The dream became a reality in 2017 when the two friends co-founded BlendJet. They discovered that a blender that could make a clump-free smoothie was missing from the market and, since they both relied on daily smoothies to supplement their nutrition, they decided to create one."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "BlendJet’s mission is to help people live longer lives and to make healthy happen anywhere. They exist to optimize the everyday, empower mindful living, and provide fuel to help you feel good."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "The Situation"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "As BlendJet began to sell their products in the United States, they realized they also wanted to establish a global presence from the get-go."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "However, they knew that processing US dollars through US banking networks would prove difficult to capture the international audience they wanted, and setting up entities and a presence in each market would be a massive burden on the business. Without it they would face a high cost of acquisition and lower conversion rate, which would stunt their overall growth plans."
+      },
+      {
+        "blockType": "blockquote",
+        "quote": "\"Using Reach has unlocked the ability to have a significant portion of our revenue come from international sales. Reach is an incredibly cost-effective, easy to set up way to take your business global. It drives amazing conversion rates for us.\" Ryan Pamplin, CEO & Co-Founder at BlendJet",
+        "citation": ""
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "The Solution"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Reach’s unique Merchant of Record model combined with Local Acquiring is a gamechanger for global ecommerce. The MOR is fully compliant with local regulations and gives merchants a one-stop-shop for international payment processing, eliminating the need to establish and maintain connections in diverse geographies with disparate needs."
+      },
+      {
+        "blockType": "paragraph",
+        "text": "With Reach, both merchants and consumers win. Merchants offload the complexity of expanding globally to Reach and consumers enjoy a frictionless experience with the ability to pay in their local currency and preferred payment method."
+      },
+      {
+        "blockType": "heading",
+        "level": "h3",
+        "text": "The Outcome"
+      },
+      {
+        "blockType": "paragraph",
+        "text": "Upon partnering with Reach, BlendJet was able to establish itself as a leading international brand by taking advantage of:"
+      },
+      {
+        "blockType": "list",
+        "style": "unordered",
+        "items": [
+          "The ability to dynamically display local currencies and relevant payment methods based on global customer location thanks to our innovative API.",
+          "Access to the best wholesale FX rates, ensuring that shoppers see the lowest local pricing with the help of Reach's Guaranteed FX Solution.",
+          "An increase in authorization rates for legitimate transactions while protecting their brand against fraudulent transactions with our Fraud Solution."
+        ]
+      }
+    ]
   },
   "meta": {
     "title": "Case Study: BlendJet",
     "description": "Blendjet chose the Reach MoR Solution to process in their global shopper’s preferred payment method and local currency, increasing international sales 45% faster.",
-    "ogImageUrl": null
+    "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-812d-8e2c-e85ebd02c8f4/8cdf60bd-0905-430a-886b-afbf0d501678.jpg"
   },
   "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-blendjet"
 }

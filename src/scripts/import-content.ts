@@ -4,84 +4,20 @@ import config from '@payload-config'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import crypto from 'crypto'
+
+import {
+  type ScrapedPost,
+  type ScrapedCaseStudy,
+  type ImageRef,
+  ensureMedia,
+  convertBlocksToLexical,
+  makeSimpleLexical,
+  cleanupTempDir,
+} from './lib/lexical-helpers.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const DATA_DIR = path.resolve(__dirname, '../../data')
-const TEMP_DIR = path.resolve(__dirname, '../../temp-import-media')
-const OLD_SITE_BASE = 'https://www.withreach.com'
-
-// ---------------------------------------------------------------------------
-// Types matching the scraped JSON shape
-// ---------------------------------------------------------------------------
-
-interface ImageRef {
-  url: string
-  alt?: string
-  filename?: string
-}
-
-interface ScrapedBlock {
-  blockType: string
-  text?: string
-  level?: string
-  style?: string
-  items?: string[]
-  quote?: string
-  citation?: string
-  heading?: string
-  stats?: Array<{ value?: string; description?: string; title?: string }>
-  imageUrl?: string
-  imageAlt?: string
-  videoType?: string
-  youtubeUrl?: string
-  title?: string
-  description?: string
-}
-
-interface ScrapedContent {
-  type: string
-  blocks: ScrapedBlock[]
-}
-
-interface ScrapedMeta {
-  title?: string
-  description?: string
-  ogImageUrl?: string | null
-}
-
-interface ScrapedPost {
-  type: 'post'
-  title: string
-  slug: string
-  excerpt?: string | null
-  publishedAt?: string | null
-  heroImage?: ImageRef | null
-  authors?: string[]
-  categories?: string[]
-  content: ScrapedContent
-  meta?: ScrapedMeta
-  sourceUrl?: string
-}
-
-interface ScrapedCaseStudy {
-  type: 'case-study'
-  title: string
-  slug: string
-  companyName?: string | null
-  excerpt?: string | null
-  publishedAt?: string | null
-  heroImage?: ImageRef | null
-  companyLogo?: ImageRef | null
-  pdfUrl?: string | null
-  highlights?: Array<{ label: string; value: string }>
-  categories?: string[]
-  caseStudyCategories?: string[]
-  content: ScrapedContent
-  meta?: ScrapedMeta
-  sourceUrl?: string
-}
 
 // ---------------------------------------------------------------------------
 // Counters for summary output
@@ -92,315 +28,6 @@ const stats = {
   media: { uploaded: 0, skipped: 0, failed: 0 },
   posts: { created: 0, skipped: 0, failed: 0 },
   caseStudies: { created: 0, skipped: 0, failed: 0 },
-}
-
-// ---------------------------------------------------------------------------
-// Utilities
-// ---------------------------------------------------------------------------
-
-function generateId(): string {
-  return crypto.randomBytes(12).toString('hex')
-}
-
-/** Resolve relative image URLs against the old site base. */
-function resolveImageUrl(url: string | null | undefined): string | null {
-  if (!url) return null
-  if (url.startsWith('http')) return url
-  return OLD_SITE_BASE + (url.startsWith('/') ? url : '/' + url)
-}
-
-/** Derive a safe filename from a URL. */
-function urlToFilename(url: string): string {
-  try {
-    const parsed = new URL(url)
-    const base = path.basename(parsed.pathname)
-    return base || `image-${generateId()}`
-  } catch {
-    return `image-${generateId()}`
-  }
-}
-
-/** Download a remote URL to a temp file, returning the local path. */
-async function downloadToTemp(url: string): Promise<string> {
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`HTTP ${res.status} downloading ${url}`)
-
-  const contentType = res.headers.get('content-type') || ''
-  const buffer = Buffer.from(await res.arrayBuffer())
-
-  let filename = urlToFilename(url)
-  // Ensure the extension matches the content-type
-  if (!path.extname(filename)) {
-    if (contentType.includes('svg')) filename += '.svg'
-    else if (contentType.includes('webp')) filename += '.webp'
-    else if (contentType.includes('jpeg') || contentType.includes('jpg')) filename += '.jpg'
-    else if (contentType.includes('png')) filename += '.png'
-    else if (contentType.includes('gif')) filename += '.gif'
-    else filename += '.bin'
-  }
-
-  if (!fs.existsSync(TEMP_DIR)) fs.mkdirSync(TEMP_DIR, { recursive: true })
-  const filePath = path.join(TEMP_DIR, filename)
-  fs.writeFileSync(filePath, buffer)
-  return filePath
-}
-
-/**
- * Download a remote image, upload it to Payload media, and return the media ID.
- * Results are cached so each URL is only downloaded/uploaded once.
- */
-async function ensureMedia(
-  rawUrl: string | null | undefined,
-  alt: string,
-  payload: Awaited<ReturnType<typeof getPayload>>,
-  cache: Map<string, number>,
-): Promise<number | null> {
-  const url = resolveImageUrl(rawUrl)
-  if (!url) return null
-  if (cache.has(url)) return cache.get(url)!
-
-  let filePath: string | null = null
-  try {
-    filePath = await downloadToTemp(url)
-
-    const media = await payload.create({
-      collection: 'media',
-      data: { alt: alt || '' },
-      filePath,
-    })
-
-    cache.set(url, media.id as number)
-    stats.media.uploaded++
-    console.log(`  [media] uploaded: ${path.basename(filePath)} (id: ${media.id})`)
-    return media.id as number
-  } catch (err: unknown) {
-    console.warn(`  [media] FAILED to upload ${url}: ${err instanceof Error ? err.message : String(err)}`)
-    stats.media.failed++
-    return null
-  } finally {
-    if (filePath && fs.existsSync(filePath)) fs.unlinkSync(filePath)
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Lexical AST helpers
-// ---------------------------------------------------------------------------
-
-function makeTextNode(text: string) {
-  return { type: 'text', text, format: 0, detail: 0, mode: 'normal', style: '', version: 1 }
-}
-
-function makeParagraphNode(text: string) {
-  return {
-    type: 'paragraph',
-    children: [makeTextNode(text)],
-    direction: 'ltr',
-    format: '',
-    indent: 0,
-    version: 1,
-    textFormat: 0,
-    textStyle: '',
-  }
-}
-
-function makeHeadingNode(tag: string, text: string) {
-  return {
-    type: 'heading',
-    tag,
-    children: [makeTextNode(text)],
-    direction: 'ltr',
-    format: '',
-    indent: 0,
-    version: 1,
-  }
-}
-
-function makeListNode(listType: 'bullet' | 'number', items: string[]) {
-  return {
-    type: 'list',
-    listType,
-    start: 1,
-    tag: listType === 'bullet' ? 'ul' : 'ol',
-    children: items.map((item, i) => ({
-      type: 'listitem',
-      value: i + 1,
-      children: [makeTextNode(item)],
-      direction: 'ltr',
-      format: '',
-      indent: 0,
-      version: 1,
-    })),
-    direction: 'ltr',
-    format: '',
-    indent: 0,
-    version: 1,
-  }
-}
-
-function makeBlockNode(fields: Record<string, unknown>) {
-  return {
-    type: 'block',
-    fields: { id: generateId(), ...fields },
-    format: '',
-    version: 2,
-  }
-}
-
-/** Build a minimal Lexical document from an array of plain-text paragraphs. */
-function makeSimpleLexical(paragraphs: string[]) {
-  const children =
-    paragraphs.filter(Boolean).length > 0
-      ? paragraphs.filter(Boolean).map(makeParagraphNode)
-      : [makeParagraphNode('')]
-
-  return {
-    root: {
-      type: 'root',
-      children,
-      direction: 'ltr',
-      format: '',
-      indent: 0,
-      version: 1,
-    },
-  }
-}
-
-/**
- * Convert the scraped flat block array into a Payload Lexical document.
- * Downloads any inline images as media before building block nodes.
- */
-async function convertBlocksToLexical(
-  blocks: ScrapedBlock[],
-  mediaCache: Map<string, number>,
-  payload: Awaited<ReturnType<typeof getPayload>>,
-): Promise<object> {
-  const children: unknown[] = []
-
-  for (const block of blocks) {
-    try {
-      switch (block.blockType) {
-        case 'paragraph': {
-          if (!block.text) break
-          // A single paragraph may contain \n-separated lines — emit each as its own node.
-          const lines = block.text.split('\n').filter((l) => l.trim())
-          for (const line of lines) {
-            children.push(makeParagraphNode(line.trim()))
-          }
-          break
-        }
-
-        case 'heading': {
-          if (!block.text) break
-          const tag = ['h1', 'h2', 'h3', 'h4'].includes(block.level || '') ? block.level! : 'h2'
-          children.push(makeHeadingNode(tag, block.text))
-          break
-        }
-
-        case 'list': {
-          if (!block.items?.length) break
-          const listType = block.style === 'ordered' ? 'number' : 'bullet'
-          children.push(makeListNode(listType, block.items))
-          break
-        }
-
-        case 'blockquote': {
-          children.push(
-            makeBlockNode({
-              blockType: 'blockquote',
-              quote: block.quote || '',
-              citation: block.citation || '',
-            }),
-          )
-          break
-        }
-
-        case 'statsBlock': {
-          // `value` is a required field in StatsBlock — fall back to description if empty
-          const validStats = (block.stats || []).map((s) => ({
-            value: s.value || s.description || '-',
-            description: s.description || '',
-          }))
-          if (validStats.length > 0) {
-            children.push(
-              makeBlockNode({
-                blockType: 'statsBlock',
-                heading: block.heading || '',
-                stats: validStats,
-              }),
-            )
-          }
-          break
-        }
-
-        case 'imageBlock': {
-          const imageId = await ensureMedia(block.imageUrl, block.imageAlt || '', payload, mediaCache)
-          if (imageId) {
-            children.push(
-              makeBlockNode({
-                blockType: 'imageBlock',
-                image: imageId,
-                maxWidth: 'max-w-4xl',
-                alignment: 'center',
-              }),
-            )
-          }
-          break
-        }
-
-        case 'videoEmbed': {
-          children.push(
-            makeBlockNode({
-              blockType: 'videoEmbed',
-              title: block.title || '',
-              description: block.description || '',
-              videoType: block.videoType || 'youtube',
-              youtubeUrl: block.youtubeUrl || '',
-            }),
-          )
-          break
-        }
-
-        case 'conclusion': {
-          // The scraped `text` field becomes the conclusion's nested richText `content`.
-          // Split on double-newlines to produce separate paragraphs.
-          const textParts = (block.text || '').split('\n\n').filter(Boolean)
-          const conclusionContent = makeSimpleLexical(textParts)
-
-          children.push(
-            makeBlockNode({
-              blockType: 'conclusion',
-              heading: block.heading || 'Conclusion',
-              content: conclusionContent,
-              stats: (block.stats || []).map((s) => ({
-                title: s.title || '',
-                description: s.description || '',
-              })),
-            }),
-          )
-          break
-        }
-
-        default:
-          console.warn(`  [lexical] Unknown blockType: ${block.blockType} — skipping`)
-      }
-    } catch (err: unknown) {
-      console.warn(`  [lexical] Failed to convert block (${block.blockType}): ${err instanceof Error ? err.message : String(err)}`)
-    }
-  }
-
-  // Lexical requires at least one child node
-  if (children.length === 0) children.push(makeParagraphNode(''))
-
-  return {
-    root: {
-      type: 'root',
-      children,
-      direction: 'ltr',
-      format: '',
-      indent: 0,
-      version: 1,
-    },
-  }
 }
 
 // ---------------------------------------------------------------------------
@@ -422,7 +49,6 @@ function loadCaseStudies(): ScrapedCaseStudy[] {
     .readdirSync(dir)
     .filter((f) => f.endsWith('.json') && f !== 'case-studies.json')
 
-  // Read all individual files
   const all: ScrapedCaseStudy[] = files.map((f) => {
     const raw = fs.readFileSync(path.join(dir, f), 'utf-8')
     return JSON.parse(raw) as ScrapedCaseStudy
@@ -442,7 +68,6 @@ function loadCaseStudies(): ScrapedCaseStudy[] {
       const existingIsClean = !existing.slug.startsWith('case-study-')
       const currentIsClean = !cs.slug.startsWith('case-study-')
 
-      // Prefer the one with more content; if equal, prefer the clean slug
       if (
         currentBlocks > existingBlocks ||
         (currentBlocks === existingBlocks && currentIsClean && !existingIsClean)
@@ -498,7 +123,9 @@ async function ensureCategory(
     console.log(`  [category] created: ${title}`)
     return id
   } catch (err: unknown) {
-    console.warn(`  [category] FAILED for "${title}": ${err instanceof Error ? err.message : String(err)}`)
+    console.warn(
+      `  [category] FAILED for "${title}": ${err instanceof Error ? err.message : String(err)}`,
+    )
     return null
   }
 }
@@ -513,7 +140,6 @@ async function importPost(
   categoryCache: Map<string, number>,
   mediaCache: Map<string, number>,
 ): Promise<void> {
-  // Idempotency check
   const existing = await payload.find({
     collection: 'posts',
     where: { slug: { equals: post.slug } },
@@ -526,34 +152,32 @@ async function importPost(
   }
 
   try {
-    // Resolve categories
     const categoryIds = (
       await Promise.all(
         (post.categories || []).map((c) => ensureCategory(c, categoryCache, payload)),
       )
     ).filter((id): id is number => id !== null)
 
-    // Resolve hero image
     const heroImageId = await ensureMedia(
       post.heroImage?.url,
       post.heroImage?.alt || post.title,
       payload,
       mediaCache,
+      stats.media,
     )
 
-    // Resolve OG image (may be the same as hero — cache deduplicates)
     const ogImageId = await ensureMedia(
       post.meta?.ogImageUrl,
       `${post.title} OG`,
       payload,
       mediaCache,
+      stats.media,
     )
 
-    // Convert content blocks — use excerpt as fallback if no blocks
     const blocks = post.content?.blocks || []
     const content =
       blocks.length > 0
-        ? await convertBlocksToLexical(blocks, mediaCache, payload)
+        ? await convertBlocksToLexical(blocks, mediaCache, payload, stats.media)
         : makeSimpleLexical([post.excerpt || post.title])
 
     await payload.create({
@@ -580,7 +204,9 @@ async function importPost(
     console.log(`  [post] created: ${post.slug}`)
     stats.posts.created++
   } catch (err: unknown) {
-    console.error(`  [post] FAILED: ${post.slug}: ${err instanceof Error ? err.message : String(err)}`)
+    console.error(
+      `  [post] FAILED: ${post.slug}: ${err instanceof Error ? err.message : String(err)}`,
+    )
     stats.posts.failed++
   }
 }
@@ -612,6 +238,7 @@ async function importCaseStudy(
       cs.heroImage?.alt || cs.title,
       payload,
       mediaCache,
+      stats.media,
     )
 
     const companyLogoId = await ensureMedia(
@@ -619,6 +246,7 @@ async function importCaseStudy(
       cs.companyLogo?.alt || `${cs.companyName || cs.title} logo`,
       payload,
       mediaCache,
+      stats.media,
     )
 
     const ogImageId = await ensureMedia(
@@ -626,12 +254,13 @@ async function importCaseStudy(
       `${cs.title} OG`,
       payload,
       mediaCache,
+      stats.media,
     )
 
     const csBlocks = cs.content?.blocks || []
     const content =
       csBlocks.length > 0
-        ? await convertBlocksToLexical(csBlocks, mediaCache, payload)
+        ? await convertBlocksToLexical(csBlocks, mediaCache, payload, stats.media)
         : makeSimpleLexical([cs.excerpt || cs.title])
 
     await payload.create({
@@ -660,7 +289,9 @@ async function importCaseStudy(
     console.log(`  [case-study] created: ${cs.slug}`)
     stats.caseStudies.created++
   } catch (err: unknown) {
-    console.error(`  [case-study] FAILED: ${cs.slug}: ${err instanceof Error ? err.message : String(err)}`)
+    console.error(
+      `  [case-study] FAILED: ${cs.slug}: ${err instanceof Error ? err.message : String(err)}`,
+    )
     stats.caseStudies.failed++
   }
 }
@@ -674,11 +305,9 @@ async function main() {
 
   const payload = await getPayload({ config })
 
-  // Shared caches so images and categories are only resolved once
   const categoryCache = new Map<string, number>()
   const mediaCache = new Map<string, number>()
 
-  // --- Posts ---
   console.log('Loading posts...')
   const posts = loadPosts()
   console.log(`Found ${posts.length} posts.\n`)
@@ -688,7 +317,6 @@ async function main() {
     await importPost(post, payload, categoryCache, mediaCache)
   }
 
-  // --- Case Studies ---
   console.log('\nLoading case studies...')
   const caseStudies = loadCaseStudies()
   console.log(`Found ${caseStudies.length} case studies (after deduplication).\n`)
@@ -698,17 +326,21 @@ async function main() {
     await importCaseStudy(cs, payload, categoryCache, mediaCache)
   }
 
-  // Cleanup temp directory if it exists
-  if (fs.existsSync(TEMP_DIR)) {
-    fs.rmSync(TEMP_DIR, { recursive: true, force: true })
-  }
+  cleanupTempDir()
 
-  // --- Summary ---
   console.log('\n=== Import Summary ===')
-  console.log(`Categories:   created=${stats.categories.created}  skipped=${stats.categories.skipped}`)
-  console.log(`Media:        uploaded=${stats.media.uploaded}  skipped=${stats.media.skipped}  failed=${stats.media.failed}`)
-  console.log(`Posts:        created=${stats.posts.created}  skipped=${stats.posts.skipped}  failed=${stats.posts.failed}`)
-  console.log(`Case Studies: created=${stats.caseStudies.created}  skipped=${stats.caseStudies.skipped}  failed=${stats.caseStudies.failed}`)
+  console.log(
+    `Categories:   created=${stats.categories.created}  skipped=${stats.categories.skipped}`,
+  )
+  console.log(
+    `Media:        uploaded=${stats.media.uploaded}  skipped=${stats.media.skipped}  failed=${stats.media.failed}`,
+  )
+  console.log(
+    `Posts:        created=${stats.posts.created}  skipped=${stats.posts.skipped}  failed=${stats.posts.failed}`,
+  )
+  console.log(
+    `Case Studies: created=${stats.caseStudies.created}  skipped=${stats.caseStudies.skipped}  failed=${stats.caseStudies.failed}`,
+  )
 
   process.exit(0)
 }

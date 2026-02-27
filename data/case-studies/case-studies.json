@@ -3,10 +3,14 @@
     "type": "case-study",
     "title": "Case Study: aussieBum",
     "slug": "case-study-aussiebum",
-    "companyName": null,
+    "companyName": "aussieBum",
     "excerpt": "Learn how aussieBum was able to increase conversions and decrease failed credit card transactions with Reach's Merchant of Record model and Guided Fraud Services.",
     "publishedAt": null,
-    "heroImage": null,
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8152-ab9b-c260e4821a47/9a2efef4-f5a5-4c32-93ed-343571f2bdf6.jpg",
+      "alt": "Case Study: aussieBum",
+      "filename": "9a2efef4-f5a5-4c32-93ed-343571f2bdf6.jpg"
+    },
     "companyLogo": null,
     "pdfUrl": null,
     "highlights": [],
@@ -14,12 +18,74 @@
     "caseStudyCategories": [],
     "content": {
       "type": "structured",
-      "blocks": []
+      "blocks": [
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "About aussieBum"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "From its humble beginnings in the Inner West of Sydney, Australia, to its global success, aussieBum has dared to take risks. In their early days, aussieBum faced barriers to gaining traction in physical retail locations. This led them to dive in head first and develop their online retail channels. This pivot paid off and garnered aussieBum worldwide attention from retailers and consumers alike. Today the producer of quality men’s swimwear, underwear, and clothing produces over 1 million garments for markets worldwide and they continue to expand their digital footprint. Their cross-border success story has won them multiple Australian export and ecommerce awards, including multiple Australian export awards for ecommerce & manufacturing. aussieBum partnered with Reach to help optimize their global expansion and to help them increase payment approval rates in overseas markets."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In 2022, aussieBum was looking to maximize its ability to scale in its international markets. While they had achievedsuccess globally, they noticed they were experiencing multiple friction points impacting their expansion and bottom line:"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "As aussieBum only had an entity in Australia, which meant they were limited to processing transactions crossborder, they were experiencing decreased authorization rates in their global markets.",
+            "AussieBum was also being subjected to high fees on their international transactions due to the costs of processing cross-border instead of locally.",
+            "AussieBum was experiencing an influx of failed credit card transactions in international markets like the US due to fraud rejection. This meant they were losing potential revenue from valid transactions due to suspected fraud."
+          ]
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "“Reach increased our approval rates by 18% and reduced fraud rejection by 91.12%. Reach has been a great addition to our cross-border solution.” — Ash Doran, Creative Marketing Manager",
+          "citation": ""
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Aussiebum decided to Integrate with Reach because of the clear advantage of its Merchant of Record model and Local Acquiring versus competing solutions. The ability to process transactions locally in the jurisdiction of their buyers empowered aussieBum to increase their international authorization rates and save on cross-border processing fees. aussieBum also leveraged Reach’s Guided Fraud Services to bolster its fraud controls. Supplementing their fraud controls with Reach’s global experts allowed them to significantly decrease failed credit card transactions due to fraud rejections. Thanks to the optimizations Reach’s Merchant of Record model provided, aussieBum has increased its conversions, revenue and enhanced its ability to scale globally."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Outcome"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Fraud rejection represented a total of 17% of all failed credit card transactions before Reach. Only 1.51% of failed credit card transactions represented fraud rejection after integrating with Reach’s Guided Fraud Services."
+        },
+        {
+          "blockType": "imageBlock",
+          "imageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/wp-content/uploads/2023/10/Screenshot-2023-10-18-141029.png",
+          "imageAlt": "",
+          "caption": null
+        },
+        {
+          "blockType": "heading",
+          "level": "h4",
+          "text": "By reducing fees from 3.75% to 3.20%, aussieBum saved $94,621.45 with Reach."
+        }
+      ]
     },
     "meta": {
       "title": "Case Study: aussieBum",
       "description": "Learn how aussieBum was able to increase conversions and decrease failed credit card transactions with Reach's Merchant of Record model and Guided Fraud Services.",
-      "ogImageUrl": null
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8152-ab9b-c260e4821a47/9a2efef4-f5a5-4c32-93ed-343571f2bdf6.jpg"
     },
     "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-aussiebum"
   },
@@ -27,10 +93,14 @@
     "type": "case-study",
     "title": "Case Study: BlendJet",
     "slug": "case-study-blendjet",
-    "companyName": null,
+    "companyName": "Blendjet",
     "excerpt": "Blendjet chose the Reach MoR Solution to process in their global shopper’s preferred payment method and local currency, increasing international sales 45% faster.",
     "publishedAt": null,
-    "heroImage": null,
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-812d-8e2c-e85ebd02c8f4/8cdf60bd-0905-430a-886b-afbf0d501678.jpg",
+      "alt": "Case Study: BlendJet",
+      "filename": "8cdf60bd-0905-430a-886b-afbf0d501678.jpg"
+    },
     "companyLogo": null,
     "pdfUrl": null,
     "highlights": [],
@@ -38,12 +108,79 @@
     "caseStudyCategories": [],
     "content": {
       "type": "structured",
-      "blocks": []
+      "blocks": [
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "About Blendjet"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "BlendJet’s story began over a decade ago when Ryan Pamplin and John Zheng met through colleagues and formed a friendship, keeping in touch over the years. After life took an unexpected turn, Ryan was inspired to create a product that would help people live longer, healthier lives and he reconnected with John to brainstorm."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The dream became a reality in 2017 when the two friends co-founded BlendJet. They discovered that a blender that could make a clump-free smoothie was missing from the market and, since they both relied on daily smoothies to supplement their nutrition, they decided to create one."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "BlendJet’s mission is to help people live longer lives and to make healthy happen anywhere. They exist to optimize the everyday, empower mindful living, and provide fuel to help you feel good."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "The Situation"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "As BlendJet began to sell their products in the United States, they realized they also wanted to establish a global presence from the get-go."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "However, they knew that processing US dollars through US banking networks would prove difficult to capture the international audience they wanted, and setting up entities and a presence in each market would be a massive burden on the business. Without it they would face a high cost of acquisition and lower conversion rate, which would stunt their overall growth plans."
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "\"Using Reach has unlocked the ability to have a significant portion of our revenue come from international sales. Reach is an incredibly cost-effective, easy to set up way to take your business global. It drives amazing conversion rates for us.\" Ryan Pamplin, CEO & Co-Founder at BlendJet",
+          "citation": ""
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "The Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach’s unique Merchant of Record model combined with Local Acquiring is a gamechanger for global ecommerce. The MOR is fully compliant with local regulations and gives merchants a one-stop-shop for international payment processing, eliminating the need to establish and maintain connections in diverse geographies with disparate needs."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "With Reach, both merchants and consumers win. Merchants offload the complexity of expanding globally to Reach and consumers enjoy a frictionless experience with the ability to pay in their local currency and preferred payment method."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "The Outcome"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Upon partnering with Reach, BlendJet was able to establish itself as a leading international brand by taking advantage of:"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "The ability to dynamically display local currencies and relevant payment methods based on global customer location thanks to our innovative API.",
+            "Access to the best wholesale FX rates, ensuring that shoppers see the lowest local pricing with the help of Reach's Guaranteed FX Solution.",
+            "An increase in authorization rates for legitimate transactions while protecting their brand against fraudulent transactions with our Fraud Solution."
+          ]
+        }
+      ]
     },
     "meta": {
       "title": "Case Study: BlendJet",
       "description": "Blendjet chose the Reach MoR Solution to process in their global shopper’s preferred payment method and local currency, increasing international sales 45% faster.",
-      "ogImageUrl": null
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-812d-8e2c-e85ebd02c8f4/8cdf60bd-0905-430a-886b-afbf0d501678.jpg"
     },
     "sourceUrl": "https://www.withreach.com/resources/case-studies/case-study-blendjet"
   },
