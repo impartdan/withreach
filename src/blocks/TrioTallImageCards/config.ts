@@ -40,7 +40,6 @@ export const TrioTallImageCards: Block = {
               label: 'Cards',
               minRows: 1,
               maxRows: 3,
-              required: true,
               fields: [
                 {
                   name: 'image',
@@ -60,13 +59,12 @@ export const TrioTallImageCards: Block = {
                     },
                   }),
                 },
-                {
-                  name: 'link',
-                  type: 'text',
-                  admin: {
-                    description: 'Optional link URL for the card',
+                linkGroup({
+                  appearances: ['default', 'outline'],
+                  overrides: {
+                    maxRows: 2,
                   },
-                },
+                }),
               ],
             },
           ],

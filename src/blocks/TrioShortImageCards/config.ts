@@ -60,13 +60,12 @@ export const TrioShortImageCards: Block = {
                     },
                   }),
                 },
-                {
-                  name: 'link',
-                  type: 'text',
-                  admin: {
-                    description: 'Optional link URL for the card',
+                linkGroup({
+                  appearances: ['default', 'outline'],
+                  overrides: {
+                    maxRows: 2,
                   },
-                },
+                }),
               ],
             },
           ],
