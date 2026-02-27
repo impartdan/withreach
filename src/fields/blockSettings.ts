@@ -226,7 +226,6 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       name: 'backgroundBlur',
       type: 'checkbox',
       defaultValue: false,
-      dbName: 'bg_blur',
       label: 'Background Blur',
       admin: {
         condition: (_, siblingData) =>
