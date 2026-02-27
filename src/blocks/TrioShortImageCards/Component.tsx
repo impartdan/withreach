@@ -63,6 +63,11 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                     enableProse={false}
                   />
                 )}
+                {card.link && (
+                  <div className="mt-auto">
+                    <CMSLink size="default" url={card.link} label="Learn more" />
+                  </div>
+                )}
               </div>
             </div>
           ))}
