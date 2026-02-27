@@ -66,10 +66,16 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
 
   const payload = await getPayload({ config: configPromise })
 
-  const [page, newsSettings, categoriesResult, posts] = await Promise.all([
+  const [page, newsSettings, allPostCategories, posts] = await Promise.all([
     queryPageByPath({ pathSegments: ['resources', 'news'] }),
     payload.findGlobal({ slug: 'news-settings', depth: 2 }),
-    payload.find({ collection: 'categories', limit: 100, sort: 'title', where: { parent: { exists: false } } }),
+    payload.find({
+      collection: 'posts',
+      depth: 1,
+      pagination: false,
+      overrideAccess: false,
+      select: { categories: true },
+    }),
     payload.find({
       collection: 'posts',
       depth: 1,
@@ -90,7 +96,17 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
     }),
   ])
 
-  const categories = categoriesResult.docs
+  const categoryMap = new Map<number, Category>()
+  for (const post of allPostCategories.docs) {
+    for (const cat of post.categories ?? []) {
+      if (typeof cat === 'object' && cat !== null && !cat.parent) {
+        categoryMap.set(cat.id, cat)
+      }
+    }
+  }
+  const categories = Array.from(categoryMap.values()).sort((a, b) =>
+    (a.title ?? '').localeCompare(b.title ?? ''),
+  )
   const featuredPosts = newsSettings.featuredPosts
 
   const resolvedFeaturedCategories = (newsSettings.featuredCategories ?? []).filter(
