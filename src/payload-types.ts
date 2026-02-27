@@ -293,7 +293,7 @@ export interface HomeHeroBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -310,7 +310,7 @@ export interface HomeHeroBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -749,7 +749,7 @@ export interface PlatformHeroBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -766,7 +766,7 @@ export interface PlatformHeroBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -1140,7 +1140,7 @@ export interface TextHeroBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -1157,7 +1157,7 @@ export interface TextHeroBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -1281,7 +1281,7 @@ export interface SupportHeroBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -1298,7 +1298,7 @@ export interface SupportHeroBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -2426,7 +2426,7 @@ export interface TextImageFeatureBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -2443,7 +2443,7 @@ export interface TextImageFeatureBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -2580,7 +2580,7 @@ export interface InsetDualImageBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -2597,7 +2597,7 @@ export interface InsetDualImageBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -2731,7 +2731,7 @@ export interface InsetCopyImageBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -2748,7 +2748,7 @@ export interface InsetCopyImageBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -2995,7 +2995,7 @@ export interface PageTeaserBlock {
   content?: string | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -3012,7 +3012,7 @@ export interface PageTeaserBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -3143,7 +3143,7 @@ export interface DiagramBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -3160,7 +3160,7 @@ export interface DiagramBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -3273,7 +3273,7 @@ export interface TrioTallImageCardsBlock {
   heading?: string | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -3290,7 +3290,7 @@ export interface TrioTallImageCardsBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -3320,7 +3320,7 @@ export interface TrioTallImageCardsBlock {
         } | null;
         links?:
           | {
-              link: {
+              link?: {
                 type?: ('reference' | 'custom') | null;
                 newTab?: boolean | null;
                 reference?:
@@ -3337,7 +3337,7 @@ export interface TrioTallImageCardsBlock {
                       value: number | CaseStudy;
                     } | null);
                 url?: string | null;
-                label: string;
+                label?: string | null;
                 /**
                  * Choose how the link should be rendered.
                  */
@@ -3449,7 +3449,7 @@ export interface TrioShortImageCardsBlock {
   heading?: string | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -3466,7 +3466,7 @@ export interface TrioShortImageCardsBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -3495,7 +3495,7 @@ export interface TrioShortImageCardsBlock {
     } | null;
     links?:
       | {
-          link: {
+          link?: {
             type?: ('reference' | 'custom') | null;
             newTab?: boolean | null;
             reference?:
@@ -3512,7 +3512,7 @@ export interface TrioShortImageCardsBlock {
                   value: number | CaseStudy;
                 } | null);
             url?: string | null;
-            label: string;
+            label?: string | null;
             /**
              * Choose how the link should be rendered.
              */
@@ -3637,7 +3637,7 @@ export interface TrioTextOnlyCardsBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -3654,7 +3654,7 @@ export interface TrioTextOnlyCardsBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -3695,7 +3695,7 @@ export interface TrioTextOnlyCardsBlock {
     /**
      * Optional link for this card
      */
-    link: {
+    link?: {
       type?: ('reference' | 'custom') | null;
       newTab?: boolean | null;
       reference?:
@@ -3712,7 +3712,7 @@ export interface TrioTextOnlyCardsBlock {
             value: number | CaseStudy;
           } | null);
       url?: string | null;
-      label: string;
+      label?: string | null;
     };
     /**
      * Card style variant
@@ -3848,7 +3848,7 @@ export interface TestimonialBlock {
   authorTitle?: string | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -3865,7 +3865,7 @@ export interface TestimonialBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -5095,7 +5095,7 @@ export interface CtaLargeBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -5112,7 +5112,7 @@ export interface CtaLargeBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -5239,7 +5239,7 @@ export interface CtaSmallBlock {
     /**
      * Optional link for this card
      */
-    link: {
+    link?: {
       type?: ('reference' | 'custom') | null;
       newTab?: boolean | null;
       reference?:
@@ -5256,7 +5256,7 @@ export interface CtaSmallBlock {
             value: number | CaseStudy;
           } | null);
       url?: string | null;
-      label: string;
+      label?: string | null;
       /**
        * Choose how the link should be rendered.
        */
@@ -5548,7 +5548,7 @@ export interface FiftyFiftyBlock {
   } | null;
   links?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -5565,7 +5565,7 @@ export interface FiftyFiftyBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
           /**
            * Choose how the link should be rendered.
            */
@@ -5705,7 +5705,7 @@ export interface ItemHighlightsWithIntroBlock {
     /**
      * Optional link for this item
      */
-    link: {
+    link?: {
       type?: ('reference' | 'custom') | null;
       newTab?: boolean | null;
       reference?:
@@ -5722,7 +5722,7 @@ export interface ItemHighlightsWithIntroBlock {
             value: number | CaseStudy;
           } | null);
       url?: string | null;
-      label: string;
+      label?: string | null;
     };
     id?: string | null;
   }[];
@@ -5965,7 +5965,7 @@ export interface CardGridBlock {
         /**
          * Optional link for this card
          */
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -5982,7 +5982,7 @@ export interface CardGridBlock {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
         };
         id?: string | null;
       }[]
@@ -8936,14 +8936,14 @@ export interface Header {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
         };
         dropdownLabel?: string | null;
         dropdown?: {
           layout?: ('featuredWithList' | 'twoColumnShowcase' | 'featuredIntegrations' | 'contentGrid') | null;
           fwlItems?:
             | {
-                link: {
+                link?: {
                   type?: ('reference' | 'custom') | null;
                   newTab?: boolean | null;
                   reference?:
@@ -8960,15 +8960,15 @@ export interface Header {
                         value: number | CaseStudy;
                       } | null);
                   url?: string | null;
-                  label: string;
+                  label?: string | null;
                 };
                 description?: string | null;
                 id?: string | null;
               }[]
             | null;
-          fwlCard: {
+          fwlCard?: {
             backgroundImage?: (number | null) | Media;
-            link: {
+            link?: {
               type?: ('reference' | 'custom') | null;
               newTab?: boolean | null;
               reference?:
@@ -8985,12 +8985,12 @@ export interface Header {
                     value: number | CaseStudy;
                   } | null);
               url?: string | null;
-              label: string;
+              label?: string | null;
             };
           };
           tcsItems?:
             | {
-                link: {
+                link?: {
                   type?: ('reference' | 'custom') | null;
                   newTab?: boolean | null;
                   reference?:
@@ -9007,7 +9007,7 @@ export interface Header {
                         value: number | CaseStudy;
                       } | null);
                   url?: string | null;
-                  label: string;
+                  label?: string | null;
                 };
                 description?: string | null;
                 id?: string | null;
@@ -9019,7 +9019,7 @@ export interface Header {
           tcsCaseStudy?: (number | null) | CaseStudy;
           fiItems?:
             | {
-                link: {
+                link?: {
                   type?: ('reference' | 'custom') | null;
                   newTab?: boolean | null;
                   reference?:
@@ -9036,7 +9036,7 @@ export interface Header {
                         value: number | CaseStudy;
                       } | null);
                   url?: string | null;
-                  label: string;
+                  label?: string | null;
                 };
                 description?: string | null;
                 id?: string | null;
@@ -9045,7 +9045,7 @@ export interface Header {
           fiIntegrations?: (number | Integration)[] | null;
           cgItems?:
             | {
-                link: {
+                link?: {
                   type?: ('reference' | 'custom') | null;
                   newTab?: boolean | null;
                   reference?:
@@ -9062,7 +9062,7 @@ export interface Header {
                         value: number | CaseStudy;
                       } | null);
                   url?: string | null;
-                  label: string;
+                  label?: string | null;
                 };
                 description?: string | null;
                 id?: string | null;
@@ -9076,7 +9076,7 @@ export interface Header {
     | null;
   additionalLinks?:
     | {
-        link: {
+        link?: {
           type?: ('reference' | 'custom') | null;
           newTab?: boolean | null;
           reference?:
@@ -9093,7 +9093,7 @@ export interface Header {
                 value: number | CaseStudy;
               } | null);
           url?: string | null;
-          label: string;
+          label?: string | null;
         };
         style?: ('link' | 'primary') | null;
         id?: string | null;
@@ -9115,7 +9115,7 @@ export interface Footer {
               title: string;
               items?:
                 | {
-                    link: {
+                    link?: {
                       type?: ('reference' | 'custom') | null;
                       newTab?: boolean | null;
                       reference?:
@@ -9132,7 +9132,7 @@ export interface Footer {
                             value: number | CaseStudy;
                           } | null);
                       url?: string | null;
-                      label: string;
+                      label?: string | null;
                     };
                     id?: string | null;
                   }[]
@@ -9171,10 +9171,10 @@ export interface NewsSetting {
   /**
    * Call-to-action displayed within blog posts.
    */
-  postCta: {
+  postCta?: {
     title?: string | null;
     description?: string | null;
-    link: {
+    link?: {
       type?: ('reference' | 'custom') | null;
       newTab?: boolean | null;
       reference?:
@@ -9191,7 +9191,7 @@ export interface NewsSetting {
             value: number | CaseStudy;
           } | null);
       url?: string | null;
-      label: string;
+      label?: string | null;
     };
   };
   updatedAt?: string | null;
