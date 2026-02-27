@@ -54,7 +54,8 @@ export const RenderHero: React.FC<{ hero: Page['hero']; after?: React.ReactNode 
     >
       {React.createElement(
         HeroToRender as unknown as React.ComponentType<Record<string, unknown>>,
-        { ...(block as unknown as Record<string, unknown>), children: after ?? null },
+        block as unknown as Record<string, unknown>,
+        after ?? null,
       )}
     </HeroBlockWrapper>
   )
