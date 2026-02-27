@@ -5,6 +5,7 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
+import { getTrioCardItemClasses, getTrioCardsContainerClasses } from '@/blocks/trioCardScrollClasses'
 
 export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> = ({
   heading,
@@ -33,21 +34,14 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
 
       {/* Cards Grid */}
       {Array.isArray(cards) && cards.length > 0 && (
-        <div
-          className={`flex overflow-x-auto -mx-4 px-4 pb-2 scroll-smooth snap-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-6 md:overflow-x-visible md:mx-0 md:px-0 md:pb-0 md:grid ${
-            cards.length === 1
-              ? ''
-              : cards.length === 2
-                ? 'md:grid-cols-2'
-                : 'md:grid-cols-2 lg:grid-cols-3'
-          }`}
-        >
+        <div className={getTrioCardsContainerClasses(cards.length)}>
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`w-[calc(100vw-5rem)] shrink-0 md:w-auto bg-brand-white rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col ${
-                index === 0 ? 'snap-none' : 'snap-start'
-              }`}
+              className={getTrioCardItemClasses(
+                index,
+                'bg-brand-white rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col',
+              )}
             >
               {card.image && typeof card.image !== 'string' && (
                 <div className="w-full h-[300px] bg-white relative overflow-hidden">

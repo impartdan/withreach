@@ -3,6 +3,7 @@ import type { TrioTextOnlyCardsBlock as TrioTextOnlyCardsBlockProps } from '@/pa
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
+import { getTrioCardItemClasses, getTrioCardsContainerClasses } from '@/blocks/trioCardScrollClasses'
 
 export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
   introduction,
@@ -46,15 +47,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
       )}
 
       {Array.isArray(cards) && cards.length > 0 && (
-        <div
-          className={`flex overflow-x-auto -mx-4 px-4 pb-2 scroll-smooth snap-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-6 md:overflow-x-visible md:mx-0 md:px-0 md:pb-0 md:grid ${
-            cards.length === 1
-              ? ''
-              : cards.length === 2
-                ? 'md:grid-cols-2'
-                : 'md:grid-cols-2 lg:grid-cols-3'
-          }`}
-        >
+        <div className={getTrioCardsContainerClasses(cards.length)}>
           {cards.map((card, index) => {
             const cardInner = (
               <>
@@ -108,9 +101,10 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
               </>
             )
 
-            const cardClassName = `w-[calc(100vw-5rem)] shrink-0 md:w-auto rounded-[8px] p-8 lg:min-h-[400px] flex flex-col gap-6 justify-between bg-white border border-brand-black/20 text-brand-black group hover:bg-brand-black hover:text-white transition-colors duration-300 ${
-              index === 0 ? 'snap-none' : 'snap-start'
-            }`
+            const cardClassName = getTrioCardItemClasses(
+              index,
+              'rounded-[8px] p-8 lg:min-h-[400px] flex flex-col gap-6 justify-between bg-white border border-brand-black/20 text-brand-black group hover:bg-brand-black hover:text-white transition-colors duration-300',
+            )
 
             return card.link ? (
               <CMSLink
