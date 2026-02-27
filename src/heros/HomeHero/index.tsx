@@ -2,7 +2,6 @@
 import React from 'react'
 
 import type { HomeHeroBlock as HomeHeroBlockType } from '@/payload-types'
-
 import { CMSLink } from '@/components/Link'
 import RichText from '@/components/RichText'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
