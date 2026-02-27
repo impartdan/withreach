@@ -11,8 +11,8 @@ import { generateMeta } from '@/utilities/generateMeta'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { FeaturedCaseStudies } from '@/components/CaseStudiesArchive/FeaturedCaseStudies'
 import { CategoryFilter } from '@/components/NewsArchive/CategoryFilter'
-import { CaseStudyGrid } from '@/components/CaseStudiesArchive/CaseStudyGrid'
-import { ArchivePagination } from '@/components/NewsArchive/ArchivePagination'
+import { BrowseSection } from '@/components/BrowseSection'
+import { fetchCaseStudies } from './actions'
 import PageClient from './page.client'
 
 export const dynamic = 'force-dynamic'
@@ -118,6 +118,7 @@ export default async function CaseStudiesArchivePage({ searchParams: searchParam
                   activeCategory={categorySlug}
                   variant="pills"
                   basePath={BASE_PATH}
+                  scrollTarget="browse"
                 />
               </div>
             )
@@ -129,32 +130,16 @@ export default async function CaseStudiesArchivePage({ searchParams: searchParam
         <FeaturedCaseStudies caseStudies={featuredCaseStudies} />
       )}
 
-      <div className="bg-white">
-        <div className="container">
-          <div className="flex items-end justify-between border-t border-brand-gray-light/50 pt-sm pb-md">
-            <h2 className="type-display-lg">Browse All</h2>
-            <CategoryFilter
-              categories={categories}
-              activeCategory={categorySlug}
-              variant="dropdown"
-              basePath={BASE_PATH}
-            />
-          </div>
-        </div>
-
-        <div className="container pb-xl">
-          <CaseStudyGrid caseStudies={caseStudies.docs} />
-
-          {caseStudies.totalPages > 1 && (
-            <ArchivePagination
-              currentPage={caseStudies.page!}
-              totalPages={caseStudies.totalPages}
-              activeCategory={categorySlug}
-              basePath={BASE_PATH}
-            />
-          )}
-        </div>
-      </div>
+      <BrowseSection
+        variant="case-studies"
+        initialDocs={caseStudies.docs}
+        initialTotalPages={caseStudies.totalPages}
+        initialPage={caseStudies.page!}
+        initialCategory={categorySlug}
+        categories={categories}
+        basePath={BASE_PATH}
+        fetchAction={fetchCaseStudies}
+      />
     </article>
   )
 }

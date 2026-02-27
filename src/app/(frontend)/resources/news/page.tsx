@@ -11,8 +11,8 @@ import { generateMeta } from '@/utilities/generateMeta'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { FeaturedPosts } from '@/components/NewsArchive/FeaturedPosts'
 import { CategoryFilter } from '@/components/NewsArchive/CategoryFilter'
-import { PostArchiveGrid } from '@/components/NewsArchive/PostArchiveGrid'
-import { ArchivePagination } from '@/components/NewsArchive/ArchivePagination'
+import { BrowseSection } from '@/components/BrowseSection'
+import { fetchPosts } from './actions'
 import PageClient from './page.client'
 
 export const dynamic = 'force-dynamic'
@@ -113,6 +113,7 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
                   categories={pillCategories}
                   activeCategory={categorySlug}
                   variant="pills"
+                  scrollTarget="browse"
                 />
               </div>
             )
@@ -124,30 +125,16 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
         <FeaturedPosts posts={featuredPosts} />
       )}
 
-      <div className="bg-white">
-        <div className="container">
-          <div className="flex items-end justify-between border-t border-brand-gray-light/50 pt-sm pb-md">
-            <h2 className="type-display-lg">Browse All</h2>
-            <CategoryFilter
-              categories={categories}
-              activeCategory={categorySlug}
-              variant="dropdown"
-            />
-          </div>
-        </div>
-
-        <div className="container pb-xl">
-          <PostArchiveGrid posts={posts.docs} />
-
-          {posts.totalPages > 1 && (
-            <ArchivePagination
-              currentPage={posts.page!}
-              totalPages={posts.totalPages}
-              activeCategory={categorySlug}
-            />
-          )}
-        </div>
-      </div>
+      <BrowseSection
+        variant="posts"
+        initialDocs={posts.docs}
+        initialTotalPages={posts.totalPages}
+        initialPage={posts.page!}
+        initialCategory={categorySlug}
+        categories={categories}
+        basePath="/resources/news"
+        fetchAction={fetchPosts}
+      />
     </article>
   )
 }

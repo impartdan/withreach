@@ -7,14 +7,17 @@ type ArchivePaginationProps = {
   totalPages: number
   activeCategory: string | null
   basePath?: string
+  scrollTarget?: string
+  onChange?: (page: number) => void
 }
 
-function buildHref(page: number, category: string | null, basePath: string) {
+function buildHref(page: number, category: string | null, basePath: string, scrollTarget?: string) {
   const params = new URLSearchParams()
   if (category) params.set('category', category)
   if (page > 1) params.set('page', String(page))
   const qs = params.toString()
-  return `${basePath}${qs ? `?${qs}` : ''}`
+  const hash = scrollTarget ? `#${scrollTarget}` : ''
+  return `${basePath}${qs ? `?${qs}` : ''}${hash}`
 }
 
 function getPageNumbers(current: number, total: number): (number | 'ellipsis')[] {
@@ -40,10 +43,104 @@ export const ArchivePagination: React.FC<ArchivePaginationProps> = ({
   totalPages,
   activeCategory,
   basePath = '/resources/news',
+  scrollTarget,
+  onChange,
 }) => {
   const hasPrev = currentPage > 1
   const hasNext = currentPage < totalPages
   const pageNumbers = getPageNumbers(currentPage, totalPages)
+
+  const PrevArrow = ({ disabled }: { disabled?: boolean }) => (
+    <svg
+      width="40"
+      height="20"
+      viewBox="0 0 40 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={disabled ? 'text-brand-gray-light' : 'text-brand-black'}
+    >
+      <path
+        d="M10 1L2 10M2 10L10 19M2 10H38"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+
+  const NextArrow = ({ disabled }: { disabled?: boolean }) => (
+    <svg
+      width="40"
+      height="20"
+      viewBox="0 0 40 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={disabled ? 'text-brand-gray-light' : 'text-brand-black'}
+    >
+      <path
+        d="M30 1L38 10M38 10L30 19M38 10H2"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+
+  if (onChange) {
+    return (
+      <div className="border-t border-brand-gray-light/50 pt-5 mt-xl">
+        <nav className="flex items-center justify-between" aria-label="Pagination">
+          <div className="flex items-center gap-6">
+            {hasPrev ? (
+              <button onClick={() => onChange(currentPage - 1)} className="flex items-center gap-6 group">
+                <PrevArrow />
+                <span className="type-micro-b text-brand-black">Previous</span>
+              </button>
+            ) : (
+              <div className="flex items-center gap-6">
+                <PrevArrow disabled />
+                <span className="type-micro-b text-brand-gray-light">Previous</span>
+              </div>
+            )}
+          </div>
+
+          <div className="hidden md:flex items-center gap-10">
+            {pageNumbers.map((item, i) => {
+              if (item === 'ellipsis') {
+                return (
+                  <span key={`ellipsis-${i}`} className="type-micro-b text-brand-gray-light">...</span>
+                )
+              }
+              const isActive = item === currentPage
+              return isActive ? (
+                <span key={item} className="type-micro-b text-brand-black" aria-current="page">{item}</span>
+              ) : (
+                <button key={item} onClick={() => onChange(item)} className="type-micro-b text-brand-gray-light hover:text-brand-black transition-colors">
+                  {item}
+                </button>
+              )
+            })}
+          </div>
+
+          <div className="flex items-center gap-6">
+            {hasNext ? (
+              <button onClick={() => onChange(currentPage + 1)} className="flex items-center gap-6 group">
+                <span className="type-micro-b text-brand-black">Next</span>
+                <NextArrow />
+              </button>
+            ) : (
+              <div className="flex items-center gap-6">
+                <span className="type-micro-b text-brand-gray-light">Next</span>
+                <NextArrow disabled />
+              </div>
+            )}
+          </div>
+        </nav>
+      </div>
+    )
+  }
 
   return (
     <div className="border-t border-brand-gray-light/50 pt-5 mt-xl">
@@ -51,51 +148,21 @@ export const ArchivePagination: React.FC<ArchivePaginationProps> = ({
         <div className="flex items-center gap-6">
           {hasPrev ? (
             <Link
-              href={buildHref(currentPage - 1, activeCategory, basePath)}
+              href={buildHref(currentPage - 1, activeCategory, basePath, scrollTarget)}
               className="flex items-center gap-6 group"
             >
-              <svg
-                width="40"
-                height="20"
-                viewBox="0 0 40 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-brand-black"
-              >
-                <path
-                  d="M10 1L2 10M2 10L10 19M2 10H38"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <PrevArrow />
               <span className="type-micro-b text-brand-black">Previous</span>
             </Link>
           ) : (
             <div className="flex items-center gap-6">
-              <svg
-                width="40"
-                height="20"
-                viewBox="0 0 40 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-brand-gray-light"
-              >
-                <path
-                  d="M10 1L2 10M2 10L10 19M2 10H38"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <PrevArrow disabled />
               <span className="type-micro-b text-brand-gray-light">Previous</span>
             </div>
           )}
         </div>
 
-        <div className="flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-10">
           {pageNumbers.map((item, i) => {
             if (item === 'ellipsis') {
               return (
@@ -118,7 +185,7 @@ export const ArchivePagination: React.FC<ArchivePaginationProps> = ({
             ) : (
               <Link
                 key={item}
-                href={buildHref(item, activeCategory, basePath)}
+                href={buildHref(item, activeCategory, basePath, scrollTarget)}
                 className="type-micro-b text-brand-gray-light hover:text-brand-black transition-colors"
               >
                 {item}
@@ -130,46 +197,16 @@ export const ArchivePagination: React.FC<ArchivePaginationProps> = ({
         <div className="flex items-center gap-6">
           {hasNext ? (
             <Link
-              href={buildHref(currentPage + 1, activeCategory, basePath)}
+              href={buildHref(currentPage + 1, activeCategory, basePath, scrollTarget)}
               className="flex items-center gap-6 group"
             >
               <span className="type-micro-b text-brand-black">Next</span>
-              <svg
-                width="40"
-                height="20"
-                viewBox="0 0 40 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-brand-black"
-              >
-                <path
-                  d="M30 1L38 10M38 10L30 19M38 10H2"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <NextArrow />
             </Link>
           ) : (
             <div className="flex items-center gap-6">
               <span className="type-micro-b text-brand-gray-light">Next</span>
-              <svg
-                width="40"
-                height="20"
-                viewBox="0 0 40 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-brand-gray-light"
-              >
-                <path
-                  d="M30 1L38 10M38 10L30 19M38 10H2"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <NextArrow disabled />
             </div>
           )}
         </div>

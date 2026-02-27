@@ -12,11 +12,14 @@ type CategoryFilterProps = {
   activeCategory: string | null
   variant: 'pills' | 'dropdown'
   basePath?: string
+  scrollTarget?: string
+  onChange?: (categorySlug: string | null) => void
 }
 
-function buildHref(basePath: string, categorySlug?: string) {
-  if (!categorySlug) return basePath
-  return `${basePath}?category=${encodeURIComponent(categorySlug)}`
+function buildHref(basePath: string, categorySlug?: string, scrollTarget?: string) {
+  const hash = scrollTarget ? `#${scrollTarget}` : ''
+  if (!categorySlug) return `${basePath}${hash}`
+  return `${basePath}?category=${encodeURIComponent(categorySlug)}${hash}`
 }
 
 export const CategoryFilter: React.FC<CategoryFilterProps> = ({
@@ -24,27 +27,45 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   activeCategory,
   variant,
   basePath = '/resources/news',
+  scrollTarget,
+  onChange,
 }) => {
   if (variant === 'pills') {
-    return <PillFilter categories={categories} activeCategory={activeCategory} basePath={basePath} />
+    return <PillFilter categories={categories} activeCategory={activeCategory} basePath={basePath} scrollTarget={scrollTarget} onChange={onChange} />
   }
 
-  return <DropdownFilter categories={categories} activeCategory={activeCategory} basePath={basePath} />
+  return <DropdownFilter categories={categories} activeCategory={activeCategory} basePath={basePath} scrollTarget={scrollTarget} onChange={onChange} />
 }
 
 function PillFilter({
   categories,
   activeCategory,
   basePath,
+  scrollTarget,
+  onChange,
 }: {
   categories: Category[]
   activeCategory: string | null
   basePath: string
+  scrollTarget?: string
+  onChange?: (categorySlug: string | null) => void
 }) {
+  if (onChange) {
+    return (
+      <>
+        {categories.map((cat) => (
+          <button key={cat.id} onClick={() => onChange(cat.slug ?? null)}>
+            <Tag label={cat.title ?? 'Untitled'} active={activeCategory === cat.slug} />
+          </button>
+        ))}
+      </>
+    )
+  }
+
   return (
     <>
       {categories.map((cat) => (
-        <Link key={cat.id} href={buildHref(basePath, cat.slug)}>
+        <Link key={cat.id} href={buildHref(basePath, cat.slug, scrollTarget)}>
           <Tag label={cat.title ?? 'Untitled'} active={activeCategory === cat.slug} />
         </Link>
       ))}
@@ -56,10 +77,14 @@ function DropdownFilter({
   categories,
   activeCategory,
   basePath,
+  scrollTarget,
+  onChange,
 }: {
   categories: Category[]
   activeCategory: string | null
   basePath: string
+  scrollTarget?: string
+  onChange?: (categorySlug: string | null) => void
 }) {
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -78,6 +103,15 @@ function DropdownFilter({
   const activeLabel = activeCategory
     ? categories.find((c) => c.slug === activeCategory)?.title || 'Filter by type'
     : 'Filter by type'
+
+  function handleSelect(categorySlug: string | null) {
+    if (onChange) {
+      onChange(categorySlug)
+    } else {
+      router.push(buildHref(basePath, categorySlug ?? undefined, scrollTarget))
+    }
+    setIsOpen(false)
+  }
 
   return (
     <div className="relative" ref={ref}>
@@ -102,10 +136,7 @@ function DropdownFilter({
       {isOpen && (
         <div className="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-brand-gray-light/30 py-2 min-w-[200px] z-50">
           <button
-            onClick={() => {
-              router.push(buildHref(basePath))
-              setIsOpen(false)
-            }}
+            onClick={() => handleSelect(null)}
             className={cn(
               'w-full text-left px-4 py-2.5 type-micro-b transition-colors hover:bg-brand-linen',
               !activeCategory && 'text-brand-black font-semibold',
@@ -116,10 +147,7 @@ function DropdownFilter({
           {categories.map((cat) => (
             <button
               key={cat.id}
-              onClick={() => {
-                router.push(buildHref(basePath, cat.slug))
-                setIsOpen(false)
-              }}
+              onClick={() => handleSelect(cat.slug ?? null)}
               className={cn(
                 'w-full text-left px-4 py-2.5 type-micro-b transition-colors hover:bg-brand-linen',
                 activeCategory === cat.slug && 'text-brand-black font-semibold',
