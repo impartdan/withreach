@@ -60,6 +60,12 @@ export const TrioShortImageCards: Block = {
                     },
                   }),
                 },
+                {
+                  name: 'markAsFeatured',
+                  type: 'checkbox',
+                  label: 'Mark as featured',
+                  defaultValue: false,
+                },
                 linkGroup({
                   appearances: ['default', 'outline', 'arrow'],
                   overrides: {

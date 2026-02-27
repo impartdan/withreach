@@ -39,6 +39,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
       {Array.isArray(cards) && cards.length > 0 && (
         <TrioCardScroller cardCount={cards.length}>
           {cards.map((card, index) => {
+            const isFeaturedCard = Boolean(card.markAsFeatured)
             const validCardLinks = Array.isArray(card.links)
               ? card.links
                   .map(({ link }) => link)
@@ -66,13 +67,17 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
               <div
                 key={index}
                 className={getTrioCardItemClasses(
-                  'relative bg-brand-white rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col',
+                  `relative rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 p-5 overflow-hidden flex flex-col ${
+                    isFeaturedCard
+                      ? 'bg-brand-black text-brand-off-white border border-brand-white/10'
+                      : 'bg-brand-white border border-brand-black/20 gap-5'
+                  }`,
                 )}
               >
                 {primaryCardLink && (
                   <CMSLink
                     appearance="inline"
-                    className="absolute inset-0 z-10 rounded-[8px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40"
+                    className="absolute opacity-0 transition-opacity duration-300 inset-0 z-10 rounded-[8px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40"
                     {...primaryCardLink}
                   >
                     <span className="sr-only">{card.title || 'Open card'}</span>
@@ -81,32 +86,48 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
 
                 {card.image && typeof card.image !== 'string' && (
                   <div
-                    className={`bg-white relative overflow-hidden ${
-                      isLessThanThreeCards ? 'w-full h-[300px]' : 'aspect-square'
+                    className={`relative overflow-hidden ${
+                      isFeaturedCard
+                        ? '-mx-5 mt-auto h-[300px] w-[calc(100%+40px)]'
+                        : `bg-white ${isLessThanThreeCards ? 'w-full h-[300px]' : 'aspect-square'}`
                     }`}
                   >
                     <Media
                       resource={card.image}
                       imgClassName={
-                        isLessThanThreeCards
-                          ? 'object-cover w-full h-[300px]'
-                          : 'object-cover w-full h-full absolute inset-0'
+                        isFeaturedCard
+                          ? 'object-cover w-full h-full absolute inset-0'
+                          : isLessThanThreeCards
+                            ? 'object-cover w-full h-[300px]'
+                            : 'object-cover w-full h-full absolute inset-0'
                       }
                     />
                   </div>
                 )}
-                <div className=" flex flex-col gap-4 py-6 md:p-6">
-                  {card.title && <h3 className="type-display-xs">{card.title}</h3>}
+                <div
+                  className={`flex flex-col gap-4 ${
+                    isFeaturedCard ? 'px-6 pt-5 pb-0' : 'py-6 md:p-6'
+                  }`}
+                >
+                  {card.title && (
+                    <h3 className={isFeaturedCard ? 'type-display-xs text-brand-off-white' : 'type-display-xs'}>
+                      {card.title}
+                    </h3>
+                  )}
                   {card.description && (
                     <RichText
-                      className="type-micro [&_p]:type-micro"
+                      className={
+                        isFeaturedCard
+                          ? 'type-micro text-brand-off-white/80 [&_p]:type-micro [&_p]:text-brand-off-white/80'
+                          : 'type-micro [&_p]:type-micro'
+                      }
                       data={card.description}
                       enableGutter={false}
                       enableProse={false}
                     />
                   )}
                   {visibleCardLinks.length > 0 && (
-                    <BlockThemeContext.Provider value="light">
+                    <BlockThemeContext.Provider value={isFeaturedCard ? 'dark' : 'light'}>
                       <div className="relative z-20 mt-auto flex flex-wrap gap-3">
                         {visibleCardLinks.map((link, i) => (
                           <CMSLink key={i} appearance="arrow" size="default" {...link} />

@@ -3318,6 +3318,7 @@ export interface TrioTallImageCardsBlock {
           };
           [k: string]: unknown;
         } | null;
+        markAsFeatured?: boolean | null;
         links?:
           | {
               link?: {
@@ -3493,6 +3494,7 @@ export interface TrioShortImageCardsBlock {
       };
       [k: string]: unknown;
     } | null;
+    markAsFeatured?: boolean | null;
     links?:
       | {
           link?: {
@@ -7531,6 +7533,7 @@ export interface TrioTallImageCardsBlockSelect<T extends boolean = true> {
         image?: T;
         title?: T;
         description?: T;
+        markAsFeatured?: T;
         links?:
           | T
           | {
@@ -7596,6 +7599,7 @@ export interface TrioShortImageCardsBlockSelect<T extends boolean = true> {
         image?: T;
         title?: T;
         description?: T;
+        markAsFeatured?: T;
         links?:
           | T
           | {

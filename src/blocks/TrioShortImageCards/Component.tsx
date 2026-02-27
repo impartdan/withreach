@@ -37,6 +37,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
       {Array.isArray(cards) && cards.length > 0 && (
         <TrioCardScroller cardCount={cards.length}>
           {cards.map((card, index) => {
+            const isFeaturedCard = Boolean(card.markAsFeatured)
             const validCardLinks = Array.isArray(card.links)
               ? card.links
                   .map(({ link }) => link)
@@ -64,7 +65,11 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
               <div
                 key={index}
                 className={getTrioCardItemClasses(
-                  'relative bg-brand-white rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col',
+                  `relative rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 p-5 overflow-hidden flex flex-col ${
+                    isFeaturedCard
+                      ? 'bg-brand-black text-brand-off-white border border-brand-white/10'
+                      : 'bg-brand-white border border-brand-black/20 gap-5'
+                  }`,
                 )}
               >
                 {primaryCardLink && (
@@ -78,25 +83,41 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                 )}
 
                 {card.image && typeof card.image !== 'string' && (
-                  <div className="w-full h-[300px] bg-white relative overflow-hidden">
+                  <div
+                    className={`relative overflow-hidden ${
+                      isFeaturedCard ? '-mx-5 mt-auto h-[300px] w-[calc(100%+40px)]' : 'w-full h-[300px] bg-white'
+                    }`}
+                  >
                     <Media
                       resource={card.image}
                       imgClassName="object-cover w-full h-full absolute inset-0"
                     />
                   </div>
                 )}
-                <div className=" flex flex-col gap-4 py-6 md:p-6">
-                  {card.title && <h3 className="type-display-xs">{card.title}</h3>}
+                <div
+                  className={`flex flex-col gap-4 ${
+                    isFeaturedCard ? 'px-6 pt-5 pb-0' : 'py-6 md:p-6'
+                  }`}
+                >
+                  {card.title && (
+                    <h3 className={isFeaturedCard ? 'type-display-xs text-brand-off-white' : 'type-display-xs'}>
+                      {card.title}
+                    </h3>
+                  )}
                   {card.description && (
                     <RichText
-                      className="type-micro [&_p]:type-micro"
+                      className={
+                        isFeaturedCard
+                          ? 'type-micro text-brand-off-white/80 [&_p]:type-micro [&_p]:text-brand-off-white/80'
+                          : 'type-micro [&_p]:type-micro'
+                      }
                       data={card.description}
                       enableGutter={false}
                       enableProse={false}
                     />
                   )}
                   {visibleCardLinks.length > 0 && (
-                    <BlockThemeContext.Provider value="light">
+                    <BlockThemeContext.Provider value={isFeaturedCard ? 'dark' : 'light'}>
                       <div className="relative z-20 mt-auto flex flex-wrap gap-3">
                         {visibleCardLinks.map((link, i) => (
                           <CMSLink key={i} {...link} appearance="arrow" size="default" />
