@@ -47,6 +47,16 @@ export const HomeHeroBlock: Block = {
         {
           label: 'Content',
           fields: [
+            {
+              name: 'title',
+              type: 'text',
+              label: 'Title',
+            },
+            {
+              name: 'subtitle',
+              type: 'text',
+              label: 'Subtitle',
+            },
             heroRichText,
             linkGroup({
               overrides: {

@@ -265,6 +265,8 @@ export interface Page {
  * via the `definition` "HomeHeroBlock".
  */
 export interface HomeHeroBlock {
+  title?: string | null;
+  subtitle?: string | null;
   richText?: {
     root: {
       type: string;
@@ -6205,6 +6207,8 @@ export interface PagesSelect<T extends boolean = true> {
  * via the `definition` "HomeHeroBlock_select".
  */
 export interface HomeHeroBlockSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
   richText?: T;
   links?:
     | T

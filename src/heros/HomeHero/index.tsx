@@ -7,12 +7,14 @@ import { CMSLink } from '@/components/Link'
 import RichText from '@/components/RichText'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
-export const HomeHero: React.FC<HomeHeroBlockType> = ({ links, richText }) => {
+export const HomeHero: React.FC<HomeHeroBlockType> = ({ title, subtitle, links, richText }) => {
   return (
     <div className="relative min-h-screen pb-lg header-offset flex items-center justify-center">
       <div className="container z-10 relative flex items-center justify-center">
         <RevealOnScroll variant="slideUp">
           <div className="max-w-3xl md:text-center space-y-6">
+            {title && <h1 className="type-display-hero-a text-balance">{title}</h1>}
+            {subtitle && <p className="type-display-hero-b text-balance">{subtitle}</p>}
             {richText && (
               <RichText className="wysiwyg text-balance" data={richText} enableGutter={false} />
             )}
