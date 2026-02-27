@@ -171,6 +171,16 @@ export const CtaSmall: Block = {
                     { label: 'Right', value: 'right' },
                   ],
                 },
+                {
+                  name: 'backgroundBlur',
+                  type: 'checkbox',
+                  defaultValue: false,
+                  label: 'Background Blur',
+                  admin: {
+                    condition: (_, s) => s?.background === 'image',
+                    description: 'Apply a blur effect over the card background image',
+                  },
+                },
               ],
             },
           ],

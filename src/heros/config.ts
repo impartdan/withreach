@@ -146,6 +146,15 @@ export const PartnerHeroBlock: Block = {
               relationTo: 'media',
             },
             {
+              name: 'blurBackground',
+              type: 'checkbox',
+              defaultValue: false,
+              label: 'Background Blur',
+              admin: {
+                description: 'Apply a blur effect over the background image',
+              },
+            },
+            {
               name: 'partnerCards',
               type: 'array',
               label: 'Partner Cards',

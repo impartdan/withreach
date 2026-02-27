@@ -24,6 +24,7 @@ type HeroBlockWrapperProps = {
     backgroundImagePosition?: 'center' | 'top' | 'bottom' | 'left' | 'right' | null
     backgroundVideo?: number | Media | null
     backgroundVideoUrl?: string | null
+    backgroundBlur?: boolean | null
     gradientFrom?: BackgroundColor | null
     gradientTo?: BackgroundColor | null
     gradientDirection?: GradientDirection | null
@@ -163,6 +164,7 @@ export const HeroBlockWrapper: React.FC<HeroBlockWrapperProps> = ({
       : null
 
   const videoSrc = bgVideoFile?.url ?? bgVideoUrl
+  const backgroundBlur = blockSettings?.backgroundBlur ?? false
 
   const theme = blockSettings?.textColor === 'light' ? 'light' : 'dark'
   const textColorClass = theme === 'light' ? 'text-white' : 'text-brand-black'
@@ -200,8 +202,8 @@ export const HeroBlockWrapper: React.FC<HeroBlockWrapperProps> = ({
           <source src={videoSrc} type="video/mp4" />
         </video>
       )}
-      {/* z-[15]: blur overlay — applied over any video background */}
-      {videoSrc && (
+      {/* z-[15]: blur overlay — applied when Background Blur is enabled */}
+      {backgroundBlur && (videoSrc || bgImage?.url) && (
         <div className="absolute inset-0 z-[15] backdrop-blur-[17px] bg-[rgba(0,0,0,0.2)]" />
       )}
       {/* z-[16]: grid lines — between background and content */}

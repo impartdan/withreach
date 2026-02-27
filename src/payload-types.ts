@@ -391,6 +391,10 @@ export interface HomeHeroBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -844,6 +848,10 @@ export interface PlatformHeroBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -966,6 +974,10 @@ export interface SolutionsHeroBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -1001,6 +1013,10 @@ export interface PartnerHeroBlock {
     [k: string]: unknown;
   } | null;
   media?: (number | null) | Media;
+  /**
+   * Apply a blur effect over the background image
+   */
+  blurBackground?: boolean | null;
   partnerCards?:
     | {
         image: number | Media;
@@ -1083,6 +1099,10 @@ export interface PartnerHeroBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -1221,6 +1241,10 @@ export interface TextHeroBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -1356,6 +1380,10 @@ export interface SupportHeroBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -1473,6 +1501,10 @@ export interface HubspotFormHeroBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -1597,6 +1629,10 @@ export interface ContentBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -1692,6 +1728,10 @@ export interface ImageBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -1809,6 +1849,10 @@ export interface VideoBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -1910,6 +1954,10 @@ export interface IntegrationsBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -2090,6 +2138,10 @@ export interface LogoListBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -2225,6 +2277,10 @@ export interface HubspotFormBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -2322,6 +2378,10 @@ export interface StatsBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -2473,6 +2533,10 @@ export interface TextImageFeatureBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -2623,6 +2687,10 @@ export interface InsetDualImageBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -2770,6 +2838,10 @@ export interface InsetCopyImageBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -2892,6 +2964,10 @@ export interface StatsTextBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -3022,6 +3098,10 @@ export interface PageTeaserBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -3166,6 +3246,10 @@ export interface DiagramBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -3339,6 +3423,10 @@ export interface TrioTallImageCardsBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -3508,6 +3596,10 @@ export interface TrioShortImageCardsBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -3702,6 +3794,10 @@ export interface TrioTextOnlyCardsBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -3852,6 +3948,10 @@ export interface TestimonialBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -3955,6 +4055,10 @@ export interface ItemHighlightsBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -4076,6 +4180,10 @@ export interface FaqCenterBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -4209,6 +4317,10 @@ export interface FaqToCallBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -4322,6 +4434,10 @@ export interface ChecklistBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -4424,6 +4540,10 @@ export interface ImageLeftTextRightBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -4546,6 +4666,10 @@ export interface SimpleContentBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -4672,6 +4796,10 @@ export interface IndentedContentBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -4795,6 +4923,10 @@ export interface ConsListBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -4917,6 +5049,10 @@ export interface ProsListBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -5059,6 +5195,10 @@ export interface CtaLargeBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -5171,6 +5311,10 @@ export interface CtaSmallBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the card background image
+     */
+    backgroundBlur?: boolean | null;
     id?: string | null;
   }[];
   /**
@@ -5246,6 +5390,10 @@ export interface CtaSmallBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -5358,6 +5506,10 @@ export interface DisclaimerBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -5500,6 +5652,10 @@ export interface FiftyFiftyBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -5644,6 +5800,10 @@ export interface ItemHighlightsWithIntroBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -5750,6 +5910,10 @@ export interface PeopleIndexBlock {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -5897,6 +6061,10 @@ export interface CardGridBlock {
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
     /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
      * Upload an MP4 video file
      */
     backgroundVideo?: (number | null) | Media;
@@ -6015,6 +6183,10 @@ export interface FormBlock2Type {
     gradientDirection?: ('down' | 'right') | null;
     backgroundImage?: (number | null) | Media;
     backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
     /**
      * Upload an MP4 video file
      */
@@ -6609,6 +6781,7 @@ export interface HomeHeroBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6649,6 +6822,7 @@ export interface PlatformHeroBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6675,6 +6849,7 @@ export interface SolutionsHeroBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6690,6 +6865,7 @@ export interface SolutionsHeroBlockSelect<T extends boolean = true> {
 export interface PartnerHeroBlockSelect<T extends boolean = true> {
   richText?: T;
   media?: T;
+  blurBackground?: T;
   partnerCards?:
     | T
     | {
@@ -6711,6 +6887,7 @@ export interface PartnerHeroBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6753,6 +6930,7 @@ export interface TextHeroBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6793,6 +6971,7 @@ export interface SupportHeroBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6820,6 +6999,7 @@ export interface HubspotFormHeroBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6848,6 +7028,7 @@ export interface ContentBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6876,6 +7057,7 @@ export interface ImageBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6909,6 +7091,7 @@ export interface VideoBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6937,6 +7120,7 @@ export interface IntegrationsBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -6971,6 +7155,7 @@ export interface LogoListBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7002,6 +7187,7 @@ export interface HubspotFormBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7029,6 +7215,7 @@ export interface StatsBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7087,6 +7274,7 @@ export interface TextImageFeatureBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7135,6 +7323,7 @@ export interface InsetDualImageBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7183,6 +7372,7 @@ export interface InsetCopyImageBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7217,6 +7407,7 @@ export interface StatsTextBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7260,6 +7451,7 @@ export interface PageTeaserBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7303,6 +7495,7 @@ export interface DiagramBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7367,6 +7560,7 @@ export interface TrioTallImageCardsBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7431,6 +7625,7 @@ export interface TrioShortImageCardsBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7492,6 +7687,7 @@ export interface TrioTextOnlyCardsBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7540,6 +7736,7 @@ export interface TestimonialBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7575,6 +7772,7 @@ export interface ItemHighlightsBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7610,6 +7808,7 @@ export interface FaqCenterBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7645,6 +7844,7 @@ export interface FaqToCallBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7678,6 +7878,7 @@ export interface ChecklistBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7712,6 +7913,7 @@ export interface ImageLeftTextRightBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7751,6 +7953,7 @@ export interface SimpleContentBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7785,6 +7988,7 @@ export interface IndentedContentBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7819,6 +8023,7 @@ export interface ConsListBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7853,6 +8058,7 @@ export interface ProsListBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7896,6 +8102,7 @@ export interface CtaLargeBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7932,6 +8139,7 @@ export interface CtaSmallBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         id?: T;
       };
   blockSettings?:
@@ -7946,6 +8154,7 @@ export interface CtaSmallBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -7973,6 +8182,7 @@ export interface DisclaimerBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -8017,6 +8227,7 @@ export interface FiftyFiftyBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -8061,6 +8272,7 @@ export interface ItemHighlightsWithIntroBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -8096,6 +8308,7 @@ export interface PeopleIndexBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -8138,6 +8351,7 @@ export interface CardGridBlockSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
@@ -8166,6 +8380,7 @@ export interface FormBlock2TypeSelect<T extends boolean = true> {
         gradientDirection?: T;
         backgroundImage?: T;
         backgroundImagePosition?: T;
+        backgroundBlur?: T;
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;

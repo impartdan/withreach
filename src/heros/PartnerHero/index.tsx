@@ -7,15 +7,19 @@ import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import Link from 'next/link'
 
-export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, partnerCards }) => {
+export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, partnerCards, blurBackground }) => {
   return (
     <div className="relative w-full md:min-h-[536px] header-offset overflow-hidden">
-      {/* Background image with blur + overlay */}
+      {/* Background image */}
       {media && typeof media === 'object' && (
         <div className="absolute inset-0">
           <Media fill imgClassName="object-cover" priority resource={media} />
-          <div className="absolute inset-0 bg-black/20" />
-          <div className="absolute inset-0 backdrop-blur-[17px] bg-white/[0.01]" />
+          {blurBackground && (
+            <>
+              <div className="absolute inset-0 bg-black/20" />
+              <div className="absolute inset-0 backdrop-blur-[17px] bg-white/[0.01]" />
+            </>
+          )}
         </div>
       )}
 

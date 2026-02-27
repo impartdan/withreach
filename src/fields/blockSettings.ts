@@ -223,6 +223,19 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
     })
 
     fields.push({
+      name: 'backgroundBlur',
+      type: 'checkbox',
+      defaultValue: false,
+      dbName: 'bg_blur',
+      label: 'Background Blur',
+      admin: {
+        condition: (_, siblingData) =>
+          ['image', 'video'].includes(siblingData?.background),
+        description: 'Apply a blur effect over the background image or video',
+      },
+    })
+
+    fields.push({
       name: 'backgroundVideo',
       type: 'upload',
       relationTo: 'media',

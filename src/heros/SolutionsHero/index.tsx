@@ -45,10 +45,12 @@ export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
             aria-hidden="true"
           />
         )}
-        <div
-          className="absolute inset-0 pointer-events-none z-[1] backdrop-blur"
-          aria-hidden="true"
-        />
+        {blockSettings?.backgroundBlur && (
+          <div
+            className="absolute inset-0 pointer-events-none z-[1] backdrop-blur-[17px]"
+            aria-hidden="true"
+          />
+        )}
 
         {/* Centered text content */}
         <div className="container relative z-10 text-center text-white max-w-[922px] py-20">

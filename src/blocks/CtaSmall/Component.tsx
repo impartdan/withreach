@@ -48,7 +48,9 @@ function resolveCardBackground(card: Card) {
     ? (bgPositionClasses[card.backgroundImagePosition] ?? bgPositionClasses.center)
     : bgPositionClasses.center
 
-  return { bgColorClass, gradientStyle, bgImage, bgPositionClass }
+  const backgroundBlur = (card as { backgroundBlur?: boolean | null }).backgroundBlur ?? false
+
+  return { bgColorClass, gradientStyle, bgImage, bgPositionClass, backgroundBlur }
 }
 
 export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
@@ -59,7 +61,7 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
           className={`grid gap-6 ${cards.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'}`}
         >
           {cards.map((card, index) => {
-            const { bgColorClass, gradientStyle, bgImage, bgPositionClass } =
+            const { bgColorClass, gradientStyle, bgImage, bgPositionClass, backgroundBlur } =
               resolveCardBackground(card)
             const logoResource = card.logo && typeof card.logo === 'object' ? card.logo : null
 
@@ -78,6 +80,11 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
                     className={cn('absolute inset-0 z-0 bg-cover bg-no-repeat', bgPositionClass)}
                     style={{ backgroundImage: `url(${bgImage.url})` }}
                   />
+                )}
+
+                {/* blur overlay */}
+                {backgroundBlur && bgImage?.url && (
+                  <div className="absolute inset-0 z-[5] backdrop-blur-[17px] bg-[rgba(255,255,255,0.01)]" />
                 )}
 
                 {/* content */}
