@@ -85,7 +85,9 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                 {card.image && typeof card.image !== 'string' && (
                   <div
                     className={`relative overflow-hidden ${
-                      isFeaturedCard ? '-mx-5 mt-auto h-[300px] w-[calc(100%+40px)]' : 'w-full h-[300px] bg-white'
+                      isFeaturedCard
+                        ? '-mx-5 w-[calc(100%+40px)] flex-1 min-h-[220px]'
+                        : 'w-full h-[300px] bg-white'
                     }`}
                   >
                     <Media
@@ -96,7 +98,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                 )}
                 <div
                   className={`flex flex-col gap-4 ${
-                    isFeaturedCard ? 'px-6 pt-5 pb-0' : 'py-6 md:p-6'
+                    isFeaturedCard ? 'px-6 pt-5 pb-5' : 'py-6 md:p-6'
                   }`}
                 >
                   {card.title && (

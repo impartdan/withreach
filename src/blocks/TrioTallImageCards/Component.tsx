@@ -69,7 +69,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
                 className={getTrioCardItemClasses(
                   `relative rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 p-5 overflow-hidden flex flex-col ${
                     isFeaturedCard
-                      ? 'bg-brand-black text-brand-off-white border border-brand-white/10'
+                      ? 'bg-[#c3bfbc]  border border-brand-white/10 flex-col-reverse'
                       : 'bg-brand-white border border-brand-black/20 gap-5'
                   }`,
                 )}
@@ -88,7 +88,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
                   <div
                     className={`relative overflow-hidden ${
                       isFeaturedCard
-                        ? '-mx-5 mt-auto h-[300px] w-[calc(100%+40px)]'
+                        ? '-mx-5 -mb-5 w-[calc(100%+40px)] flex-1 min-h-[220px]'
                         : `bg-white ${isLessThanThreeCards ? 'w-full h-[300px]' : 'aspect-square'}`
                     }`}
                   >
@@ -106,11 +106,11 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
                 )}
                 <div
                   className={`flex flex-col gap-4 ${
-                    isFeaturedCard ? 'px-6 pt-5 pb-0' : 'py-6 md:p-6'
+                    isFeaturedCard ? 'px-6 pt-5 pb-10' : 'py-6 md:p-6'
                   }`}
                 >
                   {card.title && (
-                    <h3 className={isFeaturedCard ? 'type-display-xs text-brand-off-white' : 'type-display-xs'}>
+                    <h3 className={isFeaturedCard ? 'type-display-sm' : 'type-display-xs'}>
                       {card.title}
                     </h3>
                   )}
@@ -118,7 +118,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
                     <RichText
                       className={
                         isFeaturedCard
-                          ? 'type-micro text-brand-off-white/80 [&_p]:type-micro [&_p]:text-brand-off-white/80'
+                          ? 'type-micro  [&_p]:type-micro '
                           : 'type-micro [&_p]:type-micro'
                       }
                       data={card.description}
