@@ -8,6 +8,7 @@ import * as migration_20260216_pages_nested_docs from './20260216_pages_nested_d
 import * as migration_20260218_migrate_media_blocks from './20260218_migrate_media_blocks';
 import * as migration_20260224_update_bg_color_enum from './20260224_update_bg_color_enum';
 import * as migration_20260227_set_show_grid_lines_false from './20260227_set_show_grid_lines_false';
+import * as migration_20260227_cta_small_add_logo from './20260227_cta_small_add_logo';
 
 export const migrations = [
   {
@@ -59,5 +60,10 @@ export const migrations = [
     up: migration_20260227_set_show_grid_lines_false.up,
     down: migration_20260227_set_show_grid_lines_false.down,
     name: '20260227_set_show_grid_lines_false'
+  },
+  {
+    up: migration_20260227_cta_small_add_logo.up,
+    down: migration_20260227_cta_small_add_logo.down,
+    name: '20260227_cta_small_add_logo'
   },
 ];
