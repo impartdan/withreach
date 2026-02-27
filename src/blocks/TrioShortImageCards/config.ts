@@ -4,7 +4,6 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
-import { link } from '@/fields/link'
 import { linkGroup } from '@/fields/linkGroup'
 import { blockSettings } from '@/fields/blockSettings'
 
@@ -28,7 +27,6 @@ export const TrioShortImageCards: Block = {
             {
               name: 'heading',
               type: 'text',
-              required: true,
             },
             linkGroup({
               appearances: ['default', 'outline'],
@@ -48,12 +46,10 @@ export const TrioShortImageCards: Block = {
                   name: 'image',
                   type: 'upload',
                   relationTo: 'media',
-                  required: true,
                 },
                 {
                   name: 'title',
                   type: 'text',
-                  required: true,
                 },
                 {
                   name: 'description',
@@ -64,14 +60,13 @@ export const TrioShortImageCards: Block = {
                     },
                   }),
                 },
-                link({
-                  appearances: false,
-                  overrides: {
-                    admin: {
-                      description: 'Optional link for this card',
-                    },
+                {
+                  name: 'link',
+                  type: 'text',
+                  admin: {
+                    description: 'Optional link URL for the card',
                   },
-                }),
+                },
               ],
             },
           ],

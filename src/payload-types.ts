@@ -3157,7 +3157,7 @@ export interface TrioTallImageCardsBlock {
  * via the `definition` "TrioShortImageCardsBlock".
  */
 export interface TrioShortImageCardsBlock {
-  heading: string;
+  heading?: string | null;
   links?:
     | {
         link: {
@@ -3187,8 +3187,8 @@ export interface TrioShortImageCardsBlock {
       }[]
     | null;
   cards: {
-    image: number | Media;
-    title: string;
+    image?: (number | null) | Media;
+    title?: string | null;
     description?: {
       root: {
         type: string;
@@ -3205,27 +3205,9 @@ export interface TrioShortImageCardsBlock {
       [k: string]: unknown;
     } | null;
     /**
-     * Optional link for this card
+     * Optional link URL for the card
      */
-    link: {
-      type?: ('reference' | 'custom') | null;
-      newTab?: boolean | null;
-      reference?:
-        | ({
-            relationTo: 'pages';
-            value: number | Page;
-          } | null)
-        | ({
-            relationTo: 'posts';
-            value: number | Post;
-          } | null)
-        | ({
-            relationTo: 'case-studies';
-            value: number | CaseStudy;
-          } | null);
-      url?: string | null;
-      label: string;
-    };
+    link?: string | null;
     id?: string | null;
   }[];
   /**
@@ -6929,15 +6911,7 @@ export interface TrioShortImageCardsBlockSelect<T extends boolean = true> {
         image?: T;
         title?: T;
         description?: T;
-        link?:
-          | T
-          | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-            };
+        link?: T;
         id?: T;
       };
   blockSettings?:
