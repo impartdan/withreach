@@ -46,7 +46,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
       }`}
     >
       {/* Scrollable content area that fills remaining height */}
-      <div className="flex-1 flex flex-col px-8 pt-6 overflow-y-auto">
+      <div className="flex-1 flex flex-col px-8 pt-6 md:pt-40 overflow-y-auto">
         {/* Nav items */}
         <nav className="flex flex-col gap-6">
           {menuItems?.map((item, i) => {
