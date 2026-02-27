@@ -5,7 +5,8 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
-import { getTrioCardItemClasses, getTrioCardsContainerClasses } from '@/blocks/trioCardScrollClasses'
+import { getTrioCardItemClasses } from '@/blocks/trioCardScrollClasses'
+import { TrioCardScroller } from '@/blocks/TrioCardScroller'
 
 export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> = ({
   heading,
@@ -34,12 +35,11 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
 
       {/* Cards Grid */}
       {Array.isArray(cards) && cards.length > 0 && (
-        <div className={getTrioCardsContainerClasses(cards.length)}>
+        <TrioCardScroller cardCount={cards.length}>
           {cards.map((card, index) => (
             <div
               key={index}
               className={getTrioCardItemClasses(
-                index,
                 'bg-brand-white rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col',
               )}
             >
@@ -73,7 +73,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
               </div>
             </div>
           ))}
-        </div>
+        </TrioCardScroller>
       )}
     </div>
   )

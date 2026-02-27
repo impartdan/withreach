@@ -3,7 +3,8 @@ import type { TrioTextOnlyCardsBlock as TrioTextOnlyCardsBlockProps } from '@/pa
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
-import { getTrioCardItemClasses, getTrioCardsContainerClasses } from '@/blocks/trioCardScrollClasses'
+import { getTrioCardItemClasses } from '@/blocks/trioCardScrollClasses'
+import { TrioCardScroller } from '@/blocks/TrioCardScroller'
 
 export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
   introduction,
@@ -47,7 +48,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
       )}
 
       {Array.isArray(cards) && cards.length > 0 && (
-        <div className={getTrioCardsContainerClasses(cards.length)}>
+        <TrioCardScroller cardCount={cards.length}>
           {cards.map((card, index) => {
             const cardInner = (
               <>
@@ -102,7 +103,6 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
             )
 
             const cardClassName = getTrioCardItemClasses(
-              index,
               'rounded-[8px] p-8 lg:min-h-[400px] flex flex-col gap-6 justify-between bg-white border border-brand-black/20 text-brand-black group hover:bg-brand-black hover:text-white transition-colors duration-300',
             )
 
@@ -122,7 +122,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
               </div>
             )
           })}
-        </div>
+        </TrioCardScroller>
       )}
     </div>
   )
