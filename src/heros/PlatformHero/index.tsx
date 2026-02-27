@@ -22,11 +22,11 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({ richText, links,
       <div className="absolute bottom-0 left-0 right-0 z-20 h-[230px] bg-gradient-to-b from-transparent to-white pointer-events-none" />
 
       <div
-        className="container relative z-10 flex flex-col md:flex-row items-center gap-10 md:gap-16 pb-20 header-offset
+        className="container  flex flex-col md:flex-row items-center gap-10 md:gap-16 pb-20 header-offset
       "
       >
         {/* Left column: text content */}
-        <div className="w-full md:w-1/2 flex flex-col gap-6">
+        <div className="w-full md:w-1/2 flex flex-col gap-6 relative z-30">
           {richText && <RichText data={richText} enableGutter={false} />}
           {Array.isArray(links) && links.length > 0 && (
             <ul className="flex gap-4">

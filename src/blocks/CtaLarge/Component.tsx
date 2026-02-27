@@ -9,11 +9,11 @@ export const CtaLargeBlock: React.FC<CtaLargeBlockProps> = ({ label, heading, co
       <div className="text-center max-w-3xl mx-auto text-pretty">
         {label && <p className=" type-eyebrow  mb-4">{label}</p>}
 
-        {heading && <h2 className="type-display-lg mb-6">{heading}</h2>}
+        {heading && <h2 className="type-display-lg mb-6 text-pretty">{heading}</h2>}
 
         {content && (
           <RichText
-            className="wysiwyg mb-8"
+            className="wysiwyg text-pretty mb-8"
             data={content}
             enableGutter={false}
             enableProse={false}
