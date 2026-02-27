@@ -43,9 +43,6 @@ function PillFilter({
 }) {
   return (
     <>
-      <Link href={buildHref(basePath)}>
-        <Tag label="All" active={!activeCategory} />
-      </Link>
       {categories.map((cat) => (
         <Link key={cat.id} href={buildHref(basePath, cat.slug)}>
           <Tag label={cat.title ?? 'Untitled'} active={activeCategory === cat.slug} />
