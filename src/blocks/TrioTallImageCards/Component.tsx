@@ -13,6 +13,8 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
   links,
   cards,
 }) => {
+  const isLessThanThreeCards = Array.isArray(cards) && cards.length < 3
+
   return (
     <div className="container">
       {/* Header */}
@@ -44,10 +46,18 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
               )}
             >
               {card.image && typeof card.image !== 'string' && (
-                <div className="aspect-square bg-white relative overflow-hidden">
+                <div
+                  className={`bg-white relative overflow-hidden ${
+                    isLessThanThreeCards ? 'w-full h-[300px]' : 'aspect-square'
+                  }`}
+                >
                   <Media
                     resource={card.image}
-                    imgClassName="object-cover w-full h-full absolute inset-0"
+                    imgClassName={
+                      isLessThanThreeCards
+                        ? 'object-cover w-full h-[300px]'
+                        : 'object-cover w-full h-full absolute inset-0'
+                    }
                   />
                 </div>
               )}
