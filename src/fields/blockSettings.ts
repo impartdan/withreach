@@ -264,7 +264,6 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
     name: 'showGridLines',
     type: 'checkbox',
     defaultValue: true,
-    dbName: 'show_grid',
     label: 'Show grid lines?',
   })
 
