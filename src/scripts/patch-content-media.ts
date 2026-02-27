@@ -136,7 +136,8 @@ async function patchPost(
     await payload.update({
       collection: 'posts',
       id: docId,
-      data: { content } as Parameters<typeof payload.update>[0]['data'],
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      data: { content } as any,
       context: { disableRevalidate: true },
     })
 
@@ -200,7 +201,8 @@ async function patchCaseStudy(
     await payload.update({
       collection: 'case-studies',
       id: docId,
-      data: { content } as Parameters<typeof payload.update>[0]['data'],
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      data: { content } as any,
       context: { disableRevalidate: true },
     })
 

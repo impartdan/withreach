@@ -8,7 +8,6 @@ import { fileURLToPath } from 'url'
 import {
   type ScrapedPost,
   type ScrapedCaseStudy,
-  type ImageRef,
   ensureMedia,
   convertBlocksToLexical,
   makeSimpleLexical,
