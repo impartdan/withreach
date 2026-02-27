@@ -260,6 +260,14 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
     })
   }
 
+  fields.push({
+    name: 'showGridLines',
+    type: 'checkbox',
+    defaultValue: true,
+    dbName: 'show_grid',
+    label: 'Show grid lines?',
+  })
+
   const blockSettingsGroup: GroupField = {
     name: 'blockSettings',
     type: 'group',

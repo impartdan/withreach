@@ -43,7 +43,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
           {cards.map((card, index) => (
             <div
               key={index}
-              className="w-[calc(100vw-5rem)] shrink-0 snap-start md:w-auto bg-brand-white/80 rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col"
+              className="w-[calc(100vw-5rem)] shrink-0 snap-start md:w-auto bg-brand-white rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col"
             >
               {card.image && typeof card.image !== 'string' && (
                 <div className="w-full h-[300px] bg-white relative overflow-hidden">

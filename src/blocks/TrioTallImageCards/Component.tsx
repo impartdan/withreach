@@ -43,7 +43,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
           {cards.map((card, index) => (
             <div
               key={index}
-              className="w-[calc(100vw-5rem)] shrink-0 snap-start md:w-auto bg-brand-white/80 rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col"
+              className="w-[calc(100vw-5rem)] shrink-0 snap-start md:w-auto bg-brand-white rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col"
             >
               {card.image && typeof card.image !== 'string' && (
                 <div className="aspect-square bg-white relative overflow-hidden">

@@ -3,7 +3,13 @@ import React from 'react'
 import { cn } from '@/utilities/ui'
 import type { Media } from '@/payload-types'
 
-import type { BackgroundColor, BackgroundType, GradientDirection, SpacingSize, TextColor } from '@/fields/blockSettings'
+import type {
+  BackgroundColor,
+  BackgroundType,
+  GradientDirection,
+  SpacingSize,
+  TextColor,
+} from '@/fields/blockSettings'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
 
 type BlockWrapperProps = {
@@ -22,6 +28,7 @@ type BlockWrapperProps = {
     gradientTo?: BackgroundColor | null
     gradientDirection?: GradientDirection | null
     textColor?: TextColor | null
+    showGridLines?: boolean | null
   }
   /** Applied to the root div only when blockSettings produces no active background class */
   fallbackBgClass?: string
@@ -140,10 +147,9 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
       ? blockSettings.backgroundImage
       : null
 
-  const bgPositionClass =
-    blockSettings?.backgroundImagePosition
-      ? bgPositionClasses[blockSettings.backgroundImagePosition]
-      : bgPositionClasses.center
+  const bgPositionClass = blockSettings?.backgroundImagePosition
+    ? bgPositionClasses[blockSettings.backgroundImagePosition]
+    : bgPositionClasses.center
 
   const bgVideoFile =
     bgType === 'video' &&
@@ -162,23 +168,29 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
   const theme = blockSettings?.textColor === 'light' ? 'light' : 'dark'
   const textColorClass = theme === 'light' ? 'text-white' : 'text-brand-black'
 
+  const gridLineColor = theme === 'light' ? 'bg-white/10' : 'bg-brand-black/10'
+  const showGridLines = blockSettings?.showGridLines !== false
+
   return (
     <div
-      className={cn('relative', paddingTopClass, paddingBottomClass, bgColorClass || (!gradientStyle ? fallbackBgClass : undefined), className)}
+      className={cn(
+        'relative',
+        paddingTopClass,
+        paddingBottomClass,
+        bgColorClass || (!gradientStyle ? fallbackBgClass : undefined),
+        className,
+      )}
       style={gradientStyle}
       data-block={blockType}
     >
-      {/* z-0: image layer — sits above the background color */}
+      {/* z-0: image layer */}
       {bgImage?.url && (
         <div
-          className={cn(
-            'absolute inset-0 bg-cover bg-no-repeat z-0',
-            bgPositionClass,
-          )}
+          className={cn('absolute inset-0 z-0 bg-cover bg-no-repeat', bgPositionClass)}
           style={{ backgroundImage: `url(${bgImage.url})` }}
         />
       )}
-      {/* z-10: video layer — sits above the image */}
+      {/* z-10: video layer */}
       {videoSrc && (
         <video
           autoPlay
@@ -190,11 +202,24 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
           <source src={videoSrc} type="video/mp4" />
         </video>
       )}
-      {/* z-[15]: blur overlay — applied over any video background */}
+      {/* z-[15]: blur overlay */}
       {videoSrc && (
         <div className="absolute inset-0 z-[15] backdrop-blur-[17px] bg-[rgba(255,255,255,0.01)]" />
       )}
-      {/* z-20: content — always on top */}
+      {/* z-[16]: grid lines — between background and content */}
+      {showGridLines && (
+        <div
+          className="absolute inset-0 z-[16] pointer-events-none hidden md:block"
+          aria-hidden="true"
+        >
+          <div className="container relative h-full">
+            <div className={cn('absolute top-0 left-[17%] w-px h-full', gridLineColor)} />
+            <div className={cn('absolute top-0 left-[33%] w-px h-full', gridLineColor)} />
+            <div className={cn('absolute top-0 right-[17%] w-px h-full', gridLineColor)} />
+          </div>
+        </div>
+      )}
+      {/* z-20: content */}
       <BlockThemeContext.Provider value={theme}>
         <div className={cn('relative z-20', textColorClass)}>{children}</div>
       </BlockThemeContext.Provider>
