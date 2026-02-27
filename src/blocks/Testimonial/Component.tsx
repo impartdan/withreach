@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import type { Media as MediaType } from '@/payload-types'
 import type { TestimonialBlock as TestimonialBlockProps } from '@/payload-types'
@@ -5,6 +6,7 @@ import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { VideoBlockClient } from '@/blocks/VideoBlock/Component.client'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
+import { BlockThemeContext } from '@/components/BlockThemeContext'
 
 function resolveMediaUrl(resource: MediaType | string | number | null | undefined): string | null {
   if (!resource || typeof resource === 'string' || typeof resource === 'number') return null
@@ -66,11 +68,13 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
           </div>
 
           {Array.isArray(links) && links.length > 0 && (
-            <div className="flex flex-wrap gap-3">
-              {links.map(({ link }, i) => {
-                return <CMSLink key={i} size="default" {...link} />
-              })}
-            </div>
+            <BlockThemeContext.Provider value="light">
+              <div className="flex flex-wrap gap-3">
+                {links.map(({ link }, i) => {
+                  return <CMSLink key={i} size="default" {...link} />
+                })}
+              </div>
+            </BlockThemeContext.Provider>
           )}
         </div>
       </div>

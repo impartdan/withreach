@@ -1,8 +1,10 @@
+'use client'
 import React from 'react'
 import type { TextImageFeatureBlock as TextImageFeatureBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
+import { BlockThemeContext } from '@/components/BlockThemeContext'
 
 export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
   heading,
@@ -31,11 +33,13 @@ export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
           )}
 
           {Array.isArray(links) && links.length > 0 && (
-            <div className="flex flex-wrap gap-3 mt-2">
-              {links.map(({ link }, i) => {
-                return <CMSLink key={i} size="default" {...link} />
-              })}
-            </div>
+            <BlockThemeContext.Provider value="light">
+              <div className="flex flex-wrap gap-3 mt-2">
+                {links.map(({ link }, i) => {
+                  return <CMSLink key={i} size="default" {...link} />
+                })}
+              </div>
+            </BlockThemeContext.Provider>
           )}
         </div>
 

@@ -1,7 +1,9 @@
+'use client'
 import React from 'react'
 import type { CardGridBlock as CardGridBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
+import { BlockThemeContext } from '@/components/BlockThemeContext'
 
 export const CardGridBlock: React.FC<CardGridBlockProps> = ({ title, cards }) => {
   return (
@@ -35,9 +37,11 @@ export const CardGridBlock: React.FC<CardGridBlockProps> = ({ title, cards }) =>
                 )}
               </div>
               {card.link && (
-                <div className="mt-auto pt-2">
-                  <CMSLink size="default" {...card.link} />
-                </div>
+                <BlockThemeContext.Provider value="light">
+                  <div className="mt-auto pt-2">
+                    <CMSLink size="default" {...card.link} />
+                  </div>
+                </BlockThemeContext.Provider>
               )}
             </div>
           ))}

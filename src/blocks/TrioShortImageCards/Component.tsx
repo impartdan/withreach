@@ -1,8 +1,10 @@
+'use client'
 import React from 'react'
 import type { TrioShortImageCardsBlock as TrioShortImageCardsBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
+import { BlockThemeContext } from '@/components/BlockThemeContext'
 
 export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> = ({
   heading,
@@ -64,11 +66,13 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                   />
                 )}
                 {Array.isArray(card.links) && card.links.length > 0 && (
-                  <div className="mt-auto flex flex-wrap gap-3">
-                    {card.links.map(({ link }, i) => (
-                      <CMSLink key={i} size="default" {...link} />
-                    ))}
-                  </div>
+                  <BlockThemeContext.Provider value="light">
+                    <div className="mt-auto flex flex-wrap gap-3">
+                      {card.links.map(({ link }, i) => (
+                        <CMSLink key={i} size="default" {...link} />
+                      ))}
+                    </div>
+                  </BlockThemeContext.Provider>
                 )}
               </div>
             </div>
