@@ -27,6 +27,7 @@ import { ImageLeftTextRight } from '../../blocks/ImageLeftTextRight/config'
 import { SimpleContent } from '../../blocks/SimpleContent/config'
 import { IndentedContent } from '../../blocks/IndentedContent/config'
 import { ConsList } from '../../blocks/ConsList/config'
+import { ProsList } from '../../blocks/ProsList/config'
 import { CtaLarge } from '../../blocks/CtaLarge/config'
 import { CtaSmall } from '../../blocks/CtaSmall/config'
 import { Disclaimer } from '../../blocks/Disclaimer/config'
@@ -143,6 +144,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 SimpleContent,
                 IndentedContent,
                 ConsList,
+                ProsList,
                 CtaLarge,
                 CtaSmall,
                 Disclaimer,

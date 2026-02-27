@@ -27,6 +27,7 @@ import { ImageLeftTextRightBlock } from '@/blocks/ImageLeftTextRight/Component'
 import { SimpleContentBlock } from '@/blocks/SimpleContent/Component'
 import { IndentedContentBlock } from '@/blocks/IndentedContent/Component'
 import { ConsListBlock } from '@/blocks/ConsList/Component'
+import { ProsListBlock } from '@/blocks/ProsList/Component'
 import { CtaLargeBlock } from '@/blocks/CtaLarge/Component'
 import { CtaSmallBlock } from '@/blocks/CtaSmall/Component'
 import { DisclaimerBlock } from '@/blocks/Disclaimer/Component'
@@ -63,6 +64,7 @@ const blockComponents = {
   simpleContent: SimpleContentBlock,
   indentedContent: IndentedContentBlock,
   consList: ConsListBlock,
+  prosList: ProsListBlock,
   ctaLarge: CtaLargeBlock,
   ctaSmall: CtaSmallBlock,
   disclaimer: DisclaimerBlock,

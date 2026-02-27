@@ -7,14 +7,14 @@ import {
 } from '@payloadcms/richtext-lexical'
 import { blockSettings } from '@/fields/blockSettings'
 
-export const ConsList: Block = {
-  slug: 'consList',
-  imageURL: '/block-thumbnails/cons-list.png',
-  imageAltText: 'Two-column comparison with cons list and solution text',
-  interfaceName: 'ConsListBlock',
+export const ProsList: Block = {
+  slug: 'prosList',
+  imageURL: '/block-thumbnails/pros-list.png',
+  imageAltText: 'Two-column comparison with pros list and solution text',
+  interfaceName: 'ProsListBlock',
   labels: {
-    singular: 'Cons List',
-    plural: 'Cons Lists',
+    singular: 'Pros List',
+    plural: 'Pros Lists',
   },
   fields: [
     {
@@ -31,17 +31,17 @@ export const ConsList: Block = {
               },
             },
             {
-              name: 'consHeading',
+              name: 'prosHeading',
               type: 'text',
               admin: {
                 description:
-                  'Heading for the cons/problems column (e.g. "Incorrect tax handling leads to:")',
+                  'Heading for the pros/benefits column (e.g. "Correct tax handling leads to:")',
               },
             },
             {
-              name: 'consItems',
+              name: 'prosItems',
               type: 'array',
-              label: 'Cons Items',
+              label: 'Pros Items',
               minRows: 1,
               required: true,
               fields: [

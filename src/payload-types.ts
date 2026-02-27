@@ -218,6 +218,7 @@ export interface Page {
         | SimpleContentBlock
         | IndentedContentBlock
         | ConsListBlock
+        | ProsListBlock
         | CtaLargeBlock
         | CtaSmallBlock
         | DisclaimerBlock
@@ -4507,11 +4508,11 @@ export interface ConsListBlock {
   /**
    * Main heading above the two columns
    */
-  heading: string;
+  heading?: string | null;
   /**
    * Heading for the cons/problems column (e.g. "Incorrect tax handling leads to:")
    */
-  consHeading: string;
+  consHeading?: string | null;
   consItems: {
     text: string;
     id?: string | null;
@@ -4620,6 +4621,128 @@ export interface ConsListBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'consList';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ProsListBlock".
+ */
+export interface ProsListBlock {
+  /**
+   * Main heading above the two columns
+   */
+  heading?: string | null;
+  /**
+   * Heading for the pros/benefits column (e.g. "Correct tax handling leads to:")
+   */
+  prosHeading?: string | null;
+  prosItems: {
+    text: string;
+    id?: string | null;
+  }[];
+  /**
+   * Text for the solution/positive column on the right
+   */
+  solutionText: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'prosList';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -6168,6 +6291,7 @@ export interface PagesSelect<T extends boolean = true> {
         simpleContent?: T | SimpleContentBlockSelect<T>;
         indentedContent?: T | IndentedContentBlockSelect<T>;
         consList?: T | ConsListBlockSelect<T>;
+        prosList?: T | ProsListBlockSelect<T>;
         ctaLarge?: T | CtaLargeBlockSelect<T>;
         ctaSmall?: T | CtaSmallBlockSelect<T>;
         disclaimer?: T | DisclaimerBlockSelect<T>;
@@ -7367,6 +7491,39 @@ export interface ConsListBlockSelect<T extends boolean = true> {
   heading?: T;
   consHeading?: T;
   consItems?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  solutionText?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        background?: T;
+        backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ProsListBlock_select".
+ */
+export interface ProsListBlockSelect<T extends boolean = true> {
+  heading?: T;
+  prosHeading?: T;
+  prosItems?:
     | T
     | {
         text?: T;
