@@ -9,8 +9,8 @@ const defaultOpenGraph: Metadata['openGraph'] = {
       url: `${getServerSideURL()}/withreach-og.webp`,
     },
   ],
-  siteName: 'With Reach',
-  title: 'With Reach',
+  siteName: 'Reach',
+  title: 'Reach',
 }
 
 export const mergeOpenGraph = (og?: Metadata['openGraph']): Metadata['openGraph'] => {
