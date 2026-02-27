@@ -8,7 +8,7 @@ import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 
-export const TextHero: React.FC<TextHeroBlockType> = ({ richText, links, logoOne, logoTwo, alignment }) => {
+export const TextHero: React.FC<TextHeroBlockType & { children?: React.ReactNode }> = ({ richText, links, logoOne, logoTwo, alignment, children }) => {
   return (
     <div className="w-full header-offset">
       <div className="container py-20">
@@ -47,6 +47,8 @@ export const TextHero: React.FC<TextHeroBlockType> = ({ richText, links, logoOne
             ))}
           </ul>
         )}
+
+        {children}
         </div>
       </div>
     </div>

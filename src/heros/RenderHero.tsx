@@ -51,11 +51,10 @@ export const RenderHero: React.FC<{ hero: Page['hero']; after?: React.ReactNode 
       blockType={block.blockType}
       blockSettings={wrapperSettings}
       fallbackBgClass={meta?.fallbackBgClass}
-      after={after}
     >
       {React.createElement(
         HeroToRender as unknown as React.ComponentType<Record<string, unknown>>,
-        block as unknown as Record<string, unknown>,
+        { ...(block as unknown as Record<string, unknown>), children: after ?? null },
       )}
     </HeroBlockWrapper>
   )
