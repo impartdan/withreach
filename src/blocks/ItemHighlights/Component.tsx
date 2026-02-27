@@ -16,7 +16,6 @@ export const ItemHighlightsBlock: React.FC<ItemHighlightsBlockProps> = ({
           {heading}
         </h2>
       )}
-
       {Array.isArray(items) && items.length > 0 && (
         <div className={`grid grid-cols-2 ${gridCols} gap-8 md:gap-10`}>
           {items.map((item, index) => (
