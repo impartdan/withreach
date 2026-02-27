@@ -12,7 +12,7 @@ export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
 }) => {
   return (
     <div className="container">
-      <div className="bg-brand-off-white rounded-xl overflow-hidden p-12 md:p-16 flex flex-col gap-8 lg:gap-12 lg:flex-row lg:items-center">
+      <div className="bg-brand-off-white rounded-[8px] overflow-hidden p-12 md:p-16 flex flex-col gap-8 lg:gap-12 lg:flex-row lg:items-center">
         {/* Text Content */}
         <div className="flex flex-col gap-8 flex-1 items-start text-left">
           {heading && (

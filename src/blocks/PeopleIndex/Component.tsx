@@ -16,23 +16,18 @@ export const PeopleIndexBlock: React.FC<PeopleIndexBlockProps> = ({ heading, peo
           {people.map((person, index) => (
             <div
               key={index}
-              className="bg-brand-off-white rounded-xl p-5 md:p-6 flex flex-col gap-4"
+              className="bg-brand-off-white rounded-[8px] p-5 md:p-6 flex flex-col gap-4"
             >
               {person.photo && typeof person.photo !== 'string' && (
                 <div className="aspect-square rounded-lg overflow-hidden">
-                  <Media
-                    resource={person.photo}
-                    imgClassName="object-cover w-full h-full"
-                  />
+                  <Media resource={person.photo} imgClassName="object-cover w-full h-full" />
                 </div>
               )}
               <div>
                 {person.name && (
                   <p className="text-base font-semibold text-brand-black">{person.name}</p>
                 )}
-                {person.title && (
-                  <p className="text-sm text-brand-black/60">{person.title}</p>
-                )}
+                {person.title && <p className="text-sm text-brand-black/60">{person.title}</p>}
               </div>
               {person.linkedinUrl && (
                 <a

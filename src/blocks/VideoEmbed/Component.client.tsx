@@ -57,7 +57,7 @@ export const VideoEmbedClient: React.FC<VideoEmbedClientProps> = ({
   const handlePlay = () => setIsPlaying(true)
 
   return (
-    <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
+    <div className="relative w-full aspect-video rounded-[8px] overflow-hidden bg-black">
       {isPlaying ? (
         <>
           {videoType === 'youtube' && youtubeId ? (

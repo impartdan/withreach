@@ -34,7 +34,7 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, p
             {partnerCards.map((card, i) => (
               <div
                 key={i}
-                className="bg-white border border-brand-olive/20 rounded-xl p-5 w-full md:w-[432px] flex flex-col gap-5 hover:shadow-lg transition-shadow"
+                className="bg-white border border-brand-olive/20 rounded-[8px] p-5 w-full md:w-[432px] flex flex-col gap-5 hover:shadow-lg transition-shadow"
               >
                 {/* Card image */}
                 {card.image && typeof card.image === 'object' && (

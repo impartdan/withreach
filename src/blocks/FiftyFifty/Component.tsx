@@ -49,7 +49,7 @@ export const FiftyFiftyBlock: React.FC<FiftyFiftyBlockProps> = ({
         {/* Image */}
         {image && typeof image !== 'string' && (
           <div className="flex-1">
-            <div className="rounded-xl overflow-hidden">
+            <div className="rounded-[8px] overflow-hidden">
               <Media resource={image} imgClassName="w-full h-auto" />
             </div>
           </div>

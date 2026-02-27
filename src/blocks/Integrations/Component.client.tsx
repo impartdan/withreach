@@ -98,7 +98,7 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
             placeholder="Search integrations"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-5 py-4 pl-14 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-gray-900 placeholder:text-gray-500 text-lg"
+            className="w-full px-5 py-4 pl-14 bg-white border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-gray-900 placeholder:text-gray-500 text-lg"
           />
           <svg
             className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -176,7 +176,7 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
 
             {/* Placeholder Card - only show when not searching and not showing all */}
             <RevealListItem>
-              <article className="h-full flex flex-col border border-gray-200 rounded-xl bg-white items-center justify-center p-8 text-center min-h-[320px]">
+              <article className="h-full flex flex-col border border-gray-200 rounded-[8px] bg-white items-center justify-center p-8 text-center min-h-[320px]">
                 <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                   Not seeing your integration?
                 </h3>
@@ -211,7 +211,7 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
       {/* No results - show as a card in the grid */}
       {displayedIntegrations.length === 0 && isSearching && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <article className="flex flex-col border border-gray-200 rounded-xl bg-white items-center justify-center p-12 text-center min-h-[320px] sm:col-span-2 lg:col-span-3 xl:col-span-4">
+          <article className="flex flex-col border border-gray-200 rounded-[8px] bg-white items-center justify-center p-12 text-center min-h-[320px] sm:col-span-2 lg:col-span-3 xl:col-span-4">
             <div className="max-w-md mx-auto">
               <h3 className="text-2xl font-semibold mb-4 text-gray-900">No integrations found</h3>
               <p className="text-gray-600 text-base mb-8 leading-relaxed">

@@ -13,7 +13,7 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-brand-off-white rounded-xl p-8 md:p-10 lg:p-12 flex flex-col items-center text-center gap-4"
+              className="bg-brand-off-white rounded-[8px] p-8 md:p-10 lg:p-12 flex flex-col items-center text-center gap-4"
             >
               {card.heading && (
                 <h3 className="text-2xl md:text-3xl font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">

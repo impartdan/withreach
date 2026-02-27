@@ -4,15 +4,10 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 
-export const DiagramBlock: React.FC<DiagramBlockProps> = ({
-  heading,
-  content,
-  links,
-  image,
-}) => {
+export const DiagramBlock: React.FC<DiagramBlockProps> = ({ heading, content, links, image }) => {
   return (
     <div className="container">
-      <div className="bg-brand-off-white rounded-xl overflow-hidden px-8 py-12 md:px-16 md:py-16">
+      <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-8 py-12 md:px-16 md:py-16">
         {/* Text Content */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
           {heading && (

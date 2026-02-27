@@ -17,7 +17,7 @@ export const CardGridBlock: React.FC<CardGridBlockProps> = ({ title, cards }) =>
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-white border border-border rounded-xl p-8 md:p-10 flex flex-col gap-4"
+              className="bg-white border border-border rounded-[8px] p-8 md:p-10 flex flex-col gap-4"
             >
               <div className="flex flex-col gap-4 flex-1">
                 {card.title && (

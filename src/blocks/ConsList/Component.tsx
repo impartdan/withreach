@@ -14,7 +14,7 @@ export const ConsListBlock: React.FC<ConsListBlockProps> = ({
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Cons Column */}
-        <div className="bg-brand-off-white rounded-xl p-8 md:p-10">
+        <div className="bg-brand-off-white rounded-[8px] p-8 md:p-10">
           {consHeading && <h3 className="type-display-xs text-brand-olive mb-6">{consHeading}</h3>}
 
           {Array.isArray(consItems) && consItems.length > 0 && (
@@ -38,7 +38,7 @@ export const ConsListBlock: React.FC<ConsListBlockProps> = ({
         </div>
 
         {/* Solution Column */}
-        <div className="bg-white border border-border rounded-xl p-8 md:p-10 flex items-center justify-center text-center">
+        <div className="bg-white border border-border rounded-[8px] p-8 md:p-10 flex items-center justify-center text-center">
           {solutionText && (
             <RichText
               className="type-display-sm [&>p]:mb-0"

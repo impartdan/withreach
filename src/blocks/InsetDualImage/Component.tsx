@@ -12,7 +12,7 @@ export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
 }) => {
   return (
     <div className="container">
-      <div className="bg-brand-off-white rounded-xl overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col gap-10 lg:gap-16 lg:flex-row lg:items-start">
+      <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col gap-10 lg:gap-16 lg:flex-row lg:items-start">
         {/* Text Content */}
         <div className="flex flex-col gap-8 lg:max-w-[445px] shrink-0 items-start text-left">
           {heading && (

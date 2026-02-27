@@ -12,7 +12,7 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
 }) => {
   return (
     <div className="container">
-      <div className="bg-brand-off-white rounded-xl overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col gap-10 lg:gap-16 lg:flex-row lg:items-center">
+      <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col gap-10 lg:gap-16 lg:flex-row lg:items-center">
         {/* Text Content */}
         <div className="flex flex-col gap-8 lg:max-w-[480px] shrink-0 items-start text-left">
           {heading && (
@@ -56,10 +56,7 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
                   key={index}
                   className={`absolute rounded-lg overflow-hidden shadow-lg ${positionClasses[index] || ''}`}
                 >
-                  <Media
-                    resource={item.image}
-                    imgClassName="object-cover w-full h-full"
-                  />
+                  <Media resource={item.image} imgClassName="object-cover w-full h-full" />
                 </div>
               )
             })}
