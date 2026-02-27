@@ -12,7 +12,7 @@ export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
 }) => {
   return (
     <div className="container">
-      <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col gap-10 lg:gap-16 lg:flex-row lg:items-start">
+      <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col-reverse gap-10 xl:gap-16 xl:flex-row xl:items-start">
         {/* Text Content */}
         <div className="flex flex-col gap-8 lg:max-w-[445px] shrink-0 items-start text-left">
           {heading && (
@@ -49,7 +49,8 @@ export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
                 <div key={index} className="relative w-1/2 flex-shrink-0">
                   <Media
                     resource={item.image}
-                    imgClassName="object-cover w-full h-full absolute inset-0"
+                    pictureClassName="w-full h-full block"
+                    imgClassName="object-cover w-full h-full"
                   />
                 </div>
               )

@@ -32,7 +32,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
       {/* Cards Grid */}
       {Array.isArray(cards) && cards.length > 0 && (
         <div
-          className={`grid grid-cols-1 gap-6 ${
+          className={`flex overflow-x-auto -mx-4 px-4 pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-6 md:overflow-x-visible md:mx-0 md:px-0 md:pb-0 md:grid ${
             cards.length === 1
               ? ''
               : cards.length === 2
@@ -43,7 +43,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-brand-white/80 rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col"
+              className="w-[calc(100vw-5rem)] shrink-0 snap-start md:w-auto bg-brand-white/80 rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col"
             >
               {card.image && typeof card.image !== 'string' && (
                 <div className="aspect-square bg-white relative overflow-hidden">
