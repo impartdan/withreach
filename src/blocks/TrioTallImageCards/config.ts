@@ -29,7 +29,7 @@ export const TrioTallImageCards: Block = {
               type: 'text',
             },
             linkGroup({
-              appearances: ['default', 'outline'],
+              appearances: ['default', 'outline', 'arrow'],
               overrides: {
                 maxRows: 2,
               },
@@ -60,7 +60,7 @@ export const TrioTallImageCards: Block = {
                   }),
                 },
                 linkGroup({
-                  appearances: ['default', 'outline'],
+                  appearances: ['default', 'outline', 'arrow'],
                   overrides: {
                     maxRows: 2,
                   },

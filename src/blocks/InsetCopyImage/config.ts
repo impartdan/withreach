@@ -48,7 +48,7 @@ export const InsetCopyImage: Block = {
               label: 'Description',
             },
             linkGroup({
-              appearances: ['default', 'outline'],
+              appearances: ['default', 'outline', 'arrow'],
               overrides: {
                 maxRows: 3,
               },

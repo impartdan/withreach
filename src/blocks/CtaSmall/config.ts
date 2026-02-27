@@ -46,7 +46,7 @@ export const CtaSmall: Block = {
                   }),
                 },
                 link({
-                  appearances: ['default', 'outline'],
+                  appearances: ['default', 'outline', 'arrow'],
                 }),
               ],
             },

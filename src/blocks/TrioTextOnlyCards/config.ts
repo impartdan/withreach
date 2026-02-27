@@ -36,7 +36,7 @@ export const TrioTextOnlyCards: Block = {
               }),
             },
             linkGroup({
-              appearances: ['default', 'outline'],
+              appearances: ['default', 'outline', 'arrow'],
               overrides: {
                 maxRows: 2,
               },

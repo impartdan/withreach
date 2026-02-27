@@ -46,7 +46,7 @@ export const CtaLarge: Block = {
               label: 'Description',
             },
             linkGroup({
-              appearances: ['default', 'outline'],
+              appearances: ['default', 'outline', 'arrow'],
               overrides: {
                 maxRows: 2,
               },

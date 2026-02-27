@@ -20,7 +20,7 @@ export const FaqToCallBlock: React.FC<FaqToCallBlockProps> = ({
         <div className="flex flex-col gap-8 lg:max-w-[440px] shrink-0">
           {heading && (
             <h2
-              className=" type-display-lg [&_span]:text-brand-olive"
+              className=" type-display-lg [&_span]:text-brand-olive [&_span]:block"
               dangerouslySetInnerHTML={{ __html: heading }}
             />
           )}

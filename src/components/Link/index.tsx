@@ -17,7 +17,27 @@ const lightVariantMap: Partial<Record<NonNullable<ButtonProps['variant']>, Butto
   {
     default: 'default-invert',
     outline: 'outline-invert',
+    arrow: 'arrow-invert',
   }
+
+const ArrowIcon = () => (
+  <svg
+    width="6"
+    height="10"
+    viewBox="0 0 6 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M0.75 8.75L4.89286 4.75L0.75 0.75"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
 
 type CMSLinkType = {
   appearance?: 'inline' | ButtonProps['variant']
@@ -58,7 +78,8 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
 
   if (!href) return null
 
-  const size = appearance === 'link' ? 'clear' : sizeFromProps
+  const isArrow = appearance === 'arrow'
+  const size = appearance === 'link' || isArrow ? 'clear' : sizeFromProps
   const newTabProps = newTab ? { rel: 'noopener noreferrer', target: '_blank' } : {}
 
   /* Ensure we don't break any styles set by richText */
@@ -79,8 +100,9 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
   return (
     <Button asChild className={className} size={size} variant={resolvedVariant}>
       <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
-        {label && label}
+        {label && <span>{label}</span>}
         {children && children}
+        {isArrow && <ArrowIcon />}
       </Link>
     </Button>
   )

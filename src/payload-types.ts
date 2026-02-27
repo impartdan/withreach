@@ -2222,7 +2222,7 @@ export interface TextImageFeatureBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
@@ -2371,7 +2371,7 @@ export interface InsetDualImageBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
@@ -2517,7 +2517,7 @@ export interface InsetCopyImageBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
@@ -2771,7 +2771,7 @@ export interface PageTeaserBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
@@ -2914,7 +2914,7 @@ export interface DiagramBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
@@ -3039,7 +3039,7 @@ export interface TrioTallImageCardsBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
@@ -3086,7 +3086,7 @@ export interface TrioTallImageCardsBlock {
                 /**
                  * Choose how the link should be rendered.
                  */
-                appearance?: ('default' | 'outline') | null;
+                appearance?: ('default' | 'outline' | 'arrow') | null;
               };
               id?: string | null;
             }[]
@@ -3210,7 +3210,7 @@ export interface TrioShortImageCardsBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
@@ -3256,7 +3256,7 @@ export interface TrioShortImageCardsBlock {
             /**
              * Choose how the link should be rendered.
              */
-            appearance?: ('default' | 'outline') | null;
+            appearance?: ('default' | 'outline' | 'arrow') | null;
           };
           id?: string | null;
         }[]
@@ -3393,7 +3393,7 @@ export interface TrioTextOnlyCardsBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
@@ -3595,7 +3595,7 @@ export interface TestimonialBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
@@ -4792,7 +4792,7 @@ export interface CtaLargeBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
@@ -4927,7 +4927,7 @@ export interface CtaSmallBlock {
       /**
        * Choose how the link should be rendered.
        */
-      appearance?: ('default' | 'outline') | null;
+      appearance?: ('default' | 'outline' | 'arrow') | null;
     };
     id?: string | null;
   }[];
@@ -5173,7 +5173,7 @@ export interface FiftyFiftyBlock {
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
+          appearance?: ('default' | 'outline' | 'arrow') | null;
         };
         id?: string | null;
       }[]
