@@ -13,6 +13,17 @@ export const CaseStudiesSettings: GlobalConfig = {
   },
   fields: [
     {
+      name: 'featuredCategories',
+      type: 'relationship',
+      relationTo: 'categories',
+      hasMany: true,
+      maxRows: 4,
+      label: 'Featured Categories',
+      admin: {
+        description: 'Select up to 4 categories to show as filter pills on the case studies page. If none are selected, no pills are shown.',
+      },
+    },
+    {
       name: 'featuredCaseStudies',
       type: 'relationship',
       relationTo: 'case-studies',

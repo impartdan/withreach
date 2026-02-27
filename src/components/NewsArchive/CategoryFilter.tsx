@@ -5,6 +5,7 @@ import { useTransitionRouter } from 'next-view-transitions'
 
 import type { Category } from '@/payload-types'
 import { cn } from '@/utilities/ui'
+import { Tag } from '@/components/Tag'
 
 type CategoryFilterProps = {
   categories: Category[]
@@ -42,29 +43,12 @@ function PillFilter({
 }) {
   return (
     <>
-      <Link
-        href={buildHref(basePath)}
-        className={cn(
-          'rounded-[6px] px-5 py-2.5 type-eyebrow transition-colors',
-          !activeCategory
-            ? 'bg-brand-black text-white'
-            : 'bg-white text-brand-black hover:bg-brand-black/5',
-        )}
-      >
-        All
+      <Link href={buildHref(basePath)}>
+        <Tag label="All" active={!activeCategory} />
       </Link>
       {categories.map((cat) => (
-        <Link
-          key={cat.id}
-          href={buildHref(basePath, cat.slug)}
-          className={cn(
-            'rounded-[6px] px-5 py-2.5 type-eyebrow transition-colors',
-            activeCategory === cat.slug
-              ? 'bg-brand-black text-white'
-              : 'bg-white text-brand-black hover:bg-brand-black/5',
-          )}
-        >
-          {cat.title}
+        <Link key={cat.id} href={buildHref(basePath, cat.slug)}>
+          <Tag label={cat.title ?? 'Untitled'} active={activeCategory === cat.slug} />
         </Link>
       ))}
     </>

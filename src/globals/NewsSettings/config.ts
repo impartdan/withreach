@@ -14,6 +14,17 @@ export const NewsSettings: GlobalConfig = {
   },
   fields: [
     {
+      name: 'featuredCategories',
+      type: 'relationship',
+      relationTo: 'categories',
+      hasMany: true,
+      maxRows: 4,
+      label: 'Featured Categories',
+      admin: {
+        description: 'Select up to 4 categories to show as filter pills on the news page. If none are selected, all categories are shown.',
+      },
+    },
+    {
       name: 'featuredPosts',
       type: 'relationship',
       relationTo: 'posts',

@@ -9161,6 +9161,10 @@ export interface Footer {
 export interface NewsSetting {
   id: number;
   /**
+   * Select up to 4 categories to show as filter pills on the news page. If none are selected, all categories are shown.
+   */
+  featuredCategories?: (number | Category)[] | null;
+  /**
    * Select up to 5 posts to feature on the news page.
    */
   featuredPosts?: (number | Post)[] | null;
@@ -9199,6 +9203,10 @@ export interface NewsSetting {
  */
 export interface CaseStudiesSetting {
   id: number;
+  /**
+   * Select up to 4 categories to show as filter pills on the case studies page. If none are selected, no pills are shown.
+   */
+  featuredCategories?: (number | Category)[] | null;
   /**
    * Select up to 5 case studies to feature on the case studies page.
    */
@@ -9408,6 +9416,7 @@ export interface FooterSelect<T extends boolean = true> {
  * via the `definition` "news-settings_select".
  */
 export interface NewsSettingsSelect<T extends boolean = true> {
+  featuredCategories?: T;
   featuredPosts?: T;
   postCta?:
     | T
@@ -9433,6 +9442,7 @@ export interface NewsSettingsSelect<T extends boolean = true> {
  * via the `definition` "case-studies-settings_select".
  */
 export interface CaseStudiesSettingsSelect<T extends boolean = true> {
+  featuredCategories?: T;
   featuredCaseStudies?: T;
   caseStudyCta?:
     | T

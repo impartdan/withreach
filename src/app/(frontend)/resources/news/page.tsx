@@ -4,6 +4,7 @@ import configPromise from '@payload-config'
 import { getPayload, type RequiredDataFromCollectionSlug, type Where } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
+import type { Category } from '@/payload-types'
 
 import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
@@ -92,6 +93,11 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
   const categories = categoriesResult.docs
   const featuredPosts = newsSettings.featuredPosts
 
+  const resolvedFeaturedCategories = (newsSettings.featuredCategories ?? []).filter(
+    (c): c is Category => typeof c === 'object' && c !== null,
+  )
+  const pillCategories = resolvedFeaturedCategories.length > 0 ? resolvedFeaturedCategories : categories
+
   return (
     <article>
       {page && <PageClient id={String(page.id)} collection="pages" />}
@@ -102,7 +108,7 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
       <div className="bg-brand-linen">
         <div className="container flex justify-center gap-4 flex-wrap pb-sm">
           <CategoryFilter
-            categories={categories}
+            categories={pillCategories}
             activeCategory={categorySlug}
             variant="pills"
           />

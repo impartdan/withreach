@@ -4,6 +4,7 @@ import configPromise from '@payload-config'
 import { getPayload, type RequiredDataFromCollectionSlug, type Where } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
+import type { Category } from '@/payload-types'
 
 import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
@@ -96,12 +97,30 @@ export default async function CaseStudiesArchivePage({ searchParams: searchParam
   const categories = categoriesResult.docs
   const featuredCaseStudies = csSettings.featuredCaseStudies
 
+  const resolvedFeaturedCategories = (csSettings.featuredCategories ?? []).filter(
+    (c): c is Category => typeof c === 'object' && c !== null,
+  )
+  const pillCategories = resolvedFeaturedCategories.length > 0 ? resolvedFeaturedCategories : []
+
   return (
     <article>
       {page && <PageClient id={String(page.id)} collection="pages" />}
       {draft && <LivePreviewListener />}
 
       {page?.hero && <RenderHero hero={page.hero} />}
+
+      {pillCategories.length > 0 && (
+        <div className="bg-brand-linen">
+          <div className="container flex justify-center gap-4 flex-wrap pb-sm">
+            <CategoryFilter
+              categories={pillCategories}
+              activeCategory={categorySlug}
+              variant="pills"
+              basePath={BASE_PATH}
+            />
+          </div>
+        </div>
+      )}
 
       {featuredCaseStudies && Array.isArray(featuredCaseStudies) && featuredCaseStudies.length > 0 && (
         <FeaturedCaseStudies caseStudies={featuredCaseStudies} />
