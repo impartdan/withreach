@@ -59,36 +59,33 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
           )}
 
           <div className="flex flex-col justify-between min-h-[280px] lg:min-h-[400px] w-full">
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-4">
-                {categories.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {categories.map((cat) => (
-                      <Tag key={cat.id} label={cat.title} variant="secondary" />
-                    ))}
-                  </div>
-                )}
+            <Link href={`/resources/case-studies/${cs.slug}`} className="block">
+              <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-4">
+                  {categories.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {categories.map((cat) => (
+                        <Tag key={cat.id} label={cat.title} variant="secondary" />
+                      ))}
+                    </div>
+                  )}
 
-                {cs.companyName && (
-                  <div className="flex items-center gap-2 type-eyebrow text-brand-black">
-                    <span>{cs.companyName}</span>
-                    <span className="text-brand-gray-med">&times;</span>
-                    <span>Reach</span>
-                  </div>
-                )}
+                  {cs.companyName && (
+                    <div className="flex items-center gap-2 type-eyebrow text-brand-black">
+                      <span>{cs.companyName}</span>
+                      <span className="text-brand-gray-med">&times;</span>
+                      <span>Reach</span>
+                    </div>
+                  )}
 
-                <Link href={`/resources/case-studies/${cs.slug}`}>
                   <h3 className="type-display-sm">{cs.title}</h3>
-                </Link>
-              </div>
+                </div>
 
-              <Link
-                href={`/resources/case-studies/${cs.slug}`}
-                className="inline-flex items-center gap-3 type-button text-brand-black border border-brand-black rounded-[6px] px-6 py-2 self-start hover:bg-brand-black hover:text-white transition-colors"
-              >
-                Read article
-              </Link>
-            </div>
+                <span className="inline-flex items-center gap-3 type-button text-brand-black border border-brand-black rounded-[6px] px-6 py-2 self-start hover:bg-brand-black hover:text-white transition-colors">
+                  Read article
+                </span>
+              </div>
+            </Link>
 
             {resolved.length > 1 && (
               <div className="flex items-center justify-between mt-8">
