@@ -50,7 +50,8 @@ export const CaseStudyCard: React.FC<{ caseStudy: CaseStudyCardData }> = ({ case
             <div className="absolute inset-0 flex items-center justify-center p-12">
               <Media
                 resource={logo}
-                className="max-w-[60%] max-h-[40%] object-contain relative z-10"
+                pictureClassName="max-w-[60%] max-h-[40%] relative z-10"
+                imgClassName="object-contain w-full h-full"
                 htmlElement={null}
               />
             </div>

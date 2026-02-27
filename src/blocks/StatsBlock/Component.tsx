@@ -25,7 +25,8 @@ export const StatsBlock: React.FC<
                 <div className="h-[42px] w-auto">
                   <Media
                     resource={stat.icon}
-                    className="h-full w-auto object-contain"
+                    pictureClassName="h-full w-auto"
+                    imgClassName="h-full w-auto object-contain"
                     htmlElement={null}
                   />
                 </div>

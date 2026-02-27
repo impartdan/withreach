@@ -18,13 +18,13 @@ export const TextHero: React.FC<TextHeroBlockType> = ({ richText, links, logoOne
           <div className="flex items-center gap-6">
             {logoOne && typeof logoOne === 'object' && (
               <div className="size-20 rounded-[10px] overflow-hidden shadow-[0px_8px_12.6px_rgba(0,0,0,0.04),0px_10px_30px_rgba(0,0,0,0.05),0px_70.6px_56.5px_rgba(0,0,0,0.07)]">
-                <Media className="w-full h-full object-cover" resource={logoOne} />
+                <Media className="w-full h-full" imgClassName="w-full h-full object-cover" resource={logoOne} />
               </div>
             )}
             {logoOne && logoTwo && <span className="text-brand-black text-2xl">+</span>}
             {logoTwo && typeof logoTwo === 'object' && (
               <div className="size-20 rounded-[10px] overflow-hidden shadow-[0px_8px_12.6px_rgba(0,0,0,0.04),0px_10px_30px_rgba(0,0,0,0.05),0px_70.6px_56.5px_rgba(0,0,0,0.07)]">
-                <Media className="w-full h-full object-cover" resource={logoTwo} />
+                <Media className="w-full h-full" imgClassName="w-full h-full object-cover" resource={logoTwo} />
               </div>
             )}
           </div>
