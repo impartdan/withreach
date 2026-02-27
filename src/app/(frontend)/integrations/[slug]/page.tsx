@@ -9,7 +9,8 @@ import RichText from '@/components/RichText'
 import type { Integration } from '@/payload-types'
 import { generateMeta } from '@/utilities/generateMeta'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
-import { RelatedIntegrationsClient } from './RelatedIntegrations.client'
+import { BackButton } from '@/components/ui/back-button'
+import { Tag } from '@/components/Tag'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -84,18 +85,14 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
     return notFound()
   }
 
-  // Check if the integration is featured in any IntegrationsBlock
-  const isFeatured = await checkIfIntegrationIsFeatured(integration.id)
-  
-  if (!isFeatured) {
+  const featuredIds = await getFeaturedIntegrationIds()
+
+  if (!featuredIds.includes(integration.id)) {
     redirect('/partners')
   }
 
   const logo = typeof integration.logo === 'object' ? integration.logo : null
   const icon = typeof integration.icon === 'object' ? integration.icon : null
-
-  // Fetch 3 random integrations (excluding the current one)
-  const randomIntegrations = await getRandomIntegrations({ excludeId: integration.id, limit: 3 })
 
   // Extract features from richText
   const featuresList = integration.features ? extractFeatures(integration.features) : []
@@ -104,32 +101,31 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
     <article className="pb-24 header-offset">
       {/* Main Content Section */}
       <div className="container mx-auto px-4 max-w-7xl py-16 md:py-24">
+        {/* Icon/Logo - Small size */}
+        {(icon || logo) && (
+          <div className="mb-8">
+            {(icon || logo)!.mimeType === 'image/svg+xml' ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={getMediaUrl((icon || logo)!.url, (icon || logo)!.updatedAt)}
+                alt={(icon || logo)!.alt || integration.title}
+                className="h-16 w-auto object-contain"
+              />
+            ) : (
+              <Media resource={(icon || logo)!} imgClassName="h-16 w-auto object-contain" />
+            )}
+          </div>
+        )}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Logo, Title, Description */}
           <div>
-            {/* Icon/Logo - Small size */}
-            {(icon || logo) && (
-              <div className="mb-8">
-                {(icon || logo)!.mimeType === 'image/svg+xml' ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={getMediaUrl((icon || logo)!.url, (icon || logo)!.updatedAt)}
-                    alt={(icon || logo)!.alt || integration.title}
-                    className="h-16 w-auto object-contain"
-                  />
-                ) : (
-                  <Media resource={(icon || logo)!} imgClassName="h-16 w-auto object-contain" />
-                )}
-              </div>
-            )}
-
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="type-display-lg [&_span]:block [&_span]:text-brand-olive mb-6">
               {integration.title}
             </h1>
 
             {/* Description - Can be multiple paragraphs */}
-            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
+            <div className="space-y-4 type-body [&>p]:mb-0">
               {integration.description.split('\n\n').map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -138,23 +134,24 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
             {/* Body Content if available */}
             {integration.body && (
               <div className="mt-8">
-                <RichText data={integration.body} enableGutter={false} enableProse={false} />
+                <RichText data={integration.body} enableGutter={false} enableProse={true} />
               </div>
             )}
+
+            <BackButton href="/integrations" className="mt-8">
+              Back to Integrations
+            </BackButton>
           </div>
 
           {/* Right Column - Features */}
           {featuresList.length > 0 && (
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Features</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <h2 className="type-eyebrow [&_span]:block [&_span]:text-brand-olive mb-8">
+                Features
+              </h2>
+              <div className="flex flex-wrap gap-4">
                 {featuresList.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-50 rounded-lg px-6 py-4 text-gray-700 text-base"
-                  >
-                    {feature}
-                  </div>
+                  <Tag key={index} label={feature} variant="primary" />
                 ))}
               </div>
             </div>
@@ -169,9 +166,6 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
           )}
         </div>
       </div>
-
-      {/* Related Integrations Section */}
-      <RelatedIntegrationsClient integrations={randomIntegrations} />
     </article>
   )
 }
@@ -208,55 +202,20 @@ const queryIntegrationBySlug = cache(async ({ slug }: { slug: string }) => {
   return result.docs?.[0] || null
 })
 
-async function getRandomIntegrations({
-  excludeId,
-  limit,
-}: {
-  excludeId: string | number
-  limit: number
-}) {
-  const payload = await getPayload({ config: configPromise })
-
-  // Fetch all integrations except the current one
-  const result = await payload.find({
-    collection: 'integrations',
-    draft: false,
-    limit: 1000,
-    pagination: false,
-    overrideAccess: false,
-    where: {
-      id: {
-        not_equals: excludeId,
-      },
-    },
-  })
-
-  // Get list of all featured integration IDs
-  const featuredIds = await getFeaturedIntegrationIds()
-
-  // Filter to only include featured integrations
-  const featuredIntegrations = result.docs.filter((integration) =>
-    featuredIds.includes(integration.id),
-  )
-
-  // Shuffle and pick random integrations
-  const shuffled = featuredIntegrations.sort(() => Math.random() - 0.5)
-  return shuffled.slice(0, limit)
-}
-
 async function getFeaturedIntegrationIds(): Promise<(string | number)[]> {
   const payload = await getPayload({ config: configPromise })
 
-  // Find all pages that might contain IntegrationsBlocks
   const pages = await payload.find({
     collection: 'pages',
     limit: 1000,
     pagination: false,
+    select: {
+      layout: true,
+    },
   })
 
   const featuredIds = new Set<string | number>()
 
-  // Collect all featured integration IDs from all IntegrationsBlocks
   for (const page of pages.docs) {
     if (page.layout) {
       for (const block of page.layout) {
@@ -277,9 +236,4 @@ async function getFeaturedIntegrationIds(): Promise<(string | number)[]> {
   }
 
   return Array.from(featuredIds)
-}
-
-async function checkIfIntegrationIsFeatured(integrationId: string | number): Promise<boolean> {
-  const featuredIds = await getFeaturedIntegrationIds()
-  return featuredIds.includes(integrationId)
 }
