@@ -31,7 +31,15 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
 
       {/* Cards Grid */}
       {Array.isArray(cards) && cards.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          className={`grid grid-cols-1 gap-6 ${
+            cards.length === 1
+              ? ''
+              : cards.length === 2
+                ? 'md:grid-cols-2'
+                : 'md:grid-cols-2 lg:grid-cols-3'
+          }`}
+        >
           {cards.map((card, index) => (
             <div
               key={index}

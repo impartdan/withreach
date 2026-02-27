@@ -31,14 +31,22 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
 
       {/* Cards Grid */}
       {Array.isArray(cards) && cards.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          className={`grid grid-cols-1 gap-6 ${
+            cards.length === 1
+              ? ''
+              : cards.length === 2
+                ? 'md:grid-cols-2'
+                : 'md:grid-cols-2 lg:grid-cols-3'
+          }`}
+        >
           {cards.map((card, index) => (
             <div
               key={index}
               className="bg-brand-white/80 rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 border border-brand-black/20 p-5 gap-5 overflow-hidden flex flex-col"
             >
               {card.image && typeof card.image !== 'string' && (
-                <div className="aspect-[4/3] bg-white relative overflow-hidden">
+                <div className="w-full h-[300px] bg-white relative overflow-hidden">
                   <Media
                     resource={card.image}
                     imgClassName="object-cover w-full h-full absolute inset-0"
