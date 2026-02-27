@@ -1,11 +1,13 @@
 import type { Block } from 'payload'
 import {
+  BlocksFeature,
   FixedToolbarFeature,
   HeadingFeature,
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 import { blockSettings } from '@/fields/blockSettings'
+import { ChecklistList } from '@/blocks/ChecklistList/config'
 
 export const IndentedContent: Block = {
   slug: 'indentedContent',
@@ -43,6 +45,7 @@ export const IndentedContent: Block = {
                   return [
                     ...rootFeatures,
                     HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
+                    BlocksFeature({ blocks: [ChecklistList] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                   ]

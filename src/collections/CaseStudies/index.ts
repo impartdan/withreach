@@ -16,6 +16,7 @@ import { VideoEmbed } from '../../blocks/VideoEmbed/config'
 import { StatsBlock } from '../../blocks/StatsBlock/config'
 import { BlockquoteBlock } from '../../blocks/Blockquote/config'
 import { ConclusionBlock } from '../../blocks/Conclusion/config'
+import { ChecklistList } from '../../blocks/ChecklistList/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateCaseStudy, revalidateCaseStudyDelete } from './hooks/revalidateCaseStudy'
 
@@ -152,7 +153,7 @@ export const CaseStudies: CollectionConfig<'case-studies'> = {
                   return [
                     ...rootFeatures.filter((f) => f.key !== 'blockquote'),
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [ImageBlock, VideoEmbed, StatsBlock, BlockquoteBlock, ConclusionBlock] }),
+                    BlocksFeature({ blocks: [ImageBlock, VideoEmbed, StatsBlock, BlockquoteBlock, ConclusionBlock, ChecklistList] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),

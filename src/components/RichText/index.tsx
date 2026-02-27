@@ -16,16 +16,17 @@ import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
 import { VideoEmbedComponent } from '@/blocks/VideoEmbed/Component'
 import { BlockquoteBlockComponent } from '@/blocks/Blockquote/Component'
 import { ConclusionBlockComponent } from '@/blocks/Conclusion/Component'
+import { ChecklistListComponent } from '@/blocks/ChecklistList/Component'
 import { Media } from '@/components/Media'
 
-import type { ImageBlock as ImageBlockProps, VideoEmbed as VideoEmbedProps, StatsBlock as StatsBlockProps, BlockquoteBlock as BlockquoteBlockProps, ConclusionBlock as ConclusionBlockProps, Page } from '@/payload-types'
+import type { ImageBlock as ImageBlockProps, VideoEmbed as VideoEmbedProps, StatsBlock as StatsBlockProps, BlockquoteBlock as BlockquoteBlockProps, ConclusionBlock as ConclusionBlockProps, ChecklistListBlock as ChecklistListBlockProps, Page } from '@/payload-types'
 import { cn } from '@/utilities/ui'
 import type { SerializedTypographyStyleNode } from '@/lexical/typography/TypographyStyleNode'
 import { getPagePath } from '@/utilities/getPagePath'
 
 type NodeTypes =
   | DefaultNodeTypes
-  | SerializedBlockNode<CodeBlockProps | ImageBlockProps | VideoEmbedProps | StatsBlockProps | BlockquoteBlockProps | ConclusionBlockProps>
+  | SerializedBlockNode<CodeBlockProps | ImageBlockProps | VideoEmbedProps | StatsBlockProps | BlockquoteBlockProps | ConclusionBlockProps | ChecklistListBlockProps>
   | SerializedTypographyStyleNode
 
 const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
@@ -103,6 +104,9 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     ),
     conclusion: ({ node }) => (
       <ConclusionBlockComponent className="col-start-2" {...node.fields} />
+    ),
+    checklistList: ({ node }) => (
+      <ChecklistListComponent {...(node.fields as ChecklistListBlockProps)} />
     ),
   },
 })

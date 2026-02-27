@@ -18,6 +18,7 @@ import { HubspotFormBlock } from '../../blocks/HubspotForm/config'
 import { StatsBlock } from '../../blocks/StatsBlock/config'
 import { BlockquoteBlock } from '../../blocks/Blockquote/config'
 import { ConclusionBlock } from '../../blocks/Conclusion/config'
+import { ChecklistList } from '../../blocks/ChecklistList/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { populateAuthors } from './hooks/populateAuthors'
 import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
@@ -105,7 +106,7 @@ export const Posts: CollectionConfig<'posts'> = {
                   return [
                     ...rootFeatures.filter((f) => f.key !== 'blockquote'),
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Code, ImageBlock, VideoEmbed, HubspotFormBlock, StatsBlock, BlockquoteBlock, ConclusionBlock] }),
+                    BlocksFeature({ blocks: [Code, ImageBlock, VideoEmbed, HubspotFormBlock, StatsBlock, BlockquoteBlock, ConclusionBlock, ChecklistList] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),
