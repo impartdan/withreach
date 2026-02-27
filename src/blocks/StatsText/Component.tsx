@@ -8,7 +8,7 @@ export const StatsTextBlock: React.FC<StatsTextBlockProps> = ({ stats, heading, 
       <div className="flex flex-col-reverse gap-12 lg:flex-row lg:items-start lg:gap-16">
         {/* Stats Grid */}
         {Array.isArray(stats) && stats.length > 0 && (
-          <div className="grid grid-cols-2 gap-8 flex-1">
+          <div className="grid grid-cols-2 gap-8 lg:gap-y-16 flex-1">
             {stats.map((stat, index) => (
               <div key={index} className="border-l-2 border-brand-olive/30 pl-6">
                 <p className="type-display-lg text-brand-olive">{stat.value}</p>
