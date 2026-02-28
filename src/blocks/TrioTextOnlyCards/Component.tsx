@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import type { TrioTextOnlyCardsBlock as TrioTextOnlyCardsBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
@@ -5,6 +6,7 @@ import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { getTrioCardItemClasses } from '@/blocks/trioCardScrollClasses'
 import { TrioCardScroller } from '@/blocks/TrioCardScroller'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
   introduction,
@@ -18,7 +20,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
   return (
     <div className="container">
       {hasHeader && (
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16 mb-12 md:mb-16 lg:mb-20">
+        <RevealOnScroll variant="fadeIn" className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16 mb-12 md:mb-16 lg:mb-20">
           <div className="flex flex-col gap-6 flex-1">
             {introduction && (
               <RichText data={introduction} enableGutter={false} enableProse={false} />
@@ -44,10 +46,11 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
               />
             )}
           </div>
-        </div>
+        </RevealOnScroll>
       )}
 
       {Array.isArray(cards) && cards.length > 0 && (
+        <RevealOnScroll variant="slideUp" delay={0.1}>
         <TrioCardScroller cardCount={cards.length}>
           {cards.map((card, index) => {
             const cardInner = (
@@ -123,6 +126,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
             )
           })}
         </TrioCardScroller>
+        </RevealOnScroll>
       )}
     </div>
   )

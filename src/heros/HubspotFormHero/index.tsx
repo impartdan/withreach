@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import RichText from '@/components/RichText'
 import type { HubspotFormHeroBlock as HubspotFormHeroBlockType } from '@/payload-types'
 import '@/blocks/HubspotForm/hubspot-form.css'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 declare global {
   interface Window {
@@ -95,12 +96,12 @@ export const HubspotFormHero: React.FC<HubspotFormHeroBlockType> = ({
     <div className="w-full header-offset">
       <div className="container py-20 flex flex-col items-center gap-10">
         {/* Eyebrow + heading */}
-        <div className="flex flex-col items-center gap-4 text-center max-w-3xl">
+        <RevealOnScroll variant="fadeIn" className="flex flex-col items-center gap-4 text-center max-w-3xl">
           {richText && <RichText data={richText} enableGutter={false} />}
-        </div>
+        </RevealOnScroll>
 
         {/* HubSpot form */}
-        <div className="w-full max-w-xl">
+        <RevealOnScroll variant="fadeIn" delay={0.2} className="w-full max-w-xl">
           {isLoading && (
             <div className="flex items-center justify-center min-h-[400px]">
               <svg
@@ -136,7 +137,7 @@ export const HubspotFormHero: React.FC<HubspotFormHeroBlockType> = ({
             id={`hubspot-hero-form-${formId}`}
             className={isLoading || error ? 'hidden' : ''}
           />
-        </div>
+        </RevealOnScroll>
       </div>
     </div>
   )

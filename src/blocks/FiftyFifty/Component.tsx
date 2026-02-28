@@ -1,8 +1,10 @@
+'use client'
 import React from 'react'
 import type { FiftyFiftyBlock as FiftyFiftyBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const FiftyFiftyBlock: React.FC<FiftyFiftyBlockProps> = ({
   heading,
@@ -21,7 +23,7 @@ export const FiftyFiftyBlock: React.FC<FiftyFiftyBlockProps> = ({
         }`}
       >
         {/* Text Content */}
-        <div className="flex flex-col gap-6 flex-1 items-start text-left">
+        <RevealOnScroll variant="fadeIn" className="flex flex-col gap-6 flex-1 items-start text-left">
           {heading && (
             <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
               {heading}
@@ -44,15 +46,15 @@ export const FiftyFiftyBlock: React.FC<FiftyFiftyBlockProps> = ({
               })}
             </div>
           )}
-        </div>
+        </RevealOnScroll>
 
         {/* Image */}
         {image && typeof image !== 'string' && (
-          <div className="flex-1">
+          <RevealOnScroll variant="slideUp" delay={0.15} className="flex-1">
             <div className="rounded-[8px] overflow-hidden">
               <Media resource={image} imgClassName="w-full h-auto" />
             </div>
-          </div>
+          </RevealOnScroll>
         )}
       </div>
     </div>

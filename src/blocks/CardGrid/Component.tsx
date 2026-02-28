@@ -4,21 +4,26 @@ import type { CardGridBlock as CardGridBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const CardGridBlock: React.FC<CardGridBlockProps> = ({ title, cards }) => {
   return (
     <div className="container">
       {title && (
-        <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black mb-10 md:mb-12">
-          {title}
-        </h2>
+        <RevealOnScroll variant="fadeIn">
+          <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black mb-10 md:mb-12">
+            {title}
+          </h2>
+        </RevealOnScroll>
       )}
 
       {Array.isArray(cards) && cards.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
-            <div
+            <RevealOnScroll
               key={index}
+              variant="slideUp"
+              delay={index * 0.15}
               className="bg-white border border-border rounded-[8px] p-8 md:p-10 flex flex-col gap-4"
             >
               <div className="flex flex-col gap-4 flex-1">
@@ -43,7 +48,7 @@ export const CardGridBlock: React.FC<CardGridBlockProps> = ({ title, cards }) =>
                   </div>
                 </BlockThemeContext.Provider>
               )}
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
       )}

@@ -4,6 +4,7 @@ import type { InsetDualImageBlock as InsetDualImageBlockProps } from '@/payload-
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
   heading,
@@ -15,7 +16,7 @@ export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
     <div className="container">
       <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col-reverse gap-10 xl:gap-16 xl:flex-row xl:items-start">
         {/* Text Content */}
-        <div className="flex flex-col gap-8 lg:max-w-[445px] shrink-0 items-start text-left">
+        <RevealOnScroll variant="fadeIn" className="flex flex-col gap-8 lg:max-w-[445px] shrink-0 items-start text-left">
           {heading && (
             <h2 className="text-4xl md:text-5xl lg:text-[56px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
               {heading}
@@ -38,11 +39,11 @@ export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
               })}
             </div>
           )}
-        </div>
+        </RevealOnScroll>
 
         {/* Dual Images */}
         {Array.isArray(images) && images.length > 0 && (
-          <div className="flex flex-1 flex-row items-stretch h-[280px] md:h-[342px] overflow-hidden rounded-lg">
+          <RevealOnScroll variant="slideUp" delay={0.15} className="flex flex-1 flex-row items-stretch h-[280px] md:h-[342px] overflow-hidden rounded-lg">
             {images.slice(0, 2).map((item, index) => {
               if (!item.image || typeof item.image === 'string') return null
 
@@ -56,7 +57,7 @@ export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
                 </div>
               )
             })}
-          </div>
+          </RevealOnScroll>
         )}
       </div>
     </div>

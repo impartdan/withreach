@@ -70,6 +70,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({
         isMenuOpen={isMenuOpen}
         onClose={() => setIsMenuOpen(false)}
         menuItems={data.menuItems}
+        mobileSecondaryMenu={data.mobileSecondaryMenu}
         additionalLinks={data.additionalLinks}
         topOffset={headerHeight}
       />

@@ -1,8 +1,10 @@
+'use client'
 import React from 'react'
 import type { ItemHighlightsWithIntroBlock as ItemHighlightsWithIntroBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const ItemHighlightsWithIntroBlock: React.FC<ItemHighlightsWithIntroBlockProps> = ({
   heading,
@@ -14,7 +16,7 @@ export const ItemHighlightsWithIntroBlock: React.FC<ItemHighlightsWithIntroBlock
       <div className="container">
         <div className="py-16 md:py-20">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <RevealOnScroll variant="fadeIn" className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             {heading && (
               <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-white mb-4">
                 {heading}
@@ -23,13 +25,13 @@ export const ItemHighlightsWithIntroBlock: React.FC<ItemHighlightsWithIntroBlock
             {description && (
               <p className="text-base md:text-lg text-white/70 leading-[1.5]">{description}</p>
             )}
-          </div>
+          </RevealOnScroll>
 
           {/* Items Grid */}
           {Array.isArray(items) && items.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
               {items.map((item, index) => (
-                <div key={index} className="flex flex-col gap-4">
+                <RevealOnScroll key={index} variant="slideUp" delay={index * 0.15} className="flex flex-col gap-4">
                   {item.icon && typeof item.icon !== 'string' && (
                     <div className="w-10 h-10 mb-1">
                       <Media resource={item.icon} imgClassName="w-full h-full object-contain" />
@@ -53,7 +55,7 @@ export const ItemHighlightsWithIntroBlock: React.FC<ItemHighlightsWithIntroBlock
                       <CMSLink size="default" {...item.link} className="text-white" />
                     </div>
                   )}
-                </div>
+                </RevealOnScroll>
               ))}
             </div>
           )}

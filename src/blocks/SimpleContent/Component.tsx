@@ -1,7 +1,9 @@
+'use client'
 import React from 'react'
 import type { SimpleContentBlock as SimpleContentBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { Media } from '@/components/Media'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const SimpleContentBlock: React.FC<SimpleContentBlockProps> = ({
   heading,
@@ -12,7 +14,7 @@ export const SimpleContentBlock: React.FC<SimpleContentBlockProps> = ({
     <div className="container">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
         {/* Left: Heading + Steps */}
-        <div className="flex-1">
+        <RevealOnScroll variant="fadeIn" className="flex-1">
           {heading && (
             <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black mb-10 md:mb-12">
               {heading}
@@ -40,11 +42,11 @@ export const SimpleContentBlock: React.FC<SimpleContentBlockProps> = ({
               ))}
             </div>
           )}
-        </div>
+        </RevealOnScroll>
 
         {/* Right: Images */}
         {Array.isArray(images) && images.length > 0 && (
-          <div className="relative flex-1 min-h-[300px] md:min-h-[400px]">
+          <RevealOnScroll variant="slideUp" delay={0.15} className="relative flex-1 min-h-[300px] md:min-h-[400px]">
             {images.map((item, index) => {
               if (!item.image || typeof item.image === 'string') return null
 
@@ -66,7 +68,7 @@ export const SimpleContentBlock: React.FC<SimpleContentBlockProps> = ({
                 </div>
               )
             })}
-          </div>
+          </RevealOnScroll>
         )}
       </div>
     </div>

@@ -5,6 +5,7 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
   heading,
@@ -16,7 +17,7 @@ export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
     <div className="container">
       <div className="bg-brand-off-white rounded-[8px] overflow-hidden p-12 md:p-16 flex flex-col gap-8 lg:gap-12 lg:flex-row lg:items-center">
         {/* Text Content */}
-        <div className="flex flex-col gap-8 flex-1 items-start text-left">
+        <RevealOnScroll variant="fadeIn" className="flex flex-col gap-8 flex-1 items-start text-left">
           {heading && (
             <h2 className="text-4xl md:text-5xl lg:text-[56px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
               {heading}
@@ -41,11 +42,11 @@ export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
               </div>
             </BlockThemeContext.Provider>
           )}
-        </div>
+        </RevealOnScroll>
 
         {/* Images */}
         {Array.isArray(images) && images.length > 0 && (
-          <div className="flex flex-1 flex-row gap-0 items-stretch flex-shrink-0 w-full aspect-[16/9] overflow-hidden rounded-lg">
+          <RevealOnScroll variant="slideUp" delay={0.15} className="flex flex-1 flex-row gap-0 items-stretch flex-shrink-0 w-full aspect-[16/9] overflow-hidden rounded-lg">
             {images.slice(0, 2).map((item, index) => {
               if (!item.image || typeof item.image === 'string') return null
 
@@ -61,7 +62,7 @@ export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
                 </div>
               )
             })}
-          </div>
+          </RevealOnScroll>
         )}
       </div>
     </div>

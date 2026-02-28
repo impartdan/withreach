@@ -9,6 +9,7 @@ import type {
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 const bgPositionClasses: Record<string, string> = {
   center: 'bg-center',
@@ -84,14 +85,14 @@ export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
         )}
 
         {/* Centered text content */}
-        <div className="container relative z-10 text-center text-white max-w-[922px] py-20">
+        <RevealOnScroll variant="fadeIn" className="container relative z-10 text-center text-white max-w-[922px] py-20">
           {richText && <RichText className="text-balance" data={richText} enableGutter={false} />}
-        </div>
+        </RevealOnScroll>
       </div>
 
       {/* Feature card — overlaps the hero, sits on white bg */}
       {(featureImage || featureContent) && (
-        <div className="container relative z-10 -mt-[135px] px-4 md:px-20 pb-20">
+        <RevealOnScroll variant="slideUp" delay={0.2} className="container relative z-10 -mt-[135px] px-4 md:px-20 pb-20">
           <div className="bg-brand-off-white rounded-2xl overflow-hidden flex flex-col md:flex-row items-center gap-10 md:gap-16 p-10 md:p-20 text-brand-black">
             {featureImage && typeof featureImage === 'object' && (
               <div className="w-full md:w-1/2 flex-shrink-0">
@@ -112,7 +113,7 @@ export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
               </div>
             )}
           </div>
-        </div>
+        </RevealOnScroll>
       )}
     </div>
   )

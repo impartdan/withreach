@@ -7,6 +7,7 @@ import { Media } from '@/components/Media'
 import { VideoBlockClient } from '@/blocks/VideoBlock/Component.client'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 function resolveMediaUrl(resource: MediaType | string | number | null | undefined): string | null {
   if (!resource || typeof resource === 'string' || typeof resource === 'number') return null
@@ -36,7 +37,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
       <div className="relative flex flex-col lg:flex-row lg:items-end gap-5 lg:gap-0 pb-10">
         {/* Video */}
         {hasVideo && (
-          <div className="relative rounded-[8px] overflow-hidden lg:w-[68%] aspect-video z-0 ">
+          <RevealOnScroll variant="slideUp" className="relative rounded-[8px] overflow-hidden lg:w-[68%] aspect-video z-0">
             <VideoBlockClient
               embedded
               videoType={videoType ?? undefined}
@@ -45,11 +46,11 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
               posterUrl={resolveMediaUrl(poster)}
               posterAlt={resolveMediaAlt(poster)}
             />
-          </div>
+          </RevealOnScroll>
         )}
 
         {/* Quote Card */}
-        <div className="bg-brand-off-white w-full md:w-auto rounded-[8px] p-8 md:p-10 lg:p-12 flex flex-col gap-8 -mb-10 pb-10 lg:-translate-x-10 lg:w-[36%] z-10  shadow-sm">
+        <RevealOnScroll variant="slideUp" delay={0.15} className="bg-brand-off-white w-full md:w-auto rounded-[8px] p-8 md:p-10 lg:p-12 flex flex-col gap-8 -mb-10 pb-10 lg:-translate-x-10 lg:w-[36%] z-10  shadow-sm">
           {companyLogo && typeof companyLogo !== 'string' && (
             <div className="h-6 md:h-8 mb-4">
               <Media resource={companyLogo} imgClassName="h-full w-auto object-contain" />
@@ -76,7 +77,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
               </div>
             </BlockThemeContext.Provider>
           )}
-        </div>
+        </RevealOnScroll>
       </div>
     </div>
   )

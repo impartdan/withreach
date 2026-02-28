@@ -9225,6 +9225,33 @@ export interface Header {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Links shown in the mobile menu only, above the primary CTA button.
+   */
+  mobileSecondaryMenu?:
+    | {
+        link?: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
+              } | null);
+          url?: string | null;
+          label?: string | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
   additionalLinks?:
     | {
         link?: {
@@ -9498,6 +9525,20 @@ export interface HeaderSelect<T extends boolean = true> {
                   };
               cgMode?: T;
               cgPosts?: T;
+            };
+        id?: T;
+      };
+  mobileSecondaryMenu?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
             };
         id?: T;
       };

@@ -1,7 +1,9 @@
+'use client'
 import React from 'react'
 import { cn } from '@/utilities/ui'
 import RichText from '@/components/RichText'
 import type { ContentBlock as ContentBlockProps } from '@/payload-types'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 const maxWidthClasses: Record<string, string> = {
   'max-w-sm': 'max-w-sm',
@@ -21,9 +23,9 @@ export const ContentBlock: React.FC<ContentBlockProps> = ({ content, maxWidth, a
 
   return (
     <div className="container">
-      <div className={cn(alignment === 'center' && 'mx-auto', maxWidthClass)}>
+      <RevealOnScroll variant="fadeIn" className={cn(alignment === 'center' && 'mx-auto', maxWidthClass)}>
         {content && <RichText data={content} enableGutter={false} enableProse={true} />}
-      </div>
+      </RevealOnScroll>
     </div>
   )
 }

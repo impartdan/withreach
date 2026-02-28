@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import type { CtaSmallBlock as CtaSmallBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
@@ -7,6 +8,7 @@ import { getMediaUrl } from '@/utilities/getMediaUrl'
 import { cn } from '@/utilities/ui'
 import { bgColorClasses, colorToCss } from '@/blocks/BlockWrapper'
 import type { BackgroundColor } from '@/fields/blockSettings'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 const bgPositionClasses: Record<string, string> = {
   center: 'bg-center',
@@ -66,8 +68,10 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
             const logoResource = card.logo && typeof card.logo === 'object' ? card.logo : null
 
             return (
-              <div
+              <RevealOnScroll
                 key={index}
+                variant="slideUp"
+                delay={index * 0.15}
                 className={cn(
                   'relative overflow-hidden rounded-[8px] min-h-[320px] flex flex-col',
                   !gradientStyle ? bgColorClass : undefined,
@@ -125,7 +129,7 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
                     </div>
                   )}
                 </div>
-              </div>
+              </RevealOnScroll>
             )
           })}
         </div>

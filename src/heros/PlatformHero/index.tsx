@@ -6,6 +6,7 @@ import type { PlatformHeroBlock as PlatformHeroBlockType } from '@/payload-types
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
   richText,
@@ -41,7 +42,7 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
       "
       >
         {/* Left column: text content */}
-        <div className="w-full md:w-1/2 flex flex-col gap-6 relative z-30">
+        <RevealOnScroll variant="fadeIn" className="w-full md:w-1/2 flex flex-col gap-6 relative z-30">
           {richText && <RichText data={richText} enableGutter={false} />}
           {Array.isArray(links) && links.length > 0 && (
             <ul className="flex gap-4">
@@ -52,11 +53,11 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
               ))}
             </ul>
           )}
-        </div>
+        </RevealOnScroll>
 
         {/* Right column: illustration (image or video) */}
         {media && typeof media === 'object' && (
-          <div className="w-full md:w-1/2 mix-blend-multiply ">
+          <RevealOnScroll variant="slideUp" delay={0.15} className="w-full md:w-1/2 mix-blend-multiply">
             {isVideo && media.url ? (
               <video autoPlay className="w-full h-auto" loop muted playsInline>
                 <source src={media.url} type="video/mp4" />
@@ -64,7 +65,7 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
             ) : (
               <Media className="w-full h-auto mix-blend-multiply" resource={media} priority />
             )}
-          </div>
+          </RevealOnScroll>
         )}
       </div>
     </div>

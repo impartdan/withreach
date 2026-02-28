@@ -6,6 +6,7 @@ import type { PartnerHeroBlock as PartnerHeroBlockType } from '@/payload-types'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import Link from 'next/link'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, partnerCards, blurBackground }) => {
   return (
@@ -27,17 +28,19 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, p
       <div className="relative z-10 flex flex-col items-center gap-16 md:gap-[120px] pt-20 md:pt-20 pb-20 md:pb-[120px]">
         {/* Heading + subtitle */}
         {richText && (
-          <div className="container text-center text-white max-w-[922px]">
+          <RevealOnScroll variant="fadeIn" className="container text-center text-white max-w-[922px]">
             <RichText data={richText} enableGutter={false} className="space-y-10 text-pretty" />
-          </div>
+          </RevealOnScroll>
         )}
 
         {/* Partner cards */}
         {Array.isArray(partnerCards) && partnerCards.length > 0 && (
           <div className="container flex flex-col md:flex-row gap-8 justify-center items-stretch">
             {partnerCards.map((card, i) => (
-              <div
+              <RevealOnScroll
                 key={i}
+                variant="slideUp"
+                delay={i * 0.15}
                 className="bg-white border border-brand-olive/20 rounded-[8px] p-5 w-full md:w-[432px] flex flex-col gap-5 hover:shadow-lg transition-shadow"
               >
                 {/* Card image */}
@@ -90,7 +93,7 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, p
                     </Link>
                   )}
                 </div>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         )}

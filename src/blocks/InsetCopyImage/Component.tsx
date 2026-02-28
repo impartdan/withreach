@@ -5,6 +5,7 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
   heading,
@@ -16,7 +17,7 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
     <div className="container">
       <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col gap-10 lg:gap-16 lg:flex-row lg:items-center">
         {/* Text Content */}
-        <div className="flex flex-col gap-8 lg:max-w-[480px] shrink-0 items-start text-left">
+        <RevealOnScroll variant="fadeIn" className="flex flex-col gap-8 lg:max-w-[480px] shrink-0 items-start text-left">
           {heading && (
             <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
               {heading}
@@ -41,11 +42,11 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
               </div>
             </BlockThemeContext.Provider>
           )}
-        </div>
+        </RevealOnScroll>
 
         {/* Image Collage */}
         {Array.isArray(images) && images.length > 0 && (
-          <div className="relative flex-1 min-h-[300px] md:min-h-[400px]">
+          <RevealOnScroll variant="slideUp" delay={0.15} className="relative flex-1 min-h-[300px] md:min-h-[400px]">
             {images.map((item, index) => {
               if (!item.image || typeof item.image === 'string') return null
 
@@ -58,7 +59,7 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
                 </div>
               )
             })}
-          </div>
+          </RevealOnScroll>
         )}
       </div>
     </div>

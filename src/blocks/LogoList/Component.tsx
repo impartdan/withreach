@@ -1,7 +1,9 @@
+'use client'
 import type { LogoListBlock as LogoListBlockProps } from '@/payload-types'
 import React from 'react'
 import { Media } from '@/components/Media'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const LogoListBlock: React.FC<
   LogoListBlockProps & {
@@ -60,7 +62,11 @@ export const LogoListBlock: React.FC<
     )
   }
 
-  const titleElement = title ? <p className="text-center type-display-xs mb-6">{title}</p> : null
+  const titleElement = title ? (
+    <RevealOnScroll variant="fadeIn">
+      <p className="text-center type-display-xs mb-6">{title}</p>
+    </RevealOnScroll>
+  ) : null
 
   // Duration scales with the number of logos for consistent speed
   const duration = `${logos.length * 4}s`

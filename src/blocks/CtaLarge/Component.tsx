@@ -1,12 +1,14 @@
+'use client'
 import React from 'react'
 import type { CtaLargeBlock as CtaLargeBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const CtaLargeBlock: React.FC<CtaLargeBlockProps> = ({ label, heading, content, links }) => {
   return (
     <div className="container">
-      <div className="text-center max-w-3xl mx-auto text-pretty">
+      <RevealOnScroll variant="fadeIn" className="text-center max-w-3xl mx-auto text-pretty">
         {label && <p className=" type-eyebrow  mb-4">{label}</p>}
 
         {heading && <h2 className="type-display-lg mb-6 text-pretty">{heading}</h2>}
@@ -27,7 +29,7 @@ export const CtaLargeBlock: React.FC<CtaLargeBlockProps> = ({ label, heading, co
             })}
           </div>
         )}
-      </div>
+      </RevealOnScroll>
     </div>
   )
 }

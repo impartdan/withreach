@@ -7,12 +7,13 @@ import { cn } from '@/utilities/ui'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const TextHero: React.FC<TextHeroBlockType & { children?: React.ReactNode }> = ({ richText, links, logoOne, logoTwo, alignment, children }) => {
   return (
     <div className="w-full header-offset">
       <div className="container py-20">
-        <div className={cn('flex flex-col items-center gap-10 max-w-[908px]', alignment !== 'left' && 'mx-auto')}>
+        <RevealOnScroll variant="fadeIn" className={cn('flex flex-col items-center gap-10 max-w-[908px]', alignment !== 'left' && 'mx-auto')}>
         {/* Optional logos */}
         {(logoOne || logoTwo) && (
           <div className="flex items-center gap-6">
@@ -49,7 +50,7 @@ export const TextHero: React.FC<TextHeroBlockType & { children?: React.ReactNode
         )}
 
         {children}
-        </div>
+        </RevealOnScroll>
       </div>
     </div>
   )

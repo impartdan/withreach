@@ -10,6 +10,7 @@ interface MobileNavProps {
   isMenuOpen: boolean
   onClose: () => void
   menuItems: Header['menuItems']
+  mobileSecondaryMenu: Header['mobileSecondaryMenu']
   additionalLinks: Header['additionalLinks']
   topOffset: number
 }
@@ -18,6 +19,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
   isMenuOpen,
   onClose,
   menuItems = [],
+  mobileSecondaryMenu = [],
   additionalLinks = [],
   topOffset,
 }) => {
@@ -65,8 +67,11 @@ export const MobileNav: React.FC<MobileNavProps> = ({
         }`}
       >
         <div
-          className="bg-white rounded-[10px] p-5 flex flex-col gap-20 overflow-y-auto"
-          style={{ maxHeight: `calc(100dvh - ${topOffset}px - 12px)` }}
+          className="bg-white rounded-[10px] p-5 flex flex-col justify-between overflow-y-auto"
+          style={{
+            minHeight: `calc(100dvh - ${topOffset}px - 12px)`,
+            maxHeight: `calc(100dvh - ${topOffset}px - 12px)`,
+          }}
         >
           {/* Links section */}
           <div className="flex flex-col gap-6">
@@ -135,10 +140,10 @@ export const MobileNav: React.FC<MobileNavProps> = ({
               })}
             </div>
 
-            {/* Secondary links — 16px */}
-            {secondaryLinks.length > 0 && (
+            {/* Mobile secondary menu */}
+            {(mobileSecondaryMenu ?? []).length > 0 && (
               <div className="flex flex-col gap-1.5">
-                {secondaryLinks.map((item, i) => {
+                {(mobileSecondaryMenu ?? []).map((item, i) => {
                   if (!item.link) return null
                   return (
                     <div key={i} onClick={onClose}>

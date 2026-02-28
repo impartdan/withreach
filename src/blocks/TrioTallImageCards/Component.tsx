@@ -7,6 +7,7 @@ import { Media } from '@/components/Media'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
 import { getTrioCardItemClasses } from '@/blocks/trioCardScrollClasses'
 import { TrioCardScroller } from '@/blocks/TrioCardScroller'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = ({
   heading,
@@ -19,7 +20,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
     <div className="container">
       {/* Header */}
       {heading && (
-        <div className="flex flex-col gap-6 mb-10 md:mb-12 lg:mb-20 max-w-2xl">
+        <RevealOnScroll variant="fadeIn" className="flex flex-col gap-6 mb-10 md:mb-12 lg:mb-20 max-w-2xl">
           <h2
             className="type-display-lg [&_span]:text-brand-olive [&_span]:block"
             dangerouslySetInnerHTML={{ __html: heading }}
@@ -32,11 +33,12 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
               })}
             </div>
           )}
-        </div>
+        </RevealOnScroll>
       )}
 
       {/* Cards Grid */}
       {Array.isArray(cards) && cards.length > 0 && (
+        <RevealOnScroll variant="slideUp" delay={0.1}>
         <TrioCardScroller cardCount={cards.length}>
           {cards.map((card, index) => {
             const isFeaturedCard = Boolean(card.markAsFeatured)
@@ -140,6 +142,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
             )
           })}
         </TrioCardScroller>
+        </RevealOnScroll>
       )}
     </div>
   )

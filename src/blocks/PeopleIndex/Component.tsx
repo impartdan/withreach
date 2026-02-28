@@ -1,21 +1,27 @@
+'use client'
 import React from 'react'
 import type { PeopleIndexBlock as PeopleIndexBlockProps } from '@/payload-types'
 import { Media } from '@/components/Media'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const PeopleIndexBlock: React.FC<PeopleIndexBlockProps> = ({ heading, people }) => {
   return (
     <div className="container">
       {heading && (
-        <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black text-center mb-10 md:mb-14">
-          {heading}
-        </h2>
+        <RevealOnScroll variant="fadeIn">
+          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black text-center mb-10 md:mb-14">
+            {heading}
+          </h2>
+        </RevealOnScroll>
       )}
 
       {Array.isArray(people) && people.length > 0 && (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {people.map((person, index) => (
-            <div
+            <RevealOnScroll
               key={index}
+              variant="slideUp"
+              delay={index * 0.15}
               className="bg-brand-off-white rounded-[8px] p-5 md:p-6 flex flex-col gap-4"
             >
               {person.photo && typeof person.photo !== 'string' && (
@@ -42,7 +48,7 @@ export const PeopleIndexBlock: React.FC<PeopleIndexBlockProps> = ({ heading, peo
                   </svg>
                 </a>
               )}
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
       )}

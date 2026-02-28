@@ -343,6 +343,21 @@ export const Header: GlobalConfig = {
       },
     },
     {
+      name: 'mobileSecondaryMenu',
+      type: 'array',
+      label: 'Mobile Secondary Menu',
+      fields: [
+        link({
+          appearances: false,
+        }),
+      ],
+      maxRows: 10,
+      admin: {
+        initCollapsed: true,
+        description: 'Links shown in the mobile menu only, above the primary CTA button.',
+      },
+    },
+    {
       name: 'additionalLinks',
       type: 'array',
       label: 'Additional Links',

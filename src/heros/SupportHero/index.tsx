@@ -6,6 +6,7 @@ import type { SupportHeroBlock as SupportHeroBlockType } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const SupportHero: React.FC<SupportHeroBlockType> = ({
   richText,
@@ -16,7 +17,7 @@ export const SupportHero: React.FC<SupportHeroBlockType> = ({
     <div className="w-full">
       <div className="container flex flex-col md:flex-row gap-16 md:gap-36 items-start py-20 md:py-[120px]">
         {/* Left column – text content */}
-        <div className="w-full md:w-[548px] flex flex-col gap-10 flex-shrink-0">
+        <RevealOnScroll variant="fadeIn" className="w-full md:w-[548px] flex flex-col gap-10 flex-shrink-0">
           {richText && (
             <RichText data={richText} enableGutter={false} />
           )}
@@ -31,16 +32,16 @@ export const SupportHero: React.FC<SupportHeroBlockType> = ({
               ))}
             </ul>
           )}
-        </div>
+        </RevealOnScroll>
 
         {/* Right column – media/illustration */}
         {media && typeof media === 'object' && (
-          <div className="w-full md:flex-1 relative">
+          <RevealOnScroll variant="slideUp" delay={0.15} className="w-full md:flex-1 relative">
             <Media
               className="w-full h-auto mix-blend-color-burn"
               resource={media}
             />
-          </div>
+          </RevealOnScroll>
         )}
       </div>
     </div>
