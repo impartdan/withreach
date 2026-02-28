@@ -98,6 +98,7 @@ export const Integrations: CollectionConfig = {
       label: 'Body',
       admin: {
         description: 'Detailed content about the integration',
+        condition: (data) => data?.layoutType !== 'detailed',
       },
     },
     {
@@ -106,11 +107,12 @@ export const Integrations: CollectionConfig = {
       label: 'Features',
       admin: {
         description: 'Key features of the integration',
+        condition: (data) => data?.layoutType !== 'detailed',
       },
     },
     {
       name: 'introText',
-      type: 'textarea',
+      type: 'richText',
       label: 'Intro Text',
       admin: {
         description: 'Introductory text displayed below the title in the header.',
