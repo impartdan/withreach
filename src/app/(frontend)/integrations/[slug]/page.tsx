@@ -132,6 +132,8 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
                     ) : (
                       <Media
                         resource={(icon || logo)!}
+                        className="w-full h-full"
+                        pictureClassName="w-full h-full"
                         imgClassName="w-full h-full object-cover"
                       />
                     )}
