@@ -13,6 +13,7 @@ import { BackButton } from '@/components/ui/back-button'
 import { Tag } from '@/components/Tag'
 import { CMSLink } from '@/components/Link'
 import { RenderBlocks } from '@/blocks/RenderBlocks'
+import IntegrationPageClient from './page.client'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -100,6 +101,7 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
   if (isDetailed) {
     return (
       <article className="pb-24 header-offset">
+        <IntegrationPageClient id={String(integration.id)} />
         {/* Detailed Header Section */}
         <div className="container mx-auto px-4 max-w-7xl py-16 md:py-24">
           {/* Icon/Logo */}
@@ -157,6 +159,7 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
 
   return (
     <article className="pb-24 header-offset">
+      <IntegrationPageClient id={String(integration.id)} />
       {/* Main Content Section */}
       <div className="container mx-auto px-4 max-w-7xl py-16 md:py-24">
         {/* Icon/Logo - Small size */}
