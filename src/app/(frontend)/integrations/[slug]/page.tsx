@@ -11,6 +11,8 @@ import { generateMeta } from '@/utilities/generateMeta'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
 import { BackButton } from '@/components/ui/back-button'
 import { Tag } from '@/components/Tag'
+import { CMSLink } from '@/components/Link'
+import { RenderBlocks } from '@/blocks/RenderBlocks'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -93,8 +95,65 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
 
   const logo = typeof integration.logo === 'object' ? integration.logo : null
   const icon = typeof integration.icon === 'object' ? integration.icon : null
+  const isDetailed = integration.layoutType === 'detailed'
 
-  // Extract features from richText
+  if (isDetailed) {
+    return (
+      <article className="pb-24 header-offset">
+        {/* Detailed Header Section */}
+        <div className="container mx-auto px-4 max-w-7xl py-16 md:py-24">
+          {/* Icon/Logo */}
+          {(icon || logo) && (
+            <div className="mb-8">
+              {(icon || logo)!.mimeType === 'image/svg+xml' ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={getMediaUrl((icon || logo)!.url, (icon || logo)!.updatedAt)}
+                  alt={(icon || logo)!.alt || integration.title}
+                  className="h-16 w-auto object-contain"
+                />
+              ) : (
+                <Media resource={(icon || logo)!} imgClassName="h-16 w-auto object-contain" />
+              )}
+            </div>
+          )}
+
+          {/* Title */}
+          <h1 className="type-display-lg [&_span]:block [&_span]:text-brand-olive mb-6">
+            {integration.title}
+          </h1>
+
+          {/* Intro Text */}
+          {integration.introText && (
+            <div className="space-y-4 type-body [&>p]:mb-0 max-w-3xl mb-8">
+              {integration.introText.split('\n\n').map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+          )}
+
+          {/* Header Links */}
+          {Array.isArray(integration.headerLinks) && integration.headerLinks.length > 0 && (
+            <ul className="flex flex-wrap gap-4">
+              {integration.headerLinks.map(({ link }: { link: Record<string, unknown> }, i: number) => (
+                <li key={i}>
+                  <CMSLink {...link} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* Page Blocks */}
+        {Array.isArray(integration.layout) && integration.layout.length > 0 && (
+          // @ts-expect-error Integration layout blocks share the same shape as Page layout blocks
+          <RenderBlocks blocks={integration.layout} />
+        )}
+      </article>
+    )
+  }
+
+  // Simple layout (default)
   const featuresList = integration.features ? extractFeatures(integration.features) : []
 
   return (

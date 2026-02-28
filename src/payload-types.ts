@@ -1980,6 +1980,10 @@ export interface IntegrationsBlock {
 export interface Integration {
   id: number;
   title: string;
+  /**
+   * Choose how this integration page is displayed.
+   */
+  layoutType?: ('simple' | 'detailed') | null;
   description: string;
   logo?: (number | null) | Media;
   icon?: (number | null) | Media;
@@ -2019,22 +2023,82 @@ export interface Integration {
     };
     [k: string]: unknown;
   } | null;
-  category?: (number | null) | IntegrationCategory;
   /**
-   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   * Introductory text displayed below the title in the header.
    */
-  generateSlug?: boolean | null;
-  slug: string;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "integration-categories".
- */
-export interface IntegrationCategory {
-  id: number;
-  title: string;
+  introText?: string | null;
+  /**
+   * Links displayed in the header section.
+   */
+  headerLinks?:
+    | {
+        link?: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
+              } | null);
+          url?: string | null;
+          label?: string | null;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Stack blocks to build out the page content.
+   */
+  layout?:
+    | (
+        | ContentBlock
+        | ImageBlock
+        | VideoBlock
+        | LogoListBlock
+        | HubspotFormBlock
+        | StatsBlock
+        | TextImageFeatureBlock
+        | InsetDualImageBlock
+        | InsetCopyImageBlock
+        | StatsTextBlock
+        | PageTeaserBlock
+        | DiagramBlock
+        | TrioTallImageCardsBlock
+        | TrioShortImageCardsBlock
+        | TrioTextOnlyCardsBlock
+        | TestimonialBlock
+        | ItemHighlightsBlock
+        | FaqCenterBlock
+        | FaqToCallBlock
+        | ChecklistBlock
+        | ImageLeftTextRightBlock
+        | SimpleContentBlock
+        | IndentedContentBlock
+        | ConsListBlock
+        | ProsListBlock
+        | CtaLargeBlock
+        | CtaSmallBlock
+        | DisclaimerBlock
+        | FiftyFiftyBlock
+        | ItemHighlightsWithIntroBlock
+        | PeopleIndexBlock
+        | CardGridBlock
+        | FormBlock2Type
+      )[]
+    | null;
+  category?: (number | null) | IntegrationCategory;
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */
@@ -6380,6 +6444,21 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "integration-categories".
+ */
+export interface IntegrationCategory {
+  id: number;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -8399,11 +8478,65 @@ export interface FormBlock2TypeSelect<T extends boolean = true> {
  */
 export interface IntegrationsSelect<T extends boolean = true> {
   title?: T;
+  layoutType?: T;
   description?: T;
   logo?: T;
   icon?: T;
   body?: T;
   features?: T;
+  introText?: T;
+  headerLinks?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        id?: T;
+      };
+  layout?:
+    | T
+    | {
+        content?: T | ContentBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        videoBlock?: T | VideoBlockSelect<T>;
+        logoList?: T | LogoListBlockSelect<T>;
+        hubspotForm?: T | HubspotFormBlockSelect<T>;
+        statsBlock?: T | StatsBlockSelect<T>;
+        textImageFeature?: T | TextImageFeatureBlockSelect<T>;
+        insetDualImage?: T | InsetDualImageBlockSelect<T>;
+        insetCopyImage?: T | InsetCopyImageBlockSelect<T>;
+        statsText?: T | StatsTextBlockSelect<T>;
+        pageTeaser?: T | PageTeaserBlockSelect<T>;
+        diagram?: T | DiagramBlockSelect<T>;
+        trioTallImageCards?: T | TrioTallImageCardsBlockSelect<T>;
+        trioShortImageCards?: T | TrioShortImageCardsBlockSelect<T>;
+        trioTextOnlyCards?: T | TrioTextOnlyCardsBlockSelect<T>;
+        testimonial?: T | TestimonialBlockSelect<T>;
+        itemHighlights?: T | ItemHighlightsBlockSelect<T>;
+        faqCenter?: T | FaqCenterBlockSelect<T>;
+        faqToCall?: T | FaqToCallBlockSelect<T>;
+        checklist?: T | ChecklistBlockSelect<T>;
+        imageLeftTextRight?: T | ImageLeftTextRightBlockSelect<T>;
+        simpleContent?: T | SimpleContentBlockSelect<T>;
+        indentedContent?: T | IndentedContentBlockSelect<T>;
+        consList?: T | ConsListBlockSelect<T>;
+        prosList?: T | ProsListBlockSelect<T>;
+        ctaLarge?: T | CtaLargeBlockSelect<T>;
+        ctaSmall?: T | CtaSmallBlockSelect<T>;
+        disclaimer?: T | DisclaimerBlockSelect<T>;
+        fiftyFifty?: T | FiftyFiftyBlockSelect<T>;
+        itemHighlightsWithIntro?: T | ItemHighlightsWithIntroBlockSelect<T>;
+        peopleIndex?: T | PeopleIndexBlockSelect<T>;
+        cardGrid?: T | CardGridBlockSelect<T>;
+        formBlock2?: T | FormBlock2TypeSelect<T>;
+      };
   category?: T;
   generateSlug?: T;
   slug?: T;
