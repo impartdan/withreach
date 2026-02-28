@@ -4,7 +4,6 @@ import type { InsetDualImageBlock as InsetDualImageBlockProps } from '@/payload-
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
-import { BlockThemeContext } from '@/components/BlockThemeContext'
 
 export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
   heading,

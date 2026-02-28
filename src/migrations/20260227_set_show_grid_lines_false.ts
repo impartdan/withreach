@@ -18,7 +18,9 @@ export async function up({ db, payload }: MigrateUpArgs): Promise<void> {
 
   for (const table of tables) {
     await db.execute(
-      sql.raw(`UPDATE "${table}" SET "blk_settings_show_grid_lines" = false WHERE "blk_settings_show_grid_lines" = true`),
+      sql.raw(
+        `UPDATE "${table}" SET "blk_settings_show_grid_lines" = false WHERE "blk_settings_show_grid_lines" = true`,
+      ),
     )
     payload.logger.info(`Updated ${table}`)
   }
@@ -26,6 +28,6 @@ export async function up({ db, payload }: MigrateUpArgs): Promise<void> {
   payload.logger.info('blk_settings_show_grid_lines set to false on all rows')
 }
 
-export async function down({ db, payload }: MigrateDownArgs): Promise<void> {
+export async function down({ payload }: MigrateDownArgs): Promise<void> {
   payload.logger.info('down: no-op — cannot safely restore previous show_grid_lines values')
 }
