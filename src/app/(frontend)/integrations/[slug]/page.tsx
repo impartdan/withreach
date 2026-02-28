@@ -135,9 +135,9 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
           {/* Header Links */}
           {Array.isArray(integration.headerLinks) && integration.headerLinks.length > 0 && (
             <ul className="flex flex-wrap gap-4">
-              {integration.headerLinks.map(({ link }: { link: Record<string, unknown> }, i: number) => (
+              {integration.headerLinks.map((item, i) => (
                 <li key={i}>
-                  <CMSLink {...link} />
+                  {item.link && <CMSLink {...item.link} />}
                 </li>
               ))}
             </ul>
