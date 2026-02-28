@@ -146,7 +146,6 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
 
         {/* Page Blocks */}
         {Array.isArray(integration.layout) && integration.layout.length > 0 && (
-          // @ts-expect-error Integration layout blocks share the same shape as Page layout blocks
           <RenderBlocks blocks={integration.layout} />
         )}
       </article>
