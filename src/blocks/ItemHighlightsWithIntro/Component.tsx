@@ -31,7 +31,7 @@ export const ItemHighlightsWithIntroBlock: React.FC<ItemHighlightsWithIntroBlock
           {Array.isArray(items) && items.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
               {items.map((item, index) => (
-                <RevealOnScroll key={index} variant="slideUp" delay={index * 0.15} className="flex flex-col gap-4">
+                <RevealOnScroll key={index} variant="slideUp" delay={index * 0.05} className="flex flex-col gap-4">
                   {item.icon && typeof item.icon !== 'string' && (
                     <div className="w-10 h-10 mb-1">
                       <Media resource={item.icon} imgClassName="w-full h-full object-contain" />

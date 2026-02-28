@@ -71,7 +71,7 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
               <RevealOnScroll
                 key={index}
                 variant="slideUp"
-                delay={index * 0.15}
+                delay={index * 0.05}
                 className={cn(
                   'relative overflow-hidden rounded-[8px] min-h-[320px] flex flex-col',
                   !gradientStyle ? bgColorClass : undefined,

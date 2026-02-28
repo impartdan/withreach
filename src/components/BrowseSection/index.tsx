@@ -3,6 +3,7 @@
 import React, { useState, useTransition, useCallback } from 'react'
 
 import type { Category } from '@/payload-types'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 import { CategoryFilter } from '@/components/NewsArchive/CategoryFilter'
 import { ArchivePagination } from '@/components/NewsArchive/ArchivePagination'
 import { PostArchiveGrid } from '@/components/NewsArchive/PostArchiveGrid'
@@ -68,7 +69,7 @@ export function BrowseSection({
   }, [fetchAndUpdate, activeCategory])
 
   return (
-    <div id="browse" className="bg-white scroll-mt-20">
+    <RevealOnScroll variant="fadeIn" id="browse" className="bg-white scroll-mt-20">
       <div className="container">
         <div className="flex items-end justify-between border-t border-brand-gray-light/50 pt-sm pb-md">
           <h2 className="type-display-lg">Browse All</h2>
@@ -100,6 +101,6 @@ export function BrowseSection({
           />
         )}
       </div>
-    </div>
+    </RevealOnScroll>
   )
 }

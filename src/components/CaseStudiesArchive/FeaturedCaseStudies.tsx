@@ -6,6 +6,7 @@ import type { CaseStudy, Category } from '@/payload-types'
 import { Media } from '@/components/Media'
 import { Tag } from '@/components/Tag'
 import { cn } from '@/utilities/ui'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 type FeaturedCaseStudiesProps = {
   caseStudies: (number | CaseStudy)[]
@@ -43,22 +44,21 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-10 items-center">
           {image && (
-            <Link
-              href={`/resources/case-studies/${cs.slug}`}
-              className="w-full lg:w-[55%] shrink-0"
-            >
-              <div className="relative rounded-lg overflow-hidden aspect-[3/2]">
-                <Media
-                  resource={image}
-                  pictureClassName="absolute inset-0 w-full h-full"
-                  imgClassName="w-full h-full object-cover"
-                  htmlElement={null}
-                />
-              </div>
-            </Link>
+            <RevealOnScroll variant="slideUp" className="w-full lg:w-[55%] shrink-0">
+              <Link href={`/resources/case-studies/${cs.slug}`} className="block">
+                <div className="relative rounded-lg overflow-hidden aspect-[3/2]">
+                  <Media
+                    resource={image}
+                    pictureClassName="absolute inset-0 w-full h-full"
+                    imgClassName="w-full h-full object-cover"
+                    htmlElement={null}
+                  />
+                </div>
+              </Link>
+            </RevealOnScroll>
           )}
 
-          <div className="flex flex-col justify-between min-h-[280px] lg:min-h-[400px] w-full">
+          <RevealOnScroll variant="fadeIn" delay={0.15} className="flex flex-col justify-between min-h-[280px] lg:min-h-[400px] w-full">
             <Link href={`/resources/case-studies/${cs.slug}`} className="block">
               <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-4">
@@ -129,7 +129,7 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
                 </div>
               </div>
             )}
-          </div>
+          </RevealOnScroll>
         </div>
       </div>
     </section>

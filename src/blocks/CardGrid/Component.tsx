@@ -23,7 +23,7 @@ export const CardGridBlock: React.FC<CardGridBlockProps> = ({ title, cards }) =>
             <RevealOnScroll
               key={index}
               variant="slideUp"
-              delay={index * 0.15}
+              delay={index * 0.05}
               className="bg-white border border-border rounded-[8px] p-8 md:p-10 flex flex-col gap-4"
             >
               <div className="flex flex-col gap-4 flex-1">

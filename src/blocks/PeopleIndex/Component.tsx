@@ -21,7 +21,7 @@ export const PeopleIndexBlock: React.FC<PeopleIndexBlockProps> = ({ heading, peo
             <RevealOnScroll
               key={index}
               variant="slideUp"
-              delay={index * 0.15}
+              delay={index * 0.05}
               className="bg-brand-off-white rounded-[8px] p-5 md:p-6 flex flex-col gap-4"
             >
               {person.photo && typeof person.photo !== 'string' && (

@@ -22,7 +22,7 @@ export const StatsBlock: React.FC<
       <div id={id ? `block-${id}` : undefined} className="w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
           {stats.map((stat, index) => (
-            <RevealOnScroll key={index} variant="slideUp" delay={index * 0.15}>
+            <RevealOnScroll key={index} variant="slideUp" delay={index * 0.05}>
             <div className="flex flex-col gap-4">
               {stat.icon && typeof stat.icon === 'object' && (
                 <div className="h-[42px] w-auto">
@@ -67,7 +67,7 @@ export const StatsBlock: React.FC<
               <RevealOnScroll
                 key={index}
                 variant="slideUp"
-                delay={index * 0.15}
+                delay={index * 0.05}
                 className={`flex flex-col gap-2 ${
                   index > 0 ? 'lg:border-l lg:border-[#1E1A15]/20 lg:pl-8' : ''
                 }`}

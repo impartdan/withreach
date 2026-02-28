@@ -23,7 +23,7 @@ export const ItemHighlightsBlock: React.FC<ItemHighlightsBlockProps> = ({
       {Array.isArray(items) && items.length > 0 && (
         <div className={`grid grid-cols-2 ${gridCols} gap-8 md:gap-10`}>
           {items.map((item, index) => (
-            <RevealOnScroll key={index} variant="slideUp" delay={index * 0.15} className="flex flex-col gap-4">
+            <RevealOnScroll key={index} variant="slideUp" delay={index * 0.05} className="flex flex-col gap-4">
               {item.icon && typeof item.icon !== 'string' && (
                 <div className="relative w-10 h-10">
                   <Media

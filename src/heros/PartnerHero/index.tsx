@@ -40,7 +40,7 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, p
               <RevealOnScroll
                 key={i}
                 variant="slideUp"
-                delay={i * 0.15}
+                delay={i * 0.05}
                 className="bg-white border border-brand-olive/20 rounded-[8px] p-5 w-full md:w-[432px] flex flex-col gap-5 hover:shadow-lg transition-shadow"
               >
                 {/* Card image */}

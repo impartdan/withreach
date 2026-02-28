@@ -12,7 +12,7 @@ export const StatsTextBlock: React.FC<StatsTextBlockProps> = ({ stats, heading, 
         {Array.isArray(stats) && stats.length > 0 && (
           <div className="grid grid-cols-2 gap-8 lg:gap-y-16 flex-1">
             {stats.map((stat, index) => (
-              <RevealOnScroll key={index} variant="slideUp" delay={index * 0.15} className="border-l-2 border-brand-olive/30 pl-6">
+              <RevealOnScroll key={index} variant="slideUp" delay={index * 0.05} className="border-l-2 border-brand-olive/30 pl-6">
                 <p className="type-display-lg text-brand-olive">{stat.value}</p>
                 <p className="type-micro-b mt-2">{stat.label}</p>
               </RevealOnScroll>

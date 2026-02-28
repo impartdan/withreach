@@ -33,7 +33,7 @@ export const ImageLeftTextRightBlock: React.FC<ImageLeftTextRightBlockProps> = (
           <div className="flex-1 flex flex-col gap-8">
             {Array.isArray(items) &&
               items.map((item, index) => (
-                <RevealOnScroll key={index} variant="slideUp" delay={index * 0.15}>
+                <RevealOnScroll key={index} variant="slideUp" delay={index * 0.05}>
                   <div className="flex flex-col gap-2">
                     {item.title && <h3 className="type-display-xs text-brand-olive">{item.title}</h3>}
                     {item.description && (

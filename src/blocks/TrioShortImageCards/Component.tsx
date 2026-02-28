@@ -36,7 +36,6 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
 
       {/* Cards Grid */}
       {Array.isArray(cards) && cards.length > 0 && (
-        <RevealOnScroll variant="slideUp" delay={0.1}>
         <TrioCardScroller cardCount={cards.length}>
           {cards.map((card, index) => {
             const isFeaturedCard = Boolean(card.markAsFeatured)
@@ -64,15 +63,18 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
             const visibleCardLinks = validCardLinks.filter((link) => Boolean(link.label?.trim()))
 
             return (
-              <div
+              <RevealOnScroll
                 key={index}
-                className={getTrioCardItemClasses(
-                  `relative rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 p-5 overflow-hidden flex flex-col ${
-                    isFeaturedCard
-                      ? 'bg-brand-black text-brand-off-white border border-brand-white/10'
-                      : 'bg-brand-white border border-brand-black/20 gap-5'
-                  }`,
-                )}
+                variant="slideUp"
+                delay={index * 0.05}
+                className="w-full shrink-0 snap-center md:w-auto"
+              >
+              <div
+                className={`relative rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 p-5 overflow-hidden flex flex-col h-full ${
+                  isFeaturedCard
+                    ? 'bg-brand-black text-brand-off-white border border-brand-white/10'
+                    : 'bg-brand-white border border-brand-black/20 gap-5'
+                }`}
               >
                 {primaryCardLink && (
                   <CMSLink
@@ -135,10 +137,10 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                   )}
                 </div>
               </div>
+              </RevealOnScroll>
             )
           })}
         </TrioCardScroller>
-        </RevealOnScroll>
       )}
     </div>
   )
