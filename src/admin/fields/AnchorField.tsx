@@ -18,7 +18,7 @@ export const AnchorFieldComponent: React.FC<{ path: string }> = ({ path }) => {
     <TextInput
       path={path}
       value={value || ''}
-      onChange={(e) => setValue(slugify(e.target.value))}
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(slugify(e.target.value))}
       label="Section Anchor"
       description="Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us)."
       placeholder="e.g. about-us"
