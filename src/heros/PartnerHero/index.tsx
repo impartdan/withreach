@@ -50,11 +50,15 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({
                 key={i}
                 variant="slideUp"
                 delay={i * 0.05}
-                className="relative bg-white border border-brand-olive/20 rounded-[8px] p-5 w-full md:w-[432px] flex flex-col gap-5 hover:shadow-lg hover:border-brand-gray-light transition-[shadow,border-color] group"
+                className="relative bg-white border border-brand-olive/20 rounded-[8px] p-5 w-full md:w-[432px] flex flex-col gap-5 hover:shadow-lg hover:bg-brand-gray-light transition-all group"
               >
                 {/* Full-card link overlay */}
                 {card.linkUrl && (
-                  <Link href={card.linkUrl} className="absolute inset-0 z-0 rounded-[8px]" aria-label={card.title ?? undefined} />
+                  <Link
+                    href={card.linkUrl}
+                    className="absolute inset-0 z-0 rounded-[8px]"
+                    aria-label={card.title ?? undefined}
+                  />
                 )}
 
                 {/* Card image */}
