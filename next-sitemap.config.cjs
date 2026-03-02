@@ -7,7 +7,7 @@ const SITE_URL =
 module.exports = {
   siteUrl: SITE_URL,
   generateRobotsTxt: true,
-  exclude: ['/posts-sitemap.xml', '/pages-sitemap.xml', '/integrations-sitemap.xml', '/case-studies-sitemap.xml', '/*', '/posts/*', '/integrations/*'],
+  exclude: ['/posts-sitemap.xml', '/pages-sitemap.xml', '/integrations-sitemap.xml', '/case-studies-sitemap.xml', '/*', '/posts/*', '/partners/integrations/*'],
   robotsTxtOptions: {
     policies: [
       {

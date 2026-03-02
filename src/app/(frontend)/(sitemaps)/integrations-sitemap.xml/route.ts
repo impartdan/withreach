@@ -30,7 +30,7 @@ const getIntegrationsSitemap = unstable_cache(
       ? results.docs
           .filter((integration) => Boolean(integration?.slug))
           .map((integration) => ({
-            loc: `${SITE_URL}/integrations/${integration?.slug}`,
+            loc: `${SITE_URL}/partners/integrations/${integration?.slug}`,
             lastmod: integration.updatedAt || dateFallback,
           }))
       : []

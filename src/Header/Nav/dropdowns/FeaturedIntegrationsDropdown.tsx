@@ -76,7 +76,7 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
               transition={{ duration: 0.2, delay: 0.1 + index * 0.08, ease: 'easeOut' }}
             >
               <Link
-                href={`/integrations/${integration.slug}`}
+                href={`/partners/integrations/${integration.slug}`}
                 className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] group hover:bg-white border-transparent border hover:border-black/20 transition-all hover:shadow-lg"
               >
                 <div className="flex items-center gap-4">

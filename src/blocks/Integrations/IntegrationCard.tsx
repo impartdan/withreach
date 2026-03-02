@@ -93,7 +93,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
   return (
     <article className="h-full flex flex-col border border-gray-200 rounded-[8px] bg-white hover:border-gray-300 hover:shadow-md transition-all duration-200 group">
       {isFeatured ? (
-        <Link href={`/integrations/${integration.slug}`} className="p-8 flex flex-col flex-1">
+        <Link href={`/partners/integrations/${integration.slug}`} className="p-8 flex flex-col flex-1">
           {cardContent}
         </Link>
       ) : (
