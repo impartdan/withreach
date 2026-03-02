@@ -142,14 +142,6 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
         </div>
       )}
 
-      {/* Results count when searching */}
-      {isSearching && (
-        <div className="mb-8 text-base text-gray-600">
-          {displayedIntegrations.length} {displayedIntegrations.length === 1 ? 'result' : 'results'}{' '}
-          found
-        </div>
-      )}
-
       {/* Integration Grid */}
       {!isSearching && !showAll ? (
         <>
@@ -211,15 +203,19 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
       {/* No results - show as a card in the grid */}
       {displayedIntegrations.length === 0 && isSearching && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <article className="flex flex-col border border-gray-200 rounded-[8px] bg-white items-center justify-center p-12 text-center min-h-[320px] sm:col-span-2 lg:col-span-3 xl:col-span-4">
+          <article className="flex flex-col rounded-[8px] items-center justify-center p-12 text-center min-h-[320px] sm:col-span-2 lg:col-span-3 xl:col-span-4">
             <div className="max-w-md mx-auto">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">No integrations found</h3>
+              <h3 className="type-display-md  mb-4 ">Don’t see your provider? </h3>
               <p className="text-gray-600 text-base mb-8 leading-relaxed">
-                We couldn&apos;t find any integrations matching &quot;{searchTerm}&quot;. Try
-                adjusting your search or browse all integrations.
+                We couldn&apos;t find any integrations matching &quot;{searchTerm}&quot;. Reach out
+                to{' '}
+                <a href="mailto:partners@withreach.com" className="underline hover:no-underline">
+                  partners@withreach.com
+                </a>{' '}
+                for support.
               </p>
               <Button asChild size="lg">
-                <Link href="/contact">Connect with Sales</Link>
+                <Link href="/contact">Connect</Link>
               </Button>
             </div>
           </article>
