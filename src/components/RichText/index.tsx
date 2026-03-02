@@ -8,7 +8,6 @@ import {
   JSXConvertersFunction,
   LinkJSXConverter,
   RichText as ConvertRichText,
-  TextJSXConverter,
 } from '@payloadcms/richtext-lexical/react'
 
 import React from 'react'
@@ -57,7 +56,9 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   ...defaultConverters,
   ...LinkJSXConverter({ internalDocToHref }),
   text: (args) => {
-    const rendered = TextJSXConverter.text(args)
+    const defaultTextConverter = defaultConverters.text
+    const rendered =
+      typeof defaultTextConverter === 'function' ? defaultTextConverter(args) : args.node.text
     if (!('style' in args.node) || !hasOliveTextColor(args.node.style as string | undefined)) {
       return rendered
     }
