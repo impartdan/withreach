@@ -83,9 +83,7 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
       page: pageNumber,
       sort: '-publishedAt',
       overrideAccess: false,
-      where: categorySlug
-        ? { 'categories.slug': { equals: categorySlug } }
-        : {},
+      where: categorySlug ? { 'categories.slug': { equals: categorySlug } } : {},
       select: {
         title: true,
         slug: true,
@@ -112,7 +110,8 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
   const resolvedFeaturedCategories = (newsSettings.featuredCategories ?? []).filter(
     (c): c is Category => typeof c === 'object' && c !== null,
   )
-  const pillCategories = resolvedFeaturedCategories.length > 0 ? resolvedFeaturedCategories : categories
+  const pillCategories =
+    resolvedFeaturedCategories.length > 0 ? resolvedFeaturedCategories : categories
 
   return (
     <article>
