@@ -156,6 +156,11 @@
   html {
     @apply scroll-smooth;
   }
+  /* Disable smooth scrolling during view transitions to prevent the scroll
+     position reset from animating and conflicting with the page transition. */
+  html:active-view-transition {
+    scroll-behavior: auto;
+  }
   body {
     @apply bg-brand-off-white text-brand-black min-h-[100vh] flex flex-col font-sans;
   }
