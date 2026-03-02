@@ -20,7 +20,7 @@ export const PostCard: React.FC<{ post: PostCardData }> = ({ post }) => {
   const resolvedCategories =
     categories?.filter((c): c is Category => typeof c === 'object' && c !== null) ?? []
 
-  const href = `/resources/news/${slug}`
+  const href = `/news-insights/${slug}`
 
   return (
     <article className="group">

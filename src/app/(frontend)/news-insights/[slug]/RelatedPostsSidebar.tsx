@@ -32,7 +32,7 @@ export const RelatedPostsSidebar: React.FC<RelatedPostsSidebarProps> = ({ posts 
               (c): c is Category => typeof c === 'object' && c !== null,
             ) ?? []
 
-          const href = `/resources/news/${slug}`
+          const href = `/news-insights/${slug}`
 
           return (
             <Link

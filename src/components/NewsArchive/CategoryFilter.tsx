@@ -26,7 +26,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   categories,
   activeCategory,
   variant,
-  basePath = '/resources/news',
+  basePath = '/news-insights',
   scrollTarget,
   onChange,
 }) => {

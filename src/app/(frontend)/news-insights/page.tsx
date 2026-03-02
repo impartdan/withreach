@@ -105,9 +105,9 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
   const categories = Array.from(categoryMap.values()).sort((a, b) =>
     (a.title ?? '').localeCompare(b.title ?? ''),
   )
-  const featuredPosts = newsSettings.featuredPosts
+  const featuredPosts = newsSettings?.featuredPosts
 
-  const resolvedFeaturedCategories = (newsSettings.featuredCategories ?? []).filter(
+  const resolvedFeaturedCategories = (newsSettings?.featuredCategories ?? []).filter(
     (c): c is Category => typeof c === 'object' && c !== null,
   )
   const pillCategories =

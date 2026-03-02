@@ -9,7 +9,7 @@ import type { Page, Post, CaseStudy } from '@/payload-types'
 import { getPagePath } from '@/utilities/getPagePath'
 
 const collectionPathMap: Record<string, string> = {
-  posts: '/resources/news',
+  posts: '/news-insights',
   'case-studies': '/resources/case-studies',
 }
 

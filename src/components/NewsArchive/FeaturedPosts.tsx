@@ -45,7 +45,7 @@ export const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
         <div className="flex flex-col lg:flex-row gap-10 items-center">
           {image && (
             <RevealOnScroll variant="slideUp" className="w-full lg:w-[55%] shrink-0">
-              <Link href={`/resources/news/${post.slug}`} className="block">
+              <Link href={`/news-insights/${post.slug}`} className="block">
                 <div className="relative rounded-lg overflow-hidden aspect-[3/2]">
                   <Media
                     resource={image}
@@ -69,13 +69,13 @@ export const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
                   </div>
                 )}
 
-                <Link href={`/resources/news/${post.slug}`}>
+                <Link href={`/news-insights/${post.slug}`}>
                   <h3 className="type-display-sm">{post.title}</h3>
                 </Link>
               </div>
 
               <Link
-                href={`/resources/news/${post.slug}`}
+                href={`/news-insights/${post.slug}`}
                 className="inline-flex items-center gap-3 type-button text-brand-black border border-brand-black rounded-[6px] px-6 py-2 self-start hover:bg-brand-black hover:text-white transition-colors"
               >
                 Read article

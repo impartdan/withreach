@@ -24,7 +24,7 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-[78px] items-start justify-between max-w-6xl mx-auto md:pt-14">
           {/* Left column */}
           <RevealOnScroll variant="fadeIn" className="flex flex-col gap-10 flex-1 min-w-0 max-w-[661px]">
-            <BackButton href="/resources/news">Back to News and Insights</BackButton>
+            <BackButton href="/news-insights">Back to News and Insights</BackButton>
 
             <div className="flex flex-col gap-6">
               <h1 className="type-display-lg text-brand-black">{title}</h1>

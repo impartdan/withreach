@@ -42,7 +42,7 @@ export const ArchivePagination: React.FC<ArchivePaginationProps> = ({
   currentPage,
   totalPages,
   activeCategory,
-  basePath = '/resources/news',
+  basePath = '/news-insights',
   scrollTarget,
   onChange,
 }) => {
