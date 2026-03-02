@@ -87,6 +87,8 @@ export async function generateStaticParams() {
     },
   })
 
+  const dedicatedRoutes = new Set(['news-insights'])
+
   const params = pages.docs
     ?.filter((doc) => doc.slug !== 'home' || (doc.breadcrumbs?.length ?? 0) > 0)
     .map((doc) => {
@@ -94,6 +96,7 @@ export async function generateStaticParams() {
       return { slug: pathSegments }
     })
     .filter((p) => p.slug.length > 0)
+    .filter((p) => !dedicatedRoutes.has(p.slug.join('/')))
 
   return params ?? []
 }
