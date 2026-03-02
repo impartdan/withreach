@@ -18,12 +18,14 @@ import {
   type LinkFields,
 } from '@payloadcms/richtext-lexical'
 import { TypographyFeature } from '@/lexical/typography/feature.server'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 import { ImageBlock } from '@/blocks/ImageBlock/config'
 import { VideoEmbed } from '@/blocks/VideoEmbed/config'
 
 export const defaultLexical = lexicalEditor({
   features: [
     TypographyFeature(),
+    OliveTextFeature(),
     ParagraphFeature(),
     HeadingFeature({
       enabledHeadingSizes: ['h2', 'h3', 'h4'],

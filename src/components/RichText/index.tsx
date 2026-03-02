@@ -8,6 +8,7 @@ import {
   JSXConvertersFunction,
   LinkJSXConverter,
   RichText as ConvertRichText,
+  TextJSXConverter,
 } from '@payloadcms/richtext-lexical/react'
 
 import React from 'react'
@@ -40,9 +41,29 @@ const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
   return `/${relationTo}/${value.slug}`
 }
 
+const OLIVE_TEXT_COLOR_HEX = '#999177'
+const OLIVE_TEXT_COLOR_RGB = 'rgb(153,145,119)'
+
+const hasOliveTextColor = (style: string | null | undefined): boolean => {
+  if (!style) return false
+  const normalized = style.replace(/\s+/g, '').toLowerCase()
+  return (
+    normalized.includes(`color:${OLIVE_TEXT_COLOR_HEX}`) ||
+    normalized.includes(`color:${OLIVE_TEXT_COLOR_RGB}`)
+  )
+}
+
 const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) => ({
   ...defaultConverters,
   ...LinkJSXConverter({ internalDocToHref }),
+  text: (args) => {
+    const rendered = TextJSXConverter.text(args)
+    if (!('style' in args.node) || !hasOliveTextColor(args.node.style as string | undefined)) {
+      return rendered
+    }
+
+    return <span className="text-brand-olive">{rendered}</span>
+  },
   typographyStyle: ({ node, nodesToJSX }) => {
     const children = nodesToJSX({ nodes: node.children })
     if (!children?.length) {
