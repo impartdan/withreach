@@ -5,7 +5,6 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
-import { getTrioCardItemClasses } from '@/blocks/trioCardScrollClasses'
 import { TrioCardScroller } from '@/blocks/TrioCardScroller'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 

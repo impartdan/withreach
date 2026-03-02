@@ -45,7 +45,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
 
   const hasActiveDropdown = mobileAccordion !== null
 
-  const secondaryLinks = additionalLinks?.filter((item) => item.style !== 'primary') ?? []
+  const _secondaryLinks = additionalLinks?.filter((item) => item.style !== 'primary') ?? []
   const primaryButton = additionalLinks?.find((item) => item.style === 'primary') ?? null
 
   return (

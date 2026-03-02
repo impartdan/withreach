@@ -324,6 +324,10 @@ export interface HomeHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
@@ -781,6 +785,10 @@ export interface PlatformHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
@@ -907,6 +915,10 @@ export interface SolutionsHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
@@ -1033,6 +1045,10 @@ export interface PartnerHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
@@ -1174,6 +1190,10 @@ export interface TextHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
@@ -1313,6 +1333,10 @@ export interface SupportHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
@@ -1435,6 +1459,10 @@ export interface HubspotFormHeroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
     backgroundColor?:
       | (
@@ -1560,6 +1588,10 @@ export interface ContentBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -1660,6 +1692,10 @@ export interface ImageBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -1780,6 +1816,10 @@ export interface VideoBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -1886,6 +1926,10 @@ export interface IntegrationsBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -2147,6 +2191,10 @@ export interface LogoListBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -2286,6 +2334,10 @@ export interface HubspotFormBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -2388,6 +2440,10 @@ export interface StatsBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -2542,6 +2598,10 @@ export interface TextImageFeatureBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -2696,6 +2756,10 @@ export interface InsetDualImageBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -2847,6 +2911,10 @@ export interface InsetCopyImageBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -2974,6 +3042,10 @@ export interface StatsTextBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -3108,6 +3180,10 @@ export interface PageTeaserBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -3256,6 +3332,10 @@ export interface DiagramBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -3433,6 +3513,10 @@ export interface TrioTallImageCardsBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -3608,6 +3692,10 @@ export interface TrioShortImageCardsBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -3805,6 +3893,10 @@ export interface TrioTextOnlyCardsBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -3959,6 +4051,10 @@ export interface TestimonialBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -4067,6 +4163,10 @@ export interface ItemHighlightsBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -4192,6 +4292,10 @@ export interface FaqCenterBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -4328,6 +4432,10 @@ export interface FaqToCallBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -4445,6 +4553,10 @@ export interface ChecklistBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -4552,6 +4664,10 @@ export interface ImageLeftTextRightBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -4678,6 +4794,10 @@ export interface SimpleContentBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -4807,6 +4927,10 @@ export interface IndentedContentBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -4934,6 +5058,10 @@ export interface ConsListBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -5061,6 +5189,10 @@ export interface ProsListBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -5206,6 +5338,10 @@ export interface CtaLargeBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -5402,6 +5538,10 @@ export interface CtaSmallBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -5518,6 +5658,10 @@ export interface DisclaimerBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -5664,6 +5808,10 @@ export interface FiftyFiftyBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -5811,6 +5959,10 @@ export interface ItemHighlightsWithIntroBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -5922,6 +6074,10 @@ export interface PeopleIndexBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -6072,6 +6228,10 @@ export interface CardGridBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -6195,6 +6355,10 @@ export interface FormBlock2Type {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -6486,6 +6650,10 @@ export interface FeaturedPartnersBlock {
    * Configure appearance settings for this block
    */
   blockSettings?: {
+    /**
+     * Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).
+     */
+    anchor?: string | null;
     paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
     background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
@@ -6973,6 +7141,7 @@ export interface HomeHeroBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         background?: T;
         backgroundColor?: T;
         gradientFrom?: T;
@@ -7014,6 +7183,7 @@ export interface PlatformHeroBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         background?: T;
         backgroundColor?: T;
         gradientFrom?: T;
@@ -7041,6 +7211,7 @@ export interface SolutionsHeroBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         background?: T;
         backgroundColor?: T;
         gradientFrom?: T;
@@ -7079,6 +7250,7 @@ export interface PartnerHeroBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         background?: T;
         backgroundColor?: T;
         gradientFrom?: T;
@@ -7122,6 +7294,7 @@ export interface TextHeroBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         background?: T;
         backgroundColor?: T;
         gradientFrom?: T;
@@ -7163,6 +7336,7 @@ export interface SupportHeroBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         background?: T;
         backgroundColor?: T;
         gradientFrom?: T;
@@ -7191,6 +7365,7 @@ export interface HubspotFormHeroBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         background?: T;
         backgroundColor?: T;
         gradientFrom?: T;
@@ -7218,6 +7393,7 @@ export interface ContentBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7247,6 +7423,7 @@ export interface ImageBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7281,6 +7458,7 @@ export interface VideoBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7310,6 +7488,7 @@ export interface IntegrationsBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7345,6 +7524,7 @@ export interface LogoListBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7377,6 +7557,7 @@ export interface HubspotFormBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7405,6 +7586,7 @@ export interface StatsBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7464,6 +7646,7 @@ export interface TextImageFeatureBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7513,6 +7696,7 @@ export interface InsetDualImageBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7562,6 +7746,7 @@ export interface InsetCopyImageBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7597,6 +7782,7 @@ export interface StatsTextBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7641,6 +7827,7 @@ export interface PageTeaserBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7685,6 +7872,7 @@ export interface DiagramBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7751,6 +7939,7 @@ export interface TrioTallImageCardsBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7817,6 +8006,7 @@ export interface TrioShortImageCardsBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7879,6 +8069,7 @@ export interface TrioTextOnlyCardsBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7928,6 +8119,7 @@ export interface TestimonialBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -7964,6 +8156,7 @@ export interface ItemHighlightsBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8000,6 +8193,7 @@ export interface FaqCenterBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8036,6 +8230,7 @@ export interface FaqToCallBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8070,6 +8265,7 @@ export interface ChecklistBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8105,6 +8301,7 @@ export interface ImageLeftTextRightBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8145,6 +8342,7 @@ export interface SimpleContentBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8180,6 +8378,7 @@ export interface IndentedContentBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8215,6 +8414,7 @@ export interface ConsListBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8250,6 +8450,7 @@ export interface ProsListBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8294,6 +8495,7 @@ export interface CtaLargeBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8346,6 +8548,7 @@ export interface CtaSmallBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8374,6 +8577,7 @@ export interface DisclaimerBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8419,6 +8623,7 @@ export interface FiftyFiftyBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8464,6 +8669,7 @@ export interface ItemHighlightsWithIntroBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8500,6 +8706,7 @@ export interface PeopleIndexBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8543,6 +8750,7 @@ export interface CardGridBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8572,6 +8780,7 @@ export interface FormBlock2TypeSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
@@ -8600,6 +8809,7 @@ export interface FeaturedPartnersBlockSelect<T extends boolean = true> {
   blockSettings?:
     | T
     | {
+        anchor?: T;
         paddingTop?: T;
         paddingBottom?: T;
         background?: T;
