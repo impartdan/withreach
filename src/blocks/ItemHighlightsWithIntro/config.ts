@@ -4,6 +4,7 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 import { link } from '@/fields/link'
 import { blockSettings } from '@/fields/blockSettings'
 
@@ -62,7 +63,12 @@ export const ItemHighlightsWithIntro: Block = {
                   type: 'richText',
                   editor: lexicalEditor({
                     features: ({ rootFeatures }) => {
-                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                      return [
+                        ...rootFeatures,
+                        OliveTextFeature(),
+                        FixedToolbarFeature(),
+                        InlineToolbarFeature(),
+                      ]
                     },
                   }),
                 },

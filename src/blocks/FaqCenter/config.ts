@@ -4,6 +4,7 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 import { blockSettings } from '@/fields/blockSettings'
 
 export const FaqCenter: Block = {
@@ -59,7 +60,12 @@ export const FaqCenter: Block = {
                   required: true,
                   editor: lexicalEditor({
                     features: ({ rootFeatures }) => {
-                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                      return [
+                        ...rootFeatures,
+                        OliveTextFeature(),
+                        FixedToolbarFeature(),
+                        InlineToolbarFeature(),
+                      ]
                     },
                   }),
                 },

@@ -4,6 +4,7 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 import { linkGroup } from '@/fields/linkGroup'
 import { blockSettings } from '@/fields/blockSettings'
 
@@ -55,7 +56,12 @@ export const TrioTallImageCards: Block = {
                   type: 'richText',
                   editor: lexicalEditor({
                     features: ({ rootFeatures }) => {
-                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                      return [
+                        ...rootFeatures,
+                        OliveTextFeature(),
+                        FixedToolbarFeature(),
+                        InlineToolbarFeature(),
+                      ]
                     },
                   }),
                 },

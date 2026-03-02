@@ -8,6 +8,7 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
@@ -105,6 +106,7 @@ export const Posts: CollectionConfig<'posts'> = {
                 features: ({ rootFeatures }) => {
                   return [
                     ...rootFeatures.filter((f) => f.key !== 'blockquote'),
+                    OliveTextFeature(),
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
                     BlocksFeature({ blocks: [Code, ImageBlock, VideoEmbed, HubspotFormBlock, StatsBlock, BlockquoteBlock, ConclusionBlock, ChecklistList] }),
                     FixedToolbarFeature(),

@@ -6,6 +6,7 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 import { blockSettings } from '@/fields/blockSettings'
 import { ChecklistList } from '@/blocks/ChecklistList/config'
 import { ImageBlock } from '@/blocks/ImageBlock/config'
@@ -46,6 +47,7 @@ export const IndentedContent: Block = {
                 features: ({ rootFeatures }) => {
                   return [
                     ...rootFeatures,
+                    OliveTextFeature(),
                     HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
                     BlocksFeature({ blocks: [ImageBlock, VideoEmbed, ChecklistList] }),
                     FixedToolbarFeature(),

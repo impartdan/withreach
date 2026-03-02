@@ -4,6 +4,7 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 import { blockSettings } from '@/fields/blockSettings'
 
 export const FormBlock2: Block = {
@@ -35,7 +36,12 @@ export const FormBlock2: Block = {
               type: 'richText',
               editor: lexicalEditor({
                 features: ({ rootFeatures }) => {
-                  return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                  return [
+                    ...rootFeatures,
+                    OliveTextFeature(),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                  ]
                 },
               }),
               label: 'Description',

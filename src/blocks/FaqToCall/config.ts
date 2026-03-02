@@ -5,6 +5,7 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 import { blockSettings } from '@/fields/blockSettings'
 
 export const FaqToCall: Block = {
@@ -35,6 +36,7 @@ export const FaqToCall: Block = {
                 features: ({ rootFeatures }) => {
                   return [
                     ...rootFeatures,
+                    OliveTextFeature(),
                     HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
@@ -69,7 +71,12 @@ export const FaqToCall: Block = {
                   required: true,
                   editor: lexicalEditor({
                     features: ({ rootFeatures }) => {
-                      return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+                      return [
+                        ...rootFeatures,
+                        OliveTextFeature(),
+                        FixedToolbarFeature(),
+                        InlineToolbarFeature(),
+                      ]
                     },
                   }),
                 },

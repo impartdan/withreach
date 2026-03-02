@@ -6,6 +6,7 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 
 import { blockSettings } from '@/fields/blockSettings'
 import { linkGroup } from '@/fields/linkGroup'
@@ -17,6 +18,7 @@ const heroRichText: Field = {
     features: ({ rootFeatures }) => {
       return [
         ...rootFeatures,
+        OliveTextFeature(),
         HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
         FixedToolbarFeature(),
         InlineToolbarFeature(),
@@ -104,6 +106,7 @@ export const SolutionsHeroBlock: Block = {
                 features: ({ rootFeatures }) => {
                   return [
                     ...rootFeatures,
+                    OliveTextFeature(),
                     HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),

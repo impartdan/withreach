@@ -5,6 +5,7 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 import { blockSettings } from '@/fields/blockSettings'
 
 export const SimpleContent: Block = {
@@ -47,6 +48,7 @@ export const SimpleContent: Block = {
                     features: ({ rootFeatures }) => {
                       return [
                         ...rootFeatures,
+                        OliveTextFeature(),
                         HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
                         FixedToolbarFeature(),
                         InlineToolbarFeature(),

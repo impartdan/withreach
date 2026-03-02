@@ -6,6 +6,7 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 
 export const ConclusionBlock: Block = {
   slug: 'conclusion',
@@ -28,6 +29,7 @@ export const ConclusionBlock: Block = {
         features: ({ rootFeatures }) => {
           return [
             ...rootFeatures,
+            OliveTextFeature(),
             HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
             FixedToolbarFeature(),
             InlineToolbarFeature(),
