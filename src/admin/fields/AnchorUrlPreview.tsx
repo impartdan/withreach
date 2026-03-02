@@ -19,13 +19,40 @@ export const AnchorUrlPreviewComponent: React.FC<{ path: string }> = ({ path }) 
 
   const anchorValue = useFormFields(([fields]) => fields[anchorPath]?.value as string | undefined)
   const slugValue = useFormFields(([fields]) => fields['slug']?.value as string | undefined)
+
+  // For nested pages, pull the full path from the last breadcrumb URL.
+  // nestedDocsPlugin stores breadcrumbs as breadcrumbs.{n}.url in the form state.
+  const allFields = useFormFields(([fields]) => fields)
   const { collectionSlug } = useDocumentInfo()
 
   if (!anchorValue) return null
 
   const prefix = collectionUrlPrefixes[collectionSlug ?? ''] ?? ''
-  const slug = slugValue ? `/${slugValue}` : ''
-  const fullUrl = `${getClientSideURL()}${prefix}${slug}#${anchorValue}`
+
+  // Attempt to use the breadcrumb URL for a more accurate full path.
+  let pagePath: string
+  if (collectionSlug === 'pages') {
+    const breadcrumbEntries = Object.entries(allFields)
+      .filter(([key]) => /^breadcrumbs\.\d+\.url$/.test(key))
+      .sort(([a], [b]) => {
+        const idxA = parseInt(a.match(/\d+/)?.[0] ?? '0', 10)
+        const idxB = parseInt(b.match(/\d+/)?.[0] ?? '0', 10)
+        return idxA - idxB
+      })
+    const lastBreadcrumbUrl = breadcrumbEntries.at(-1)?.[1]?.value as string | undefined
+    pagePath = lastBreadcrumbUrl
+      ? lastBreadcrumbUrl.startsWith('/')
+        ? lastBreadcrumbUrl
+        : `/${lastBreadcrumbUrl}`
+      : slugValue
+        ? `/${slugValue}`
+        : ''
+  } else {
+    const slug = slugValue ? `/${slugValue}` : ''
+    pagePath = `${prefix}${slug}`
+  }
+
+  const fullUrl = `${getClientSideURL()}${pagePath}#${anchorValue}`
 
   const handleCopy = async () => {
     try {
