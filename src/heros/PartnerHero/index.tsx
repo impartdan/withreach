@@ -7,8 +7,14 @@ import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import Link from 'next/link'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
+import { Tag } from '@/components/Tag'
 
-export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, partnerCards, blurBackground }) => {
+export const PartnerHero: React.FC<PartnerHeroBlockType> = ({
+  media,
+  richText,
+  partnerCards,
+  blurBackground,
+}) => {
   return (
     <div className="relative w-full md:min-h-[536px] header-offset overflow-hidden">
       {/* Background image */}
@@ -28,7 +34,10 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, p
       <div className="relative z-10 flex flex-col items-center gap-16 md:gap-[120px] pt-20 md:pt-20 pb-20 md:pb-[120px]">
         {/* Heading + subtitle */}
         {richText && (
-          <RevealOnScroll variant="fadeIn" className="container text-center text-white max-w-[922px]">
+          <RevealOnScroll
+            variant="fadeIn"
+            className="container text-center text-white max-w-[922px]"
+          >
             <RichText data={richText} enableGutter={false} className="space-y-10 text-pretty" />
           </RevealOnScroll>
         )}
@@ -41,11 +50,16 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, p
                 key={i}
                 variant="slideUp"
                 delay={i * 0.05}
-                className="bg-white border border-brand-olive/20 rounded-[8px] p-5 w-full md:w-[432px] flex flex-col gap-5 hover:shadow-lg transition-shadow"
+                className="relative bg-white border border-brand-olive/20 rounded-[8px] p-5 w-full md:w-[432px] flex flex-col gap-5 hover:shadow-lg hover:border-brand-gray-light transition-[shadow,border-color] group"
               >
+                {/* Full-card link overlay */}
+                {card.linkUrl && (
+                  <Link href={card.linkUrl} className="absolute inset-0 z-0 rounded-[8px]" aria-label={card.title ?? undefined} />
+                )}
+
                 {/* Card image */}
                 {card.image && typeof card.image === 'object' && (
-                  <div className="relative h-[264px] rounded-lg overflow-hidden">
+                  <div className="relative w-full aspect-[4/3] rounded-[8px] overflow-hidden">
                     <Media fill imgClassName="object-cover" resource={card.image} />
                   </div>
                 )}
@@ -55,21 +69,15 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, p
                   <div className="flex flex-col gap-2">
                     {/* Badge */}
                     {card.badge && (
-                      <span className="inline-flex self-start bg-brand-black text-white text-sm font-semibold px-5 py-2.5 rounded-md">
-                        {card.badge}
-                      </span>
+                      <Tag label={card.badge} variant="secondary" className="self-start" />
                     )}
 
                     {/* Title + description */}
                     {card.title && (
-                      <h3 className="font-display text-[32px] leading-[1.2] tracking-tight text-brand-black">
-                        {card.title}
-                      </h3>
+                      <h3 className="type-display-sm text-brand-black">{card.title}</h3>
                     )}
                     {card.description && (
-                      <p className="text-base leading-relaxed text-brand-black">
-                        {card.description}
-                      </p>
+                      <p className="typt-micro-b text-brand-black">{card.description}</p>
                     )}
                   </div>
 
@@ -77,7 +85,7 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, p
                   {card.link && card.linkUrl && (
                     <Link
                       href={card.linkUrl}
-                      className="inline-flex items-center gap-3 text-brand-black font-semibold text-base group"
+                      className="relative z-10 inline-flex items-center gap-3 text-brand-black font-semibold text-base group/cta"
                     >
                       {card.link}
                       <svg
@@ -86,7 +94,7 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({ media, richText, p
                         viewBox="0 0 5 8"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="transition-transform group-hover:translate-x-1"
+                        className="transition-transform group-hover/cta:translate-x-1"
                       >
                         <path d="M1 1L4 4L1 7" stroke="currentColor" strokeWidth="1.5" />
                       </svg>

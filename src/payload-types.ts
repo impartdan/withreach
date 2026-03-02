@@ -235,6 +235,7 @@ export interface Page {
         | PeopleIndexBlock
         | CardGridBlock
         | FormBlock2Type
+        | FeaturedPartnersBlock
       )[]
     | null;
   meta?: {
@@ -6473,6 +6474,108 @@ export interface IntegrationCategory {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FeaturedPartnersBlock".
+ */
+export interface FeaturedPartnersBlock {
+  title: string;
+  /**
+   * Select the integrations to feature in this block.
+   */
+  integrations: (number | Integration)[];
+  /**
+   * Configure appearance settings for this block
+   */
+  blockSettings?: {
+    paddingTop?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    paddingBottom?: ('none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl') | null;
+    background?: ('none' | 'color' | 'gradient' | 'image' | 'video') | null;
+    backgroundColor?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientFrom?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientTo?:
+      | (
+          | 'brand-off-white'
+          | 'brand-linen'
+          | 'brand-black'
+          | 'brand-white'
+          | 'brand-olive'
+          | 'brand-gray'
+          | 'brand-purple'
+          | 'brand-peach'
+          | 'brand-green'
+          | 'brand-blue'
+          | 'brand-blue-light'
+          | 'primary'
+          | 'secondary'
+          | 'accent'
+          | 'muted'
+          | 'card'
+          | 'background'
+        )
+      | null;
+    gradientDirection?: ('down' | 'right') | null;
+    backgroundImage?: (number | null) | Media;
+    backgroundImagePosition?: ('center' | 'top' | 'bottom' | 'left' | 'right') | null;
+    /**
+     * Apply a blur effect over the background image or video
+     */
+    backgroundBlur?: boolean | null;
+    /**
+     * Upload an MP4 video file
+     */
+    backgroundVideo?: (number | null) | Media;
+    /**
+     * Or paste an external video URL (used if no file is uploaded)
+     */
+    backgroundVideoUrl?: string | null;
+    textColor?: ('dark' | 'light') | null;
+    showGridLines?: boolean | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'featuredPartners';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -6817,6 +6920,7 @@ export interface PagesSelect<T extends boolean = true> {
         peopleIndex?: T | PeopleIndexBlockSelect<T>;
         cardGrid?: T | CardGridBlockSelect<T>;
         formBlock2?: T | FormBlock2TypeSelect<T>;
+        featuredPartners?: T | FeaturedPartnersBlockSelect<T>;
       };
   meta?:
     | T
@@ -8465,6 +8569,34 @@ export interface FormBlock2TypeSelect<T extends boolean = true> {
   heading?: T;
   description?: T;
   form?: T;
+  blockSettings?:
+    | T
+    | {
+        paddingTop?: T;
+        paddingBottom?: T;
+        background?: T;
+        backgroundColor?: T;
+        gradientFrom?: T;
+        gradientTo?: T;
+        gradientDirection?: T;
+        backgroundImage?: T;
+        backgroundImagePosition?: T;
+        backgroundBlur?: T;
+        backgroundVideo?: T;
+        backgroundVideoUrl?: T;
+        textColor?: T;
+        showGridLines?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FeaturedPartnersBlock_select".
+ */
+export interface FeaturedPartnersBlockSelect<T extends boolean = true> {
+  title?: T;
+  integrations?: T;
   blockSettings?:
     | T
     | {

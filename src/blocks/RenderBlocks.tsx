@@ -36,6 +36,7 @@ import { ItemHighlightsWithIntroBlock } from '@/blocks/ItemHighlightsWithIntro/C
 import { PeopleIndexBlock } from '@/blocks/PeopleIndex/Component'
 import { CardGridBlock } from '@/blocks/CardGrid/Component'
 import { FormBlock2Component } from '@/blocks/FormBlock2/Component'
+import { FeaturedPartnersBlock } from '@/blocks/FeaturedPartners/Component'
 import { BlockWrapper } from '@/blocks/BlockWrapper'
 
 const blockComponents = {
@@ -73,6 +74,7 @@ const blockComponents = {
   peopleIndex: PeopleIndexBlock,
   cardGrid: CardGridBlock,
   formBlock2: FormBlock2Component,
+  featuredPartners: FeaturedPartnersBlock,
 }
 
 export const RenderBlocks: React.FC<{

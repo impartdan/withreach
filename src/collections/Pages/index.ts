@@ -36,6 +36,7 @@ import { ItemHighlightsWithIntro } from '../../blocks/ItemHighlightsWithIntro/co
 import { PeopleIndex } from '../../blocks/PeopleIndex/config'
 import { CardGrid } from '../../blocks/CardGrid/config'
 import { FormBlock2 } from '../../blocks/FormBlock2/config'
+import { FeaturedPartners } from '../../blocks/FeaturedPartners/config'
 import { createParentField, createBreadcrumbsField } from '@payloadcms/plugin-nested-docs'
 import { heroBlocks } from '@/heros/config'
 import { slugField } from 'payload'
@@ -153,6 +154,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 PeopleIndex,
                 CardGrid,
                 FormBlock2,
+                FeaturedPartners,
               ],
               required: false,
               admin: {
