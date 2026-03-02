@@ -67,7 +67,7 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
   const payload = await getPayload({ config: configPromise })
 
   const [page, newsSettings, allPostCategories, posts] = await Promise.all([
-    queryPageByPath({ pathSegments: ['resources', 'news'] }),
+    queryPageByPath({ pathSegments: ['news-insights'] }),
     payload.findGlobal({ slug: 'news-settings', depth: 2 }),
     payload.find({
       collection: 'posts',
@@ -148,7 +148,7 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
         initialPage={posts.page!}
         initialCategory={categorySlug}
         categories={categories}
-        basePath="/resources/news"
+        basePath="/news-insights"
         fetchAction={fetchPosts}
       />
     </article>
@@ -156,6 +156,6 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await queryPageByPath({ pathSegments: ['resources', 'news'] })
+  const page = await queryPageByPath({ pathSegments: ['news-insights'] })
   return generateMeta({ doc: page })
 }

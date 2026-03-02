@@ -104,7 +104,7 @@ const PostShowcaseCard: React.FC<{ post: Post }> = ({ post }) => {
       : null
 
   return (
-    <Link href={`/resources/news/${post.slug}`} className="w-[359px] block group">
+    <Link href={`/news-insights/${post.slug}`} className="w-[359px] block group">
       <div className="aspect-[3/2] rounded-lg overflow-hidden relative mb-6">
         {image ? (
           <Media

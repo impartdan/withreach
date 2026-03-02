@@ -47,7 +47,7 @@ export default async function Post({ params: paramsPromise }: Args) {
   const { isEnabled: draft } = await draftMode()
   const { slug = '' } = await paramsPromise
   const decodedSlug = decodeURIComponent(slug)
-  const url = '/resources/news/' + decodedSlug
+  const url = '/news-insights/' + decodedSlug
   const post = await queryPostBySlug({ slug: decodedSlug })
 
   if (!post) return <PayloadRedirects url={url} />
@@ -78,7 +78,7 @@ export default async function Post({ params: paramsPromise }: Args) {
             <div className="flex-1 min-w-0 flex flex-col gap-10 max-w-[720px]">
               <RichText data={post.content} enableGutter={false} />
 
-              <BackButton href="/resources/news">Back to News and Insights</BackButton>
+              <BackButton href="/news-insights">Back to News and Insights</BackButton>
 
               {cta && (cta.title || cta.description || cta.link?.label) && (
                 <PostCta cta={cta} />
