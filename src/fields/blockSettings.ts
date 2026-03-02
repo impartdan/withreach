@@ -48,7 +48,29 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
     overrides = {},
   } = options
 
-  const fields: Field[] = []
+  const fields: Field[] = [
+    {
+      name: 'anchor',
+      type: 'text',
+      label: 'Section Anchor',
+      admin: {
+        description:
+          'Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us).',
+        components: {
+          Field: '@/admin/fields/AnchorField#AnchorFieldComponent',
+        },
+      },
+    },
+    {
+      name: 'anchorPreview',
+      type: 'ui',
+      admin: {
+        components: {
+          Field: '@/admin/fields/AnchorUrlPreview#AnchorUrlPreviewComponent',
+        },
+      },
+    },
+  ]
 
   if (enablePadding) {
     fields.push({

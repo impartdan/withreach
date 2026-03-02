@@ -16,6 +16,7 @@ type BlockWrapperProps = {
   children: React.ReactNode
   blockType?: string
   blockSettings?: {
+    anchor?: string | null
     paddingTop?: SpacingSize | null
     paddingBottom?: SpacingSize | null
     background?: BackgroundType | null
@@ -118,6 +119,7 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
   className,
   skipBackground = false,
 }) => {
+  const anchor = blockSettings?.anchor || undefined
   const paddingTopClass =
     blockSettings?.paddingTop && blockSettings.paddingTop !== null
       ? paddingTopClasses[blockSettings.paddingTop]
@@ -180,6 +182,7 @@ export const BlockWrapper: React.FC<BlockWrapperProps> = ({
 
   return (
     <div
+      id={anchor}
       className={cn(
         'relative',
         paddingTopClass,
