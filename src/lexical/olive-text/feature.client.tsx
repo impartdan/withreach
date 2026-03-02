@@ -1,7 +1,10 @@
 'use client'
 
 import { $getSelectionStyleValueForProperty, $patchStyleText } from '@lexical/selection'
-import { createClientFeature } from '@payloadcms/richtext-lexical/client'
+import {
+  createClientFeature,
+  toolbarFeatureButtonsGroupWithItems,
+} from '@payloadcms/richtext-lexical/client'
 import { $getSelection, $isRangeSelection, type BaseSelection, type LexicalEditor } from 'lexical'
 
 const OLIVE_HEX = '#999177'
@@ -22,33 +25,28 @@ const OliveTextIcon = () => (
 )
 
 const toolbarGroups = [
-  {
-    type: 'buttons' as const,
-    items: [
-      {
-        ChildComponent: OliveTextIcon,
-        isActive: ({ selection }: { selection: BaseSelection | null }) => {
-          if (!$isRangeSelection(selection)) return false
-          const color = $getSelectionStyleValueForProperty(selection, 'color', '')
-          return isOliveColor(color)
-        },
-        key: 'oliveTextToggle',
-        label: 'Toggle olive text color',
-        onSelect: ({ editor }: { editor: LexicalEditor }) => {
-          editor.update(() => {
-            const selection = $getSelection()
-            if (!$isRangeSelection(selection)) return
-
-            const color = $getSelectionStyleValueForProperty(selection, 'color', '')
-            $patchStyleText(selection, { color: isOliveColor(color) ? null : OLIVE_HEX })
-          })
-        },
-        order: 1,
+  toolbarFeatureButtonsGroupWithItems([
+    {
+      ChildComponent: OliveTextIcon,
+      isActive: ({ selection }: { selection: BaseSelection | null }) => {
+        if (!$isRangeSelection(selection)) return false
+        const color = $getSelectionStyleValueForProperty(selection, 'color', '')
+        return isOliveColor(color)
       },
-    ],
-    key: 'oliveText',
-    order: 41,
-  },
+      key: 'oliveTextToggle',
+      label: 'Toggle olive text color',
+      onSelect: ({ editor }: { editor: LexicalEditor }) => {
+        editor.update(() => {
+          const selection = $getSelection()
+          if (!$isRangeSelection(selection)) return
+
+          const color = $getSelectionStyleValueForProperty(selection, 'color', '')
+          $patchStyleText(selection, { color: isOliveColor(color) ? null : OLIVE_HEX })
+        })
+      },
+      order: 1,
+    },
+  ]),
 ]
 
 export const OliveTextFeatureClient = createClientFeature({
