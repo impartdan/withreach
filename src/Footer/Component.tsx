@@ -9,6 +9,7 @@ import { E } from '@/components/Logo/E'
 import { A } from '@/components/Logo/A'
 import { C } from '@/components/Logo/C'
 import { H } from '@/components/Logo/H'
+import { ClymDoNotSellLink } from '@/components/ClymDoNotSellLink'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import { FooterCollapsibleMenu } from './FooterCollapsibleMenu'
 
@@ -53,6 +54,7 @@ export async function Footer() {
         <div className=" gap-8 flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col md:flex-row md:items-center gap-4">
             &copy; {new Date().getFullYear()} All rights reserved.
+            <ClymDoNotSellLink />
           </div>
 
           {badges && badges.length > 0 && (

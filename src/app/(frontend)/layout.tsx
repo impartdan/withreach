@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 
 import { cn } from '@/utilities/ui'
 import React from 'react'
-import Script from 'next/script'
 
 import { AdminBar } from '@/components/AdminBar'
+import { ThirdPartyScripts } from '@/components/ThirdPartyScripts'
 import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
 import { Providers } from '@/providers'
@@ -18,7 +18,6 @@ import { SeasonMix, SeasonSans, SeasonSerif } from './fonts'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
-  const hubspotPortalId = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID
 
   return (
     <ViewTransitions>
@@ -32,6 +31,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
         </head>
         <body>
+          {/* Google Tag Manager (noscript) */}
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-WK6N6RD"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+
           <Providers>
             <AdminBar
               adminBarProps={{
@@ -46,14 +55,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Footer />
           </Providers>
 
-          {/* HubSpot Tracking Code - tracks page views across all pages for journey analytics */}
-          {hubspotPortalId && (
-            <Script
-              id="hs-script-loader"
-              strategy="afterInteractive"
-              src={`//js.hs-scripts.com/${hubspotPortalId}.js`}
-            />
-          )}
+          <ThirdPartyScripts />
         </body>
       </html>
     </ViewTransitions>
