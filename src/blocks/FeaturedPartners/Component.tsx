@@ -1,4 +1,7 @@
-import type { Integration, FeaturedPartnersBlock as FeaturedPartnersBlockProps } from '@/payload-types'
+import type {
+  Integration,
+  FeaturedPartnersBlock as FeaturedPartnersBlockProps,
+} from '@/payload-types'
 
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
@@ -49,7 +52,7 @@ export const FeaturedPartnersBlock: React.FC<
 
   return (
     <div className="container" id={`block-${id}`}>
-      <h2 className="type-display-m text-center mb-12">{title}</h2>
+      <h2 className="type-display-md text-center mb-12">{title}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
         {integrations.map((integration) => (
           <IntegrationCard
