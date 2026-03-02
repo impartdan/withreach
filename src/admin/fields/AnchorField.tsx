@@ -48,14 +48,15 @@ export const AnchorFieldComponent: React.FC<{ path: string }> = ({ path }) => {
   }
 
   return (
-    <TextInput
-      path={path}
-      value={rawValue}
-      onChange={handleChange}
-      onBlur={handleBlur}
-      label="Section Anchor"
-      description="Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us)."
-      placeholder="e.g. about-us"
-    />
+    <div onBlur={handleBlur}>
+      <TextInput
+        path={path}
+        value={rawValue}
+        onChange={handleChange}
+        label="Section Anchor"
+        description="Used for in-page linking. Type naturally — it will be auto-formatted to a URL-safe slug (e.g. about-us)."
+        placeholder="e.g. about-us"
+      />
+    </div>
   )
 }
