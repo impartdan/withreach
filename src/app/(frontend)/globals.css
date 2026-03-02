@@ -153,6 +153,9 @@
   * {
     @apply border-border;
   }
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply bg-brand-off-white text-brand-black min-h-[100vh] flex flex-col font-sans;
   }
