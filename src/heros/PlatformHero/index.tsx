@@ -29,7 +29,10 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
       <div className="absolute bottom-0 left-0 right-0 z-20 h-[230px] bg-gradient-to-b from-transparent to-white pointer-events-none" />
       {/* Grid lines above gradient fade, below text content */}
       {showGridLines && (
-        <div className="absolute inset-0 z-20 pointer-events-none hidden md:block" aria-hidden="true">
+        <div
+          className="absolute inset-0 z-20 pointer-events-none hidden md:block"
+          aria-hidden="true"
+        >
           <div className="container relative h-full">
             <div className="absolute top-0 left-[17%] w-px h-full bg-brand-black/10" />
             <div className="absolute top-0 left-[33%] w-px h-full bg-brand-black/10" />
@@ -42,7 +45,10 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
       "
       >
         {/* Left column: text content */}
-        <RevealOnScroll variant="fadeIn" className="w-full md:w-1/2 flex flex-col gap-6 relative z-30">
+        <RevealOnScroll
+          variant="fadeIn"
+          className="w-full md:w-1/2 flex flex-col gap-6 relative z-30"
+        >
           {richText && <RichText data={richText} enableGutter={false} />}
           {Array.isArray(links) && links.length > 0 && (
             <ul className="flex gap-4">
@@ -57,7 +63,12 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
 
         {/* Right column: illustration (image or video) */}
         {media && typeof media === 'object' && (
-          <RevealOnScroll variant="slideUp" delay={0.15} className="w-full md:w-1/2 mix-blend-multiply">
+          <RevealOnScroll
+            variant="fadeIn"
+            delay={0.25}
+            duration={1}
+            className="w-full md:w-1/2 mix-blend-multiply"
+          >
             {isVideo && media.url ? (
               <video autoPlay className="w-full h-auto" loop muted playsInline>
                 <source src={media.url} type="video/mp4" />
