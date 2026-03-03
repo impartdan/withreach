@@ -16,23 +16,20 @@ export const SimpleContentBlock: React.FC<SimpleContentBlockProps> = ({
         {/* Left: Heading + Steps */}
         <RevealOnScroll variant="fadeIn" className="flex-1">
           {heading && (
-            <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black mb-10 md:mb-12">
-              {heading}
-            </h2>
+            <h2
+              className="type-display-lg  mb-10 md:mb-12 [&_span]:text-brand-olive [&_span]:block"
+              dangerouslySetInnerHTML={{ __html: heading }}
+            />
           )}
 
           {Array.isArray(items) && items.length > 0 && (
             <div className="flex flex-col divide-y divide-border">
               {items.map((item, index) => (
                 <div key={index} className="py-6 first:pt-0">
-                  {item.title && (
-                    <h3 className="text-base md:text-lg font-semibold text-brand-black mb-2">
-                      {item.title}
-                    </h3>
-                  )}
+                  {item.title && <h3 className="type-display-xs mb-2">{item.title}</h3>}
                   {item.description && (
                     <RichText
-                      className="text-sm md:text-base text-brand-black/70 leading-[1.5] [&>p]:mb-0"
+                      className="type-body"
                       data={item.description}
                       enableGutter={false}
                       enableProse={false}
