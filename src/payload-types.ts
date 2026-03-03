@@ -342,12 +342,6 @@ export interface HomeHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -363,12 +357,6 @@ export interface HomeHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -384,12 +372,6 @@ export interface HomeHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -803,12 +785,6 @@ export interface PlatformHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -824,12 +800,6 @@ export interface PlatformHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -845,12 +815,6 @@ export interface PlatformHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -933,12 +897,6 @@ export interface SolutionsHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -954,12 +912,6 @@ export interface SolutionsHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -975,12 +927,6 @@ export interface SolutionsHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -1063,12 +1009,6 @@ export interface PartnerHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -1084,12 +1024,6 @@ export interface PartnerHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -1105,12 +1039,6 @@ export interface PartnerHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -1208,12 +1136,6 @@ export interface TextHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -1229,12 +1151,6 @@ export interface TextHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -1250,12 +1166,6 @@ export interface TextHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -1351,12 +1261,6 @@ export interface SupportHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -1372,12 +1276,6 @@ export interface SupportHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -1393,12 +1291,6 @@ export interface SupportHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -1477,12 +1369,6 @@ export interface HubspotFormHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -1498,12 +1384,6 @@ export interface HubspotFormHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -1519,12 +1399,6 @@ export interface HubspotFormHeroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -1608,12 +1482,6 @@ export interface ContentBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -1629,12 +1497,6 @@ export interface ContentBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -1650,12 +1512,6 @@ export interface ContentBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -1712,12 +1568,6 @@ export interface ImageBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -1733,12 +1583,6 @@ export interface ImageBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -1754,12 +1598,6 @@ export interface ImageBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -1836,12 +1674,6 @@ export interface VideoBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -1857,12 +1689,6 @@ export interface VideoBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -1878,12 +1704,6 @@ export interface VideoBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -1946,12 +1766,6 @@ export interface IntegrationsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -1967,12 +1781,6 @@ export interface IntegrationsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -1988,12 +1796,6 @@ export interface IntegrationsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -2211,12 +2013,6 @@ export interface LogoListBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -2232,12 +2028,6 @@ export interface LogoListBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -2253,12 +2043,6 @@ export interface LogoListBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -2354,12 +2138,6 @@ export interface HubspotFormBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -2375,12 +2153,6 @@ export interface HubspotFormBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -2396,12 +2168,6 @@ export interface HubspotFormBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -2460,12 +2226,6 @@ export interface StatsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -2481,12 +2241,6 @@ export interface StatsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -2502,12 +2256,6 @@ export interface StatsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -2618,12 +2366,6 @@ export interface TextImageFeatureBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -2639,12 +2381,6 @@ export interface TextImageFeatureBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -2660,12 +2396,6 @@ export interface TextImageFeatureBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -2776,12 +2506,6 @@ export interface InsetDualImageBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -2797,12 +2521,6 @@ export interface InsetDualImageBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -2818,12 +2536,6 @@ export interface InsetDualImageBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -2931,12 +2643,6 @@ export interface InsetCopyImageBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -2952,12 +2658,6 @@ export interface InsetCopyImageBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -2973,12 +2673,6 @@ export interface InsetCopyImageBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -3062,12 +2756,6 @@ export interface StatsTextBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -3083,12 +2771,6 @@ export interface StatsTextBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -3104,12 +2786,6 @@ export interface StatsTextBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -3200,12 +2876,6 @@ export interface PageTeaserBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -3221,12 +2891,6 @@ export interface PageTeaserBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -3242,12 +2906,6 @@ export interface PageTeaserBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -3352,12 +3010,6 @@ export interface DiagramBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -3373,12 +3025,6 @@ export interface DiagramBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -3394,12 +3040,6 @@ export interface DiagramBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -3533,12 +3173,6 @@ export interface TrioTallImageCardsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -3554,12 +3188,6 @@ export interface TrioTallImageCardsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -3575,12 +3203,6 @@ export interface TrioTallImageCardsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -3712,12 +3334,6 @@ export interface TrioShortImageCardsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -3733,12 +3349,6 @@ export interface TrioShortImageCardsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -3754,12 +3364,6 @@ export interface TrioShortImageCardsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -3913,12 +3517,6 @@ export interface TrioTextOnlyCardsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -3934,12 +3532,6 @@ export interface TrioTextOnlyCardsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -3955,12 +3547,6 @@ export interface TrioTextOnlyCardsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -4071,12 +3657,6 @@ export interface TestimonialBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -4092,12 +3672,6 @@ export interface TestimonialBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -4113,12 +3687,6 @@ export interface TestimonialBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -4183,12 +3751,6 @@ export interface ItemHighlightsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -4204,12 +3766,6 @@ export interface ItemHighlightsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -4225,12 +3781,6 @@ export interface ItemHighlightsBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -4312,12 +3862,6 @@ export interface FaqCenterBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -4333,12 +3877,6 @@ export interface FaqCenterBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -4354,12 +3892,6 @@ export interface FaqCenterBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -4452,12 +3984,6 @@ export interface FaqToCallBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -4473,12 +3999,6 @@ export interface FaqToCallBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -4494,12 +4014,6 @@ export interface FaqToCallBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -4573,12 +4087,6 @@ export interface ChecklistBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -4594,12 +4102,6 @@ export interface ChecklistBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -4615,12 +4117,6 @@ export interface ChecklistBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -4684,12 +4180,6 @@ export interface ImageLeftTextRightBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -4705,12 +4195,6 @@ export interface ImageLeftTextRightBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -4726,12 +4210,6 @@ export interface ImageLeftTextRightBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -4814,12 +4292,6 @@ export interface SimpleContentBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -4835,12 +4307,6 @@ export interface SimpleContentBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -4856,12 +4322,6 @@ export interface SimpleContentBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -4947,12 +4407,6 @@ export interface IndentedContentBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -4968,12 +4422,6 @@ export interface IndentedContentBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -4989,12 +4437,6 @@ export interface IndentedContentBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -5078,12 +4520,6 @@ export interface ConsListBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -5099,12 +4535,6 @@ export interface ConsListBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -5120,12 +4550,6 @@ export interface ConsListBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -5209,12 +4633,6 @@ export interface ProsListBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -5230,12 +4648,6 @@ export interface ProsListBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -5251,12 +4663,6 @@ export interface ProsListBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -5358,12 +4764,6 @@ export interface CtaLargeBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -5379,12 +4779,6 @@ export interface CtaLargeBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -5400,12 +4794,6 @@ export interface CtaLargeBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -5558,12 +4946,6 @@ export interface CtaSmallBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -5579,12 +4961,6 @@ export interface CtaSmallBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -5600,12 +4976,6 @@ export interface CtaSmallBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -5678,12 +5048,6 @@ export interface DisclaimerBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -5699,12 +5063,6 @@ export interface DisclaimerBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -5720,12 +5078,6 @@ export interface DisclaimerBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -5828,12 +5180,6 @@ export interface FiftyFiftyBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -5849,12 +5195,6 @@ export interface FiftyFiftyBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -5870,12 +5210,6 @@ export interface FiftyFiftyBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -5979,12 +5313,6 @@ export interface ItemHighlightsWithIntroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -6000,12 +5328,6 @@ export interface ItemHighlightsWithIntroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -6021,12 +5343,6 @@ export interface ItemHighlightsWithIntroBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -6094,12 +5410,6 @@ export interface PeopleIndexBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -6115,12 +5425,6 @@ export interface PeopleIndexBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -6136,12 +5440,6 @@ export interface PeopleIndexBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -6248,12 +5546,6 @@ export interface CardGridBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -6269,12 +5561,6 @@ export interface CardGridBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -6290,12 +5576,6 @@ export interface CardGridBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -6375,12 +5655,6 @@ export interface FormBlock2Type {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -6396,12 +5670,6 @@ export interface FormBlock2Type {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -6417,12 +5685,6 @@ export interface FormBlock2Type {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;
@@ -6670,12 +5932,6 @@ export interface FeaturedPartnersBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientFrom?:
@@ -6691,12 +5947,6 @@ export interface FeaturedPartnersBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientTo?:
@@ -6712,12 +5962,6 @@ export interface FeaturedPartnersBlock {
           | 'brand-green'
           | 'brand-blue'
           | 'brand-blue-light'
-          | 'primary'
-          | 'secondary'
-          | 'accent'
-          | 'muted'
-          | 'card'
-          | 'background'
         )
       | null;
     gradientDirection?: ('down' | 'right') | null;

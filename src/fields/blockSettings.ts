@@ -1,6 +1,7 @@
 import type { Field, GroupField } from 'payload'
 
 import deepMerge from '@/utilities/deepMerge'
+import { BACKGROUND_COLOR_OPTIONS } from '@/fields/backgroundColorOptions'
 
 export type SpacingSize = 'none' | '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 
@@ -134,35 +135,14 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       admin: {
         condition: (_, siblingData) =>
           ['color', 'image', 'video'].includes(siblingData?.background),
+        components: {
+          Field: '@/admin/fields/PaletteSelectorField#PaletteSelectorField',
+        },
       },
-      options: [
-        { label: 'Off White', value: 'brand-off-white' },
-        { label: 'Linen', value: 'brand-linen' },
-        { label: 'Black', value: 'brand-black' },
-        { label: 'White', value: 'brand-white' },
-        { label: 'Olive', value: 'brand-olive' },
-        { label: 'Gray', value: 'brand-gray' },
-        { label: 'Purple', value: 'brand-purple' },
-        { label: 'Peach', value: 'brand-peach' },
-        { label: 'Green', value: 'brand-green' },
-        { label: 'Blue', value: 'brand-blue' },
-        { label: 'Blue Light', value: 'brand-blue-light' },
-      ],
+      options: BACKGROUND_COLOR_OPTIONS.map((option) => ({ ...option })),
     })
 
-    const gradientColorOptions = [
-      { label: 'Off White', value: 'brand-off-white' },
-      { label: 'Linen', value: 'brand-linen' },
-      { label: 'Black', value: 'brand-black' },
-      { label: 'White', value: 'brand-white' },
-      { label: 'Olive', value: 'brand-olive' },
-      { label: 'Gray', value: 'brand-gray' },
-      { label: 'Purple', value: 'brand-purple' },
-      { label: 'Peach', value: 'brand-peach' },
-      { label: 'Green', value: 'brand-green' },
-      { label: 'Blue', value: 'brand-blue' },
-      { label: 'Blue Light', value: 'brand-blue-light' },
-    ]
+    const gradientColorOptions = BACKGROUND_COLOR_OPTIONS.map((option) => ({ ...option }))
 
     fields.push({
       name: 'gradientFrom',
@@ -171,6 +151,9 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       label: 'From',
       admin: {
         condition: (_, siblingData) => siblingData?.background === 'gradient',
+        components: {
+          Field: '@/admin/fields/PaletteSelectorField#PaletteSelectorField',
+        },
       },
       options: gradientColorOptions,
     })
@@ -182,6 +165,9 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       label: 'To',
       admin: {
         condition: (_, siblingData) => siblingData?.background === 'gradient',
+        components: {
+          Field: '@/admin/fields/PaletteSelectorField#PaletteSelectorField',
+        },
       },
       options: gradientColorOptions,
     })
