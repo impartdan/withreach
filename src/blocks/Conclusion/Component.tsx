@@ -15,11 +15,9 @@ export const ConclusionBlockComponent: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={`bg-brand-linen rounded-lg p-9 my-8 flex flex-col gap-10${className ? ` ${className}` : ''}`}
+      className={`bg-brand-linen rounded-[8px] p-9 my-8 flex flex-col gap-10${className ? ` ${className}` : ''}`}
     >
-      {heading && (
-        <h3 className="type-display-sm text-brand-black">{heading}</h3>
-      )}
+      {heading && <h3 className="type-display-sm text-brand-black">{heading}</h3>}
 
       {stats && stats.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
@@ -50,9 +48,7 @@ export const ConclusionBlockComponent: React.FC<Props> = ({
         </div>
       )}
 
-      {content && (
-        <RichText data={content} enableGutter={false} />
-      )}
+      {content && <RichText data={content} enableGutter={false} />}
     </div>
   )
 }

@@ -79,70 +79,70 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
   const handlePlay = () => setIsPlaying(true)
 
   const videoPlayer = (
-    <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black">
-          {isPlaying ? (
-            <>
-              {videoType === 'youtube' && youtubeId ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
-                  allow="autoplay; encrypted-media; fullscreen"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                  title="YouTube video"
-                />
-              ) : videoUrl ? (
-                <video
-                  src={videoUrl}
-                  controls
-                  autoPlay
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-contain"
-                />
-              ) : null}
-            </>
+    <div className="relative w-full aspect-video rounded-[8px] overflow-hidden bg-black">
+      {isPlaying ? (
+        <>
+          {videoType === 'youtube' && youtubeId ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+              allow="autoplay; encrypted-media; fullscreen"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+              title="YouTube video"
+            />
+          ) : videoUrl ? (
+            <video
+              src={videoUrl}
+              controls
+              autoPlay
+              playsInline
+              className="absolute inset-0 w-full h-full object-contain"
+            />
+          ) : null}
+        </>
+      ) : (
+        <button
+          onClick={handlePlay}
+          className="absolute inset-0 w-full h-full group focus:outline-none"
+          aria-label="Play video"
+        >
+          {/* Poster / thumbnail */}
+          {thumbSrc ? (
+            posterUrl ? (
+              <NextImage
+                src={posterUrl}
+                alt={posterAlt || 'Video thumbnail'}
+                fill
+                className="object-cover"
+              />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={thumbSrc}
+                alt="Video thumbnail"
+                className="absolute inset-0 w-full h-full object-cover"
+                onError={
+                  youtubeId && ytThumbIdx < YT_THUMB_SIZES.length - 1
+                    ? () => setYtThumbIdx((i) => i + 1)
+                    : undefined
+                }
+              />
+            )
           ) : (
-            <button
-              onClick={handlePlay}
-              className="absolute inset-0 w-full h-full group focus:outline-none"
-              aria-label="Play video"
-            >
-              {/* Poster / thumbnail */}
-              {thumbSrc ? (
-                posterUrl ? (
-                  <NextImage
-                    src={posterUrl}
-                    alt={posterAlt || 'Video thumbnail'}
-                    fill
-                    className="object-cover"
-                  />
-                ) : (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={thumbSrc}
-                    alt="Video thumbnail"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    onError={
-                      youtubeId && ytThumbIdx < YT_THUMB_SIZES.length - 1
-                        ? () => setYtThumbIdx((i) => i + 1)
-                        : undefined
-                    }
-                  />
-                )
-              ) : (
-                <div className="absolute inset-0 bg-neutral-900" />
-              )}
-
-              {/* Dark overlay on hover */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-
-              {/* Play button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="rounded-full bg-black/50 group-hover:bg-black/70 p-5 transition-colors backdrop-blur-sm">
-                  <PlayIcon />
-                </div>
-              </div>
-            </button>
+            <div className="absolute inset-0 bg-neutral-900" />
           )}
+
+          {/* Dark overlay on hover */}
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+
+          {/* Play button */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="rounded-full bg-black/50 group-hover:bg-black/70 p-5 transition-colors backdrop-blur-sm">
+              <PlayIcon />
+            </div>
+          </div>
+        </button>
+      )}
     </div>
   )
 
@@ -152,9 +152,7 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
 
   return (
     <div className="container">
-      <div className={cn(maxWidthClass, isCenter && 'mx-auto')}>
-        {videoPlayer}
-      </div>
+      <div className={cn(maxWidthClass, isCenter && 'mx-auto')}>{videoPlayer}</div>
     </div>
   )
 }

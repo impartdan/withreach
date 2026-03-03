@@ -48,7 +48,7 @@ const CaseStudyShowcaseCard: React.FC<{ caseStudy: CaseStudy }> = ({ caseStudy }
 
   return (
     <Link href={`/resources/case-studies/${caseStudy.slug}`} className="w-[359px] block group">
-      <div className="aspect-[3/2] rounded-lg overflow-hidden relative mb-6">
+      <div className="aspect-[3/2] rounded-[8px] overflow-hidden relative mb-6">
         {image ? (
           <>
             <Media
@@ -57,10 +57,10 @@ const CaseStudyShowcaseCard: React.FC<{ caseStudy: CaseStudy }> = ({ caseStudy }
               imgClassName="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               htmlElement={null}
             />
-            <div className="absolute inset-0 bg-black/30 rounded-lg" />
+            <div className="absolute inset-0 bg-black/30 rounded-[8px]" />
           </>
         ) : (
-          <div className="absolute inset-0 bg-brand-black/80 rounded-lg" />
+          <div className="absolute inset-0 bg-brand-black/80 rounded-[8px]" />
         )}
         {logo && (
           <div className="absolute inset-0 flex items-center justify-center p-12">
@@ -105,7 +105,7 @@ const PostShowcaseCard: React.FC<{ post: Post }> = ({ post }) => {
 
   return (
     <Link href={`/news-insights/${post.slug}`} className="w-[359px] block group">
-      <div className="aspect-[3/2] rounded-lg overflow-hidden relative mb-6">
+      <div className="aspect-[3/2] rounded-[8px] overflow-hidden relative mb-6">
         {image ? (
           <Media
             resource={image}
@@ -114,7 +114,7 @@ const PostShowcaseCard: React.FC<{ post: Post }> = ({ post }) => {
             htmlElement={null}
           />
         ) : (
-          <div className="absolute inset-0 bg-brand-black/80 rounded-lg" />
+          <div className="absolute inset-0 bg-brand-black/80 rounded-[8px]" />
         )}
       </div>
 

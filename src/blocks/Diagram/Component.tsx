@@ -42,7 +42,7 @@ export const DiagramBlock: React.FC<DiagramBlockProps> = ({ heading, content, li
         {/* Diagram Image */}
         {image && typeof image !== 'string' && (
           <RevealOnScroll variant="fadeIn" delay={0.15}>
-            <div className="rounded-lg overflow-hidden">
+            <div className="rounded-[8px] overflow-hidden">
               <Media resource={image} imgClassName="w-full h-auto" />
             </div>
           </RevealOnScroll>

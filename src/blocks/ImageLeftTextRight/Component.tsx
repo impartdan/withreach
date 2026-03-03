@@ -24,7 +24,10 @@ export const ImageLeftTextRightBlock: React.FC<ImageLeftTextRightBlockProps> = (
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           {/* Image */}
           {image && typeof image !== 'string' && (
-            <RevealOnScroll variant="slideUp" className="relative flex-1 min-h-[300px] md:min-h-[400px] rounded-lg overflow-hidden">
+            <RevealOnScroll
+              variant="slideUp"
+              className="relative flex-1 min-h-[300px] md:min-h-[400px] rounded-[8px] overflow-hidden"
+            >
               <Media resource={image} imgClassName="object-cover w-full h-full" />
             </RevealOnScroll>
           )}
@@ -35,7 +38,9 @@ export const ImageLeftTextRightBlock: React.FC<ImageLeftTextRightBlockProps> = (
               items.map((item, index) => (
                 <RevealOnScroll key={index} variant="slideUp" delay={index * 0.05}>
                   <div className="flex flex-col gap-2">
-                    {item.title && <h3 className="type-display-xs text-brand-olive">{item.title}</h3>}
+                    {item.title && (
+                      <h3 className="type-display-xs text-brand-olive">{item.title}</h3>
+                    )}
                     {item.description && (
                       <p className="type-micro-b  [&>p]:mb-0">{item.description}</p>
                     )}

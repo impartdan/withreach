@@ -25,7 +25,7 @@ export const PeopleIndexBlock: React.FC<PeopleIndexBlockProps> = ({ heading, peo
               className="bg-brand-off-white rounded-[8px] p-5 md:p-6 flex flex-col gap-4"
             >
               {person.photo && typeof person.photo !== 'string' && (
-                <div className="aspect-square rounded-lg overflow-hidden">
+                <div className="aspect-square rounded-[8px] overflow-hidden">
                   <Media resource={person.photo} imgClassName="object-cover w-full h-full" />
                 </div>
               )}

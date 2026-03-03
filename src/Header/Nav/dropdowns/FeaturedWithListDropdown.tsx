@@ -80,7 +80,7 @@ export const FeaturedWithListDropdown: React.FC<FeaturedWithListDropdownProps> =
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3, delay: 0.1, ease: 'easeOut' }}
-          className="w-[382px] h-[340px] rounded-lg overflow-hidden relative group"
+          className="w-[382px] h-[340px] rounded-[8px] overflow-hidden relative group"
         >
           {featuredCard.backgroundImage && (
             <div className="absolute inset-0">

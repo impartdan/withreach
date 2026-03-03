@@ -15,9 +15,7 @@ type FeaturedPostsProps = {
 export const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const resolvedPosts = posts.filter(
-    (p): p is Post => typeof p === 'object' && p !== null,
-  )
+  const resolvedPosts = posts.filter((p): p is Post => typeof p === 'object' && p !== null)
 
   const goTo = useCallback(
     (index: number) => {
@@ -30,14 +28,11 @@ export const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
 
   const post = resolvedPosts[currentIndex]
   const heroImage = typeof post.heroImage === 'object' ? post.heroImage : null
-  const metaImage =
-    post.meta && typeof post.meta.image === 'object' ? post.meta.image : null
+  const metaImage = post.meta && typeof post.meta.image === 'object' ? post.meta.image : null
   const image = heroImage || metaImage
 
   const categories =
-    post.categories?.filter(
-      (c): c is Category => typeof c === 'object' && c !== null,
-    ) ?? []
+    post.categories?.filter((c): c is Category => typeof c === 'object' && c !== null) ?? []
 
   return (
     <section className="bg-white py-xl">
@@ -46,7 +41,7 @@ export const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
           {image && (
             <RevealOnScroll variant="slideUp" className="w-full lg:w-[55%] shrink-0">
               <Link href={`/news-insights/${post.slug}`} className="block">
-                <div className="relative rounded-lg overflow-hidden aspect-[3/2]">
+                <div className="relative rounded-[8px] overflow-hidden aspect-[3/2]">
                   <Media
                     resource={image}
                     pictureClassName="absolute inset-0 w-full h-full"
@@ -58,7 +53,11 @@ export const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
             </RevealOnScroll>
           )}
 
-          <RevealOnScroll variant="fadeIn" delay={0.15} className="flex flex-col justify-between min-h-[280px] lg:min-h-[400px] w-full">
+          <RevealOnScroll
+            variant="fadeIn"
+            delay={0.15}
+            className="flex flex-col justify-between min-h-[280px] lg:min-h-[400px] w-full"
+          >
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-4">
                 {categories.length > 0 && (
@@ -92,9 +91,7 @@ export const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
                       aria-label={`Go to featured post ${i + 1}`}
                       className={cn(
                         'h-1.5 rounded-full transition-all',
-                        i === currentIndex
-                          ? 'w-6 bg-brand-black'
-                          : 'w-1.5 bg-brand-gray-light',
+                        i === currentIndex ? 'w-6 bg-brand-black' : 'w-1.5 bg-brand-gray-light',
                       )}
                     />
                   ))}

@@ -40,7 +40,7 @@ const PostCard: React.FC<{ post: Post }> = ({ post }) => {
 
   return (
     <Link href={`/news-insights/${post.slug}`} className="block group/card">
-      <div className="aspect-[3/2] rounded-lg overflow-hidden relative mb-6">
+      <div className="aspect-[3/2] rounded-[8px] overflow-hidden relative mb-6">
         {image ? (
           <Media
             resource={image}
@@ -49,7 +49,7 @@ const PostCard: React.FC<{ post: Post }> = ({ post }) => {
             htmlElement={null}
           />
         ) : (
-          <div className="absolute inset-0 bg-brand-black/80 rounded-lg" />
+          <div className="absolute inset-0 bg-brand-black/80 rounded-[8px]" />
         )}
       </div>
 

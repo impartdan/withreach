@@ -23,7 +23,10 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
       <div className="container header-offset pb-10 md:pb-20">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-[78px] items-start justify-between max-w-6xl mx-auto md:pt-14">
           {/* Left column */}
-          <RevealOnScroll variant="fadeIn" className="flex flex-col gap-10 flex-1 min-w-0 max-w-[661px]">
+          <RevealOnScroll
+            variant="fadeIn"
+            className="flex flex-col gap-10 flex-1 min-w-0 max-w-[661px]"
+          >
             <BackButton href="/news-insights">Back to News and Insights</BackButton>
 
             <div className="flex flex-col gap-6">
@@ -56,7 +59,7 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
           {/* Right column — hero image */}
           {heroImage && typeof heroImage !== 'string' && (
             <RevealOnScroll variant="slideUp" delay={0.15} className="w-full lg:w-[430px] shrink-0">
-              <div className="relative w-full aspect-[430/290] rounded-lg overflow-hidden">
+              <div className="relative w-full aspect-[430/290] rounded-[8px] overflow-hidden">
                 <Media fill priority imgClassName="object-cover" resource={heroImage} />
               </div>
             </RevealOnScroll>

@@ -104,7 +104,7 @@ export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
             {featureImage && typeof featureImage === 'object' && (
               <div className="w-full md:w-1/2 flex-shrink-0">
                 <Media
-                  className="relative aspect-square w-full overflow-hidden rounded-lg"
+                  className="relative aspect-square w-full overflow-hidden rounded-[8px]"
                   fill
                   pictureClassName="h-full w-full"
                   imgClassName="h-full w-full object-cover"

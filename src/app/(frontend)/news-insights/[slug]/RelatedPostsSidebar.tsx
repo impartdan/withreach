@@ -28,19 +28,13 @@ export const RelatedPostsSidebar: React.FC<RelatedPostsSidebarProps> = ({ posts 
                 : null
 
           const resolvedCategories =
-            categories?.filter(
-              (c): c is Category => typeof c === 'object' && c !== null,
-            ) ?? []
+            categories?.filter((c): c is Category => typeof c === 'object' && c !== null) ?? []
 
           const href = `/news-insights/${slug}`
 
           return (
-            <Link
-              key={post.id}
-              href={href}
-              className="flex gap-8 items-start group rounded-lg"
-            >
-              <div className="w-[200px] h-[135px] shrink-0 rounded-lg overflow-hidden bg-brand-linen relative">
+            <Link key={post.id} href={href} className="flex gap-8 items-start group rounded-[8px]">
+              <div className="w-[200px] h-[135px] shrink-0 rounded-[8px] overflow-hidden bg-brand-linen relative">
                 {image ? (
                   <Media
                     fill
@@ -48,7 +42,7 @@ export const RelatedPostsSidebar: React.FC<RelatedPostsSidebarProps> = ({ posts 
                     resource={image}
                   />
                 ) : (
-                  <div className="absolute inset-0 bg-brand-black/10 rounded-lg" />
+                  <div className="absolute inset-0 bg-brand-black/10 rounded-[8px]" />
                 )}
               </div>
 

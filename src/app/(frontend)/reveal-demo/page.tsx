@@ -170,22 +170,22 @@ export default function RevealDemoPage() {
 
           <div className="max-w-2xl mx-auto space-y-4">
             <RevealOnScroll variant="slideLeft" delay={0}>
-              <div className="bg-gray-100 rounded-lg p-4 text-gray-900">
+              <div className="bg-gray-100 rounded-[8px] p-4 text-gray-900">
                 <strong>First:</strong> No delay
               </div>
             </RevealOnScroll>
             <RevealOnScroll variant="slideLeft" delay={0.2}>
-              <div className="bg-gray-100 rounded-lg p-4 text-gray-900">
+              <div className="bg-gray-100 rounded-[8px] p-4 text-gray-900">
                 <strong>Second:</strong> 0.2s delay
               </div>
             </RevealOnScroll>
             <RevealOnScroll variant="slideLeft" delay={0.4}>
-              <div className="bg-gray-100 rounded-lg p-4 text-gray-900">
+              <div className="bg-gray-100 rounded-[8px] p-4 text-gray-900">
                 <strong>Third:</strong> 0.4s delay
               </div>
             </RevealOnScroll>
             <RevealOnScroll variant="slideLeft" delay={0.6}>
-              <div className="bg-gray-100 rounded-lg p-4 text-gray-900">
+              <div className="bg-gray-100 rounded-[8px] p-4 text-gray-900">
                 <strong>Fourth:</strong> 0.6s delay
               </div>
             </RevealOnScroll>

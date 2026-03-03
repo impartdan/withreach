@@ -28,10 +28,7 @@ export const ImageBlockComponent: React.FC<Props> = ({ image, maxWidth, alignmen
   return (
     <div className="container">
       <div className={cn(maxWidthClass, isCenter && 'mx-auto')}>
-        <Media
-          resource={image}
-          imgClassName="w-full h-auto rounded-lg"
-        />
+        <Media resource={image} imgClassName="w-full h-auto rounded-[8px]" />
       </div>
     </div>
   )

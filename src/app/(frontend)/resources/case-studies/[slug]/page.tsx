@@ -171,8 +171,7 @@ function CaseStudyCta({
 }
 
 function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
-  const { categories, caseStudyCategories, excerpt, heroImage, title, companyLogo } =
-    caseStudy
+  const { categories, caseStudyCategories, excerpt, heroImage, title, companyLogo } = caseStudy
 
   const resolvedCategories = [
     ...(caseStudyCategories
@@ -213,9 +212,9 @@ function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
 
           {heroImage && typeof heroImage === 'object' && (
             <div className="w-full lg:w-[430px] shrink-0">
-              <div className="relative w-full aspect-[430/290] rounded-lg overflow-hidden">
+              <div className="relative w-full aspect-[430/290] rounded-[8px] overflow-hidden">
                 <Media fill priority imgClassName="object-cover" resource={heroImage} />
-                <div className="absolute inset-0 bg-black/30 rounded-lg" />
+                <div className="absolute inset-0 bg-black/30 rounded-[8px]" />
                 {logo && (
                   <div className="absolute inset-0 flex items-center justify-center p-12">
                     <Media

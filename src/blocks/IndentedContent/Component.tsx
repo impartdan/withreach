@@ -43,7 +43,7 @@ export const IndentedContentBlock: React.FC<IndentedContentBlockProps> = ({
                 <div key={index} className="w-full max-w-lg mx-auto">
                   <Media
                     resource={item.image}
-                    imgClassName="w-full h-auto rounded-lg overflow-hidden"
+                    imgClassName="w-full h-auto rounded-[8px] overflow-hidden"
                   />
                 </div>
               )

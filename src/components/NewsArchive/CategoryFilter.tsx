@@ -31,10 +31,26 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   onChange,
 }) => {
   if (variant === 'pills') {
-    return <PillFilter categories={categories} activeCategory={activeCategory} basePath={basePath} scrollTarget={scrollTarget} onChange={onChange} />
+    return (
+      <PillFilter
+        categories={categories}
+        activeCategory={activeCategory}
+        basePath={basePath}
+        scrollTarget={scrollTarget}
+        onChange={onChange}
+      />
+    )
   }
 
-  return <DropdownFilter categories={categories} activeCategory={activeCategory} basePath={basePath} scrollTarget={scrollTarget} onChange={onChange} />
+  return (
+    <DropdownFilter
+      categories={categories}
+      activeCategory={activeCategory}
+      basePath={basePath}
+      scrollTarget={scrollTarget}
+      onChange={onChange}
+    />
+  )
 }
 
 function PillFilter({
@@ -123,18 +139,13 @@ function DropdownFilter({
         )}
       >
         <span>{activeLabel}</span>
-        <span
-          className={cn(
-            'transition-transform text-lg leading-none',
-            isOpen && 'rotate-45',
-          )}
-        >
+        <span className={cn('transition-transform text-lg leading-none', isOpen && 'rotate-45')}>
           +
         </span>
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-brand-gray-light/30 py-2 min-w-[200px] z-50">
+        <div className="absolute right-0 top-full mt-2 bg-white rounded-[8px] shadow-lg border border-brand-gray-light/30 py-2 min-w-[200px] z-50">
           <button
             onClick={() => handleSelect(null)}
             className={cn(

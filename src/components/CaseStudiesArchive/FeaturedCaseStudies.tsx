@@ -30,14 +30,11 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
 
   const cs = resolved[currentIndex]
   const heroImage = typeof cs.heroImage === 'object' ? cs.heroImage : null
-  const metaImage =
-    cs.meta && typeof cs.meta.image === 'object' ? cs.meta.image : null
+  const metaImage = cs.meta && typeof cs.meta.image === 'object' ? cs.meta.image : null
   const image = heroImage || metaImage
 
   const categories =
-    cs.categories?.filter(
-      (c): c is Category => typeof c === 'object' && c !== null,
-    ) ?? []
+    cs.categories?.filter((c): c is Category => typeof c === 'object' && c !== null) ?? []
 
   return (
     <section className="bg-white py-xl">
@@ -46,7 +43,7 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
           {image && (
             <RevealOnScroll variant="slideUp" className="w-full lg:w-[55%] shrink-0">
               <Link href={`/resources/case-studies/${cs.slug}`} className="block">
-                <div className="relative rounded-lg overflow-hidden aspect-[3/2]">
+                <div className="relative rounded-[8px] overflow-hidden aspect-[3/2]">
                   <Media
                     resource={image}
                     pictureClassName="absolute inset-0 w-full h-full"
@@ -58,7 +55,11 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
             </RevealOnScroll>
           )}
 
-          <RevealOnScroll variant="fadeIn" delay={0.15} className="flex flex-col justify-between min-h-[280px] lg:min-h-[400px] w-full">
+          <RevealOnScroll
+            variant="fadeIn"
+            delay={0.15}
+            className="flex flex-col justify-between min-h-[280px] lg:min-h-[400px] w-full"
+          >
             <Link href={`/resources/case-studies/${cs.slug}`} className="block">
               <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-4">
@@ -97,9 +98,7 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
                       aria-label={`Go to featured case study ${i + 1}`}
                       className={cn(
                         'h-1.5 rounded-full transition-all',
-                        i === currentIndex
-                          ? 'w-6 bg-brand-black'
-                          : 'w-1.5 bg-brand-gray-light',
+                        i === currentIndex ? 'w-6 bg-brand-black' : 'w-1.5 bg-brand-gray-light',
                       )}
                     />
                   ))}
@@ -112,8 +111,20 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
                     aria-label="Previous featured case study"
                     className="w-10 h-5 flex items-center justify-center rounded border border-brand-gray-light disabled:opacity-30 transition-opacity"
                   >
-                    <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 1L1 5M1 5L5 9M1 5H15" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg
+                      width="16"
+                      height="10"
+                      viewBox="0 0 16 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 1L1 5M1 5L5 9M1 5H15"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </button>
                   <button
@@ -122,8 +133,20 @@ export const FeaturedCaseStudies: React.FC<FeaturedCaseStudiesProps> = ({ caseSt
                     aria-label="Next featured case study"
                     className="w-10 h-5 flex items-center justify-center rounded border border-brand-gray-light disabled:opacity-30 transition-opacity"
                   >
-                    <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 1L15 5M15 5L11 9M15 5H1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg
+                      width="16"
+                      height="10"
+                      viewBox="0 0 16 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 1L15 5M15 5L11 9M15 5H1"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </button>
                 </div>

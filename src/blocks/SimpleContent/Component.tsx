@@ -46,7 +46,11 @@ export const SimpleContentBlock: React.FC<SimpleContentBlockProps> = ({
 
         {/* Right: Images */}
         {Array.isArray(images) && images.length > 0 && (
-          <RevealOnScroll variant="slideUp" delay={0.15} className="relative flex-1 min-h-[300px] md:min-h-[400px]">
+          <RevealOnScroll
+            variant="slideUp"
+            delay={0.15}
+            className="relative flex-1 min-h-[300px] md:min-h-[400px]"
+          >
             {images.map((item, index) => {
               if (!item.image || typeof item.image === 'string') return null
 
@@ -59,12 +63,9 @@ export const SimpleContentBlock: React.FC<SimpleContentBlockProps> = ({
               return (
                 <div
                   key={index}
-                  className={`absolute rounded-lg overflow-hidden shadow-lg ${positionClasses[index] || ''}`}
+                  className={`absolute rounded-[8px] overflow-hidden shadow-lg ${positionClasses[index] || ''}`}
                 >
-                  <Media
-                    resource={item.image}
-                    imgClassName="object-cover w-full h-full"
-                  />
+                  <Media resource={item.image} imgClassName="object-cover w-full h-full" />
                 </div>
               )
             })}
