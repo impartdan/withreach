@@ -13,12 +13,12 @@ export const HomeHero: React.FC<HomeHeroBlockType> = ({ title, subtitle, links, 
         <div className="max-w-3xl">
           {title && (
             <RevealOnScroll variant="slideUp" delay={0.1}>
-              <h1 className="type-display-hero-a text-balance">{title}</h1>
+              <h1 className="type-display-hero-a text-pretty">{title}</h1>
             </RevealOnScroll>
           )}
           {subtitle && (
             <RevealOnScroll variant="slideUp" delay={0.15}>
-              <p className="type-display-hero-b text-balance">{subtitle}</p>
+              <p className="type-display-hero-b text-pretty">{subtitle}</p>
             </RevealOnScroll>
           )}
           {richText && (

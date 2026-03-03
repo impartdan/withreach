@@ -38,7 +38,7 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({
             variant="fadeIn"
             className="container text-center text-white max-w-[922px]"
           >
-            <RichText data={richText} enableGutter={false} className="space-y-10 text-pretty" />
+            <RichText data={richText} enableGutter={false} className="space-y-10 text-balance" />
           </RevealOnScroll>
         )}
 
