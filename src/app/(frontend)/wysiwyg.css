@@ -1,21 +1,21 @@
 .wysiwyg {
   h1:not([class^='type-']) {
-    @apply type-display-xl;
-  }
-  h2:not([class^='type-']) {
     @apply type-display-lg;
   }
-  h3:not([class^='type-']) {
+  h2:not([class^='type-']) {
     @apply type-display-md;
   }
-  h4:not([class^='type-']) {
+  h3:not([class^='type-']) {
     @apply type-display-sm;
   }
-  h5:not([class^='type-']) {
+  h4:not([class^='type-']) {
     @apply type-display-xs;
   }
+  h5:not([class^='type-']) {
+    @apply type-display-intro;
+  }
   h6:not([class^='type-']) {
-    @apply type-intro;
+    @apply type-micro;
   }
   p:not([class^='type-']) {
     @apply type-body;
