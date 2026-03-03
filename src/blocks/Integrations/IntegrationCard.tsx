@@ -75,12 +75,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
         <div className="pt-2 mt-auto">
           <span className={buttonVariants({ size: 'clear', variant: 'arrow-invert' })}>
             Explore
-            <svg
-              className="w-[6px] h-[10px]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 6 10"
-            >
+            <svg className="w-[6px] h-[10px]" fill="none" stroke="currentColor" viewBox="0 0 6 10">
               <path
                 d="M0.75 8.75L4.89286 4.75L0.75 0.75"
                 strokeLinecap="round"
@@ -95,7 +90,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
   )
 
   return (
-    <article className="h-full flex flex-col border border-gray-200 rounded-[8px] bg-white hover:border-gray-300 hover:shadow-md transition-all duration-200 group">
+    <article className="h-full flex flex-col border border-brand-olive/20 rounded-[8px] bg-white hover:border-brand-olive/40 hover:shadow-md transition-all duration-200 group">
       {isFeatured ? (
         <Link
           href={`/partners/integrations/${integration.slug}`}

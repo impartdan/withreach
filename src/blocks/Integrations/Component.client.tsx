@@ -179,11 +179,11 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
 
             {/* Placeholder Card - only show when not searching and not showing all */}
             <RevealListItem>
-              <article className="h-full flex flex-col border border-gray-200 rounded-[8px] bg-white items-center justify-center p-8 text-center min-h-[320px]">
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">
+              <article className="h-full flex flex-col border border-brand-olive/20 rounded-[8px] items-center justify-center p-6 text-center min-h-[320px]">
+                <h3 className="type-display-xs text-brand-black mb-4">
                   Not seeing your integration?
                 </h3>
-                <p className="text-gray-600 text-base mb-8">Search our full directory</p>
+                <p className="type-body mb-8">Search our full directory</p>
                 <Button onClick={() => searchInputRef.current?.focus()} size="lg">
                   Search
                 </Button>
@@ -215,9 +215,9 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
       {displayedIntegrations.length === 0 && isSearching && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           <article className="flex flex-col rounded-[8px] items-center justify-center p-12 text-center min-h-[320px] sm:col-span-2 lg:col-span-3 xl:col-span-4">
-            <div className="max-w-md mx-auto">
+            <div className="max-w-2xl text-balance mx-auto">
               <h3 className="type-display-md  mb-4 ">Don’t see your provider? </h3>
-              <p className="text-gray-600 text-base mb-8 leading-relaxed">
+              <p className="type-intro mb-8">
                 We couldn&apos;t find any integrations matching &quot;{searchTerm}&quot;. Reach out
                 to{' '}
                 <a href="mailto:partners@withreach.com" className="underline hover:no-underline">
