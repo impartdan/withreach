@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, type Variants } from 'framer-motion'
+import { motion, type Transition, type Variants } from 'framer-motion'
 import { type HTMLMotionProps } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
@@ -39,7 +39,7 @@ interface RevealOnScrollProps extends Omit<HTMLMotionProps<'div'>, 'variants'> {
   variant?: keyof typeof variants
   delay?: number
   duration?: number
-  ease?: number[] | string
+  ease?: Transition['ease']
   amount?: number
   once?: boolean
 }
