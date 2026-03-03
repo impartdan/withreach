@@ -5,6 +5,7 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
+import type { BlockTheme } from '@/components/BlockThemeContext'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
@@ -12,7 +13,10 @@ export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
   content,
   links,
   images,
+  blockSettings,
 }) => {
+  const linkTheme: BlockTheme = blockSettings?.textColor === 'light' ? 'light' : 'dark'
+
   return (
     <div className="container">
       <div className="bg-brand-off-white rounded-[8px] overflow-hidden p-12 md:p-16 flex flex-col gap-8 lg:gap-12 lg:flex-row lg:items-center">
@@ -37,7 +41,7 @@ export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
           )}
 
           {Array.isArray(links) && links.length > 0 && (
-            <BlockThemeContext.Provider value="light">
+            <BlockThemeContext.Provider value={linkTheme}>
               <div className="flex flex-wrap gap-3 mt-2">
                 {links.map(({ link }, i) => {
                   return <CMSLink key={i} size="default" {...link} />

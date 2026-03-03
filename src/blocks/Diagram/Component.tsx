@@ -5,9 +5,18 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
+import type { BlockTheme } from '@/components/BlockThemeContext'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
-export const DiagramBlock: React.FC<DiagramBlockProps> = ({ heading, content, links, image }) => {
+export const DiagramBlock: React.FC<DiagramBlockProps> = ({
+  heading,
+  content,
+  links,
+  image,
+  blockSettings,
+}) => {
+  const linkTheme: BlockTheme = blockSettings?.textColor === 'light' ? 'light' : 'dark'
+
   return (
     <div className="container">
       <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-8 py-12 md:px-16 md:py-16">
@@ -25,7 +34,7 @@ export const DiagramBlock: React.FC<DiagramBlockProps> = ({ heading, content, li
           )}
 
           {Array.isArray(links) && links.length > 0 && (
-            <BlockThemeContext.Provider value="light">
+            <BlockThemeContext.Provider value={linkTheme}>
               <div className="flex flex-wrap gap-3 justify-center mt-6">
                 {links.map(({ link }, i) => {
                   return <CMSLink key={i} size="default" {...link} />

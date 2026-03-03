@@ -5,6 +5,7 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
+import type { BlockTheme } from '@/components/BlockThemeContext'
 import { TrioCardScroller } from '@/blocks/TrioCardScroller'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
@@ -12,7 +13,10 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
   heading,
   links,
   cards,
+  blockSettings,
 }) => {
+  const linkTheme: BlockTheme = blockSettings?.textColor === 'light' ? 'light' : 'dark'
+
   return (
     <div className="container">
       {/* Header */}
@@ -126,7 +130,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                     />
                   )}
                   {visibleCardLinks.length > 0 && (
-                    <BlockThemeContext.Provider value="light">
+                    <BlockThemeContext.Provider value={linkTheme}>
                       <div className="relative z-20 mt-auto flex flex-wrap gap-3">
                         {visibleCardLinks.map((link, i) => (
                           <CMSLink key={i} {...link} appearance="arrow" size="default" />

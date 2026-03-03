@@ -35,7 +35,7 @@ export const ProsListBlock: React.FC<ProsListBlockProps> = ({
                     />
                   </svg>
 
-                  <span className="text-sm md:text-base text-brand-black">{item.text}</span>
+                  <span className="type-micro-b [&>p]:mb-0">{item.text}</span>
                 </li>
               ))}
             </ul>
