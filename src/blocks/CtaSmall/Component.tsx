@@ -66,6 +66,7 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
             const { bgColorClass, gradientStyle, bgImage, bgPositionClass, backgroundBlur } =
               resolveCardBackground(card)
             const logoResource = card.logo && typeof card.logo === 'object' ? card.logo : null
+            const isLeftAligned = card.contentAlign === 'left'
 
             return (
               <RevealOnScroll
@@ -92,7 +93,12 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
                 )}
 
                 {/* content */}
-                <div className="relative z-10 p-8 md:p-10 lg:p-12 flex flex-col items-center justify-center text-center gap-4 flex-1">
+                <div
+                  className={cn(
+                    'relative z-10 p-8 md:p-10 lg:p-12 flex flex-col justify-center gap-4 flex-1',
+                    isLeftAligned ? 'items-start text-left' : 'items-center text-center',
+                  )}
+                >
                   {logoResource &&
                     (logoResource.mimeType === 'image/svg+xml' ? (
                       // eslint-disable-next-line @next/next/no-img-element

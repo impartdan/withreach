@@ -4867,6 +4867,7 @@ export interface CtaSmallBlock {
        */
       appearance?: ('default' | 'outline' | 'arrow') | null;
     };
+    contentAlign?: ('center' | 'left') | null;
     background?: ('none' | 'color' | 'gradient' | 'image') | null;
     backgroundColor?:
       | (
@@ -7779,6 +7780,7 @@ export interface CtaSmallBlockSelect<T extends boolean = true> {
               label?: T;
               appearance?: T;
             };
+        contentAlign?: T;
         background?: T;
         backgroundColor?: T;
         gradientFrom?: T;

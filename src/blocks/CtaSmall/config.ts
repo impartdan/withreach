@@ -65,6 +65,16 @@ export const CtaSmall: Block = {
                   },
                 }),
                 {
+                  name: 'contentAlign',
+                  type: 'select',
+                  defaultValue: 'center',
+                  label: 'Content Alignment',
+                  options: [
+                    { label: 'Center', value: 'center' },
+                    { label: 'Left', value: 'left' },
+                  ],
+                },
+                {
                   name: 'background',
                   type: 'select',
                   defaultValue: 'none',
