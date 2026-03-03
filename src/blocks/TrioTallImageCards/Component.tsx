@@ -26,7 +26,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
           className="flex flex-col gap-6 mb-10 md:mb-12 lg:mb-20 max-w-2xl"
         >
           <h2
-            className="type-display-lg [&_span]:text-brand-olive [&_span]:block"
+            className="type-display-md [&_span]:text-brand-olive [&_span]:block"
             dangerouslySetInnerHTML={{ __html: heading }}
           />
 
