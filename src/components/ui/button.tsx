@@ -20,20 +20,22 @@ const buttonVariants = cva(
       },
       variant: {
         default:
-          'bg-brand-black text-brand-off-white hover:bg-brand-off-white hover:text-brand-black',
+          'bg-brand-black text-brand-off-white hover:border-brand-black hover:bg-transparent hover:text-brand-black',
         'default-invert':
-          'bg-brand-off-white text-brand-black hover:bg-brand-black hover:text-brand-off-white',
+          'bg-brand-off-white text-brand-black hover:bg-brand-off-white/80 hover:text-brand-black',
         destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         ghost: 'hover:bg-card hover:text-accent-foreground',
         link: 'text-primary items-start justify-start underline-offset-4 hover:underline',
         outline:
-          'border-2 border-brand-black bg-transparent text-brand-black hover:border-brand-off-white hover:text-brand-off-white',
+          'border-2 border-brand-black bg-transparent text-brand-black hover:border-brand-black hover:text-brand-black',
         'outline-invert':
-          'border-2 border-brand-off-white bg-transparent text-brand-off-white hover:border-brand-black hover:text-brand-black',
+          'border-2 border-brand-off-white bg-transparent text-brand-off-white hover:border-brand-off-white hover:bg-brand-off-white/10 hover:text-brand-off-white',
         secondary:
           'bg-brand-gray text-brand-off-white hover:bg-brand-black hover:text-brand-off-white',
-        arrow: ' text-brand-off-white bg-transparent border-transparent gap-4',
-        'arrow-invert': ' text-brand-black bg-transparent border-transparent gap-4',
+        arrow:
+          'group text-brand-off-white bg-transparent border-transparent gap-4 hover:text-brand-off-white',
+        'arrow-invert':
+          'group text-brand-black bg-transparent border-transparent gap-4 hover:text-brand-black',
       },
     },
   },
