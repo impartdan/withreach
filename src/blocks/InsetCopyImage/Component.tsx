@@ -59,7 +59,7 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
         {/* Image Collage */}
         {Array.isArray(images) && images.length > 0 && (
           <RevealOnScroll
-            variant="slideUp"
+            variant="fadeIn"
             delay={0.15}
             className="relative flex-1 min-h-[300px] md:min-h-[400px]"
           >

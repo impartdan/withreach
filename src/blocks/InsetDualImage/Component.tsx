@@ -11,10 +11,17 @@ export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
   content,
   links,
   images,
+  blockSettings,
 }) => {
+  const isOffWhiteBlockBackground =
+    blockSettings?.background === 'color' && blockSettings?.backgroundColor === 'brand-off-white'
+  const insetBackgroundClass = isOffWhiteBlockBackground ? 'bg-brand-white' : 'bg-brand-off-white'
+
   return (
     <div className="container">
-      <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col-reverse gap-10 xl:gap-16 xl:flex-row xl:items-start">
+      <div
+        className={`${insetBackgroundClass} rounded-[8px] overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col-reverse gap-10 xl:gap-16 xl:flex-row xl:items-start`}
+      >
         {/* Text Content */}
         <RevealOnScroll
           variant="fadeIn"
