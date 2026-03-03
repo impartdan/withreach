@@ -26,14 +26,15 @@ export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
           className="flex flex-col gap-8 flex-1 items-start text-left"
         >
           {heading && (
-            <h2 className="text-4xl md:text-5xl lg:text-[56px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
-              {heading}
-            </h2>
+            <h2
+              className="type-display-lg [&_span]:text-brand-olive [&_span]:block"
+              dangerouslySetInnerHTML={{ __html: heading }}
+            />
           )}
 
           {content && (
             <RichText
-              className="text-lg md:text-[22px] text-brand-black leading-[1.3] max-w-md [&>p]:mb-0"
+              className="type-intro max-w-md [&>p]:mb-0"
               data={content}
               enableGutter={false}
               enableProse={false}
@@ -56,7 +57,7 @@ export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
           <RevealOnScroll
             variant="slideUp"
             delay={0.15}
-            className="flex flex-1 flex-row gap-0 items-stretch flex-shrink-0 w-full aspect-[16/9] overflow-hidden rounded-[8px]"
+            className="flex flex-1 flex-row gap-0 items-stretch flex-shrink-0 w-full aspect-square overflow-hidden rounded-[8px]"
           >
             {images.slice(0, 2).map((item, index) => {
               if (!item.image || typeof item.image === 'string') return null

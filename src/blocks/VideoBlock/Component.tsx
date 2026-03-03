@@ -50,14 +50,8 @@ export const VideoBlockComponent: React.FC<Props> = ({
     <div>
       {(title || description) && (
         <div className="flex flex-col gap-4 mb-4">
-          {title && (
-            <h3 className="type-display-sm text-brand-black">{title}</h3>
-          )}
-          {description && (
-            <p className="text-lg font-sans font-medium text-brand-black leading-relaxed">
-              {description}
-            </p>
-          )}
+          {title && <h3 className="type-display-sm text-brand-black">{title}</h3>}
+          {description && <p className="type-body">{description}</p>}
         </div>
       )}
       <VideoBlockClient {...clientProps} />
