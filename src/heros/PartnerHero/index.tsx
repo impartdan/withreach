@@ -48,8 +48,11 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({
             {partnerCards.map((card, i) => (
               <RevealOnScroll
                 key={i}
-                variant="slideUp"
-                delay={i * 0.05}
+                variant="slideUpSoft"
+                delay={i * 0.06}
+                duration={0.72}
+                ease={[0.22, 1, 0.36, 1]}
+                amount={0.12}
                 className="relative bg-white border border-brand-olive/20 rounded-[8px] p-5 w-full md:w-[432px] flex flex-col gap-5 hover:shadow-lg hover:bg-brand-gray-light transition-all group"
               >
                 {/* Full-card link overlay */}

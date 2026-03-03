@@ -13,6 +13,10 @@ const variants: Record<string, Variants> = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   },
+  slideUpSoft: {
+    hidden: { opacity: 0, y: 28 },
+    visible: { opacity: 1, y: 0 },
+  },
   slideDown: {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0 },
@@ -35,6 +39,7 @@ interface RevealOnScrollProps extends Omit<HTMLMotionProps<'div'>, 'variants'> {
   variant?: keyof typeof variants
   delay?: number
   duration?: number
+  ease?: number[] | string
   amount?: number
   once?: boolean
 }
@@ -44,6 +49,7 @@ export function RevealOnScroll({
   variant = 'fadeIn',
   delay = 0,
   duration = 0.5,
+  ease = 'easeOut',
   amount,
   once = true,
   className,
@@ -77,7 +83,7 @@ export function RevealOnScroll({
       transition={{
         duration,
         delay,
-        ease: 'easeOut',
+        ease,
       }}
       className={className}
       {...props}
