@@ -53,7 +53,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
               {openIndex === index ? '−' : '+'}
             </span>
           </button>
-          {openIndex === index && item.answer && (
+          {openIndex === index && Boolean(item.answer) && (
             <div className={answerWrapperClassName}>{renderAnswer(item, index)}</div>
           )}
         </div>

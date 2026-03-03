@@ -4,6 +4,11 @@ import React from 'react'
 import type { FaqCenterBlock as FaqCenterBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { FaqAccordion } from '@/components/FaqAccordion'
+import type { DefaultTypedEditorState } from '@payloadcms/richtext-lexical'
+
+const isEditorState = (value: unknown): value is DefaultTypedEditorState => {
+  return typeof value === 'object' && value !== null && 'root' in value
+}
 
 export const FaqCenterBlock: React.FC<FaqCenterBlockProps> = ({
   label,
@@ -32,7 +37,9 @@ export const FaqCenterBlock: React.FC<FaqCenterBlockProps> = ({
           className="max-w-3xl mx-auto divide-y divide-white/20"
           itemClassName="py-6"
           renderAnswer={(item) =>
-            item.answer ? <RichText data={item.answer} enableGutter={false} enableProse={true} /> : null
+            isEditorState(item.answer) ? (
+              <RichText data={item.answer} enableGutter={false} enableProse={true} />
+            ) : null
           }
         />
       </div>

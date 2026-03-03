@@ -5,6 +5,11 @@ import type { FaqToCallBlock as FaqToCallBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { Media } from '@/components/Media'
 import { FaqAccordion } from '@/components/FaqAccordion'
+import type { DefaultTypedEditorState } from '@payloadcms/richtext-lexical'
+
+const isEditorState = (value: unknown): value is DefaultTypedEditorState => {
+  return typeof value === 'object' && value !== null && 'root' in value
+}
 
 export const FaqToCallBlock: React.FC<FaqToCallBlockProps> = ({
   heading,
@@ -46,7 +51,7 @@ export const FaqToCallBlock: React.FC<FaqToCallBlockProps> = ({
             items={faqs}
             className="divide-y divide-border"
             renderAnswer={(item) =>
-              item.answer ? (
+              isEditorState(item.answer) ? (
                 <RichText
                   className="wysiwyg type-micro-b"
                   data={item.answer}
