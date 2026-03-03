@@ -3,7 +3,6 @@ import React from 'react'
 import type { CardGridBlock as CardGridBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
-import { BlockThemeContext } from '@/components/BlockThemeContext'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const CardGridBlock: React.FC<CardGridBlockProps> = ({ title, cards }) => {
@@ -24,7 +23,7 @@ export const CardGridBlock: React.FC<CardGridBlockProps> = ({ title, cards }) =>
               key={index}
               variant="slideUp"
               delay={index * 0.05}
-              className="bg-white border border-border rounded-[8px] p-8 md:p-10 flex flex-col gap-4"
+              className={`bg-white border border-border rounded-[8px] p-8 md:p-10 flex flex-col gap-4 relative ${card.link ? 'group/card' : ''}`}
             >
               <div className="flex flex-col gap-4 flex-1">
                 {card.title && (
@@ -42,11 +41,31 @@ export const CardGridBlock: React.FC<CardGridBlockProps> = ({ title, cards }) =>
                 )}
               </div>
               {card.link && (
-                <BlockThemeContext.Provider value="light">
-                  <div className="mt-auto pt-2">
-                    <CMSLink size="default" {...card.link} />
+                <>
+                  <div className="mt-auto pt-2 text-sm md:text-base text-brand-black inline-flex items-center gap-2">
+                    <span>{card.link.label || 'Learn more'}</span>
+                    <svg
+                      width="6"
+                      height="10"
+                      viewBox="0 0 6 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      className="transition-transform duration-200 group-hover/card:translate-x-0.5"
+                    >
+                      <path
+                        d="M0.75 8.75L4.89286 4.75L0.75 0.75"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </div>
-                </BlockThemeContext.Provider>
+                  <CMSLink {...card.link} label={null} className="absolute inset-0 z-10 rounded-[8px]">
+                    <span className="sr-only">{card.link.label || card.title || 'Open card link'}</span>
+                  </CMSLink>
+                </>
               )}
             </RevealOnScroll>
           ))}
