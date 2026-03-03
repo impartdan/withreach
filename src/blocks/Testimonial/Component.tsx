@@ -55,38 +55,40 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
         )}
 
         {/* Quote Card */}
-        <RevealOnScroll
-          variant="slideUp"
-          delay={0.15}
-          className="bg-brand-off-white w-full md:w-auto rounded-[8px] p-8 md:p-10 lg:p-12 flex flex-col gap-8 -mb-10 pb-10 lg:-translate-x-10 lg:w-[36%] z-10  shadow-sm"
-        >
-          {companyLogo && typeof companyLogo !== 'string' && (
-            <div className="h-6 md:h-8 mb-4">
-              <Media resource={companyLogo} imgClassName="h-full w-auto object-contain" />
-            </div>
-          )}
-
-          {quote && (
-            <blockquote className="type-display-sm text-brand-black">
-              &ldquo;{quote}&rdquo;
-            </blockquote>
-          )}
-
-          <div>
-            {authorName && <p className="type-body">{authorName}</p>}
-            {authorTitle && <p className="type-body">{authorTitle}</p>}
-          </div>
-
-          {Array.isArray(links) && links.length > 0 && (
-            <BlockThemeContext.Provider value={linkTheme}>
-              <div className="flex flex-wrap gap-3">
-                {links.map(({ link }, i) => {
-                  return <CMSLink key={i} size="default" {...link} />
-                })}
+        <div className="w-full md:w-auto lg:w-[36%] z-10 -mb-10 pb-10 lg:-translate-x-10  lg:translate-y-10">
+          <RevealOnScroll
+            variant="slideUp"
+            delay={0.15}
+            className="bg-brand-off-white rounded-[8px] p-8 md:p-10 lg:p-12 flex flex-col gap-8 shadow-sm"
+          >
+            {companyLogo && typeof companyLogo !== 'string' && (
+              <div className="h-6 md:h-8 mb-4">
+                <Media resource={companyLogo} imgClassName="h-full w-auto object-contain" />
               </div>
-            </BlockThemeContext.Provider>
-          )}
-        </RevealOnScroll>
+            )}
+
+            {quote && (
+              <blockquote className="type-display-sm text-brand-black">
+                &ldquo;{quote}&rdquo;
+              </blockquote>
+            )}
+
+            <div>
+              {authorName && <p className="type-body">{authorName}</p>}
+              {authorTitle && <p className="type-body">{authorTitle}</p>}
+            </div>
+
+            {Array.isArray(links) && links.length > 0 && (
+              <BlockThemeContext.Provider value={linkTheme}>
+                <div className="flex flex-wrap gap-3">
+                  {links.map(({ link }, i) => {
+                    return <CMSLink key={i} size="default" {...link} />
+                  })}
+                </div>
+              </BlockThemeContext.Provider>
+            )}
+          </RevealOnScroll>
+        </div>
       </div>
     </div>
   )
