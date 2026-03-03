@@ -1,14 +1,28 @@
 'use client'
-import React from 'react'
+import React, { useRef } from 'react'
+import { useInView } from 'framer-motion'
 import type { PeopleIndexBlock as PeopleIndexBlockProps } from '@/payload-types'
 import { Media } from '@/components/Media'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const PeopleIndexBlock: React.FC<PeopleIndexBlockProps> = ({ heading, people }) => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const hasEnteredViewport = useInView(containerRef, {
+    once: true,
+    amount: 0.1,
+    margin: '0px 0px -50px 0px',
+  })
+
   return (
-    <div className="container">
+    <div ref={containerRef} className="container">
       {heading && (
-        <RevealOnScroll variant="fadeIn">
+        <RevealOnScroll
+          variant="fadeIn"
+          initial="hidden"
+          animate={hasEnteredViewport ? 'visible' : 'hidden'}
+          whileInView={undefined}
+          viewport={undefined}
+        >
           <h2
             className="type-display-lg text-center mb-10 md:mb-14 [&_span]:text-brand-olive [&_span]:block"
             dangerouslySetInnerHTML={{ __html: heading }}
@@ -23,6 +37,10 @@ export const PeopleIndexBlock: React.FC<PeopleIndexBlockProps> = ({ heading, peo
               key={index}
               variant="slideUp"
               delay={index * 0.05}
+              initial="hidden"
+              animate={hasEnteredViewport ? 'visible' : 'hidden'}
+              whileInView={undefined}
+              viewport={undefined}
               className="bg-brand-off-white rounded-[8px] p-5 md:p-6 flex flex-col gap-4"
             >
               {person.photo && typeof person.photo !== 'string' && (
