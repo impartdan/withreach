@@ -3,6 +3,7 @@ import {
   AlignFeature,
   BlocksFeature,
   BoldFeature,
+  EXPERIMENTAL_TableFeature,
   FixedToolbarFeature,
   InlineToolbarFeature,
   ItalicFeature,
@@ -26,6 +27,7 @@ export const defaultLexical = lexicalEditor({
   features: [
     TypographyFeature(),
     OliveTextFeature(),
+    EXPERIMENTAL_TableFeature(),
     ParagraphFeature(),
     HeadingFeature({
       enabledHeadingSizes: ['h2', 'h3', 'h4'],
