@@ -9,9 +9,10 @@ export const PeopleIndexBlock: React.FC<PeopleIndexBlockProps> = ({ heading, peo
     <div className="container">
       {heading && (
         <RevealOnScroll variant="fadeIn">
-          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black text-center mb-10 md:mb-14">
-            {heading}
-          </h2>
+          <h2
+            className="type-display-lg text-center mb-10 md:mb-14 [&_span]:text-brand-olive [&_span]:block"
+            dangerouslySetInnerHTML={{ __html: heading }}
+          />
         </RevealOnScroll>
       )}
 
@@ -26,14 +27,16 @@ export const PeopleIndexBlock: React.FC<PeopleIndexBlockProps> = ({ heading, peo
             >
               {person.photo && typeof person.photo !== 'string' && (
                 <div className="aspect-square rounded-[8px] overflow-hidden">
-                  <Media resource={person.photo} imgClassName="object-cover w-full h-full" />
+                  <Media
+                    resource={person.photo}
+                    pictureClassName="block w-full h-full"
+                    imgClassName="object-cover w-full h-full"
+                  />
                 </div>
               )}
               <div>
-                {person.name && (
-                  <p className="text-base font-semibold text-brand-black">{person.name}</p>
-                )}
-                {person.title && <p className="text-sm text-brand-black/60">{person.title}</p>}
+                {person.name && <p className="type-display-xs">{person.name}</p>}
+                {person.title && <p className="type-micro-b">{person.title}</p>}
               </div>
               {person.linkedinUrl && (
                 <a
