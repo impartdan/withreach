@@ -1,6 +1,16 @@
+const normalizeSiteUrl = (rawUrl) => {
+  if (!rawUrl) return undefined
+
+  if (rawUrl.startsWith('http://') || rawUrl.startsWith('https://')) {
+    return rawUrl
+  }
+
+  return `https://${rawUrl}`
+}
+
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SERVER_URL ||
-  process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+  normalizeSiteUrl(process.env.NEXT_PUBLIC_SERVER_URL) ||
+  normalizeSiteUrl(process.env.VERCEL_PROJECT_PRODUCTION_URL) ||
   'https://example.com'
 
 /** @type {import('next-sitemap').IConfig} */
