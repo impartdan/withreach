@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useMemo, useRef } from 'react'
+import { useInView } from 'framer-motion'
 import { Link } from 'next-view-transitions'
 import type { Integration } from '@/payload-types'
 import { Button } from '@/components/ui/button'
@@ -48,6 +49,12 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
   const [searchTerm, setSearchTerm] = useState('')
   const [showAll, setShowAll] = useState(false)
   const searchInputRef = useRef<HTMLInputElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const hasEnteredViewport = useInView(containerRef, {
+    once: true,
+    amount: 0.1,
+    margin: '0px 0px -50px 0px',
+  })
 
   const displayedIntegrations = useMemo(() => {
     let filtered: Integration[]
@@ -88,7 +95,7 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
   const isSearching = searchTerm.trim().length > 0
 
   return (
-    <div>
+    <div ref={containerRef}>
       {/* Search Bar */}
       <div className="mb-12">
         <div className="relative">
@@ -135,9 +142,9 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
       {/* Title with See All/See Featured button - only show when not searching */}
       {!isSearching && (
         <div className="mb-10 flex items-center justify-between">
-          <h2 className="type-display-sm">{showAll ? 'Integrations' : title}</h2>
-          <Button onClick={() => setShowAll(!showAll)} variant="secondary" size="lg">
-            {showAll ? 'See Featured' : 'See All'}
+          <h2 className="type-display-sm">{showAll ? 'All partners' : title}</h2>
+          <Button onClick={() => setShowAll(!showAll)}>
+            {showAll ? 'See featured' : 'See all partners'}
           </Button>
         </div>
       )}
@@ -149,6 +156,10 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
           <RevealList
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-12 lg:gap-y-16"
             staggerDelay={0.08}
+            initial="hidden"
+            animate={hasEnteredViewport ? 'visible' : 'hidden'}
+            whileInView={undefined}
+            viewport={undefined}
           >
             {displayedIntegrations.map((integration) => {
               const isFeatured = featuredIds.includes(integration.id)

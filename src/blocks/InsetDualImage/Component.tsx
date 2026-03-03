@@ -27,18 +27,14 @@ export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
           variant="fadeIn"
           className="flex flex-col gap-8 lg:max-w-[445px] shrink-0 items-start text-left"
         >
-          {heading && (
-            <h2 className="text-4xl md:text-5xl lg:text-[56px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
-              {heading}
-            </h2>
-          )}
+          {heading && <h2 className="type-display-lg text-brand-black">{heading}</h2>}
 
           {content && (
             <RichText
-              className="text-lg md:text-[22px] text-brand-black leading-[1.3] max-w-md [&>p]:mb-0"
+              className="type-intro"
               data={content}
               enableGutter={false}
-              enableProse={false}
+              enableProse={true}
             />
           )}
 
