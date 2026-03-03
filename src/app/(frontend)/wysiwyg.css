@@ -12,7 +12,7 @@
     @apply type-display-xs;
   }
   h5:not([class^='type-']) {
-    @apply type-display-intro;
+    @apply type-intro;
   }
   h6:not([class^='type-']) {
     @apply type-micro;
