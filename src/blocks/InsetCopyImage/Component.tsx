@@ -5,6 +5,7 @@ import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import { BlockThemeContext } from '@/components/BlockThemeContext'
+import type { BlockTheme } from '@/components/BlockThemeContext'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
@@ -17,6 +18,7 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
   const isOffWhiteBlockBackground =
     blockSettings?.background === 'color' && blockSettings?.backgroundColor === 'brand-off-white'
   const insetBackgroundClass = isOffWhiteBlockBackground ? 'bg-brand-white' : 'bg-brand-off-white'
+  const linkTheme: BlockTheme = blockSettings?.textColor === 'light' ? 'light' : 'dark'
 
   return (
     <div className="container">
@@ -44,7 +46,7 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
           )}
 
           {Array.isArray(links) && links.length > 0 && (
-            <BlockThemeContext.Provider value={blockSettings?.textColor}>
+            <BlockThemeContext.Provider value={linkTheme}>
               <div className="flex flex-wrap gap-3">
                 {links.map(({ link }, i) => {
                   return <CMSLink key={i} size="default" {...link} />
