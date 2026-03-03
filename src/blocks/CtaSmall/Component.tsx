@@ -119,7 +119,7 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
 
                   {card.description && (
                     <RichText
-                      className="[&>p]:mb-0"
+                      className={cn(isLeftAligned && '!mx-0')}
                       data={card.description}
                       enableGutter={false}
                       enableProse={true}
