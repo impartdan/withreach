@@ -113,9 +113,7 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
                       </div>
                     ))}
 
-                  {card.heading && (
-                    <h3 className="type-display-md text-brand-black">{card.heading}</h3>
-                  )}
+                  {card.heading && <h3 className="type-display-md">{card.heading}</h3>}
 
                   {card.description && (
                     <RichText
