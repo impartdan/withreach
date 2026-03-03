@@ -147,12 +147,6 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
         { label: 'Green', value: 'brand-green' },
         { label: 'Blue', value: 'brand-blue' },
         { label: 'Blue Light', value: 'brand-blue-light' },
-        { label: 'Primary', value: 'primary' },
-        { label: 'Secondary', value: 'secondary' },
-        { label: 'Accent', value: 'accent' },
-        { label: 'Muted', value: 'muted' },
-        { label: 'Card', value: 'card' },
-        { label: 'Background', value: 'background' },
       ],
     })
 
@@ -168,12 +162,6 @@ export const blockSettings: BlockSettingsType = (options = {}) => {
       { label: 'Green', value: 'brand-green' },
       { label: 'Blue', value: 'brand-blue' },
       { label: 'Blue Light', value: 'brand-blue-light' },
-      { label: 'Primary', value: 'primary' },
-      { label: 'Secondary', value: 'secondary' },
-      { label: 'Accent', value: 'accent' },
-      { label: 'Muted', value: 'muted' },
-      { label: 'Card', value: 'card' },
-      { label: 'Background', value: 'background' },
     ]
 
     fields.push({
