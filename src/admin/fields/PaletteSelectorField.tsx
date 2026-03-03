@@ -93,8 +93,8 @@ export const PaletteSelectorField: React.FC<PaletteSelectorProps> = ({ path, lab
               <span
                 aria-hidden="true"
                 style={{
-                  width: '1.1rem',
-                  height: '1.1rem',
+                  width: '1.25rem',
+                  height: '1.25rem',
                   borderRadius: '999px',
                   border: '1px solid var(--theme-elevation-300)',
                   background: swatchColor,

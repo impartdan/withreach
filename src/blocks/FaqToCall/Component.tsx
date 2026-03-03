@@ -21,7 +21,7 @@ export const FaqToCallBlock: React.FC<FaqToCallBlockProps> = ({
     <div className="container">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
         {/* Left side: Heading + Description + Image */}
-        <div className="flex flex-col gap-8 lg:max-w-[440px] shrink-0">
+        <div className="flex flex-col gap-8 flex-1">
           {heading && (
             <h2
               className=" type-display-lg [&_span]:text-brand-olive [&_span]:block"

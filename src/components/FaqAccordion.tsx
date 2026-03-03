@@ -38,6 +38,8 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
         <div key={index} className={itemClassName}>
           <button
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            aria-expanded={openIndex === index}
+            aria-controls={`faq-accordion-panel-${index}`}
             className="flex items-start justify-between w-full text-left gap-4"
           >
             <span className={questionClassName}>{item.question}</span>
@@ -53,8 +55,24 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
               {openIndex === index ? '−' : '+'}
             </span>
           </button>
-          {openIndex === index && Boolean(item.answer) && (
-            <div className={answerWrapperClassName}>{renderAnswer(item, index)}</div>
+          {Boolean(item.answer) && (
+            <div
+              id={`faq-accordion-panel-${index}`}
+              className={cn(
+                'grid overflow-hidden transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
+                openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0',
+              )}
+            >
+              <div
+                className={cn(
+                  'overflow-hidden transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
+                  openIndex === index ? 'translate-y-0 opacity-100' : '-translate-y-1 opacity-0',
+                  answerWrapperClassName,
+                )}
+              >
+                {renderAnswer(item, index)}
+              </div>
+            </div>
           )}
         </div>
       ))}
