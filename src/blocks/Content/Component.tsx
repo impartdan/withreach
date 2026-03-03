@@ -23,7 +23,11 @@ export const ContentBlock: React.FC<ContentBlockProps> = ({ content, maxWidth, a
 
   return (
     <div className="container">
-      <RevealOnScroll variant="fadeIn" className={cn(alignment === 'center' && 'mx-auto', maxWidthClass)}>
+      <RevealOnScroll
+        variant="fadeIn"
+        amount={0.01}
+        className={cn(alignment === 'center' && 'mx-auto', maxWidthClass)}
+      >
         {content && <RichText data={content} enableGutter={false} enableProse={true} />}
       </RevealOnScroll>
     </div>
