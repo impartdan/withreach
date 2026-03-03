@@ -26,6 +26,7 @@ export const ContentBlock: React.FC<ContentBlockProps> = ({ content, maxWidth, a
       <RevealOnScroll
         variant="fadeIn"
         amount={0.01}
+        initial={false}
         className={cn(alignment === 'center' && 'mx-auto', maxWidthClass)}
       >
         {content && <RichText data={content} enableGutter={false} enableProse={true} />}
