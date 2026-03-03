@@ -51,7 +51,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
     <>
       <nav className="flex items-center gap-8 dropdown-container">
         {/* Desktop Nav Items - Hidden on large and below */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden xl:flex items-center gap-8">
           {menuItems?.map((item, i) => {
             if (item.type === 'link' && item.link) {
               return (
@@ -87,7 +87,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
         {/* Hamburger Menu Button - Visible on large and below */}
         <button
           onClick={onToggleMenu}
-          className="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
+          className="xl:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
           aria-label="Toggle menu"
         >
           <span

@@ -52,7 +52,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
     <>
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 z-20 lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-20 xl:hidden transition-opacity duration-300 ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         style={{ top: topOffset }}
@@ -62,19 +62,16 @@ export const MobileNav: React.FC<MobileNavProps> = ({
       {/* Card panel */}
       <div
         style={{ top: topOffset }}
-        className={`fixed left-0 right-0 z-20 mx-3 lg:hidden transform transition-all duration-300 ease-in-out ${
+        className={`fixed left-0 right-0 z-20 mx-3 md:mx-10 xl:hidden transform transition-all duration-300 ease-in-out ${
           isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'
         }`}
       >
         <div
-          className="bg-white rounded-[10px] p-5 flex flex-col justify-between overflow-y-auto"
-          style={{
-            minHeight: `calc(100dvh - ${topOffset}px - 12px)`,
-            maxHeight: `calc(100dvh - ${topOffset}px - 12px)`,
-          }}
+          className="bg-white rounded-[10px] p-5 flex flex-col justify-between overflow-y-auto min-h-[calc(100dvh-var(--top-offset)-12px)] max-h-[calc(100dvh-var(--top-offset)-12px)] md:min-h-[calc(100dvh-var(--top-offset)-40px)] md:max-h-[calc(100dvh-var(--top-offset)-40px)]"
+          style={{ '--top-offset': `${topOffset}px` } as React.CSSProperties}
         >
           {/* Links section */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 mb-6">
             {/* Primary nav items — 32px */}
             <div className="flex flex-col gap-3">
               {menuItems?.map((item, i) => {
@@ -142,14 +139,14 @@ export const MobileNav: React.FC<MobileNavProps> = ({
 
             {/* Mobile secondary menu */}
             {(mobileSecondaryMenu ?? []).length > 0 && (
-              <div className="flex flex-col gap-1.5">
+              <div className="flex flex-col gap-3">
                 {(mobileSecondaryMenu ?? []).map((item, i) => {
                   if (!item.link) return null
                   return (
                     <div key={i} onClick={onClose}>
                       <CMSLink
                         {...item.link}
-                        className={`block type-micro-b transition-colors duration-200 ${
+                        className={`block type-micro-b md:type-intro transition-colors duration-200 ${
                           hasActiveDropdown ? 'text-brand-gray-light' : 'text-brand-black'
                         }`}
                       />
