@@ -30,20 +30,9 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
           variant="fadeIn"
           className="flex flex-col gap-8 lg:max-w-[480px] shrink-0 items-start text-left"
         >
-          {heading && (
-            <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
-              {heading}
-            </h2>
-          )}
+          {heading && <h2 className="type-display-sm">{heading}</h2>}
 
-          {content && (
-            <RichText
-              className="text-base md:text-lg text-brand-black leading-[1.5] [&>p]:mb-0"
-              data={content}
-              enableGutter={false}
-              enableProse={false}
-            />
-          )}
+          {content && <RichText data={content} enableGutter={false} enableProse={true} />}
 
           {Array.isArray(links) && links.length > 0 && (
             <BlockThemeContext.Provider value={linkTheme}>

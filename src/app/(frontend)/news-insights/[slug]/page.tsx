@@ -80,9 +80,7 @@ export default async function Post({ params: paramsPromise }: Args) {
 
               <BackButton href="/news-insights">Back to News and Insights</BackButton>
 
-              {cta && (cta.title || cta.description || cta.link?.label) && (
-                <PostCta cta={cta} />
-              )}
+              {cta && (cta.title || cta.description || cta.link?.label) && <PostCta cta={cta} />}
             </div>
 
             {/* Right Column - Sticky Related Posts */}
@@ -104,12 +102,8 @@ function PostCta({ cta }: { cta: NonNullable<NewsSetting['postCta']> }) {
   return (
     <div className="border border-brand-gray-light backdrop-blur-[187px] rounded-2xl py-[72px] px-[50px] flex flex-col items-center gap-8 text-center overflow-hidden">
       <div className="flex flex-col gap-6">
-        {cta.title && (
-          <p className="text-[40px] font-sans text-brand-black leading-[1.1]">{cta.title}</p>
-        )}
-        {cta.description && (
-          <p className="text-[22px] font-sans text-brand-black leading-snug">{cta.description}</p>
-        )}
+        {cta.title && <p className="type-display-md text-brand-black">{cta.title}</p>}
+        {cta.description && <p className="type-body text-brand-black">{cta.description}</p>}
       </div>
       {cta.link?.label && (
         <CMSLink

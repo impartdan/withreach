@@ -11,9 +11,7 @@ export const CardGridBlock: React.FC<CardGridBlockProps> = ({ title, cards }) =>
     <div className="container">
       {title && (
         <RevealOnScroll variant="fadeIn">
-          <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black mb-10 md:mb-12">
-            {title}
-          </h2>
+          <h2 className="type-display-sm mb-10 md:mb-12">{title}</h2>
         </RevealOnScroll>
       )}
 

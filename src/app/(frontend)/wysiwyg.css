@@ -114,7 +114,7 @@
 
   blockquote {
     @apply block;
-    @apply font-serif font-medium text-[18px] leading-[1.4];
+    @apply type-display-sm;
   }
 
   hr {

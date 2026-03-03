@@ -141,14 +141,8 @@ function CaseStudyCta({
   return (
     <div className="border border-brand-gray-light backdrop-blur-[187px] rounded-2xl py-[72px] px-[50px] flex flex-col items-center gap-8 text-center overflow-hidden">
       <div className="flex flex-col gap-6">
-        {cta.title && (
-          <p className="text-[40px] font-sans text-brand-black leading-[1.1]">{cta.title}</p>
-        )}
-        {cta.description && (
-          <p className="text-lg font-sans font-medium text-brand-black leading-relaxed">
-            {cta.description}
-          </p>
-        )}
+        {cta.title && <p className="type-display-md text-brand-black">{cta.title}</p>}
+        {cta.description && <p className="type-body text-brand-black">{cta.description}</p>}
       </div>
       <div className="flex flex-col gap-4 items-center">
         {cta.primaryLink && cta.primaryLink.label && (
