@@ -97,7 +97,7 @@ export const HubspotFormHero: React.FC<HubspotFormHeroBlockType> = ({
       <div className="container py-20 flex flex-col items-center gap-10">
         {/* Eyebrow + heading */}
         <RevealOnScroll variant="fadeIn" className="flex flex-col items-center gap-4 text-center max-w-3xl">
-          {richText && <RichText data={richText} enableGutter={false} />}
+          {richText && <RichText className="text-pretty" data={richText} enableGutter={false} />}
         </RevealOnScroll>
 
         {/* HubSpot form */}

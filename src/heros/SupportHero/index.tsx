@@ -19,7 +19,7 @@ export const SupportHero: React.FC<SupportHeroBlockType> = ({
         {/* Left column – text content */}
         <RevealOnScroll variant="fadeIn" className="w-full md:w-[548px] flex flex-col gap-10 flex-shrink-0">
           {richText && (
-            <RichText data={richText} enableGutter={false} />
+            <RichText className="text-pretty" data={richText} enableGutter={false} />
           )}
 
           {/* CTA buttons */}

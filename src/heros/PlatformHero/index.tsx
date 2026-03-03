@@ -49,7 +49,7 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
           variant="fadeIn"
           className="w-full md:w-1/2 flex flex-col gap-6 relative z-30"
         >
-          {richText && <RichText data={richText} enableGutter={false} />}
+          {richText && <RichText className="text-pretty" data={richText} enableGutter={false} />}
           {Array.isArray(links) && links.length > 0 && (
             <ul className="flex gap-4">
               {links.map(({ link }, i) => (

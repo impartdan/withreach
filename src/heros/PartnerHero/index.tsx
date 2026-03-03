@@ -78,10 +78,10 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({
 
                     {/* Title + description */}
                     {card.title && (
-                      <h3 className="type-display-sm text-brand-black">{card.title}</h3>
+                      <h3 className="type-display-sm text-brand-black text-pretty">{card.title}</h3>
                     )}
                     {card.description && (
-                      <p className="typt-micro-b text-brand-black">{card.description}</p>
+                      <p className="typt-micro-b text-brand-black text-pretty">{card.description}</p>
                     )}
                   </div>
 

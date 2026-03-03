@@ -85,8 +85,8 @@ export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
         )}
 
         {/* Centered text content */}
-        <RevealOnScroll variant="fadeIn" className="container relative z-10 text-center text-white max-w-[922px] py-20">
-          {richText && <RichText className="text-balance" data={richText} enableGutter={false} />}
+        <RevealOnScroll variant="fadeIn" className="container relative z-10 text-center text-white text-pretty max-w-[922px] py-20">
+          {richText && <RichText className="text-pretty" data={richText} enableGutter={false} />}
         </RevealOnScroll>
       </div>
 
@@ -108,8 +108,8 @@ export const SolutionsHero: React.FC<SolutionsHeroBlockType> = ({
             )}
 
             {featureContent && (
-              <div className="w-full md:w-1/2">
-                <RichText data={featureContent} enableGutter={false} />
+              <div className="w-full md:w-1/2 text-pretty">
+                <RichText className="text-pretty" data={featureContent} enableGutter={false} />
               </div>
             )}
           </div>

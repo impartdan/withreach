@@ -27,14 +27,14 @@ export const PostHero: React.FC<{ post: Post }> = ({ post }) => {
             <BackButton href="/news-insights">Back to News and Insights</BackButton>
 
             <div className="flex flex-col gap-6">
-              <h1 className="type-display-lg text-brand-black">{title}</h1>
+              <h1 className="type-display-lg text-brand-black text-pretty">{title}</h1>
 
               <div className="flex flex-col gap-2">
                 {formattedDate && (
                   <p className="text-lg font-sans font-medium text-brand-black">{formattedDate}</p>
                 )}
                 {excerpt && (
-                  <p className="text-lg font-sans font-medium text-brand-black leading-relaxed">
+                  <p className="text-lg font-sans font-medium text-brand-black leading-relaxed text-pretty">
                     {excerpt}
                   </p>
                 )}

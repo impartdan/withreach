@@ -33,8 +33,8 @@ export const TextHero: React.FC<TextHeroBlockType & { children?: React.ReactNode
 
         {/* Heading + subtitle */}
         {richText && (
-          <div className="text-center w-full">
-            <RichText data={richText} enableGutter={false} />
+          <div className="text-center w-full text-pretty">
+            <RichText className="text-pretty" data={richText} enableGutter={false} />
           </div>
         )}
 
