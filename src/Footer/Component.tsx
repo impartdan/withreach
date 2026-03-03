@@ -21,7 +21,7 @@ export async function Footer() {
 
   return (
     <footer className="mt-auto  bg-brand-black dark:bg-card text-white">
-      <div className="container py-8 space-y-16">
+      <div className="px-3 md:px-10 py-8 space-y-16 max-w-[2400px] mx-auto">
         <nav className="flex w-full flex-col md:flex-row md:gap-8">
           {navColumns.map((column, columnIndex) => {
             return (
