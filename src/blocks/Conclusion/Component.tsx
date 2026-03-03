@@ -34,13 +34,9 @@ export const ConclusionBlockComponent: React.FC<Props> = ({
                 </div>
               )}
               <div className="flex flex-col gap-2">
-                <p className="text-lg font-sans font-semibold text-brand-black leading-snug">
-                  {stat.title}
-                </p>
+                <p className="type-eyebrow text-brand-black">{stat.title}</p>
                 {stat.description && (
-                  <p className="text-base font-sans text-brand-black leading-relaxed">
-                    {stat.description}
-                  </p>
+                  <p className="type-micro text-brand-black">{stat.description}</p>
                 )}
               </div>
             </div>
@@ -48,7 +44,7 @@ export const ConclusionBlockComponent: React.FC<Props> = ({
         </div>
       )}
 
-      {content && <RichText data={content} enableGutter={false} />}
+      {content && <RichText className="wysiwyg" data={content} enableGutter={false} />}
     </div>
   )
 }

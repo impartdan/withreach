@@ -30,7 +30,7 @@ export const ConsListBlock: React.FC<ConsListBlockProps> = ({
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                  <span className="text-sm md:text-base text-brand-black">{item.text}</span>
+                  <span className="type-micro-b text-brand-black">{item.text}</span>
                 </li>
               ))}
             </ul>

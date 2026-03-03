@@ -12,10 +12,17 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
   content,
   links,
   images,
+  blockSettings,
 }) => {
+  const isOffWhiteBlockBackground =
+    blockSettings?.background === 'color' && blockSettings?.backgroundColor === 'brand-off-white'
+  const insetBackgroundClass = isOffWhiteBlockBackground ? 'bg-brand-white' : 'bg-brand-off-white'
+
   return (
     <div className="container">
-      <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col gap-10 lg:gap-16 lg:flex-row lg:items-center">
+      <div
+        className={`${insetBackgroundClass} rounded-[8px] overflow-hidden px-10 py-10 md:px-16 md:py-16 flex flex-col gap-10 lg:gap-16 lg:flex-row lg:items-center`}
+      >
         {/* Text Content */}
         <RevealOnScroll
           variant="fadeIn"
@@ -37,7 +44,7 @@ export const InsetCopyImageBlock: React.FC<InsetCopyImageBlockProps> = ({
           )}
 
           {Array.isArray(links) && links.length > 0 && (
-            <BlockThemeContext.Provider value="light">
+            <BlockThemeContext.Provider value={blockSettings?.textColor}>
               <div className="flex flex-wrap gap-3">
                 {links.map(({ link }, i) => {
                   return <CMSLink key={i} size="default" {...link} />

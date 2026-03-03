@@ -23,29 +23,27 @@ export const FiftyFiftyBlock: React.FC<FiftyFiftyBlockProps> = ({
         }`}
       >
         {/* Text Content */}
-        <RevealOnScroll variant="fadeIn" className="flex flex-col gap-6 flex-1 items-start text-left">
-          {heading && (
-            <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
-              {heading}
-            </h2>
-          )}
+        <RevealOnScroll variant="fadeIn" className="  flex-1  text-left">
+          <div className="lg:max-w-md mx-auto space-y-6 ">
+            {heading && <h2 className="type-display-md text-balance">{heading}</h2>}
 
-          {content && (
-            <RichText
-              className="text-base md:text-lg text-brand-black/70 leading-[1.5] [&>p]:mb-0"
-              data={content}
-              enableGutter={false}
-              enableProse={false}
-            />
-          )}
+            {content && (
+              <RichText
+                data={content}
+                className="text-pretty"
+                enableGutter={false}
+                enableProse={true}
+              />
+            )}
 
-          {Array.isArray(links) && links.length > 0 && (
-            <div className="flex flex-wrap gap-3 mt-2">
-              {links.map(({ link }, i) => {
-                return <CMSLink key={i} size="default" {...link} />
-              })}
-            </div>
-          )}
+            {Array.isArray(links) && links.length > 0 && (
+              <div className="flex flex-wrap gap-3 mt-2">
+                {links.map(({ link }, i) => {
+                  return <CMSLink key={i} size="default" {...link} />
+                })}
+              </div>
+            )}
+          </div>
         </RevealOnScroll>
 
         {/* Image */}

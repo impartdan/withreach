@@ -30,12 +30,7 @@ export const FaqToCallBlock: React.FC<FaqToCallBlockProps> = ({
           )}
 
           {content && (
-            <RichText
-              className="`wysiwyg`"
-              data={content}
-              enableGutter={false}
-              enableProse={false}
-            />
+            <RichText className="wysiwyg" data={content} enableGutter={false} enableProse={true} />
           )}
 
           {image && typeof image !== 'string' && (

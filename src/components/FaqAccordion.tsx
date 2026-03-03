@@ -38,7 +38,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
         <div key={index} className={itemClassName}>
           <button
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            className="flex items-center justify-between w-full text-left gap-4"
+            className="flex items-start justify-between w-full text-left gap-4"
           >
             <span className={questionClassName}>{item.question}</span>
             <span

@@ -11,27 +11,14 @@ export const IndentedContentBlock: React.FC<IndentedContentBlockProps> = ({
 }) => {
   return (
     <div className="container">
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+      <div className="flex flex-col lg:flex-row gap-12  lg:gap-16 items-center">
         {/* Left: Text Content */}
-        <div className="flex flex-col gap-6 flex-1 items-start">
-          {heading && (
-            <h2 className="text-3xl md:text-4xl lg:text-[44px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
-              {heading}
-            </h2>
-          )}
+        <div className="flex flex-col gap-6 flex-1 items-start max-w-5xl">
+          {heading && <h2 className="type-display-lg ">{heading}</h2>}
 
-          {description && (
-            <p className="text-base md:text-lg text-brand-black/70 leading-[1.5]">{description}</p>
-          )}
+          {description && <p className="type-body [&>p]:mb-0">{description}</p>}
 
-          {content && (
-            <RichText
-              className="text-base text-brand-black leading-[1.6] [&>ul]:list-none [&>ul]:space-y-2 [&_li]:flex [&_li]:gap-2 [&_li]:items-start"
-              data={content}
-              enableGutter={false}
-              enableProse={false}
-            />
-          )}
+          {content && <RichText data={content} enableGutter={false} enableProse={true} />}
         </div>
 
         {/* Right: Logo/Icon Grid */}

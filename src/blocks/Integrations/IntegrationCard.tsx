@@ -4,6 +4,7 @@ import React from 'react'
 import { Link } from 'next-view-transitions'
 import type { Integration } from '@/payload-types'
 import { Media } from '@/components/Media'
+import { buttonVariants } from '@/components/ui/button'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
 import { getCategoryColor } from '@/utilities/getCategoryColor'
 
@@ -29,7 +30,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
       <div className="-mt-[45px] mb-8 flex items-center gap-2">
         {category && (
           <span
-            className={`inline-block px-3 py-1.5 text-xs font-medium rounded-full ${getCategoryColor(category.title)}`}
+            className={`inline-block px-3 py-1.5 text-xs font-medium rounded-full ${getCategoryColor(category.title)} !text-brand-black`}
           >
             {category.title}
           </span>
@@ -64,25 +65,28 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
       )}
 
       {/* Title */}
-      <h3 className="text-2xl font-semibold mb-4 text-gray-900">{integration.title}</h3>
+      <h3 className="type-display-xs text-brand-black mb-4">{integration.title}</h3>
 
       {/* Description */}
-      <p className="text-gray-600 text-base leading-relaxed mb-6 flex-1">
-        {integration.description}
-      </p>
+      <p className="type-micro-b mb-6 flex-1">{integration.description}</p>
 
       {/* Link indicator - only show for featured */}
       {isFeatured && (
         <div className="pt-2 mt-auto">
-          <span className="inline-flex items-center text-base font-medium text-gray-900 group-hover:text-gray-700 transition-colors group">
-            Learn more
+          <span className={buttonVariants({ size: 'clear', variant: 'arrow-invert' })}>
+            Explore
             <svg
-              className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+              className="w-[6px] h-[10px]"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
+              viewBox="0 0 6 10"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <path
+                d="M0.75 8.75L4.89286 4.75L0.75 0.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+              />
             </svg>
           </span>
         </div>
@@ -93,7 +97,10 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
   return (
     <article className="h-full flex flex-col border border-gray-200 rounded-[8px] bg-white hover:border-gray-300 hover:shadow-md transition-all duration-200 group">
       {isFeatured ? (
-        <Link href={`/partners/integrations/${integration.slug}`} className="p-8 flex flex-col flex-1">
+        <Link
+          href={`/partners/integrations/${integration.slug}`}
+          className="p-8 flex flex-col flex-1"
+        >
           {cardContent}
         </Link>
       ) : (

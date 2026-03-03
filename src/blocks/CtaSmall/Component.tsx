@@ -108,17 +108,15 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
                     ))}
 
                   {card.heading && (
-                    <h3 className="text-2xl md:text-3xl font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black">
-                      {card.heading}
-                    </h3>
+                    <h3 className="type-display-md text-brand-black">{card.heading}</h3>
                   )}
 
                   {card.description && (
                     <RichText
-                      className="text-sm md:text-base text-brand-black/70 leading-[1.5] [&>p]:mb-0"
+                      className="[&>p]:mb-0"
                       data={card.description}
                       enableGutter={false}
-                      enableProse={false}
+                      enableProse={true}
                     />
                   )}
 

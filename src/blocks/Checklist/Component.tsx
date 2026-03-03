@@ -36,7 +36,7 @@ export const ChecklistBlock: React.FC<ChecklistBlockProps> = ({ heading, items }
                   {item.title && <h3 className="type-display-xs ">{item.title}</h3>}
                   {item.description && (
                     <RichText
-                      className="type-micro-b  [&>p]:mb-0"
+                      className="type-micro-b [&>p]:mb-0"
                       data={item.description}
                       enableGutter={false}
                       enableProse={false}

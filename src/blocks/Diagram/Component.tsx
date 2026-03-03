@@ -13,15 +13,11 @@ export const DiagramBlock: React.FC<DiagramBlockProps> = ({ heading, content, li
       <div className="bg-brand-off-white rounded-[8px] overflow-hidden px-8 py-12 md:px-16 md:py-16">
         {/* Text Content */}
         <RevealOnScroll variant="fadeIn" className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
-          {heading && (
-            <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light font-mix tracking-[-0.02em] leading-[1.1] text-brand-black mb-4">
-              {heading}
-            </h2>
-          )}
+          {heading && <h2 className="type-display-lg text-brand-black mb-4">{heading}</h2>}
 
           {content && (
             <RichText
-              className="text-base md:text-lg text-brand-black leading-[1.5] [&>p]:mb-0"
+              className="type-intro [&>p]:mb-0"
               data={content}
               enableGutter={false}
               enableProse={false}
