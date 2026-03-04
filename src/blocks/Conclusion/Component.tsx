@@ -34,9 +34,9 @@ export const ConclusionBlockComponent: React.FC<Props> = ({
                 </div>
               )}
               <div className="flex flex-col gap-2">
-                <p className="type-eyebrow text-brand-black">{stat.title}</p>
+                <div className="type-eyebrow text-brand-black">{stat.title}</div>
                 {stat.description && (
-                  <p className="type-micro text-brand-black">{stat.description}</p>
+                  <div className="type-micro text-brand-black">{stat.description}</div>
                 )}
               </div>
             </div>

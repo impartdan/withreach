@@ -80,17 +80,13 @@
     }
   }
 
-  p {
-    + {
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        @apply mt-8;
-      }
-    }
+  p + h1,
+  p + h2,
+  p + h3,
+  p + h4,
+  p + h5,
+  p + h6 {
+    @apply mt-8 md:mt-10;
   }
 
   ul,

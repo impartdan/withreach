@@ -19,14 +19,30 @@ import { ConclusionBlockComponent } from '@/blocks/Conclusion/Component'
 import { ChecklistListComponent } from '@/blocks/ChecklistList/Component'
 import { Media } from '@/components/Media'
 
-import type { ImageBlock as ImageBlockProps, VideoEmbed as VideoEmbedProps, StatsBlock as StatsBlockProps, BlockquoteBlock as BlockquoteBlockProps, ConclusionBlock as ConclusionBlockProps, ChecklistListBlock as ChecklistListBlockProps, Page } from '@/payload-types'
+import type {
+  ImageBlock as ImageBlockProps,
+  VideoEmbed as VideoEmbedProps,
+  StatsBlock as StatsBlockProps,
+  BlockquoteBlock as BlockquoteBlockProps,
+  ConclusionBlock as ConclusionBlockProps,
+  ChecklistListBlock as ChecklistListBlockProps,
+  Page,
+} from '@/payload-types'
 import { cn } from '@/utilities/ui'
 import type { SerializedTypographyStyleNode } from '@/lexical/typography/TypographyStyleNode'
 import { getPagePath } from '@/utilities/getPagePath'
 
 type NodeTypes =
   | DefaultNodeTypes
-  | SerializedBlockNode<CodeBlockProps | ImageBlockProps | VideoEmbedProps | StatsBlockProps | BlockquoteBlockProps | ConclusionBlockProps | ChecklistListBlockProps>
+  | SerializedBlockNode<
+      | CodeBlockProps
+      | ImageBlockProps
+      | VideoEmbedProps
+      | StatsBlockProps
+      | BlockquoteBlockProps
+      | ConclusionBlockProps
+      | ChecklistListBlockProps
+    >
   | SerializedTypographyStyleNode
 
 const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
@@ -78,12 +94,12 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   },
   blocks: {
     imageBlock: ({ node }) => (
-      <div className="col-start-1 col-span-3 my-4">
+      <div className="col-start-1 col-span-3 my-5 md:my-10 lg:my-14">
         <ImageBlockComponent {...node.fields} />
       </div>
     ),
     videoEmbed: ({ node }) => (
-      <div className="col-start-1 col-span-3 my-4">
+      <div className="col-start-1 col-span-3 my-5 md:my-10 lg:my-14">
         <VideoEmbedComponent {...(node.fields as VideoEmbedProps)} />
       </div>
     ),
@@ -91,7 +107,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
       const { stats } = node.fields as StatsBlockProps
       if (!stats || stats.length === 0) return null
       return (
-        <div className="col-start-1 col-span-3 border-t border-brand-gray-light pt-10 pb-10 border-b">
+        <div className="col-start-1 col-span-3 my-5 md:my-10 lg:my-14 border-t border-brand-gray-light pt-10 pb-10 border-b">
           <div className="grid grid-cols-2 gap-x-10 gap-y-8">
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col gap-4">
@@ -106,14 +122,8 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
                   </div>
                 )}
                 <div className="flex flex-col gap-2">
-                  <p className="text-lg font-sans font-semibold text-brand-black leading-snug">
-                    {stat.value}
-                  </p>
-                  {stat.description && (
-                    <p className="text-base font-sans text-brand-black leading-relaxed">
-                      {stat.description}
-                    </p>
-                  )}
+                  <div className="type-eyebrow ">{stat.value}</div>
+                  {stat.description && <div className="type-micro">{stat.description}</div>}
                 </div>
               </div>
             ))}
@@ -121,15 +131,17 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
         </div>
       )
     },
-    code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
+    code: ({ node }) => (
+      <CodeBlock className="col-start-2 my-5 md:my-10 lg:my-14" {...node.fields} />
+    ),
     blockquote: ({ node }) => (
-      <BlockquoteBlockComponent className="col-start-2" {...node.fields} />
+      <BlockquoteBlockComponent className="col-start-2 my-5 md:my-10 lg:my-14" {...node.fields} />
     ),
-    conclusion: ({ node }) => (
-      <ConclusionBlockComponent className="col-start-2" {...node.fields} />
-    ),
+    conclusion: ({ node }) => <ConclusionBlockComponent className="col-start-2" {...node.fields} />,
     checklistList: ({ node }) => (
-      <ChecklistListComponent {...(node.fields as ChecklistListBlockProps)} />
+      <div className="col-start-1 col-span-3 my-5 md:my-10 lg:my-14">
+        <ChecklistListComponent {...(node.fields as ChecklistListBlockProps)} />
+      </div>
     ),
   },
 })
