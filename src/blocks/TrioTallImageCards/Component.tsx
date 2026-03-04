@@ -137,7 +137,7 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
                       />
                     )}
                     {visibleCardLinks.length > 0 && (
-                      <BlockThemeContext.Provider value={linkTheme}>
+                      <BlockThemeContext.Provider value={isFeaturedCard ? 'light' : linkTheme}>
                         <div className="relative z-20 mt-auto flex flex-wrap gap-3">
                           {visibleCardLinks.map((link, i) => (
                             <CMSLink key={i} appearance="arrow" size="default" {...link} />
