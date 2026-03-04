@@ -95,7 +95,7 @@ export const CtaSmallBlock: React.FC<CtaSmallBlockProps> = ({ cards }) => {
                 {/* content */}
                 <div
                   className={cn(
-                    'relative z-10 p-8 md:p-10 lg:p-12 flex flex-col justify-center gap-4 flex-1',
+                    'relative z-10 p-8 md:p-10 lg:p-12 flex flex-col justify-center gap-4 flex-1 text-pretty',
                     isLeftAligned
                       ? 'items-start text-left w-full lg:max-w-[50%]'
                       : 'items-center text-center',
