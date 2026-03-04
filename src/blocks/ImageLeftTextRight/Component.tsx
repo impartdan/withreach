@@ -15,7 +15,7 @@ export const ImageLeftTextRightBlock: React.FC<ImageLeftTextRightBlockProps> = (
         {heading && (
           <RevealOnScroll variant="fadeIn">
             <h2
-              className="type-display-lg max-w-2xl [&_span]:block [&_span]:text-brand-olive  mb-10 md:mb-14"
+              className="type-display-md max-w-2xl [&_span]:block [&_span]:text-brand-olive  mb-10 md:mb-14"
               dangerouslySetInnerHTML={{ __html: heading }}
             />
           </RevealOnScroll>
