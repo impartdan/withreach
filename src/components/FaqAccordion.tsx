@@ -59,13 +59,13 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
             <div
               id={`faq-accordion-panel-${index}`}
               className={cn(
-                'grid overflow-hidden transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
+                'grid overflow-hidden transition-[grid-template-rows,opacity] duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)]',
                 openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0',
               )}
             >
               <div
                 className={cn(
-                  'overflow-hidden transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
+                  'overflow-hidden transition-[transform,opacity] duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)]',
                   openIndex === index ? 'translate-y-0 opacity-100' : '-translate-y-1 opacity-0',
                   answerWrapperClassName,
                 )}

@@ -144,7 +144,7 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
         variant="posts"
         initialDocs={posts.docs}
         initialTotalPages={posts.totalPages}
-        initialPage={posts.page!}
+        initialPage={posts.page ?? 1}
         initialCategory={categorySlug}
         categories={categories}
         basePath="/news-insights"

@@ -97,6 +97,7 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
 
   const logo = typeof integration.logo === 'object' ? integration.logo : null
   const icon = typeof integration.icon === 'object' ? integration.icon : null
+  const integrationMedia = icon ?? logo
   const isDetailed = integration.layoutType === 'detailed'
 
   if (isDetailed) {
@@ -119,18 +120,18 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
                   />
                 </div>
                 <span className="text-brand-black text-2xl">+</span>
-                {(icon || logo) && (
+                {integrationMedia && (
                   <div className="size-20 rounded-[10px] bg-white flex items-center justify-center overflow-hidden shadow-[0px_8px_12.6px_rgba(0,0,0,0.04),0px_10px_30px_rgba(0,0,0,0.05),0px_70.6px_56.5px_rgba(0,0,0,0.07)]">
-                    {(icon || logo)!.mimeType === 'image/svg+xml' ? (
+                    {integrationMedia.mimeType === 'image/svg+xml' ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
-                        src={getMediaUrl((icon || logo)!.url, (icon || logo)!.updatedAt)}
-                        alt={(icon || logo)!.alt || integration.title}
+                        src={getMediaUrl(integrationMedia.url, integrationMedia.updatedAt)}
+                        alt={integrationMedia.alt || integration.title}
                         className="w-full h-full object-cover"
                       />
                     ) : (
                       <Media
-                        resource={(icon || logo)!}
+                        resource={integrationMedia}
                         className="w-full h-full"
                         pictureClassName="w-full h-full"
                         imgClassName="w-full h-full object-cover"
@@ -176,17 +177,17 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
       {/* Main Content Section */}
       <div className="container mx-auto px-4 max-w-7xl py-16 md:py-24">
         {/* Icon/Logo - Small size */}
-        {(icon || logo) && (
+        {integrationMedia && (
           <div className="mb-8">
-            {(icon || logo)!.mimeType === 'image/svg+xml' ? (
+            {integrationMedia.mimeType === 'image/svg+xml' ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
-                src={getMediaUrl((icon || logo)!.url, (icon || logo)!.updatedAt)}
-                alt={(icon || logo)!.alt || integration.title}
+                src={getMediaUrl(integrationMedia.url, integrationMedia.updatedAt)}
+                alt={integrationMedia.alt || integration.title}
                 className="h-16 w-auto object-contain"
               />
             ) : (
-              <Media resource={(icon || logo)!} imgClassName="h-16 w-auto object-contain" />
+              <Media resource={integrationMedia} imgClassName="h-16 w-auto object-contain" />
             )}
           </div>
         )}

@@ -2,7 +2,6 @@ import configPromise from '@payload-config'
 import { getPayload, type Payload } from 'payload'
 
 declare global {
-  // eslint-disable-next-line no-var
   var __withreachPayloadPromise: Promise<Payload> | undefined
 }
 

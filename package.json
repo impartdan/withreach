@@ -4,6 +4,7 @@
   "description": "With Reach - Unlock Global Growth with Reach",
   "license": "MIT",
   "type": "module",
+  "packageManager": "pnpm@10.28.0",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
     "postbuild": "next-sitemap --config next-sitemap.config.cjs",
@@ -94,7 +95,7 @@
     "vitest": "3.2.3"
   },
   "engines": {
-    "node": "^18.20.2 || >=20.9.0",
+    "node": "^18.20.2 || ^20.9.0",
     "pnpm": "^9 || ^10"
   },
   "pnpm": {

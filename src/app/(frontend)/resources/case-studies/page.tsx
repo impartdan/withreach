@@ -150,7 +150,7 @@ export default async function CaseStudiesArchivePage({ searchParams: searchParam
         variant="case-studies"
         initialDocs={caseStudies.docs}
         initialTotalPages={caseStudies.totalPages}
-        initialPage={caseStudies.page!}
+        initialPage={caseStudies.page ?? 1}
         initialCategory={categorySlug}
         categories={categories}
         basePath={BASE_PATH}
