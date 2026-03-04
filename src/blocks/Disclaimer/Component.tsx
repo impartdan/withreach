@@ -9,7 +9,7 @@ export const DisclaimerBlock: React.FC<DisclaimerBlockProps> = ({ label, content
         {label && <p className="type-body shrink-0 md:w-[200px]">{label}</p>}
         {content && (
           <RichText
-            className="type-micro [&>p]:mb-0 flex-1"
+            className="type-micro [&>p]:type-micro [&>p]:mb-0 flex-1"
             data={content}
             enableGutter={false}
             enableProse={false}

@@ -34,7 +34,7 @@ export const TextImageFeatureBlock: React.FC<TextImageFeatureBlockProps> = ({
 
           {content && (
             <RichText
-              className="type-intro max-w-md [&>p]:mb-0"
+              className="type-intro [&>p]:type-intro max-w-md [&>p]:mb-0"
               data={content}
               enableGutter={false}
               enableProse={false}

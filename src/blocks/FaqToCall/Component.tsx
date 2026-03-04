@@ -48,7 +48,7 @@ export const FaqToCallBlock: React.FC<FaqToCallBlockProps> = ({
             renderAnswer={(item) =>
               isEditorState(item.answer) ? (
                 <RichText
-                  className="wysiwyg type-micro-b"
+                  className="wysiwyg type-micro-b [&>p]:type-micro-b"
                   data={item.answer}
                   enableGutter={false}
                   enableProse={false}

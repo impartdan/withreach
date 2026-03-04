@@ -41,7 +41,7 @@ export const ConsListBlock: React.FC<ConsListBlockProps> = ({
         <div className="bg-white border border-border rounded-[8px] p-8 md:p-10 flex items-center justify-center text-center">
           {solutionText && (
             <RichText
-              className="type-display-sm [&>p]:mb-0"
+              className="type-display-sm [&>p]:type-display-sm [&>p]:mb-0"
               data={solutionText}
               enableGutter={false}
               enableProse={false}

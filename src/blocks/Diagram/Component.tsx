@@ -26,7 +26,7 @@ export const DiagramBlock: React.FC<DiagramBlockProps> = ({
 
           {content && (
             <RichText
-              className="type-intro [&>p]:mb-0"
+              className="type-intro [&>p]:type-intro [&>p]:mb-0"
               data={content}
               enableGutter={false}
               enableProse={false}

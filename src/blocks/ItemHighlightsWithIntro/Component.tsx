@@ -51,7 +51,7 @@ export const ItemHighlightsWithIntroBlock: React.FC<ItemHighlightsWithIntroBlock
               {item.title && <h3 className="type-eyebrow">{item.title}</h3>}
               {item.description && (
                 <RichText
-                  className="type-micro"
+                  className="type-micro [&>p]:type-micro"
                   data={item.description}
                   enableGutter={false}
                   enableProse={false}

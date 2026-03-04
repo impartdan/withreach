@@ -31,7 +31,7 @@ export const InsetDualImageBlock: React.FC<InsetDualImageBlockProps> = ({
 
           {content && (
             <RichText
-              className="type-intro"
+              className="type-intro [&>p]:type-intro"
               data={content}
               enableGutter={false}
               enableProse={true}

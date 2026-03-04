@@ -29,7 +29,7 @@ export const SimpleContentBlock: React.FC<SimpleContentBlockProps> = ({
                   {item.title && <h3 className="type-display-xs mb-2">{item.title}</h3>}
                   {item.description && (
                     <RichText
-                      className="type-body"
+                      className="type-body [&>p]:type-body"
                       data={item.description}
                       enableGutter={false}
                       enableProse={false}

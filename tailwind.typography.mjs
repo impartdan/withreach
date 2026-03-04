@@ -101,12 +101,14 @@ module.exports = plugin(function ({ addUtilities }) {
         'line-height': '1.3',
         'font-weight': '500',
         'font-family': seasonSans,
+        'letter-spacing': '0.01875em',
       },
       '.type-body': {
         'font-size': '16px',
         'line-height': '1.3',
         'font-weight': '500',
         'font-family': seasonSans,
+        'letter-spacing': '0.01875em',
         '@screen lg': {
           'font-size': '18px',
         },
