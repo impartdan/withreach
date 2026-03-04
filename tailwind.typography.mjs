@@ -83,6 +83,7 @@ module.exports = plugin(function ({ addUtilities }) {
         'line-height': '1.3',
         'font-weight': '400',
         'font-family': seasonSans,
+        'letter-spacing': '0.01875em',
         '@screen md': {
           'font-size': '22px',
         },
