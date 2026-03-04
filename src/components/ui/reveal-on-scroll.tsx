@@ -37,6 +37,7 @@ const variants: Record<string, Variants> = {
 
 interface RevealOnScrollProps extends Omit<HTMLMotionProps<'div'>, 'variants'> {
   variant?: keyof typeof variants
+  mobileVariant?: keyof typeof variants
   delay?: number
   duration?: number
   ease?: Transition['ease']
@@ -47,6 +48,7 @@ interface RevealOnScrollProps extends Omit<HTMLMotionProps<'div'>, 'variants'> {
 export function RevealOnScroll({
   children,
   variant = 'fadeIn',
+  mobileVariant,
   delay = 0,
   duration = 0.5,
   ease = 'easeOut',
@@ -73,13 +75,14 @@ export function RevealOnScroll({
   // On mobile: 0.1 (10% visible) - triggers earlier
   // On desktop: 0.2 (20% visible) - original behavior
   const viewportAmount = amount !== undefined ? amount : (isMobile ? 0.1 : 0.2)
+  const effectiveVariant = isMobile && mobileVariant ? mobileVariant : variant
 
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once, amount: viewportAmount, margin: '0px 0px -50px 0px' }}
-      variants={variants[variant]}
+      variants={variants[effectiveVariant]}
       transition={{
         duration,
         delay,

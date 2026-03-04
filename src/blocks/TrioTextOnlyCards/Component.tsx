@@ -15,6 +15,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
   cards,
 }) => {
   const hasHeader = introduction || (Array.isArray(links) && links.length > 0) || image
+  const usesScrollableCards = Array.isArray(cards) && cards.length > 1
 
   return (
     <div className="container">
@@ -110,6 +111,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
               <RevealOnScroll
                 key={index}
                 variant="slideUp"
+                mobileVariant={usesScrollableCards ? 'fadeIn' : undefined}
                 delay={index * 0.05}
                 className="w-full shrink-0 snap-center md:w-auto"
               >
