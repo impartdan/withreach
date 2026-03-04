@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 import { PayloadRedirects } from '@/components/PayloadRedirects'
-import configPromise from '@payload-config'
-import { getPayload, type RequiredDataFromCollectionSlug, type Where } from 'payload'
+import { getPayloadClient } from '@/utilities/getPayloadClient'
+import { type RequiredDataFromCollectionSlug, type Where } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 
@@ -18,7 +18,7 @@ import { LivePreviewListener } from '@/components/LivePreviewListener'
  */
 const queryPageByPath = cache(async ({ pathSegments }: { pathSegments: string[] }) => {
   const { isEnabled: draft } = await draftMode()
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   if (pathSegments.length === 0) {
     pathSegments = ['home']
@@ -74,7 +74,7 @@ function getPathSegmentsFromPage(
 }
 
 export async function generateStaticParams() {
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
   const pages = await payload.find({
     collection: 'pages',
     draft: false,

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
-import configPromise from '@payload-config'
-import { getPayload, type RequiredDataFromCollectionSlug, type Where } from 'payload'
+import { getPayloadClient } from '@/utilities/getPayloadClient'
+import { type RequiredDataFromCollectionSlug, type Where } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import type { Category } from '@/payload-types'
@@ -19,7 +19,7 @@ export const dynamic = 'force-dynamic'
 
 const queryPageByPath = cache(async ({ pathSegments }: { pathSegments: string[] }) => {
   const { isEnabled: draft } = await draftMode()
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   let parentId: number | null = null
   let page: RequiredDataFromCollectionSlug<'pages'> | null = null
@@ -64,7 +64,7 @@ export default async function NewsArchivePage({ searchParams: searchParamsPromis
   const categorySlug = searchParams.category || null
   const pageNumber = Math.max(1, parseInt(searchParams.page || '1', 10) || 1)
 
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   const [page, newsSettings, allPostCategories, posts] = await Promise.all([
     queryPageByPath({ pathSegments: ['news-insights'] }),

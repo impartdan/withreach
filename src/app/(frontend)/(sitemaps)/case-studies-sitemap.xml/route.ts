@@ -1,12 +1,11 @@
 import { getServerSideSitemap } from 'next-sitemap'
-import { getPayload } from 'payload'
-import config from '@payload-config'
+import { getPayloadClient } from '@/utilities/getPayloadClient'
 import { unstable_cache } from 'next/cache'
 import { getServerSideURL } from '@/utilities/getURL'
 
 const getCaseStudiesSitemap = unstable_cache(
   async () => {
-    const payload = await getPayload({ config })
+    const payload = await getPayloadClient()
     const SITE_URL = getServerSideURL()
 
     const results = await payload.find({

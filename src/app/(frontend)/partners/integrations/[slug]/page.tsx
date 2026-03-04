@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
+import { getPayloadClient } from '@/utilities/getPayloadClient'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import { notFound, redirect } from 'next/navigation'
@@ -18,7 +17,7 @@ import IntegrationPageClient from './page.client'
 import Image from 'next/image'
 
 export async function generateStaticParams() {
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
   const integrations = await payload.find({
     collection: 'integrations',
     draft: false,
@@ -259,7 +258,7 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
 const queryIntegrationBySlug = cache(async ({ slug }: { slug: string }) => {
   const { isEnabled: draft } = await draftMode()
 
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   const result = await payload.find({
     collection: 'integrations',
@@ -278,7 +277,7 @@ const queryIntegrationBySlug = cache(async ({ slug }: { slug: string }) => {
 })
 
 async function getFeaturedIntegrationIds(): Promise<(string | number)[]> {
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   const pages = await payload.find({
     collection: 'pages',

@@ -1,7 +1,6 @@
 import type { Integration, IntegrationsBlock as IntegrationsBlockProps } from '@/payload-types'
 
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
+import { getPayloadClient } from '@/utilities/getPayloadClient'
 import React from 'react'
 import { IntegrationsClient } from './Component.client'
 
@@ -12,7 +11,7 @@ export const IntegrationsBlock: React.FC<
 > = async (props) => {
   const { id, title, selectedIntegrations, pinnedIntegrations } = props
 
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   // Get all integrations for search
   const allIntegrationsResult = await payload.find({

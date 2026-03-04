@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 
 import { PayloadRedirects } from '@/components/PayloadRedirects'
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
+import { getPayloadClient } from '@/utilities/getPayloadClient'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import RichText from '@/components/RichText'
@@ -19,7 +18,7 @@ import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { RelatedCaseStudies } from './RelatedCaseStudies'
 
 export async function generateStaticParams() {
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
   const caseStudies = await payload.find({
     collection: 'case-studies',
     draft: false,
@@ -49,7 +48,7 @@ export default async function CaseStudyPage({ params: paramsPromise }: Args) {
 
   if (!caseStudy) return <PayloadRedirects url={url} />
 
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
   const caseStudiesSettings = (await payload.findGlobal({
     slug: 'case-studies-settings',
   })) as CaseStudiesSetting
@@ -239,7 +238,7 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
 const queryCaseStudyBySlug = cache(async ({ slug }: { slug: string }) => {
   const { isEnabled: draft } = await draftMode()
 
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   const result = await payload.find({
     collection: 'case-studies',
@@ -264,7 +263,7 @@ async function getRelatedCaseStudies({
   caseStudy: CaseStudy
   limit: number
 }) {
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   const relatedIds =
     caseStudy.relatedCaseStudies?.map((r) => (typeof r === 'object' ? r.id : r)).filter(Boolean) ??

@@ -3,8 +3,7 @@ import type {
   FeaturedPartnersBlock as FeaturedPartnersBlockProps,
 } from '@/payload-types'
 
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
+import { getPayloadClient } from '@/utilities/getPayloadClient'
 import React from 'react'
 import { IntegrationCard } from '@/blocks/Integrations/IntegrationCard'
 
@@ -19,7 +18,7 @@ export const FeaturedPartnersBlock: React.FC<
     return null
   }
 
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   const selectedIds = selectedIntegrations
     .map((integration) => {

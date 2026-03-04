@@ -1,10 +1,9 @@
 'use server'
 
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
+import { getPayloadClient } from '@/utilities/getPayloadClient'
 
 export async function fetchPosts(category: string | null, page: number) {
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   const result = await payload.find({
     collection: 'posts',

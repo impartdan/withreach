@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 
 import { PayloadRedirects } from '@/components/PayloadRedirects'
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
+import { getPayloadClient } from '@/utilities/getPayloadClient'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import RichText from '@/components/RichText'
@@ -18,7 +17,7 @@ import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { RelatedPostsSidebar } from './RelatedPostsSidebar'
 
 export async function generateStaticParams() {
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
   const posts = await payload.find({
     collection: 'posts',
     draft: false,
@@ -52,7 +51,7 @@ export default async function Post({ params: paramsPromise }: Args) {
 
   if (!post) return <PayloadRedirects url={url} />
 
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
   const newsSettings = (await payload.findGlobal({
     slug: 'news-settings',
   })) as NewsSetting
@@ -130,7 +129,7 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
 const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
   const { isEnabled: draft } = await draftMode()
 
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   const result = await payload.find({
     collection: 'posts',
@@ -149,7 +148,7 @@ const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
 })
 
 async function getRelatedPosts({ post, limit }: { post: Post; limit: number }) {
-  const payload = await getPayload({ config: configPromise })
+  const payload = await getPayloadClient()
 
   const relatedIds =
     post.relatedPosts?.map((r) => (typeof r === 'object' ? r.id : r)).filter(Boolean) ?? []
