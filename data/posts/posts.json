@@ -203,7 +203,7 @@
     },
     "authors": [],
     "categories": [
-      "Tarrifs",
+      "Tariffs",
       "Compliance",
       "United States",
       "Reach blog"
@@ -962,7 +962,7 @@
     },
     "authors": [],
     "categories": [
-      "Tarrifs",
+      "Tariffs",
       "United States",
       "Merchant of Record",
       "Reach blog"
@@ -1813,7 +1813,7 @@
     },
     "authors": [],
     "categories": [
-      "Tarrifs",
+      "Tariffs",
       "Compliance",
       "United States",
       "Reach blog"
@@ -3438,7 +3438,7 @@
     "authors": [],
     "categories": [
       "Tax",
-      "Tarrifs",
+      "Tariffs",
       "Reach blog"
     ],
     "content": {
@@ -4122,5 +4122,2190 @@
       "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-819f-868f-e50c3e1b43ea/11c8f5b7-29d2-43ef-8b4d-1d31981d0356.jpg"
     },
     "sourceUrl": "https://www.withreach.com/resources/reach-blog/why-your-business-needs-a-payment-strategy"
+  },
+  {
+    "type": "post",
+    "title": "What is a Merchant of Record?",
+    "slug": "what-is-a-merchant-of-record",
+    "excerpt": "Learn about how a Merchant of Record leverages local acquiring to increase conversions and reduce processing fees, and ensure you remain compliant as you scale into international markets.\r\n",
+    "publishedAt": "2022-10-12T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8165-ba54-fd410969b4d6/d3de52aa-12fd-4d4f-a7ef-3a9e2cf9fcbc.webp",
+      "alt": "What is a Merchant of Record?",
+      "filename": "d3de52aa-12fd-4d4f-a7ef-3a9e2cf9fcbc.webp"
+    },
+    "authors": [],
+    "categories": [
+      "Merchant of Record",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "The vast potential of international selling presents businesses with unprecedented growth opportunities, as cross-border ecommerce surged by a remarkable 344% since 2016, culminating in a staggering $1.2 trillion in 2022. Yet, capitalizing on this potential remains a daunting task. When venturing across borders, the complexities and liabilities grow exponentially with each new geography: from navigating evolving duties, taxes, government and banking regulations specific to each market. This intricate landscape often results in global expansion becoming a slow and costly endeavor, leading brands to forego potential revenue and miss out on valuable growth prospects."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "However, there is an alternative for ecommerce brands seeking international expansion – the Merchant of Record. This specialized model offers a transformative remedy to the overwhelming operational challenges that business owners encounter when tapping into overseas markets."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Let’s dive into the Merchant of Record concept and explore the benefits it can offer your business."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "What is a Merchant of Record?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "A merchant of record (MoR) is the company that sells products or services to the final customer, and the legal entity those customers pay when making a purchase. The MoR takes on the financial responsibility and liability of payments, billing, sales, taxes, refunds and chargebacks, and more."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In the traditional business model, many brands unknowingly act as their own MoR. They independently handle all aspects of their sales, taxes, and refunds. However, as a business owner seeking expansion, you have the option to continue operating as your own MoR. Yet, each new market you enter will introduce a fresh set of financial and legal complexities that might impede your business's growth."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "When selling globally, in order to achieve the highest approval rates , lowest fees, and best customer experience, processing locally is the way to go (local acquiring vs. crossborder. In order for a company to process locally, they must set up local operations, a bank account, and a legal entity. The cost and complexity of setting up a foreign subsidiary is typically too large for most companies to overcome."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Alternatively, a third-party solution can act as an MoR on your behalf."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "What is a 3rd Party Merchant of Record?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Many businesses operate as their own Merchant of Record, organizing the payment infrastructure and undertaking all the liability and processes involved in receiving or refunding a payment. This is standard for companies selling into their domestic market where they have a local establishment set up, existing relationships with local banks and understand the rules and regulations. But for international markets, businesses are starting to utilize the 3rd party Merchant of Record Model."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "3rd party Merchant of Record services acts as an intermediary between a business and its customers, taking responsibility for the payment processes and liabilities on behalf of the business. Ultimately they function as a commercial agent, with the customer paying the Merchant of Record during their purchase and the merchant of record then paying the business."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Put simply, a 3rd Party MoR handles how you, the merchant, get paid for your services/products when selling globally. Its roles include (but aren’t limited to):"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "Handling international payments",
+            "Maintaining merchant accounts",
+            "Being liable for transactions",
+            "Collecting and remitting sales taxes (including local taxes, if applicable)",
+            "Providing customer support for questions on the payment"
+          ]
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Using a third-party MoR allows you to focus on other parts of your business, like creating great products and developing marketing to drive awareness to overseas customers."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "How does 3rd Party Merchant of Record work with Reach?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Partnering with a 3rd party Merchant of Record doesn’t change much as far as your customers are concerned. They still visit your website to buy the goods and process their payment as usual. However, Reach will dynamically present the pricing in the local currency and allow the buyers to pay with their preferred payment methods based on their location.\nTransactions are routed through our vast global payments infrastructure already built and maintained by Reach. Reach takes on the liability for all payments and sales tax compliance associated with those transactions. Reach then pays the amount due to you once the fee have been deducted."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "What are the benefits of utilizing Reach to be the Merchant of Record?"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "Increase conversion by offering customers the ability to pay in local currency and preferred payment method",
+            "Reduce processing fees by utilizing Reach’s global payment infrastructure, unlocking local processing power.",
+            "Offload all compliance and liability for Tax, PCI, & local regulations",
+            "Easily Expand quickly to new markets with confidence",
+            "No requirement to set up a legal entity outside of your domestic market.",
+            "Reduce complexity - Manage currency, payment methods, tax, & compliance all through a single partner."
+          ]
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "What type of business can Reach provide this solution for? Reach can work with all types of companies including marketplaces, Travel, SaaS, and companies selling physical and/or digital goods. Learn more about our offerings for each service model in our Customers page.",
+            "Do I still need to contract with payment providers like Stripe or Paypal? No additional contracts are required. With one contract and integration, Reach can enable processing in 130+ currencies, 100+ payment methods, and local acquiring in 40 markets. You may choose to have a direct relationship with other payment providers in your domestic markets or other countries.",
+            "Do you require the customer to go through a Reach hosted checkout? We offer several ways to integrate to Reach which enable your business to maintain complete control of your checkout, UX, data, and customer relationship. No customer redirect to Reach is required.",
+            "If Reach is the MoR, what does this do to my relationship with the customer? Reach only steps in to take liability for the transaction. You will still be in charge of how you communicate and market to your customers.",
+            "What will the customer see on their credit card statement? As the Merchant of Record, Reach will be included on the card statement. We offer dynamic descriptors so you can include your company name or website on the statement. For example: RCH*www.withreach.com.",
+            "What is the difference between an MOR provider and a payment provider like Stripe, PayPal, or Adyen? A payment service provider refers to a company that securely processes payments on your behalf but doesn't take on any financial risk or handle the other complex tasks mentioned above. For these providers, you will still need to be the Merchant of Record. This can cause issues when selling into global markets as these providers will require you to have a foreign subsidiary in each market you want to access local processing.",
+            "Will I need to register for sales tax in markets outside my domestic market? No. As the Merchant of Record, Reach can take on all tax liability and will file and remit all required sales tax under our Tax IDs.",
+            "How does Reach ensure my business is compliant with global and cross-border taxes? By leveraging our Merchant of Record model, our global tax experts manage the entire process of complying with the thousands of rules, regulations, and complications that global tax management entails. Our comprehensive platform calculates, files, and remits all VAT, GST, and sales taxes on your behalf, and assumes all risks and liabilities associated with global tax compliance."
+          ]
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Want to learn more about how Reach can operate as your Merchant of Record? Check out our"
+        },
+        {
+          "blockType": "paragraph",
+          "text": ", or"
+        }
+      ]
+    },
+    "meta": {
+      "title": "What is a Merchant of Record?",
+      "description": "Learn about how a Merchant of Record leverages local acquiring to increase conversions and reduce processing fees, and ensure you remain compliant as you scale into international markets.\r\n",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8165-ba54-fd410969b4d6/d3de52aa-12fd-4d4f-a7ef-3a9e2cf9fcbc.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/what-is-a-merchant-of-record"
+  },
+  {
+    "type": "post",
+    "title": "Germany's High Return Rate: Catalogs, Invoicing, and BuyNowPayLater",
+    "slug": "germanys-high-return-rate-catalogs-invoicing-and-buynowpaylater",
+    "excerpt": "Every country has unique purchasing behaviors, and often merchants have no clue what they are or how to fulfill their consumers’ needs. With the competition so high in every market, it’s essential to know how to optimize your ecommerce flow so you can mak",
+    "publishedAt": "2022-11-02T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8144-a800-fe8032ce7494/afbcfbef-0370-4b08-9f60-89fc3de4adec.jpeg",
+      "alt": "Germany's High Return Rate: Catalogs, Invoicing, and BuyNowPayLater",
+      "filename": "afbcfbef-0370-4b08-9f60-89fc3de4adec.jpeg"
+    },
+    "authors": [],
+    "categories": [
+      "Localized Customer Experience",
+      "Germany",
+      "Alternative Payment Methods",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Every country has unique purchasing behaviors, and often merchants have no clue what they are or how to fulfill their consumers’ needs. With the competition so high in every market, it’s essential to know how to optimize your ecommerce flow so you can make the sale."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Germany is one of these unique markets that needs more nuanced attention, and it’s often overlooked because of its integration with the Euro."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "I have backpacked through dozens of German cities over the years and have close friends from all over the country. I’ve learned, first-hand, some of their specific and unusual (to me) buying behaviors. On my first trip to the country, I went to a major grocery store chain in Wiesbaden, and they didn’t accept foreign credit cards – only local German credit/debit cards or cash."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "As an American who has had credit card commercial jingles ingrained in my brain from constant advertisements, it was hard to see how everyone didn’t have an average of 3-4 credit cards in their wallet like Americans (how naïve, right?). That’s when I started asking questions to my German friends to learn about their cultural differences, realizing I was missing a crucial element of the shopping experience. As I later jumped into the world of ecommerce, I continued to dig into this behavior and finally got to the root cause described above."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Why are Germans so Debt-Averse?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Merchants who are new to the market might be confused by the high return rates and particular payment methods in the region. It’s interesting to dive into history and see how the past has brought us to the present."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "After WWI, Germany was forced to disband much of its military and pay reparations for the destruction of Europe in the treaty of Versailles. The country was in bad shape by the end of the war, and its economy quickly spiraled into a severe depression. The government started to print money, and as a result, it caused hyperinflation of the then-German currency and further economic downturn."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The general population's frustration about the treaty, along with the depression, was a perfect combination for the rise of a new right-wing leader who would eventually start the second world war."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "The Introduction of Catalog Culture"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "German retailers and manufacturers were desperate to sell their inventory to an increasingly poorer population, so they had to be creative when converting sales - thus creating the catalog culture."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Retailers would offer their goods in catalogs, where everyday consumers could easily browse different products and order them from the comfort of their homes - something that’s since grown into the modern ecommerce structure."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Not only were consumers able to have the products delivered to their homes, but they were also able to try them out for a couple of days and decide if they wanted to keep them or return them (at absolutely no additional fees and no up-front cost)."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Essentially the retailers were floating consumers free products with no risk of return friction and only taking payment once customers were happy with the product."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Adding to the catalog culture was a significant fear of leveraging lines of credit from banks, which had significantly failed the country during the recession and period of hyperinflation. People wanted to use debit-based payment methods if they paid for anything (meaning they actually had the cash on hand), and now the catalog culture was incentivizing individuals to work on an invoicing method where they didn’t have to pay anything upfront."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "How Germans Choose to Shop Today"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Fast forward to the ecommerce boom over the last couple of decades, and you’ll likely find that Germany probably has the highest return rate of all the countries you sell to. The catalog culture remains prominent in their societies' purchasing behaviors for over a century and a few generations. With the Millennial generations and younger, we are seeing higher adoption of credit cards and Buy Now Pay Later solutions. However, most consumers still prefer debit-based bank transfers or invoicing options when purchasing from online retailers."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Don’t offer free returns to Germany? Not offering direct debit or invoicing payment methods? You’re wasting your marketing dollars and are killing conversion rates because you don’t understand your audience."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The takeaway is understanding cultural nuances from a global perspective, not just your home country's expectations. The beauty of the internet is that your business is global from the first day your website launches. But the reality is that even if you are marketing and shipping globally, you may miss some critical differences in purchasing behaviors across countries/regions around the world and, as a result, are not optimizing your conversions."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Germany is just one of the dozens of examples, but the key to global expansion is picking partners that will help you learn about these behaviors and set you up for success. Choose Reach, and we can make sure your payments are optimized for success in all of the unique global markets. Book a demo today to see how our Merchant of Record and Local Acquiring solution can boost your global sales."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Germany's High Return Rate: Catalogs, Invoicing, and BuyNowPayLater",
+      "description": "Every country has unique purchasing behaviors, and often merchants have no clue what they are or how to fulfill their consumers’ needs. With the competition so high in every market, it’s essential to know how to optimize your ecommerce flow so you can mak",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8144-a800-fe8032ce7494/afbcfbef-0370-4b08-9f60-89fc3de4adec.jpeg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/germanys-high-return-rate-catalogs-invoicing-and-buynowpaylater"
+  },
+  {
+    "type": "post",
+    "title": "The True Cost of Processing Cross-border",
+    "slug": "the-true-cost-of-processing-cross-border",
+    "excerpt": "Traditional cross-border processing is expensive and considered high risk. Learn more about how to lower costs and reduce fraudulent transactions.\r\n",
+    "publishedAt": "2022-12-14T05:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8181-8529-d7f9d3d22bd8/c56e78fd-415f-42af-a0eb-0a7c36cbe9cc.jpg",
+      "alt": "The True Cost of Processing Cross-border",
+      "filename": "c56e78fd-415f-42af-a0eb-0a7c36cbe9cc.jpg"
+    },
+    "authors": [],
+    "categories": [
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "As domestic sales slump, businesses are looking more than ever at expanding their footprints outside of their primary markets. Consumer spending and overall transaction volume are down, and one of the most attractive options to stabilize revenue and protect bottom lines is by expanding into new markets. But going cross-border requires more than launching an online storefront. You must consider how you're going to manage your cross-border payments."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The two major strategies for structuring international payments are to either simply process transactions cross-border or to process locally. Local processing is considered the best approach to international payments by many. Read more on this in our blog processing locally vs. cross-border. However, the barriers to achieving this type of processing can often be too significant of a commitment for small businesses. This has forced the vast majority of companies to process cross-border transactions without considering the implications and costs of doing so."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Like many, you may be thinking that the impacts of cross-border processing can't be that bad and that maybe they're even just a necessary evil of conducting international business. The truth is, these costs and impacts are much more than you might perceive. From lost conversions to a multitude of fees, your bottom line is taking a bigger hit than you might realize."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "First, you must understand that traditional cross-border payments are processed in the merchant's jurisdiction. This results in the transaction being processed through an issuing bank and an acquiring bank in two countries. But that isn't the only multiplier these transactions experience. As this isn't a streamlined process, you also have to consider additional parties involved in the movement of funds. These include payment gateways, corresponding banks & acquirers, and card networks. All these touchpoints impact the fees and barriers of your cross-border payments."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "For instance, as banks and card networks view cross-border transactions as higher risk, your cross-border transactions are likely to experience a lower approval rate than domestic. Even though a transaction may be 100% legitimate, these parties may not be willing to take on that risk and might decline that payment. These false declines mean that you not only lose out on that transaction, you’ll probably lose that consumer, too, as they’re likely to take their business elsewhere."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "False declines aren’t your only worry. You will also have to deal with the effects of FX. Besides having to guess the actual cost of a transaction due to the flux of foreign currency, your buyers will get hit with additional cross-border fees. Banks will apply an FX assessment fee on every cross-border transaction, ranging between 2% and 5%. These surprise fees are a key ingredient to what is known in the industry as “cart abandonment,” which is an action your buyers might take when they experience added sticker shock."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "You also can’t forget about card networks. They will also impact the fees associated with your cross-border payments. Due to the additional touch points involved in processing funds internationally and ever-evolving regulation & compliance controls, card networks will apply further assessment & interchange fees to your international transactions. Assessment fees typically range between 1.45% - 2% and are tacked on to every transaction. Interchange fees are different as they vary widely based on card type, how the card is processed, where it was issued, and more. Due to the wide range of variables, interchange fees can add up quickly and steadily eat away at your international profits. Explore how these fees add up in the example below."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Below is a breakdown of the interchange and assessment fees charged by Visa/MC on cross-border transactions. If you are currently charged IC+ by your current payment provider, all of these fees will be passed on to you. If you are on fixed pricing with your payment provider, ex. 2.9% + $0.30, they will tack on an additional 1% cross-border fee to cover the additional fees they are charged by Visa/MC."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Example: Cross-border passthrough interchange & assessments based on a standard credit card issued outside of the USA, processed through a US acquiring bank"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So, now you may be wondering how you can avoid these fees and negative implications, especially when the alternative to cross-border processing has its own list of costs, which you can explore here."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Well, this complex problem is precisely what we at Reach have solved."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "By optimizing with our Merchant of Record network you can unlock the benefits of local processing at a fraction of the cost and without the hassle. This means you gain higher approval rates and the ability to accept local payment methods without establishing a local entity in your foreign markets. By integrating with us, you also eliminate foreign transaction fees and lower your processing fees by up to 50%. You and your consumer also win with our wholesale FX rates that protect both parties from currency flux, all at a better cost. Explore the previous example of cross-border fees, but this time with our advantage to discover the difference our platform makes."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Example: Cross-border passthrough interchange & assessments based on a standard credit card Issued in Australia, processed through a US acquiring bank, and the transaction is in AUD"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So what are you waiting for? Go global with our empowering platform and capture more revenue in your desired markets. Integrate today. Your bottom line will thank you."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Find The Integration That's Right For You"
+        }
+      ]
+    },
+    "meta": {
+      "title": "The True Cost of Processing Cross-border",
+      "description": "Traditional cross-border processing is expensive and considered high risk. Learn more about how to lower costs and reduce fraudulent transactions.\r\n",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8181-8529-d7f9d3d22bd8/c56e78fd-415f-42af-a0eb-0a7c36cbe9cc.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/the-true-cost-of-processing-cross-border"
+  },
+  {
+    "type": "post",
+    "title": "Cost of Setting Up an Entity",
+    "slug": "cost-of-setting-up-an-entity",
+    "excerpt": "Reach unlocks the ability to process in-country payments without the costs, risks, or effort of establishing a foreign entity. Read more in our whitepaper.",
+    "publishedAt": "2022-10-19T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8167-b585-cbe0a810cf36/119e3ff6-c589-49a9-8f62-f099fdb5b514.jpg",
+      "alt": "Cost of Setting Up an Entity",
+      "filename": "119e3ff6-c589-49a9-8f62-f099fdb5b514.jpg"
+    },
+    "authors": [],
+    "categories": [
+      "Local Acquiring",
+      "Compliance",
+      "Merchant of Record",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Cross-border commerce is expected to exceed US$2.25 trillion by 2026, and is increasing at a faster rate than domestic transaction volumes. This growth rate is attracting more companies to go cross-border, as they look for the most efficient ways to expand their global sales and capitalize on untapped consumer segments. And businesses that may already be cross-border players are also increasingly looking for ways to optimize their sales and operations and position themselves for new market entries."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "But optimizing your international sales has many considerations. Some of these considerations can, at first, seem relatively straightforward. But others, from managing fraud risk, processing payments, and local regulations can be costly if not planned and managed correctly. When strategizing your international payment structure, the critical question to ask is whether to process your payments locally vs. cross-border."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "You can read a full breakdown between processing locally vs. cross-border. But the clear winner is processing locally, as it results in 10% - 30% higher approval rates depending on the market and savings of up to 50% on processing fees. The question then is not whether you should set up local processing but rather what is required to set up local payment processing. Furthermore, is your return on investment to enable local processing greater than the cost to meet the requirements?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The main requirement to access local processing is that you must have a true operational foreign subsidiary or legal entity in the market in which you wish to process locally. While there are several excellent 3rd party tools and services on the market to assist you in setting up an entity, most only help with legal paperwork and fail to cover your risks and the actual costs of setting up an entity."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "These costs can be substantial. There is a vast array of information and opinion that puts estimates of capital requirements to establish a foreign subsidiary from as low as US$100 to as high as $2,000,000. The truth, however, lies somewhere in the middle."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The goal of this article is to clearly outline the considerations and costs of opening a legal entity outside your domestic market. Creating and maintaining a legal entity requires a large long-term financial commitment and budget. Before you decide to establish a foreign entity, there are costs to consider from the initial start-up phase and throughout the ongoing maintenance of running an overseas entity. These are some of the costs you can expect."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Legal Fees"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The first step to establishing your local entity is to incorporate it through the statutory and regulatory mechanisms of the new market. This will require extensive research and likely a certain amount of bureaucratic navigation to ensure you are in line with that country's compliance and tax structures. On average, this can mean upwards of 160 hours of research to complete these tasks. If you also include legal fees, trademark reviews, and registration, in addition to prescribed statutory fees, this can amount to an average cost of approximately US$20,000."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Resident Director & Employer Requirements"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Another requirement for you to establish an entity and receive a tax ID is hiring a resident director. This person will be responsible for handling legal documentation and representing you in the region should statutory, or regulatory issues arise."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Companies must factor in this person's salary or the cost of a 3rd party company to act as a resident director."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "A resident director is a legal requirement, but the local payment processors will also require your legal entity to have real, local employees above and beyond the resident director. These employee salaries must also be factored in and can range from US$30,000 - $150,000."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Registered Office Address"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In a perfect world, it might be possible for all foreign entities to exist as a PO box, but sadly this is not the case. Most countries and banks will require your legal entity to establish a physical registered office address to receive your tax ID. On average, office space can cost you upwards of US$6,000 per month or a minimum of US$500 should you source a co-working space. Regardless of your choice, you need to be aware of this monthly recurring cost and additional carrying costs that include insurance, utilities, and maintenance."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Opening a Bank Account and Maintenance Fees"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "You will also be required to set up a local bank account to handle incoming & outgoing transfers, foreign exchange, and meet other financial requirements. The average cost to hold an account and the fees that go along with it will average US$25,000 per year per account."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Ongoing Administrative Costs"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "On top of all these other expenses, you can't forget overhead. Yearly corporate tax filings, financial audits, monthly VAT fillings, payroll, employee insurance, and employee tax all add up against your bottom line. Industry estimates place these combined recurring costs at approximately US$25,000."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "However, these costs can vary considerably depending on multiple factors unique to each domestic market. There is no \"one size fits all\" approach to establishing local entities, as there are dramatic differences between countries, for example, setting up in Germany versus South Korea."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Breakdown of cost"
+        },
+        {
+          "blockType": "conclusion",
+          "heading": "Conclusion",
+          "text": "All these costs combined add up to US$126,000 for just the first year, with US$100,000 in expenses after that per annum. These costs are substantial but do not cover the total investment required.\n\nManaging multiple regions will add complexities as well as expose you to the risk of fines and penalties if you do not comply with the local regulations. Regardless of the market, you need knowledgeable internal teams with adequate bandwidth to keep up with changing laws and regulations.\n\nAnother element you must consider is that in order to unlock the power of local processing, banking regulations will require a local legal entity in each individual country you wish to sell into. While the beauty of ecommerce is that it allows businesses to sell goods or services to multiple markets easily, you still must set up local legal entities in those markets to enable local processing. You may have the business requirements and justification to set up one legal subsidiary outside your domestic market. But the cost and additional complexities of setting up multiple subsidiaries far exceed the benefits of local processing.\n\nThe result of this is that most business process payments cross-border in the majority of markets, not because it is more beneficial than local processing. But because the cost and complexities involved with unlocking the power of local processing are too great."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Our Merchant of Record Model and Localized Platform"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "We were created to solve this exact problem. With our"
+        },
+        {
+          "blockType": "paragraph",
+          "text": ", we eliminate the complexities and cost of expanding globally."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "By connecting to our platform, your business unlocks the ability to process in-country payments without the costs, risks, or efforts of establishing a cumbersome foreign entity. Instead, you gain access to our global Merchant of Record network and leverage our global corporate structure."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "If you’re still contemplating setting up that local entity, you can do the heavy lifting, or you can leave it to us and do it for a fraction of the cost."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Cost of Setting Up an Entity",
+      "description": "Reach unlocks the ability to process in-country payments without the costs, risks, or effort of establishing a foreign entity. Read more in our whitepaper.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8167-b585-cbe0a810cf36/119e3ff6-c589-49a9-8f62-f099fdb5b514.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/cost-of-setting-up-an-entity"
+  },
+  {
+    "type": "post",
+    "title": "Small Oversights That Cost Big Money: Merchants Battling New Chargeback Trends and Communications Concerns",
+    "slug": "small-oversights-that-cost-big-money-merchants-battling-new-chargeback-trends-and-communications-concerns",
+    "excerpt": "Reach is the top ecommerce payments provider that helps brands deal with risks associated with online transactions, such as failed authorizations.\r\n",
+    "publishedAt": "2021-04-07T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-81d7-b1a0-e5359704797f/5bdbdace-6052-44a6-bc23-5dae1391b642.jpg",
+      "alt": "Small Oversights That Cost Big Money: Merchants Battling New Chargeback Trends and Communications Concerns",
+      "filename": "5bdbdace-6052-44a6-bc23-5dae1391b642.jpg"
+    },
+    "authors": [],
+    "categories": [
+      "Fraud",
+      "Compliance",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "It’s common knowledge that the ecommerce universe has evolved and expanded over the last year, providing retailers with countless opportunities to grow their brand, while also introducing new, unique challenges and mountains to climb. As retailers work hard to acclimatize and navigate the peaks and valleys of this new ecommerce landscape, they find themselves overwhelmed with the influx of new, global customers, which means they are likely not noticing new fraud and chargeback trends until it’s too late."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In this blog post, we will uncover these new trends and their unique challenges, while exploring key strategies to help brands conquer the changing ecommerce landscape."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "New Ecommerce Hurdles Merchants Must Master"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Since the first wave of lock-downs in 2020, shoppers turned online to satisfy their every need. The influx of new online shoppers tested even the most “on top of it all” ecommerce brands, which faced massive fulfillment issues as they responded to an increasing number of online orders. Fast forward to 12 months later and we see that most of these retailers have caught their breath, streamlining their operations (and at times, product lines) to be able to fulfill the increased volume of orders."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Even though these retailers may have their products packaged and ready to go, the many months of disruption caused serious delays in supply chains around the world. One recent report claims the pandemic disrupted the supply chains of nearly 75% of all US companies. Unreliable supply chains meant limited inventory and canceled orders, which not only restricted earning potential but angered their otherwise loyal customers."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So how can brands deal with a tidal wave of customer complaints as a result of these delays, and help reduce the number of chargeback requests? Let’s explore."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Communication, Communication, Communication"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "As retailers hustle to ensure their local and international online orders are processed, packaged, and shipped on time, one area where some have fallen short is arguably the most crucial: communication."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "With widespread concerns about delayed or canceled orders, retail brands are quickly finding themselves experiencing backups with their customer service requests - but this is no excuse to let customers fall through the cracks."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Keeping consumers up-to-date about their order and any potential shipping and delivery delays is an absolute must, as a lack of communication is one of the triggers leading to an increased number of chargebacks."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Remember the 3 “C's of communication: clear, concise, and consistent. Merchants that communicate clearly, concisely, and regularly with their customers before, during, and after the ordering process will not only foster a positive relationship and provide a 5-star review worthy experience - but will also prevent the land-slide of consequences that come along with chargebacks. These consequences include thousands in lost revenue, revoked credit-card processing privileges, and higher chargeback fees and penalties. Fraudsters out there will capitalize on a lack of customer communication - don’t let them do it."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Tighten Up Terms and Conditions"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Refund fraud is nothing new, but the hyper-focus on it as a tactic is, and it’s a trend that is likely to continue."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "One of the strategies that Reach’s fraud team has spotted is that these fraudsters are honing in on the grey areas of a retailer’s Terms and Conditions, in search of new ways to manipulate their systems and take advantage of chargebacks. They then use the weak spots in the T&C’s to their advantage by offering “services” to real customers - promising a customer they will get some of their money back and get to keep the products in return for 25% of the refunded money. This scam is effective, and it’s spreading fast."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Here’s how it works:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Some retailers opt to ship items through major global shipping channels so that both customers and their bottom-line can benefit from lower delivery costs. However, this means that they are not likely to have access to accurate, real-time tracking information and delivery updates - which is a big problem when it comes to proving that the item was delivered and signed for by the customer."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So what can retailers do to mitigate this risk?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "By adding a simple caveat in their T&Cs that clearly states the different tracking capabilities and guarantees based on the type of shipping the customer selects (economy, premium, etc), retailers are seeing a drastic decrease in the number of chargeback requests received. These caveats look something like this:"
+        },
+        {
+          "blockType": "blockquote",
+          "quote": "Should you choose to select economy shipping, tracking and updates on your order will not be provided, and [retailer] takes no responsibility for the delivery of your order. By selecting premium shipping for $X more, [retailer] will be able to track your order and ensure you get your package delivered on time!",
+          "citation": ""
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Adding in this caveat will clearly communicate the limitations of certain types of shipping to shoppers, as well as give merchants a way to validate delivery, and fight back against fraudulent chargebacks, which will save a lot of time, trouble, and money!"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "One thing retailers need to understand is that today’s fraudsters are smart, and know exactly where to look for weaknesses in your business. Tightening up your T&C’s will not only protect your business from bankruptcy but improve your brand image as well."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "New fraudsters need new fraud-fighting efforts"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The sad reality of the COVID pandemic is that in addition to disrupting life as we know it, it has put so many people out of work, forcing them to seek out new ways to make money. This, unfortunately, has resulted in a new wave of people trying their hand at ecommerce fraud."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The good news? They aren’t particularly good at it."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The bad news? They don’t have to be, because retailers are often too busy to notice."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "While this new wave of fraudster “freshmen” haven’t graduated with the same extensive network as a lot of experienced fraudsters, they are still able to throw a spanner in your business systems and strategies by experimenting with bots, scripts, and the “dark web.” Because these scam artists are not in organized groups with clear, trackable strategies, retailers and their fraud monitoring systems aren’t always able to detect a pattern, and end up ignoring small inconsistencies that compound over time.."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "This doesn’t mean it’s overly difficult to track down these less advanced fraudsters - because it’s not. By simply revising certain rule sets, retailers will be able to intercept amateur fraudulent activity before it can do any major damage."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "For example, a focus on device location vs shipping and billing would capture a good amount of these fraudulent transactions, but when was the last time that you looked at that ruleset? Have you added any variations or scores? Are there any new data points you can leverage? Are you noticing a decrease in conversions? If so, you’re likely being targeted by these amateur scammers. One transaction won’t give you much information, but data on trends will reveal what you need to know to act smart and fast."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The trends detailed here are really just the tip of the iceberg. The reality is that new types of fraudulent activity pop up every week. Most retailer fraud-fighting efforts are limited, falling short of capturing everything they should. That’s why we’re here to help."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach out and talk to our fraud experts who can give you the tools you need to protect your brand, and succeed in new markets."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Small Oversights That Cost Big Money: Merchants Battling New Chargeback Trends and Communications Concerns",
+      "description": "Reach is the top ecommerce payments provider that helps brands deal with risks associated with online transactions, such as failed authorizations.\r\n",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-81d7-b1a0-e5359704797f/5bdbdace-6052-44a6-bc23-5dae1391b642.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/small-oversights-that-cost-big-money-merchants-battling-new-chargeback-trends-and-communications-concerns"
+  },
+  {
+    "type": "post",
+    "title": "How Merchants Can Reduce Chargebacks and Navigate Disputes",
+    "slug": "how-merchants-can-reduce-chargebacks-and-navigate-disputes",
+    "excerpt": "Chargebacks are an inevitable part of ecommerce. Learn how to reduce chargebacks and returns, and navigate disputes to create happy long-term customers.\r\n",
+    "publishedAt": "2021-06-30T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8123-a60b-fca8864d1e8c/98b93acf-e272-45b9-8e98-f52ab8936828.jpg",
+      "alt": "How Merchants Can Reduce Chargebacks and Navigate Disputes",
+      "filename": "98b93acf-e272-45b9-8e98-f52ab8936828.jpg"
+    },
+    "authors": [],
+    "categories": [
+      "Fraud",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Chargebacks are an unavoidable part of the online retail universe, and when not handled correctly, can become a massive financial burden to merchants. Beyond the financial toll, handling chargeback disputes is a tedious, time-consuming process - forcing the merchant to take their attention away from other strategic business tasks and deal with the stressful reality of potentially losing their payment processing capabilities if they exceed the designated chargeback threshold for a given time period."
+        },
+        {
+          "blockType": "heading",
+          "level": "h1",
+          "text": "The Anatomy of the Chargeback Dispute"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Chargebacks can also ensure the merchant stays accountable, and continuously provide their online shoppers with top-notch customer service because if they don’t, chargebacks are one of the many consequences that can have a serious impact on their business."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So, how can merchants reduce the number of disputes they receive, as well as mitigate the associated risks? The short answer: Crank up your customer communication."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Step one: Be customer-first for service, systems, and resources"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "It’s crucial that all of your customer service systems are accessible, clear, and simple to use. If a customer needs to hunt for your contact info, or search for ways to track their purchase, they’re more likely to give up and just file a chargeback out of frustration."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "You can reduce this frustration by having clear contact information and tracking resources available on invoices, on your website, and in your communication with your customers. You can also increase accessibility and speed by having live chat features on your website for quicker service."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Once those systems are in place, be sure to monitor them for any issues or malfunctions."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "This may sound simple, but our team recently dealt with a situation where an entire region of a merchant’s business was frustrated and filing chargebacks, because a “contact us” section on their website was malfunctioning and they couldn’t get in touch with the merchant!"
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Step Two: Clearly define shipping terms."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Step Three: Communicate regularly."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Step Four: Create crystal clear invoices and offer additional resources."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Step Five: Clearly define your return policies and procedures"
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Evidence You’ll Need to Win a Chargeback Dispute"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Disputes are difficult to navigate, even when you’re completely correct. The biggest misconception merchants have about chargebacks is the level of evidence required. They often believe that if they can show they have shipped the order out, they are absolved of consequence – but this is not enough to win the dispute. Fraudulent orders made by bad actors can still be delivered successfully."
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "Invoice",
+            "Copy of shipping documentation",
+            "Customer communication",
+            "Fraud data",
+            "Fraud reports",
+            "CVV and AVS checks (the three-digit code on the back of the customer’s credit card and cross-referencing the billing address and name with the actual card holder’s information)"
+          ]
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Some merchants generate those data points themselves or use other third parties to generate them. Regardless of how you capture the intel, you will want to have it collected and handy to keep those chargeback ratios in check. When merchants win chargeback disputes, they aren’t counted against their total, which is great. What isn’t great is the frequency with which the disputes are happening."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Have you noticed an increase in chargebacks? What steps have you taken to get ahead of the issue? Reach helps our merchants dispute chargebacks and offers strategic advice on how brands can improve their chargeback rate and minimize fees."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach out and we can share some tips that are more specific to your needs!"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "{{cta('18e86e7a-5247-4187-ae81-c04d6e465c76','justifycenter')}}"
+        }
+      ]
+    },
+    "meta": {
+      "title": "How Merchants Can Reduce Chargebacks and Navigate Disputes",
+      "description": "Chargebacks are an inevitable part of ecommerce. Learn how to reduce chargebacks and returns, and navigate disputes to create happy long-term customers.\r\n",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-8123-a60b-fca8864d1e8c/98b93acf-e272-45b9-8e98-f52ab8936828.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/how-merchants-can-reduce-chargebacks-and-navigate-disputes"
+  },
+  {
+    "type": "post",
+    "title": "Local Acquiring vs Cross-Border",
+    "slug": "local-acquiring-vs-cross-border",
+    "excerpt": "When selling products or services to global customers, you have two options for processing transactions: local or cross-border. Learn more in this blog.\r\n",
+    "publishedAt": "2022-11-09T05:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-815b-b004-e71d8194f672/5081e841-4123-41e8-85a1-fd7cb4d83159.jpg",
+      "alt": "Local Acquiring vs Cross-Border",
+      "filename": "5081e841-4123-41e8-85a1-fd7cb4d83159.jpg"
+    },
+    "authors": [],
+    "categories": [
+      "Local Acquiring",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "When your organization is selling products or services to global customers, you have one of two options when it comes to processing transactions; local or cross-border."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "But before we go into the benefits of local vs. cross-border, we need to start at the basics; what is acquiring?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "An acquirer is a bank that acts on behalf of a business by processing credit and debit card payments. An acquirer sends purchase authorization requests to your customer's bank through card networks, such as Visa and Mastercard. It then either sends you the money or tells you why the request has been declined."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In order to process payments, your business must contract and work with an acquiring bank to accept and process credit card payments."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "An acquirer is a regulated business and must have the proper license in order to contract and process on behalf of your business. These licenses are issued country by country. For example, if an acquirer wants to contract and process credit cards for a US-based business, they must have a US license. If the acquirer wants to contract and process credit cards for a UK-based business, they must have a UK license."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The banking regulations only allow acquirers to contract with companies based on where they are licensed. For example, a US licensed acquiring bank can only contract and process for a US-based business. A UK licensed acquirer cannot contract with a US-based business and vice versa - a US license acquired cannot contract with a UK-based business."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "This setup works great when a US-based business only has US-based customers, or a UK-based company only has UK-based customers. But, it starts to break down when you add shoppers outside the business’s domestic market."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The difference between cross-border processing and local acquiring is best demonstrated through this scenario:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "You’re a US-based business, and a UK-based shopper is attempting to buy something from your ecommerce site. They enter their information at checkout and hit ‘pay’."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "What happens to cross-border transactions:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Your US-based acquirer approaches the customer’s bank in the UK and requests the authorization of the transaction."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Simple, right? Not necessarily. There’s a catch."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The UK bank may not be familiar with the US acquirer, so the authorization request message may contain data that the UK bank does not recognize. On top of that, issuing banks see cross-border sales as higher risk, so they err on the side of caution and the request is refused."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Of course, this is not to say that every cross-border transaction would be declined. But cross-border transactions will be declined at a higher rate due to the reasons stated above. And if the transaction does go through, the end customer may be charged Foreign Transaction Fee on top of the amount paid because of the additional risk and complexities the issuing bank is taking on by approving the transaction."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "What happens to local transactions:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In this case, when your UK shopper hits ‘pay’, your local UK acquirer approaches the UK bank with an authorization request. The request is seen as local and it is perfectly formatted to meet the UK bank’s specific requirements. The bank allows the payment to proceed, which releases the funds from the acquirer and then your sale goes through."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Benefits of processing local:"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "Higher success rates",
+            "Lower processing cost (up to 50% lower)",
+            "Eliminate customers getting hit with foreign transaction fees"
+          ]
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In order to process locally, there are hard requirements that your business must have such as local operations, a bank account, and a legal entity."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In the example above, for a US-based business to process the UK customer’s transaction locally, they must have a fully operating subsidiary in the UK. (Remember, an UK licensed acquirer only has the capability of contracting with a UK-based company). The cost and complexity of setting up a foreign subsidiary is typically too large for most companies to overcome."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So… what should my next step be?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "By leveraging Reach’s Merchant of Record model, your organization can unlock the power of local processing and allow Reach to handle the complexities associated with global expansion."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Book a demo to get started."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Local Acquiring vs Cross-Border",
+      "description": "When selling products or services to global customers, you have two options for processing transactions: local or cross-border. Learn more in this blog.\r\n",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-815b-b004-e71d8194f672/5081e841-4123-41e8-85a1-fd7cb4d83159.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/local-acquiring-vs-cross-border"
+  },
+  {
+    "type": "post",
+    "title": "Experts at Everything: What Brands Need to Know to be Global",
+    "slug": "experts-at-everything-what-brands-need-to-know-to-be-global",
+    "excerpt": "Reach is the top ecommerce payments provider that helps brands optimize their checkout experience to prevent cart abandonment.",
+    "publishedAt": "2021-03-11T05:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81ef-8b31-eb9ca3d1f24e/53373488-83cc-4f9b-bf91-03abfd5394ae.jpg",
+      "alt": "Experts at Everything: What Brands Need to Know to be Global",
+      "filename": "53373488-83cc-4f9b-bf91-03abfd5394ae.jpg"
+    },
+    "authors": [],
+    "categories": [
+      "Localized Customer Experience",
+      "Currency Exchange",
+      "Merchant of Record",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Consumers all over the world have recognized the many conveniences of shopping online — just as electronic mail has become our day-to-day ‘email,’ we may soon see a world where “ecommerce shopping” becomes our daily “shopping.” While this shift in mindset offers new opportunities for brands, some retailers have found themselves in deep water after the tidal wave of new online consumers in 2020. How could an influx of new worldwide business be a bad thing? Because most brands didn’t have a strong infrastructure in place to support it. A less-than optimal online shopping and checkout experience can shut down a business quicker than you can say “cart abandonment.”"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Let’s dive into the shift in consumer mindset to ‘everything online,’ how this has impacted retailer strategy and bottom-lines, and the game-changing payment solutions that will help brands stay several steps ahead of the ecommerce curve."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "From Omnipresent to ‘Ecommerce is Everything’"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The Covid-19 pandemic propelled buyers to transition from in-person to online shopping virtually overnight - forcing merchants to shift focus from brick and mortar sales to ecommerce. The 180 degree shift towards digital dominance meant that brands had to up their digital marketing game - which meant that suddenly they were everywhere consumers wanted them to be, but in their eagerness to over-deliver meant that they were also in many places consumers didn’t want them to be."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The ‘retargeting bordering on stalking’ approach dominated the online space for quite some time, And it worked well... until it didn’t. Ultimately, the consumer-merchant relationship suffered for it, and calls for privacy protocols resulted in stricter marketing regulations, leading us to the next shift in industry trends."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Marketing tactics shifted away from stalking consumers webwide to producing innovative campaigns that made it possible for online brands to be found, and followed by their target consumer. Being everywhere 24/7 became less important, and omnipresence was replaced with nurturing targeted communities and courting relevant influencers. Merchants that kept up with these shifting consumer behaviours flourished, becoming adept at anticipating trends thanks to their newfound, customer-experience-centric approach."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So what about those merchants that were able to stand tall in their ability to pivot and accommodate the increased consumer traffic that came their way - did this mean it was easy sailing? Not so fast. The accompanying FX fluctuations brought on by the pandemic would prove to be a challenge greater than anyone could have anticipated!"
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "The FX Fluctuations Merchants Weren’t Ready For"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Although some merchants already had key business tactics locked down, processing payments for a rapidly expanding global market exposed brands to entirely new audience segments overnight, along with the associated (and unanticipated) levels of risk."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The intense market fluctuations resulted in foreign exchange rates becoming both volatile and unpredictable. In one of our previous blog posts, FX and the Unknown, we note that “The wild, daily shifts this pandemic caused in the foreign exchange market have left many merchants in the lurch. If they were holding any position, they lost lots of money, rapidly. The market has never been this volatile.\""
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Not only have brands had to excel in their core business, and marketing… now they have to be FX experts, too."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Shifting from a domestic to a global mindset requires more than most merchants bargain for. Optimizing payment systems to create a shopping experience complete with competitive global pricing, no hidden fees, and a streamlined checkout process is a tall order – and is precisely what Reach offers. And all of this while creating distance for the merchant, and protection, from volatile and unpredictable FX, as well as from fraudsters that are developing new exploits daily."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Cost-effective and seamless shopping experiences will continue to be the expectation. The question is – will you be ready to offer it?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach out and we can show you how!"
+        }
+      ]
+    },
+    "meta": {
+      "title": "Experts at Everything: What Brands Need to Know to be Global",
+      "description": "Reach is the top ecommerce payments provider that helps brands optimize their checkout experience to prevent cart abandonment.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81ef-8b31-eb9ca3d1f24e/53373488-83cc-4f9b-bf91-03abfd5394ae.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/experts-at-everything-what-brands-need-to-know-to-be-global"
+  },
+  {
+    "type": "post",
+    "title": "Fragmentation of B2B Cross-Border Payments",
+    "slug": "fragmentation-of-b2b-cross-border-payments",
+    "excerpt": "Explore the root causes of B2B cross-border payments fragmentation and learn how our Merchant of Record model can eliminate it with one seamless integration.",
+    "publishedAt": "2023-03-09T05:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81c8-94d1-f870450e97df/7a48df9a-7a60-403e-a848-6ee457d1e0ba.webp",
+      "alt": "Fragmentation of B2B Cross-Border Payments",
+      "filename": "7a48df9a-7a60-403e-a848-6ee457d1e0ba.webp"
+    },
+    "authors": [],
+    "categories": [
+      "B2B",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "The B2B payments ecosystem is experiencing a digital renaissance as companies ditch manual processes and adopt modern methods similar to those they expect from a B2C experience. Today's Businesses want fast and seamless payments, and the ability to process cross-border payments digitally. The advantage to this is that it eliminates manual processes, extensive costs, and it reduces their overall DSO in global markets."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The dream payment experience international businesses want is one where the buyers are able to get invoiced in their local currency at preferred FX rates while gaining the ability to pay how they want. This means having access to a full suite of payment methods like wire transfers, net terms, and credit cards. The sellers, then get to receive funds quickly while incurring low processing fees and minimal hassle regarding reporting and reconciliation. But, most importantly, B2B businesses want all this to exist in one all-inclusive solution."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "However, the reality of the B2B cross-border payments experience as it exists today is less of a dream and more of a fragmented & expensive nightmare."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "This fragmentation exists due to the sheer number of individual parties you need to work with to offer the modern payment experience that your clients demand. You will need to work with a myriad of different financial institutions, credit cards, FX providers, and payment facilitators to meet your buyers' needs. And these individual parties are not ubiquitous across jurisdictions. Every market has its own unique economic characteristics and local payment preferences that are often guided by domestic jurisdictional dynamics and long-held legal and regulatory traditions. These regional dynamics, and the various players involved in reaching these markets, is at the heart of the B2B payments fragmentation experience."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Let's break down some of today's most in-demand cross-border B2B payment methods to examine why this fragmentation happens."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "FX Management & Wire Transfers"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In order to offer your international buyers their local currency and manage changing FX rates, you have to outsource to an FX provider. While FX providers can provide competitive FX rates for your global markets, they are limited in the number of payment methods they can accept. They only can offer payment methods like wire/ bank transfers. So if your buyers want to pay via another payment method, such as credit cards, you won't be able to leverage the benefits of your FX provider."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "To add insult to injury, bank transfers are slow & expensive. Traditionally, these cross-border transactions will pass through three banks between the buyer and seller. These are made up of an acquiring bank, an issuing bank, and a processing bank. Each of these fragmentation points will charge interchange fees to talk to each other, and these drastically increase as soon as your transactions crosses a border. This added complexity also creates longer settlement time frames which can strain your business's cash flow."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Net Terms"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Another payment method that remains a mainstay in B2B payments is net terms. It's an extremely attractive payment method as it can help to protect and extend your business's cash flows. Learn more here. However, traditional net terms are not exempt from fragmentation. You still will have to outsource your FX to deal with fluctuating currency rates in each of your desired markets. Not only that but in some cases, your buyer may not be approved by net terms. So even if you outsource your currency management to an FX provider, you still have to connect with additional parties to offer the payment methods your B2B buyers require."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Net terms fragmentation also exists because when it's used cross-border, it becomes exceedingly complex. Net terms require a lot of administrative leg work as you will need to meet the requirements and gain approval from lenders in each region you plan to process in. This multiplier of pain points makes net terms a colossal undertaking and creates a level of fragmentation most businesses can't manage."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Credit Cards"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Like consumer transactions, credit cards provide an easy, secure, and established payment method for common or recurring purchases. They're simple and easy to use for international payments, as they are accepted in the majority of regions around the world. However, there is an underlying problem - credit cards are not FX providers. This means when cards are used for cross-border transactions, they have to deal with different global acquirers and exchange rates, and you better believe they have assessment fees for that."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So, while credit cards are great at what they do, they are horrible at FX. On average, credit cards will charge 2-3% in fees to assess and handle FX. Now a fee of around 2.5% may not be the end of the world on a $250 B2C purchase, but add a few more zeros on the end for a B2B purchase, and your head may start to spin. On a $250,000 transaction, you would rack up $6,250 just in FX fees, and you still have not even accounted for interchange or additional assessments. This gets even more painful when you imagine this impact multiplied if the transaction is recurring because it is a core function of your business. In fact, this expense has caused many international businesses to not utilize credit cards at all due to their sheer cost."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So, If you're conducting B2B payments cross-border, fragmentation, hassle, and high fees may seem like your only option to provide your buyers with the payment experience they want. That is unless you choose the right global partner."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Your All-In-One Solution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Integrating with Reach eliminates your B2B payments fragmentation by unlocking optimized cross-border payments and guaranteed FX rates through one complete end-to-end solution. While other payment facilitators, card schemes, and FX providers may be good at what they do individually, they are each only one piece of the puzzle. When you leverage our vast Merchant of Record network, all these pieces fall together through one integration. With our established international infrastructure, you can unlock preferred FX rates and a full suite of in-demand payment methods including credit cards, net terms and more. Best of all, you also can drastically reduce cross-border fees in your global markets thanks to our next-level advantage of local acquiring."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Connect today to see how we can eliminate fragmentation from your cross-border B2B payments with our comprehensive solution designed to save you money and help you scale quickly."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Fragmentation of B2B Cross-Border Payments",
+      "description": "Explore the root causes of B2B cross-border payments fragmentation and learn how our Merchant of Record model can eliminate it with one seamless integration.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81c8-94d1-f870450e97df/7a48df9a-7a60-403e-a848-6ee457d1e0ba.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/fragmentation-of-b2b-cross-border-payments"
+  },
+  {
+    "type": "post",
+    "title": "The Missing Piece",
+    "slug": "the-missing-piece",
+    "excerpt": "As domestic ecommerce is experiencing a downturn, more businesses are going beyond their borders to increase their global sales.\r\n",
+    "publishedAt": "2022-10-26T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-81ae-911f-c3b6dbdd1c18/f675a236-3f8f-4651-8679-640424f1db2b.jpg",
+      "alt": "The Missing Piece",
+      "filename": "f675a236-3f8f-4651-8679-640424f1db2b.jpg"
+    },
+    "authors": [],
+    "categories": [
+      "Localized Customer Experience",
+      "Alternative Payment Methods",
+      "Tax",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "As domestic ecommerce is experiencing a downturn, more businesses are going beyond their borders to increase their global sales. Companies looking to capitalize on this trend and optimize their global checkouts often look to partner with Global Payment Service providers."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "This is for a good reason. They heavily market that you can go global with just a flip of the switch. And technically this is true. Through one streamlined integration, payment platforms can help companies accept 135+ currencies, local payment methods, and credit card acquiring."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "However, there are many missing pieces to what it actually takes to create a successful global strategy that no one talks about."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "One example is that every payment provider offers the ability to accept multiple currencies. Yet, the vast majority of companies selling globally do not enable more than one currency. Why is that? It is not due to technical issues, but the operational complexities involved with offering multiple currencies that global payment platforms do not address."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "These operational complexities range from setting up local pricing strategies in each market, managing FX risk, and handling the additional logistics of reporting and reconciliation."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Another big missing piece is how do cross-border brands take advantage of local acquiring. Global payment providers heavily advertise and avidly preach in publications about all of the benefits of local acquiring. With desirable benefits like Increased conversion rates and reduced processing fees, accepting payments locally vs. cross-border is hands down the clear winner."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Again on a technical level, you can easily plug into a local acquiring network through the payment provider’s platform. But a big piece they leave out from the marketing, is that in order to leverage the local acquiring, you are required to set up local operations and legal entities in your desired foreign markets."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Global payment providers are ideally built for the likes of Uber, Netflix, and Airbnb, who have the size and sophistication to set up global operations. But for companies looking to grow their international sales, the cost and complexity of setting up just one entity outside their domestic market, let alone two or three, is often too significant of a barrier. These expansion requirements force the large majority to process transactions cross-border and just accept increased fees as the cost of doing business."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "And then there's taxes. A lot of global payment platforms now have the ability to calculate the tax at checkout. This is a great service, but it still means you have to register, file, and remit sales tax, in the countries you are selling cross-border into. The regulations associated with this also vary from country to county, and in the case of countries like the United States, even vary between different States. Registering, filing, and remitting in your domestic market is usually doable for a business. But, when factoring all the different country regulations, data formats, timing, and currency management, a large team of experienced international accounts is required."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So, if you want to expand globally and increase your cross-border revenue but don’t have an in-house pricing, legal, and treasury team to manage all of the intricacies required to be successful - what option do you have?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "This is the exact problem that Reach was built for. Like the top payment providers, we provide a global platform to accept 135+ local currencies and access to local acquiring in 40+ countries. But, with our dynamic Merchant of Record model, we remove all of the roadblocks like currency risk, operational complexities, and tax/legal regulations. This allows you to utilize the same optimal setup as the big guys. Integrate today and start capturing revenue in your desired cross-border markets without increased fees, hassle, or risk."
+        }
+      ]
+    },
+    "meta": {
+      "title": "The Missing Piece",
+      "description": "As domestic ecommerce is experiencing a downturn, more businesses are going beyond their borders to increase their global sales.\r\n",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-81ae-911f-c3b6dbdd1c18/f675a236-3f8f-4651-8679-640424f1db2b.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/the-missing-piece"
+  },
+  {
+    "type": "post",
+    "title": "Rapidly Scale Retail & DTC Ecommerce Through Composable Architecture",
+    "slug": "rapidly-scale-retail-dtc-ecommerce-through-composable-architecture",
+    "excerpt": "Learn how composable architecture can address omnichannel ecommerce concerns and help you rapidly scale your retail, DTC, or marketplace operations.",
+    "publishedAt": "2023-04-25T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8156-bc66-dda8b6752fdc/0a23d807-0346-445d-b1df-706623bc61e7.webp",
+      "alt": "Rapidly Scale Retail & DTC Ecommerce Through Composable Architecture",
+      "filename": "0a23d807-0346-445d-b1df-706623bc61e7.webp"
+    },
+    "authors": [],
+    "categories": [
+      "Integration",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "As the world of ecommerce grows, so does the breadth and diversity of customer purchasing behaviour. To keep up with changing market trends, brands need to diversify and iterate quickly as customers seek individualized experiences across multiple sales channels."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In this article, we'll take a look at the rise of multichannel sales, how composable ecommerce compares to monolithic architecture, and the importance of localized pricing."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "What is composable ecommerce?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Composable ecommerce is a direct response to the growing ominichannel needs of the retail ecommerce market. An approach defined by its a-la-carte, modular architecture, components can be replaced on-demand without affecting other parts of the ecommerce stack. This allows developers to choose the best technologies based on customer data and market dynamics."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Ecommerce goes omnichannel"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Retail ecommerce accounted for approximately USD $5.2 trillion of global sales in 2021 and is forecasted to grow to USD $8.1 trillion by 2026. Yet, retail ecommerce accounted for only 19% of total retail sales, leaving tremendous opportunity for growth through alternative digital sales channels."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "As your ecommerce platform or marketplace scales, your customers expect seamless, performant, omnichannel retail customer experiences (CX) that acknowledge alternative touchpoints such as social media, marketplaces, and comparison shopping engines like Google Shopping or Vendazzo. They expect to see products in their local currency, with tax-inclusive pricing. According to research by Ingenico, one-in-four shoppers will abandon their cart when their preferred local currency is not offered. Composable architecture allows you meet this expectation through rapidly integrated solutions like Reach Drop-In, enabling you to scale easier and faster."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "DTC’s culture of iterative evolution"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Despite the low barrier to entry in the DTC (direct-to-consumer) space, traditional retailers still have a clear advantage, with an established online sales infrastructure and millions of advertising dollars to burn every year. This requires smaller retailers to be more reactive to market trends and more tolerant of risk. Lesser-known brands must be willing to pivot quickly and fail upwards, resulting in a culture of continuous iteration, evolution and re-invention in the retail & DTC spaces. When managed correctly, this tactical trial-and-error can pay off big. Composable components like Reach Drop-In allow you to flip the switch on different payment methods and implement local pricing strategy with little hassle."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Monolithic ecommerce is a waste of time (for you and your customers)"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "On the dev side, multichannel CX and a culture of re-invention have created a situation where traditional, monolithic ecommerce solutions block your organization’s ability to respond to ever-changing market conditions."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Monolithic architecture requires developers to abide by existing frameworks and conventions, which makes it tedious to integrate new sales channels or analytics tools, test new campaign strategies, or A/B test new customer experiences."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Performance matters. Back in 2006, Greg Linden (then at Amazon) discovered through A/B testing that every 100ms delay in page loading caused substantial drops in ecommerce revenue. Because monolithic solutions often depend on a single central data store, they require elaborate caching solutions to ensure adequate website performance and deliver high conversion rates. Furthermore, periods of high traffic and sales can grind these solutions to a halt entirely, even with proper load-balancing measures in place."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Composable is faster, cheaper, and more flexible"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "This is why many organizations have begun to implement composable elements into their retail ecommerce solutions."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "By keeping each component physically separate, development and marketing teams can rapidly test and deploy new functionality such as alternative payment methods or vanity pricing rules without breaking or re-configuring existing systems."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Composable architecture allows for distributed, static front-end solutions that cater to the needs of different customers and sales channels. Because they are pre-rendered, static front-ends load in mere milliseconds, and scale infinitely by design."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The same goes for the back-end. By leveraging edge functions and serverless microservices, organizations no longer need to maintain a single entity that handles business logic, content management, and payment processing."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Edge/serverless functions run code per-function, in a sandboxed instance that dies when the function has completed. This means serverless functions can be scaled virtually infinitely, so your ecommerce or marketplace application can securely interact with payments interfaces like Reach’s Drop-In API without worrying about downtime or denial-of-service issues."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "In 2019, MANSCAPED made the decision to switch from their legacy Shopify-based store to a composable commerce application. By confining global operations to a single composable codebase, the MANSCAPED team found it much easier to ship changes at scale."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Adopt composable at your own pace"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "By nature, composable architecture can be adopted incrementally."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Most existing monolithic ecommerce solutions provide a REST API, allowing development teams to begin their composable transition by building a headless front-end. Once the headless front-end is running, teams have the freedom to rapidly deploy any number of new microservices that work in parallel with (or replace functionality of) the legacy platform – without consideration for its framework or conventions."
+        },
+        {
+          "blockType": "heading",
+          "level": "h2",
+          "text": "Reach Drop-In is a key component of your composable ecommerce transition"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Our Drop-In API is an all-in-one, plug and play payments solution that is flexible and easy to integrate, making it the perfect payments component for your composable ecommerce application."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Drop-In leverages our extensive Merchant of Record network, which helps your ecommerce solution scale into international markets through localized pricing, fraud management, and access to market-leading FX rates."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Give global customers the choice of 40+ payment partners, including installment and alternative payment methods, as well as tax-inclusive checkout pricing that eliminates your global tax compliance risk."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Learn more about Reach Drop-In:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach • 2022 Customer Demo Video"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Our low-code integration is simple and straightforward:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach Drop-In - Full Integration Tutorial & Developer Walk-through"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Want to learn more? Book a demo today."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Rapidly Scale Retail & DTC Ecommerce Through Composable Architecture",
+      "description": "Learn how composable architecture can address omnichannel ecommerce concerns and help you rapidly scale your retail, DTC, or marketplace operations.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8156-bc66-dda8b6752fdc/0a23d807-0346-445d-b1df-706623bc61e7.webp"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/rapidly-scale-retail-dtc-ecommerce-through-composable-architecture"
+  },
+  {
+    "type": "post",
+    "title": "Is Orange the New Black? Halloween is Day 1 of the Holiday Season",
+    "slug": "is-orange-the-new-black-halloween-is-day-1-of-the-holiday-season",
+    "excerpt": "Ecommerce spend on Halloween is set to jump from $8 billion in 2020 to $10.14 billion in 2021 - like the rest of the economy, Halloween has moved online.",
+    "publishedAt": "2021-10-28T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-81f9-b6ee-c5cb233c5036/c379fe07-eef1-406f-a02e-b74394e401b0.png",
+      "alt": "Is Orange the New Black? Halloween is Day 1 of the Holiday Season",
+      "filename": "c379fe07-eef1-406f-a02e-b74394e401b0.png"
+    },
+    "authors": [],
+    "categories": [
+      "Consumer Behaviour",
+      "Localized Customer Experience",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Online spending is set for the biggest year ever, to the tune of over $2.9bn. It may not be Black Friday, but is Halloween about to kick off the biggest holiday shopping season ever? Like the rest of the economy, Halloween has moved online. According to the US National Retail Federation, overall Halloween spending is set to jump from $8 billion in 2020 to $10.14 billion in 2021, with ecommerce sales expected to comprise $2.94 billion. This is not only an opportunity for cross-border brands to sell into the US—but also for US brands to share the growing demand for “Golden Quarter” holidays with global markets. When you look at ecommerce Halloween sales, in many global markets, consumer spending on Halloween is much more spirited than other key events in the retail calendar, surpassing even Valentine’s Day in some categories. As Halloween draws ever nearer, it’s not just fancy-dress merchants who hope to rack up sales. October and November are usually a key planning time for online retailers who are expecting a surge in demand around Black Friday/Cyber Monday/Christmas and New Year sales, known collectively as “The Golden Quarter”."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "However, this year, you could be forgiven for thinking there is a new kind of retail apocalypse happening, what with all the headlines warning that supply-chain chaos is putting \"Christmas at risk\"—or that there will be empty shelves and toy shortages during this upcoming holiday season."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "At the same time, leading analysts are predicting a holiday season bonanza with sales growth in November and December expected to rise in the region of 7% to 10%. AlixPartners, whose forecast calls for 13% in a best-case scenario (and includes October), says it will be the strongest holiday season since 1999 in terms of growth."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Consumer behaviors and demands are constantly changing. Online retailers will generally be aware of the regular key seasonal peaks and drivers. It may not be as big an event as Black Friday, but niche holidays like Halloween can bring significant growth in sales to cross-border ecommerce brands. What’s different this year (apart from the fact that more people are planning to get into the spirit of Halloween - to make it an even more memorable one post-pandemic) is the global media frenzy around the holidays and some scarcity panic buying."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "So here at Reach, we’re wondering if Halloween, at least for this year, will mark the start of our peak spending season? More importantly, are retailers accommodating this shift in preparedness to meet what are obviously going to be tricky fulfillment issues?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Clunky checkout processes, frustrated customers, and lost sales all add up create nightmares for businesses struggling to stand out from the crowd. For most cross-border ecommerce brands, their long-term and short-term goals are all linked to scaling up and expansion. They need to ensure that they have an ecommerce platform ready and capable to grow online fast and support offline areas of the business, as the opportunity arises."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "We know only too well from recent events that external forces also play a huge role in creating unprecedented spikes in global demand. Over the past 18 months, retailers have dealt with extenuating circumstances springing out of the rapid surge in ecommerce growth, because of the global pandemic shifting large swathes of consumer spending online."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The online retailers that have managed to keep pace with this demand, amongst coping with product supply chain hold-ups, will have invested appropriately some time before in their technology, and will be working with technical partners capable of responding rapidly to changing retail dynamics, and global shopping habits. The importance of choosing a platform that can successfully scale to cope with new demands, capable of entering new markets, and be fit for purpose for aggressive growth ambitions online, cannot be underestimated."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "With Reach’s optimized API technology designed specifically for cross-border retail ecommerce platforms and game-changing Merchant of Record “MOR” model, retailers can use Reach’s core connections and corporate structure to process payments locally without having to establish multiple local entities, offer 100+ currencies, display optimized local pricing, offer relevant payment methods, while staying compliant in every region - and provide a flawless shopping experience for global customers."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "{{cta('18e86e7a-5247-4187-ae81-c04d6e465c76','justifycenter')}}"
+        }
+      ]
+    },
+    "meta": {
+      "title": "Is Orange the New Black? Halloween is Day 1 of the Holiday Season",
+      "description": "Ecommerce spend on Halloween is set to jump from $8 billion in 2020 to $10.14 billion in 2021 - like the rest of the economy, Halloween has moved online.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-81f9-b6ee-c5cb233c5036/c379fe07-eef1-406f-a02e-b74394e401b0.png"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/is-orange-the-new-black-halloween-is-day-1-of-the-holiday-season"
+  },
+  {
+    "type": "post",
+    "title": "Managing Your Local Pricing Strategy, Currency Risk, and Costs",
+    "slug": "managing-your-local-pricing-strategy-currency-risk-and-costs",
+    "excerpt": "A local shopping experience goes beyond offering local currency. Learn how to optimize your local pricing strategy with dynamic checkouts and lower FX risk.\r\n",
+    "publishedAt": "2023-01-25T05:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-81ab-9875-fabd5db1df36/b431e508-0b9c-447e-a266-e0fedfc93601.jpg",
+      "alt": "Managing Your Local Pricing Strategy, Currency Risk, and Costs",
+      "filename": "b431e508-0b9c-447e-a266-e0fedfc93601.jpg"
+    },
+    "authors": [],
+    "categories": [
+      "Localized Customer Experience",
+      "Reach blog"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "As domestic spending decreases, businesses will cater to their cross-border customers in order to increase revenue and protect their bottom lines. As such, it’s no surprise that international selling is quickly defining the growth strategy of many online organizations."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "With promising opportunities to sell globally, businesses are still left with critical questions. What is the best way to eliminate the complexities and friction points when converting traffic? And how to do it while remaining profitable?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The first pain point and common problem to address is your pricing strategy. There is no debate that consumers prefer to purchase in their local currency, since over 75% of global shoppers prefer sites that dynamically price products."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Consider the following retail-focused example:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Imagine if a US-based retailer suddenly changed the pricing on their website from USD to JPY. What would happen to their conversion rate for their US-based customers?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The customers would lose trust in your business and wonder if you sell to US customers. It would also create extra steps for them to understand what price they would actually pay in their local currency. Even if the customer decides to purchase the product in another currency they will be hit with extra fees from their bank."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Many would agree that this would be frustrating. Unfortunately, the same friction points are happening with your global customers."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Offering customers the ability to pay in their local currency is typically the first step businesses take when optimizing their global checkout. On a technical level, it should be fairly easy to start accepting local currencies on your website, since the ability to process in multiple currencies is a standard feature that all payment providers support."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Unfortunately this issue is not a technical challenge. There are many operational considerations and factors a business must consider before they start offering local currencies."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The key factors to offering local currencies that your business must consider are your pricing strategies, how you will manage your currency risk, and your costs."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Pricing Strategy:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The first step is to decide if your pricing strategy will just be a straight conversion from your domestic based pricing, or will it be market specific based on demand and competition. Consider the following:"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "If using a set conversion rate to price locally, how do you determine this rate?",
+            "How often are you monitoring and adjusting the conversion rate in each currency to make sure you are not over or underpriced?",
+            "If you are using a fixed pricing strategy based on local demand, how do you protect yourself against losing net profit if the currency moves against you over time?",
+            "Consider the local expectations; does a specific market prefer to see pricing rounded to the nearest dollar, to the nearest 0.95, or include the tax?"
+          ]
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Regardless of the strategy you choose, there is a significant amount of additional work and overhead than simply flipping a switch to set and maintain a viable pricing strategy."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Managing Currency Risk:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Once the pricing strategy is set, the real work starts in managing risk. Currencies fluctuate every second of the day. If you set your local pricing based on market demand, then you have to be very conscious of market movements that will negatively affect your profit margin."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "For example, a US-based business sets local pricing in the UK based on market demand, with an acceptable profit margin of 30%. What happens if over the first few months of setting the strategy, the US dollar goes up 4% vs the British Pound? Is a 4% loss in margin acceptable, or will the pricing need to be adjusted? This is something your team will have to closely monitor."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "If you are basing the local pricing strategy on the daily exchange, you still have to factor in risk from the time the transaction is created to the time the funds are converted. For example, you may be expecting to be remitted $98.00 for an order, but because of currency fluctuations, you only receive $97.22. This may not seem like a big difference, but when you span this across several currencies and thousands of transactions, the fluctuations pile up."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Additionally, your business must factor in refunds. Say a customer in the EU purchases something for 100 EUR, and your US-based company receives $97. If the buyer requests to return the product 30 days later, they are going to expect a full return of their 100 EUR. However, the conversion rate from USD to EUR can change drastically in 30 days. In order to refund the customer their original purchase of 100 EUR, your business may be required to refund more than the $97 USD you were paid, just so the customer receives their full 100 EUR."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Cost:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "On top of managing currency risks, your business also has to deal with high FX fees that are applied to each conversion by your payment providers. Every time an FX transaction occurs, a fee is charged. Due to the way the FX fees are applied, many businesses are unaware of the large fees they are paying on top of the processing fee, ranging anywhere from an extra 2% – 5%."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "This upcharge occurs because FX fees are applied to exchange rates. For example, if the current market exchange rate for 1 GBP to USD is 1.334, that would mean for a 100 GBP transaction, the business should be remitted $133.40 USD."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "But because the payment provider applies a mark up to the exchange rate (ex: 1.294), the business is remitted $129.40 USD. The FX fee on the conversion is $4.05 USD, which equals an additional fee of 3%. This fee is often not presented as a line item, but is reported on the settlement statement that the exchange rate of GBP to USD was 1.294 on X day."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "To make matters more complex, most payment methods will have different fees and methodologies. The FX rate charged by your credit card provider vs. PayPal is usually very different. The different FX fees along with the currency risk, makes reporting and reconciliation very difficult."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Luckily, Reach was built to help companies to easily accept over 130 currencies, increase conversions, streamline reporting, and eliminate risk through the lifecycle of the payment, helping our partners remain profitable."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Managing Your Local Pricing Strategy, Currency Risk, and Costs",
+      "description": "A local shopping experience goes beyond offering local currency. Learn how to optimize your local pricing strategy with dynamic checkouts and lower FX risk.\r\n",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1769344f-6e66-81ab-9875-fabd5db1df36/b431e508-0b9c-447e-a266-e0fedfc93601.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/reach-blog/managing-your-local-pricing-strategy-currency-risk-and-costs"
+  },
+  {
+    "type": "post",
+    "title": "CellPoint Digital partners with Reach to break down cross-border barriers",
+    "slug": "cellpoint-digital-partners-with-reach-to-break-down-cross-border-barriers",
+    "excerpt": "Partnership between two industry leaders will make cross-border transactions easier than ever.",
+    "publishedAt": "2022-10-26T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81c8-967c-fc9ede5b2b66/a7ac00ac-62ab-4d15-9c3e-4b4171459fd2.png",
+      "alt": "CellPoint Digital partners with Reach to break down cross-border barriers",
+      "filename": "a7ac00ac-62ab-4d15-9c3e-4b4171459fd2.png"
+    },
+    "authors": [],
+    "categories": [
+      "Newsroom"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "October 26, 2022 - CellPoint Digital, the global leader in Payment Orchestration, today announces a new partnership with Reach, a payment platform that simplifies how businesses sell cross-border--enabling merchants to process payments locally while selling globally."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "An estimated 30% of eCommerce sales are now cross-border, but for businesses to accept payments in-country, many traditional payment acquirers require merchants to have in-country business entities – which can cause costly and complex operational challenges."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach solves this common pain point by using a Merchant of Record model that allows merchants to process in-country worldwide without having a local entity. In this way, merchants can avoid the process of establishing foreign entities in multiple markets while still benefiting from higher in-country approval rates and bypassing more expensive cross-border interchange fees."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Additionally, Reach offers cost-effective and streamlined cross-border transactions for any industry or use-case, helping customers in B2B, SaaS, marketplace, and retail."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Commenting on the partnership, CellPoint Digital CEO, Kristian Gjerding, said: “As the pioneers of Payment Orchestration we know how important it is to allow customers to shop in their local currency and pay how they choose. Reach’s global network takes the border out of cross-border payments by processing transactions through entities local to merchants’ customers and in their local currency."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The growth of cross-border transactions has presented several issues for businesses looking to scale further and expand their base of customers. The combination of CellPoint Digital’s Payment Orchestration Platform combined with simplified cross-border services is another win for merchants."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Another win for merchants is how well this partnership allows Reach and CellPoint to leverage their key competencies. Reach provides multiple payment methods, supports 36 languages, and offers in-country payments, while CellPoint Digital optimizes the payment experience and provides businesses insight into the payment ecosystem to maximize approvals, lower costs and take greater control of payments."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The partnership is the latest in CellPoint Digital’s ongoing commitment to offer easy-to-implement solutions that help merchants solve cross-border, operational and technological challenges and simplify back-office complexities."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "For more details, visit https://cellpointdigital.com/"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "About CellPoint Digital"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "CellPoint Digital is a fintech leader in payment orchestration. CellPoint Digital’s main solution is a powerful Payment Orchestration Platform that optimises digital payment transactions, from cards or alternative payment methods, and accelerates the deployment of new payment options. Merchants can easily scale their own payment ecosystem across the world, unify the customer payment experience across their website, mobile apps and other channels, optimize the routing of each transaction, increase conversion rates and minimise payment costs. CellPoint Digital has offices in Copenhagen, Dallas, Dubai, London, Miami, Pune and Singapore."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Visit www.cellpointdigital.com to learn more."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "About Reach"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "We take the border out of cross-border transactions. Reach enables and empowers you to reach customers in international markets from anywhere in the world."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "We believe international borders should never be barriers to ecommerce. Our mission is to empower you to stay local and sell global, and we work tirelessly to eliminate costs and pain points that prevent you from doing so. We accomplish this through our strategic partnerships with leading currency exchange providers that allows us to offer you direct and real-time currency exchange rates that are guaranteed for up to 90 days.We are world-leading experts in what your local challenges are and what your international consumers want, and we’re constantly improving to support ever-changing ecommerce markets to serve both you, and them, better."
+        }
+      ]
+    },
+    "meta": {
+      "title": "CellPoint Digital partners with Reach to break down cross-border barriers",
+      "description": "Partnership between two industry leaders will make cross-border transactions easier than ever.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81c8-967c-fc9ede5b2b66/a7ac00ac-62ab-4d15-9c3e-4b4171459fd2.png"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/newsroom/cellpoint-digital-partners-with-reach-to-break-down-cross-border-barriers"
+  },
+  {
+    "type": "post",
+    "title": "Shopify is revolutionary. With Reach, it's even better.",
+    "slug": "shopify-is-revolutionary-with-reach-its-even-better",
+    "excerpt": "Reach is the top ecommerce payments provider that provides assistance every step of the way to allow merchants to appeal to a broader global market.",
+    "publishedAt": "2020-09-16T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-811f-8e50-d04084107aeb/9c6f85c7-f451-4f51-a3e0-5a2090a2cb7c.jpg",
+      "alt": "Shopify is revolutionary. With Reach, it's even better.",
+      "filename": "9c6f85c7-f451-4f51-a3e0-5a2090a2cb7c.jpg"
+    },
+    "authors": [],
+    "categories": [
+      "Newsroom"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Shopify has revolutionized ecommerce, offering capabilities that merchants could only dream of just a few years ago. Now in the time of global pandemic, Shopify has become indispensable. Every merchant is now in the business of ecommerce. And, whether they know it or not, every merchant is global, too. That’s where Reach comes in."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Shopify has made going global astoundingly easy. Its drag and drop functionalities have made ecommerce incredibly simple for merchants to simply focus on what they do best: selling their products. And once a website is launched, anyone can find it, from anywhere in the world. Instantly global."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Peeling back the layers a bit, we can see the many complexities of owning and operating a global online business that Shopify has taken care of for merchants, including:"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "Theme designs that enhance both user and store owner experience",
+            "Infinite server scalability",
+            "A massive ecosystem of plug-and-play apps"
+          ]
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Merchants can add vendor integrations, service providers, and marketing tools with the click of a button. Shopify is holding steady as the leading platform in the online retail space, and one that is constantly raising the bar for competitors, too."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "It’s hard to think of ways to improve on Shopify, right?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Well, the seamless global experience merchants are striving for hits a bit of speed bump with cross-border transactions."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Keeping Cross-border Transactions Affordable"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Cross-border transactions inhabit their own universe in the online world, and it’s one that remains largely unexplored as other concerns often feel more pressing to merchants. And they are! At least initially."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Once a merchant is solidly positioned online and seeks to really set its global roots, cross-border transactions start to nibble and then gnaw at ROI. Nimble brands find Reach before their ROI has been chiseled and chipped at. Most companies, once they go global, are desperate to catch up to the financial benchmarks of their domestic market. Reach helps merchants get ahead in this global game. We’re one of those handy vendor integrations that Shopify loves to offer merchants. We offer a complementary and crucial service – one that no one else can. It’s the Merchant of Record processing model."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "We’ll get to what that is in a moment, but to put it in context, there are two areas to consider when it comes to cross-border transactions: multi-currency options and local processing. We’ll explore each in turn."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Merchants Must Have Multi-currency Capabilities"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Shopify offers multi-currency processing of approximately 130 currencies, and merchants can choose which to offer on their site. Shopify accepts Visa, Mastercard, or Amex as payment. They do not accept Paypal. And there are a host of other payment varieties in the world that consumers want to use, but cannot."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "It gets sticky when merchants want to create fixed prices per currency, to account for a variety of other associated costs they would like to bake into their pricing model. So for example, a store may want to offer a pair of jeans at 10,000 Yen in Japan every time, and 100 pounds in the UK every time, to every customer in those markets. To create those fixed prices, Shopify offers Expansion Stores."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Adding Expansion Stores Doesn’t Cut It"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "An Expansion Store is a replica of a Shopify storefront that’s tailored to a specific locale. And the wider your net is cast, the more expansions you must create in order to accommodate consumers. If you’re serving 20 separate markets, you need 20 stores. If this sounds like a lot of extra work, well, that’s because it is."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "And there’s an additional headache - merchants cannot map expansion stores to the same backend. Without this ability, keeping multiple concurrent storefronts consistently updated as actual “expansions” of each other is excruciatingly detailed and time-consuming work."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The challenge goes beyond this. It’s not just about merchants having pricing flexibility, nor is it about offering relevant payment options to the consumer side. There’s a missing link that’s discovered once a merchant really gets moving with its global operation – one that creates an ever-widening hole in both logistics and ROI: local processing."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Local Processing is The Missing Link"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Local governments worldwide want a piece of the ecommerce pie. As a result, we see customs cracking down on duties and taxes worldwide – this is something many brands have not taken into account, and it’s affecting their conversion and retention rates (not to mention their ROI!)."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Opening up local shops in every market they service is not a viable option for most merchants, so they’re stuck absorbing cross-border fees or charging rates that put them at a pricing disadvantage against local competitors."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Payments and logistics are the fundamental pillars of global ecommerce, each of them with nuances that are specific to the type of merchant and what demographic and region it’s targeting."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Resolving Those Pain Points with Reach"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach saves merchants from having to manage a separate storefront domain for every international currency - we decrease operational complexity. Everything can live efficiently on one Shopify site."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "This also removes the need for all of the ancillary domain management activities that come with multiple sites, including separate management of price books, inventory, marketing campaigns, SEO, administration, and support for each international storefront."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach is unique in the industry in its ability to offer Shopify merchants a single localized checkout for all international transactions. It’s a seamless, integrated checkout experience with robust data analytics, and the most competitive pricing in the industry."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "How does Reach do it?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "With our Merchant of Record model. Reach acts as the local processor for merchants. We offer consumers the local payment options that make sense for them, and remove the logistical and financial worries that typically accompany global purchases."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "And we also have global fraud solutions that keep merchants ahead of fraudsters and whatever scam du jour that might be headed their way."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "We simplify and accelerate retailers’ access to eager global consumers and significantly increase sales. Shopify is revolutionary. With Reach, you can go even further."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Find out more info about our comprehensive platform designed specifically for Shopify retailers."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Shopify is revolutionary. With Reach, it's even better.",
+      "description": "Reach is the top ecommerce payments provider that provides assistance every step of the way to allow merchants to appeal to a broader global market.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-811f-8e50-d04084107aeb/9c6f85c7-f451-4f51-a3e0-5a2090a2cb7c.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/newsroom/shopify-is-revolutionary-with-reach-its-even-better"
+  },
+  {
+    "type": "post",
+    "title": "Announcing Reach Drop-In",
+    "slug": "announcing-reach-drop-in",
+    "excerpt": "Capitalize on Reach’s market-leading Merchant of Record model and guaranteed FX rates. Integrate in just a few lines of code.",
+    "publishedAt": "2022-09-08T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8148-b19a-fe9eded3700c/328a0671-e0ff-4509-b2bf-31ebf0a33bdb.png",
+      "alt": "Announcing Reach Drop-In",
+      "filename": "328a0671-e0ff-4509-b2bf-31ebf0a33bdb.png"
+    },
+    "authors": [],
+    "categories": [
+      "Newsroom"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "CALGARY, ALBERTA, CANADA (Newswire) - September 7, 2022 - Reach is excited to announce the launch of its first low-code cross-border ecommerce integration, Reach Drop-In. Drop-In allows online businesses of any size to quickly and securely overcome traditional international barriers to entry, expanding their potential customer base while capitalizing on Reach’s market-leading Merchant of Record model, guaranteed FX rates, and advanced multi-factor fraud prevention system. Integration with an existing online storefront is quick and easy, as only a few lines of code are required. Deployable in 19 different programming languages, Reach Drop-In provides a customizable, branded checkout that is the most robust cross-border payments system on the market. With Reach Drop-In, businesses can:"
+        },
+        {
+          "blockType": "list",
+          "style": "unordered",
+          "items": [
+            "Accept all of the most popular payment methods, including all major credit cards, Paypaland Apple Pay, and specific locally-trusted payment methods like Boleto, among manyothers.",
+            "Offer Buy Now, Pay Later (BNPL) to global customers through Reach’s partnership withKlarna.",
+            "Increase conversion rates by accessing Reach’s powerful intelligent routing system,which ensures the highest approval rates and the lowest fees by routing transactionsthrough acquiring banks local to global customers.",
+            "Display pricing in local currencies.",
+            "Enable their checkout process to display in 36 different languages."
+          ]
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Merchants can also take advantage of Reach Drop-In’s pre-built integrations for the world’s leading ecommerce platforms, such as WooCommerce and Magento. And best of all, Drop-In is not limited to retail ecommerce business. It is designed to empower all cross-border ecommerce transactions, whether those are B2C or B2B."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "More detailed information can be found at https://withreach.com/meet-drop-in."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "ABOUT REACH"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach simplifies cross-border ecommerce for forward-thinking organizations with ambitious global expansion goals. Its unique Merchant of Record model eliminates complexity, risk and compliance barriers around the world, turning every international buyer into a local buyer. By leveraging Reach as the Merchant of Record and accessing its vast payments network, businesses can increase conversions, reduce costs, and offset compliance and fraud risk."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "For media inquiries:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "ReachAndrew CunninghamHead of Marketing and Mediamarketing@withreach.com"
+        }
+      ]
+    },
+    "meta": {
+      "title": "Announcing Reach Drop-In",
+      "description": "Capitalize on Reach’s market-leading Merchant of Record model and guaranteed FX rates. Integrate in just a few lines of code.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8148-b19a-fe9eded3700c/328a0671-e0ff-4509-b2bf-31ebf0a33bdb.png"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/newsroom/announcing-reach-drop-in"
+  },
+  {
+    "type": "post",
+    "title": "Primer and Reach partner to supercharge your global expansion",
+    "slug": "primer-and-reach-partner-to-supercharge-your-global-expansion",
+    "excerpt": "Sit down with Matt Steinbrecher, Reach’s VP of Partnerships, to learn about merchant of record providers (MOR) and how they help businesses scale globally.",
+    "publishedAt": "2022-09-13T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81bd-8e4e-e398a698ef0b/033db6c4-53bb-45e9-ba1a-af38edc1e6d9.png",
+      "alt": "Primer and Reach partner to supercharge your global expansion",
+      "filename": "033db6c4-53bb-45e9-ba1a-af38edc1e6d9.png"
+    },
+    "authors": [],
+    "categories": [
+      "Newsroom"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "This blog was originally created and published for our Partner, Primer.io (Link: Reach x Primer partnership announcement | Primer) and is being reposted here."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "This post is in partnership with Reach, a new Connection partner that merchants on Primer can add in just a click. With Primer, merchants get a complete infrastructure to optimize for payment success and build the smoothest end-to-end buying experiences for their customers."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "What are the key payment-related challenges merchants face when expanding to a new market?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "There are three primary barriers to global expansion: localized payment methods, credit card approval rates and cost."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Localized payment methods are important because shoppers’ behaviors vary drastically between countries, with some preferring online debit-based payment methods like bank transfers and digital wallets, while others prefer credit cards, while some countries still use cash."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Despite the plethora of local payment methods available today, credit cards still dominate online transactions globally. When your shoppers use a credit card issued in a country that’s different from the one where your business is based, you typically see a 8-50% higher card decline rate at checkout. Shoppers are then asked to try again, use a different card or payment method. So, most would just abandon the checkout, which results in a loss of revenue for the business."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Finally, we’ve got the significantly higher cost of business associated with international transactions. Cross-border banking rails typically cost 30-300% higher than domestic ones, all of which impact the business’ bottom line."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "The traditional way to address these issues is by opening local entities in new markets. Needless to say, this is an operational, very costly nightmare, especially for companies looking to focus on their core product rather than becoming a multinational corporation."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "What’s the benefit of working with a merchant of record (MOR) provider?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach helps you enjoy these benefits while maintaining direct control of your checkout and customer experience, increasing your total revenue and decreasing processing costs."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "What should merchants keep in mind when working with a MOR provider like Reach?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "When you partner with us, as the MOR, we share some liability and responsibility for the goods or services that you sell. While traditional payment providers aren’t always seen as partners, a MOR in your payment network is directly aligned with your business objectives to protect you from fraud, increase sales and decrease your costs."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "What are the benefits of connecting Reach via Primer?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Having Primer as your payment orchestration platform is incredible for businesses that want to outsource their technical payment operations and increase their capabilities of payment routing and pricing efficiency.\nWith a single integration, businesses can now access"
+        },
+        {
+          "blockType": "paragraph",
+          "text": ". Businesses that operate through a single entity yet transact globally can now unlock Reach’s global entity structure, and turn their cross-border payments into domestic payments. The"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "will clearly show superior results when processing payments domestically vs. cross-border."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "How can merchants learn more about Reach?"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Check out"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "or drop an email at"
+        },
+        {
+          "blockType": "paragraph",
+          "text": ". You can also follow us on"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "or"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "for educational content on the payment space."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Ready to build a global payment stack with Reach and Primer? Connect with Primer’s product experts today."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Primer and Reach partner to supercharge your global expansion",
+      "description": "Sit down with Matt Steinbrecher, Reach’s VP of Partnerships, to learn about merchant of record providers (MOR) and how they help businesses scale globally.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-81bd-8e4e-e398a698ef0b/033db6c4-53bb-45e9-ba1a-af38edc1e6d9.png"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/newsroom/primer-and-reach-partner-to-supercharge-your-global-expansion"
+  },
+  {
+    "type": "post",
+    "title": "Installment Payments Go Global",
+    "slug": "installment-payments-go-global",
+    "excerpt": "Reach now offers Klarna as a payment method for cross-border transactions.",
+    "publishedAt": "2022-09-26T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8181-8542-f6a0f5268d94/9f5af9af-8042-4cd9-8b17-b2cf4acfbcf0.png",
+      "alt": "Installment Payments Go Global",
+      "filename": "9f5af9af-8042-4cd9-8b17-b2cf4acfbcf0.png"
+    },
+    "authors": [],
+    "categories": [
+      "Newsroom"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "CALGARY, ALBERTA, CANADA - SEPTEMBER 26, 2022 - Reach, a global leader in providing cross-border transactions for businesses and consumers, is pleased to announce that it has partnered with Klarna to offer installment payments as a payment method for online merchants. Installment payments are rapidly growing as one of the most in-demand payment methods for consumers, and by integrating with Reach, businesses can now implement this option for cross-border sales while rapidly expanding their global customer base."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Klarna, headquartered in Stockholm, Sweden, is the FinTech market leader in the installment payments space. And while this popular payment method has been traditionally limited to domestic transactions, Reach is leveraging its extensive Merchant of Record network to allow installment payments to be accepted for any business that wishes to offer it for cross-border transactions."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Integrating with Reach is fast and simple. Its new powerful and fully customizable Drop-In plugin requires only a few lines of code and provides comprehensive access to world-leading FX. Additionally, Reach offers an advanced multi-factor fraud prevention system, allows a business to display its checkout in 36 languages, display pricing in customers’ local currency, and accept the most popular international payment methods."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "ABOUT REACHReach simplifies cross-border ecommerce for forward-thinking organizations with ambitious global expansion goals. Its unique Merchant of Record model eliminates complexity, risk and compliance barriers around the world, turning every international buyer into a local buyer. By leveraging Reach as the Merchant of Record and accessing its vast payments network, businesses can increase conversions, reduce costs, and offset compliance risk."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "For Media Inquiries:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "ReachAndrew CunninghamHead of Marketing & Mediamarketing@withreach.com"
+        }
+      ]
+    },
+    "meta": {
+      "title": "Installment Payments Go Global",
+      "description": "Reach now offers Klarna as a payment method for cross-border transactions.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8181-8542-f6a0f5268d94/9f5af9af-8042-4cd9-8b17-b2cf4acfbcf0.png"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/newsroom/installment-payments-go-global"
+  },
+  {
+    "type": "post",
+    "title": "Reach and PayMyTuition Announce Partnership",
+    "slug": "reach-and-paymytuition-announce-partnership",
+    "excerpt": "Reach forms partnership with PayMyTuition reducing the cost of credit card transactions for international students.",
+    "publishedAt": "2020-09-01T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-818e-a458-d41052c36fda/68c24130-38c7-4c5d-8d8b-f10eb633bd9a.png",
+      "alt": "Reach and PayMyTuition Announce Partnership",
+      "filename": "68c24130-38c7-4c5d-8d8b-f10eb633bd9a.png"
+    },
+    "authors": [],
+    "categories": [
+      "Newsroom"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "Reach, the global ecommerce acceleration platform that helps companies process international transactions locally, announced a partnership with PayMyTuition by MTFX, a leading provider of technology-driven global payment processing solutions for international tuition payments. Through this partnership, educational institutions will be equipped with the most cost-effective way for international students to pay tuition and fees, when choosing a credit card as their method of payment, connecting students and schools with localization, transparency, and efficiency within this payment method."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach CSO Matthew Cannon said, “This partnership is an opportunity to bring Reach’s unparalleled local expertise to an industry that has traditionally lacked a customer-first mindset. PayMyTuition is attuned to the needs of student consumers around the world and is an ideal partner for Reach. Together, we will not only access new markets but also improve the international student experience.”"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Companies seeking to map out a clear plan for international success can work with Reach to form a comprehensive ecommerce strategy that is already attuned to the needs of consumers around the world."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "“With this partnership we will be able to provide our educational institution partners the most cost-efficient option for tuition credit card payments, improving efficiencies and providing cost savings to the school,” said Arif Harji, Chief Market Strategist at MTFX Group."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "PayMyTuition is focused on putting technology first and continues to bring innovative solutions to the marketplace without restrictions or exclusivity agreements to support partner institutions within the ever-changing student payments landscape. PayMyTuition’s international tuition payment solution can be directly and seamlessly integrated, by way of a real-time API, into most student information systems including Banner, Colleague, PeopleSoft, Workday, and Jenzabar."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "“Our goal at PayMyTuition is to work with strategic partners to strengthen the solutions we offer to educational institutions. By partnering with Reach, schools can now offer a more competitive payment option with lower fees providing students with more payment flexibility,” stated Harji."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "About PayMyTuition by MTFX"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "PayMyTuition is part of the MTFX Group of companies, a foreign exchange and global payments solution provider with a track record of 24+ years, facilitating payments for over 8,000corporate and institutional clients across North America. MTFX has built its reputation on amazing people and great technology. Using a blend of “high-tech” and “high-touch” solutions, MTFX has grown to become a leader in online foreign exchange and global payment services across North America. In addition to offering incredibly competitive currency exchange rates, MTFX’s high-touch 24/7 multilingual customer support ensures that every transaction not only meets but exceeds the level of service our customers expect from us. MTFX is headquartered in Toronto, Canada with its U.S. headquarters in Jersey City, N.J."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "About Reach"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach is the premier partner for ambitious, forward-thinking online brands that want to connect with consumers around the world. Using its unique local service provider model, Reach helps companies process global payment transactions wherever a merchant’s customer is based. The company brings consistency to cross-border currency conversions with its Guaranteed FX solution, has relationships with banks worldwide to enable local credit card processing, offers consumers alternative payment methods where they are accustomed to using them, and provides best-in-class fraud detection and prevention services."
+        },
+        {
+          "blockType": "heading",
+          "level": "h3",
+          "text": "Media Contacts"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "PayMyTuition"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "media@paymytuition.com"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "www.paymytuition.com"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "www.mtfxgroup.com"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "press@withreach.com"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "www.withreach.com"
+        }
+      ]
+    },
+    "meta": {
+      "title": "Reach and PayMyTuition Announce Partnership",
+      "description": "Reach forms partnership with PayMyTuition reducing the cost of credit card transactions for international students.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-818e-a458-d41052c36fda/68c24130-38c7-4c5d-8d8b-f10eb633bd9a.png"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/newsroom/reach-and-paymytuition-announce-partnership"
+  },
+  {
+    "type": "post",
+    "title": "Digital Cross-Border Net Terms Now Empowers B2B Transactions",
+    "slug": "digital-cross-border-net-terms-now-empowers-b2b-transactions",
+    "excerpt": "Seamless net terms and trade credit invoicing without risk or hassle are now available to B2B merchants worldwide.",
+    "publishedAt": "2022-10-13T04:00:00.000Z",
+    "heroImage": {
+      "url": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8158-b8b3-c602d2651f01/be679f46-5ccc-4970-855f-f8ea6bcd2756.jpg",
+      "alt": "Digital Cross-Border Net Terms Now Empowers B2B Transactions",
+      "filename": "be679f46-5ccc-4970-855f-f8ea6bcd2756.jpg"
+    },
+    "authors": [],
+    "categories": [
+      "Newsroom"
+    ],
+    "content": {
+      "type": "structured",
+      "blocks": [
+        {
+          "blockType": "paragraph",
+          "text": "CALGARY, Alberta - October 12, 2022 - Reach, the global leader in cross-border e-commerce payments, is pleased to announce that its payments system now enables net terms of up to 60 days for business-to-business transactions. The need to modernize cross-border B2B payments has become a prominent point of conversation for international businesses as legacy payment methods continue to create friction and lag their payment process. With Reach's net terms offering, international companies can remove these pain points with one out-of-the-box solution for B2B payments."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach's Merchant of Record model eliminates the fragmented nature of traditional net terms payments by engaging its global network to manage FX, regional requirements, and compliance all through one platform. Traditionally, international businesses have struggled to offer net terms due to cash flow restrictions, FX management requirements, and the administrative burdens needed to gain approval from cross-border lenders. Reach has optimized this payment process by leveraging its sophisticated Merchant of Record model and dynamic platform."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Offering net terms through Reach empowers international businesses to drastically reduce their DSO and allows them to get paid in real-time. Additionally, Reach takes on 100% of the liability of the net terms transaction, whether the buyer pays or not. This ability means the seller experiences the expedited cross-border cash flow, without the associated risk."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "For more information about Reach, please visit https://www.withreach.com/customers/b2b."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "ABOUT REACH"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Reach simplifies cross-border e-commerce for forward-thinking organizations with ambitious global expansion goals. Its unique Merchant of Record model eliminates complexity, risk and compliance barriers around the world, turning every international buyer into a local buyer. By leveraging Reach as the Merchant of Record and accessing its vast payments network, businesses can increase conversions, reduce costs, and offset compliance risk."
+        },
+        {
+          "blockType": "paragraph",
+          "text": "For Media Inquiries:"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Andrew Cunningham, Head of Marketing & Media"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "marketing@withreach.com"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Contact Information:Andrew CunninghamHead of Marketing & Mediamarketing@withreach.com15873237124"
+        },
+        {
+          "blockType": "paragraph",
+          "text": "Related FilesReach _ B2B Net Terms Press Release (October 2022).pdf"
+        }
+      ]
+    },
+    "meta": {
+      "title": "Digital Cross-Border Net Terms Now Empowers B2B Transactions",
+      "description": "Seamless net terms and trade credit invoicing without risk or hassle are now available to B2B merchants worldwide.",
+      "ogImageUrl": "https://rch-cms-content.s3.us-west-2.amazonaws.com/notion-images/1d69344f-6e66-8158-b8b3-c602d2651f01/be679f46-5ccc-4970-855f-f8ea6bcd2756.jpg"
+    },
+    "sourceUrl": "https://www.withreach.com/resources/newsroom/digital-cross-border-net-terms-now-empowers-b2b-transactions"
   }
 ]
