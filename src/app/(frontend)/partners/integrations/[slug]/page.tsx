@@ -2,10 +2,9 @@ import type { Metadata } from 'next'
 import { getPayloadClient } from '@/utilities/getPayloadClient'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
-import type { Integration } from '@/payload-types'
 import { generateMeta } from '@/utilities/generateMeta'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
 import { BackButton } from '@/components/ui/back-button'
@@ -92,12 +91,6 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
 
   if (!integration) {
     return notFound()
-  }
-
-  const featuredIds = await getFeaturedIntegrationIds()
-
-  if (!featuredIds.includes(integration.id)) {
-    redirect('/partners')
   }
 
   const logo = typeof integration.logo === 'object' ? integration.logo : null
@@ -298,38 +291,3 @@ const queryIntegrationBySlug = cache(async ({ slug }: { slug: string }) => {
   return result.docs?.[0] || null
 })
 
-async function getFeaturedIntegrationIds(): Promise<(string | number)[]> {
-  const payload = await getPayloadClient()
-
-  const pages = await payload.find({
-    collection: 'pages',
-    limit: 1000,
-    pagination: false,
-    select: {
-      layout: true,
-    },
-  })
-
-  const featuredIds = new Set<string | number>()
-
-  for (const page of pages.docs) {
-    if (page.layout) {
-      for (const block of page.layout) {
-        if (block.blockType === 'integrations' && block.selectedIntegrations) {
-          const selectedIds = block.selectedIntegrations
-            .map((integration: number | Integration) => {
-              if (typeof integration === 'object' && integration !== null) {
-                return integration.id
-              }
-              return integration
-            })
-            .filter(Boolean)
-
-          selectedIds.forEach((id: string | number) => featuredIds.add(id))
-        }
-      }
-    }
-  }
-
-  return Array.from(featuredIds)
-}
