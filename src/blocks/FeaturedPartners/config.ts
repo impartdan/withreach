@@ -34,6 +34,16 @@ export const FeaturedPartners: Block = {
                 description: 'Select the integrations to feature in this block.',
               },
             },
+            {
+              name: 'slimLayout',
+              type: 'checkbox',
+              label: 'Slim layout',
+              defaultValue: false,
+              admin: {
+                description:
+                  'Use compact integration link buttons instead of the default featured cards.',
+              },
+            },
           ],
         },
         {

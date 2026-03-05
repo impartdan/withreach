@@ -5910,6 +5910,10 @@ export interface FeaturedPartnersBlock {
    */
   integrations: (number | Integration)[];
   /**
+   * Use compact integration link buttons instead of the default featured cards.
+   */
+  slimLayout?: boolean | null;
+  /**
    * Configure appearance settings for this block
    */
   blockSettings?: {
@@ -8052,6 +8056,7 @@ export interface FormBlock2TypeSelect<T extends boolean = true> {
 export interface FeaturedPartnersBlockSelect<T extends boolean = true> {
   title?: T;
   integrations?: T;
+  slimLayout?: T;
   blockSettings?:
     | T
     | {
