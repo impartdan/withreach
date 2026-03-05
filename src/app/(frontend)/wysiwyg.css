@@ -125,3 +125,8 @@
     @apply mt-9 !important;
   }
 }
+.wysiwyg p + p.type-display-lg,
+.wysiwyg p + p.type-display-md,
+.wysiwyg p + p.type-display-sm {
+  @apply mt-8 md:mt-10;
+}
