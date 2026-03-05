@@ -141,7 +141,7 @@ export const IntegrationsClient: React.FC<IntegrationsClientProps> = ({
 
       {/* Title with See All/See Featured button - only show when not searching */}
       {!isSearching && (
-        <div className="mb-10 flex items-center justify-between">
+        <div className="mb-10 flex flex-col items-start gap-4 md:flex-row sm:items-center sm:justify-between">
           <h2 className="type-display-sm">{showAll ? 'All partners' : title}</h2>
           <Button onClick={() => setShowAll(!showAll)}>
             {showAll ? 'See featured' : 'See all partners'}
