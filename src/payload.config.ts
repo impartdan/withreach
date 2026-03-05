@@ -66,7 +66,8 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
     },
-    push: process.env.NODE_ENV === 'development',
+    // Avoid implicit schema pushes in dev; run explicit migrations instead.
+    push: process.env.PAYLOAD_DB_PUSH === 'true',
   }),
   collections: [Pages, Integrations, Posts, CaseStudies, Categories, CaseStudyCategories, IntegrationCategories, Media, Users],
   cors: [getServerSideURL()].filter(Boolean),

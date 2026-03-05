@@ -168,9 +168,11 @@ export const Integrations: CollectionConfig = {
         // Cards contain nested linkGroups — dbName overrides keep enum names under 63 chars
         { ...TrioTallImageCards, dbName: 'ttac' },
         { ...TrioShortImageCards, dbName: 'tsac' },
-        TrioTextOnlyCards,
+        // dbName in block config is still long enough to collide in integrations_v draft FK names
+        { ...TrioTextOnlyCards, dbName: 'ttoc' },
         Testimonial,
-        ItemHighlights,
+        // versions table FK names for blockSettings backgroundImage/backgroundVideo collide without a short dbName
+        { ...ItemHighlights, dbName: 'ih' },
         FaqCenter,
         FaqToCall,
         Checklist,
