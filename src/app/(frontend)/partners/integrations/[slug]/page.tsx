@@ -99,7 +99,8 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
   const icon = typeof integration.icon === 'object' ? integration.icon : null
   const integrationMedia = icon ?? logo
   const isDetailed = integration.layoutType === 'detailed'
-  const hasLayoutBlocks = Array.isArray(integration.layout) && integration.layout.length > 0
+  const layoutBlocks = Array.isArray(integration.layout) ? integration.layout : []
+  const hasLayoutBlocks = layoutBlocks.length > 0
 
   if (isDetailed) {
     return (
@@ -162,7 +163,7 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
         </div>
 
         {/* Page Blocks */}
-        {hasLayoutBlocks && <RenderBlocks blocks={integration.layout} />}
+        {hasLayoutBlocks && <RenderBlocks blocks={layoutBlocks} />}
       </article>
     )
   }
@@ -240,7 +241,7 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
           )}
         </div>
       </div>
-      {hasLayoutBlocks && <RenderBlocks blocks={integration.layout} />}
+      {hasLayoutBlocks && <RenderBlocks blocks={layoutBlocks} />}
     </article>
   )
 }
