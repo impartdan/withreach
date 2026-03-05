@@ -12,10 +12,8 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
   richText,
   links,
   media,
-  blockSettings,
 }) => {
   const isVideo = media && typeof media === 'object' && media.mimeType?.includes('mp4')
-  const showGridLines = blockSettings?.showGridLines !== false
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -26,20 +24,7 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
       </div>
 
       {/* Fade to white at the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 h-[230px] bg-gradient-to-b from-transparent to-white pointer-events-none" />
-      {/* Grid lines above gradient fade, below text content */}
-      {showGridLines && (
-        <div
-          className="absolute inset-0 z-20 pointer-events-none hidden md:block"
-          aria-hidden="true"
-        >
-          <div className="container relative h-full">
-            <div className="absolute top-0 left-[17%] w-px h-full bg-brand-black/10" />
-            <div className="absolute top-0 left-[33%] w-px h-full bg-brand-black/10" />
-            <div className="absolute top-0 right-[17%] w-px h-full bg-brand-black/10" />
-          </div>
-        </div>
-      )}
+      <div className="absolute bottom-0 left-0 right-0 z-10 h-[230px] bg-gradient-to-b from-transparent to-white pointer-events-none" />
       <div
         className="container  flex flex-col md:flex-row items-center gap-10 md:gap-16 pb-20 header-offset
       "
@@ -47,7 +32,7 @@ export const PlatformHero: React.FC<PlatformHeroBlockType> = ({
         {/* Left column: text content */}
         <RevealOnScroll
           variant="fadeIn"
-          className="w-full md:w-1/2 flex flex-col gap-6 relative z-30"
+          className="w-full md:w-1/2 flex flex-col gap-6 relative z-20"
         >
           {richText && <RichText className="text-pretty" data={richText} enableGutter={false} />}
           {Array.isArray(links) && links.length > 0 && (

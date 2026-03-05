@@ -390,7 +390,6 @@ export interface HomeHeroBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -833,7 +832,6 @@ export interface PlatformHeroBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -945,7 +943,6 @@ export interface SolutionsHeroBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1057,7 +1054,6 @@ export interface PartnerHeroBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1184,7 +1180,6 @@ export interface TextHeroBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1309,7 +1304,6 @@ export interface SupportHeroBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1417,7 +1411,6 @@ export interface HubspotFormHeroBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1530,7 +1523,6 @@ export interface ContentBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1616,7 +1608,6 @@ export interface ImageBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1722,7 +1713,6 @@ export interface VideoBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1814,7 +1804,6 @@ export interface IntegrationsBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2067,7 +2056,6 @@ export interface LogoListBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2192,7 +2180,6 @@ export interface HubspotFormBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2280,7 +2267,6 @@ export interface StatsBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2420,7 +2406,6 @@ export interface TextImageFeatureBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2560,7 +2545,6 @@ export interface InsetDualImageBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2697,7 +2681,6 @@ export interface InsetCopyImageBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2810,7 +2793,6 @@ export interface StatsTextBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -2930,7 +2912,6 @@ export interface PageTeaserBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -3064,7 +3045,6 @@ export interface DiagramBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -3227,7 +3207,6 @@ export interface TrioTallImageCardsBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -3388,7 +3367,6 @@ export interface TrioShortImageCardsBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -3571,7 +3549,6 @@ export interface TrioTextOnlyCardsBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -3711,7 +3688,6 @@ export interface TestimonialBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -3805,7 +3781,6 @@ export interface ItemHighlightsBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -3916,7 +3891,6 @@ export interface FaqCenterBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -4038,7 +4012,6 @@ export interface FaqToCallBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -4141,7 +4114,6 @@ export interface ChecklistBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -4234,7 +4206,6 @@ export interface ImageLeftTextRightBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -4346,7 +4317,6 @@ export interface SimpleContentBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -4461,7 +4431,6 @@ export interface IndentedContentBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -4574,7 +4543,6 @@ export interface ConsListBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -4687,7 +4655,6 @@ export interface ProsListBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -4818,7 +4785,6 @@ export interface CtaLargeBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -5001,7 +4967,6 @@ export interface CtaSmallBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -5103,7 +5068,6 @@ export interface DisclaimerBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -5235,7 +5199,6 @@ export interface FiftyFiftyBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -5368,7 +5331,6 @@ export interface ItemHighlightsWithIntroBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -5465,7 +5427,6 @@ export interface PeopleIndexBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -5601,7 +5562,6 @@ export interface CardGridBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -5710,7 +5670,6 @@ export interface FormBlock2Type {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -5976,7 +5935,6 @@ export interface FeaturedPartnersBlock {
      */
     backgroundVideoUrl?: string | null;
     textColor?: ('dark' | 'light') | null;
-    showGridLines?: boolean | null;
   };
   id?: string | null;
   blockName?: string | null;
@@ -6408,7 +6366,6 @@ export interface HomeHeroBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6450,7 +6407,6 @@ export interface PlatformHeroBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6478,7 +6434,6 @@ export interface SolutionsHeroBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6517,7 +6472,6 @@ export interface PartnerHeroBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6561,7 +6515,6 @@ export interface TextHeroBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6603,7 +6556,6 @@ export interface SupportHeroBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6632,7 +6584,6 @@ export interface HubspotFormHeroBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6662,7 +6613,6 @@ export interface ContentBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6692,7 +6642,6 @@ export interface ImageBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6727,7 +6676,6 @@ export interface VideoBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6757,7 +6705,6 @@ export interface IntegrationsBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6793,7 +6740,6 @@ export interface LogoListBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6826,7 +6772,6 @@ export interface HubspotFormBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6855,7 +6800,6 @@ export interface StatsBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6915,7 +6859,6 @@ export interface TextImageFeatureBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -6965,7 +6908,6 @@ export interface InsetDualImageBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7015,7 +6957,6 @@ export interface InsetCopyImageBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7051,7 +6992,6 @@ export interface StatsTextBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7096,7 +7036,6 @@ export interface PageTeaserBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7141,7 +7080,6 @@ export interface DiagramBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7208,7 +7146,6 @@ export interface TrioTallImageCardsBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7275,7 +7212,6 @@ export interface TrioShortImageCardsBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7338,7 +7274,6 @@ export interface TrioTextOnlyCardsBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7388,7 +7323,6 @@ export interface TestimonialBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7425,7 +7359,6 @@ export interface ItemHighlightsBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7462,7 +7395,6 @@ export interface FaqCenterBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7499,7 +7431,6 @@ export interface FaqToCallBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7534,7 +7465,6 @@ export interface ChecklistBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7570,7 +7500,6 @@ export interface ImageLeftTextRightBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7611,7 +7540,6 @@ export interface SimpleContentBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7647,7 +7575,6 @@ export interface IndentedContentBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7683,7 +7610,6 @@ export interface ConsListBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7719,7 +7645,6 @@ export interface ProsListBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7764,7 +7689,6 @@ export interface CtaLargeBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7818,7 +7742,6 @@ export interface CtaSmallBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7847,7 +7770,6 @@ export interface DisclaimerBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7893,7 +7815,6 @@ export interface FiftyFiftyBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7939,7 +7860,6 @@ export interface ItemHighlightsWithIntroBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -7976,7 +7896,6 @@ export interface PeopleIndexBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -8020,7 +7939,6 @@ export interface CardGridBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -8050,7 +7968,6 @@ export interface FormBlock2TypeSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
@@ -8080,7 +7997,6 @@ export interface FeaturedPartnersBlockSelect<T extends boolean = true> {
         backgroundVideo?: T;
         backgroundVideoUrl?: T;
         textColor?: T;
-        showGridLines?: T;
       };
   id?: T;
   blockName?: T;
