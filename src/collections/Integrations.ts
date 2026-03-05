@@ -37,6 +37,7 @@ import { ItemHighlightsWithIntro } from '../blocks/ItemHighlightsWithIntro/confi
 import { PeopleIndex } from '../blocks/PeopleIndex/config'
 import { CardGrid } from '../blocks/CardGrid/config'
 import { FormBlock2 } from '../blocks/FormBlock2/config'
+import { FeaturedPartners } from '../blocks/FeaturedPartners/config'
 
 export const Integrations: CollectionConfig = {
   slug: 'integrations',
@@ -175,6 +176,7 @@ export const Integrations: CollectionConfig = {
         PeopleIndex,
         CardGrid,
         FormBlock2,
+        FeaturedPartners,
       ],
       admin: {
         initCollapsed: true,

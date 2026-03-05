@@ -1957,6 +1957,7 @@ export interface Integration {
         | PeopleIndexBlock
         | CardGridBlock
         | FormBlock2Type
+        | FeaturedPartnersBlock
       )[]
     | null;
   category?: (number | null) | IntegrationCategory;
@@ -5886,21 +5887,6 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "integration-categories".
- */
-export interface IntegrationCategory {
-  id: number;
-  title: string;
-  /**
-   * When enabled, the slug will auto-generate from the title field on save and autosave.
-   */
-  generateSlug?: boolean | null;
-  slug: string;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FeaturedPartnersBlock".
  */
 export interface FeaturedPartnersBlock {
@@ -5990,6 +5976,21 @@ export interface FeaturedPartnersBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'featuredPartners';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "integration-categories".
+ */
+export interface IntegrationCategory {
+  id: number;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -8143,6 +8144,7 @@ export interface IntegrationsSelect<T extends boolean = true> {
         peopleIndex?: T | PeopleIndexBlockSelect<T>;
         cardGrid?: T | CardGridBlockSelect<T>;
         formBlock2?: T | FormBlock2TypeSelect<T>;
+        featuredPartners?: T | FeaturedPartnersBlockSelect<T>;
       };
   category?: T;
   generateSlug?: T;
