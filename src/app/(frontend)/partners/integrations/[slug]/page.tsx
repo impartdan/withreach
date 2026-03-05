@@ -104,68 +104,73 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
 
   if (isDetailed) {
     return (
-      <article className="pb-24 header-offset">
-        {draft && <LivePreviewListener />}
-        <IntegrationPageClient id={String(integration.id)} />
-        {/* Detailed Header Section (Matches TextHero) */}
-        <div className="w-full">
-          <div className="container py-20">
-            <div className={cn('flex flex-col items-center gap-10 max-w-[908px] mx-auto')}>
-              {/* Logos */}
-              <div className="flex items-center gap-6">
-                <div className="aspect-square w-20 bg-white overflow-hidden rounded-[10px] shadow-[0px_8px_12.6px_rgba(0,0,0,0.04),0px_10px_30px_rgba(0,0,0,0.05),0px_70.6px_56.5px_rgba(0,0,0,0.07)]">
-                  <Image
-                    src="/reach-icon.png"
-                    alt="Reach Logo"
-                    height={80}
-                    width={80}
-                    className="w-full h-full object-cover"
-                  />
+      <>
+        <article className="pb-10 lg:pb-14 header-offset">
+          {draft && <LivePreviewListener />}
+          <IntegrationPageClient id={String(integration.id)} />
+          {/* Detailed Header Section (Matches TextHero) */}
+          <div className="w-full">
+            <div className="container py-20">
+              <div className={cn('flex flex-col items-center gap-10 max-w-[908px] mx-auto')}>
+                {/* Logos */}
+                <div className="flex items-center gap-6">
+                  <div className="aspect-square w-20 bg-white overflow-hidden rounded-[10px] shadow-[0px_8px_12.6px_rgba(0,0,0,0.04),0px_10px_30px_rgba(0,0,0,0.05),0px_70.6px_56.5px_rgba(0,0,0,0.07)]">
+                    <Image
+                      src="/reach-icon.png"
+                      alt="Reach Logo"
+                      height={80}
+                      width={80}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <span className="text-brand-black text-2xl">+</span>
+                  {integrationMedia && (
+                    <div className="size-20 rounded-[10px] bg-white flex items-center justify-center overflow-hidden shadow-[0px_8px_12.6px_rgba(0,0,0,0.04),0px_10px_30px_rgba(0,0,0,0.05),0px_70.6px_56.5px_rgba(0,0,0,0.07)]">
+                      {integrationMedia.mimeType === 'image/svg+xml' ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={getMediaUrl(integrationMedia.url, integrationMedia.updatedAt)}
+                          alt={integrationMedia.alt || integration.title}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <Media
+                          resource={integrationMedia}
+                          className="w-full h-full"
+                          pictureClassName="w-full h-full"
+                          imgClassName="w-full h-full object-cover"
+                        />
+                      )}
+                    </div>
+                  )}
                 </div>
-                <span className="text-brand-black text-2xl">+</span>
-                {integrationMedia && (
-                  <div className="size-20 rounded-[10px] bg-white flex items-center justify-center overflow-hidden shadow-[0px_8px_12.6px_rgba(0,0,0,0.04),0px_10px_30px_rgba(0,0,0,0.05),0px_70.6px_56.5px_rgba(0,0,0,0.07)]">
-                    {integrationMedia.mimeType === 'image/svg+xml' ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={getMediaUrl(integrationMedia.url, integrationMedia.updatedAt)}
-                        alt={integrationMedia.alt || integration.title}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <Media
-                        resource={integrationMedia}
-                        className="w-full h-full"
-                        pictureClassName="w-full h-full"
-                        imgClassName="w-full h-full object-cover"
-                      />
-                    )}
+
+                {/* Intro Text */}
+                {integration.introText && (
+                  <div className="text-center w-full mx-auto max-w-3xl">
+                    <RichText
+                      data={integration.introText}
+                      enableGutter={false}
+                      enableProse={true}
+                    />
                   </div>
                 )}
+
+                {/* Header Links */}
+                {Array.isArray(integration.headerLinks) && integration.headerLinks.length > 0 && (
+                  <ul className="flex justify-center gap-4">
+                    {integration.headerLinks.map((item, i) => (
+                      <li key={i}>{item.link && <CMSLink {...item.link} />}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
-
-              {/* Intro Text */}
-              {integration.introText && (
-                <div className="text-center w-full mx-auto max-w-3xl">
-                  <RichText data={integration.introText} enableGutter={false} enableProse={true} />
-                </div>
-              )}
-
-              {/* Header Links */}
-              {Array.isArray(integration.headerLinks) && integration.headerLinks.length > 0 && (
-                <ul className="flex justify-center gap-4">
-                  {integration.headerLinks.map((item, i) => (
-                    <li key={i}>{item.link && <CMSLink {...item.link} />}</li>
-                  ))}
-                </ul>
-              )}
             </div>
           </div>
-        </div>
-
+        </article>
         {/* Page Blocks */}
         {hasLayoutBlocks && <RenderBlocks blocks={layoutBlocks} />}
-      </article>
+      </>
     )
   }
 
@@ -173,78 +178,80 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
   const featuresList = integration.features ? extractFeatures(integration.features) : []
 
   return (
-    <article className="pb-24 header-offset">
-      {draft && <LivePreviewListener />}
-      <IntegrationPageClient id={String(integration.id)} />
-      {/* Main Content Section */}
-      <div className="container mx-auto px-4 max-w-7xl py-16 md:py-24">
-        {/* Icon/Logo - Small size */}
-        {integrationMedia && (
-          <div className="mb-8">
-            {integrationMedia.mimeType === 'image/svg+xml' ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={getMediaUrl(integrationMedia.url, integrationMedia.updatedAt)}
-                alt={integrationMedia.alt || integration.title}
-                className="h-16 w-auto object-contain"
-              />
-            ) : (
-              <Media resource={integrationMedia} imgClassName="h-16 w-auto object-contain" />
-            )}
-          </div>
-        )}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Column - Logo, Title, Description */}
-          <div>
-            {/* Title */}
-            <h1 className="type-display-lg [&_span]:block [&_span]:text-brand-olive mb-6">
-              {integration.title}
-            </h1>
-
-            {/* Description - Can be multiple paragraphs */}
-            <div className="space-y-4 type-body [&>p]:mb-0">
-              {integration.description.split('\n\n').map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
+    <>
+      <article className="pb-24 header-offset">
+        {draft && <LivePreviewListener />}
+        <IntegrationPageClient id={String(integration.id)} />
+        {/* Main Content Section */}
+        <div className="container mx-auto px-4 max-w-7xl py-16 md:py-24">
+          {/* Icon/Logo - Small size */}
+          {integrationMedia && (
+            <div className="mb-8">
+              {integrationMedia.mimeType === 'image/svg+xml' ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={getMediaUrl(integrationMedia.url, integrationMedia.updatedAt)}
+                  alt={integrationMedia.alt || integration.title}
+                  className="h-16 w-auto object-contain"
+                />
+              ) : (
+                <Media resource={integrationMedia} imgClassName="h-16 w-auto object-contain" />
+              )}
             </div>
-
-            {/* Body Content if available */}
-            {integration.body && (
-              <div className="mt-8">
-                <RichText data={integration.body} enableGutter={false} enableProse={true} />
-              </div>
-            )}
-
-            <BackButton href="/integrations" className="mt-8">
-              Back to Integrations
-            </BackButton>
-          </div>
-
-          {/* Right Column - Features */}
-          {featuresList.length > 0 && (
+          )}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            {/* Left Column - Logo, Title, Description */}
             <div>
-              <h2 className="type-eyebrow [&_span]:block [&_span]:text-brand-olive mb-8">
-                Features
-              </h2>
-              <div className="flex flex-wrap gap-4">
-                {featuresList.map((feature, index) => (
-                  <Tag key={index} label={feature} variant="primary" />
+              {/* Title */}
+              <h1 className="type-display-lg [&_span]:block [&_span]:text-brand-olive mb-6">
+                {integration.title}
+              </h1>
+
+              {/* Description - Can be multiple paragraphs */}
+              <div className="space-y-4 type-body [&>p]:mb-0">
+                {integration.description.split('\n\n').map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
-            </div>
-          )}
 
-          {/* If no feature list, show features richText in full */}
-          {!featuresList.length && integration.features && (
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Features</h2>
-              <RichText data={integration.features} enableGutter={false} enableProse={false} />
+              {/* Body Content if available */}
+              {integration.body && (
+                <div className="mt-8">
+                  <RichText data={integration.body} enableGutter={false} enableProse={true} />
+                </div>
+              )}
+
+              <BackButton href="/integrations" className="mt-8">
+                Back to Integrations
+              </BackButton>
             </div>
-          )}
+
+            {/* Right Column - Features */}
+            {featuresList.length > 0 && (
+              <div>
+                <h2 className="type-eyebrow [&_span]:block [&_span]:text-brand-olive mb-8">
+                  Features
+                </h2>
+                <div className="flex flex-wrap gap-4">
+                  {featuresList.map((feature, index) => (
+                    <Tag key={index} label={feature} variant="primary" />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* If no feature list, show features richText in full */}
+            {!featuresList.length && integration.features && (
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Features</h2>
+                <RichText data={integration.features} enableGutter={false} enableProse={false} />
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </article>
       {hasLayoutBlocks && <RenderBlocks blocks={layoutBlocks} />}
-    </article>
+    </>
   )
 }
 
@@ -294,4 +301,3 @@ const queryIntegrationBySlug = cache(async ({ slug }: { slug: string }) => {
 
   return result.docs?.[0] || null
 })
-
