@@ -38,6 +38,7 @@ import { PeopleIndex } from '../blocks/PeopleIndex/config'
 import { CardGrid } from '../blocks/CardGrid/config'
 import { FormBlock2 } from '../blocks/FormBlock2/config'
 import { FeaturedPartners } from '../blocks/FeaturedPartners/config'
+import { generatePreviewPath } from '../utilities/generatePreviewPath'
 
 export const Integrations: CollectionConfig = {
   slug: 'integrations',
@@ -51,6 +52,18 @@ export const Integrations: CollectionConfig = {
     group: 'Collections',
     useAsTitle: 'title',
     defaultColumns: ['title', 'category', 'layoutType', 'updatedAt'],
+    livePreview: {
+      url: ({ data }) =>
+        generatePreviewPath({
+          slug: data?.slug,
+          collection: 'integrations',
+        }),
+    },
+    preview: (data) =>
+      generatePreviewPath({
+        slug: data?.slug as string,
+        collection: 'integrations',
+      }),
   },
   fields: [
     {
@@ -176,7 +189,8 @@ export const Integrations: CollectionConfig = {
         PeopleIndex,
         CardGrid,
         FormBlock2,
-        FeaturedPartners,
+        // blockSettings backgroundImage + backgroundVideo FK names exceed 63 chars with integrations_blocks_ prefix
+        { ...FeaturedPartners, dbName: 'fp' },
       ],
       admin: {
         initCollapsed: true,
@@ -193,4 +207,13 @@ export const Integrations: CollectionConfig = {
     },
     slugField(),
   ],
+  versions: {
+    drafts: {
+      autosave: {
+        interval: 100,
+      },
+      schedulePublish: true,
+    },
+    maxPerDoc: 50,
+  },
 }
