@@ -10,6 +10,7 @@ import * as migration_20260224_update_bg_color_enum from './20260224_update_bg_c
 import * as migration_20260227_set_show_grid_lines_false from './20260227_set_show_grid_lines_false';
 import * as migration_20260227_cta_small_add_logo from './20260227_cta_small_add_logo';
 import * as migration_20260227_cta_small_move_logo_to_cards from './20260227_cta_small_move_logo_to_cards';
+import * as migration_20260305_publish_integrations from './20260305_publish_integrations';
 
 export const migrations = [
   {
@@ -71,5 +72,10 @@ export const migrations = [
     up: migration_20260227_cta_small_move_logo_to_cards.up,
     down: migration_20260227_cta_small_move_logo_to_cards.down,
     name: '20260227_cta_small_move_logo_to_cards'
+  },
+  {
+    up: migration_20260305_publish_integrations.up,
+    down: migration_20260305_publish_integrations.down,
+    name: '20260305_publish_integrations'
   },
 ];
