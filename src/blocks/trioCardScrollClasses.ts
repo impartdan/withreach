@@ -2,7 +2,7 @@ import { cn } from '@/utilities/ui'
 
 export const getTrioCardsContainerClasses = (cardCount: number) =>
   cn(
-    'flex overflow-x-auto -mx-4 px-4 pb-2 scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-6 md:overflow-x-visible md:mx-0 md:px-0 md:pb-0 md:grid',
+    'flex overflow-x-auto overflow-y-hidden touch-pan-x -mx-4 px-4 pb-2 scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-6 md:overflow-x-visible md:overflow-y-visible md:mx-0 md:px-0 md:pb-0 md:grid',
     cardCount > 0 && cardCount < 3 && 'md:grid-cols-2',
     cardCount > 2 && 'md:grid-cols-2 lg:grid-cols-3',
   )
