@@ -49,6 +49,28 @@ export const BeforeLogin: React.FC = () => {
           body :is(label, p, a, h1, h2, h3, h4, h5, h6, span) {
             color: var(--theme-elevation-800);
           }
+
+          /* Force login CTA contrast regardless of OS/theme mode */
+          body form button[type='submit'],
+          body form .btn--style-primary {
+            background: #faf7f5 !important;
+            border-color: #faf7f5 !important;
+            color: #1a1713 !important;
+          }
+
+          body form button[type='submit'] *,
+          body form .btn--style-primary * {
+            color: #1a1713 !important;
+            fill: currentColor !important;
+            stroke: currentColor !important;
+          }
+
+          body form button[type='submit']:is(:hover, :focus, :focus-visible),
+          body form .btn--style-primary:is(:hover, :focus, :focus-visible) {
+            background: #ffffff !important;
+            border-color: #ffffff !important;
+            color: #1a1713 !important;
+          }
         `,
       }}
     />
