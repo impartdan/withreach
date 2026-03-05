@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload'
+import type { CollectionBeforeValidateHook, CollectionConfig } from 'payload'
 
 import { anyone } from '../access/anyone'
 import { authenticated } from '../access/authenticated'
@@ -40,6 +40,34 @@ import { FormBlock2 } from '../blocks/FormBlock2/config'
 import { FeaturedPartners } from '../blocks/FeaturedPartners/config'
 import { generatePreviewPath } from '../utilities/generatePreviewPath'
 
+const stripPastedRowIDs = (value: unknown): unknown => {
+  if (Array.isArray(value)) {
+    return value.map(stripPastedRowIDs)
+  }
+
+  if (value && typeof value === 'object') {
+    const objectValue = value as Record<string, unknown>
+    const cleanedEntries = Object.entries(objectValue)
+      // Payload block/array row IDs are generated strings; strip them on paste.
+      .filter(([key, entryValue]) => !(key === 'id' && typeof entryValue === 'string'))
+      .map(([key, entryValue]) => [key, stripPastedRowIDs(entryValue)] as const)
+
+    return Object.fromEntries(cleanedEntries)
+  }
+
+  return value
+}
+
+const sanitizePastedLayoutIDs: CollectionBeforeValidateHook = ({ data }) => {
+  if (!data || typeof data !== 'object') return data
+
+  const incomingData = data as Record<string, unknown>
+  if (!Array.isArray(incomingData.layout)) return data
+
+  incomingData.layout = stripPastedRowIDs(incomingData.layout)
+  return incomingData
+}
+
 export const Integrations: CollectionConfig = {
   slug: 'integrations',
   access: {
@@ -47,6 +75,9 @@ export const Integrations: CollectionConfig = {
     delete: authenticated,
     read: anyone,
     update: authenticated,
+  },
+  hooks: {
+    beforeValidate: [sanitizePastedLayoutIDs],
   },
   admin: {
     group: 'Collections',

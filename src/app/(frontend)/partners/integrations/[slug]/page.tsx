@@ -14,6 +14,7 @@ import { cn } from '@/utilities/ui'
 import { RenderBlocks } from '@/blocks/RenderBlocks'
 import IntegrationPageClient from './page.client'
 import Image from 'next/image'
+import { LivePreviewListener } from '@/components/LivePreviewListener'
 
 export async function generateStaticParams() {
   const payload = await getPayloadClient()
@@ -86,6 +87,7 @@ function extractFeatures(richTextData: RichTextData): string[] {
 }
 
 export default async function IntegrationPage({ params: paramsPromise }: Args) {
+  const { isEnabled: draft } = await draftMode()
   const { slug } = await paramsPromise
   const integration = await queryIntegrationBySlug({ slug })
 
@@ -103,6 +105,7 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
   if (isDetailed) {
     return (
       <article className="pb-24 header-offset">
+        {draft && <LivePreviewListener />}
         <IntegrationPageClient id={String(integration.id)} />
         {/* Detailed Header Section (Matches TextHero) */}
         <div className="w-full">
@@ -171,6 +174,7 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
 
   return (
     <article className="pb-24 header-offset">
+      {draft && <LivePreviewListener />}
       <IntegrationPageClient id={String(integration.id)} />
       {/* Main Content Section */}
       <div className="container mx-auto px-4 max-w-7xl py-16 md:py-24">
