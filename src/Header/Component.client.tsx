@@ -22,6 +22,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({
   latestCaseStudies,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true)
   const [headerHeight, setHeaderHeight] = useState(0)
   const headerRef = useRef<HTMLElement>(null)
   const pathname = usePathname()
@@ -39,9 +40,71 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const desktopQuery = window.matchMedia('(min-width: 1280px)')
+
+    const handleDesktopChange = (event: MediaQueryListEvent | MediaQueryList) => {
+      if (event.matches) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    handleDesktopChange(desktopQuery)
+
+    const onChange = (event: MediaQueryListEvent) => handleDesktopChange(event)
+    desktopQuery.addEventListener('change', onChange)
+
+    return () => desktopQuery.removeEventListener('change', onChange)
+  }, [])
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsHeaderVisible(true)
+      return
+    }
+
+    let lastScrollY = window.scrollY
+    let ticking = false
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (isMenuOpen) {
+            setIsHeaderVisible(true)
+            lastScrollY = window.scrollY
+            ticking = false
+            return
+          }
+
+          const currentScrollY = window.scrollY
+          const isScrollingUp = currentScrollY < lastScrollY
+          const isPastHeader = currentScrollY > headerHeight
+
+          if (!isPastHeader || isScrollingUp) {
+            setIsHeaderVisible(true)
+          } else {
+            setIsHeaderVisible(false)
+          }
+
+          lastScrollY = currentScrollY
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [headerHeight, isMenuOpen])
+
   return (
     <>
-      <header ref={headerRef} className="fixed top-0 z-30 w-full">
+      <header
+        ref={headerRef}
+        className={`fixed top-0 z-30 w-full transition-transform duration-300 ease-in-out ${
+          isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
         <div className="p-3 md:px-10 md:pt-9 md:pb-6 group max-w-[2400px] mx-auto">
           <div className="relative rounded-[10px]">
             {/* Blur background layer — no ancestor has view-transition-name, so backdrop-filter works */}
