@@ -1828,6 +1828,10 @@ export interface Integration {
   id: number;
   title: string;
   /**
+   * Controls whether this integration page is publicly accessible.
+   */
+  isPubliclyViewable?: boolean | null;
+  /**
    * Choose how this integration page is displayed.
    */
   layoutType?: ('simple' | 'detailed') | null;
@@ -8087,6 +8091,7 @@ export interface FeaturedPartnersBlockSelect<T extends boolean = true> {
  */
 export interface IntegrationsSelect<T extends boolean = true> {
   title?: T;
+  isPubliclyViewable?: T;
   layoutType?: T;
   description?: T;
   logo?: T;

@@ -23,6 +23,8 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
 }) => {
   const category = typeof integration.category === 'object' ? integration.category : null
   const logo = typeof integration.logo === 'object' ? integration.logo : null
+  const isPubliclyViewable =
+    (integration as { isPubliclyViewable?: boolean }).isPubliclyViewable !== false
 
   const cardContent = (
     <>
@@ -71,7 +73,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
       <p className="type-micro-b mb-6 flex-1">{integration.description}</p>
 
       {/* Link indicator - only show for featured */}
-      {isFeatured && (
+      {isFeatured && isPubliclyViewable && (
         <div className="pt-2 mt-auto">
           <span className={buttonVariants({ size: 'clear', variant: 'arrow-invert' })}>
             Explore
@@ -91,7 +93,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
 
   return (
     <article className="h-full flex flex-col border border-brand-olive/20 rounded-[8px] bg-white hover:border-brand-olive/40 hover:shadow-md transition-all duration-200 group">
-      {isFeatured ? (
+      {isFeatured && isPubliclyViewable ? (
         <Link
           href={`/partners/integrations/${integration.slug}`}
           className="p-8 flex flex-col flex-1"

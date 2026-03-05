@@ -67,6 +67,8 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
         {integrations ? <div className="type-micro-b">Featured integrations</div> : null}
         {integrations?.map((integration, index) => {
           if (typeof integration !== 'object') return null
+          const isPubliclyViewable =
+            (integration as { isPubliclyViewable?: boolean }).isPubliclyViewable !== false
 
           return (
             <motion.div
@@ -75,27 +77,43 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.2, delay: 0.1 + index * 0.08, ease: 'easeOut' }}
             >
-              <Link
-                href={`/partners/integrations/${integration.slug}`}
-                className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] group hover:bg-white border-transparent border hover:border-black/20 transition-all hover:shadow-lg"
-              >
-                <div className="flex items-center gap-4">
-                  {integration.icon && (
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
-                      <MediaComponent
-                        resource={integration.icon}
-                        className="w-6 h-6 object-contain"
-                      />
-                    </div>
-                  )}
-                  <span className="type-display-md">{integration.title}</span>
+              {isPubliclyViewable ? (
+                <Link
+                  href={`/partners/integrations/${integration.slug}`}
+                  className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] group hover:bg-white border-transparent border hover:border-black/20 transition-all hover:shadow-lg"
+                >
+                  <div className="flex items-center gap-4">
+                    {integration.icon && (
+                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
+                        <MediaComponent
+                          resource={integration.icon}
+                          className="w-6 h-6 object-contain"
+                        />
+                      </div>
+                    )}
+                    <span className="type-display-md">{integration.title}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-base font-semibold text-[#1E1A15]">
+                    <svg width="4" height="8" viewBox="0 0 4 8" fill="none">
+                      <path d="M0.5 0.5L3.5 4L0.5 7.5" stroke="#1E1A15" strokeWidth="1.5" />
+                    </svg>
+                  </div>
+                </Link>
+              ) : (
+                <div className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] border border-transparent">
+                  <div className="flex items-center gap-4">
+                    {integration.icon && (
+                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
+                        <MediaComponent
+                          resource={integration.icon}
+                          className="w-6 h-6 object-contain"
+                        />
+                      </div>
+                    )}
+                    <span className="type-display-md">{integration.title}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3 text-base font-semibold text-[#1E1A15]">
-                  <svg width="4" height="8" viewBox="0 0 4 8" fill="none">
-                    <path d="M0.5 0.5L3.5 4L0.5 7.5" stroke="#1E1A15" strokeWidth="1.5" />
-                  </svg>
-                </div>
-              </Link>
+              )}
             </motion.div>
           )
         })}

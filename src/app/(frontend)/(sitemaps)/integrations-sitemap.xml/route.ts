@@ -19,6 +19,11 @@ const getIntegrationsSitemap = unstable_cache(
         slug: true,
         updatedAt: true,
       },
+      where: {
+        isPubliclyViewable: {
+          equals: true,
+        },
+      },
     })
 
     const dateFallback = new Date().toISOString()

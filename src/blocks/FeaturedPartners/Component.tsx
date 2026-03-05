@@ -57,25 +57,41 @@ export const FeaturedPartnersBlock: React.FC<
       {slimLayout ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
           {integrations.map((integration) => (
-            <Link
-              key={integration.id}
-              href={`/partners/integrations/${integration.slug}`}
-              className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] group hover:bg-white border-transparent border hover:border-black/20 transition-all hover:shadow-lg"
-            >
-              <div className="flex items-center gap-4 min-w-0">
-                {integration.icon && (
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
-                    <MediaComponent resource={integration.icon} className="w-6 h-6 object-contain" />
-                  </div>
-                )}
-                <span className="type-display-md truncate">{integration.title}</span>
+            ((integration as { isPubliclyViewable?: boolean }).isPubliclyViewable !== false ? (
+              <Link
+                key={integration.id}
+                href={`/partners/integrations/${integration.slug}`}
+                className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] group hover:bg-white border-transparent border hover:border-black/20 transition-all hover:shadow-lg"
+              >
+                <div className="flex items-center gap-4 min-w-0">
+                  {integration.icon && (
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
+                      <MediaComponent resource={integration.icon} className="w-6 h-6 object-contain" />
+                    </div>
+                  )}
+                  <span className="type-display-md truncate">{integration.title}</span>
+                </div>
+                <div className="flex items-center gap-3 text-base font-semibold text-[#1E1A15] shrink-0">
+                  <svg width="4" height="8" viewBox="0 0 4 8" fill="none">
+                    <path d="M0.5 0.5L3.5 4L0.5 7.5" stroke="#1E1A15" strokeWidth="1.5" />
+                  </svg>
+                </div>
+              </Link>
+            ) : (
+              <div
+                key={integration.id}
+                className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] border border-transparent"
+              >
+                <div className="flex items-center gap-4 min-w-0">
+                  {integration.icon && (
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
+                      <MediaComponent resource={integration.icon} className="w-6 h-6 object-contain" />
+                    </div>
+                  )}
+                  <span className="type-display-md truncate">{integration.title}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-3 text-base font-semibold text-[#1E1A15] shrink-0">
-                <svg width="4" height="8" viewBox="0 0 4 8" fill="none">
-                  <path d="M0.5 0.5L3.5 4L0.5 7.5" stroke="#1E1A15" strokeWidth="1.5" />
-                </svg>
-              </div>
-            </Link>
+            ))
           ))}
         </div>
       ) : (

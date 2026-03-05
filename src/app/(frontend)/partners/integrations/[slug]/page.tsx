@@ -27,6 +27,11 @@ export async function generateStaticParams() {
     select: {
       slug: true,
     },
+    where: {
+      isPubliclyViewable: {
+        equals: true,
+      },
+    },
   })
 
   return integrations.docs.map(({ slug }) => ({
@@ -268,11 +273,26 @@ const queryIntegrationBySlug = cache(async ({ slug }: { slug: string }) => {
     limit: 1,
     pagination: false,
     overrideAccess: draft,
-    where: {
-      slug: {
-        equals: slug,
-      },
-    },
+    where: draft
+      ? {
+          slug: {
+            equals: slug,
+          },
+        }
+      : {
+          and: [
+            {
+              slug: {
+                equals: slug,
+              },
+            },
+            {
+              isPubliclyViewable: {
+                equals: true,
+              },
+            },
+          ],
+        },
   })
 
   return result.docs?.[0] || null

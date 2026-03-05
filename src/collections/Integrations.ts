@@ -72,6 +72,15 @@ export const Integrations: CollectionConfig = {
       required: true,
     },
     {
+      name: 'isPubliclyViewable',
+      type: 'checkbox',
+      label: 'Publicly viewable',
+      defaultValue: true,
+      admin: {
+        description: 'Controls whether this integration page is publicly accessible.',
+      },
+    },
+    {
       name: 'layoutType',
       type: 'select',
       label: 'Layout',
