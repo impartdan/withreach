@@ -185,6 +185,15 @@ export const Integrations: CollectionConfig = {
       },
     }),
     {
+      name: 'layoutAppendTools',
+      type: 'ui',
+      admin: {
+        components: {
+          Field: '@/admin/fields/AppendLayoutFromClipboard#AppendLayoutFromClipboardField',
+        },
+      },
+    },
+    {
       name: 'layout',
       type: 'blocks',
       label: 'Page Blocks',
