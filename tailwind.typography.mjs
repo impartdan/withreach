@@ -70,7 +70,7 @@ module.exports = plugin(function ({ addUtilities }) {
       },
       '.type-display-xs': {
         'font-size': '20px',
-        'line-height': '1.75',
+        'line-height': '1.3',
         'font-weight': '500',
         'font-family': seasonSans,
         'letter-spacing': '-0.01875em',
