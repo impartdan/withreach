@@ -179,7 +179,6 @@ export const Integrations: CollectionConfig = {
       admin: {
         initCollapsed: true,
         description: 'Stack blocks to build out the page content.',
-        condition: (data) => data?.layoutType === 'detailed',
       },
     },
     {
