@@ -41,6 +41,7 @@ import { createParentField, createBreadcrumbsField } from '@payloadcms/plugin-ne
 import { heroBlocks } from '@/heros/config'
 import { slugField } from 'payload'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
+import { ensureSlugFromTitle } from '../../hooks/ensureSlugFromTitle'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
 
@@ -237,6 +238,7 @@ export const Pages: CollectionConfig<'pages'> = {
     slugField(),
   ],
   hooks: {
+    beforeValidate: [ensureSlugFromTitle],
     afterChange: [revalidatePage],
     beforeChange: [populatePublishedAt],
     afterDelete: [revalidateDelete],
@@ -244,7 +246,7 @@ export const Pages: CollectionConfig<'pages'> = {
   versions: {
     drafts: {
       autosave: {
-        interval: 100, // We set this interval for optimal live preview
+        interval: 1000, // Give title/slug sync time to settle before autosaving
       },
       schedulePublish: true,
     },

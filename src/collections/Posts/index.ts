@@ -23,6 +23,7 @@ import { ChecklistList } from '../../blocks/ChecklistList/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { populateAuthors } from './hooks/populateAuthors'
 import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
+import { ensureSlugFromTitle } from '../../hooks/ensureSlugFromTitle'
 
 import {
   MetaDescriptionField,
@@ -246,6 +247,7 @@ export const Posts: CollectionConfig<'posts'> = {
     slugField(),
   ],
   hooks: {
+    beforeValidate: [ensureSlugFromTitle],
     afterChange: [revalidatePost],
     afterRead: [populateAuthors],
     afterDelete: [revalidateDelete],
@@ -253,7 +255,7 @@ export const Posts: CollectionConfig<'posts'> = {
   versions: {
     drafts: {
       autosave: {
-        interval: 100, // We set this interval for optimal live preview
+        interval: 1000, // Give title/slug sync time to settle before autosaving
       },
       schedulePublish: true,
     },

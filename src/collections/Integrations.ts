@@ -39,6 +39,7 @@ import { CardGrid } from '../blocks/CardGrid/config'
 import { FormBlock2 } from '../blocks/FormBlock2/config'
 import { FeaturedPartners } from '../blocks/FeaturedPartners/config'
 import { generatePreviewPath } from '../utilities/generatePreviewPath'
+import { ensureSlugFromTitle } from '../hooks/ensureSlugFromTitle'
 
 const stripPastedRowIDs = (value: unknown): unknown => {
   if (Array.isArray(value)) {
@@ -77,7 +78,7 @@ export const Integrations: CollectionConfig = {
     update: authenticated,
   },
   hooks: {
-    beforeValidate: [sanitizePastedLayoutIDs],
+    beforeValidate: [ensureSlugFromTitle, sanitizePastedLayoutIDs],
   },
   admin: {
     group: 'Collections',
@@ -252,7 +253,7 @@ export const Integrations: CollectionConfig = {
   versions: {
     drafts: {
       autosave: {
-        interval: 100,
+        interval: 1000,
       },
       schedulePublish: true,
     },

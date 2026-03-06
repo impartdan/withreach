@@ -20,6 +20,7 @@ import { ConclusionBlock } from '../../blocks/Conclusion/config'
 import { ChecklistList } from '../../blocks/ChecklistList/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateCaseStudy, revalidateCaseStudyDelete } from './hooks/revalidateCaseStudy'
+import { ensureSlugFromTitle } from '../../hooks/ensureSlugFromTitle'
 
 import {
   MetaDescriptionField,
@@ -267,13 +268,14 @@ export const CaseStudies: CollectionConfig<'case-studies'> = {
     slugField(),
   ],
   hooks: {
+    beforeValidate: [ensureSlugFromTitle],
     afterChange: [revalidateCaseStudy],
     afterDelete: [revalidateCaseStudyDelete],
   },
   versions: {
     drafts: {
       autosave: {
-        interval: 100,
+        interval: 1000,
       },
       schedulePublish: true,
     },
