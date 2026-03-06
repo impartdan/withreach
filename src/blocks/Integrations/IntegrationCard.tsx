@@ -25,7 +25,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
   const logo = typeof integration.logo === 'object' ? integration.logo : null
   const isPubliclyViewable =
     (integration as { isPubliclyViewable?: boolean }).isPubliclyViewable !== false
-  const isClickable = isFeatured && isPubliclyViewable
+  const isClickable = isPubliclyViewable
 
   const cardContent = (
     <>
@@ -73,8 +73,8 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
       {/* Description */}
       <p className="type-micro-b mb-6 flex-1">{integration.description}</p>
 
-      {/* Link indicator - only show for featured */}
-      {isFeatured && isPubliclyViewable && (
+      {/* Link indicator - only show for publicly viewable integrations */}
+      {isPubliclyViewable && (
         <div className="pt-2 mt-auto">
           <span className={buttonVariants({ size: 'clear', variant: 'arrow-invert' })}>
             Explore
