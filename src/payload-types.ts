@@ -4685,6 +4685,20 @@ export interface CtaLargeBlock {
     };
     [k: string]: unknown;
   } | null;
+  maxWidth?:
+    | (
+        | 'max-w-sm'
+        | 'max-w-md'
+        | 'max-w-lg'
+        | 'max-w-xl'
+        | 'max-w-2xl'
+        | 'max-w-3xl'
+        | 'max-w-4xl'
+        | 'max-w-5xl'
+        | 'max-w-6xl'
+        | 'none'
+      )
+    | null;
   links?:
     | {
         link?: {
@@ -7657,6 +7671,7 @@ export interface CtaLargeBlockSelect<T extends boolean = true> {
   label?: T;
   heading?: T;
   content?: T;
+  maxWidth?: T;
   links?:
     | T
     | {
@@ -9232,6 +9247,43 @@ export interface VideoEmbed {
   id?: string | null;
   blockName?: string | null;
   blockType: 'videoEmbed';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RichTextButtonGroupBlock".
+ */
+export interface RichTextButtonGroupBlock {
+  links?:
+    | {
+        link?: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ({
+                relationTo: 'pages';
+                value: number | Page;
+              } | null)
+            | ({
+                relationTo: 'posts';
+                value: number | Post;
+              } | null)
+            | ({
+                relationTo: 'case-studies';
+                value: number | CaseStudy;
+              } | null);
+          url?: string | null;
+          label?: string | null;
+          /**
+           * Choose how the link should be rendered.
+           */
+          appearance?: ('default' | 'outline') | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'buttonGroup';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

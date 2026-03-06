@@ -18,6 +18,7 @@ import { BlockquoteBlockComponent } from '@/blocks/Blockquote/Component'
 import { ConclusionBlockComponent } from '@/blocks/Conclusion/Component'
 import { ChecklistListComponent } from '@/blocks/ChecklistList/Component'
 import { Media } from '@/components/Media'
+import { CMSLink } from '@/components/Link'
 
 import type {
   ImageBlock as ImageBlockProps,
@@ -26,6 +27,7 @@ import type {
   BlockquoteBlock as BlockquoteBlockProps,
   ConclusionBlock as ConclusionBlockProps,
   ChecklistListBlock as ChecklistListBlockProps,
+  RichTextButtonGroupBlock as RichTextButtonGroupBlockProps,
   Page,
 } from '@/payload-types'
 import { cn } from '@/utilities/ui'
@@ -42,6 +44,7 @@ type NodeTypes =
       | BlockquoteBlockProps
       | ConclusionBlockProps
       | ChecklistListBlockProps
+      | RichTextButtonGroupBlockProps
     >
   | SerializedTypographyStyleNode
 
@@ -143,6 +146,20 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
         <ChecklistListComponent {...(node.fields as ChecklistListBlockProps)} />
       </div>
     ),
+    buttonGroup: ({ node }) => {
+      const { links } = node.fields as RichTextButtonGroupBlockProps
+      if (!Array.isArray(links) || links.length === 0) return null
+
+      return (
+        <div className="col-start-1 col-span-3 my-5 md:my-10 lg:my-14">
+          <div className="flex flex-wrap items-center gap-3">
+            {links.map(({ link }, index) => (
+              <CMSLink key={index} size="default" {...link} />
+            ))}
+          </div>
+        </div>
+      )
+    },
   },
 })
 

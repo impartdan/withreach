@@ -11,6 +11,7 @@ import { blockSettings } from '@/fields/blockSettings'
 import { ChecklistList } from '@/blocks/ChecklistList/config'
 import { ImageBlock } from '@/blocks/ImageBlock/config'
 import { VideoEmbed } from '@/blocks/VideoEmbed/config'
+import { RichTextButtons } from '@/blocks/RichTextButtons/config'
 
 export const IndentedContent: Block = {
   slug: 'indentedContent',
@@ -49,7 +50,7 @@ export const IndentedContent: Block = {
                     ...rootFeatures,
                     OliveTextFeature(),
                     HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
-                    BlocksFeature({ blocks: [ImageBlock, VideoEmbed, ChecklistList] }),
+                    BlocksFeature({ blocks: [ImageBlock, VideoEmbed, ChecklistList, RichTextButtons] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                   ]

@@ -22,6 +22,7 @@ import { TypographyFeature } from '@/lexical/typography/feature.server'
 import { OliveTextFeature } from '@/lexical/olive-text/feature.server'
 import { ImageBlock } from '@/blocks/ImageBlock/config'
 import { VideoEmbed } from '@/blocks/VideoEmbed/config'
+import { RichTextButtons } from '@/blocks/RichTextButtons/config'
 
 export const defaultLexical = lexicalEditor({
   features: [
@@ -68,7 +69,7 @@ export const defaultLexical = lexicalEditor({
         ]
       },
     }),
-    BlocksFeature({ blocks: [ImageBlock, VideoEmbed] }),
+    BlocksFeature({ blocks: [ImageBlock, VideoEmbed, RichTextButtons] }),
     FixedToolbarFeature(),
     InlineToolbarFeature(),
   ],

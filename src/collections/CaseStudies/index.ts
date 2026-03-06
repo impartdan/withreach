@@ -18,6 +18,7 @@ import { StatsBlock } from '../../blocks/StatsBlock/config'
 import { BlockquoteBlock } from '../../blocks/Blockquote/config'
 import { ConclusionBlock } from '../../blocks/Conclusion/config'
 import { ChecklistList } from '../../blocks/ChecklistList/config'
+import { RichTextButtons } from '../../blocks/RichTextButtons/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateCaseStudy, revalidateCaseStudyDelete } from './hooks/revalidateCaseStudy'
 import { ensureSlugFromTitle } from '../../hooks/ensureSlugFromTitle'
@@ -156,7 +157,7 @@ export const CaseStudies: CollectionConfig<'case-studies'> = {
                     ...rootFeatures.filter((f) => f.key !== 'blockquote'),
                     OliveTextFeature(),
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [ImageBlock, VideoEmbed, StatsBlock, BlockquoteBlock, ConclusionBlock, ChecklistList] }),
+                    BlocksFeature({ blocks: [ImageBlock, VideoEmbed, StatsBlock, BlockquoteBlock, ConclusionBlock, ChecklistList, RichTextButtons] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),

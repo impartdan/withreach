@@ -20,6 +20,7 @@ import { StatsBlock } from '../../blocks/StatsBlock/config'
 import { BlockquoteBlock } from '../../blocks/Blockquote/config'
 import { ConclusionBlock } from '../../blocks/Conclusion/config'
 import { ChecklistList } from '../../blocks/ChecklistList/config'
+import { RichTextButtons } from '../../blocks/RichTextButtons/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { populateAuthors } from './hooks/populateAuthors'
 import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
@@ -109,7 +110,7 @@ export const Posts: CollectionConfig<'posts'> = {
                     ...rootFeatures.filter((f) => f.key !== 'blockquote'),
                     OliveTextFeature(),
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Code, ImageBlock, VideoEmbed, HubspotFormBlock, StatsBlock, BlockquoteBlock, ConclusionBlock, ChecklistList] }),
+                    BlocksFeature({ blocks: [Code, ImageBlock, VideoEmbed, HubspotFormBlock, StatsBlock, BlockquoteBlock, ConclusionBlock, ChecklistList, RichTextButtons] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),

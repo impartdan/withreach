@@ -4,11 +4,36 @@ import type { CtaLargeBlock as CtaLargeBlockProps } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
+import { cn } from '@/utilities/ui'
 
-export const CtaLargeBlock: React.FC<CtaLargeBlockProps> = ({ label, heading, content, links }) => {
+const maxWidthClasses: Record<string, string> = {
+  'max-w-sm': 'max-w-sm',
+  'max-w-md': 'max-w-md',
+  'max-w-lg': 'max-w-lg',
+  'max-w-xl': 'max-w-xl',
+  'max-w-2xl': 'max-w-2xl',
+  'max-w-3xl': 'max-w-3xl',
+  'max-w-4xl': 'max-w-4xl',
+  'max-w-5xl': 'max-w-5xl',
+  'max-w-6xl': 'max-w-6xl',
+  none: '',
+}
+
+export const CtaLargeBlock: React.FC<CtaLargeBlockProps> = ({
+  label,
+  heading,
+  content,
+  links,
+  maxWidth,
+}) => {
+  const maxWidthClass = maxWidth ? (maxWidthClasses[maxWidth] ?? 'max-w-3xl') : 'max-w-3xl'
+
   return (
     <div className="container">
-      <RevealOnScroll variant="fadeIn" className="text-center max-w-3xl mx-auto text-pretty">
+      <RevealOnScroll
+        variant="fadeIn"
+        className={cn('text-center mx-auto text-pretty', maxWidthClass)}
+      >
         {label && <p className=" type-eyebrow  mb-4">{label}</p>}
 
         {heading && <h2 className="type-display-lg mb-6 text-pretty">{heading}</h2>}
