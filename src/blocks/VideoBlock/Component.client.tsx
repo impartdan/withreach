@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import NextImage from 'next/image'
 
 import { cn } from '@/utilities/ui'
@@ -64,11 +64,13 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [ytThumbIdx, setYtThumbIdx] = useState(0)
+  const uploadedVideoRef = useRef<HTMLVideoElement | null>(null)
 
   const maxWidthClass = maxWidth ? (maxWidthClasses[maxWidth] ?? 'max-w-4xl') : 'max-w-4xl'
   const isCenter = alignment !== 'left'
 
   const youtubeId = youtubeUrl ? extractYouTubeId(youtubeUrl) : null
+  const isUploadedVideo = videoType !== 'youtube' && Boolean(videoUrl)
 
   // Determine which thumbnail to show before playback
   const ytThumbUrl = youtubeId
@@ -76,31 +78,45 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
     : null
   const thumbSrc = posterUrl || ytThumbUrl || null
 
-  const handlePlay = () => setIsPlaying(true)
+  const handlePlay = () => {
+    setIsPlaying(true)
+
+    // On mobile Safari, invoking play() directly from the tap handler
+    // is more reliable than relying on autoPlay after a re-render.
+    if (isUploadedVideo && uploadedVideoRef.current) {
+      const playPromise = uploadedVideoRef.current.play()
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {
+          // Ignore NotAllowedError or timing races; controls remain visible for manual retry.
+        })
+      }
+    }
+  }
 
   const videoPlayer = (
     <div className="relative w-full aspect-video rounded-[8px] overflow-hidden bg-black">
-      {isPlaying ? (
-        <>
-          {videoType === 'youtube' && youtubeId ? (
-            <iframe
-              src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
-              allow="autoplay; encrypted-media; fullscreen"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-              title="YouTube video"
-            />
-          ) : videoUrl ? (
-            <video
-              src={videoUrl}
-              controls
-              autoPlay
-              playsInline
-              className="absolute inset-0 w-full h-full object-contain"
-            />
-          ) : null}
-        </>
-      ) : (
+      {videoType === 'youtube' && isPlaying && youtubeId ? (
+        <iframe
+          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+          allow="autoplay; encrypted-media; fullscreen"
+          allowFullScreen
+          className="absolute inset-0 w-full h-full"
+          title="YouTube video"
+        />
+      ) : null}
+
+      {isUploadedVideo ? (
+        <video
+          ref={uploadedVideoRef}
+          src={videoUrl ?? undefined}
+          controls={isPlaying}
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-contain"
+        />
+      ) : null}
+
+      {!isPlaying ? (
         <button
           onClick={handlePlay}
           className="absolute inset-0 w-full h-full group focus:outline-none"
@@ -142,7 +158,7 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
             </div>
           </div>
         </button>
-      )}
+      ) : null}
     </div>
   )
 
