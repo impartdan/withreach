@@ -12,6 +12,7 @@ import * as migration_20260227_cta_small_move_logo_to_cards from './20260227_cta
 import * as migration_20260305_publish_integrations from './20260305_publish_integrations';
 import * as migration_20260305_fix_shared_versions_fk from './20260305_fix_shared_versions_fk';
 import * as migration_20260305_add_integrations_visibility from './20260305_add_integrations_visibility';
+import * as migration_20260306_cta_large_max_width from './20260306_cta_large_max_width';
 
 export const migrations = [
   {
@@ -83,5 +84,10 @@ export const migrations = [
     up: migration_20260305_add_integrations_visibility.up,
     down: migration_20260305_add_integrations_visibility.down,
     name: '20260305_add_integrations_visibility'
+  },
+  {
+    up: migration_20260306_cta_large_max_width.up,
+    down: migration_20260306_cta_large_max_width.down,
+    name: '20260306_cta_large_max_width'
   },
 ];
