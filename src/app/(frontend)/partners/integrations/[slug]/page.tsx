@@ -207,13 +207,6 @@ export default async function IntegrationPage({ params: paramsPromise }: Args) {
                 {integration.title}
               </h1>
 
-              {/* Description - Can be multiple paragraphs */}
-              <div className="space-y-4 type-body [&>p]:mb-0">
-                {integration.description.split('\n\n').map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-
               {/* Body Content if available */}
               {integration.body && (
                 <div className="mt-8">
