@@ -13,25 +13,12 @@ export const TrioCardScroller: React.FC<TrioCardScrollerProps> = ({ cardCount, c
   const [canScrollPrev, setCanScrollPrev] = React.useState(false)
   const [canScrollNext, setCanScrollNext] = React.useState(cardCount > 1)
   const [containerHeight, setContainerHeight] = React.useState<number | undefined>(undefined)
-  const isMobileRef = React.useRef(false)
 
-  const measureActiveCard = React.useCallback((scroller: HTMLElement) => {
+  const measureTallestCard = React.useCallback((scroller: HTMLElement) => {
     const cards = Array.from(scroller.children) as HTMLElement[]
     if (cards.length === 0) return undefined
 
-    const scrollCenter = scroller.scrollLeft + scroller.clientWidth / 2
-    let activeCard = cards[0]
-    let best = Infinity
-
-    for (const card of cards) {
-      const d = Math.abs(card.offsetLeft + card.offsetWidth / 2 - scrollCenter)
-      if (d < best) {
-        best = d
-        activeCard = card
-      }
-    }
-
-    return activeCard.offsetHeight
+    return cards.reduce((tallest, card) => Math.max(tallest, card.offsetHeight), 0)
   }, [])
 
   const update = React.useCallback(() => {
@@ -43,18 +30,17 @@ export const TrioCardScroller: React.FC<TrioCardScrollerProps> = ({ cardCount, c
     setCanScrollNext(scroller.scrollLeft < maxScroll - 1)
 
     const mobile = !window.matchMedia('(min-width: 768px)').matches
-    isMobileRef.current = mobile
 
     if (!mobile) {
       setContainerHeight(undefined)
       return
     }
 
-    const height = measureActiveCard(scroller)
+    const height = measureTallestCard(scroller)
     if (height !== undefined && height > 0) {
       setContainerHeight(height)
     }
-  }, [measureActiveCard])
+  }, [measureTallestCard])
 
   React.useEffect(() => {
     const scroller = scrollerRef.current
@@ -117,11 +103,7 @@ export const TrioCardScroller: React.FC<TrioCardScrollerProps> = ({ cardCount, c
       <div
         ref={scrollerRef}
         className={getTrioCardsContainerClasses(cardCount)}
-        style={
-          containerHeight !== undefined
-            ? { height: containerHeight, transition: 'height 0.3s ease' }
-            : undefined
-        }
+        style={containerHeight !== undefined ? { minHeight: containerHeight } : undefined}
       >
         {children}
       </div>
