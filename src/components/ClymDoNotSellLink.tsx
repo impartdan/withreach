@@ -10,10 +10,10 @@ type WindowWithClym = Window & {
   Clym?: ClymGlobal
 }
 
-const isAnalyticsEnabled = process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === 'true'
+const isThirdPartyScriptsEnabled = process.env.NEXT_PUBLIC_ENABLE_THIRD_PARTY_SCRIPTS === 'true'
 
 export function ClymDoNotSellLink() {
-  if (!isAnalyticsEnabled) return null
+  if (!isThirdPartyScriptsEnabled) return null
 
   return (
     <button

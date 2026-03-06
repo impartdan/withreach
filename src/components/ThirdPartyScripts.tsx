@@ -2,11 +2,11 @@
 
 import Script from 'next/script'
 
-const isAnalyticsEnabled = process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === 'true'
+const isThirdPartyScriptsEnabled = process.env.NEXT_PUBLIC_ENABLE_THIRD_PARTY_SCRIPTS === 'true'
 const hubspotPortalId = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID
 
 export function ThirdPartyScripts() {
-  if (!isAnalyticsEnabled) return null
+  if (!isThirdPartyScriptsEnabled) return null
 
   return (
     <>

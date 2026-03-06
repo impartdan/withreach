@@ -18,6 +18,7 @@ import { SeasonMix, SeasonSans, SeasonSerif } from './fonts'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
+  const isThirdPartyScriptsEnabled = process.env.NEXT_PUBLIC_ENABLE_THIRD_PARTY_SCRIPTS === 'true'
 
   return (
     <ViewTransitions>
@@ -42,15 +43,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           />
         </head>
         <body>
-          {/* Google Tag Manager (noscript) */}
-          <noscript>
-            <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-WK6N6RD"
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-            />
-          </noscript>
+          {isThirdPartyScriptsEnabled && (
+            <noscript>
+              <iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-WK6N6RD"
+                height="0"
+                width="0"
+                style={{ display: 'none', visibility: 'hidden' }}
+              />
+            </noscript>
+          )}
 
           <Providers>
             <AdminBar
