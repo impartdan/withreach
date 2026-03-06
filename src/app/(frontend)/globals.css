@@ -169,6 +169,25 @@
   }
 }
 
+@layer components {
+  @media (hover: hover) and (pointer: fine) {
+    .trio-text-card--interactive:hover {
+      @apply bg-brand-black text-white;
+    }
+
+    .trio-text-card--interactive:hover .trio-text-card__title {
+      @apply text-brand-olive;
+    }
+
+    .trio-text-card--interactive:hover .trio-text-card__subtitle,
+    .trio-text-card--interactive:hover .trio-text-card__description,
+    .trio-text-card--interactive:hover .trio-text-card__description p,
+    .trio-text-card--interactive:hover .trio-text-card__icon {
+      @apply text-white;
+    }
+  }
+}
+
 @import 'wysiwyg.css';
 
 /* View transition for the header content layer (applied via Tailwind

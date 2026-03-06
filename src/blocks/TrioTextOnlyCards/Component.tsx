@@ -52,19 +52,26 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
       {Array.isArray(cards) && cards.length > 0 && (
         <TrioCardScroller cardCount={cards.length}>
           {cards.map((card, index) => {
+            const isClickable = Boolean(card.link)
             const cardInner = (
               <>
                 <div className="flex flex-col justify-between gap-4">
                   <div>
                     {card.title && (
                       <span
-                        className={`type-display-md text-brand-black group-hover:text-brand-olive`}
+                        className={`type-display-md text-brand-black ${
+                          isClickable ? 'trio-text-card__title' : ''
+                        }`}
                       >
                         {card.title}
                       </span>
                     )}
                     {card.subtitle && (
-                      <span className="type-display-md block text-brand-olive group-hover:text-white">
+                      <span
+                        className={`type-display-md block text-brand-olive ${
+                          isClickable ? 'trio-text-card__subtitle' : ''
+                        }`}
+                      >
                         {card.subtitle}
                       </span>
                     )}
@@ -73,7 +80,9 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
                 <div className="flex flex-col justify-between gap-4">
                   {card.description && (
                     <RichText
-                      className={`type-body [&>p]:type-body text-brand-black/70 group-hover:text-white`}
+                      className={`type-body [&>p]:type-body text-brand-black/70 ${
+                        isClickable ? 'trio-text-card__description' : ''
+                      }`}
                       data={card.description}
                       enableGutter={false}
                       enableProse={false}
@@ -81,7 +90,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
                   )}
                   {card.link && (
                     <div>
-                      <span className="text-brand-black group-hover:text-white">
+                      <span className={`text-brand-black ${isClickable ? 'trio-text-card__icon' : ''}`}>
                         <svg
                           width="24"
                           height="24"
@@ -105,7 +114,9 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
             )
 
             const cardVisualClasses =
-              'rounded-[8px] p-8 lg:min-h-[400px] flex flex-col gap-6 justify-between bg-white border border-brand-black/20 text-brand-black group hover:bg-brand-black hover:text-white transition-colors duration-300 h-full'
+              `rounded-[8px] p-8 lg:min-h-[400px] flex flex-col gap-6 justify-between bg-white border border-brand-black/20 text-brand-black h-full ${
+                isClickable ? 'trio-text-card trio-text-card--interactive transition-colors duration-300' : ''
+              }`
 
             return (
               <RevealOnScroll
@@ -114,7 +125,7 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
                 delay={index * 0.05}
                 className="w-full shrink-0 snap-center md:w-auto"
               >
-                {card.link ? (
+                {isClickable ? (
                   <CMSLink
                     appearance="inline"
                     {...card.link}

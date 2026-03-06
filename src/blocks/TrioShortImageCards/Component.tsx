@@ -68,6 +68,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
 
             const primaryCardLink = validCardLinks[0] ?? null
             const visibleCardLinks = validCardLinks.filter((link) => Boolean(link.label?.trim()))
+            const isClickable = Boolean(primaryCardLink)
 
             return (
               <RevealOnScroll
@@ -77,11 +78,11 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
                 className="w-full shrink-0 snap-center md:w-auto"
               >
                 <div
-                  className={`relative rounded-[8px] shadow-sm hover:shadow-xl transition duration-300 p-5 overflow-hidden flex flex-col h-full ${
+                  className={`relative rounded-[8px] shadow-sm p-5 overflow-hidden flex flex-col h-full ${
                     isFeaturedCard
                       ? 'bg-brand-black text-brand-off-white border border-brand-white/10'
                       : 'bg-brand-white border border-brand-black/20 gap-5'
-                  }`}
+                  } ${isClickable ? 'hover:shadow-xl transition duration-300' : ''}`}
                 >
                   {primaryCardLink && (
                     <CMSLink
