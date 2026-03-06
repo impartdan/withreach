@@ -15,6 +15,7 @@ export type VideoBlockClientProps = {
   alignment?: string | null
   /** When true, renders only the video player without container/maxWidth wrappers (for embedding in other blocks) */
   embedded?: boolean
+  onPlayStart?: () => void
 }
 
 const maxWidthClasses: Record<string, string> = {
@@ -61,6 +62,7 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
   maxWidth,
   alignment,
   embedded = false,
+  onPlayStart,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [ytThumbIdx, setYtThumbIdx] = useState(0)
@@ -96,6 +98,7 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
 
     playRequestedRef.current = true
     setIsPlaying(true)
+    onPlayStart?.()
 
     // On mobile Safari, invoking play() directly from the tap handler
     // is more reliable than relying on autoPlay after a re-render.

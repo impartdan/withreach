@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import type { Media as MediaType } from '@/payload-types'
 import type { TestimonialBlock as TestimonialBlockProps } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
@@ -34,14 +34,18 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
 }) => {
   const hasVideo = (videoType === 'upload' && video) || (videoType === 'youtube' && youtubeUrl)
   const linkTheme: BlockTheme = blockSettings?.textColor === 'light' ? 'light' : 'dark'
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+
   return (
     <div className="container">
       <div className="relative flex flex-col lg:flex-row lg:items-end gap-5 lg:gap-0 pb-10">
         {/* Video */}
         {hasVideo && (
           <RevealOnScroll
-            variant="slideUp"
-            className="relative rounded-[8px] overflow-hidden lg:w-[68%] aspect-video z-0"
+            variant="fadeIn"
+            className={`relative rounded-[8px] overflow-hidden lg:w-[68%] aspect-video transition-[z-index,transform] duration-500 ${
+              isVideoPlaying ? 'z-20' : 'z-0'
+            }`}
           >
             <VideoBlockClient
               embedded
@@ -50,12 +54,19 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
               youtubeUrl={youtubeUrl ?? undefined}
               posterUrl={resolveMediaUrl(poster)}
               posterAlt={resolveMediaAlt(poster)}
+              onPlayStart={() => setIsVideoPlaying(true)}
             />
           </RevealOnScroll>
         )}
 
         {/* Quote Card */}
-        <div className="w-full md:w-auto lg:w-[36%] z-10 -mb-10 pb-10 lg:-translate-x-10  lg:translate-y-10">
+        <div
+          className={`w-full md:w-auto lg:w-[36%] -mb-10 pb-10 transition-transform duration-500 ${
+            isVideoPlaying
+              ? 'z-10 lg:translate-x-0 lg:translate-y-10 xl:translate-x-6'
+              : 'z-10 lg:-translate-x-10 lg:translate-y-10'
+          }`}
+        >
           <RevealOnScroll
             variant="slideUp"
             delay={0.15}
