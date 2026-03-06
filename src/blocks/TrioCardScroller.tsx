@@ -12,30 +12,64 @@ export const TrioCardScroller: React.FC<TrioCardScrollerProps> = ({ cardCount, c
   const scrollerRef = React.useRef<HTMLDivElement>(null)
   const [canScrollPrev, setCanScrollPrev] = React.useState(false)
   const [canScrollNext, setCanScrollNext] = React.useState(cardCount > 1)
+  const [containerHeight, setContainerHeight] = React.useState<number | undefined>(undefined)
+  const isMobileRef = React.useRef(false)
 
-  const updateScrollState = React.useCallback(() => {
+  const measureActiveCard = React.useCallback((scroller: HTMLElement) => {
+    const cards = Array.from(scroller.children) as HTMLElement[]
+    if (cards.length === 0) return undefined
+
+    const scrollCenter = scroller.scrollLeft + scroller.clientWidth / 2
+    let activeCard = cards[0]
+    let best = Infinity
+
+    for (const card of cards) {
+      const d = Math.abs(card.offsetLeft + card.offsetWidth / 2 - scrollCenter)
+      if (d < best) {
+        best = d
+        activeCard = card
+      }
+    }
+
+    return activeCard.offsetHeight
+  }, [])
+
+  const update = React.useCallback(() => {
     const scroller = scrollerRef.current
     if (!scroller) return
 
-    const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth
+    const maxScroll = scroller.scrollWidth - scroller.clientWidth
     setCanScrollPrev(scroller.scrollLeft > 1)
-    setCanScrollNext(scroller.scrollLeft < maxScrollLeft - 1)
-  }, [])
+    setCanScrollNext(scroller.scrollLeft < maxScroll - 1)
+
+    const mobile = !window.matchMedia('(min-width: 768px)').matches
+    isMobileRef.current = mobile
+
+    if (!mobile) {
+      setContainerHeight(undefined)
+      return
+    }
+
+    const height = measureActiveCard(scroller)
+    if (height !== undefined && height > 0) {
+      setContainerHeight(height)
+    }
+  }, [measureActiveCard])
 
   React.useEffect(() => {
     const scroller = scrollerRef.current
     if (!scroller) return
 
-    updateScrollState()
+    update()
 
-    scroller.addEventListener('scroll', updateScrollState, { passive: true })
-    window.addEventListener('resize', updateScrollState)
+    scroller.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
 
     return () => {
-      scroller.removeEventListener('scroll', updateScrollState)
-      window.removeEventListener('resize', updateScrollState)
+      scroller.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
     }
-  }, [updateScrollState, cardCount])
+  }, [update, cardCount])
 
   const scrollByCard = React.useCallback((direction: 'prev' | 'next') => {
     const scroller = scrollerRef.current
@@ -80,7 +114,15 @@ export const TrioCardScroller: React.FC<TrioCardScrollerProps> = ({ cardCount, c
         </div>
       )}
 
-      <div ref={scrollerRef} className={getTrioCardsContainerClasses(cardCount)}>
+      <div
+        ref={scrollerRef}
+        className={getTrioCardsContainerClasses(cardCount)}
+        style={
+          containerHeight !== undefined
+            ? { height: containerHeight, transition: 'height 0.3s ease' }
+            : undefined
+        }
+      >
         {children}
       </div>
     </>

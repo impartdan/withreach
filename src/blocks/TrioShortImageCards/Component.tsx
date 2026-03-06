@@ -72,8 +72,7 @@ export const TrioShortImageCardsBlock: React.FC<TrioShortImageCardsBlockProps> =
             return (
               <RevealOnScroll
                 key={index}
-                variant="slideUp"
-                mobileVariant={usesScrollableCards ? 'fadeIn' : undefined}
+                variant="fadeIn"
                 delay={index * 0.05}
                 className="w-full shrink-0 snap-center md:w-auto"
               >

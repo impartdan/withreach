@@ -65,6 +65,7 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
   const [isPlaying, setIsPlaying] = useState(false)
   const [ytThumbIdx, setYtThumbIdx] = useState(0)
   const uploadedVideoRef = useRef<HTMLVideoElement | null>(null)
+  const playRequestedRef = useRef(false)
 
   const maxWidthClass = maxWidth ? (maxWidthClasses[maxWidth] ?? 'max-w-4xl') : 'max-w-4xl'
   const isCenter = alignment !== 'left'
@@ -78,19 +79,27 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
     : null
   const thumbSrc = posterUrl || ytThumbUrl || null
 
+  const attemptUploadedVideoPlay = () => {
+    if (!isUploadedVideo || !uploadedVideoRef.current) return
+
+    const playPromise = uploadedVideoRef.current.play()
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {
+        // Some mobile browsers reject the first call until media is ready.
+        // We retry from onCanPlay after user intent has been captured.
+      })
+    }
+  }
+
   const handlePlay = () => {
+    if (isPlaying) return
+
+    playRequestedRef.current = true
     setIsPlaying(true)
 
     // On mobile Safari, invoking play() directly from the tap handler
     // is more reliable than relying on autoPlay after a re-render.
-    if (isUploadedVideo && uploadedVideoRef.current) {
-      const playPromise = uploadedVideoRef.current.play()
-      if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.catch(() => {
-          // Ignore NotAllowedError or timing races; controls remain visible for manual retry.
-        })
-      }
-    }
+    attemptUploadedVideoPlay()
   }
 
   const videoPlayer = (
@@ -109,9 +118,18 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
         <video
           ref={uploadedVideoRef}
           src={videoUrl ?? undefined}
+          autoPlay={isPlaying}
           controls={isPlaying}
           playsInline
           preload="metadata"
+          onPlay={() => {
+            playRequestedRef.current = false
+          }}
+          onCanPlay={() => {
+            if (isPlaying && playRequestedRef.current) {
+              attemptUploadedVideoPlay()
+            }
+          }}
           className="absolute inset-0 w-full h-full object-contain"
         />
       ) : null}
