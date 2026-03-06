@@ -106,7 +106,7 @@ export const VideoBlockClient: React.FC<VideoBlockClientProps> = ({
     <div className="relative w-full aspect-video rounded-[8px] overflow-hidden bg-black">
       {videoType === 'youtube' && isPlaying && youtubeId ? (
         <iframe
-          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&playsinline=1&mute=1&rel=0&modestbranding=1`}
+          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1`}
           allow="autoplay; encrypted-media; fullscreen"
           allowFullScreen
           className="absolute inset-0 w-full h-full"
