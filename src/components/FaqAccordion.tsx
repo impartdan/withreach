@@ -40,12 +40,12 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
             aria-expanded={openIndex === index}
             aria-controls={`faq-accordion-panel-${index}`}
-            className="flex items-start justify-between w-full text-left gap-4"
+            className="flex items-center justify-between w-full text-left gap-4"
           >
             <span className={questionClassName}>{item.question}</span>
             <span
               className={cn(
-                'text-2xl shrink-0 w-8 h-8 flex items-center justify-center rounded-[5px] border bg-transparent transition-colors',
+                'text-2xl leading-none shrink-0 w-8 h-8 flex items-center justify-center rounded-[5px] border bg-transparent transition-colors',
                 isLightTheme
                   ? 'text-white/60 border-white/20'
                   : 'text-brand-black/60 border-brand-black/20',
