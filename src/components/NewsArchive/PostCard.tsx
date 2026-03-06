@@ -25,7 +25,7 @@ export const PostCard: React.FC<{ post: PostCardData }> = ({ post }) => {
   return (
     <article className="group">
       <Link href={href} className="block">
-        <div className="relative rounded-[8px] overflow-hidden aspect-[3/2] bg-brand-linen mb-8">
+        <div className="relative rounded-[8px] overflow-hidden aspect-[3/2] bg-brand-linen mb-4 md:mb-8">
           {image ? (
             <Media
               resource={image}
