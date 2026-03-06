@@ -3,6 +3,7 @@
 import type { Integration, Page, Post, CaseStudy } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Media as MediaComponent } from '@/components/Media'
+import { LinkChevron } from '@/components/ui/link-chevron'
 import { Link } from 'next-view-transitions'
 import { motion } from 'framer-motion'
 
@@ -51,9 +52,7 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
                     {item.link.label}
                   </span>
                 )}
-                <svg width="4" height="7" viewBox="0 0 4 7" className="" fill="none">
-                  <path d="M0.5 0.5L3.5 3.5L0.5 6.5" stroke="#284854" strokeWidth="1.5" />
-                </svg>
+                <LinkChevron tone="brand" size="sm" />
               </div>
               {item.description && <p className=" mt-1">{item.description}</p>}
             </CMSLink>
@@ -87,16 +86,16 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
                       <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
                         <MediaComponent
                           resource={integration.icon}
-                          className="w-6 h-6 object-contain"
+                          htmlElement={null}
+                          pictureClassName="relative w-6 h-6 shrink-0"
+                          imgClassName="w-full h-full object-contain object-center block"
                         />
                       </div>
                     )}
                     <span className="type-display-md">{integration.title}</span>
                   </div>
-                  <div className="flex items-center gap-3 text-base font-semibold text-[#1E1A15]">
-                    <svg width="4" height="8" viewBox="0 0 4 8" fill="none">
-                      <path d="M0.5 0.5L3.5 4L0.5 7.5" stroke="#1E1A15" strokeWidth="1.5" />
-                    </svg>
+                  <div className="shrink-0 flex items-center justify-center self-stretch">
+                    <LinkChevron tone="dark" size="md" />
                   </div>
                 </Link>
               ) : (
@@ -106,7 +105,9 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
                       <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
                         <MediaComponent
                           resource={integration.icon}
-                          className="w-6 h-6 object-contain"
+                          htmlElement={null}
+                          pictureClassName="relative w-6 h-6 shrink-0"
+                          imgClassName="w-full h-full object-contain object-center block"
                         />
                       </div>
                     )}

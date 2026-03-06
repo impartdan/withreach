@@ -7,6 +7,7 @@ import { getPayloadClient } from '@/utilities/getPayloadClient'
 import React from 'react'
 import { IntegrationCard } from '@/blocks/Integrations/IntegrationCard'
 import { Media as MediaComponent } from '@/components/Media'
+import { LinkChevron } from '@/components/ui/link-chevron'
 import { Link } from 'next-view-transitions'
 
 export const FeaturedPartnersBlock: React.FC<
@@ -66,15 +67,18 @@ export const FeaturedPartnersBlock: React.FC<
                 <div className="flex items-center gap-4 min-w-0">
                   {integration.icon && (
                     <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
-                      <MediaComponent resource={integration.icon} className="w-6 h-6 object-contain" />
+                      <MediaComponent
+                        resource={integration.icon}
+                        htmlElement={null}
+                        pictureClassName="relative w-6 h-6 shrink-0"
+                        imgClassName="w-full h-full object-contain object-center block"
+                      />
                     </div>
                   )}
                   <span className="type-display-md truncate">{integration.title}</span>
                 </div>
-                <div className="flex items-center gap-3 text-base font-semibold text-[#1E1A15] shrink-0">
-                  <svg width="4" height="8" viewBox="0 0 4 8" fill="none">
-                    <path d="M0.5 0.5L3.5 4L0.5 7.5" stroke="#1E1A15" strokeWidth="1.5" />
-                  </svg>
+                <div className="shrink-0 flex items-center justify-center self-stretch">
+                  <LinkChevron tone="dark" size="md" />
                 </div>
               </Link>
             ) : (
@@ -85,7 +89,12 @@ export const FeaturedPartnersBlock: React.FC<
                 <div className="flex items-center gap-4 min-w-0">
                   {integration.icon && (
                     <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
-                      <MediaComponent resource={integration.icon} className="w-6 h-6 object-contain" />
+                      <MediaComponent
+                        resource={integration.icon}
+                        htmlElement={null}
+                        pictureClassName="relative w-6 h-6 shrink-0"
+                        imgClassName="w-full h-full object-contain object-center block"
+                      />
                     </div>
                   )}
                   <span className="type-display-md truncate">{integration.title}</span>

@@ -5,6 +5,7 @@ import { CMSLink } from '@/components/Link'
 import { Link } from 'next-view-transitions'
 import { Media } from '@/components/Media'
 import { Tag } from '@/components/Tag'
+import { LinkChevron } from '@/components/ui/link-chevron'
 import { motion } from 'framer-motion'
 
 type CMSLinkType = {
@@ -178,9 +179,7 @@ export const TwoColumnShowcaseDropdown: React.FC<TwoColumnShowcaseDropdownProps>
                     {item.link.label}
                   </span>
                 )}
-                <svg width="4" height="7" viewBox="0 0 4 7" fill="none">
-                  <path d="M0.5 0.5L3.5 3.5L0.5 6.5" stroke="#284854" strokeWidth="1.5" />
-                </svg>
+                <LinkChevron tone="brand" size="sm" />
               </div>
               {item.description && <p className="mt-1">{item.description}</p>}
             </CMSLink>
