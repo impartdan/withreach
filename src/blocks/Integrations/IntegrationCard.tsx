@@ -25,6 +25,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
   const logo = typeof integration.logo === 'object' ? integration.logo : null
   const isPubliclyViewable =
     (integration as { isPubliclyViewable?: boolean }).isPubliclyViewable !== false
+  const isClickable = isFeatured && isPubliclyViewable
 
   const cardContent = (
     <>
@@ -92,8 +93,12 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({
   )
 
   return (
-    <article className="h-full flex flex-col border border-brand-olive/20 rounded-[8px] bg-white hover:border-brand-olive/40 hover:shadow-md transition-all duration-200 group">
-      {isFeatured && isPubliclyViewable ? (
+    <article
+      className={`h-full flex flex-col border border-brand-olive/20 rounded-[8px] bg-white ${
+        isClickable ? 'hover:border-brand-olive/40 hover:shadow-md transition-all duration-200' : ''
+      }`}
+    >
+      {isClickable ? (
         <Link
           href={`/partners/integrations/${integration.slug}`}
           className="p-8 flex flex-col flex-1"
