@@ -9253,6 +9253,7 @@ export interface VideoEmbed {
  * via the `definition` "RichTextButtonGroupBlock".
  */
 export interface RichTextButtonGroupBlock {
+  alignment?: ('left' | 'center') | null;
   links?:
     | {
         link?: {

@@ -9,6 +9,16 @@ export const RichTextButtons: Block = {
     plural: 'Button Groups',
   },
   fields: [
+    {
+      name: 'alignment',
+      type: 'select',
+      label: 'Alignment',
+      defaultValue: 'left',
+      options: [
+        { label: 'Left', value: 'left' },
+        { label: 'Center', value: 'center' },
+      ],
+    },
     linkGroup({
       appearances: ['default', 'outline'],
       overrides: {

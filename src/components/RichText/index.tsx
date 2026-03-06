@@ -147,12 +147,17 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
       </div>
     ),
     buttonGroup: ({ node }) => {
-      const { links } = node.fields as RichTextButtonGroupBlockProps
+      const { links, alignment } = node.fields as RichTextButtonGroupBlockProps
       if (!Array.isArray(links) || links.length === 0) return null
 
       return (
         <div className="col-start-1 col-span-3 my-5 md:my-10 lg:my-14">
-          <div className="flex flex-wrap items-center gap-3">
+          <div
+            className={cn(
+              'flex flex-wrap items-center gap-3',
+              alignment === 'center' ? 'justify-center' : 'justify-start',
+            )}
+          >
             {links.map(({ link }, index) => (
               <CMSLink key={index} size="default" {...link} />
             ))}
