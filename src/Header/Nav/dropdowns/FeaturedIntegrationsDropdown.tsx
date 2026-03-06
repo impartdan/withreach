@@ -79,7 +79,7 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
               {isPubliclyViewable ? (
                 <Link
                   href={`/partners/integrations/${integration.slug}`}
-                  className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] group hover:bg-white border-transparent border hover:border-black/20 transition-all hover:shadow-lg"
+                  className="flex items-center justify-between p-2 bg-brand-linen rounded-[10px] group hover:bg-white border-transparent border hover:border-black/20 transition-all hover:shadow-lg"
                 >
                   <div className="flex items-center gap-4">
                     {integration.icon && (
@@ -92,14 +92,14 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
                         />
                       </div>
                     )}
-                    <span className="type-display-md">{integration.title}</span>
+                    <span className="type-display-xs">{integration.title}</span>
                   </div>
                   <div className="shrink-0 flex items-center justify-center self-stretch">
                     <LinkChevron tone="dark" size="md" />
                   </div>
                 </Link>
               ) : (
-                <div className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] border border-transparent">
+                <div className="flex items-center justify-between p-2 bg-brand-linen rounded-[10px] border border-transparent">
                   <div className="flex items-center gap-4">
                     {integration.icon && (
                       <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
@@ -111,7 +111,7 @@ export const FeaturedIntegrationsDropdown: React.FC<FeaturedIntegrationsDropdown
                         />
                       </div>
                     )}
-                    <span className="type-display-md">{integration.title}</span>
+                    <span className="type-display-xs">{integration.title}</span>
                   </div>
                 </div>
               )}

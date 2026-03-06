@@ -57,12 +57,12 @@ export const FeaturedPartnersBlock: React.FC<
       <h2 className="type-display-md text-center mb-12">{title}</h2>
       {slimLayout ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
-          {integrations.map((integration) => (
-            ((integration as { isPubliclyViewable?: boolean }).isPubliclyViewable !== false ? (
+          {integrations.map((integration) =>
+            (integration as { isPubliclyViewable?: boolean }).isPubliclyViewable !== false ? (
               <Link
                 key={integration.id}
                 href={`/partners/integrations/${integration.slug}`}
-                className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] group hover:bg-white border-transparent border hover:border-black/20 transition-all hover:shadow-lg"
+                className="flex items-center justify-between p-2 bg-brand-linen rounded-[10px] group hover:bg-white border-transparent border hover:border-black/20 transition-all hover:shadow-lg"
               >
                 <div className="flex items-center gap-4 min-w-0">
                   {integration.icon && (
@@ -75,7 +75,7 @@ export const FeaturedPartnersBlock: React.FC<
                       />
                     </div>
                   )}
-                  <span className="type-display-md truncate">{integration.title}</span>
+                  <span className="type-display-xs truncate">{integration.title}</span>
                 </div>
                 <div className="shrink-0 flex items-center justify-center self-stretch">
                   <LinkChevron tone="dark" size="md" />
@@ -84,7 +84,7 @@ export const FeaturedPartnersBlock: React.FC<
             ) : (
               <div
                 key={integration.id}
-                className="flex items-center justify-between p-4 bg-brand-linen rounded-[10px] border border-transparent"
+                className="flex items-center justify-between p-2 bg-brand-linen rounded-[10px] border border-transparent"
               >
                 <div className="flex items-center gap-4 min-w-0">
                   {integration.icon && (
@@ -97,11 +97,11 @@ export const FeaturedPartnersBlock: React.FC<
                       />
                     </div>
                   )}
-                  <span className="type-display-md truncate">{integration.title}</span>
+                  <span className="type-display-xs truncate">{integration.title}</span>
                 </div>
               </div>
-            ))
-          ))}
+            ),
+          )}
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap lg:justify-center gap-6 items-start">
