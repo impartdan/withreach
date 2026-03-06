@@ -31,7 +31,7 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({
       )}
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-16 md:gap-[120px] pt-20 md:pt-20 pb-20 md:pb-[120px]">
+      <div className="relative z-10 flex flex-col items-center gap-16 md:gap-[100px] pt-10 md:pt-10 pb-20 md:pb-[100px]">
         {/* Heading + subtitle */}
         {richText && (
           <RevealOnScroll
@@ -44,15 +44,17 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({
 
         {/* Partner cards */}
         {Array.isArray(partnerCards) && partnerCards.length > 0 && (
-          <div className="container flex flex-col md:flex-row gap-8 justify-center items-stretch">
+          <RevealOnScroll
+            variant="slideUp"
+            delay={0.15}
+            className="container flex flex-col md:flex-row gap-8 justify-center items-stretch"
+          >
             {partnerCards.map((card, i) => (
               <RevealOnScroll
                 key={i}
-                variant="slideUpSoft"
-                delay={i * 0.06}
-                duration={0.72}
-                ease={[0.22, 1, 0.36, 1]}
-                amount={0.12}
+                variant="fadeIn"
+                delay={i * 0.15}
+                duration={0.5}
                 className="relative bg-white border border-brand-olive/20 rounded-[8px] p-5 w-full md:w-[432px] flex flex-col gap-5 hover:shadow-lg hover:bg-brand-gray-light transition-all group"
               >
                 {/* Full-card link overlay */}
@@ -84,7 +86,9 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({
                       <h3 className="type-display-sm text-brand-black text-pretty">{card.title}</h3>
                     )}
                     {card.description && (
-                      <p className="typt-micro-b text-brand-black text-pretty">{card.description}</p>
+                      <p className="typt-micro-b text-brand-black text-pretty">
+                        {card.description}
+                      </p>
                     )}
                   </div>
 
@@ -110,7 +114,7 @@ export const PartnerHero: React.FC<PartnerHeroBlockType> = ({
                 </div>
               </RevealOnScroll>
             ))}
-          </div>
+          </RevealOnScroll>
         )}
       </div>
     </div>
