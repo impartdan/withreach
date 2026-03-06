@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useTransition, useCallback } from 'react'
+import React, { useState, useTransition, useCallback, useEffect } from 'react'
 
 import type { Category } from '@/payload-types'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
@@ -37,6 +37,13 @@ export function BrowseSection({
   const [currentPage, setCurrentPage] = useState(initialPage)
   const [activeCategory, setActiveCategory] = useState<string | null>(initialCategory)
   const [isPending, startTransition] = useTransition()
+
+  useEffect(() => {
+    setDocs(initialDocs)
+    setTotalPages(initialTotalPages)
+    setCurrentPage(initialPage)
+    setActiveCategory(initialCategory)
+  }, [initialDocs, initialTotalPages, initialPage, initialCategory])
 
   const updateUrl = useCallback((category: string | null, page: number) => {
     const params = new URLSearchParams()
