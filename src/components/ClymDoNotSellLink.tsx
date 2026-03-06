@@ -13,18 +13,20 @@ type WindowWithClym = Window & {
 const isThirdPartyScriptsEnabled = process.env.NEXT_PUBLIC_ENABLE_THIRD_PARTY_SCRIPTS === 'true'
 
 export function ClymDoNotSellLink() {
-  if (!isThirdPartyScriptsEnabled) return null
+  return null
 
-  return (
-    <button
-      type="button"
-      className="underline decoration-white/40 underline-offset-4 hover:decoration-white transition-colors"
-      onClick={(event) => {
-        const browserWindow = window as WindowWithClym
-        browserWindow.Clym?.showWidget('/requests/new/do_not_sell_my_information', '', event)
-      }}
-    >
-      Do Not Sell My Information
-    </button>
-  )
+  // if (!isThirdPartyScriptsEnabled) return null
+
+  // return (
+  //   <button
+  //     type="button"
+  //     className="underline decoration-white/40 underline-offset-4 hover:decoration-white transition-colors"
+  //     onClick={(event) => {
+  //       const browserWindow = window as WindowWithClym
+  //       browserWindow.Clym?.showWidget('/requests/new/do_not_sell_my_information', '', event)
+  //     }}
+  //   >
+  //     Do Not Sell My Information
+  //   </button>
+  // )
 }
