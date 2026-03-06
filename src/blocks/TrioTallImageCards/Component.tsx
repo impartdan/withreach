@@ -16,7 +16,6 @@ export const TrioTallImageCardsBlock: React.FC<TrioTallImageCardsBlockProps> = (
   blockSettings,
 }) => {
   const isLessThanThreeCards = Array.isArray(cards) && cards.length < 3
-  const usesScrollableCards = Array.isArray(cards) && cards.length > 1
   const linkTheme: BlockTheme = blockSettings?.textColor === 'light' ? 'light' : 'dark'
   return (
     <div className="container">

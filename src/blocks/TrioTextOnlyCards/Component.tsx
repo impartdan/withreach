@@ -15,8 +15,6 @@ export const TrioTextOnlyCardsBlock: React.FC<TrioTextOnlyCardsBlockProps> = ({
   cards,
 }) => {
   const hasHeader = introduction || (Array.isArray(links) && links.length > 0) || image
-  const usesScrollableCards = Array.isArray(cards) && cards.length > 1
-
   return (
     <div className="container">
       {hasHeader && (
